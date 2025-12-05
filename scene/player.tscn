@@ -1,11 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://b8orbduoade27"]
+[gd_scene load_steps=18 format=3 uid="uid://b8orbduoade27"]
 
 [ext_resource type="Script" uid="uid://cftr1t220lj12" path="res://script/player.gd" id="1_hjaqi"]
 [ext_resource type="PackedScene" uid="uid://b0v42bl82qnrr" path="res://scene/ability/sword_ability/sword_ability_controller.tscn" id="2_fvtld"]
 [ext_resource type="PackedScene" uid="uid://bnactnfyipltl" path="res://scene/游戏功能组件/health_component.tscn" id="3_ct4mp"]
 [ext_resource type="PackedScene" uid="uid://clk86unthnvj5" path="res://scene/ability/fireball_ability/fireball_controller.tscn" id="4_oh5ij"]
 [ext_resource type="PackedScene" uid="uid://b6vs7ye342hb6" path="res://scene/ability/hammer_ability/heaven_fruy/heaven_fruy_controller.tscn" id="5_hp4bs"]
-[ext_resource type="PackedScene" uid="uid://lae6sogmc22b" path="res://scene/ability/hammer_ability/hammer_ability_controller.tscn" id="5_s4jxa"]
 [ext_resource type="Texture2D" uid="uid://pd06xdyq86de" path="res://动画图片素材/女巫师/summon_run.png" id="7_hp4bs"]
 [ext_resource type="Script" uid="uid://b085c5vup7duv" path="res://script/拾取范围.gd" id="8_g2vtq"]
 
@@ -83,8 +82,6 @@ MAX_speed = 115
 [node name="Fireball_controller" parent="abilitymanager" instance=ExtResource("4_oh5ij")]
 
 [node name="heaven_fury_controller" parent="abilitymanager" instance=ExtResource("5_hp4bs")]
-
-[node name="hammer_ability_controller" parent="abilitymanager" instance=ExtResource("5_s4jxa")]
 
 [node name="health_component" parent="." instance=ExtResource("3_ct4mp")]
 max_health = 100.0
