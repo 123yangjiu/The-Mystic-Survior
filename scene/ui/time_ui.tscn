@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://8ltjdygo5nge"]
+
+[ext_resource type="Script" uid="uid://dh134i6hvchbm" path="res://script/time_ui.gd" id="1_5xbj7"]
+
+[node name="Time_UI" type="CanvasLayer" node_paths=PackedStringArray("game_time_manager")]
+layer = 100
+script = ExtResource("1_5xbj7")
+game_time_manager = NodePath("Label")
+
+[node name="Label" type="Label" parent="."]
+unique_name_in_owner = true
+z_index = 100
+offset_right = 640.0
+offset_bottom = 360.0
+size_flags_vertical = 1
+theme_override_colors/font_outline_color = Color(0.24705882, 0.14901961, 0.19215687, 1)
+theme_override_constants/outline_size = 2
+text = "text"
+horizontal_alignment = 1

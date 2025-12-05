@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://byrfr2i02s1sk"]
+
+[ext_resource type="Script" uid="uid://beqg6eyavy01k" path="res://script/gamevent.gd" id="1_yrl0y"]
+
+[node name="gameEvent" type="Node"]
+script = ExtResource("1_yrl0y")
+
+[node name="difficulty_timer" type="Timer" parent="."]
+wait_time = 37.0
+autostart = true

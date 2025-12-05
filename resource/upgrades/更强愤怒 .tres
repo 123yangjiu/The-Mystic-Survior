@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=2 format=3 uid="uid://dladi3itxe508"]
+
+[ext_resource type="Script" uid="uid://dmyfvo2eu1rj2" path="res://resource/upgrades/ability_upgrade.gd" id="1_iwek5"]
+
+[resource]
+script = ExtResource("1_iwek5")
+ID = "更强愤怒"
+Sort = "天堂"
+name = "把把他们炸干净"
+Description = "每个天堂之怒的伤害增加25%"

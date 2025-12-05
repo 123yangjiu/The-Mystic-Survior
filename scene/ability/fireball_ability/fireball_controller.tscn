@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://clk86unthnvj5"]
+
+[ext_resource type="Script" uid="uid://c8gdrjifusycy" path="res://script/fireball_controller.gd" id="1_dvaxo"]
+[ext_resource type="PackedScene" uid="uid://cbdxmcmld8om5" path="res://scene/ability/fireball_ability/fireball.tscn" id="2_de04s"]
+
+[node name="Fireball_controller" type="Node"]
+script = ExtResource("1_dvaxo")
+fireball = ExtResource("2_de04s")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.5

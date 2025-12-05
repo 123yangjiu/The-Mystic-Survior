@@ -1,0 +1,98 @@
+[gd_scene load_steps=21 format=3 uid="uid://b2fnijcvbh7hg"]
+
+[ext_resource type="Script" uid="uid://rsl4jg827i3e" path="res://script/slimer_2d.gd" id="1_s6cpb"]
+[ext_resource type="PackedScene" uid="uid://decyru6mnkuga" path="res://scene/游戏功能组件/hurtboxcomponent.tscn" id="2_8rq5f"]
+[ext_resource type="Texture2D" uid="uid://ccw1sevq6qydv" path="res://动画图片素材/迷你地牢素材/Tiles/tile_0089.png" id="3_c336l"]
+[ext_resource type="Texture2D" uid="uid://bopbigjlqgvr8" path="res://动画图片素材/迷你地牢素材/Tiles/tile_0090.png" id="4_7u1is"]
+[ext_resource type="PackedScene" uid="uid://bnactnfyipltl" path="res://scene/游戏功能组件/health_component.tscn" id="4_bpx8c"]
+[ext_resource type="Texture2D" uid="uid://byrikbil0dp1x" path="res://动画图片素材/迷你地牢素材/Tiles/tile_0091.png" id="5_j0tct"]
+[ext_resource type="PackedScene" uid="uid://i5imcyd15vix" path="res://scene/游戏 物件/exprience_bottle  .tscn" id="6_bpx8c"]
+[ext_resource type="Texture2D" uid="uid://b1tvv6dq2k6no" path="res://动画图片素材/迷你地牢素材/Tiles/tile_0092.png" id="6_wjwl7"]
+[ext_resource type="PackedScene" uid="uid://daaqcmminiyk1" path="res://scene/游戏 物件/blood_bottle .tscn" id="7_18obl"]
+[ext_resource type="PackedScene" uid="uid://g6ks4dc6kpht" path="res://scene/游戏功能组件/velocity_component.tscn" id="8_cq32u"]
+[ext_resource type="Script" uid="uid://tjaflxnpe5iy" path="res://特殊掉落.gd" id="9_swju3"]
+[ext_resource type="PackedScene" uid="uid://nukfwpmcx40n" path="res://scene/游戏 物件/bonus_bottle.tscn" id="12_7u1is"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vcrpj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wxa6r"]
+atlas = ExtResource("3_c336l")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cji6c"]
+atlas = ExtResource("4_7u1is")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_84al2"]
+atlas = ExtResource("5_j0tct")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x65gu"]
+atlas = ExtResource("6_wjwl7")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fq6t5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wxa6r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cji6c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_84al2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x65gu")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ntng8"]
+radius = 10.607901
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8egh0"]
+radius = 5.0
+
+[node name="box" type="CharacterBody2D" groups=["初级"]]
+collision_layer = 40
+collision_mask = 33
+script = ExtResource("1_s6cpb")
+
+[node name="Hurtboxcomponent" parent="." node_paths=PackedStringArray("health_component") groups=["enemy"] instance=ExtResource("2_8rq5f")]
+collision_layer = 4
+health_component = NodePath("../health_component")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Hurtboxcomponent"]
+shape = SubResource("CircleShape2D_vcrpj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["enemy"]]
+position = Vector2(0, -1.9999995)
+scale = Vector2(1.2553042, 1.0013652)
+sprite_frames = SubResource("SpriteFrames_fq6t5")
+animation = &"run"
+autoplay = "run"
+frame_progress = 0.41755745
+
+[node name="对角色造成伤害的碰撞" type="CollisionShape2D" parent="." groups=["enemy"]]
+position = Vector2(-4.7683716e-07, 4.7683716e-07)
+scale = Vector2(0.47134686, 0.4559797)
+shape = SubResource("CircleShape2D_ntng8")
+
+[node name="health_component" parent="." instance=ExtResource("4_bpx8c")]
+max_health = 150.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_8egh0")
+
+[node name="velocity_component" parent="." instance=ExtResource("8_cq32u")]
+speed = 20
+acceleration = 3.5
+
+[node name="特殊掉落" type="Node" parent="." node_paths=PackedStringArray("health_component")]
+script = ExtResource("9_swju3")
+drop_thing = Array[PackedScene]([ExtResource("6_bpx8c"), ExtResource("7_18obl"), ExtResource("12_7u1is")])
+health_component = NodePath("../health_component")

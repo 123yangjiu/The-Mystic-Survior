@@ -1,0 +1,93 @@
+[gd_scene load_steps=17 format=3 uid="uid://cxuy15d1s524"]
+
+[ext_resource type="Script" uid="uid://rsl4jg827i3e" path="res://script/slimer_2d.gd" id="1_8egh0"]
+[ext_resource type="PackedScene" uid="uid://decyru6mnkuga" path="res://scene/游戏功能组件/hurtboxcomponent.tscn" id="2_lgbb7"]
+[ext_resource type="Texture2D" uid="uid://br5m38aemvmux" path="res://动画图片素材/slime_green.png" id="3_qboba"]
+[ext_resource type="PackedScene" uid="uid://bnactnfyipltl" path="res://scene/游戏功能组件/health_component.tscn" id="4_x35gv"]
+[ext_resource type="PackedScene" uid="uid://c0i7tc6xpk0n8" path="res://scene/游戏功能组件/drop_component.tscn" id="5_5tc53"]
+[ext_resource type="PackedScene" uid="uid://i5imcyd15vix" path="res://scene/游戏 物件/exprience_bottle  .tscn" id="6_7fpsb"]
+[ext_resource type="PackedScene" uid="uid://g6ks4dc6kpht" path="res://scene/游戏功能组件/velocity_component.tscn" id="6_eh7t0"]
+[ext_resource type="PackedScene" uid="uid://daaqcmminiyk1" path="res://scene/游戏 物件/blood_bottle .tscn" id="7_s5pc1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vcrpj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwl80"]
+atlas = ExtResource("3_qboba")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1u1kg"]
+atlas = ExtResource("3_qboba")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vhgnm"]
+atlas = ExtResource("3_qboba")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t6r5b"]
+atlas = ExtResource("3_qboba")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fq6t5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iwl80")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1u1kg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vhgnm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t6r5b")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ntng8"]
+radius = 10.607901
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8egh0"]
+radius = 5.0
+
+[node name="slimer" type="CharacterBody2D" groups=["初级"]]
+collision_layer = 40
+collision_mask = 33
+script = ExtResource("1_8egh0")
+
+[node name="Hurtboxcomponent" parent="." node_paths=PackedStringArray("health_component") groups=["enemy"] instance=ExtResource("2_lgbb7")]
+collision_layer = 4
+health_component = NodePath("../health_component")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Hurtboxcomponent"]
+shape = SubResource("CircleShape2D_vcrpj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["enemy"]]
+position = Vector2(0, -4.9999995)
+scale = Vector2(1.2553042, 1.0013652)
+sprite_frames = SubResource("SpriteFrames_fq6t5")
+animation = &"run"
+autoplay = "run"
+frame_progress = 0.50348395
+
+[node name="对角色造成伤害的碰撞" type="CollisionShape2D" parent="." groups=["enemy"]]
+position = Vector2(-4.7683716e-07, 4.7683716e-07)
+scale = Vector2(0.47134686, 0.4559797)
+shape = SubResource("CircleShape2D_ntng8")
+
+[node name="health_component" parent="." instance=ExtResource("4_x35gv")]
+max_health = 13.0
+
+[node name="drop_component" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("5_5tc53")]
+drop_thing = Array[PackedScene]([ExtResource("6_7fpsb"), ExtResource("7_s5pc1")])
+health_component = NodePath("../health_component")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_8egh0")
+
+[node name="velocity_component" parent="." instance=ExtResource("6_eh7t0")]
+speed = 50
+acceleration = 4.0

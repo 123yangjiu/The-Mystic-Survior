@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0gjd680ncete"]
+
+[ext_resource type="Script" uid="uid://ny8c2jvym1to" path="res://script/gametimemanager.gd" id="1_0gk00"]
+
+[node name="gametimemanager" type="Node"]
+script = ExtResource("1_0gk00")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 600.0
+one_shot = true
+autostart = true

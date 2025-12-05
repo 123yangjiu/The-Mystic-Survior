@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bwkdpup5ikf3a"]
+
+[ext_resource type="Script" uid="uid://fa0ak1csqele" path="res://script/enemymanager.gd" id="1_osh64"]
+
+[node name="enemyproducer" type="Node"]
+script = ExtResource("1_osh64")
+kill_cirle_enemy = Array[PackedScene]([null, null, null])
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true

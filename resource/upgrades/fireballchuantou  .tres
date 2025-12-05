@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=2 format=3 uid="uid://brv0twbh4faty"]
+
+[ext_resource type="Script" uid="uid://dmyfvo2eu1rj2" path="res://resource/upgrades/ability_upgrade.gd" id="1_yn45e"]
+
+[resource]
+script = ExtResource("1_yn45e")
+ID = "火球穿透"
+Sort = "火球"
+name = "力大穿！"
+Description = "你的火球现在可以多穿透两个目标！
+"

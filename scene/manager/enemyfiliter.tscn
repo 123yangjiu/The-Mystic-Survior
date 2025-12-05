@@ -1,0 +1,16 @@
+[gd_scene load_steps=11 format=3 uid="uid://ccgl3enwp4fx2"]
+
+[ext_resource type="Script" uid="uid://bmo2bfwiohbak" path="res://script/enemyfiliter.gd" id="1_35xkm"]
+[ext_resource type="Script" uid="uid://b8kynvj5xuaby" path="res://resource/enemy/enemy.gd" id="2_5ebq4"]
+[ext_resource type="Resource" uid="uid://bxky4hcyjohvi" path="res://resource/enemy/silime.tres" id="3_dokpp"]
+[ext_resource type="Resource" uid="uid://c6o5mfp0ul3mh" path="res://resource/enemy/purple_silime.tres" id="4_dokpp"]
+[ext_resource type="Resource" uid="uid://bl6c65geij0ji" path="res://resource/enemy/邪恶鸭梨l.tres" id="5_6sdlv"]
+[ext_resource type="Resource" uid="uid://dcshkpdkqmlmv" path="res://resource/enemy/wolf.tres" id="6_k1eir"]
+[ext_resource type="Resource" uid="uid://pff6k5t7ol3j" path="res://resource/enemy/石头人.tres" id="6_tkm8a"]
+[ext_resource type="Resource" uid="uid://c02spyysuegq7" path="res://resource/enemy/box.tres" id="8_7s4j5"]
+[ext_resource type="Resource" uid="uid://ckcolpwqwrycv" path="res://resource/enemy/猫头鹰.tres" id="8_41gov"]
+[ext_resource type="Resource" uid="uid://bwvsf8rcctefe" path="res://resource/enemy/骑士.tres" id="9_fdl5p"]
+
+[node name="enemyfiliter" type="Node"]
+script = ExtResource("1_35xkm")
+enemy_group = Array[ExtResource("2_5ebq4")]([ExtResource("3_dokpp"), ExtResource("4_dokpp"), ExtResource("5_6sdlv"), ExtResource("6_k1eir"), ExtResource("6_tkm8a"), ExtResource("8_41gov"), ExtResource("9_fdl5p"), ExtResource("8_7s4j5")])

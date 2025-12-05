@@ -1,0 +1,110 @@
+[gd_scene load_steps=15 format=3 uid="uid://dmpby4vf0jtmo"]
+
+[ext_resource type="Script" uid="uid://c4qoebpka5oyc" path="res://script/boss.gd" id="1_et0im"]
+[ext_resource type="Texture2D" uid="uid://bfvdbq4tsdn8e" path="res://动画图片素材/RockFlameBoss.png" id="2_285t0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_et0im"]
+radius = 100.18346
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gtfqc"]
+atlas = ExtResource("2_285t0")
+region = Rect2(900, 1500, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ex4t5"]
+atlas = ExtResource("2_285t0")
+region = Rect2(1200, 1500, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_27m4v"]
+atlas = ExtResource("2_285t0")
+region = Rect2(900, 1500, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_et0im"]
+atlas = ExtResource("2_285t0")
+region = Rect2(0, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_285t0"]
+atlas = ExtResource("2_285t0")
+region = Rect2(300, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fl70q"]
+atlas = ExtResource("2_285t0")
+region = Rect2(600, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nuwfj"]
+atlas = ExtResource("2_285t0")
+region = Rect2(900, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ot3je"]
+atlas = ExtResource("2_285t0")
+region = Rect2(1200, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tcgrh"]
+atlas = ExtResource("2_285t0")
+region = Rect2(0, 300, 300, 300)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gtfqc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gtfqc")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_ex4t5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_27m4v")
+}],
+"loop": false,
+"name": &"kind1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_et0im")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_285t0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fl70q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nuwfj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ot3je")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tcgrh")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_et0im"]
+
+[node name="boss" type="CharacterBody2D"]
+position = Vector2(3, 2)
+collision_mask = 2
+script = ExtResource("1_et0im")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.9441575, 0.93338656)
+shape = SubResource("CircleShape2D_et0im")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-5, 6)
+sprite_frames = SubResource("SpriteFrames_gtfqc")
+animation = &"kind1"
+
+[node name="bullet" type="CharacterBody2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="bullet"]
+position = Vector2(415, -51)
+sprite_frames = SubResource("SpriteFrames_et0im")
+frame_progress = 0.86166656
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="speedup"]

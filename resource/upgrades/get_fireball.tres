@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=2 format=3 uid="uid://dq2ug8ceqhgg0"]
+
+[ext_resource type="Script" uid="uid://dmyfvo2eu1rj2" path="res://resource/upgrades/ability_upgrade.gd" id="1_57rql"]
+
+[resource]
+script = ExtResource("1_57rql")
+ID = "解锁火球"
+Sort = "火球"
+name = "ta有点烫手"
+Description = "朝敌人的方向发射火球（射偏了我可不管:)"
