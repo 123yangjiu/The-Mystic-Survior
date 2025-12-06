@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=2 format=3 uid="uid://dn5ri83sm6i23"]
+
+[ext_resource type="Script" uid="uid://dmyfvo2eu1rj2" path="res://resource/upgrades/ability_upgrade.gd" id="1_tv43d"]
+
+[resource]
+script = ExtResource("1_tv43d")
+ID = "增加生命瓶"
+Sort = "角色能力"
+name = "活——活下去"
+Description = "有更大的可能掉落生命药水（可叠加）"

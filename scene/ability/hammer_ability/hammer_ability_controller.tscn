@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://lae6sogmc22b"]
 
-[ext_resource type="Script" uid="uid://2ol48jsjon7h" path="res://script/hammer_ability_controller.gd" id="1_kt7pk"]
+[ext_resource type="Script" uid="uid://2ol48jsjon7h" path="res://script/upgrade/hammer_ability_controller.gd" id="1_kt7pk"]
 [ext_resource type="PackedScene" uid="uid://s1i31vfh2lr5" path="res://scene/ability/hammer_ability/hammer_ability.tscn" id="2_ans4e"]
 
 [node name="hammer_ability_controller" type="Node"]

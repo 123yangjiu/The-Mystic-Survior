@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=2 format=3 uid="uid://bqpb3vuil8nte"]
+
+[ext_resource type="Script" uid="uid://dmyfvo2eu1rj2" path="res://resource/upgrades/ability_upgrade.gd" id="1_qm081"]
+
+[resource]
+script = ExtResource("1_qm081")
+ID = "火球数量"
+Sort = "火球"
+name = "批发火球"
+Description = "你现在每次可以多发射一个火球了！"

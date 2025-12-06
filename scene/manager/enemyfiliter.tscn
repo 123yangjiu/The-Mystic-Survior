@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://ccgl3enwp4fx2"]
 
-[ext_resource type="Script" uid="uid://bmo2bfwiohbak" path="res://script/enemyfiliter.gd" id="1_35xkm"]
+[ext_resource type="Script" uid="uid://bmo2bfwiohbak" path="res://script/enemy/enemyfiliter.gd" id="1_35xkm"]
 [ext_resource type="Script" uid="uid://b8kynvj5xuaby" path="res://resource/enemy/enemy.gd" id="2_5ebq4"]
 [ext_resource type="Resource" uid="uid://bxky4hcyjohvi" path="res://resource/enemy/silime.tres" id="3_dokpp"]
 [ext_resource type="Resource" uid="uid://c6o5mfp0ul3mh" path="res://resource/enemy/purple_silime.tres" id="4_dokpp"]

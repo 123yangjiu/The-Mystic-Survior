@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://bawo0mh4gaicu"]
 
 [ext_resource type="Texture2D" uid="uid://bx6rlx10cm75k" path="res://scene/ability/sword_ability/tile_0104.png" id="1_l440w"]
-[ext_resource type="Script" uid="uid://b1w6aiu8k6jho" path="res://script/sword_ability.gd" id="1_lcf15"]
+[ext_resource type="Script" uid="uid://b1w6aiu8k6jho" path="res://script/upgrade/sword_ability.gd" id="1_lcf15"]
 [ext_resource type="PackedScene" uid="uid://c4aqf7g3512kf" path="res://scene/游戏功能组件/hitbox_component.tscn" id="2_rt8kj"]
 
 [sub_resource type="Animation" id="Animation_rt8kj"]

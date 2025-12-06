@@ -1,6 +1,6 @@
 [gd_scene load_steps=19 format=3 uid="uid://bcl20xpjeekut"]
 
-[ext_resource type="Script" uid="uid://d24270xd2qhtf" path="res://script/猫头鹰.gd" id="1_ysij7"]
+[ext_resource type="Script" uid="uid://d24270xd2qhtf" path="res://script/enemy/main_enemy/猫头鹰.gd" id="1_ysij7"]
 [ext_resource type="PackedScene" uid="uid://decyru6mnkuga" path="res://scene/游戏功能组件/hurtboxcomponent.tscn" id="2_0uyp4"]
 [ext_resource type="Texture2D" uid="uid://1nyfiavgxiia" path="res://动画图片素材/黑暗猫头鹰/Aurigaidlewithshadow-Sheet.png" id="3_ysij7"]
 [ext_resource type="PackedScene" uid="uid://bnactnfyipltl" path="res://scene/游戏功能组件/health_component.tscn" id="4_2yh8p"]

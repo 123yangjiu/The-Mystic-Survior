@@ -1,11 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://cptmnlexwivwt"]
+[gd_scene load_steps=2 format=3 uid="uid://cptmnlexwivwt"]
 
-[ext_resource type="Script" uid="uid://fa0ak1csqele" path="res://script/enemymanager.gd" id="1_osh64"]
-[ext_resource type="PackedScene" uid="uid://cxuy15d1s524" path="res://scene/enemy/silime.tscn" id="2_ugv6t"]
+[ext_resource type="Script" uid="uid://fa0ak1csqele" path="res://script/manager/enemymanager.gd" id="1_osh64"]
 
 [node name="enemymanager" type="Node"]
 script = ExtResource("1_osh64")
-basic_enemy_scene = ExtResource("2_ugv6t")
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true

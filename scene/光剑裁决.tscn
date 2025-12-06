@@ -1,6 +1,6 @@
 [gd_scene load_steps=34 format=3 uid="uid://4borjb35h5h2"]
 
-[ext_resource type="Texture2D" uid="uid://c4hluc4fovntv" path="res://scene/ability/hammer_ability/Cast Spell 102-DownCut All.png" id="1_jcdc6"]
+[ext_resource type="Texture2D" uid="uid://c4hluc4fovntv" path="res://scene/Cast Spell 102-DownCut All.png" id="1_jcdc6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8g0r1"]
 atlas = ExtResource("1_jcdc6")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=21 format=3 uid="uid://b2fnijcvbh7hg"]
 
-[ext_resource type="Script" uid="uid://rsl4jg827i3e" path="res://script/slimer_2d.gd" id="1_s6cpb"]
+[ext_resource type="Script" uid="uid://rsl4jg827i3e" path="res://script/enemy/main_enemy/slimer_2d.gd" id="1_s6cpb"]
 [ext_resource type="PackedScene" uid="uid://decyru6mnkuga" path="res://scene/游戏功能组件/hurtboxcomponent.tscn" id="2_8rq5f"]
 [ext_resource type="Texture2D" uid="uid://ccw1sevq6qydv" path="res://动画图片素材/迷你地牢素材/Tiles/tile_0089.png" id="3_c336l"]
 [ext_resource type="Texture2D" uid="uid://bopbigjlqgvr8" path="res://动画图片素材/迷你地牢素材/Tiles/tile_0090.png" id="4_7u1is"]

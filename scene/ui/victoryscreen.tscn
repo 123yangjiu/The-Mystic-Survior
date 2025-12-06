@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ci3fodbprfo2x"]
 
-[ext_resource type="Script" uid="uid://dhi6irssr0s2a" path="res://script/victoryscreen.gd" id="1_73tji"]
+[ext_resource type="Script" uid="uid://dhi6irssr0s2a" path="res://script/文本及ui显示/victoryscreen.gd" id="1_73tji"]
 
 [node name="Victoryscreen" type="CanvasLayer"]
 process_mode = 3

@@ -13,15 +13,20 @@ func on_died():
 		var angle := TAU * i / 3
 		var entities_Layer=get_tree().get_first_node_in_group("实体图层")
 		var spawn_position=(owner as Node2D).global_position
+		var bottle_instence:Node2D
 		if randf()<drop_persent:
-			var experience_thing_instance=drop_thing[0].instantiate() as Node2D
-			entities_Layer.add_child(experience_thing_instance)
-			experience_thing_instance.global_position=spawn_position+Vector2.RIGHT.rotated(angle) *float(random_R ) 
+			bottle_instence=drop_thing[0].instantiate() as Node2D
+			print(bottle_instence,1)
+			call_deferred("add_bottle",entities_Layer,spawn_position,angle,bottle_instence)
 			if randf()<drop_blood_persent:
-				var blood_thing_instance=drop_thing[1].instantiate() as Node2D
-				entities_Layer.add_child(blood_thing_instance)
-				blood_thing_instance.global_position=spawn_position+Vector2.RIGHT.rotated(angle) *float(random_R)
+				bottle_instence=drop_thing[1].instantiate() as Node2D
 			else:
-				var bonus_thing_instance=drop_thing[2].instantiate() as Node2D
-				entities_Layer.add_child(bonus_thing_instance)
-				bonus_thing_instance.global_position=spawn_position+Vector2.RIGHT.rotated(angle) *float(random_R)
+				bottle_instence=drop_thing[2].instantiate() as Node2D
+			print(bottle_instence,2)
+			call_deferred("add_bottle",entities_Layer,spawn_position,angle,bottle_instence)
+
+func add_bottle(entities_Layer:Node,spawn_position:Vector2,angle,bottle_instance:Node2D):
+	if ! bottle_instance:
+		return
+	entities_Layer.add_child(bottle_instance)
+	bottle_instance.global_position=spawn_position+Vector2.RIGHT.rotated(angle) *float(random_R)

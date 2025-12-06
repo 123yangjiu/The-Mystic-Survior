@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://8ltjdygo5nge"]
 
-[ext_resource type="Script" uid="uid://dh134i6hvchbm" path="res://script/time_ui.gd" id="1_5xbj7"]
+[ext_resource type="Script" uid="uid://dh134i6hvchbm" path="res://script/文本及ui显示/time_ui.gd" id="1_5xbj7"]
 
 [node name="Time_UI" type="CanvasLayer" node_paths=PackedStringArray("game_time_manager")]
 layer = 100
