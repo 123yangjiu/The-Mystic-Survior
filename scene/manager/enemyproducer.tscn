@@ -1,9 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://cptmnlexwivwt"]
+[gd_scene load_steps=10 format=3 uid="uid://cptmnlexwivwt"]
 
 [ext_resource type="Script" uid="uid://fa0ak1csqele" path="res://script/manager/enemymanager.gd" id="1_osh64"]
+[ext_resource type="PackedScene" uid="uid://cxuy15d1s524" path="res://scene/enemy/silime.tscn" id="2_oko6g"]
+[ext_resource type="PackedScene" uid="uid://dup0ew61sv1b8" path="res://scene/enemy/puple_silime.tscn" id="3_k2c75"]
+[ext_resource type="PackedScene" uid="uid://b53artfqc50vr" path="res://scene/enemy/Avocado.tscn" id="4_xrm1e"]
+[ext_resource type="PackedScene" uid="uid://3yghqc3xt4xt" path="res://scene/enemy/wolf.tscn" id="5_kpt6l"]
+[ext_resource type="PackedScene" uid="uid://ccmf8dg5ymjjs" path="res://scene/enemy/gorlen.tscn" id="6_c4ixa"]
+[ext_resource type="PackedScene" uid="uid://bcl20xpjeekut" path="res://scene/enemy/猫头鹰.tscn" id="7_jtadt"]
+[ext_resource type="PackedScene" uid="uid://dg0lowfwv0dg3" path="res://scene/enemy/骑士.tscn" id="8_hlkyc"]
+[ext_resource type="PackedScene" uid="uid://b2fnijcvbh7hg" path="res://scene/enemy/box.tscn" id="9_myi5d"]
 
 [node name="enemymanager" type="Node"]
 script = ExtResource("1_osh64")
+kill_cirle_enemy = Array[PackedScene]([ExtResource("2_oko6g"), ExtResource("3_k2c75"), ExtResource("4_xrm1e"), ExtResource("5_kpt6l"), ExtResource("6_c4ixa"), ExtResource("7_jtadt"), ExtResource("8_hlkyc"), ExtResource("9_myi5d")])
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true

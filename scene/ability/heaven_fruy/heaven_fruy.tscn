@@ -254,6 +254,5 @@ frame = 13
 [node name="hitbox component" parent="." instance=ExtResource("3_2p8la")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox component"]
-position = Vector2(0, 16)
 shape = SubResource("CircleShape2D_n6qmd")
 disabled = true

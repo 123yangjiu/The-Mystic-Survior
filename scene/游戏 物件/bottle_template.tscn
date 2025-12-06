@@ -1,9 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://f15fc5ggcq0l"]
-
-[ext_resource type="Script" uid="uid://b6dajqt1n115x" path="res://script/掉落物相关/bonus_bottle.gd" id="1_1pgvs"]
+[gd_scene format=3 uid="uid://cgie7jh7phbvg"]
 
 [node name="what_bottle" type="Node2D"]
-script = ExtResource("1_1pgvs")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 

@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://cytjt82x3vdwn"]
+
+[ext_resource type="PackedScene" uid="uid://decyru6mnkuga" path="res://scene/游戏功能组件/hurtboxcomponent.tscn" id="2_71xyg"]
+[ext_resource type="PackedScene" uid="uid://bnactnfyipltl" path="res://scene/游戏功能组件/health_component.tscn" id="4_n2jsd"]
+[ext_resource type="PackedScene" uid="uid://c0i7tc6xpk0n8" path="res://scene/游戏功能组件/drop_component.tscn" id="5_dpmi2"]
+[ext_resource type="PackedScene" uid="uid://i5imcyd15vix" path="res://scene/游戏 物件/exprience_bottle  .tscn" id="6_xhvbf"]
+[ext_resource type="PackedScene" uid="uid://daaqcmminiyk1" path="res://scene/游戏 物件/blood_bottle .tscn" id="7_mqw3h"]
+[ext_resource type="PackedScene" uid="uid://g6ks4dc6kpht" path="res://scene/游戏功能组件/velocity_component.tscn" id="8_vk65t"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fq6t5"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]
+
+[node name="Name" type="CharacterBody2D" groups=["初级"]]
+collision_layer = 40
+collision_mask = 33
+
+[node name="Hurtboxcomponent" parent="." node_paths=PackedStringArray("health_component") groups=["enemy"] instance=ExtResource("2_71xyg")]
+collision_layer = 4
+health_component = NodePath("../health_component")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Hurtboxcomponent"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["enemy"]]
+position = Vector2(0, -4.9999995)
+scale = Vector2(1.2553042, 1.0013652)
+sprite_frames = SubResource("SpriteFrames_fq6t5")
+animation = &"run"
+autoplay = "run"
+frame_progress = 0.50348395
+
+[node name="对角色造成伤害的碰撞" type="CollisionShape2D" parent="." groups=["enemy"]]
+position = Vector2(-4.7683716e-07, 4.7683716e-07)
+scale = Vector2(0.47134686, 0.4559797)
+
+[node name="health_component" parent="." instance=ExtResource("4_n2jsd")]
+
+[node name="drop_component" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("5_dpmi2")]
+drop_thing = Array[PackedScene]([ExtResource("6_xhvbf"), ExtResource("7_mqw3h")])
+health_component = NodePath("../health_component")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="velocity_component" parent="." instance=ExtResource("8_vk65t")]

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="EnemyUnlockEntry" load_steps=3 format=3 uid="uid://bl6c65geij0ji"]
 
-[ext_resource type="PackedScene" uid="uid://cdrl4eiafqsjs" path="res://scene/enemy/Avacode.tscn" id="1_kldm8"]
+[ext_resource type="PackedScene" uid="uid://b53artfqc50vr" path="res://scene/enemy/Avocado.tscn" id="1_kldm8"]
 [ext_resource type="Script" uid="uid://b8kynvj5xuaby" path="res://resource/enemy/enemy.gd" id="2_mytem"]
 
 [resource]

@@ -3,9 +3,6 @@ extends CharacterBody2D
 @onready var health_component:HealthComponent = $health_component
 @onready var velocity_component: Node = $velocity_component
 
-
-
-
 func _physics_process(_delta: float) -> void:
 
 	velocity_component.accelerate_to_player()
