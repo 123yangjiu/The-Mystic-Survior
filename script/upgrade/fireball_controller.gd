@@ -71,7 +71,7 @@ func on_ability_upgrade_add(upgrade:AbilityUpgrade,current_upgrade:Dictionary):
 	#监听所有关于剑的升级
 	if upgrade.ID=="火球大穿":
 		amout+=2
-		fireball.size *=1.2
+		fireball.scale *=1.2
 	   
 	if upgrade.ID=="火球力速":
 		var persent_improvement=current_upgrade["火球力速"]["quantity"]*.15
