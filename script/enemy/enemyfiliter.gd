@@ -37,7 +37,6 @@ func get_weight():
 		
 func random_chose():
 	var roll=randf_range(0,all_weight-1)
-	print("随机权重",roll)
 	for enemy in unlocked_group:
 		roll-=enemy.weight
 		if roll<0:

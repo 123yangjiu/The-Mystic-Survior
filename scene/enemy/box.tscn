@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://daaqcmminiyk1" path="res://scene/游戏 物件/blood_bottle .tscn" id="7_18obl"]
 [ext_resource type="PackedScene" uid="uid://g6ks4dc6kpht" path="res://scene/游戏功能组件/velocity_component.tscn" id="8_cq32u"]
 [ext_resource type="Script" uid="uid://tjaflxnpe5iy" path="res://特殊掉落.gd" id="9_swju3"]
-[ext_resource type="PackedScene" uid="uid://nukfwpmcx40n" path="res://scene/游戏 物件/bonus_bottle.tscn" id="12_7u1is"]
+[ext_resource type="PackedScene" uid="uid://f15fc5ggcq0l" path="res://scene/游戏 物件/bonus_bottle.tscn" id="12_7u1is"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vcrpj"]
 
@@ -94,5 +94,6 @@ acceleration = 3.5
 
 [node name="特殊掉落" type="Node" parent="." node_paths=PackedStringArray("health_component")]
 script = ExtResource("9_swju3")
+drop_persent = 0.8
 drop_thing = Array[PackedScene]([ExtResource("6_bpx8c"), ExtResource("7_18obl"), ExtResource("12_7u1is")])
 health_component = NodePath("../health_component")

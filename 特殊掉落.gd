@@ -9,21 +9,29 @@ var bonus_drop
 func _ready() -> void:
 	(health_component as HealthComponent).died.connect(on_died)
 func on_died():
+	var bonus_botlle:=0
 	for i in range(5):
 		var angle := TAU * i / 3
 		var entities_Layer=get_tree().get_first_node_in_group("实体图层")
 		var spawn_position=(owner as Node2D).global_position
 		var bottle_instence:Node2D
 		if randf()<drop_persent:
+			#普通经验瓶
 			bottle_instence=drop_thing[0].instantiate() as Node2D
-			print(bottle_instence,1)
 			call_deferred("add_bottle",entities_Layer,spawn_position,angle,bottle_instence)
+			if i==4 and bonus_botlle==0:
+				bottle_instence=drop_thing[2].instantiate() as Node2D
+				call_deferred("add_bottle",entities_Layer,spawn_position,angle,bottle_instence)
+				bottle_instence=drop_thing[1].instantiate() as Node2D
+				call_deferred("add_bottle",entities_Layer,spawn_position,angle,bottle_instence)
+				return
 			if randf()<drop_blood_persent:
 				bottle_instence=drop_thing[1].instantiate() as Node2D
 			else:
+				bonus_botlle +=1
 				bottle_instence=drop_thing[2].instantiate() as Node2D
-			print(bottle_instence,2)
 			call_deferred("add_bottle",entities_Layer,spawn_position,angle,bottle_instence)
+		
 
 func add_bottle(entities_Layer:Node,spawn_position:Vector2,angle,bottle_instance:Node2D):
 	if ! bottle_instance:

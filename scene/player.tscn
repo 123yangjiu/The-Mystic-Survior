@@ -90,8 +90,6 @@ max_health = 100.0
 scale = Vector2(1.4342026, 1.2283583)
 sprite_frames = SubResource("SpriteFrames_u7b46")
 animation = &"run"
-autoplay = "run"
-frame_progress = 0.43323913
 flip_h = true
 
 [node name="拾取范围" type="Area2D" parent="."]

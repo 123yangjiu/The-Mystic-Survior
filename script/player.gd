@@ -19,6 +19,7 @@ var enter_body_number_47_hurt=47
 
 var direction:Vector2
 var vec:Vector2
+var is_run:=false:set=set_is_run
 func _ready() -> void:
 	
 	# ① 形状是否存在
@@ -37,14 +38,24 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	direction=get_move_direction().normalized()
 	velocity=direction*MAX_speed
-	
+	if direction.length() != 0.0:
+		is_run=true
+	else:
+		is_run=false
 	move_and_slide()
 	if direction.x<0:
 		animated_sprite_2d.flip_h=false
 	if direction.x>0:
 		animated_sprite_2d.flip_h=true
-		
-
+func set_is_run(value)->void:
+	if is_run!= value:
+		print("is_run:",value)
+		match value:
+			true:
+				animated_sprite_2d.play()
+			false:
+				animated_sprite_2d.stop()
+	is_run=value
 func get_move_direction():
 	var movement_x=Input.get_action_strength("right")-Input.get_action_strength("left")
 	var movement_y=Input.get_action_strength("down")-Input.get_action_strength("up")

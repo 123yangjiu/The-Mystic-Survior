@@ -14,4 +14,5 @@ layout_mode = 2
 
 [node name="DescriptionLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+horizontal_alignment = 1
 autowrap_mode = 2

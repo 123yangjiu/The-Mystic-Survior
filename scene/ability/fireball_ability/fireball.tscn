@@ -71,10 +71,10 @@ animations = [{
 radius = 17.029387
 
 [node name="fireball" type="Node2D"]
+scale = Vector2(0.8, 0.8)
 script = ExtResource("1_eoyyy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.968, 1)
 sprite_frames = SubResource("SpriteFrames_fht1s")
 autoplay = "default"
 frame_progress = 0.9472984
