@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=2 format=3 uid="uid://cjjqnoy3whssy"]
+
+[ext_resource type="Script" uid="uid://dmyfvo2eu1rj2" path="res://resource/ability_upgrade.gd" id="1_o3lc7"]
+
+[resource]
+script = ExtResource("1_o3lc7")
+ID = "光的速度"
+Sort = "光剑"
+name = "圣光会制裁你！"
+Description = "光剑冷却减少20%"
