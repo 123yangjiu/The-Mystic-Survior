@@ -7,4 +7,4 @@
 script = ExtResource("2_mytem")
 scene = ExtResource("1_kldm8")
 unlock_difficulty = 4
-weight = 10.0
+weight = 12.5

@@ -66,6 +66,7 @@ func on_timer_timeoout():
 
     
 func on_ability_upgrade_add(upgrade:AbilityUpgrade,current_upgrade:Dictionary):
+
     #print("saiuofai")
     if upgrade.ID=="火球大穿":
         amout+=2
@@ -80,3 +81,5 @@ func on_ability_upgrade_add(upgrade:AbilityUpgrade,current_upgrade:Dictionary):
     if upgrade.ID=="解锁火球":
         $Timer.start()
     pass
+
+	
