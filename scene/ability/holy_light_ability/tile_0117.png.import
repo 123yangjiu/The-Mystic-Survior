@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://58sp7lmieu6d"
-path="res://.godot/imported/tile_0117.png-31d0d074de4f13d92331a285222b7203.ctex"
+path="res://.godot/imported/tile_0117.png-2b18fd6cfc8dca4a65ef1d0190c722e3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scene/ability/hammer_ability/tile_0117.png"
-dest_files=["res://.godot/imported/tile_0117.png-31d0d074de4f13d92331a285222b7203.ctex"]
+source_file="res://scene/ability/holy_light_ability/tile_0117.png"
+dest_files=["res://.godot/imported/tile_0117.png-2b18fd6cfc8dca4a65ef1d0190c722e3.ctex"]
 
 [params]
 

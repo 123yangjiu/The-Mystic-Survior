@@ -7,7 +7,7 @@ extends Node
 var random_R=randf_range(100,150)
 var bonus_drop
 func _ready() -> void:
-	(health_component).died.connect(on_died)
+    (health_component as HealthComponent).died.connect(on_died)
 func on_died():
 	var bonus_botlle:=0
 	for i in range(5):
@@ -30,7 +30,7 @@ func on_died():
 			call_deferred("add_bottle",entities_Layer,spawn_position,angle,bottle_instence)
 
 func add_bottle(entities_Layer:Node,spawn_position:Vector2,angle,bottle_instance:Node2D):
-	if ! bottle_instance:
-		return
-	entities_Layer.add_child(bottle_instance)
-	bottle_instance.global_position=spawn_position+Vector2.RIGHT.rotated(angle) *float(random_R)
+    if ! bottle_instance:
+        return
+    entities_Layer.add_child(bottle_instance)
+    bottle_instance.global_position=spawn_position+Vector2.RIGHT.rotated(angle) *float(random_R)
