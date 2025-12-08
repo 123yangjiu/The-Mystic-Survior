@@ -50,6 +50,7 @@ y_sort_enabled = true
 position = Vector2(573, 242.00003)
 scale = Vector2(1, 0.9772806)
 collision_layer = 2
+MAX_speed = 115
 
 [node name="Camera2D2" type="Camera2D" parent="实体/player"]
 position = Vector2(4, 4.0929594)
