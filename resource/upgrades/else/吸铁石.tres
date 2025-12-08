@@ -7,5 +7,5 @@ script = ExtResource("1_tvue7")
 ID = "吸铁石"
 Sort = "角色能力"
 name = "吸铁石"
-Description = "拾取范围增加30%
+Description = "拾取范围增大30%
 ——或许应该叫吸药水石"

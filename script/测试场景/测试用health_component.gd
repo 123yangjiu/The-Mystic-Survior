@@ -1,16 +1,15 @@
 extends Node
-class_name HealthComponent
 @onready var animated_sprite_2d: AnimatedSprite2D = get_parent().get_node("AnimatedSprite2D")
 #所有角色都可以公用这个组件，可以非常方便的计算伤害和调整数值
 signal died
-signal health_change
+signal health_change(_damage)
 @export var max_health:float=10
 var current_health
 func _ready() -> void:
 	current_health=max_health
 func damage(_damage:float):
 	current_health=max(current_health-_damage,0)
-	health_change.emit()
+	health_change.emit(_damage)
 	flash_white()
 	if current_health==0:
 		died.emit()
@@ -32,5 +31,3 @@ func flash_white(duration := 0.12):
 	create_tween().tween_property(animated_sprite_2d, "modulate", original, 0.08)
 	await get_tree().create_timer(0.08).timeout   # 等 tween 结束
 	_is_flashing = false                            # ③ 解锁
-	
-	

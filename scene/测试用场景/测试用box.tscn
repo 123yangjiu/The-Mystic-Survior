@@ -1,0 +1,108 @@
+[gd_scene load_steps=22 format=3 uid="uid://kwbt2wo8phu5"]
+
+[ext_resource type="Script" uid="uid://cgo00brxsju1a" path="res://script/测试场景/测试用box.gd" id="1_1flpc"]
+[ext_resource type="PackedScene" uid="uid://decyru6mnkuga" path="res://scene/游戏功能组件/hurtboxcomponent.tscn" id="2_1flpc"]
+[ext_resource type="Texture2D" uid="uid://ccw1sevq6qydv" path="res://动画图片素材/迷你地牢素材/Tiles/tile_0089.png" id="3_25m3l"]
+[ext_resource type="Texture2D" uid="uid://bopbigjlqgvr8" path="res://动画图片素材/迷你地牢素材/Tiles/tile_0090.png" id="4_3p171"]
+[ext_resource type="Texture2D" uid="uid://byrikbil0dp1x" path="res://动画图片素材/迷你地牢素材/Tiles/tile_0091.png" id="5_rxyd7"]
+[ext_resource type="Texture2D" uid="uid://b1tvv6dq2k6no" path="res://动画图片素材/迷你地牢素材/Tiles/tile_0092.png" id="6_l7874"]
+[ext_resource type="PackedScene" uid="uid://bnactnfyipltl" path="res://scene/游戏功能组件/health_component.tscn" id="7_7vn3c"]
+[ext_resource type="Script" uid="uid://4soj2oikgoom" path="res://script/测试场景/测试用health_component.gd" id="8_25m3l"]
+[ext_resource type="PackedScene" uid="uid://g6ks4dc6kpht" path="res://scene/游戏功能组件/velocity_component.tscn" id="8_r5nn1"]
+[ext_resource type="Script" uid="uid://tjaflxnpe5iy" path="res://特殊掉落.gd" id="9_sg1qh"]
+[ext_resource type="PackedScene" uid="uid://i5imcyd15vix" path="res://scene/游戏 物件/exprience_bottle  .tscn" id="10_jat28"]
+[ext_resource type="PackedScene" uid="uid://daaqcmminiyk1" path="res://scene/游戏 物件/blood_bottle .tscn" id="11_3xbq8"]
+[ext_resource type="PackedScene" uid="uid://f15fc5ggcq0l" path="res://scene/游戏 物件/bonus_bottle.tscn" id="12_s0lfp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vcrpj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wxa6r"]
+atlas = ExtResource("3_25m3l")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cji6c"]
+atlas = ExtResource("4_3p171")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_84al2"]
+atlas = ExtResource("5_rxyd7")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x65gu"]
+atlas = ExtResource("6_l7874")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fq6t5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wxa6r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cji6c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_84al2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x65gu")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ntng8"]
+radius = 10.607901
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8egh0"]
+radius = 5.0
+
+[node name="box" type="CharacterBody2D" groups=["初级"]]
+collision_layer = 40
+collision_mask = 33
+script = ExtResource("1_1flpc")
+
+[node name="Hurtboxcomponent" parent="." node_paths=PackedStringArray("health_component") groups=["enemy"] instance=ExtResource("2_1flpc")]
+collision_layer = 4
+health_component = NodePath("../health_component")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Hurtboxcomponent"]
+shape = SubResource("CircleShape2D_vcrpj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["enemy"]]
+position = Vector2(0, -1.9999995)
+scale = Vector2(1.2553042, 1.0013652)
+sprite_frames = SubResource("SpriteFrames_fq6t5")
+animation = &"run"
+autoplay = "run"
+frame_progress = 0.41755745
+
+[node name="对角色造成伤害的碰撞" type="CollisionShape2D" parent="." groups=["enemy"]]
+position = Vector2(-4.7683716e-07, 4.7683716e-07)
+scale = Vector2(0.47134686, 0.4559797)
+shape = SubResource("CircleShape2D_ntng8")
+
+[node name="health_component" parent="." instance=ExtResource("7_7vn3c")]
+script = ExtResource("8_25m3l")
+max_health = 999999999.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_8egh0")
+
+[node name="velocity_component" parent="." instance=ExtResource("8_r5nn1")]
+
+[node name="特殊掉落" type="Node" parent="." node_paths=PackedStringArray("health_component")]
+script = ExtResource("9_sg1qh")
+drop_persent = 0.8
+drop_thing = Array[PackedScene]([ExtResource("10_jat28"), ExtResource("11_3xbq8"), ExtResource("12_s0lfp")])
+health_component = NodePath("../health_component")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -24.0
+offset_top = -27.0
+offset_right = 26.0
+offset_bottom = -4.0
+text = "我是沙包"
+horizontal_alignment = 1
+vertical_alignment = 1

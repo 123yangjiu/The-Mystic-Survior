@@ -1,0 +1,77 @@
+[gd_scene load_steps=16 format=3 uid="uid://b7m6v5bhfdkhq"]
+
+[ext_resource type="Script" uid="uid://rt8ham21rr6r" path="res://script/game.gd" id="1_4h26k"]
+[ext_resource type="PackedScene" uid="uid://co66107rpg80r" path="res://scene/ui/You_Die_Screen.tscn" id="2_wbt8i"]
+[ext_resource type="PackedScene" uid="uid://8ltjdygo5nge" path="res://scene/ui/time_ui.tscn" id="3_h48kl"]
+[ext_resource type="PackedScene" uid="uid://ccgl3enwp4fx2" path="res://scene/manager/enemyfiliter.tscn" id="4_ufowh"]
+[ext_resource type="PackedScene" uid="uid://cptmnlexwivwt" path="res://scene/manager/enemyproducer.tscn" id="5_wttg5"]
+[ext_resource type="PackedScene" uid="uid://c0gjd680ncete" path="res://scene/manager/gametimemanager.tscn" id="9_cwx6g"]
+[ext_resource type="PackedScene" uid="uid://ci3fodbprfo2x" path="res://scene/ui/victoryscreen.tscn" id="10_xteuj"]
+[ext_resource type="TileSet" uid="uid://7j2lt71noofj" path="res://动画图片素材/new_tile_set.tres" id="11_hxyqj"]
+[ext_resource type="PackedScene" uid="uid://clj43eql2an1f" path="res://scene/manager/experiencemanager.tscn" id="12_41cdt"]
+[ext_resource type="PackedScene" uid="uid://buqog17qtp4og" path="res://scene/ui/experience_bar.tscn" id="13_vsqd6"]
+[ext_resource type="PackedScene" uid="uid://b6jpe6qhci3ks" path="res://scene/manager/upgrademanager.tscn" id="14_btvex"]
+[ext_resource type="PackedScene" uid="uid://b8orbduoade27" path="res://scene/player.tscn" id="15_ch78n"]
+[ext_resource type="PackedScene" uid="uid://kwbt2wo8phu5" path="res://scene/测试用场景/测试用box.tscn" id="16_kudbt"]
+[ext_resource type="Script" uid="uid://dmwfixnlvdupe" path="res://script/测试场景/测试用操作者.gd" id="17_wdb4m"]
+[ext_resource type="Script" uid="uid://dd8g1lp2yl3j6" path="res://script/测试场景/升级按钮.gd" id="18_1lpuq"]
+
+[node name="game" type="Node2D"]
+script = ExtResource("1_4h26k")
+end_screen = ExtResource("2_wbt8i")
+
+[node name="Time_UI" parent="." node_paths=PackedStringArray("game_time_manager") instance=ExtResource("3_h48kl")]
+game_time_manager = NodePath("../gametimemanager")
+
+[node name="enemyfiliter" parent="." instance=ExtResource("4_ufowh")]
+script = null
+
+[node name="enemymanager" parent="." instance=ExtResource("5_wttg5")]
+script = null
+
+[node name="gametimemanager" parent="." instance=ExtResource("9_cwx6g")]
+victory_screen = ExtResource("10_xteuj")
+
+[node name="TileMap" type="TileMap" parent="gametimemanager"]
+position = Vector2(82, 141)
+tile_set = ExtResource("11_hxyqj")
+format = 2
+
+[node name="experiencemanager" parent="." instance=ExtResource("12_41cdt")]
+
+[node name="experience_Bar" parent="." node_paths=PackedStringArray("experience_manager") instance=ExtResource("13_vsqd6")]
+experience_manager = NodePath("../experiencemanager")
+
+[node name="Upgrademanager" parent="." node_paths=PackedStringArray("experience_manager") instance=ExtResource("14_btvex")]
+experience_manager = NodePath("../experiencemanager")
+
+[node name="实体" type="Node" parent="." groups=["实体图层"]]
+
+[node name="player" parent="实体" instance=ExtResource("15_ch78n")]
+unique_name_in_owner = true
+y_sort_enabled = true
+position = Vector2(573, 242.00003)
+scale = Vector2(1, 0.9772806)
+collision_layer = 2
+
+[node name="Camera2D2" type="Camera2D" parent="实体/player"]
+position = Vector2(4, 4.0929594)
+position_smoothing_enabled = true
+
+[node name="前景" type="Node" parent="." groups=["前景图层"]]
+
+[node name="box" parent="前景" instance=ExtResource("16_kudbt")]
+position = Vector2(417, 237)
+
+[node name="测试用操作者" type="Node2D" parent="."]
+script = ExtResource("17_wdb4m")
+
+[node name="Button" type="Button" parent="测试用操作者"]
+offset_left = 491.0
+offset_top = 135.0
+offset_right = 499.0
+offset_bottom = 143.0
+text = "增长一级"
+script = ExtResource("18_1lpuq")
+
+[connection signal="button_up" from="测试用操作者/Button" to="测试用操作者/Button" method="_on_button_up"]
