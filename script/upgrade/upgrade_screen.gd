@@ -16,10 +16,15 @@ func Set_Ability_Upgrade(upgrades:Array[AbilityUpgrade]):#传入选项这个函�
         #绑定了升级的选项可以直接传进函数
     pass
 func on_upgrade_select(upgrade:AbilityUpgrade):
-    upgrade_selected.emit(upgrade)#把这个选项传出到其他地方，显示屏不负责
-    #更改升级后的数值
-    get_tree().paused=false
-    #选择完能力之后游戏继续进行
-    queue_free()#选择完能力之后关掉能力升级显示屏
-    
-    pass
+	upgrade_selected.emit(upgrade)#把这个选项传出到其他地方，显示屏不负责
+	#更改升级后的数值
+	var children= get_parent().get_children()
+	if children.size()>=2:
+		return
+	get_tree().paused=false
+	#选择完能力之后游戏继续进行
+	queue_free()#选择完能力之后关掉能力升级显示屏
+	
+	pass
+
+
