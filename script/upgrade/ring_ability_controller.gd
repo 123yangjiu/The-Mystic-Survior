@@ -1,8 +1,8 @@
 extends Node
 const MAX_RANGE=200
-@export var hammer_ability:PackedScene
+@export var ring_ability:PackedScene
 
-var Damage=30#定义的伤害
+var Damage=12#定义的伤害
 var base_wait_time#定义基础冷却
 var base_scale=1#定义光剑基础大小
 
@@ -31,19 +31,19 @@ func on_timer_timeoout():
     )
     
     
-    var hammer_instance = hammer_ability.instantiate() as holy_right_ruling
+    var ring_instance = ring_ability.instantiate() as Ring
     var foreground = get_tree().get_first_node_in_group("前景图层")
-    hammer_instance.scale*=base_scale
+    ring_instance.scale*=base_scale
 
         # ② 等节点_ready完成再赋值，避免 nil
-    foreground.add_child(hammer_instance)#加入到场景中
-    hammer_instance.hitbox_component.damage =int(Damage+randf_range(-5,5))
+    foreground.add_child(ring_instance)#加入到场景中
+    ring_instance.hitbox_component.damage =int(Damage+randf_range(-2,2))
     if enemies.is_empty():
-        hammer_instance.queue_free()
+        ring_instance.queue_free()
         return
         
          # ③ 位置 & 朝向
-    hammer_instance.global_position =player.global_position
+    ring_instance.global_position =player.global_position
         
 
 # 再拿最近的那只
@@ -53,17 +53,16 @@ func on_timer_timeoout():
 func on_ability_upgrade_add(upgrade:AbilityUpgrade,current_upgrade:Dictionary):
     #监听所有关于剑的升级
     print("解锁成功")
-    if upgrade.ID=="光的速度":
-        var persent_reduction=current_upgrade["光的速度"]["quantity"]*.2
+    if upgrade.ID=="环的大速":
+        var persent_reduction=current_upgrade["环的大速"]["quantity"]*.2
+        base_scale*=1.25
         $Timer.wait_time=base_wait_time*(1-persent_reduction)
         $Timer.start()
-    if upgrade.ID=="光的力量":
+        
+    if upgrade.ID=="环的伤害":
         Damage*=1.2
         print(Damage)
-    if upgrade.ID=="解锁光剑":
+    if upgrade.ID=="解锁法环":
         $Timer.start()
-    if upgrade.ID=="光剑变大":
-        base_scale+=0.2
-        #print("解锁战锤")
         
-    #pass	
+    pass	

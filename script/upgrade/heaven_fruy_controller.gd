@@ -47,7 +47,7 @@ func on_timer_timeoout():
 
         # ③ 位置 & 朝向
         fury_instance.global_position =player.global_position
-        var ran_R=randf_range(40,60)
+        var ran_R=randf_range(60,90)
         fury_instance.global_position += Vector2.RIGHT.rotated(randf_range(0, TAU)) * ran_R
         
     

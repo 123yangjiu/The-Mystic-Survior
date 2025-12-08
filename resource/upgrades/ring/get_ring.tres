@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=2 format=3 uid="uid://cvcyibysmviov"]
+
+[ext_resource type="Script" uid="uid://dmyfvo2eu1rj2" path="res://resource/ability_upgrade.gd" id="1_uxeeo"]
+
+[resource]
+script = ExtResource("1_uxeeo")
+ID = "解锁法环"
+Sort = "环"
+name = "死灵法环"
+Description = "召唤死灵法环围绕你，他会攻击所有进入环内的敌人！"

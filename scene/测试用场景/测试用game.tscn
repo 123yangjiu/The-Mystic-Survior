@@ -1,7 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://b7m6v5bhfdkhq"]
+[gd_scene load_steps=15 format=3 uid="uid://b7m6v5bhfdkhq"]
 
 [ext_resource type="Script" uid="uid://rt8ham21rr6r" path="res://script/game.gd" id="1_4h26k"]
-[ext_resource type="PackedScene" uid="uid://co66107rpg80r" path="res://scene/ui/You_Die_Screen.tscn" id="2_wbt8i"]
 [ext_resource type="PackedScene" uid="uid://8ltjdygo5nge" path="res://scene/ui/time_ui.tscn" id="3_h48kl"]
 [ext_resource type="PackedScene" uid="uid://ccgl3enwp4fx2" path="res://scene/manager/enemyfiliter.tscn" id="4_ufowh"]
 [ext_resource type="PackedScene" uid="uid://cptmnlexwivwt" path="res://scene/manager/enemyproducer.tscn" id="5_wttg5"]
@@ -18,7 +17,6 @@
 
 [node name="game" type="Node2D"]
 script = ExtResource("1_4h26k")
-end_screen = ExtResource("2_wbt8i")
 
 [node name="Time_UI" parent="." node_paths=PackedStringArray("game_time_manager") instance=ExtResource("3_h48kl")]
 game_time_manager = NodePath("../gametimemanager")

@@ -9,7 +9,7 @@ func _ready():
     experience_manager.level_up.connect(on_level_up)
     can_chose_pool=[upgrade_pool[0],upgrade_pool[1],upgrade_pool[2]
     ,upgrade_pool[3],upgrade_pool[7],upgrade_pool[8],upgrade_pool[12],
-    upgrade_pool[16],upgrade_pool[17],upgrade_pool[18]]#初始化选择池子,选择剑类的选项和所有解锁新武器的选项
+    upgrade_pool[16],upgrade_pool[17],upgrade_pool[18],upgrade_pool[19]]#初始化选择池子,选择剑类的选项和所有解锁新武器的选项
 func on_level_up(_current_level:int):#升级时展示卡片
     upgrade_list.clear() 
     while upgrade_list.size()<3:
@@ -61,6 +61,13 @@ func add_upgrade(upgrade:AbilityUpgrade):#这个字典控制已经有的能力
         for upgrade_option in upgrade_pool:
             
             if upgrade_option.Sort=="天堂" and upgrade_option.ID!="解锁天堂之怒":
+                can_chose_pool.append(upgrade_option)
+    if upgrade.ID=="解锁法环":
+        can_chose_pool = can_chose_pool.filter(func(op): return op.ID != "解锁法环")
+        #删掉解锁战锤      
+        for upgrade_option in upgrade_pool:
+            
+            if upgrade_option.Sort=="环" and upgrade_option.ID!="解锁法环":
                 can_chose_pool.append(upgrade_option)
     GameEvent.emit_ability_upgrade_add(upgrade,current_upgrade)
     print (current_upgrade)

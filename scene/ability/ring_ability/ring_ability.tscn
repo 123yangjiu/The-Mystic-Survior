@@ -1,3 +1,99 @@
-[gd_scene format=3 uid="uid://crcg0u1elatvt"]
+[gd_scene load_steps=15 format=3 uid="uid://crcg0u1elatvt"]
+
+[ext_resource type="Texture2D" uid="uid://cd88qbkxkrkd2" path="res://动画图片素材/死灵法环.png" id="1_e3vcv"]
+[ext_resource type="Script" uid="uid://dv2iaaaqoycwe" path="res://script/upgrade/ring_ability.gd" id="1_jq0bu"]
+[ext_resource type="PackedScene" uid="uid://c4aqf7g3512kf" path="res://scene/游戏功能组件/hitbox_component.tscn" id="2_jq0bu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s3bgp"]
+atlas = ExtResource("1_e3vcv")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y3hbf"]
+atlas = ExtResource("1_e3vcv")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j86lh"]
+atlas = ExtResource("1_e3vcv")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tptbm"]
+atlas = ExtResource("1_e3vcv")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gbbnw"]
+atlas = ExtResource("1_e3vcv")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qckvu"]
+atlas = ExtResource("1_e3vcv")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_slxcw"]
+atlas = ExtResource("1_e3vcv")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0axe3"]
+atlas = ExtResource("1_e3vcv")
+region = Rect2(256, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i4j0x"]
+atlas = ExtResource("1_e3vcv")
+region = Rect2(384, 128, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6tk77"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s3bgp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y3hbf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j86lh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tptbm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gbbnw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qckvu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_slxcw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0axe3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i4j0x")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uu33b"]
+radius = 67.01593
 
 [node name="ring_ability" type="Node2D"]
+script = ExtResource("1_jq0bu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, 0)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_6tk77")
+autoplay = "default"
+frame = 8
+frame_progress = 1.0
+offset = Vector2(0, -20)
+
+[node name="hitbox component" parent="." instance=ExtResource("2_jq0bu")]
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox component"]
+position = Vector2(0, 1)
+scale = Vector2(1.0788372, -0.9850134)
+shape = SubResource("CircleShape2D_uu33b")
