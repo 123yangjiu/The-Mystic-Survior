@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://bawo0mh4gaicu"]
+[gd_scene load_steps=9 format=3 uid="uid://bawo0mh4gaicu"]
 
 [ext_resource type="Texture2D" uid="uid://bx6rlx10cm75k" path="res://scene/ability/sword_ability/tile_0104.png" id="1_l440w"]
 [ext_resource type="Script" uid="uid://b1w6aiu8k6jho" path="res://script/upgrade/sword_ability.gd" id="1_lcf15"]
 [ext_resource type="PackedScene" uid="uid://c4aqf7g3512kf" path="res://scene/游戏功能组件/hitbox_component.tscn" id="2_rt8kj"]
+[ext_resource type="AudioStream" uid="uid://ych53kwihfmf" path="res://scene/ability/sword_ability/Sword Slide 03.wav" id="4_fogpa"]
 
 [sub_resource type="Animation" id="Animation_rt8kj"]
 length = 0.001
@@ -41,6 +42,18 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_l440w"]
@@ -97,6 +110,18 @@ tracks/3/keys = {
 "update": 1,
 "values": [true, false, true]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lcf15"]
 _data = {
@@ -127,3 +152,6 @@ position = Vector2(13.499999, 0.5000006)
 scale = Vector2(0.75300276, 1.1087304)
 shape = SubResource("RectangleShape2D_fogpa")
 disabled = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_fogpa")
