@@ -24,10 +24,9 @@ end_screen = ExtResource("2_wbt8i")
 game_time_manager = NodePath("../gametimemanager")
 
 [node name="enemyfiliter" parent="." instance=ExtResource("4_ufowh")]
-script = null
 
 [node name="enemymanager" parent="." instance=ExtResource("5_wttg5")]
-script = null
+kill_cirle_enemy = Array[PackedScene]([])
 
 [node name="gametimemanager" parent="." instance=ExtResource("9_cwx6g")]
 victory_screen = ExtResource("10_xteuj")
@@ -66,7 +65,7 @@ position = Vector2(417, 237)
 [node name="测试用操作者" type="Node2D" parent="."]
 script = ExtResource("17_wdb4m")
 
-[node name="Button" type="Button" parent="测试用操作者"]
+[node name="Upgrade" type="Button" parent="测试用操作者"]
 offset_left = 491.0
 offset_top = 135.0
 offset_right = 499.0
@@ -74,4 +73,11 @@ offset_bottom = 143.0
 text = "增长一级"
 script = ExtResource("18_1lpuq")
 
-[connection signal="button_up" from="测试用操作者/Button" to="测试用操作者/Button" method="_on_button_up"]
+[node name="Enemystart" type="Button" parent="测试用操作者"]
+offset_left = 571.0
+offset_top = 136.0
+offset_right = 579.0
+offset_bottom = 144.0
+text = "开始 刷怪"
+
+[connection signal="button_up" from="测试用操作者/Upgrade" to="测试用操作者/Upgrade" method="_on_button_up"]

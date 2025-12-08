@@ -69,7 +69,7 @@ func on_ability_upgrade_add(upgrade:AbilityUpgrade,current_upgrade:Dictionary):
 	print("saiuofai")
 	if upgrade.ID=="火球大穿":
 		amout+=2
-		ball_size +=0.2
+		ball_size *=1.2
 	if upgrade.ID=="火球力速":
 		var persent_improvement=current_upgrade["火球力速"]["quantity"]*.15
 		Damage=Damage*(1+persent_improvement)

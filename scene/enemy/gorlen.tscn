@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c0i7tc6xpk0n8" path="res://scene/游戏功能组件/drop_component.tscn" id="5_qgpht"]
 [ext_resource type="PackedScene" uid="uid://g6ks4dc6kpht" path="res://scene/游戏功能组件/velocity_component.tscn" id="6_60ack"]
 [ext_resource type="Script" uid="uid://ynxy18f6xc5n" path="res://scene/游戏功能组件/石头人掉落.gd" id="6_d7sbi"]
-[ext_resource type="PackedScene" uid="uid://nukfwpmcx40n" path="res://scene/游戏 物件/bonus_bottle.tscn" id="7_iuixe"]
+[ext_resource type="PackedScene" uid="uid://f15fc5ggcq0l" path="res://scene/游戏 物件/bonus_bottle.tscn" id="7_iuixe"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vcrpj"]
 radius = 36.0
