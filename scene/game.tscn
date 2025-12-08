@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://yy0os3e5cvfu"]
+[gd_scene load_steps=17 format=3 uid="uid://yy0os3e5cvfu"]
 
+[ext_resource type="Script" uid="uid://bfg33r63hua37" path="res://scene/gameover.gd" id="1_0lu6w"]
 [ext_resource type="PackedScene" uid="uid://b8orbduoade27" path="res://scene/player.tscn" id="1_5kiuu"]
-[ext_resource type="Script" uid="uid://rt8ham21rr6r" path="res://script/game.gd" id="1_17rxn"]
 [ext_resource type="TileSet" uid="uid://7j2lt71noofj" path="res://动画图片素材/new_tile_set.tres" id="1_dbls1"]
 [ext_resource type="PackedScene" uid="uid://8ltjdygo5nge" path="res://scene/ui/time_ui.tscn" id="1_xwcet"]
+[ext_resource type="PackedScene" uid="uid://co66107rpg80r" path="res://scene/ui/You_Die_Screen.tscn" id="2_i6gbm"]
 [ext_resource type="PackedScene" uid="uid://cptmnlexwivwt" path="res://scene/manager/enemyproducer.tscn" id="3_33cqm"]
 [ext_resource type="PackedScene" uid="uid://c0gjd680ncete" path="res://scene/manager/gametimemanager.tscn" id="5_p1ry8"]
 [ext_resource type="PackedScene" uid="uid://buqog17qtp4og" path="res://scene/ui/experience_bar.tscn" id="7_ll5lq"]
@@ -17,7 +18,8 @@
 [ext_resource type="PackedScene" uid="uid://3yghqc3xt4xt" path="res://scene/enemy/wolf.tscn" id="18_ww6yf"]
 
 [node name="game" type="Node2D"]
-script = ExtResource("1_17rxn")
+script = ExtResource("1_0lu6w")
+die_scene = ExtResource("2_i6gbm")
 
 [node name="Time_UI" parent="." node_paths=PackedStringArray("game_time_manager") instance=ExtResource("1_xwcet")]
 game_time_manager = NodePath("../gametimemanager")
