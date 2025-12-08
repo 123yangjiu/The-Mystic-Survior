@@ -19,19 +19,15 @@ func on_died():
 			#普通经验瓶
 			bottle_instence=drop_thing[0].instantiate() as Node2D
 			call_deferred("add_bottle",entities_Layer,spawn_position,angle,bottle_instence)
-			if i==4 and bonus_botlle==0:
-				bottle_instence=drop_thing[2].instantiate() as Node2D
-				call_deferred("add_bottle",entities_Layer,spawn_position,angle,bottle_instence)
-				bottle_instence=drop_thing[1].instantiate() as Node2D
-				call_deferred("add_bottle",entities_Layer,spawn_position,angle,bottle_instence)
-				return
 			if randf()<drop_blood_persent:
 				bottle_instence=drop_thing[1].instantiate() as Node2D
 			else:
 				bonus_botlle +=1
 				bottle_instence=drop_thing[2].instantiate() as Node2D
 			call_deferred("add_bottle",entities_Layer,spawn_position,angle,bottle_instence)
-		
+		if i==4 and bonus_botlle==0:
+			bottle_instence=drop_thing[2].instantiate() as Node2D
+			call_deferred("add_bottle",entities_Layer,spawn_position,angle,bottle_instence)
 
 func add_bottle(entities_Layer:Node,spawn_position:Vector2,angle,bottle_instance:Node2D):
 	if ! bottle_instance:

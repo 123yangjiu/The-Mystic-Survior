@@ -394,5 +394,4 @@ libraries = {
 autoplay = "move"
 
 [node name="velocity_component" parent="." instance=ExtResource("6_60ack")]
-speed = 20
 acceleration = 2.0

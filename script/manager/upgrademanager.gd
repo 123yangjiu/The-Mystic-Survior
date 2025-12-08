@@ -25,12 +25,8 @@ func on_level_up(_current_level:int):#升级时展示卡片
 	add_child(upgrade_screen_instance)#把显示屏幕场景的实例加到节点树上
 	upgrade_screen_instance.Set_Ability_Upgrade(upgrade_list)#升级选项显示屏显示卡片
 	upgrade_screen_instance.upgrade_selected.connect(on_upgrade_selected)
-		
-	
-	
-	
+
 func add_upgrade(upgrade:AbilityUpgrade):#这个字典控制已经有的能力
-	
 	var has_upgrade=current_upgrade.has(upgrade.ID)
 	var _has_Sort=current_upgrade.has(upgrade.Sort)
 	if !has_upgrade:
@@ -63,14 +59,11 @@ func add_upgrade(upgrade:AbilityUpgrade):#这个字典控制已经有的能力
 			if upgrade_option.Sort=="天堂" and upgrade_option.ID!="解锁天堂之怒":
 				can_chose_pool.append(upgrade_option)
 	GameEvent.emit_ability_upgrade_add(upgrade,current_upgrade)
+	#删掉叠满的减CDbuff
+	
 	print (current_upgrade)
 	print(can_chose_pool)
 func on_upgrade_selected(upgrade):
 	add_upgrade(upgrade)
 	
 	pass
-	
-	   
-
-	
-	  

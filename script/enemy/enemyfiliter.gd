@@ -39,10 +39,14 @@ func random_chose():
 	var roll=randf_range(0,all_weight)
 	for enemy in unlocked_group:
 		roll-=enemy.weight
-		if roll<0:
+		if roll<=0:
+			if enemy.weight<0.5:
+				unlocked_group.erase(enemy)
+				all_weight-=enemy.weight
+				print("删了宝箱后：",unlocked_group)
 			return enemy.scene#拿到这次抽到的怪物
-		#else:
-			#return unlocked_group[-2].scene            
+		else :
+			print(roll,"现在的group：",unlocked_group)     
 	
 func on_more_difficulty(difficulty):
 	print("当前难度等级：",difficulty)

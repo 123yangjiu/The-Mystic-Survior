@@ -112,5 +112,5 @@ func on_ability_upgrade_add(upgrade:AbilityUpgrade,current_upgrade:Dictionary):
 		health_component.max_health*=1.1
 		print(health_component.max_health)
 	if upgrade.ID=="飞毛腿":
-		MAX_speed*=1.1
+		MAX_speed*=1.15
 		
