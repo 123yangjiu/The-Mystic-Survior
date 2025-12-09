@@ -1,15 +1,18 @@
 extends  Node
 const MAX_RANGE=150
 @export var heaven_fury:PackedScene
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 var Damage=25#定义天堂之怒的伤害
 var base_wait_time#定义基础冷却
 var number=2#定义基础剑的数量
+var volume:=-8
 
 func _ready() -> void:
 	base_wait_time=$Timer.wait_time
 	$Timer.timeout.connect(on_timer_timeoout)
 	GameEvent.ability_upgrade_add.connect(on_ability_upgrade_add)
+	audio_stream_player_2d
 	
 func on_timer_timeoout():
 	var player=get_tree().get_first_node_in_group("player") as Node2D
@@ -37,6 +40,8 @@ func on_timer_timeoout():
 
 		# ② 等节点_ready完成再赋值，避免 nil
 		foreground.add_child(fury_instance)
+		audio_stream_player_2d.volume_db=volume
+		audio_stream_player_2d.play()
 		fury_instance.hitbox_component.damage = int(Damage+randf_range(-6,6))
 		if enemies.is_empty():
 			fury_instance.queue_free()
@@ -61,6 +66,7 @@ func on_ability_upgrade_add(upgrade:AbilityUpgrade,current_upgrade:Dictionary):
 	#监听所有关于剑的升级
 	if upgrade.ID=="更快愤怒":
 		var persent_reduction=current_upgrade["更快愤怒"]["quantity"]*.2
+		volume=-8-persent_reduction*10
 		$Timer.wait_time=max(base_wait_time*(1-persent_reduction),0.5)
 		$Timer.start()
 	if upgrade.ID=="更强愤怒":

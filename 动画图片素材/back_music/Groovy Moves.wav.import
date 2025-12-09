@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d3fqo15a0me7k"
+path="res://.godot/imported/Groovy Moves.wav-feed5c06c48b009002e32e80a1d93a5e.sample"
+
+[deps]
+
+source_file="res://动画图片素材/back_music/Groovy Moves.wav"
+dest_files=["res://.godot/imported/Groovy Moves.wav-feed5c06c48b009002e32e80a1d93a5e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

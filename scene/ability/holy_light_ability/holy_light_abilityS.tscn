@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://cm0g4goafw5ax" path="res://script/upgrade/animation_player.gd" id="3_xf82j"]
 [ext_resource type="PackedScene" uid="uid://c4aqf7g3512kf" path="res://scene/游戏功能组件/hitbox_component.tscn" id="4_jd0r7"]
 [ext_resource type="AudioStream" uid="uid://bgykkstxbrk1y" path="res://scene/ability/holy_light_ability/挥剑.wav" id="5_xf82j"]
-[ext_resource type="AudioStream" uid="uid://cf4kx4f86edbp" path="res://scene/ability/holy_light_ability/汇集.wav" id="6_jd0r7"]
+[ext_resource type="AudioStream" uid="uid://jo8adleqvqyi" path="res://scene/ability/holy_light_ability/MAGAngl_BUFF-Shimmer Tone_HY_PC-002.wav" id="6_xf82j"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8g0r1"]
 atlas = ExtResource("2_koqwj")
@@ -410,5 +410,5 @@ disabled = true
 stream = ExtResource("5_xf82j")
 
 [node name="汇集" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("6_jd0r7")
+stream = ExtResource("6_xf82j")
 pitch_scale = 1.2

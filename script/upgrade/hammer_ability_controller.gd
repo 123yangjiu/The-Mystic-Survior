@@ -61,8 +61,7 @@ func on_ability_upgrade_add(upgrade:AbilityUpgrade,current_upgrade:Dictionary):
 	if upgrade.ID=="光的速度":
 		var persent_reduction=current_upgrade["光的速度"]["quantity"]*.2
 		$Timer.wait_time=base_wait_time*(1-persent_reduction)
-		if persent_reduction==0.8:
-			volume -=8
+		volume =-10*persent_reduction
 		$Timer.start()
 	if upgrade.ID=="光的力量":
 		Damage*=1.2

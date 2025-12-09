@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://yy0os3e5cvfu"]
+[gd_scene load_steps=20 format=3 uid="uid://yy0os3e5cvfu"]
 
 [ext_resource type="PackedScene" uid="uid://b8orbduoade27" path="res://scene/player.tscn" id="1_5kiuu"]
 [ext_resource type="Script" uid="uid://rt8ham21rr6r" path="res://script/game.gd" id="1_17rxn"]
@@ -14,7 +14,16 @@
 [ext_resource type="PackedScene" uid="uid://ccgl3enwp4fx2" path="res://scene/manager/enemyfiliter.tscn" id="11_ym5sv"]
 [ext_resource type="PackedScene" uid="uid://b2fnijcvbh7hg" path="res://scene/enemy/box.tscn" id="14_81276"]
 [ext_resource type="PackedScene" uid="uid://bcl20xpjeekut" path="res://scene/enemy/猫头鹰.tscn" id="15_ve786"]
+[ext_resource type="AudioStream" uid="uid://d3fqo15a0me7k" path="res://动画图片素材/back_music/Groovy Moves.wav" id="16_ux4dc"]
+[ext_resource type="AudioStream" uid="uid://ddda7n23il1ly" path="res://动画图片素材/back_music/Earth Turns To Our Feet.wav" id="17_jrd6n"]
+[ext_resource type="AudioStream" uid="uid://leodt70umxya" path="res://动画图片素材/back_music/Into The Battle.wav" id="18_jhlss"]
 [ext_resource type="PackedScene" uid="uid://3yghqc3xt4xt" path="res://scene/enemy/wolf.tscn" id="18_ww6yf"]
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_ww6yf"]
+stream_count = 3
+stream_0 = ExtResource("16_ux4dc")
+stream_1 = ExtResource("17_jrd6n")
+stream_2 = ExtResource("18_jhlss")
 
 [node name="game" type="Node2D"]
 script = ExtResource("1_17rxn")
@@ -60,3 +69,6 @@ position_smoothing_enabled = true
 position = Vector2(442, 213)
 
 [node name="前景" type="Node" parent="." groups=["前景图层"]]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamPlaylist_ww6yf")

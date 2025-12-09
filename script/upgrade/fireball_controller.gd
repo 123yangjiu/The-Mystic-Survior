@@ -8,6 +8,8 @@ var number=1#火球数量
 var speed=0.05#火球的速度
 var amout=3#初始穿透个数
 var ball_size=1#初始化火球大小
+var volume:=0
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 func _ready() -> void:
 	base_wait_time=$Timer.wait_time
@@ -15,6 +17,7 @@ func _ready() -> void:
 	GameEvent.ability_upgrade_add.connect(on_ability_upgrade_add)
 	
 func on_timer_timeoout():
+	audio_stream_player_2d.stop()
 	var player=get_tree().get_first_node_in_group("player") as Node2D
 	var enemies= get_tree().get_nodes_in_group("enemy")
 	enemies=enemies.filter(func(enemy:Node2D):#过滤掉不在范围内的敌人
@@ -41,6 +44,8 @@ func on_timer_timeoout():
 
 		# ② 等节点_ready完成再赋值，避免 nil
 		foreground.add_child(fireball_instance)
+		audio_stream_player_2d.volume_db=volume
+		audio_stream_player_2d.play()
 		fireball_instance.hitbox_component.damage = int(Damage+randf_range(-3,3))
 		if enemies.is_empty():
 			fireball_instance.queue_free()
@@ -74,7 +79,8 @@ func on_ability_upgrade_add(upgrade:AbilityUpgrade,current_upgrade:Dictionary):
 	if upgrade.ID=="火球力速":
 		Damage*=1.15
 		var persent_reduction=current_upgrade["火球力速"]["quantity"]*.15
-		$Timer.wait_time=base_wait_time*(1-persent_reduction)
+		volume =-persent_reduction*10
+		$Timer.wait_time=base_wait_time*max((1-persent_reduction),0.1)
 		$Timer.start()
 	if upgrade.ID=="火球数量":
 		number+=1
