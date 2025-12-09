@@ -90,6 +90,7 @@ shape = SubResource("CircleShape2D_sc8rp")
 max_health = 30.0
 
 [node name="drop_component" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("3_3lfw1")]
+drop_range = 2
 drop_thing = Array[PackedScene]([ExtResource("4_pjlxh"), ExtResource("5_2w5ch")])
 health_component = NodePath("../health_component")
 

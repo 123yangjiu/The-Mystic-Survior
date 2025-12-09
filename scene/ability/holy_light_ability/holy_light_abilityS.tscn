@@ -380,7 +380,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uir0u"]
-size = Vector2(208.97098, 54.065125)
+size = Vector2(195.2536, 55.223167)
 
 [node name="holy_light_ruling" type="Node2D"]
 script = ExtResource("1_im8mf")
@@ -401,7 +401,7 @@ script = ExtResource("3_xf82j")
 [node name="hitbox component" parent="." instance=ExtResource("4_jd0r7")]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="hitbox component"]
-position = Vector2(111.59044, 31.522877)
+position = Vector2(94, 31)
 scale = Vector2(0.7887178, 1.1589339)
 shape = SubResource("RectangleShape2D_uir0u")
 disabled = true

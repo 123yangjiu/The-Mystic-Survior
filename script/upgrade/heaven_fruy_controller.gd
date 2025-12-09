@@ -71,7 +71,7 @@ func on_ability_upgrade_add(upgrade:AbilityUpgrade,current_upgrade:Dictionary):
 		$Timer.start()
 	if upgrade.ID=="更强愤怒":
 		var _persent_improvement=current_upgrade["更强愤怒"]["quantity"]*.25
-		Damage*=0.25
+		Damage*=1.25
 		print(Damage)
 	if upgrade.ID=="更多愤怒":
 		number+=2
