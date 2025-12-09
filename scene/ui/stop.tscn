@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://doij8jy300u7f"]
+[gd_scene load_steps=0 format=3 uid="uid://doij8jy300u7f"]
 
 [node name="stop" type="Button"]
 offset_right = 8.0

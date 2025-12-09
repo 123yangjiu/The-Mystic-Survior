@@ -62,6 +62,7 @@ func on_timer_timeoout():
 
     
 func on_ability_upgrade_add(upgrade:AbilityUpgrade,current_upgrade:Dictionary):
+
     print("saiuofai")
     #监听所有关于剑的升级
     if upgrade.ID=="更快愤怒":
@@ -78,3 +79,4 @@ func on_ability_upgrade_add(upgrade:AbilityUpgrade,current_upgrade:Dictionary):
     if upgrade.ID=="解锁天堂之怒":
         print("解锁天堂之怒")
         $Timer.start()
+

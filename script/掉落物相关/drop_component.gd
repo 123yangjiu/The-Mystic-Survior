@@ -2,6 +2,7 @@ extends Node
 
 @export_range(0,1) var drop_exprience_persent:float=0.7
 @export_range(0,1) var drop_blood_persent:float=0.04
+@export var drop_range :=1
 @export var drop_thing:Array[PackedScene]
 @export var health_component:Node
 
