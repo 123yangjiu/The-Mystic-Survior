@@ -107,12 +107,12 @@ func on_blood_bottle_collected(blood:int):
     on_health_change()
 
 func on_ability_upgrade_add(upgrade:AbilityUpgrade,current_upgrade:Dictionary):
-    if upgrade.ID=="盔甲":
-        enter_body_number_10_hurt=10*(1-0.07*current_upgrade["盔甲"]["quantity"])
-        enter_body_number_17_hurt=17*(1-0.07*current_upgrade["盔甲"]["quantity"])
-        enter_body_number_30_hurt=30*(1-0.07*current_upgrade["盔甲"]["quantity"])
-        enter_body_number_47_hurt=47*(1-0.07*current_upgrade["盔甲"]["quantity"])
-        health_component.max_health*=1.1
-        print(health_component.max_health)
-    if upgrade.ID=="飞毛腿":
-        MAX_speed*=1.15
+	if upgrade.ID=="盔甲":
+		enter_body_number_10_hurt=10*(1-0.07*current_upgrade["盔甲"]["quantity"])
+		enter_body_number_17_hurt=17*(1-0.07*current_upgrade["盔甲"]["quantity"])
+		enter_body_number_30_hurt=30*(1-0.07*current_upgrade["盔甲"]["quantity"])
+		enter_body_number_47_hurt=47*(1-0.07*current_upgrade["盔甲"]["quantity"])
+		health_component.max_health*=1.1
+		print(health_component.max_health)
+	if upgrade.ID=="飞毛腿":
+		MAX_speed*=1.15

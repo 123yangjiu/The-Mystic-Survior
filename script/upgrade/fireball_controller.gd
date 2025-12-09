@@ -8,7 +8,7 @@ var number=1#火球数量
 var speed=0.05#火球的速度
 var amout=3#初始穿透个数
 var ball_size=1#初始化火球大小
-var volume:=0
+var volume:=5
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 func _ready() -> void:
@@ -72,6 +72,7 @@ func on_timer_timeoout():
     
 func on_ability_upgrade_add(upgrade:AbilityUpgrade,current_upgrade:Dictionary):
 
+<<<<<<< Updated upstream
     #print("saiuofai")
     if upgrade.ID=="火球大穿":
         amout+=2
@@ -87,5 +88,22 @@ func on_ability_upgrade_add(upgrade:AbilityUpgrade,current_upgrade:Dictionary):
     if upgrade.ID=="解锁火球":
         $Timer.start()
     pass
+=======
+	#print("saiuofai")
+	if upgrade.ID=="火球大穿":
+		amout+=2
+		ball_size +=0.2
+	if upgrade.ID=="火球力速":
+		Damage*=1.15
+		var persent_reduction=current_upgrade["火球力速"]["quantity"]*.15
+		volume =5-persent_reduction*10
+		$Timer.wait_time=base_wait_time*max((1-persent_reduction),0.1)
+		$Timer.start()
+	if upgrade.ID=="火球数量":
+		number+=1
+	if upgrade.ID=="解锁火球":
+		$Timer.start()
+	pass
+>>>>>>> Stashed changes
 
     
