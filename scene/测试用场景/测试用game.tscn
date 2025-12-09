@@ -22,9 +22,10 @@ script = ExtResource("1_4h26k")
 game_time_manager = NodePath("../gametimemanager")
 
 [node name="enemyfiliter" parent="." instance=ExtResource("4_ufowh")]
+script = null
 
 [node name="enemymanager" parent="." instance=ExtResource("5_wttg5")]
-kill_cirle_enemy = Array[PackedScene]([])
+script = null
 
 [node name="gametimemanager" parent="." instance=ExtResource("9_cwx6g")]
 victory_screen = ExtResource("10_xteuj")

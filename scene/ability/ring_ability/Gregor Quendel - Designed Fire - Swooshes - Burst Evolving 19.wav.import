@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bf8uvghh0jp6j"
+path="res://.godot/imported/Gregor Quendel - Designed Fire - Swooshes - Burst Evolving 19.wav-003c822562797ac205e3820097bd657a.sample"
+
+[deps]
+
+source_file="res://scene/ability/ring_ability/Gregor Quendel - Designed Fire - Swooshes - Burst Evolving 19.wav"
+dest_files=["res://.godot/imported/Gregor Quendel - Designed Fire - Swooshes - Burst Evolving 19.wav-003c822562797ac205e3820097bd657a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

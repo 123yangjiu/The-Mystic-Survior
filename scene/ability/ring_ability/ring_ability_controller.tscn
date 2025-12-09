@@ -1,10 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://b7lj8mwnd703c"]
+[gd_scene load_steps=3 format=3 uid="uid://b7lj8mwnd703c"]
 
 [ext_resource type="Script" uid="uid://ciixs7nyyfhdb" path="res://script/upgrade/ring_ability_controller.gd" id="1_00eck"]
+[ext_resource type="AudioStream" uid="uid://bf8uvghh0jp6j" path="res://scene/ability/ring_ability/Gregor Quendel - Designed Fire - Swooshes - Burst Evolving 19.wav" id="2_00eck"]
 
 [node name="ring_ability_controller" type="Node"]
 script = ExtResource("1_00eck")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
-autostart = true
+
+wait_time = 4.5
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_00eck")
+pitch_scale = 1.5
+

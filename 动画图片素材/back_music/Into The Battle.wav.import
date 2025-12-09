@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://leodt70umxya"
+path="res://.godot/imported/Into The Battle.wav-08cc6748b9075f2a059e88abf0668b77.sample"
+
+[deps]
+
+source_file="res://动画图片素材/back_music/Into The Battle.wav"
+dest_files=["res://.godot/imported/Into The Battle.wav-08cc6748b9075f2a059e88abf0668b77.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
