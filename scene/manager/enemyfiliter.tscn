@@ -13,4 +13,4 @@
 
 [node name="enemyfiliter" type="Node"]
 script = ExtResource("1_35xkm")
-enemy_group = Array[ExtResource("2_5ebq4")]([ExtResource("3_dokpp"), ExtResource("4_dokpp"), ExtResource("5_6sdlv"), ExtResource("6_k1eir"), ExtResource("6_tkm8a"), ExtResource("8_41gov"), ExtResource("9_fdl5p"), ExtResource("8_7s4j5")])
+enemy_group = Array[ExtResource("2_5ebq4")]([ExtResource("3_dokpp"), ExtResource("4_dokpp"), ExtResource("5_6sdlv"), ExtResource("6_k1eir"), ExtResource("8_41gov"), ExtResource("6_tkm8a"), ExtResource("9_fdl5p"), ExtResource("8_7s4j5")])

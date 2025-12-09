@@ -87,7 +87,7 @@ position = Vector2(0, 9.999999)
 shape = SubResource("CircleShape2D_sc8rp")
 
 [node name="health_component" parent="." instance=ExtResource("2_jhxc5")]
-max_health = 30.0
+max_health = 42.0
 
 [node name="drop_component" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("3_3lfw1")]
 drop_thing = Array[PackedScene]([ExtResource("4_pjlxh"), ExtResource("5_2w5ch")])

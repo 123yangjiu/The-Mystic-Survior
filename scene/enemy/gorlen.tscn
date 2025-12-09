@@ -367,14 +367,13 @@ animation = &"hit"
 frame = 6
 
 [node name="对角色造成伤害的碰撞" type="CollisionShape2D" parent="." groups=["enemy"]]
-visible = false
 position = Vector2(-4.7683716e-07, -5.9999995)
 scale = Vector2(0.47134686, 0.4559797)
 shape = SubResource("CircleShape2D_ntng8")
 disabled = true
 
 [node name="health_component" parent="." instance=ExtResource("4_iuixe")]
-max_health = 110.0
+max_health = 220.0
 
 [node name="drop_component" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("5_qgpht")]
 script = ExtResource("6_d7sbi")
@@ -382,7 +381,6 @@ drop_thing = ExtResource("7_iuixe")
 health_component = NodePath("../health_component")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(0, -6)
 scale = Vector2(1.9930668, 1.9930668)
 shape = SubResource("CircleShape2D_8egh0")

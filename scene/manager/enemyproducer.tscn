@@ -15,4 +15,5 @@ script = ExtResource("1_osh64")
 kill_cirle_enemy = Array[PackedScene]([ExtResource("2_oko6g"), ExtResource("3_k2c75"), ExtResource("4_xrm1e"), ExtResource("5_kpt6l"), ExtResource("6_c4ixa"), ExtResource("7_jtadt"), ExtResource("8_hlkyc"), ExtResource("9_myi5d")])
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 1.2999999999999998
 autostart = true

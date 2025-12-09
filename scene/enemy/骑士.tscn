@@ -101,7 +101,7 @@ scale = Vector2(0.47134686, 0.4559797)
 shape = SubResource("CircleShape2D_ntng8")
 
 [node name="health_component" parent="." instance=ExtResource("4_hhqmu")]
-max_health = 80.0
+max_health = 150.0
 
 [node name="drop_component" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("5_7fhkn")]
 drop_thing = Array[PackedScene]([ExtResource("6_4jt46"), ExtResource("7_d3vui")])

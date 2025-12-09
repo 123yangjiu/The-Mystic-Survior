@@ -76,7 +76,6 @@ border_color = Color(0.24705882, 0.14901961, 0.19215687, 1)
 position = Vector2(0, -5)
 collision_layer = 0
 script = ExtResource("1_hjaqi")
-MAX_speed = 130
 
 [node name="abilitymanager" type="Node" parent="."]
 

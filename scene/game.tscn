@@ -1,8 +1,4 @@
-
-
-
-[gd_scene load_steps=20 format=3 uid="uid://yy0os3e5cvfu"]
-
+[gd_scene load_steps=21 format=3 uid="uid://yy0os3e5cvfu"]
 
 [ext_resource type="Script" uid="uid://bfg33r63hua37" path="res://scene/gameover.gd" id="1_0lu6w"]
 [ext_resource type="PackedScene" uid="uid://b8orbduoade27" path="res://scene/player.tscn" id="1_5kiuu"]
@@ -18,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://b6jpe6qhci3ks" path="res://scene/manager/upgrademanager.tscn" id="8_ll5lq"]
 [ext_resource type="PackedScene" uid="uid://ccgl3enwp4fx2" path="res://scene/manager/enemyfiliter.tscn" id="11_ym5sv"]
 [ext_resource type="PackedScene" uid="uid://b2fnijcvbh7hg" path="res://scene/enemy/box.tscn" id="14_81276"]
-[ext_resource type="PackedScene" uid="uid://bcl20xpjeekut" path="res://scene/enemy/猫头鹰.tscn" id="15_ve786"]
+[ext_resource type="PackedScene" uid="uid://ccmf8dg5ymjjs" path="res://scene/enemy/gorlen.tscn" id="16_abp7u"]
 [ext_resource type="AudioStream" uid="uid://d3fqo15a0me7k" path="res://动画图片素材/back_music/Groovy Moves.wav" id="16_ux4dc"]
 [ext_resource type="AudioStream" uid="uid://ddda7n23il1ly" path="res://动画图片素材/back_music/Earth Turns To Our Feet.wav" id="17_jrd6n"]
 [ext_resource type="AudioStream" uid="uid://leodt70umxya" path="res://动画图片素材/back_music/Into The Battle.wav" id="18_jhlss"]
@@ -40,7 +36,7 @@ game_time_manager = NodePath("../gametimemanager")
 [node name="enemyfiliter" parent="." instance=ExtResource("11_ym5sv")]
 
 [node name="enemymanager" parent="." instance=ExtResource("3_33cqm")]
-kill_cirle_enemy = Array[PackedScene]([ExtResource("18_ww6yf"), ExtResource("15_ve786"), ExtResource("8_0lu6w")])
+kill_cirle_enemy = Array[PackedScene]([ExtResource("18_ww6yf"), ExtResource("16_abp7u"), ExtResource("8_0lu6w")])
 
 [node name="gametimemanager" parent="." instance=ExtResource("5_p1ry8")]
 victory_screen = ExtResource("7_sng2h")
@@ -78,3 +74,4 @@ position = Vector2(442, 213)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamPlaylist_ww6yf")
+autoplay = true
