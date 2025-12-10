@@ -49,7 +49,7 @@ func add_upgrade(upgrade:AbilityUpgrade):#这个字典控制已经有的能力
 			"quantity":1   #如果之前没有选过这种能力那把他加入字典
 		}
 	else:
-		if current_upgrade[upgrade.ID]["quantity"]>2:#每种能力最多3次
+		if current_upgrade[upgrade.ID]["quantity"]>3:#每种能力最多4次，然后进小黑屋
 			for Upgrade in mystrious_pool:
 				if Upgrade.ID==upgrade.ID:
 					if !upgrade.ID=="火球力速":
