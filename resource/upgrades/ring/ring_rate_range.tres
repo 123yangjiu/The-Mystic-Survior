@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=2 format=3 uid="uid://bd0tr7xshvycr"]
 
-[ext_resource type="Script" uid="uid://dmyfvo2eu1rj2" path="res://resource/ability_upgrade.gd" id="1_qj2er"]
+[ext_resource type="Script" path="res://resource/ability_upgrade.gd" id="1_qj2er"]
 
 [resource]
 script = ExtResource("1_qj2er")
 ID = "环的大速"
 Sort = "环"
 name = "真正的死灵法师！"
-Description = "增加死灵法环的大小25%并缩短20%的CD"
+Description = "增加死灵法环的大小15%并缩短20%的CD"

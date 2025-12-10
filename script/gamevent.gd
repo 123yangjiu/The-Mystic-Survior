@@ -3,6 +3,7 @@ extends Node
 
 func _ready() -> void:
 	difficulty_timer.timeout.connect(emit_more_difficulty)
+	
 
 signal experience_bottle_collected(number:float)#吃到经验瓶时发出信号
 func emit_increase_experience(number:float):#发射信号的函数这样写是为了控制经验瓶的经验多少
@@ -22,8 +23,10 @@ func emit_more_difficulty():
 	difficulty+=1
 	more_difficulty.emit(difficulty)
 	
-	
-	
 signal blood_bottle_collected(number:float)
 func emit_increase_blood(number:float):#发射信号的函数这样写是为了控制经验瓶的经验多少
 	blood_bottle_collected.emit(number)
+
+var the_first=0
+@warning_ignore("unused_signal")
+signal the_first_damage()

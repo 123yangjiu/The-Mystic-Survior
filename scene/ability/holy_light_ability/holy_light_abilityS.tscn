@@ -1,8 +1,7 @@
-[gd_scene load_steps=43 format=3 uid="uid://s1i31vfh2lr5"]
+[gd_scene load_steps=42 format=3 uid="uid://s1i31vfh2lr5"]
 
 [ext_resource type="Script" uid="uid://povge0m0ojnx" path="res://script/upgrade/hammer_ability.gd" id="1_im8mf"]
 [ext_resource type="Texture2D" uid="uid://c4hluc4fovntv" path="res://scene/Cast Spell 102-DownCut All.png" id="2_koqwj"]
-[ext_resource type="Script" uid="uid://cm0g4goafw5ax" path="res://script/upgrade/animation_player.gd" id="3_xf82j"]
 [ext_resource type="PackedScene" uid="uid://c4aqf7g3512kf" path="res://scene/游戏功能组件/hitbox_component.tscn" id="4_jd0r7"]
 [ext_resource type="AudioStream" uid="uid://bgykkstxbrk1y" path="res://scene/ability/holy_light_ability/挥剑.wav" id="5_xf82j"]
 [ext_resource type="AudioStream" uid="uid://jo8adleqvqyi" path="res://scene/ability/holy_light_ability/MAGAngl_BUFF-Shimmer Tone_HY_PC-002.wav" id="6_xf82j"]
@@ -380,7 +379,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uir0u"]
-size = Vector2(195.2536, 55.223167)
+size = Vector2(195.2536, 81.97189)
 
 [node name="holy_light_ruling" type="Node2D"]
 script = ExtResource("1_im8mf")
@@ -396,12 +395,11 @@ libraries = {
 &"": SubResource("AnimationLibrary_silok")
 }
 autoplay = "right"
-script = ExtResource("3_xf82j")
 
 [node name="hitbox component" parent="." instance=ExtResource("4_jd0r7")]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="hitbox component"]
-position = Vector2(94, 31)
+position = Vector2(94, 15.5)
 scale = Vector2(0.7887178, 1.1589339)
 shape = SubResource("RectangleShape2D_uir0u")
 disabled = true

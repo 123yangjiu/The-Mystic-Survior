@@ -4,4 +4,4 @@ extends Node
 
 
 func _upgrade()->void:
-    experiencemanager.increase_experience(experiencemanager.target_experience)
+	experiencemanager.increase_experience(experiencemanager.target_experience)

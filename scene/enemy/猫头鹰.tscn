@@ -107,5 +107,5 @@ scale = Vector2(1.9930668, 1.9930668)
 shape = SubResource("CircleShape2D_8egh0")
 
 [node name="velocity_component" parent="." instance=ExtResource("8_q10tu")]
-speed = 60
+speed = 80
 acceleration = 11.0
