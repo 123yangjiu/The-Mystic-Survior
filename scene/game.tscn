@@ -1,97 +1,140 @@
-[gd_scene load_steps=24 format=3 uid="uid://yy0os3e5cvfu"]
+[gd_scene load_steps=21 format=3 uid="uid://yy0os3e5cvfu"]
 
-[ext_resource type="Script" uid="uid://bfg33r63hua37" path="res://scene/gameover.gd" id="1_0lu6w"]
-[ext_resource type="PackedScene" uid="uid://b8orbduoade27" path="res://scene/player.tscn" id="1_5kiuu"]
-[ext_resource type="TileSet" uid="uid://7j2lt71noofj" path="res://动画图片素材/new_tile_set.tres" id="1_dbls1"]
-[ext_resource type="PackedScene" uid="uid://8ltjdygo5nge" path="res://scene/ui/time_ui.tscn" id="1_xwcet"]
-[ext_resource type="PackedScene" uid="uid://co66107rpg80r" path="res://scene/ui/You_Die_Screen.tscn" id="2_i6gbm"]
-[ext_resource type="PackedScene" uid="uid://cptmnlexwivwt" path="res://scene/manager/enemyproducer.tscn" id="3_33cqm"]
-[ext_resource type="PackedScene" uid="uid://c0gjd680ncete" path="res://scene/manager/gametimemanager.tscn" id="5_p1ry8"]
-[ext_resource type="PackedScene" uid="uid://buqog17qtp4og" path="res://scene/ui/experience_bar.tscn" id="7_ll5lq"]
-[ext_resource type="PackedScene" uid="uid://clj43eql2an1f" path="res://scene/manager/experiencemanager.tscn" id="7_qpk70"]
-[ext_resource type="PackedScene" uid="uid://ci3fodbprfo2x" path="res://scene/ui/victoryscreen.tscn" id="7_sng2h"]
-[ext_resource type="PackedScene" uid="uid://dg0lowfwv0dg3" path="res://scene/enemy/骑士.tscn" id="8_0lu6w"]
-[ext_resource type="PackedScene" uid="uid://b6jpe6qhci3ks" path="res://scene/manager/upgrademanager.tscn" id="8_ll5lq"]
-[ext_resource type="PackedScene" uid="uid://dup0ew61sv1b8" path="res://scene/enemy/puple_silime.tscn" id="9_pp3pk"]
-[ext_resource type="PackedScene" uid="uid://ccgl3enwp4fx2" path="res://scene/manager/enemyfiliter.tscn" id="11_ym5sv"]
-[ext_resource type="PackedScene" uid="uid://b2fnijcvbh7hg" path="res://scene/enemy/box.tscn" id="14_81276"]
-[ext_resource type="PackedScene" uid="uid://ccmf8dg5ymjjs" path="res://scene/enemy/gorlen.tscn" id="16_abp7u"]
-[ext_resource type="AudioStream" uid="uid://d3fqo15a0me7k" path="res://动画图片素材/back_music/Groovy Moves.wav" id="16_ux4dc"]
-[ext_resource type="Script" uid="uid://cbv3aa54oasir" path="res://script/manager/musicmanager.gd" id="17_i6gbm"]
-[ext_resource type="AudioStream" uid="uid://ddda7n23il1ly" path="res://动画图片素材/back_music/Earth Turns To Our Feet.wav" id="17_jrd6n"]
-[ext_resource type="AudioStream" uid="uid://c5uulbfvf0wpc" path="res://动画图片素材/back_music/Brand New.wav" id="18_jhlss"]
-[ext_resource type="PackedScene" uid="uid://3yghqc3xt4xt" path="res://scene/enemy/wolf.tscn" id="18_ww6yf"]
-[ext_resource type="AudioStream" uid="uid://ndho2y6dc21m" path="res://动画图片素材/back_music/Ariadne's Thread.wav" id="21_ww6yf"]
-[ext_resource type="AudioStream" uid="uid://leodt70umxya" path="res://动画图片素材/back_music/Into The Battle.wav" id="22_1it6f"]
+[ext_resource type="Script" uid="uid://c4rg2s1ijtbwu" path="res://script/enemy/main_enemy/骑士.gd" id="1_17rxn"]
+[ext_resource type="PackedScene" uid="uid://decyru6mnkuga" path="res://scene/游戏功能组件/hurtboxcomponent.tscn" id="2_yq8tf"]
+[ext_resource type="Texture2D" uid="uid://mybwidsudo2r" path="res://动画图片素材/Knight/knight-Sheet_whitefx.png" id="3_ym5sv"]
+[ext_resource type="PackedScene" uid="uid://bnactnfyipltl" path="res://scene/游戏功能组件/health_component.tscn" id="4_sng2h"]
+[ext_resource type="PackedScene" uid="uid://c0i7tc6xpk0n8" path="res://scene/游戏功能组件/drop_component.tscn" id="5_5g16k"]
+[ext_resource type="PackedScene" uid="uid://f15fc5ggcq0l" path="res://scene/游戏 物件/bonus_bottle.tscn" id="6_81276"]
+[ext_resource type="PackedScene" uid="uid://daaqcmminiyk1" path="res://scene/游戏 物件/blood_bottle .tscn" id="7_ve786"]
+[ext_resource type="PackedScene" uid="uid://g6ks4dc6kpht" path="res://scene/游戏功能组件/velocity_component.tscn" id="8_0lu6w"]
+[ext_resource type="Script" uid="uid://dw1xa58nup1q4" path="res://script/enemy/main_enemy/骑士冲刺.gd" id="9_i6gbm"]
 
-[node name="game" type="Node2D"]
-script = ExtResource("1_0lu6w")
-die_scene = ExtResource("2_i6gbm")
+[sub_resource type="CircleShape2D" id="CircleShape2D_vcrpj"]
+radius = 13.0
 
-[node name="Time_UI" parent="." node_paths=PackedStringArray("game_time_manager") instance=ExtResource("1_xwcet")]
-game_time_manager = NodePath("../gametimemanager")
+[sub_resource type="AtlasTexture" id="AtlasTexture_2umt1"]
+atlas = ExtResource("3_ym5sv")
+region = Rect2(0, 90, 90, 90)
 
-[node name="enemyfiliter" parent="." instance=ExtResource("11_ym5sv")]
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3kh2"]
+atlas = ExtResource("3_ym5sv")
+region = Rect2(90, 90, 90, 90)
 
-[node name="enemymanager" parent="." instance=ExtResource("3_33cqm")]
-kill_cirle_enemy = Array[PackedScene]([ExtResource("18_ww6yf"), ExtResource("16_abp7u"), ExtResource("8_0lu6w"), ExtResource("9_pp3pk")])
+[sub_resource type="AtlasTexture" id="AtlasTexture_x0prp"]
+atlas = ExtResource("3_ym5sv")
+region = Rect2(180, 90, 90, 90)
 
-[node name="gametimemanager" parent="." instance=ExtResource("5_p1ry8")]
-victory_screen = ExtResource("7_sng2h")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ockl4"]
+atlas = ExtResource("3_ym5sv")
+region = Rect2(270, 90, 90, 90)
 
-[node name="TileMap" type="TileMap" parent="gametimemanager"]
-position = Vector2(82, 141)
-tile_set = ExtResource("1_dbls1")
-format = 2
+[sub_resource type="AtlasTexture" id="AtlasTexture_g67mx"]
+atlas = ExtResource("3_ym5sv")
+region = Rect2(360, 90, 90, 90)
 
-[node name="experiencemanager" parent="." instance=ExtResource("7_qpk70")]
+[sub_resource type="AtlasTexture" id="AtlasTexture_av3ta"]
+atlas = ExtResource("3_ym5sv")
+region = Rect2(450, 90, 90, 90)
 
-[node name="experience_Bar" parent="." node_paths=PackedStringArray("experience_manager") instance=ExtResource("7_ll5lq")]
-experience_manager = NodePath("../experiencemanager")
+[sub_resource type="AtlasTexture" id="AtlasTexture_7a888"]
+atlas = ExtResource("3_ym5sv")
+region = Rect2(540, 90, 90, 90)
 
-[node name="Upgrademanager" parent="." node_paths=PackedStringArray("experience_manager") instance=ExtResource("8_ll5lq")]
-experience_manager = NodePath("../experiencemanager")
+[sub_resource type="SpriteFrames" id="SpriteFrames_fq6t5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2umt1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i3kh2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x0prp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ockl4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g67mx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_av3ta")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7a888")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]
 
-[node name="实体" type="Node" parent="." groups=["实体图层"]]
+[sub_resource type="CircleShape2D" id="CircleShape2D_ntng8"]
+radius = 17.11374
 
-[node name="player" parent="实体" instance=ExtResource("1_5kiuu")]
-unique_name_in_owner = true
-y_sort_enabled = true
-position = Vector2(573, 242.00003)
-scale = Vector2(1, 0.9772806)
-collision_layer = 2
+[sub_resource type="CircleShape2D" id="CircleShape2D_elmko"]
+radius = 57.781265
 
-[node name="Camera2D2" type="Camera2D" parent="实体/player"]
-position = Vector2(4, 4.0929594)
-position_smoothing_enabled = true
+[node name="骑士" type="CharacterBody2D" groups=["终极"]]
+scale = Vector2(2.9948473, 3)
+collision_layer = 40
+collision_mask = 0
+script = ExtResource("1_17rxn")
 
-[node name="box" parent="实体" instance=ExtResource("14_81276")]
-position = Vector2(442, 213)
+[node name="Hurtboxcomponent" parent="." node_paths=PackedStringArray("health_component") groups=["enemy"] instance=ExtResource("2_yq8tf")]
+collision_layer = 4
+health_component = NodePath("../health_component")
 
-[node name="前景" type="Node" parent="." groups=["前景图层"]]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Hurtboxcomponent"]
+visible = false
+shape = SubResource("CircleShape2D_vcrpj")
 
-[node name="Music" type="Node" parent="."]
-process_mode = 3
-script = ExtResource("17_i6gbm")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["enemy"]]
+position = Vector2(0, -1.0000005)
+scale = Vector2(0.8, 0.638)
+sprite_frames = SubResource("SpriteFrames_fq6t5")
+animation = &"run"
+autoplay = "run"
+frame_progress = 0.8870586
 
-[node name="Maintheme" type="AudioStreamPlayer" parent="Music"]
-stream = ExtResource("18_jhlss")
-volume_db = -5.0
+[node name="对角色造成伤害的碰撞" type="CollisionShape2D" parent="." groups=["enemy"]]
+visible = false
+position = Vector2(-4.7683716e-07, 4.7683716e-07)
+scale = Vector2(0.47134686, 0.4559797)
+shape = SubResource("CircleShape2D_ntng8")
 
-[node name="TheFirst" type="AudioStreamPlayer" parent="Music"]
-stream = ExtResource("16_ux4dc")
-volume_db = -5.0
+[node name="health_component" parent="." instance=ExtResource("4_sng2h")]
+max_health = 500.0
 
-[node name="WIthWolf" type="AudioStreamPlayer" parent="Music"]
-stream = ExtResource("17_jrd6n")
-volume_db = -8.0
+[node name="drop_component" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("5_5g16k")]
+drop_range = 3
+drop_thing = Array[PackedScene]([ExtResource("6_81276"), ExtResource("7_ve786")])
+health_component = NodePath("../health_component")
+
+
+[node name="velocity_component" parent="." instance=ExtResource("8_0lu6w")]
+speed = 45
+acceleration = 7.0
 
 [node name="WIthGorlen" type="AudioStreamPlayer" parent="Music"]
 stream = ExtResource("21_ww6yf")
 volume_db = 3.0
 
-[node name="TheFinal" type="AudioStreamPlayer" parent="Music"]
-stream = ExtResource("22_1it6f")
-volume_db = -5.0
 
-[connection signal="finished" from="Music/WIthGorlen" to="Music" method="_on_w_ith_gorlen_finished"]
+[node name="冲刺范围" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("9_i6gbm")
+
+[node name="冲刺判定" type="CollisionShape2D" parent="冲刺范围"]
+visible = false
+shape = SubResource("CircleShape2D_elmko")
+
+[node name="rush_duration" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="rush_interval" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true

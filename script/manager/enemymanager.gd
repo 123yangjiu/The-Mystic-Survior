@@ -2,8 +2,8 @@ extends Node
 const SPAWN_R=300
 @export var kill_cirle_enemy:Array[PackedScene]
 var chosen_enemy_scene:PackedScene
-var min_gap=0.07
-var decay =0.38
+var min_gap=0.08
+var decay =0.34
 var rand_R=450#包围半径
 @onready var enemyfiliter: EnemyFiliter = $"../enemyfiliter"
 var base_time_gap

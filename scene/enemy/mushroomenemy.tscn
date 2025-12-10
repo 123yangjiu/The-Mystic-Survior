@@ -1,0 +1,99 @@
+[gd_scene load_steps=16 format=3 uid="uid://cc3x2b78lonqh"]
+
+[ext_resource type="Texture2D" uid="uid://bwrwbv3n4pihm" path="res://Mushroom.png" id="1_64fop"]
+[ext_resource type="Script" uid="uid://c5ld8jykbg6p4" path="res://script/enemy/mushroomenemy.gd" id="1_ry05w"]
+[ext_resource type="PackedScene" uid="uid://decyru6mnkuga" path="res://scene/游戏功能组件/hurtboxcomponent.tscn" id="2_g74f1"]
+[ext_resource type="PackedScene" uid="uid://bnactnfyipltl" path="res://scene/游戏功能组件/health_component.tscn" id="3_1vn3o"]
+[ext_resource type="PackedScene" uid="uid://c0i7tc6xpk0n8" path="res://scene/游戏功能组件/drop_component.tscn" id="4_ry05w"]
+[ext_resource type="Script" uid="uid://6viyb8hj8ocd" path="res://scene/游戏功能组件/猫头鹰掉落.gd" id="5_xhrya"]
+[ext_resource type="PackedScene" uid="uid://g6ks4dc6kpht" path="res://scene/游戏功能组件/velocity_component.tscn" id="7_xhrya"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ylara"]
+atlas = ExtResource("1_64fop")
+region = Rect2(0, 0, 1000, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4p15b"]
+atlas = ExtResource("1_64fop")
+region = Rect2(1000, 0, 1000, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wdoer"]
+atlas = ExtResource("1_64fop")
+region = Rect2(2000, 0, 1000, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g74f1"]
+atlas = ExtResource("1_64fop")
+region = Rect2(3000, 0, 1000, 600)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1vn3o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ylara")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4p15b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wdoer")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g74f1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eao75"]
+radius = 13.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rji2m"]
+radius = 17.11374
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yuaj2"]
+radius = 2.5086966
+
+[node name="mushroomenemy" type="CharacterBody2D" groups=["终极"]]
+scale = Vector2(1.6298676, 1.5427694)
+collision_layer = 40
+collision_mask = 33
+script = ExtResource("1_ry05w")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.05, 0.05)
+sprite_frames = SubResource("SpriteFrames_1vn3o")
+autoplay = "default"
+frame_progress = 0.92313284
+
+[node name="Hurtboxcomponent" parent="." node_paths=PackedStringArray("health_component") groups=["enemy"] instance=ExtResource("2_g74f1")]
+collision_layer = 4
+health_component = NodePath("../health_component")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Hurtboxcomponent"]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_eao75")
+
+[node name="对角色造成伤害的碰撞" type="CollisionShape2D" parent="." groups=["enemy"]]
+position = Vector2(0, 2.9999998)
+scale = Vector2(0.47134686, 0.4559797)
+shape = SubResource("CircleShape2D_rji2m")
+
+[node name="health_component" parent="." instance=ExtResource("3_1vn3o")]
+max_health = 500.0
+
+[node name="drop_component" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("4_ry05w")]
+script = ExtResource("5_xhrya")
+health_component = NodePath("../health_component")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+scale = Vector2(3.273428, -3.0441794)
+shape = SubResource("CircleShape2D_yuaj2")
+
+[node name="velocity_component" parent="." instance=ExtResource("7_xhrya")]
+speed = 7
+acceleration = 11.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 20.0
+autostart = true
