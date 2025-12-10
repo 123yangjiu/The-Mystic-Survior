@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dg0lowfwv0dg3"]
+[gd_scene load_steps=22 format=3 uid="uid://dg0lowfwv0dg3"]
 
 [ext_resource type="Script" uid="uid://c4rg2s1ijtbwu" path="res://script/enemy/main_enemy/骑士.gd" id="1_gpn6s"]
 [ext_resource type="PackedScene" uid="uid://decyru6mnkuga" path="res://scene/游戏功能组件/hurtboxcomponent.tscn" id="2_ij8k6"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://f15fc5ggcq0l" path="res://scene/游戏 物件/bonus_bottle.tscn" id="6_gpn6s"]
 [ext_resource type="PackedScene" uid="uid://daaqcmminiyk1" path="res://scene/游戏 物件/blood_bottle .tscn" id="7_d3vui"]
 [ext_resource type="PackedScene" uid="uid://g6ks4dc6kpht" path="res://scene/游戏功能组件/velocity_component.tscn" id="8_nduui"]
+[ext_resource type="Script" uid="uid://dw1xa58nup1q4" path="res://script/enemy/main_enemy/骑士冲刺.gd" id="9_ij8k6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vcrpj"]
 radius = 13.0
@@ -75,7 +76,11 @@ radius = 17.11374
 [sub_resource type="CircleShape2D" id="CircleShape2D_8egh0"]
 radius = 2.5086966
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_elmko"]
+radius = 57.781265
+
 [node name="骑士" type="CharacterBody2D" groups=["终极"]]
+scale = Vector2(2.9948473, 3)
 collision_layer = 40
 collision_mask = 33
 script = ExtResource("1_gpn6s")
@@ -101,7 +106,7 @@ scale = Vector2(0.47134686, 0.4559797)
 shape = SubResource("CircleShape2D_ntng8")
 
 [node name="health_component" parent="." instance=ExtResource("4_hhqmu")]
-max_health = 150.0
+max_health = 200.0
 
 [node name="drop_component" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("5_7fhkn")]
 drop_range = 3
@@ -113,5 +118,21 @@ scale = Vector2(1.9930668, 1.9930668)
 shape = SubResource("CircleShape2D_8egh0")
 
 [node name="velocity_component" parent="." instance=ExtResource("8_nduui")]
-speed = 75
+speed = 50
 acceleration = 7.0
+
+[node name="冲刺范围" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("9_ij8k6")
+
+[node name="冲刺判定" type="CollisionShape2D" parent="冲刺范围"]
+shape = SubResource("CircleShape2D_elmko")
+
+[node name="rush_duration" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="rush_interval" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true

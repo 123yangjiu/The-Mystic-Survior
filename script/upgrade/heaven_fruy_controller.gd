@@ -79,4 +79,3 @@ func on_ability_upgrade_add(upgrade:AbilityUpgrade,current_upgrade:Dictionary):
     if upgrade.ID=="解锁天堂之怒":
         print("解锁天堂之怒")
         $Timer.start()
-

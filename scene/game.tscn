@@ -70,6 +70,9 @@ position_smoothing_enabled = true
 [node name="box" parent="实体" instance=ExtResource("14_81276")]
 position = Vector2(442, 213)
 
+[node name="骑士" parent="实体" instance=ExtResource("8_0lu6w")]
+position = Vector2(57.00006, 36)
+
 [node name="前景" type="Node" parent="." groups=["前景图层"]]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

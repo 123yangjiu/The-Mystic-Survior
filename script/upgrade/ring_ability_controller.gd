@@ -56,20 +56,19 @@ func on_timer_timeoout():
     
 func on_ability_upgrade_add(upgrade:AbilityUpgrade,current_upgrade:Dictionary):
 
-	#监听所有关于剑的升级
-	print("解锁成功")
-	if upgrade.ID=="环的大速":
-		var persent_reduction=current_upgrade["环的大速"]["quantity"]*.2
-		volume = -6*persent_reduction
-		base_scale*=1.25
-		$Timer.wait_time=base_wait_time*(1-persent_reduction)
-		$Timer.start()
-		
-	if upgrade.ID=="环的伤害":
-		Damage=(Damage+3)*1.2
-		print(Damage)
-	if upgrade.ID=="解锁法环":
-		$Timer.start()
-		
-	pass	
-
+    #监听所有关于剑的升级
+    print("解锁成功")
+    if upgrade.ID=="环的大速":
+        var persent_reduction=current_upgrade["环的大速"]["quantity"]*.2
+        volume = -6*persent_reduction
+        base_scale*=1.25
+        $Timer.wait_time=base_wait_time*(1-persent_reduction)
+        $Timer.start()
+        
+    if upgrade.ID=="环的伤害":
+        Damage=(Damage+3)*1.2
+        print(Damage)
+    if upgrade.ID=="解锁法环":
+        $Timer.start()
+        
+    pass	

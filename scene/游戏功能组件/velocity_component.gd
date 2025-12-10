@@ -1,4 +1,5 @@
 extends Node
+class_name Velocity_controller
 @export var speed:int=40
 @export var acceleration:float=5
 var velocity=Vector2.ZERO

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b7m6v5bhfdkhq"]
+[gd_scene load_steps=16 format=3 uid="uid://b7m6v5bhfdkhq"]
 
 [ext_resource type="Script" uid="uid://rt8ham21rr6r" path="res://script/game.gd" id="1_4h26k"]
 [ext_resource type="PackedScene" uid="uid://8ltjdygo5nge" path="res://scene/ui/time_ui.tscn" id="3_h48kl"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://ci3fodbprfo2x" path="res://scene/ui/victoryscreen.tscn" id="10_xteuj"]
 [ext_resource type="TileSet" uid="uid://7j2lt71noofj" path="res://动画图片素材/new_tile_set.tres" id="11_hxyqj"]
 [ext_resource type="PackedScene" uid="uid://clj43eql2an1f" path="res://scene/manager/experiencemanager.tscn" id="12_41cdt"]
+[ext_resource type="PackedScene" uid="uid://dg0lowfwv0dg3" path="res://scene/enemy/骑士.tscn" id="12_ohn68"]
 [ext_resource type="PackedScene" uid="uid://buqog17qtp4og" path="res://scene/ui/experience_bar.tscn" id="13_vsqd6"]
 [ext_resource type="PackedScene" uid="uid://b6jpe6qhci3ks" path="res://scene/manager/upgrademanager.tscn" id="14_btvex"]
 [ext_resource type="PackedScene" uid="uid://b8orbduoade27" path="res://scene/player.tscn" id="15_ch78n"]
@@ -50,12 +51,14 @@ unique_name_in_owner = true
 y_sort_enabled = true
 position = Vector2(573, 242.00003)
 scale = Vector2(1, 0.9772806)
-collision_layer = 2
 MAX_speed = 115
 
 [node name="Camera2D2" type="Camera2D" parent="实体/player"]
 position = Vector2(4, 4.0929594)
 position_smoothing_enabled = true
+
+[node name="骑士" parent="实体" instance=ExtResource("12_ohn68")]
+position = Vector2(336, 249)
 
 [node name="前景" type="Node" parent="." groups=["前景图层"]]
 

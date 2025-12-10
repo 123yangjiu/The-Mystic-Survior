@@ -74,7 +74,7 @@ border_color = Color(0.24705882, 0.14901961, 0.19215687, 1)
 
 [node name="player" type="CharacterBody2D"]
 position = Vector2(0, -5)
-collision_layer = 0
+collision_layer = 2
 script = ExtResource("1_hjaqi")
 
 [node name="abilitymanager" type="Node" parent="."]
