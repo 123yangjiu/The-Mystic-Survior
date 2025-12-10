@@ -9,51 +9,51 @@ var base_scale=1#定义光剑基础大小
 var volume:=0
 
 func _ready() -> void:
-    base_wait_time=$Timer.wait_time
-    $Timer.timeout.connect(on_timer_timeoout)
-    GameEvent.ability_upgrade_add.connect(on_ability_upgrade_add)
-    
+	base_wait_time=$Timer.wait_time
+	$Timer.timeout.connect(on_timer_timeoout)
+	GameEvent.ability_upgrade_add.connect(on_ability_upgrade_add)
+	
 
 func on_timer_timeoout():
-    
-    var player=get_tree().get_first_node_in_group("player") as Player
-    var enemies= get_tree().get_nodes_in_group("enemy")
-    enemies=enemies.filter(func(enemy:Node2D):#过滤掉不在范围内的敌人
-        return enemy.global_position.distance_squared_to(player.global_position)<pow(MAX_RANGE,2)
-    
-    )
-    #get_first_node_in_group是拿到组里面的第一个节点，如果我们想要拿到player节点
-    #就要在player脚本中加入add_to_group("player")
-    enemies.sort_custom(func (a:Node2D,b:Node2D):
-        var A_distance=a.global_position.distance_squared_to(player.global_position)
-        var B_distance=b.global_position.distance_squared_to(player.global_position)
-        return A_distance< B_distance
-    
-        
-    )
-    
-    
-    var ring_instance = ring_ability.instantiate() as Ring
-    var foreground = get_tree().get_first_node_in_group("前景图层")
-    ring_instance.scale*=base_scale
+	
+	var player=get_tree().get_first_node_in_group("player") as Player
+	var enemies= get_tree().get_nodes_in_group("enemy")
+	enemies=enemies.filter(func(enemy:Node2D):#过滤掉不在范围内的敌人
+		return enemy.global_position.distance_squared_to(player.global_position)<pow(MAX_RANGE,2)
+	
+	)
+	#get_first_node_in_group是拿到组里面的第一个节点，如果我们想要拿到player节点
+	#就要在player脚本中加入add_to_group("player")
+	enemies.sort_custom(func (a:Node2D,b:Node2D):
+		var A_distance=a.global_position.distance_squared_to(player.global_position)
+		var B_distance=b.global_position.distance_squared_to(player.global_position)
+		return A_distance< B_distance
+	
+		
+	)
+	
+	
+	var ring_instance = ring_ability.instantiate() as Ring
+	var foreground = get_tree().get_first_node_in_group("前景图层")
+	ring_instance.scale*=base_scale
 
-        # ② 等节点_ready完成再赋值，避免 nil
-    foreground.add_child(ring_instance)#加入到场景中
-    audio_stream_player_2d.volume_db=volume
-    audio_stream_player_2d.play()
-    ring_instance.hitbox_component.damage =int(Damage+randf_range(-2,2))
-    if enemies.is_empty():
-        ring_instance.queue_free()
-        return
-        
-         # ③ 位置 & 朝向
-    ring_instance.global_position =player.global_position
-        
+		# ② 等节点_ready完成再赋值，避免 nil
+	foreground.add_child(ring_instance)#加入到场景中
+	audio_stream_player_2d.volume_db=volume
+	audio_stream_player_2d.play()
+	ring_instance.hitbox_component.damage =int(Damage+randf_range(-2,2))
+	if enemies.is_empty():
+		ring_instance.queue_free()
+		return
+		
+		 # ③ 位置 & 朝向
+	ring_instance.global_position =player.global_position
+		
 
 # 再拿最近的那只
-    
+	
 
-    
+	
 func on_ability_upgrade_add(upgrade:AbilityUpgrade,current_upgrade:Dictionary):
 
 	#监听所有关于剑的升级
@@ -72,4 +72,3 @@ func on_ability_upgrade_add(upgrade:AbilityUpgrade,current_upgrade:Dictionary):
 		$Timer.start()
 		
 	pass	
-
