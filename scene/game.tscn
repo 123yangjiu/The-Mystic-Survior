@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://yy0os3e5cvfu"]
+[gd_scene load_steps=28 format=3 uid="uid://yy0os3e5cvfu"]
 
 [ext_resource type="Script" uid="uid://bfg33r63hua37" path="res://scene/gameover.gd" id="1_0lu6w"]
 [ext_resource type="PackedScene" uid="uid://b8orbduoade27" path="res://scene/player.tscn" id="1_5kiuu"]
@@ -6,19 +6,26 @@
 [ext_resource type="PackedScene" uid="uid://8ltjdygo5nge" path="res://scene/ui/time_ui.tscn" id="1_xwcet"]
 [ext_resource type="PackedScene" uid="uid://co66107rpg80r" path="res://scene/ui/You_Die_Screen.tscn" id="2_i6gbm"]
 [ext_resource type="PackedScene" uid="uid://cptmnlexwivwt" path="res://scene/manager/enemyproducer.tscn" id="3_33cqm"]
+[ext_resource type="Script" uid="uid://b8kynvj5xuaby" path="res://resource/enemy/enemy.gd" id="5_ca6q5"]
 [ext_resource type="PackedScene" uid="uid://c0gjd680ncete" path="res://scene/manager/gametimemanager.tscn" id="5_p1ry8"]
+[ext_resource type="Resource" uid="uid://bxky4hcyjohvi" path="res://resource/enemy/silime.tres" id="6_yerfe"]
+[ext_resource type="Resource" uid="uid://c6o5mfp0ul3mh" path="res://resource/enemy/purple_silime.tres" id="7_abp7u"]
 [ext_resource type="PackedScene" uid="uid://buqog17qtp4og" path="res://scene/ui/experience_bar.tscn" id="7_ll5lq"]
 [ext_resource type="PackedScene" uid="uid://clj43eql2an1f" path="res://scene/manager/experiencemanager.tscn" id="7_qpk70"]
 [ext_resource type="PackedScene" uid="uid://ci3fodbprfo2x" path="res://scene/ui/victoryscreen.tscn" id="7_sng2h"]
 [ext_resource type="PackedScene" uid="uid://dg0lowfwv0dg3" path="res://scene/enemy/骑士.tscn" id="8_0lu6w"]
+[ext_resource type="Resource" uid="uid://bl6c65geij0ji" path="res://resource/enemy/邪恶鸭梨l.tres" id="8_he4o3"]
 [ext_resource type="PackedScene" uid="uid://b6jpe6qhci3ks" path="res://scene/manager/upgrademanager.tscn" id="8_ll5lq"]
+[ext_resource type="Resource" uid="uid://dcshkpdkqmlmv" path="res://resource/enemy/wolf.tres" id="9_yk3to"]
+[ext_resource type="Resource" uid="uid://ckcolpwqwrycv" path="res://resource/enemy/猫头鹰.tres" id="10_0halo"]
+[ext_resource type="Resource" uid="uid://pff6k5t7ol3j" path="res://resource/enemy/石头人.tres" id="11_8p2gu"]
 [ext_resource type="PackedScene" uid="uid://ccgl3enwp4fx2" path="res://scene/manager/enemyfiliter.tscn" id="11_ym5sv"]
+[ext_resource type="Resource" uid="uid://c02spyysuegq7" path="res://resource/enemy/box.tres" id="12_kv4hp"]
 [ext_resource type="PackedScene" uid="uid://b2fnijcvbh7hg" path="res://scene/enemy/box.tscn" id="14_81276"]
-[ext_resource type="PackedScene" uid="uid://ccmf8dg5ymjjs" path="res://scene/enemy/gorlen.tscn" id="16_abp7u"]
 [ext_resource type="AudioStream" uid="uid://d3fqo15a0me7k" path="res://动画图片素材/back_music/Groovy Moves.wav" id="16_ux4dc"]
+[ext_resource type="PackedScene" uid="uid://cc3x2b78lonqh" path="res://scene/enemy/mushroomenemy.tscn" id="17_jhlss"]
 [ext_resource type="AudioStream" uid="uid://ddda7n23il1ly" path="res://动画图片素材/back_music/Earth Turns To Our Feet.wav" id="17_jrd6n"]
 [ext_resource type="AudioStream" uid="uid://leodt70umxya" path="res://动画图片素材/back_music/Into The Battle.wav" id="18_jhlss"]
-[ext_resource type="PackedScene" uid="uid://3yghqc3xt4xt" path="res://scene/enemy/wolf.tscn" id="18_ww6yf"]
 
 [sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_ww6yf"]
 stream_count = 3
@@ -34,9 +41,10 @@ die_scene = ExtResource("2_i6gbm")
 game_time_manager = NodePath("../gametimemanager")
 
 [node name="enemyfiliter" parent="." instance=ExtResource("11_ym5sv")]
+enemy_group = Array[ExtResource("5_ca6q5")]([ExtResource("6_yerfe"), ExtResource("7_abp7u"), ExtResource("8_he4o3"), ExtResource("9_yk3to"), ExtResource("10_0halo"), ExtResource("11_8p2gu"), ExtResource("12_kv4hp")])
 
 [node name="enemymanager" parent="." instance=ExtResource("3_33cqm")]
-kill_cirle_enemy = Array[PackedScene]([ExtResource("18_ww6yf"), ExtResource("16_abp7u"), ExtResource("8_0lu6w")])
+kill_cirle_enemy = Array[PackedScene]([ExtResource("17_jhlss"), ExtResource("8_0lu6w")])
 
 [node name="gametimemanager" parent="." instance=ExtResource("5_p1ry8")]
 victory_screen = ExtResource("7_sng2h")
@@ -61,7 +69,6 @@ unique_name_in_owner = true
 y_sort_enabled = true
 position = Vector2(573, 242.00003)
 scale = Vector2(1, 0.9772806)
-collision_layer = 2
 
 [node name="Camera2D2" type="Camera2D" parent="实体/player"]
 position = Vector2(4, 4.0929594)
@@ -69,9 +76,6 @@ position_smoothing_enabled = true
 
 [node name="box" parent="实体" instance=ExtResource("14_81276")]
 position = Vector2(442, 213)
-
-[node name="骑士" parent="实体" instance=ExtResource("8_0lu6w")]
-position = Vector2(57.00006, 36)
 
 [node name="前景" type="Node" parent="." groups=["前景图层"]]
 

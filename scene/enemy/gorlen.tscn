@@ -373,7 +373,7 @@ shape = SubResource("CircleShape2D_ntng8")
 disabled = true
 
 [node name="health_component" parent="." instance=ExtResource("4_iuixe")]
-max_health = 220.0
+max_health = 150.0
 
 [node name="drop_component" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("5_qgpht")]
 script = ExtResource("6_d7sbi")

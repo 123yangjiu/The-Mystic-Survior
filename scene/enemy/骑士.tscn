@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dg0lowfwv0dg3"]
+[gd_scene load_steps=21 format=3 uid="uid://dg0lowfwv0dg3"]
 
 [ext_resource type="Script" uid="uid://c4rg2s1ijtbwu" path="res://script/enemy/main_enemy/骑士.gd" id="1_gpn6s"]
 [ext_resource type="PackedScene" uid="uid://decyru6mnkuga" path="res://scene/游戏功能组件/hurtboxcomponent.tscn" id="2_ij8k6"]
@@ -73,16 +73,13 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_ntng8"]
 radius = 17.11374
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_8egh0"]
-radius = 2.5086966
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_elmko"]
 radius = 57.781265
 
 [node name="骑士" type="CharacterBody2D" groups=["终极"]]
 scale = Vector2(2.9948473, 3)
 collision_layer = 40
-collision_mask = 33
+collision_mask = 0
 script = ExtResource("1_gpn6s")
 
 [node name="Hurtboxcomponent" parent="." node_paths=PackedStringArray("health_component") groups=["enemy"] instance=ExtResource("2_ij8k6")]
@@ -90,6 +87,7 @@ collision_layer = 4
 health_component = NodePath("../health_component")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Hurtboxcomponent"]
+visible = false
 shape = SubResource("CircleShape2D_vcrpj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["enemy"]]
@@ -101,24 +99,21 @@ autoplay = "run"
 frame_progress = 0.8870586
 
 [node name="对角色造成伤害的碰撞" type="CollisionShape2D" parent="." groups=["enemy"]]
+visible = false
 position = Vector2(-4.7683716e-07, 4.7683716e-07)
 scale = Vector2(0.47134686, 0.4559797)
 shape = SubResource("CircleShape2D_ntng8")
 
 [node name="health_component" parent="." instance=ExtResource("4_hhqmu")]
-max_health = 200.0
+max_health = 500.0
 
 [node name="drop_component" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("5_7fhkn")]
 drop_range = 3
 drop_thing = Array[PackedScene]([ExtResource("6_gpn6s"), ExtResource("7_d3vui")])
 health_component = NodePath("../health_component")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(1.9930668, 1.9930668)
-shape = SubResource("CircleShape2D_8egh0")
-
 [node name="velocity_component" parent="." instance=ExtResource("8_nduui")]
-speed = 50
+speed = 45
 acceleration = 7.0
 
 [node name="冲刺范围" type="Area2D" parent="."]
@@ -127,6 +122,7 @@ collision_mask = 2
 script = ExtResource("9_ij8k6")
 
 [node name="冲刺判定" type="CollisionShape2D" parent="冲刺范围"]
+visible = false
 shape = SubResource("CircleShape2D_elmko")
 
 [node name="rush_duration" type="Timer" parent="."]
