@@ -3,10 +3,12 @@ const MAX_RANGE=200
 @export var ring_ability:PackedScene
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
-var Damage=13#定义的伤害
+var Damage=10#定义的伤害
 var base_wait_time#定义基础冷却
 var base_scale=1#定义光剑基础大小
-var volume:=0
+var volume:=4 #声音大小
+var color_A :=255 #透明度
+var _speed_scale :=1.0#动画速度
 
 func _ready() -> void:
 	base_wait_time=$Timer.wait_time
@@ -35,11 +37,12 @@ func on_timer_timeoout():
 	
 	var ring_instance = ring_ability.instantiate() as Ring
 	var foreground = get_tree().get_first_node_in_group("前景图层")
-	ring_instance.scale*=base_scale
-
 		# ② 等节点_ready完成再赋值，避免 nil
 	foreground.add_child(ring_instance)#加入到场景中
 	audio_stream_player_2d.volume_db=volume
+	ring_instance.scale*=base_scale
+	ring_instance.modulate.a8 =color_A
+	ring_instance.animated_sprite_2d.speed_scale=_speed_scale
 	audio_stream_player_2d.play()
 	ring_instance.hitbox_component.damage =int(Damage+randf_range(-2,2))
 	if enemies.is_empty():
@@ -60,11 +63,13 @@ func on_ability_upgrade_add(upgrade:AbilityUpgrade,current_upgrade:Dictionary):
 	print("解锁成功")
 	if upgrade.ID=="环的大速":
 		var persent_reduction=current_upgrade["环的大速"]["quantity"]*.2
-		volume = -6*persent_reduction
-		base_scale*=1.25
+		volume = 4-6*persent_reduction
+		color_A = 255-persent_reduction*150
+		base_scale*=1.15
+		if persent_reduction==1:
+			_speed_scale=1.5
 		$Timer.wait_time=max(base_wait_time*(1-persent_reduction),0.1)
 		$Timer.start()
-		
 	if upgrade.ID=="环的伤害":
 		Damage=(Damage+2)*1.2
 		print(Damage)

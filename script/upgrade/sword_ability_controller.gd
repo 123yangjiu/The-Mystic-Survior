@@ -67,7 +67,7 @@ func on_ability_upgrade_add(upgrade:AbilityUpgrade,current_upgrade:Dictionary):
 			volume-=5
 		$Timer.start()
 	if upgrade.ID=="剑的伤害":
-		Damage*=1.3
+		Damage=(Damage+2)*1.3
 	if upgrade.ID=="剑的数量":
 		number+=1
 		volume-=2

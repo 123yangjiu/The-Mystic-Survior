@@ -6,13 +6,12 @@ const MAX_RANGE=150
 var Damage=25#定义天堂之怒的伤害
 var base_wait_time#定义基础冷却
 var number=2#定义基础剑的数量
-var volume:=-8
+var volume:=-5
 
 func _ready() -> void:
 	base_wait_time=$Timer.wait_time
 	$Timer.timeout.connect(on_timer_timeoout)
 	GameEvent.ability_upgrade_add.connect(on_ability_upgrade_add)
-	audio_stream_player_2d
 	
 func on_timer_timeoout():
 	var player=get_tree().get_first_node_in_group("player") as Node2D
@@ -63,19 +62,16 @@ func on_timer_timeoout():
 	
 func on_ability_upgrade_add(upgrade:AbilityUpgrade,current_upgrade:Dictionary):
 
-	print("saiuofai")
 	#监听所有关于剑的升级
 	if upgrade.ID=="更快愤怒":
 		var persent_reduction=current_upgrade["更快愤怒"]["quantity"]*.2
-		volume=-8-persent_reduction*10
-		$Timer.wait_time=max(base_wait_time*(1-persent_reduction),0.5)
+		volume=-5-persent_reduction*10
+		$Timer.wait_time=max(base_wait_time*(1-persent_reduction),0.1)
 		$Timer.start()
 	if upgrade.ID=="更强愤怒":
 		var _persent_improvement=current_upgrade["更强愤怒"]["quantity"]*.25
 		Damage*=1.25
-		print(Damage)
 	if upgrade.ID=="更多愤怒":
 		number+=2
 	if upgrade.ID=="解锁天堂之怒":
-		print("解锁天堂之怒")
 		$Timer.start()

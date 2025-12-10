@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c8gdrjifusycy" path="res://script/upgrade/fireball_controller.gd" id="1_dvaxo"]
 [ext_resource type="PackedScene" uid="uid://cbdxmcmld8om5" path="res://scene/ability/fireball_ability/fireball.tscn" id="2_de04s"]
-[ext_resource type="AudioStream" uid="uid://yh1hulyaxdck" path="res://scene/ability/fireball_ability/MAGSpel_CAST-Appear Firewall_HY_PC-001.wav" id="3_157to"]
+[ext_resource type="AudioStream" uid="uid://e2v05r1ognvx" path="res://scene/ability/fireball_ability/火球2.WAV" id="3_157to"]
 
 [node name="Fireball_controller" type="Node"]
 script = ExtResource("1_dvaxo")
@@ -13,4 +13,5 @@ wait_time = 1.5
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_157to")
-pitch_scale = 2.0
+volume_db = 5.0
+pitch_scale = 1.5

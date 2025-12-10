@@ -5,6 +5,8 @@ var can_chose_pool:Array[AbilityUpgrade]=[]#目前可供选择的池子
 @export var upgrade_screen_scene:PackedScene
 var upgrade_list: Array[AbilityUpgrade]#把抽中的三个能力放到一个列表中
 var current_upgrade={}#一个字典存放当前所有的能力buff
+var mystrious_pool:Array[AbilityUpgrade]=[]#放置已被选完4次的能力，给予很低的概率获取第5次
+var mystrious_probality:=0.008
 func _ready():
 	experience_manager.level_up.connect(on_level_up)
 	can_chose_pool=[upgrade_pool[0],upgrade_pool[1],upgrade_pool[2]
@@ -13,14 +15,22 @@ func _ready():
 func on_level_up(_current_level:int):#升级时展示卡片
 	upgrade_list.clear() 
 	while upgrade_list.size()<3:
-		var chosen_upgrade=can_chose_pool.pick_random() as AbilityUpgrade#升级选项是从
-		#升级选项池子中随机抽取一个
-		if not chosen_upgrade in upgrade_list:
-			upgrade_list.append(chosen_upgrade)
-		
-		#转换成数组属性Array[AbillityUpgrade]
-		if chosen_upgrade==null:
-			return
+		if randf()<=mystrious_probality and mystrious_pool.size() !=0:
+			var chosen_upgrade=mystrious_pool.pick_random()
+			if not chosen_upgrade in upgrade_list:
+				upgrade_list.append(chosen_upgrade)
+			#转换成数组属性Array[AbillityUpgrade]
+			if chosen_upgrade==null:
+				return
+		else:
+			var chosen_upgrade=can_chose_pool.pick_random() as AbilityUpgrade#升级选项是从
+			#升级选项池子中随机抽取一个
+			if not chosen_upgrade in upgrade_list:
+				upgrade_list.append(chosen_upgrade)
+			
+			#转换成数组属性Array[AbillityUpgrade]
+			if chosen_upgrade==null:
+				return
 	var  upgrade_screen_instance=upgrade_screen_scene.instantiate()
 	add_child(upgrade_screen_instance)#把显示屏幕场景的实例加到节点树上
 	upgrade_screen_instance.Set_Ability_Upgrade(upgrade_list)#升级选项显示屏显示卡片
@@ -39,10 +49,15 @@ func add_upgrade(upgrade:AbilityUpgrade):#这个字典控制已经有的能力
 			"quantity":1   #如果之前没有选过这种能力那把他加入字典
 		}
 	else:
-		if current_upgrade[upgrade.ID]["quantity"]>1:#每种能力最多3次
+		if current_upgrade[upgrade.ID]["quantity"]>2:#每种能力最多3次
+			for Upgrade in mystrious_pool:
+				if Upgrade.ID==upgrade.ID:
+					if !upgrade.ID=="火球力速":
+						mystrious_pool.erase(Upgrade)
 			for Upgrade in can_chose_pool:
 				if Upgrade.ID==upgrade.ID:
 					can_chose_pool.erase(Upgrade)
+					mystrious_pool.append(Upgrade)
 					print("已经删除",Upgrade.ID,"当前次数",current_upgrade[upgrade.ID]["quantity"])
 					break
 		current_upgrade[upgrade.ID]["quantity"]+=1#如果已经选过了就实现叠加把这个buff的数量加1

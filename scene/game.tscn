@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://yy0os3e5cvfu"]
+[gd_scene load_steps=24 format=3 uid="uid://yy0os3e5cvfu"]
 
 [ext_resource type="Script" uid="uid://bfg33r63hua37" path="res://scene/gameover.gd" id="1_0lu6w"]
 [ext_resource type="PackedScene" uid="uid://b8orbduoade27" path="res://scene/player.tscn" id="1_5kiuu"]
@@ -12,19 +12,17 @@
 [ext_resource type="PackedScene" uid="uid://ci3fodbprfo2x" path="res://scene/ui/victoryscreen.tscn" id="7_sng2h"]
 [ext_resource type="PackedScene" uid="uid://dg0lowfwv0dg3" path="res://scene/enemy/骑士.tscn" id="8_0lu6w"]
 [ext_resource type="PackedScene" uid="uid://b6jpe6qhci3ks" path="res://scene/manager/upgrademanager.tscn" id="8_ll5lq"]
+[ext_resource type="PackedScene" uid="uid://dup0ew61sv1b8" path="res://scene/enemy/puple_silime.tscn" id="9_pp3pk"]
 [ext_resource type="PackedScene" uid="uid://ccgl3enwp4fx2" path="res://scene/manager/enemyfiliter.tscn" id="11_ym5sv"]
 [ext_resource type="PackedScene" uid="uid://b2fnijcvbh7hg" path="res://scene/enemy/box.tscn" id="14_81276"]
 [ext_resource type="PackedScene" uid="uid://ccmf8dg5ymjjs" path="res://scene/enemy/gorlen.tscn" id="16_abp7u"]
 [ext_resource type="AudioStream" uid="uid://d3fqo15a0me7k" path="res://动画图片素材/back_music/Groovy Moves.wav" id="16_ux4dc"]
+[ext_resource type="Script" uid="uid://cbv3aa54oasir" path="res://script/manager/musicmanager.gd" id="17_i6gbm"]
 [ext_resource type="AudioStream" uid="uid://ddda7n23il1ly" path="res://动画图片素材/back_music/Earth Turns To Our Feet.wav" id="17_jrd6n"]
-[ext_resource type="AudioStream" uid="uid://leodt70umxya" path="res://动画图片素材/back_music/Into The Battle.wav" id="18_jhlss"]
+[ext_resource type="AudioStream" uid="uid://c5uulbfvf0wpc" path="res://动画图片素材/back_music/Brand New.wav" id="18_jhlss"]
 [ext_resource type="PackedScene" uid="uid://3yghqc3xt4xt" path="res://scene/enemy/wolf.tscn" id="18_ww6yf"]
-
-[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_ww6yf"]
-stream_count = 3
-stream_0 = ExtResource("16_ux4dc")
-stream_1 = ExtResource("17_jrd6n")
-stream_2 = ExtResource("18_jhlss")
+[ext_resource type="AudioStream" uid="uid://ndho2y6dc21m" path="res://动画图片素材/back_music/Ariadne's Thread.wav" id="21_ww6yf"]
+[ext_resource type="AudioStream" uid="uid://leodt70umxya" path="res://动画图片素材/back_music/Into The Battle.wav" id="22_1it6f"]
 
 [node name="game" type="Node2D"]
 script = ExtResource("1_0lu6w")
@@ -36,7 +34,7 @@ game_time_manager = NodePath("../gametimemanager")
 [node name="enemyfiliter" parent="." instance=ExtResource("11_ym5sv")]
 
 [node name="enemymanager" parent="." instance=ExtResource("3_33cqm")]
-kill_cirle_enemy = Array[PackedScene]([ExtResource("18_ww6yf"), ExtResource("16_abp7u"), ExtResource("8_0lu6w")])
+kill_cirle_enemy = Array[PackedScene]([ExtResource("18_ww6yf"), ExtResource("16_abp7u"), ExtResource("8_0lu6w"), ExtResource("9_pp3pk")])
 
 [node name="gametimemanager" parent="." instance=ExtResource("5_p1ry8")]
 victory_screen = ExtResource("7_sng2h")
@@ -72,6 +70,28 @@ position = Vector2(442, 213)
 
 [node name="前景" type="Node" parent="." groups=["前景图层"]]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = SubResource("AudioStreamPlaylist_ww6yf")
-autoplay = true
+[node name="Music" type="Node" parent="."]
+process_mode = 3
+script = ExtResource("17_i6gbm")
+
+[node name="Maintheme" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource("18_jhlss")
+volume_db = -5.0
+
+[node name="TheFirst" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource("16_ux4dc")
+volume_db = -5.0
+
+[node name="WIthWolf" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource("17_jrd6n")
+volume_db = -8.0
+
+[node name="WIthGorlen" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource("21_ww6yf")
+volume_db = -5.0
+
+[node name="TheFinal" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource("22_1it6f")
+volume_db = -5.0
+
+[connection signal="finished" from="Music/WIthGorlen" to="Music" method="_on_w_ith_gorlen_finished"]

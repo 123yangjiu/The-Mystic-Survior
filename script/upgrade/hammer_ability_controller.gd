@@ -5,7 +5,7 @@ const MAX_RANGE=200
 var Damage=30#定义的伤害
 var base_wait_time#定义基础冷却
 var base_scale=1#定义光剑基础大小
-var volume :=0
+var volume :=-2
 
 func _ready() -> void:
 	base_wait_time=$Timer.wait_time
@@ -60,8 +60,8 @@ func on_ability_upgrade_add(upgrade:AbilityUpgrade,current_upgrade:Dictionary):
 	print("解锁成功")
 	if upgrade.ID=="光的速度":
 		var persent_reduction=current_upgrade["光的速度"]["quantity"]*.2
-		$Timer.wait_time=base_wait_time*(1-persent_reduction)
-		volume =-10*persent_reduction
+		$Timer.wait_time=max(base_wait_time*(1-persent_reduction),0.1)
+		volume =-2-6*persent_reduction
 		$Timer.start()
 	if upgrade.ID=="光的力量":
 		Damage*=1.2

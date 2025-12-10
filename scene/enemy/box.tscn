@@ -83,7 +83,7 @@ scale = Vector2(0.47134686, 0.4559797)
 shape = SubResource("CircleShape2D_ntng8")
 
 [node name="health_component" parent="." instance=ExtResource("4_bpx8c")]
-max_health = 150.0
+max_health = 200.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_8egh0")

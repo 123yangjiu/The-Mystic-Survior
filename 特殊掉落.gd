@@ -7,7 +7,7 @@ extends Node
 var random_R=randf_range(100,150)
 var bonus_drop
 func _ready() -> void:
-	health_component .died.connect(on_died)
+	health_component.died.connect(on_died)
 func on_died():
 	var bonus_botlle:=0
 	for i in range(5):
