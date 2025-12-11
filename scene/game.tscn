@@ -29,7 +29,7 @@
 [ext_resource type="AudioStream" uid="uid://d3fqo15a0me7k" path="res://动画图片素材/back_music/Groovy Moves.wav" id="19_pp3pk"]
 [ext_resource type="AudioStream" uid="uid://ddda7n23il1ly" path="res://动画图片素材/back_music/Earth Turns To Our Feet.wav" id="20_b8t8i"]
 [ext_resource type="AudioStream" uid="uid://ndho2y6dc21m" path="res://动画图片素材/back_music/Ariadne's Thread.wav" id="21_355h4"]
-[ext_resource type="AudioStream" uid="uid://bkt1tfijctn8m" path="res://动画图片素材/back_music/Show Them All.ogg" id="23_355h4"]
+[ext_resource type="AudioStream" uid="uid://bdo817fx5or0" path="res://动画图片素材/back_music/Neon Skyscrapers.ogg" id="26_ca6q5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yk3to"]
 texture = ExtResource("2_abp7u")
@@ -420,5 +420,5 @@ stream = ExtResource("21_355h4")
 volume_db = 2.0
 
 [node name="TheFinal" type="AudioStreamPlayer" parent="MusicManager"]
-stream = ExtResource("23_355h4")
+stream = ExtResource("26_ca6q5")
 volume_db = 3.0
