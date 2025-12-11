@@ -60,7 +60,7 @@ func on_ability_upgrade_add(upgrade:AbilityUpgrade,current_upgrade:Dictionary):
 	print("解锁成功")
 	if upgrade.ID=="光的速度":
 		var persent_reduction=current_upgrade["光的速度"]["quantity"]*.2
-		$Timer.wait_time=max(base_wait_time*(1-persent_reduction),0.1)
+		$Timer.wait_time=max(base_wait_time*(1-persent_reduction),1.15)
 		volume =-2-6*persent_reduction
 		$Timer.start()
 	if upgrade.ID=="光的力量":

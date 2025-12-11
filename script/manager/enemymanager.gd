@@ -27,26 +27,26 @@ func on_more_difficulty(difficulty:int):
 	var player=get_tree().get_first_node_in_group("player")
 	$Timer.wait_time = (max(min_gap, base_time_gap * exp(-decay * difficulty)))*1.15
 	if difficulty==3:
-		for i in 15:
-			var kill_enemy = kill_cirle_enemy[3].instantiate() as Node2D
+		for i in 40:
+			var kill_enemy = kill_cirle_enemy[0].instantiate() as Node2D
 			entities_Layer.add_child(kill_enemy)
-			var angle := TAU * i / 200.0
+			var angle := TAU * i / 30
 			# 2. 半径加 ±10% 随机，避免太机械
-			var radius := float(rand_R) * randf_range(0.9, 1.1)
+			var radius := float(rand_R-50) * randf_range(0.9, 1.1)
 			# 3. 最终位置
 			kill_enemy.global_position = player.global_position + Vector2.RIGHT.rotated(angle) * radius
 	if difficulty==5:
-		for i in 2:
-			var kill_enemy = kill_cirle_enemy[1].instantiate() as Node2D
+		for i in 3:
+			var kill_enemy = kill_cirle_enemy[2].instantiate() as Node2D
 			entities_Layer.add_child(kill_enemy)
-			var angle := TAU * i / 1
+			var angle := TAU * i / 3
 			# 2. 半径加 ±10% 随机，避免太机械
 			var radius := float(rand_R) * randf_range(0.9, 1.1)
 			# 3. 最终位置
 			kill_enemy.global_position = player.global_position + Vector2.RIGHT.rotated(angle) * radius
 	if difficulty==8:
 		for i in 20:
-			var kill_enemy = kill_cirle_enemy[0].instantiate() as Node2D
+			var kill_enemy = kill_cirle_enemy[1].instantiate() as Node2D
 			entities_Layer.add_child(kill_enemy)
 			var angle := TAU * i / 20.0
 			# 2. 半径加 ±10% 随机，避免太机械
@@ -54,17 +54,17 @@ func on_more_difficulty(difficulty:int):
 			# 3. 最终位置
 			kill_enemy.global_position = player.global_position + Vector2.RIGHT.rotated(angle) * radius
 	if  difficulty==12:
-		for i in 15:
-			var kill_enemy = kill_cirle_enemy[1].instantiate() as Node2D
+		for i in 60:
+			var kill_enemy = kill_cirle_enemy[0].instantiate() as Node2D
 			entities_Layer.add_child(kill_enemy)
-			var angle := TAU * i / 15
+			var angle := TAU * i / 30
 			# 2. 半径加 ±10% 随机，避免太机械
 			var radius := float(rand_R) * randf_range(0.9, 1.1)
 			# 3. 最终位置
 			kill_enemy.global_position = player.global_position + Vector2.RIGHT.rotated(angle) * radius 
 	if  difficulty==14:
-		for i in 10:
-			var kill_enemy = kill_cirle_enemy[0].instantiate() as Node2D
+		for i in 15:
+			var kill_enemy = kill_cirle_enemy[1].instantiate() as Node2D
 			entities_Layer.add_child(kill_enemy)
 			var angle := TAU * i / 10
 			# 2. 半径加 ±10% 随机，避免太机械
@@ -72,7 +72,7 @@ func on_more_difficulty(difficulty:int):
 			# 3. 最终位置
 			kill_enemy.global_position = player.global_position + Vector2.RIGHT.rotated(angle) * radius 
 		for i in 15:
-			var kill_enemy = kill_cirle_enemy[1].instantiate() as Node2D
+			var kill_enemy = kill_cirle_enemy[2].instantiate() as Node2D
 			entities_Layer.add_child(kill_enemy)
 			var angle := TAU * i / 15
 			# 2. 半径加 ±10% 随机，避免太机械
@@ -80,10 +80,10 @@ func on_more_difficulty(difficulty:int):
 			# 3. 最终位置
 			kill_enemy.global_position = player.global_position + Vector2.RIGHT.rotated(angle) * radius 			
 	if  difficulty==16:
-		for i in 20:
-			var kill_enemy = kill_cirle_enemy[2].instantiate() as Node2D
+		for i in 8:
+			var kill_enemy = kill_cirle_enemy[3].instantiate() as Node2D
 			entities_Layer.add_child(kill_enemy)
-			var angle := TAU * i / 20.0
+			var angle := TAU * i / 8
 			# 2. 半径加 ±10% 随机，避免太机械
 			var radius := float(rand_R) * randf_range(0.9, 1.1)
 			# 3. 最终位置

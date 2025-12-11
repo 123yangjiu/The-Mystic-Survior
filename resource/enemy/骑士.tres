@@ -7,4 +7,4 @@
 script = ExtResource("2_6stlx")
 scene = ExtResource("1_wo67c")
 unlock_difficulty = 14
-weight = 15.0
+weight = 2.5

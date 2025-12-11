@@ -1,9 +1,10 @@
 class_name MusicManager
 extends Node
-@onready var maintheme: AudioStreamPlayer = $Maintheme
+
+@onready var main_theme: AudioStreamPlayer = $MainTheme
 @onready var the_first: AudioStreamPlayer = $TheFirst
-@onready var w_ith_wolf: AudioStreamPlayer = $WIthWolf
-@onready var w_ith_gorlen: AudioStreamPlayer = $WIthGorlen
+@onready var with_wolf: AudioStreamPlayer = $WithWolf
+@onready var with_gorlen: AudioStreamPlayer = $WithGorlen
 @onready var the_final: AudioStreamPlayer = $TheFinal
 
 
@@ -15,11 +16,15 @@ func _ready() -> void:
 func on_more_difficulty(difficulty := 0)->void:
 	match difficulty:
 		6:
-			w_ith_wolf.play()
+			with_wolf.play()
 		11:
-			await w_ith_wolf.finished
-			w_ith_gorlen.play()
-			
+			if with_wolf.playing:
+				await with_wolf.finished
+			with_gorlen.play()
+		15:
+			if with_gorlen.playing:
+				await with_gorlen.finished
+			the_final.play()
 
 func on_the_first_damage()->void:
 	the_first.play()

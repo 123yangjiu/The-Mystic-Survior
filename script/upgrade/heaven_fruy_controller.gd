@@ -67,7 +67,7 @@ func on_ability_upgrade_add(upgrade:AbilityUpgrade,current_upgrade:Dictionary):
 	if upgrade.ID=="更快愤怒":
 		var persent_reduction=current_upgrade["更快愤怒"]["quantity"]*.2
 		volume=-5-persent_reduction*10
-		$Timer.wait_time=max(base_wait_time*(1-persent_reduction),0.1)
+		$Timer.wait_time=max(base_wait_time*(1-persent_reduction),0.2)
 		$Timer.start()
 	if upgrade.ID=="更强愤怒":
 		var _persent_improvement=current_upgrade["更强愤怒"]["quantity"]*.25
@@ -76,4 +76,3 @@ func on_ability_upgrade_add(upgrade:AbilityUpgrade,current_upgrade:Dictionary):
 		number+=2
 	if upgrade.ID=="解锁天堂之怒":
 		$Timer.start()
-

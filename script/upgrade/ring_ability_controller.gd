@@ -69,7 +69,7 @@ func on_ability_upgrade_add(upgrade:AbilityUpgrade,current_upgrade:Dictionary):
 		base_scale*=1.15
 		if persent_reduction==1:
 			_speed_scale=1.5
-		$Timer.wait_time=max(base_wait_time*(1-persent_reduction),0.1)
+		$Timer.wait_time=max(base_wait_time*(1-persent_reduction),0.8)
 		$Timer.start()
 	if upgrade.ID=="环的伤害":
 		Damage=(Damage+2)*1.2
