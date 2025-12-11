@@ -3,7 +3,7 @@ const MAX_RANGE=200
 @export var ring_ability:PackedScene
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
-var Damage=10#定义的伤害
+var Damage=11#定义的伤害
 var base_wait_time#定义基础冷却
 var base_scale=1#定义光剑基础大小
 var volume:=4 #声音大小

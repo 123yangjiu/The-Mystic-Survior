@@ -2,7 +2,7 @@ extends  Node
 const MAX_RANGE=250
 @export var fireball:PackedScene
 
-var Damage=17#定义火球的伤害
+var Damage=18#定义火球的伤害
 var base_wait_time#定义基础冷却
 var number=1#火球数量
 var speed=0.05#火球的速度
@@ -77,7 +77,7 @@ func on_ability_upgrade_add(upgrade:AbilityUpgrade,current_upgrade:Dictionary):
         amout+=2
         ball_size +=0.2
     if upgrade.ID=="火球力速":
-        Damage*=1.15
+        Damage*=1.2
         var persent_reduction=current_upgrade["火球力速"]["quantity"]*.15
         volume =-persent_reduction*6
         $Timer.wait_time=base_wait_time*max((1-persent_reduction),0.1)

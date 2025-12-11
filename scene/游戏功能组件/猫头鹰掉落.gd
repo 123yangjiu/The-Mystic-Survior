@@ -19,7 +19,7 @@ func on_died():
         if randf()<drop_blood_persent:
             var blood_thing_instance=drop_thing[1].instantiate() as Node2D
             call_deferred("add_bottle",entities_Layer,spawn_position,blood_thing_instance)
-        if randf()<0.08:
+        if randf()<0.05:
             var bonus_thing_instance=drop_thing[2].instantiate() as Node2D
             call_deferred("add_bottle",entities_Layer,spawn_position,bonus_thing_instance)
 

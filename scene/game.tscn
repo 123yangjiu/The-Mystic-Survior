@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://yy0os3e5cvfu"]
+[gd_scene load_steps=19 format=3 uid="uid://yy0os3e5cvfu"]
 
 [ext_resource type="Script" uid="uid://rt8ham21rr6r" path="res://script/game.gd" id="1_ve786"]
 [ext_resource type="PackedScene" uid="uid://8ltjdygo5nge" path="res://scene/ui/time_ui.tscn" id="2_0lu6w"]
@@ -6,15 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://cptmnlexwivwt" path="res://scene/manager/enemyproducer.tscn" id="4_ux4dc"]
 [ext_resource type="PackedScene" uid="uid://c0gjd680ncete" path="res://scene/manager/gametimemanager.tscn" id="5_jrd6n"]
 [ext_resource type="PackedScene" uid="uid://ci3fodbprfo2x" path="res://scene/ui/victoryscreen.tscn" id="6_jhlss"]
-[ext_resource type="PackedScene" uid="uid://cc3x2b78lonqh" path="res://scene/enemy/mushroomenemy.tscn" id="6_pp3pk"]
-[ext_resource type="PackedScene" uid="uid://3yghqc3xt4xt" path="res://scene/enemy/wolf.tscn" id="6_ux4dc"]
-[ext_resource type="PackedScene" uid="uid://ccmf8dg5ymjjs" path="res://scene/enemy/gorlen.tscn" id="7_jrd6n"]
 [ext_resource type="TileSet" uid="uid://7j2lt71noofj" path="res://动画图片素材/new_tile_set.tres" id="7_ww6yf"]
 [ext_resource type="PackedScene" uid="uid://clj43eql2an1f" path="res://scene/manager/experiencemanager.tscn" id="8_1it6f"]
 [ext_resource type="PackedScene" uid="uid://buqog17qtp4og" path="res://scene/ui/experience_bar.tscn" id="9_pp3pk"]
 [ext_resource type="PackedScene" uid="uid://b6jpe6qhci3ks" path="res://scene/manager/upgrademanager.tscn" id="10_b8t8i"]
 [ext_resource type="PackedScene" uid="uid://b8orbduoade27" path="res://scene/player.tscn" id="11_355h4"]
-[ext_resource type="PackedScene" uid="uid://dg0lowfwv0dg3" path="res://scene/enemy/骑士.tscn" id="12_ca6q5"]
 [ext_resource type="PackedScene" uid="uid://b2fnijcvbh7hg" path="res://scene/enemy/box.tscn" id="13_5g16k"]
 [ext_resource type="Script" uid="uid://cbv3aa54oasir" path="res://script/manager/musicmanager.gd" id="18_1it6f"]
 [ext_resource type="AudioStream" uid="uid://c5uulbfvf0wpc" path="res://动画图片素材/back_music/Brand New.wav" id="19_b8t8i"]
@@ -32,7 +28,6 @@ game_time_manager = NodePath("../gametimemanager")
 [node name="enemyfiliter" parent="." instance=ExtResource("3_i6gbm")]
 
 [node name="enemymanager" parent="." instance=ExtResource("4_ux4dc")]
-kill_cirle_enemy = Array[PackedScene]([ExtResource("6_pp3pk"), ExtResource("6_ux4dc"), ExtResource("7_jrd6n"), ExtResource("12_ca6q5")])
 
 [node name="gametimemanager" parent="." instance=ExtResource("5_jrd6n")]
 victory_screen = ExtResource("6_jhlss")

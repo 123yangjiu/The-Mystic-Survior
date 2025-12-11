@@ -74,5 +74,3 @@ func on_ability_upgrade_add(upgrade:AbilityUpgrade,current_upgrade:Dictionary):
         #print("解锁战锤")
         
     #pass	
-
-
