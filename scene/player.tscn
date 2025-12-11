@@ -1,7 +1,8 @@
-[gd_scene load_steps=21 format=3 uid="uid://b8orbduoade27"]
+[gd_scene load_steps=22 format=3 uid="uid://b8orbduoade27"]
 
 [ext_resource type="Script" uid="uid://cftr1t220lj12" path="res://script/player.gd" id="1_hjaqi"]
 [ext_resource type="PackedScene" uid="uid://b0v42bl82qnrr" path="res://scene/ability/sword_ability/sword_ability_controller.tscn" id="2_fvtld"]
+[ext_resource type="PackedScene" uid="uid://co66107rpg80r" path="res://scene/ui/You_Die_Screen.tscn" id="2_ihjo1"]
 [ext_resource type="PackedScene" uid="uid://bnactnfyipltl" path="res://scene/游戏功能组件/health_component.tscn" id="3_ct4mp"]
 [ext_resource type="PackedScene" uid="uid://clk86unthnvj5" path="res://scene/ability/fireball_ability/fireball_controller.tscn" id="4_oh5ij"]
 [ext_resource type="PackedScene" uid="uid://lae6sogmc22b" path="res://scene/ability/holy_light_ability/light_ability_controller.tscn" id="5_g2vtq"]
@@ -76,6 +77,7 @@ border_color = Color(0.24705882, 0.14901961, 0.19215687, 1)
 position = Vector2(0, -5)
 collision_layer = 2
 script = ExtResource("1_hjaqi")
+died_screen = ExtResource("2_ihjo1")
 
 [node name="abilitymanager" type="Node" parent="."]
 

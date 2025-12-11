@@ -7,9 +7,8 @@ func tween_collect(persent:float,start_position:Vector2):
     global_position=start_position.lerp(player.global_position,persent)
     pass
 func collect():
-
-	GameEvent.emit_increase_experience(35)
-	queue_free()
+    GameEvent.emit_increase_experience(35)
+    queue_free()
 
 
 func on_area_entered(_other_area:Area2D):
