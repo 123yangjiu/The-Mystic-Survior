@@ -56,6 +56,7 @@ func on_timer_timeoout():
 
     
 func on_ability_upgrade_add(upgrade:AbilityUpgrade,current_upgrade:Dictionary):
+
     #监听所有关于剑的升级
     print("解锁成功")
     if upgrade.ID=="光的速度":
@@ -73,3 +74,5 @@ func on_ability_upgrade_add(upgrade:AbilityUpgrade,current_upgrade:Dictionary):
         #print("解锁战锤")
         
     #pass	
+
+

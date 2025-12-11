@@ -59,6 +59,7 @@ func on_timer_timeoout():
 
     
 func on_ability_upgrade_add(upgrade:AbilityUpgrade,current_upgrade:Dictionary):
+
     #监听所有关于剑的升级
     if upgrade.ID=="剑的速度":
         var persent_reduction=current_upgrade["剑的速度"]["quantity"]*.2
@@ -74,3 +75,4 @@ func on_ability_upgrade_add(upgrade:AbilityUpgrade,current_upgrade:Dictionary):
     pass	
     
     
+

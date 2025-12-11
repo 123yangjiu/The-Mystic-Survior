@@ -14,6 +14,7 @@ func _ready() -> void:
     GameEvent.the_first_damage.connect(on_the_first_damage)
 
 func on_more_difficulty(difficulty := 0)->void:
+
     match difficulty:
         6:
             with_wolf.play()
@@ -25,6 +26,7 @@ func on_more_difficulty(difficulty := 0)->void:
             if with_gorlen.playing:
                 await with_gorlen.finished
             the_final.play()
+
 
 func on_the_first_damage()->void:
     the_first.play()

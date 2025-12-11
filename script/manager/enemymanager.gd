@@ -22,6 +22,7 @@ func on_time_out():
     entities_Layer.add_child(enemy)
     enemy.global_position=spawn_position
 func on_more_difficulty(difficulty:int):
+
     #print(difficulty)
     var entities_Layer=get_tree().get_first_node_in_group("实体图层")
     var player=get_tree().get_first_node_in_group("player")

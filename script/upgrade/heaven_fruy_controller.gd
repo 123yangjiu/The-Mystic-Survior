@@ -63,6 +63,7 @@ func on_timer_timeoout():
 func on_ability_upgrade_add(upgrade:AbilityUpgrade,current_upgrade:Dictionary):
 
 
+
     
     if upgrade.ID=="更快愤怒":
         var persent_reduction=current_upgrade["更快愤怒"]["quantity"]*.2
