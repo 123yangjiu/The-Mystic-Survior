@@ -1,10 +1,41 @@
-[gd_scene load_steps=2 format=3 uid="uid://ci3fodbprfo2x"]
+[gd_scene load_steps=4 format=3 uid="uid://ci3fodbprfo2x"]
 
 [ext_resource type="Script" uid="uid://dhi6irssr0s2a" path="res://script/文本及ui显示/victoryscreen.gd" id="1_73tji"]
+[ext_resource type="Texture2D" uid="uid://bpsdycqrk75ie" path="res://动画图片素材/UI/旗帜.png" id="2_03008"]
+[ext_resource type="Texture2D" uid="uid://b23tspapu85q2" path="res://动画图片素材/UI/Victory.png" id="2_k8l7b"]
 
 [node name="Victoryscreen" type="CanvasLayer"]
 process_mode = 3
 script = ExtResource("1_73tji")
+
+[node name="Qizi" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Qizi"]
+position = Vector2(424, 150)
+texture = ExtResource("2_03008")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Qizi"]
+position = Vector2(424, 165)
+texture = ExtResource("2_03008")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Qizi"]
+position = Vector2(424, 180)
+texture = ExtResource("2_03008")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Qizi"]
+position = Vector2(216, 150)
+scale = Vector2(-1, 1)
+texture = ExtResource("2_03008")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Qizi"]
+position = Vector2(216, 165)
+scale = Vector2(-1, 1)
+texture = ExtResource("2_03008")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Qizi"]
+position = Vector2(216, 180)
+scale = Vector2(-1, 1)
+texture = ExtResource("2_03008")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
@@ -14,9 +45,14 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+texture = ExtResource("2_k8l7b")
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer"]
 custom_minimum_size = Vector2(200, 0)
@@ -32,15 +68,18 @@ layout_mode = 2
 [node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
-text = "VICTORY"
 horizontal_alignment = 1
 
 [node name="restart" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+localize_numeral_system = false
 text = "重新开始"
 
 [node name="quit" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 4
 text = "离开"
