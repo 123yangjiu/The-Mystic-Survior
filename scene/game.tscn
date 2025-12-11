@@ -1,16 +1,24 @@
-[gd_scene load_steps=19 format=3 uid="uid://yy0os3e5cvfu"]
+[gd_scene load_steps=27 format=3 uid="uid://yy0os3e5cvfu"]
 
 [ext_resource type="Script" uid="uid://rt8ham21rr6r" path="res://script/game.gd" id="1_ve786"]
 [ext_resource type="PackedScene" uid="uid://8ltjdygo5nge" path="res://scene/ui/time_ui.tscn" id="2_0lu6w"]
 [ext_resource type="PackedScene" uid="uid://ccgl3enwp4fx2" path="res://scene/manager/enemyfiliter.tscn" id="3_i6gbm"]
+[ext_resource type="Script" uid="uid://b8kynvj5xuaby" path="res://resource/enemy/enemy.gd" id="4_ca6q5"]
 [ext_resource type="PackedScene" uid="uid://cptmnlexwivwt" path="res://scene/manager/enemyproducer.tscn" id="4_ux4dc"]
 [ext_resource type="PackedScene" uid="uid://c0gjd680ncete" path="res://scene/manager/gametimemanager.tscn" id="5_jrd6n"]
+[ext_resource type="Resource" uid="uid://bxky4hcyjohvi" path="res://resource/enemy/silime.tres" id="5_yerfe"]
+[ext_resource type="Resource" uid="uid://c6o5mfp0ul3mh" path="res://resource/enemy/purple_silime.tres" id="6_abp7u"]
 [ext_resource type="PackedScene" uid="uid://ci3fodbprfo2x" path="res://scene/ui/victoryscreen.tscn" id="6_jhlss"]
+[ext_resource type="Resource" uid="uid://bl6c65geij0ji" path="res://resource/enemy/邪恶鸭梨l.tres" id="7_he4o3"]
 [ext_resource type="TileSet" uid="uid://7j2lt71noofj" path="res://动画图片素材/new_tile_set.tres" id="7_ww6yf"]
 [ext_resource type="PackedScene" uid="uid://clj43eql2an1f" path="res://scene/manager/experiencemanager.tscn" id="8_1it6f"]
+[ext_resource type="Resource" uid="uid://dcshkpdkqmlmv" path="res://resource/enemy/wolf.tres" id="8_yk3to"]
+[ext_resource type="Resource" uid="uid://ckcolpwqwrycv" path="res://resource/enemy/猫头鹰.tres" id="9_0halo"]
 [ext_resource type="PackedScene" uid="uid://buqog17qtp4og" path="res://scene/ui/experience_bar.tscn" id="9_pp3pk"]
+[ext_resource type="Resource" uid="uid://pff6k5t7ol3j" path="res://resource/enemy/石头人.tres" id="10_8p2gu"]
 [ext_resource type="PackedScene" uid="uid://b6jpe6qhci3ks" path="res://scene/manager/upgrademanager.tscn" id="10_b8t8i"]
 [ext_resource type="PackedScene" uid="uid://b8orbduoade27" path="res://scene/player.tscn" id="11_355h4"]
+[ext_resource type="Resource" uid="uid://c02spyysuegq7" path="res://resource/enemy/box.tres" id="11_kv4hp"]
 [ext_resource type="PackedScene" uid="uid://b2fnijcvbh7hg" path="res://scene/enemy/box.tscn" id="13_5g16k"]
 [ext_resource type="Script" uid="uid://cbv3aa54oasir" path="res://script/manager/musicmanager.gd" id="18_1it6f"]
 [ext_resource type="AudioStream" uid="uid://c5uulbfvf0wpc" path="res://动画图片素材/back_music/Brand New.wav" id="19_b8t8i"]
@@ -26,6 +34,7 @@ script = ExtResource("1_ve786")
 game_time_manager = NodePath("../gametimemanager")
 
 [node name="enemyfiliter" parent="." instance=ExtResource("3_i6gbm")]
+enemy_group = Array[ExtResource("4_ca6q5")]([ExtResource("5_yerfe"), ExtResource("6_abp7u"), ExtResource("7_he4o3"), ExtResource("8_yk3to"), ExtResource("9_0halo"), ExtResource("10_8p2gu"), ExtResource("11_kv4hp")])
 
 [node name="enemymanager" parent="." instance=ExtResource("4_ux4dc")]
 
