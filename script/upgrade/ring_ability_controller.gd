@@ -73,7 +73,7 @@ func on_ability_upgrade_add(upgrade:AbilityUpgrade,current_upgrade:Dictionary):
 		$Timer.wait_time=max(base_wait_time*(1-persent_reduction),0.8)
 		$Timer.start()
 	if upgrade.ID=="环的伤害":
-		Damage=(Damage+2)*1.2
+		Damage=(Damage+2)*1.25
 		print(Damage)
 	if upgrade.ID=="解锁法环":
 		$Timer.start()

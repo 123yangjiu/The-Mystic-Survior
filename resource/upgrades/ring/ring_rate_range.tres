@@ -6,5 +6,5 @@
 script = ExtResource("1_qj2er")
 ID = "环的大速"
 Sort = "环"
-name = "真正的死灵法师！"
+name = "梦想上五环"
 Description = "增加死灵法环的大小15%并缩短20%的CD"

@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=2 format=3 uid="uid://bbp5xqvgt1ubd"]
 
-[ext_resource type="Script" uid="uid://dmyfvo2eu1rj2" path="res://resource/ability_upgrade.gd" id="1_k105c"]
+[ext_resource type="Script" path="res://resource/ability_upgrade.gd" id="1_k105c"]
 
 [resource]
 script = ExtResource("1_k105c")
 ID = "飞毛腿"
 Sort = "角色能力"
-name = "我能跑得过狼!"
+name = "快过B3狼"
 Description = "增加角色移动速度15%"
