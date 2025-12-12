@@ -1,7 +1,33 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dbgauou15hq13"]
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://dbgauou15hq13"]
 
+[ext_resource type="Texture2D" uid="uid://b8cvc7tkn20k1" path="res://动画图片素材/UI/长按钮_第二版.png" id="1_cjv63"]
 [ext_resource type="FontFile" uid="uid://ceoy0esmffpt8" path="res://resource/theme/fusion-pixel-12px-monospaced-zh_hans.ttf" id="1_jbdqx"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4hdpd"]
+texture = ExtResource("1_cjv63")
 
 [resource]
 default_font = ExtResource("1_jbdqx")
 default_font_size = 12
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/align_to_largest_stylebox = 0
+Button/constants/h_separation = 4
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/styles/disabled = SubResource("StyleBoxTexture_4hdpd")
+Button/styles/focus = SubResource("StyleBoxTexture_4hdpd")
+Button/styles/hover = SubResource("StyleBoxTexture_4hdpd")
+Button/styles/normal = SubResource("StyleBoxTexture_4hdpd")
+Button/styles/pressed = SubResource("StyleBoxTexture_4hdpd")

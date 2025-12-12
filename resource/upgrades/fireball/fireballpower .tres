@@ -6,6 +6,6 @@
 script = ExtResource("1_k45xu")
 ID = "火球力速"
 Sort = "火球"
-name = "“左手高伤害右手伤害高”"
+name = "双猛火哥"
 Description = "增加火球伤害15%并减少火球冷却15%
 “买一送一，什么好处都让你占了”"

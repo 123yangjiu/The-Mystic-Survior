@@ -7,4 +7,4 @@ script = ExtResource("1_i022e")
 ID = "剑的数量"
 Sort = "剑"
 name = "轮剑"
-Description = "每次生成剑的数量增加1把"
+Description = "每次生成剑的数量增加1把，"

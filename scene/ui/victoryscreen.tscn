@@ -82,7 +82,6 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 36
 text = "重新开始"
-flat = true
 autowrap_mode = 1
 
 [node name="Label2" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
@@ -95,6 +94,9 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(150, 50)
 layout_mode = 2
 size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_font_sizes/font_size = 36
 text = "离开"
-flat = true
+autowrap_mode = 1
+icon_alignment = 1
+expand_icon = true

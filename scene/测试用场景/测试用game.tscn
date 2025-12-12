@@ -400,6 +400,7 @@ offset_bottom = 169.0
 theme_override_fonts/font = ExtResource("14_ohn68")
 theme_override_font_sizes/font_size = 12
 text = "增长一级"
+flat = true
 
 [node name="Faliure" type="Button" parent="测试用操作者"]
 custom_minimum_size = Vector2(56, 0)
@@ -409,6 +410,7 @@ offset_right = 643.0
 offset_bottom = 168.0
 text = "失败
 "
+flat = true
 
 [node name="Victory" type="Button" parent="测试用操作者"]
 custom_minimum_size = Vector2(56, 0)
@@ -417,6 +419,7 @@ offset_top = 148.0
 offset_right = 711.0
 offset_bottom = 168.0
 text = "胜利"
+flat = true
 
 [connection signal="button_up" from="测试用操作者/Upgrade" to="测试用操作者" method="_upgrade"]
 [connection signal="button_up" from="测试用操作者/Faliure" to="测试用操作者" method="_on_enemystart_button_up"]

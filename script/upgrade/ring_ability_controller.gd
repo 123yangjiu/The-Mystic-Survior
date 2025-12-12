@@ -6,7 +6,7 @@ const MAX_RANGE=200
 var Damage=11#定义的伤害
 var base_wait_time#定义基础冷却
 var base_scale=1#定义光剑基础大小
-var volume:=4 #声音大小
+var volume:=8 #声音大小
 var color_A :=255 #透明度
 var _speed_scale :=1.0#动画速度
 
@@ -65,7 +65,7 @@ func on_ability_upgrade_add(upgrade:AbilityUpgrade,current_upgrade:Dictionary):
 	print("解锁成功")
 	if upgrade.ID=="环的大速":
 		var persent_reduction=current_upgrade["环的大速"]["quantity"]*.2
-		volume = 4-6*persent_reduction
+		volume = 8-6*persent_reduction
 		color_A = 255-persent_reduction*150
 		base_scale*=1.15
 		if persent_reduction==1:
