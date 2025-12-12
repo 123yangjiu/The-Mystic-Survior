@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bc25liopjo7hl"]
+[gd_scene load_steps=0 format=3 uid="uid://bc25liopjo7hl"]
 
 [node name="YouAbility" type="CanvasLayer"]
 process_mode = 3

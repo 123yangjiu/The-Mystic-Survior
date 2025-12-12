@@ -388,7 +388,7 @@ experience_manager = NodePath("../experiencemanager")
 [node name="player" parent="实体" instance=ExtResource("11_355h4")]
 unique_name_in_owner = true
 y_sort_enabled = true
-position = Vector2(573, 242.00003)
+position = Vector2(-23, 270)
 scale = Vector2(1, 0.9772806)
 MAX_speed = 115
 
@@ -399,7 +399,7 @@ position_smoothing_enabled = true
 [node name="前景" type="Node" parent="." groups=["前景图层"]]
 
 [node name="box" parent="前景" instance=ExtResource("13_5g16k")]
-position = Vector2(424, 239)
+position = Vector2(61, 282)
 
 [node name="MusicManager" type="Node" parent="." node_paths=PackedStringArray("all_music")]
 process_mode = 3
