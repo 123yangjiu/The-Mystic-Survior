@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://c6t5pqka2y0xc"]
+[gd_scene load_steps=4 format=3 uid="uid://c6t5pqka2y0xc"]
 
 [ext_resource type="Script" uid="uid://dq7lf2puo2cmq" path="res://script/文本及ui显示/abilityupgradecard.gd" id="1_6couw"]
-[ext_resource type="Texture2D" uid="uid://dpsotdn4l0qjb" path="res://动画图片素材/UI/ability_card.png" id="2_pu7i7"]
+[ext_resource type="Texture2D" uid="uid://byv42g6d74pvx" path="res://动画图片素材/UI/ability_card第2.75版.png" id="2_pu7i7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pu7i7"]
+font_size = 12
+shadow_color = Color(0, 0, 0, 1)
 
 [node name="abilityupgradecard" type="PanelContainer"]
 self_modulate = Color(1, 1, 1, 0)
@@ -19,6 +23,8 @@ layout_mode = 2
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 size_flags_vertical = 0
+theme_override_font_sizes/font_size = 12
+label_settings = SubResource("LabelSettings_pu7i7")
 horizontal_alignment = 1
 vertical_alignment = 2
 autowrap_mode = 1

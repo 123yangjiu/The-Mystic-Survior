@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=2 format=3 uid="uid://ccayapnq1hx0c"]
 
-[ext_resource type="Script" uid="uid://dmyfvo2eu1rj2" path="res://resource/ability_upgrade.gd" id="1_riffn"]
+[ext_resource type="Script" path="res://resource/ability_upgrade.gd" id="1_riffn"]
 
 [resource]
 script = ExtResource("1_riffn")
 ID = "更多愤怒"
 Sort = "天堂"
-name = "我有易怒症"
+name = "天堂幸福指数下降"
 Description = "每次多生成两次天堂之怒"
