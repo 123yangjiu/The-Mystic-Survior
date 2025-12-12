@@ -162,7 +162,7 @@ autoplay = "swing"
 [node name="hitbox component" parent="." instance=ExtResource("2_rt8kj")]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="hitbox component"]
-position = Vector2(13.499999, 0.5000006)
+position = Vector2(13.5, 0.5)
 scale = Vector2(0.75300276, 1.1087304)
 shape = SubResource("RectangleShape2D_fogpa")
 disabled = true

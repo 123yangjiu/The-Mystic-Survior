@@ -2,7 +2,7 @@ extends Node
 const MAX_RANGE=200
 @export var hammer_ability:PackedScene
 
-var Damage=30#定义的伤害
+var Damage=25#定义的伤害
 var base_wait_time#定义基础冷却
 var base_scale=1#定义光剑基础大小
 var volume :=-2

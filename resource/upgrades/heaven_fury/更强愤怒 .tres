@@ -6,5 +6,5 @@
 script = ExtResource("1_iwek5")
 ID = "更强愤怒"
 Sort = "天堂"
-name = "把他们炸干净"
+name = "红温加成"
 Description = "每个天堂之怒的伤害增加25%"

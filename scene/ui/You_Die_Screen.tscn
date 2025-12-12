@@ -38,10 +38,14 @@ horizontal_alignment = 1
 
 [node name="restart" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 20)
 layout_mode = 2
+size_flags_horizontal = 4
 text = "重新开始"
 
 [node name="quit" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 20)
 layout_mode = 2
+size_flags_horizontal = 4
 text = "离开"

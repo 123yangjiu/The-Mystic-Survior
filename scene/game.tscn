@@ -401,9 +401,10 @@ position_smoothing_enabled = true
 [node name="box" parent="前景" instance=ExtResource("13_5g16k")]
 position = Vector2(61, 282)
 
-[node name="MusicManager" type="Node" parent="."]
+[node name="MusicManager" type="Node" parent="." node_paths=PackedStringArray("all_music")]
 process_mode = 3
 script = ExtResource("18_1it6f")
+all_music = [NodePath("MainTheme"), NodePath("TheFirst"), NodePath("WithWolf"), NodePath("WithGorlen"), NodePath("TheFinal")]
 
 [node name="MainTheme" type="AudioStreamPlayer" parent="MusicManager"]
 stream = ExtResource("19_b8t8i")
