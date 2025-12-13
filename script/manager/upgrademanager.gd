@@ -6,7 +6,7 @@ var can_chose_pool:Array[AbilityUpgrade]=[]#目前可供选择的池子
 var upgrade_list: Array[AbilityUpgrade]#把抽中的三个能力放到一个列表中
 var current_upgrade={}#一个字典存放当前所有的能力buff
 var mystrious_pool:Array[AbilityUpgrade]=[]#放置已被选完4次的能力，给予很低的概率获取第5次
-var mystrious_probality:=0.008
+var mystrious_probality:=0.02
 func _ready():
 	experience_manager.level_up.connect(on_level_up)
 	can_chose_pool=[upgrade_pool[0],upgrade_pool[1],upgrade_pool[2]
@@ -52,7 +52,8 @@ func add_upgrade(upgrade:AbilityUpgrade):#这个字典控制已经有的能力
 			for Upgrade in mystrious_pool:
 				if Upgrade.ID==upgrade.ID:
 					if !upgrade.ID=="火球力速":
-						mystrious_pool.erase(Upgrade)
+						if current_upgrade[upgrade.ID]["quantity"]>3:
+							mystrious_pool.erase(Upgrade)
 			for Upgrade in can_chose_pool:
 				if Upgrade.ID==upgrade.ID:
 					can_chose_pool.erase(Upgrade)
