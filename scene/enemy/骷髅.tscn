@@ -110,7 +110,7 @@ animation = &"run"
 autoplay = "run"
 
 [node name="health_component" parent="." instance=ExtResource("4_v253o")]
-max_health = 140.0
+max_health = 185.0
 
 [node name="drop_component" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("5_qtk83")]
 drop_range = 2

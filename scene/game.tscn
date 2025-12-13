@@ -463,9 +463,6 @@ MAX_speed = 115
 position = Vector2(4, 4.0929594)
 position_smoothing_enabled = true
 
-[node name="女巫" parent="实体" instance=ExtResource("24_0halo")]
-position = Vector2(371, 213)
-
 [node name="前景" type="Node" parent="." groups=["前景图层"]]
 
 [node name="box" parent="前景" instance=ExtResource("13_5g16k")]

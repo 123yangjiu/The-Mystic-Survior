@@ -3,7 +3,7 @@ extends Area2D
 @export var enemy:PackedScene
 
 var can_spawn := false
-var SPAWN_R=50
+var SPAWN_R=65
 func _ready() -> void:
     body_entered.connect(on_body_enter)
     body_exited.connect(on_body_exited)
@@ -20,13 +20,14 @@ func on_body_exited(_area: Node2D) -> void:
     can_spawn = false
 
 func do_spawn():
-    var player=get_tree().get_first_node_in_group("player")
-    var enemy_instane=enemy.instantiate() as Node2D
-    var random_direction=Vector2.RIGHT.rotated(randf_range(0,TAU))
-    var spawn_position=player.global_position+random_direction*SPAWN_R
-    var entities_Layer=get_tree().get_first_node_in_group("实体图层")
-    entities_Layer.add_child(enemy_instane)
-    enemy_instane.global_position=spawn_position
+    for i in 2:
+        var player=get_tree().get_first_node_in_group("player")
+        var enemy_instane=enemy.instantiate() as Node2D
+        var random_direction=Vector2.RIGHT.rotated(randf_range(0,TAU))
+        var spawn_position=player.global_position+random_direction*SPAWN_R
+        var entities_Layer=get_tree().get_first_node_in_group("实体图层")
+        entities_Layer.add_child(enemy_instane)
+        enemy_instane.global_position=spawn_position
 
 
 func spawn_again():
