@@ -51,7 +51,7 @@ func on_more_difficulty(difficulty:int):
             var radius := float(rand_R) * randf_range(0.9, 1.1)
             # 3. 最终位置
             kill_enemy.global_position = player.global_position + Vector2.RIGHT.rotated(angle) * radius 
-    if difficulty>=13:
+    if difficulty>=13 and difficulty<=14:
         for i in 2:
             var kill_enemy = kill_cirle_enemy[1].instantiate() as Node2D
             entities_Layer.add_child(kill_enemy)
@@ -69,4 +69,14 @@ func on_more_difficulty(difficulty:int):
             var radius := float(rand_R) * randf_range(0.9, 1.1)
             # 3. 最终位置
             kill_enemy.global_position = player.global_position + Vector2.RIGHT.rotated(angle) * radius        
+    pass
+    if  difficulty>=15 and difficulty<=16:
+        for i in 3:
+            var kill_enemy = kill_cirle_enemy[1].instantiate() as Node2D
+            entities_Layer.add_child(kill_enemy)
+            var angle := TAU *i/ 3
+            # 2. 半径加 ±10% 随机，避免太机械
+            var radius := float(rand_R) * randf_range(0.9, 1.1)
+            # 3. 最终位置
+            kill_enemy.global_position = player.global_position + Vector2.RIGHT.rotated(angle) * radius
     pass
