@@ -9,10 +9,10 @@ var volume =0
 var sword_x3 :=false
 
 func _ready() -> void:
-    base_wait_time=$Timer.wait_time
-    get_node("Timer").timeout.connect(on_timer_timeoout)
-    print(GameEvent.ability_upgrade_add.connect(on_ability_upgrade_add))
-    
+	base_wait_time=$Timer.wait_time
+	get_node("Timer").timeout.connect(on_timer_timeoout)
+	print(GameEvent.ability_upgrade_add.connect(on_ability_upgrade_add))
+	
 func on_timer_timeoout():
 	var player=get_tree().get_first_node_in_group("player") as Node2D
 	var enemies= get_tree().get_nodes_in_group("enemy")
