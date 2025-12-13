@@ -1,5 +1,5 @@
 extends Node
-const MAX_RANGE=200
+var MAX_RANGE=200
 @export var ring_ability:PackedScene
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
@@ -69,6 +69,7 @@ func on_ability_upgrade_add(upgrade:AbilityUpgrade,current_upgrade:Dictionary):
 		volume = 8-6*persent_reduction
 		color_A = 255-persent_reduction*150
 		base_scale*=1.15
+		MAX_RANGE *=1.15
 		if persent_reduction==1:
 			_speed_scale=1.5
 		$Timer.wait_time=max(base_wait_time*(1-persent_reduction),0.8)

@@ -49,7 +49,6 @@ func _physics_process(_delta: float) -> void:
 		animated_sprite_2d.flip_h=true
 func set_is_run(value)->void:
 	if is_run!= value:
-		print("is_run:",value)
 		match value:
 			true:
 				animated_sprite_2d.play()

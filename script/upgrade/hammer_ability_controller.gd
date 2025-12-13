@@ -1,5 +1,5 @@
 extends Node
-const MAX_RANGE=200
+var MAX_RANGE=200
 @export var hammer_ability:PackedScene
 
 var Damage=25#定义的伤害
@@ -71,6 +71,7 @@ func on_ability_upgrade_add(upgrade:AbilityUpgrade,current_upgrade:Dictionary):
 		$Timer.start()
 	if upgrade.ID=="光剑变大":
 		base_scale+=0.2
+		MAX_RANGE +=0.2*MAX_RANGE
 		#print("解锁战锤")
 		
 	#pass	
