@@ -7,7 +7,7 @@ var base_wait_time#定义基础冷却
 var number=1#火球数量
 var speed=0.05#火球的速度
 var amout=4#初始穿透个数
-var ball_size=1#初始化火球大小
+var ball_size=1.2#初始化火球大小
 var volume:=5
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 

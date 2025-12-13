@@ -6,14 +6,14 @@ var Damage=12#定义剑的伤害
 var base_wait_time#定义基础冷却
 var number=1#定义基础剑的数量
 var volume =0
-var sword_x3 :=false
 
 func _ready() -> void:
-    base_wait_time=$Timer.wait_time
-    get_node("Timer").timeout.connect(on_timer_timeoout)
-    print(GameEvent.ability_upgrade_add.connect(on_ability_upgrade_add))
-    
+	base_wait_time=$Timer.wait_time
+	get_node("Timer").timeout.connect(on_timer_timeoout)
+	print(GameEvent.ability_upgrade_add.connect(on_ability_upgrade_add))
+	
 func on_timer_timeoout():
+
     var player=get_tree().get_first_node_in_group("player") as Node2D
     var enemies= get_tree().get_nodes_in_group("enemy")
     enemies=enemies.filter(func(enemy:Node2D):#过滤掉不在范围内的敌人
@@ -69,6 +69,7 @@ func set_instance()->Swordability:
     return sword_instance
 
 func on_ability_upgrade_add(upgrade:AbilityUpgrade,current_upgrade:Dictionary):
+
 
     #监听所有关于剑的升级
     if upgrade.ID=="剑的速度":

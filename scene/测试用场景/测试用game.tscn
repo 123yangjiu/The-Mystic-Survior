@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://b7m6v5bhfdkhq"]
+[gd_scene load_steps=48 format=3 uid="uid://b7m6v5bhfdkhq"]
 
 [ext_resource type="Script" uid="uid://rt8ham21rr6r" path="res://script/game.gd" id="1_4h26k"]
 [ext_resource type="Texture2D" uid="uid://hom1idtk1vw8" path="res://动画图片素材/草地城堡风格的背景/Top_Down/Texture/TX Tileset Grass.png" id="2_wbt8i"]
@@ -16,9 +16,32 @@
 [ext_resource type="PackedScene" uid="uid://b6jpe6qhci3ks" path="res://scene/manager/upgrademanager.tscn" id="14_btvex"]
 [ext_resource type="FontFile" uid="uid://ceoy0esmffpt8" path="res://resource/theme/fusion-pixel-12px-monospaced-zh_hans.ttf" id="14_ohn68"]
 [ext_resource type="PackedScene" uid="uid://b8orbduoade27" path="res://scene/player.tscn" id="15_ch78n"]
+[ext_resource type="Script" uid="uid://cao0d8jgcrhwk" path="res://script/测试场景/测试用upgrademanager.gd" id="15_h48kl"]
 [ext_resource type="PackedScene" uid="uid://kwbt2wo8phu5" path="res://scene/测试用场景/测试用box.tscn" id="16_kudbt"]
-[ext_resource type="PackedScene" uid="uid://dg0lowfwv0dg3" path="res://scene/enemy/骑士.tscn" id="16_wbt8i"]
+[ext_resource type="Script" path="res://resource/ability_upgrade.gd" id="16_ufowh"]
+[ext_resource type="Resource" uid="uid://blc0x1fuyqqd8" path="res://resource/upgrades/sword/sword_rate.tres" id="17_mcuiq"]
 [ext_resource type="Script" uid="uid://dmwfixnlvdupe" path="res://script/测试场景/测试用操作者.gd" id="17_wdb4m"]
+[ext_resource type="Resource" uid="uid://oclytr2qthx8" path="res://resource/upgrades/sword/sword_damage.tres" id="18_wlm2r"]
+[ext_resource type="Resource" uid="uid://bb008fs5wq31x" path="res://resource/upgrades/sword/sword_number.tres" id="19_bajcs"]
+[ext_resource type="Resource" uid="uid://cq6h3a5qtmde3" path="res://resource/upgrades/else/盔甲.tres" id="20_rr4dp"]
+[ext_resource type="Resource" uid="uid://b5o283wr41dta" path="res://resource/upgrades/else/吸铁石.tres" id="21_45yv1"]
+[ext_resource type="Resource" uid="uid://bbp5xqvgt1ubd" path="res://resource/upgrades/else/飞毛腿.tres" id="22_acha4"]
+[ext_resource type="Resource" uid="uid://dn5ri83sm6i23" path="res://resource/upgrades/else/生命药水瓶.tres" id="23_pbpbm"]
+[ext_resource type="Resource" uid="uid://cvcyibysmviov" path="res://resource/upgrades/ring/get_ring.tres" id="24_tkwvv"]
+[ext_resource type="Resource" uid="uid://dy38bx8w4yshf" path="res://resource/upgrades/ring/ring_power.tres" id="25_ekiqg"]
+[ext_resource type="Resource" uid="uid://brv0twbh4faty" path="res://resource/upgrades/fireball/fireballchuantou  .tres" id="26_wo850"]
+[ext_resource type="Resource" uid="uid://bqpb3vuil8nte" path="res://resource/upgrades/fireball/fireballnnumber.tres" id="27_40dpe"]
+[ext_resource type="Resource" uid="uid://v5wroaoxtel4" path="res://resource/upgrades/fireball/fireballpower .tres" id="28_4xk21"]
+[ext_resource type="Resource" uid="uid://dq2ug8ceqhgg0" path="res://resource/upgrades/fireball/get_fireball.tres" id="29_0lbpo"]
+[ext_resource type="Resource" uid="uid://dq68qtu5n06bt" path="res://resource/upgrades/heaven_fury/get_heaven_fury.tres" id="30_1ath1"]
+[ext_resource type="Resource" uid="uid://ccayapnq1hx0c" path="res://resource/upgrades/heaven_fury/更多愤怒 (2).tres" id="31_ypcgk"]
+[ext_resource type="Resource" uid="uid://dladi3itxe508" path="res://resource/upgrades/heaven_fury/更强愤怒 .tres" id="32_xfjms"]
+[ext_resource type="Resource" uid="uid://bre1wbhgghbfl" path="res://resource/upgrades/heaven_fury/更快愤怒.tres" id="33_g1f6a"]
+[ext_resource type="Resource" uid="uid://oty2cgbisuck" path="res://resource/upgrades/holy_light/get_hammer.tres" id="34_6lq15"]
+[ext_resource type="Resource" uid="uid://c80ua6iia28p6" path="res://resource/upgrades/holy_light/hammer_power.tres" id="35_4k1xf"]
+[ext_resource type="Resource" uid="uid://cjjqnoy3whssy" path="res://resource/upgrades/holy_light/hammer_speed.tres" id="36_ase8p"]
+[ext_resource type="Resource" uid="uid://d4ai6yyxvaf2a" path="res://resource/upgrades/holy_light/larger.tres" id="37_4v241"]
+[ext_resource type="Resource" uid="uid://bd0tr7xshvycr" path="res://resource/upgrades/ring/ring_rate_range.tres" id="38_7bo1d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gq3l0"]
 texture = ExtResource("2_wbt8i")
@@ -370,6 +393,8 @@ format = 2
 experience_manager = NodePath("../experiencemanager")
 
 [node name="Upgrademanager" parent="." node_paths=PackedStringArray("experience_manager") instance=ExtResource("14_btvex")]
+script = ExtResource("15_h48kl")
+upgrade_pool = Array[ExtResource("16_ufowh")]([ExtResource("17_mcuiq"), ExtResource("18_wlm2r"), ExtResource("19_bajcs"), ExtResource("20_rr4dp"), ExtResource("21_45yv1"), ExtResource("22_acha4"), ExtResource("23_pbpbm"), ExtResource("24_tkwvv"), ExtResource("25_ekiqg"), ExtResource("26_wo850"), ExtResource("27_40dpe"), ExtResource("28_4xk21"), ExtResource("29_0lbpo"), ExtResource("30_1ath1"), ExtResource("31_ypcgk"), ExtResource("32_xfjms"), ExtResource("33_g1f6a"), ExtResource("34_6lq15"), ExtResource("35_4k1xf"), ExtResource("36_ase8p"), ExtResource("37_4v241"), ExtResource("38_7bo1d")])
 experience_manager = NodePath("../experiencemanager")
 
 [node name="实体" type="Node" parent="." groups=["实体图层"]]
@@ -384,9 +409,6 @@ MAX_speed = 115
 [node name="Camera2D2" type="Camera2D" parent="实体/player"]
 position = Vector2(4, 4.0929594)
 position_smoothing_enabled = true
-
-[node name="骑士" parent="实体" instance=ExtResource("16_wbt8i")]
-position = Vector2(675, 233)
 
 [node name="前景" type="Node" parent="." groups=["前景图层"]]
 
