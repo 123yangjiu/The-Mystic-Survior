@@ -2,11 +2,10 @@ extends  Node
 const MAX_RANGE=160
 @export var sword_ability:PackedScene
 
-var Damage=12#定义剑的伤害
+var Damage=14#定义剑的伤害
 var base_wait_time#定义基础冷却
 var number=1#定义基础剑的数量
 var volume =0
-var sword_x3 :=false
 
 func _ready() -> void:
 	base_wait_time=$Timer.wait_time
@@ -41,18 +40,32 @@ func on_timer_timeoout():
 			sword_instance.queue_free()
 			return
 		var enemy
-		if i <=1:
-			enemy = enemies[i]
+		if i <=1: #前两把剑打同一个敌人
+			if enemies.size()>=3:
+				enemy = enemies[i*2]
+			else:
+				enemy=enemies[i]
 		else:
-			enemy = enemies[(i-2)*interval]
+			enemy = enemies[-(i-2)*interval]
 		# ③ 位置 & 朝向
 		sword_instance.global_position =enemy.global_position
 		#朝向
 		var dir_to_player = player.global_position - enemy.global_position
 		sword_instance.rotation = -dir_to_player.angle()
 		var collision_gap =sword_instance.collision_shape_2d_2.global_position-sword_instance.global_position
-		print(collision_gap)
 		sword_instance.global_position-=collision_gap/4
+	var number_gap=number-real_number 
+	if number_gap>0:
+		for i in range(number_gap):
+			var sword = set_instance()
+			var new_enemy=enemies[0]
+			# ③ 位置 & 朝向
+			sword.global_position =new_enemy.global_position
+			#朝向
+			var dir_to_player = player.global_position - new_enemy.global_position
+			sword.rotation = -dir_to_player.angle()
+			var collision_gap =sword.collision_shape_2d_2.global_position-sword.global_position
+			sword.global_position-=collision_gap/4
 	
 
 # 再拿最近的那只
@@ -78,10 +91,7 @@ func on_ability_upgrade_add(upgrade:AbilityUpgrade,current_upgrade:Dictionary):
 			volume-=5
 		$Timer.start()
 	if upgrade.ID=="剑的伤害":
-		Damage=(Damage+2)*1.4
+		Damage= Damage*1.4
 	if upgrade.ID=="剑的数量":
 		number+=1
 		volume-=2
-		if number>=3:
-			sword_x3=true
-	pass	
