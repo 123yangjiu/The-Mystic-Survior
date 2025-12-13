@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=2 format=3 uid="uid://dy38bx8w4yshf"]
 
-[ext_resource type="Script" uid="uid://dmyfvo2eu1rj2" path="res://resource/ability_upgrade.gd" id="1_avqlo"]
+[ext_resource type="Script" path="res://resource/ability_upgrade.gd" id="1_avqlo"]
 
 [resource]
 script = ExtResource("1_avqlo")
 ID = "环的伤害"
 Sort = "环"
 name = "全攻死灵师"
-Description = "增加死灵法环25%伤害让敌人尸骨无存！
-“同事都是恩人···，说完就把旧同事都杀了“"
+Description = "增加死灵法环25%伤害
+“同事都是恩人，巴不得对方死，死灵术士说完就把旧同事都杀了“"

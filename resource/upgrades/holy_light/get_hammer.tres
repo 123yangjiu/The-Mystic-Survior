@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=2 format=3 uid="uid://oty2cgbisuck"]
 
-[ext_resource type="Script" uid="uid://dmyfvo2eu1rj2" path="res://resource/ability_upgrade.gd" id="1_2gxql"]
+[ext_resource type="Script" path="res://resource/ability_upgrade.gd" id="1_2gxql"]
 
 [resource]
 script = ExtResource("1_2gxql")
 ID = "解锁光剑"
 Sort = "光剑"
-name = "以圣骑士之名"
+name = "咖喱剑"
 Description = "解锁光剑！在你的头顶凝聚圣光成剑，砸下造成大量伤害"
