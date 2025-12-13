@@ -82,7 +82,7 @@ health_component = NodePath("../health_component")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Hurtboxcomponent"]
 shape = SubResource("CircleShape2D_vcrpj")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["enemy"]]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 4.0000014)
 scale = Vector2(0.8, 0.638)
 sprite_frames = SubResource("SpriteFrames_fq6t5")

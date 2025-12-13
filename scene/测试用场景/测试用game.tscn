@@ -18,7 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://b8orbduoade27" path="res://scene/player.tscn" id="15_ch78n"]
 [ext_resource type="Script" uid="uid://cao0d8jgcrhwk" path="res://script/测试场景/测试用upgrademanager.gd" id="15_h48kl"]
 [ext_resource type="PackedScene" uid="uid://kwbt2wo8phu5" path="res://scene/测试用场景/测试用box.tscn" id="16_kudbt"]
-[ext_resource type="Script" path="res://resource/ability_upgrade.gd" id="16_ufowh"]
+[ext_resource type="Script" uid="uid://dmyfvo2eu1rj2" path="res://resource/ability_upgrade.gd" id="16_ufowh"]
 [ext_resource type="Resource" uid="uid://blc0x1fuyqqd8" path="res://resource/upgrades/sword/sword_rate.tres" id="17_mcuiq"]
 [ext_resource type="Script" uid="uid://dmwfixnlvdupe" path="res://script/测试场景/测试用操作者.gd" id="17_wdb4m"]
 [ext_resource type="Resource" uid="uid://oclytr2qthx8" path="res://resource/upgrades/sword/sword_damage.tres" id="18_wlm2r"]
@@ -402,7 +402,7 @@ experience_manager = NodePath("../experiencemanager")
 [node name="player" parent="实体" instance=ExtResource("15_ch78n")]
 unique_name_in_owner = true
 y_sort_enabled = true
-position = Vector2(465, 126)
+position = Vector2(284, 105)
 scale = Vector2(1, 0.9772806)
 MAX_speed = 115
 

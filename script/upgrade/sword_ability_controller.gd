@@ -42,11 +42,8 @@ func on_timer_timeoout():
         if enemies.is_empty():
             sword_instance.queue_free()
             return
-        var enemy
-        if i <=1:
-            enemy = enemies[i]
-        else:
-            enemy = enemies[(i-2)*interval]
+        var enemy= enemies[i]
+           
 
         # ③ 位置 & 朝向
         sword_instance.global_position =enemy.global_position
@@ -81,7 +78,7 @@ func on_ability_upgrade_add(upgrade:AbilityUpgrade,current_upgrade:Dictionary):
         $Timer.start()
     if upgrade.ID=="剑的伤害":
 
-        Damage=Damage*1.4
+        Damage=Damage*1.35
     if upgrade.ID=="剑的数量":
         number+=1
         volume-=2
