@@ -1,11 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://co66107rpg80r"]
+[gd_scene load_steps=4 format=3 uid="uid://co66107rpg80r"]
 
 [ext_resource type="Script" uid="uid://dhi6irssr0s2a" path="res://script/文本及ui显示/victoryscreen.gd" id="1_u23xs"]
+[ext_resource type="Texture2D" uid="uid://d1ue7ojv75eip" path="res://动画图片素材/UI/You_die.png" id="2_nqmcm"]
+[ext_resource type="Theme" uid="uid://bak7nt8mttr06" path="res://resource/theme/black_theme.tres" id="3_q6lwb"]
 
 [node name="You_Die_Screen" type="CanvasLayer"]
 process_mode = 3
 layer = 2
 script = ExtResource("1_u23xs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(318, 175)
+scale = Vector2(4, 4)
+texture = ExtResource("2_nqmcm")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
@@ -15,6 +22,8 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(400, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -31,21 +40,32 @@ theme_override_constants/margin_bottom = 8
 layout_mode = 2
 
 [node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
-text = "YOU  DIE!"
 horizontal_alignment = 1
 
 [node name="restart" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(60, 20)
+custom_minimum_size = Vector2(175, 50)
 layout_mode = 2
 size_flags_horizontal = 4
+theme = ExtResource("3_q6lwb")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.1, 0.1, 0.1, 1)
+theme_override_colors/font_pressed_color = Color(0.2, 0.2, 0.2, 1)
+theme_override_colors/font_hover_color = Color(0.1, 0.1, 0.1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
 text = "重新开始"
 
 [node name="quit" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(40, 20)
+custom_minimum_size = Vector2(125, 50)
 layout_mode = 2
 size_flags_horizontal = 4
+theme = ExtResource("3_q6lwb")
+theme_override_font_sizes/font_size = 36
 text = "离开"

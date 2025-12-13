@@ -6,6 +6,7 @@ func _ready() -> void:
 	%quit.pressed.connect(on_quit_press)
 
 func on_restart_press():
+	await get_tree().create_timer(0.1).timeout
 	get_tree().paused= false
 	GameEvent.difficulty=1
 	GameEvent.the_first=0
