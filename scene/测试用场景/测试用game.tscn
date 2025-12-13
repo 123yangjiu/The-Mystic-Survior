@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://b7m6v5bhfdkhq"]
+[gd_scene load_steps=25 format=3 uid="uid://b7m6v5bhfdkhq"]
 
 [ext_resource type="Script" uid="uid://rt8ham21rr6r" path="res://script/game.gd" id="1_4h26k"]
 [ext_resource type="Texture2D" uid="uid://hom1idtk1vw8" path="res://动画图片素材/草地城堡风格的背景/Top_Down/Texture/TX Tileset Grass.png" id="2_wbt8i"]
@@ -17,6 +17,7 @@
 [ext_resource type="FontFile" uid="uid://ceoy0esmffpt8" path="res://resource/theme/fusion-pixel-12px-monospaced-zh_hans.ttf" id="14_ohn68"]
 [ext_resource type="PackedScene" uid="uid://b8orbduoade27" path="res://scene/player.tscn" id="15_ch78n"]
 [ext_resource type="PackedScene" uid="uid://kwbt2wo8phu5" path="res://scene/测试用场景/测试用box.tscn" id="16_kudbt"]
+[ext_resource type="PackedScene" uid="uid://dg0lowfwv0dg3" path="res://scene/enemy/骑士.tscn" id="16_wbt8i"]
 [ext_resource type="Script" uid="uid://dmwfixnlvdupe" path="res://script/测试场景/测试用操作者.gd" id="17_wdb4m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gq3l0"]
@@ -376,13 +377,16 @@ experience_manager = NodePath("../experiencemanager")
 [node name="player" parent="实体" instance=ExtResource("15_ch78n")]
 unique_name_in_owner = true
 y_sort_enabled = true
-position = Vector2(573, 242.00003)
+position = Vector2(465, 126)
 scale = Vector2(1, 0.9772806)
 MAX_speed = 115
 
 [node name="Camera2D2" type="Camera2D" parent="实体/player"]
 position = Vector2(4, 4.0929594)
 position_smoothing_enabled = true
+
+[node name="骑士" parent="实体" instance=ExtResource("16_wbt8i")]
+position = Vector2(675, 233)
 
 [node name="前景" type="Node" parent="." groups=["前景图层"]]
 
