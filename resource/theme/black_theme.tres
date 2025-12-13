@@ -1,0 +1,28 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://bak7nt8mttr06"]
+
+[ext_resource type="Texture2D" uid="uid://bnerqcdsu8cgh" path="res://动画图片素材/UI/长按钮_黑.png" id="1_qfiib"]
+[ext_resource type="FontFile" uid="uid://ceoy0esmffpt8" path="res://resource/theme/fusion-pixel-12px-monospaced-zh_hans.ttf" id="2_oakwx"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_klf6g"]
+texture = ExtResource("1_qfiib")
+
+[resource]
+default_font = ExtResource("2_oakwx")
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_disabled_color = Color(0, 0, 0, 1)
+Button/colors/font_focus_color = Color(0.1, 0.1, 0.1, 1)
+Button/colors/font_hover_color = Color(0.1, 0.1, 0.1, 1)
+Button/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0.2, 0.2, 0.2, 1)
+Button/colors/icon_disabled_color = Color(0, 0, 0, 1)
+Button/colors/icon_focus_color = Color(0, 0, 0, 1)
+Button/colors/icon_hover_color = Color(0, 0, 0, 1)
+Button/colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+Button/colors/icon_normal_color = Color(0, 0, 0, 1)
+Button/colors/icon_pressed_color = Color(0, 0, 0, 1)
+Button/styles/disabled = SubResource("StyleBoxTexture_klf6g")
+Button/styles/focus = SubResource("StyleBoxTexture_klf6g")
+Button/styles/hover = SubResource("StyleBoxTexture_klf6g")
+Button/styles/normal = SubResource("StyleBoxTexture_klf6g")
+Button/styles/pressed = SubResource("StyleBoxTexture_klf6g")
