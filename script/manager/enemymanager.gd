@@ -23,71 +23,71 @@ func on_time_out():
 	enemy.global_position=spawn_position
 func on_more_difficulty(difficulty:int):
 
-    var entities_Layer=get_tree().get_first_node_in_group("实体图层")
-    var player=get_tree().get_first_node_in_group("player")
-    $Timer.wait_time = (max(min_gap, base_time_gap * exp(-decay * difficulty)))*1.15
-    if difficulty==8:
-        for i in 80:
-            var kill_enemy = kill_cirle_enemy[0].instantiate() as Node2D
-            entities_Layer.add_child(kill_enemy)
-            var angle := TAU * i / 80.0
-            # 2. 半径加 ±10% 随机，避免太机械
-            var radius := float(rand_R) * randf_range(0.9, 1.1)
-            # 3. 最终位置
-            kill_enemy.global_position = player.global_position + Vector2.RIGHT.rotated(angle) * radius
-    if difficulty==10:
-        var kill_enemy = kill_cirle_enemy[1].instantiate() as Node2D
-        entities_Layer.add_child(kill_enemy)
-        var angle := TAU / 60.0
-        # 2. 半径加 ±10% 随机，避免太机械
-        var radius := float(rand_R) * randf_range(0.9, 1.1)
-        # 3. 最终位置
-        kill_enemy.global_position = player.global_position + Vector2.RIGHT.rotated(angle) * radius
-    if  difficulty==12:
-        for i in 80.0:
-            var kill_enemy = kill_cirle_enemy[0].instantiate() as Node2D
-            entities_Layer.add_child(kill_enemy)
-            var angle := TAU * i / 80
-            # 2. 半径加 ±10% 随机，避免太机械
-            var radius := float(rand_R) * randf_range(0.9, 1.1)
-            # 3. 最终位置
-            kill_enemy.global_position = player.global_position + Vector2.RIGHT.rotated(angle) * radius 
-    if difficulty>=13 and difficulty<=14:
-        for i in 2:
-            var kill_enemy = kill_cirle_enemy[1].instantiate() as Node2D
-            entities_Layer.add_child(kill_enemy)
-            var angle := TAU *i/ 3
-            # 2. 半径加 ±10% 随机，避免太机械
-            var radius := float(rand_R) * randf_range(0.9, 1.1)
-            # 3. 最终位置
-            kill_enemy.global_position = player.global_position + Vector2.RIGHT.rotated(angle) * radius
-    if  difficulty==15:
-        for i in 80:
-            var kill_enemy = kill_cirle_enemy[0].instantiate() as Node2D
-            entities_Layer.add_child(kill_enemy)
-            var angle := TAU * i / 80
-            # 2. 半径加 ±10% 随机，避免太机械
-            var radius := float(rand_R) * randf_range(0.9, 1.1)
-            # 3. 最终位置
-            kill_enemy.global_position = player.global_position + Vector2.RIGHT.rotated(angle) * radius        
-    pass
-    if  difficulty>=15 and difficulty<=16:
-        for i in 3:
-            var kill_enemy = kill_cirle_enemy[1].instantiate() as Node2D
-            entities_Layer.add_child(kill_enemy)
-            var angle := TAU *i/ 3
-            # 2. 半径加 ±10% 随机，避免太机械
-            var radius := float(rand_R) * randf_range(0.9, 1.1)
-            # 3. 最终位置
-            kill_enemy.global_position = player.global_position + Vector2.RIGHT.rotated(angle) * radius
-    pass
-    if difficulty>=13:
-        var kill_enemy = kill_cirle_enemy[2].instantiate() as Node2D
-        entities_Layer.add_child(kill_enemy)
-        var angle := TAU / 3
-        # 2. 半径加 ±10% 随机，避免太机械
-        var radius := float(rand_R) * randf_range(0.9, 1.1)
-        # 3. 最终位置
-        kill_enemy.global_position = player.global_position + Vector2.RIGHT.rotated(angle) * (radius+50)
-        #加入女巫
-        
+	var entities_Layer=get_tree().get_first_node_in_group("实体图层")
+	var player=get_tree().get_first_node_in_group("player")
+	$Timer.wait_time = (max(min_gap, base_time_gap * exp(-decay * difficulty)))*1.15
+	if difficulty==8:
+		for i in 80:
+			var kill_enemy = kill_cirle_enemy[0].instantiate() as Node2D
+			entities_Layer.add_child(kill_enemy)
+			var angle := TAU * i / 80.0
+			# 2. 半径加 ±10% 随机，避免太机械
+			var radius := float(rand_R) * randf_range(0.9, 1.1)
+			# 3. 最终位置
+			kill_enemy.global_position = player.global_position + Vector2.RIGHT.rotated(angle) * radius
+	if difficulty==10:
+		var kill_enemy = kill_cirle_enemy[1].instantiate() as Node2D
+		entities_Layer.add_child(kill_enemy)
+		var angle := TAU / 60.0
+		# 2. 半径加 ±10% 随机，避免太机械
+		var radius := float(rand_R) * randf_range(0.9, 1.1)
+		# 3. 最终位置
+		kill_enemy.global_position = player.global_position + Vector2.RIGHT.rotated(angle) * radius
+	if  difficulty==12:
+		for i in 80.0:
+			var kill_enemy = kill_cirle_enemy[0].instantiate() as Node2D
+			entities_Layer.add_child(kill_enemy)
+			var angle := TAU * i / 80
+			# 2. 半径加 ±10% 随机，避免太机械
+			var radius := float(rand_R) * randf_range(0.9, 1.1)
+			# 3. 最终位置
+			kill_enemy.global_position = player.global_position + Vector2.RIGHT.rotated(angle) * radius 
+	if difficulty>=13 and difficulty<=14:
+		for i in 2:
+			var kill_enemy = kill_cirle_enemy[1].instantiate() as Node2D
+			entities_Layer.add_child(kill_enemy)
+			var angle := TAU *i/ 3
+			# 2. 半径加 ±10% 随机，避免太机械
+			var radius := float(rand_R) * randf_range(0.9, 1.1)
+			# 3. 最终位置
+			kill_enemy.global_position = player.global_position + Vector2.RIGHT.rotated(angle) * radius
+	if  difficulty==15:
+		for i in 80:
+			var kill_enemy = kill_cirle_enemy[0].instantiate() as Node2D
+			entities_Layer.add_child(kill_enemy)
+			var angle := TAU * i / 80
+			# 2. 半径加 ±10% 随机，避免太机械
+			var radius := float(rand_R) * randf_range(0.9, 1.1)
+			# 3. 最终位置
+			kill_enemy.global_position = player.global_position + Vector2.RIGHT.rotated(angle) * radius        
+	pass
+	if  difficulty>=15 and difficulty<=16:
+		for i in 3:
+			var kill_enemy = kill_cirle_enemy[1].instantiate() as Node2D
+			entities_Layer.add_child(kill_enemy)
+			var angle := TAU *i/ 3
+			# 2. 半径加 ±10% 随机，避免太机械
+			var radius := float(rand_R) * randf_range(0.9, 1.1)
+			# 3. 最终位置
+			kill_enemy.global_position = player.global_position + Vector2.RIGHT.rotated(angle) * radius
+	pass
+	if difficulty>=13:
+		var kill_enemy = kill_cirle_enemy[2].instantiate() as Node2D
+		entities_Layer.add_child(kill_enemy)
+		var angle := TAU / 3
+		# 2. 半径加 ±10% 随机，避免太机械
+		var radius := float(rand_R) * randf_range(0.9, 1.1)
+		# 3. 最终位置
+		kill_enemy.global_position = player.global_position + Vector2.RIGHT.rotated(angle) * (radius+50)
+		#加入女巫
+		

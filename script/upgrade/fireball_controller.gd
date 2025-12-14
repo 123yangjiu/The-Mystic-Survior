@@ -6,16 +6,16 @@ var Damage=18#定义火球的伤害
 var base_wait_time#定义基础冷却
 var number=1#火球数量
 var speed=0.05#火球的速度
-var amout=4#初始穿透个数
+var amout=3#初始穿透个数
 var ball_size=1.0#初始化火球大小
 var volume:=5
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 func _ready() -> void:
-	base_wait_time=$Timer.wait_time
-	get_node("Timer").timeout.connect(on_timer_timeoout)
-	GameEvent.ability_upgrade_add.connect(on_ability_upgrade_add)
-	
+    base_wait_time=$Timer.wait_time
+    get_node("Timer").timeout.connect(on_timer_timeoout)
+    GameEvent.ability_upgrade_add.connect(on_ability_upgrade_add)
+    
 func on_timer_timeoout():
 
     audio_stream_player_2d.stop()
@@ -42,34 +42,34 @@ func on_timer_timeoout():
         var fireball_instance = fireball.instantiate() as Fireball
         var foreground = get_tree().get_first_node_in_group("前景图层")
         fireball_instance.scale*=ball_size
-		# ② 等节点_ready完成再赋值，避免 nil
-		foreground.add_child(fireball_instance)
-		audio_stream_player_2d.volume_db=volume
-		audio_stream_player_2d.play()
-		fireball_instance.hitbox_component.damage = int(Damage+randf_range(-3,3))
-		if enemies.is_empty():
-			fireball_instance.queue_free()
-			return
+        # ② 等节点_ready完成再赋值，避免 nil
+        foreground.add_child(fireball_instance)
+        audio_stream_player_2d.volume_db=volume
+        audio_stream_player_2d.play()
+        fireball_instance.hitbox_component.damage = int(Damage+randf_range(-3,3))
+        if enemies.is_empty():
+            fireball_instance.queue_free()
+            return
 
-		var enemy = enemies[i]
-		
+        var enemy = enemies[i]
+        
 
-		# ③ 位置 & 朝向
-		fireball_instance.global_position =player.global_position
-		#fireball_instance.global_position += Vector2.RIGHT.rotated(randf_range(0, TAU)) * 4
-		var dir_to_player = player.global_position - enemy.global_position
-		var _offset_deg = randf_range(-10,10)
-		#拿到玩家跟敌人的方向
-		#dir_to_player = dir_to_player.rotated(deg_to_rad(-90))#火球发射前随机旋转一个小角度
-		fireball_instance.direction=dir_to_player
-		fireball_instance.velocity=speed
-		fireball_instance.ammout=amout
-		var base_offset = deg_to_rad(90)
-		fireball_instance.global_rotation = dir_to_player.angle()+base_offset
+        # ③ 位置 & 朝向
+        fireball_instance.global_position =player.global_position
+        #fireball_instance.global_position += Vector2.RIGHT.rotated(randf_range(0, TAU)) * 4
+        var dir_to_player = player.global_position - enemy.global_position
+        var _offset_deg = randf_range(-10,10)
+        #拿到玩家跟敌人的方向
+        #dir_to_player = dir_to_player.rotated(deg_to_rad(-90))#火球发射前随机旋转一个小角度
+        fireball_instance.direction=dir_to_player
+        fireball_instance.velocity=speed
+        fireball_instance.ammout=amout
+        var base_offset = deg_to_rad(90)
+        fireball_instance.global_rotation = dir_to_player.angle()+base_offset
 # 再拿最近的那只
-	
+    
 
-	
+    
 func on_ability_upgrade_add(upgrade:AbilityUpgrade,current_upgrade:Dictionary):
 
     #print("saiuofai")
