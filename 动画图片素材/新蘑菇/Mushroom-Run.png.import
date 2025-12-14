@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://opcbvuq1mes5"
-path="res://.godot/imported/旗帜.png-4a51e5ec695d1eca4b7dc4b576a31b09.ctex"
+uid="uid://cpxpef8s5wt6m"
+path="res://.godot/imported/Mushroom-Run.png-04041273281d2792eb6a46dff2193222.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://动画图片素材/sound/旗帜.png"
-dest_files=["res://.godot/imported/旗帜.png-4a51e5ec695d1eca4b7dc4b576a31b09.ctex"]
+source_file="res://动画图片素材/新蘑菇/Mushroom-Run.png"
+dest_files=["res://.godot/imported/Mushroom-Run.png-04041273281d2792eb6a46dff2193222.ctex"]
 
 [params]
 

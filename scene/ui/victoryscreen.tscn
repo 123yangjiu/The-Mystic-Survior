@@ -11,30 +11,33 @@ script = ExtResource("1_73tji")
 [node name="Qizi" type="Node2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="Qizi"]
-position = Vector2(424, 150)
+position = Vector2(556.5, 137)
+scale = Vector2(2.5, 2.5)
 texture = ExtResource("2_03008")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Qizi"]
-position = Vector2(424, 165)
+position = Vector2(556.5, 172)
+scale = Vector2(2.5, 2.5)
 texture = ExtResource("2_03008")
 
 [node name="Sprite2D3" type="Sprite2D" parent="Qizi"]
-position = Vector2(424, 180)
+position = Vector2(556.5, 207)
+scale = Vector2(2.5, 2.5)
 texture = ExtResource("2_03008")
 
 [node name="Sprite2D4" type="Sprite2D" parent="Qizi"]
-position = Vector2(216, 150)
-scale = Vector2(-1, 1)
+position = Vector2(83.50001, 137)
+scale = Vector2(-2.5, 2.5)
 texture = ExtResource("2_03008")
 
 [node name="Sprite2D5" type="Sprite2D" parent="Qizi"]
-position = Vector2(216, 165)
-scale = Vector2(-1, 1)
+position = Vector2(83.5, 172)
+scale = Vector2(-2.5, 2.5)
 texture = ExtResource("2_03008")
 
 [node name="Sprite2D6" type="Sprite2D" parent="Qizi"]
-position = Vector2(216, 180)
-scale = Vector2(-1, 1)
+position = Vector2(83.5, 207)
+scale = Vector2(-2.5, 2.5)
 texture = ExtResource("2_03008")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]

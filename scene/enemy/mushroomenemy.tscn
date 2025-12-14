@@ -1,47 +1,75 @@
-[gd_scene load_steps=16 format=3 uid="uid://cc3x2b78lonqh"]
+[gd_scene load_steps=20 format=3 uid="uid://cc3x2b78lonqh"]
 
-[ext_resource type="Texture2D" uid="uid://bwrwbv3n4pihm" path="res://Mushroom.png" id="1_64fop"]
 [ext_resource type="Script" uid="uid://c5ld8jykbg6p4" path="res://script/enemy/mushroomenemy.gd" id="1_ry05w"]
 [ext_resource type="PackedScene" uid="uid://decyru6mnkuga" path="res://scene/游戏功能组件/hurtboxcomponent.tscn" id="2_g74f1"]
+[ext_resource type="Texture2D" uid="uid://cpxpef8s5wt6m" path="res://动画图片素材/新蘑菇/Mushroom-Run.png" id="2_ry05w"]
 [ext_resource type="PackedScene" uid="uid://bnactnfyipltl" path="res://scene/游戏功能组件/health_component.tscn" id="3_1vn3o"]
 [ext_resource type="PackedScene" uid="uid://c0i7tc6xpk0n8" path="res://scene/游戏功能组件/drop_component.tscn" id="4_ry05w"]
 [ext_resource type="Script" uid="uid://6viyb8hj8ocd" path="res://scene/游戏功能组件/猫头鹰掉落.gd" id="5_xhrya"]
 [ext_resource type="PackedScene" uid="uid://g6ks4dc6kpht" path="res://scene/游戏功能组件/velocity_component.tscn" id="7_xhrya"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ylara"]
-atlas = ExtResource("1_64fop")
-region = Rect2(0, 0, 1000, 600)
+[sub_resource type="AtlasTexture" id="AtlasTexture_xhrya"]
+atlas = ExtResource("2_ry05w")
+region = Rect2(0, 0, 80, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4p15b"]
-atlas = ExtResource("1_64fop")
-region = Rect2(1000, 0, 1000, 600)
+[sub_resource type="AtlasTexture" id="AtlasTexture_eao75"]
+atlas = ExtResource("2_ry05w")
+region = Rect2(80, 0, 80, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wdoer"]
-atlas = ExtResource("1_64fop")
-region = Rect2(2000, 0, 1000, 600)
+[sub_resource type="AtlasTexture" id="AtlasTexture_rji2m"]
+atlas = ExtResource("2_ry05w")
+region = Rect2(160, 0, 80, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_g74f1"]
-atlas = ExtResource("1_64fop")
-region = Rect2(3000, 0, 1000, 600)
+[sub_resource type="AtlasTexture" id="AtlasTexture_yuaj2"]
+atlas = ExtResource("2_ry05w")
+region = Rect2(240, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c1mce"]
+atlas = ExtResource("2_ry05w")
+region = Rect2(320, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j2b56"]
+atlas = ExtResource("2_ry05w")
+region = Rect2(400, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eel5c"]
+atlas = ExtResource("2_ry05w")
+region = Rect2(480, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qeenr"]
+atlas = ExtResource("2_ry05w")
+region = Rect2(560, 0, 80, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1vn3o"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ylara")
+"texture": SubResource("AtlasTexture_xhrya")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4p15b")
+"texture": SubResource("AtlasTexture_eao75")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wdoer")
+"texture": SubResource("AtlasTexture_rji2m")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_g74f1")
+"texture": SubResource("AtlasTexture_yuaj2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c1mce")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j2b56")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eel5c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qeenr")
 }],
 "loop": true,
-"name": &"default",
-"speed": 7.0
+"name": &"new_animation",
+"speed": 5.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_eao75"]
@@ -60,10 +88,12 @@ collision_mask = 33
 script = ExtResource("1_ry05w")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.05, 0.05)
+position = Vector2(0, -9.07459)
+scale = Vector2(-0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_1vn3o")
-autoplay = "default"
-frame_progress = 0.92313284
+animation = &"new_animation"
+autoplay = "new_animation"
+frame_progress = 0.587092
 
 [node name="Hurtboxcomponent" parent="." node_paths=PackedStringArray("health_component") groups=["enemy"] instance=ExtResource("2_g74f1")]
 collision_layer = 4
