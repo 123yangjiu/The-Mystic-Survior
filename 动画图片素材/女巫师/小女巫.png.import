@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://opcbvuq1mes5"
-path="res://.godot/imported/旗帜.png-4a51e5ec695d1eca4b7dc4b576a31b09.ctex"
+uid="uid://bhn043cbs8vkk"
+path="res://.godot/imported/小女巫.png-72325a0d82f6ebe08698f136b31af7df.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://动画图片素材/sound/旗帜.png"
-dest_files=["res://.godot/imported/旗帜.png-4a51e5ec695d1eca4b7dc4b576a31b09.ctex"]
+source_file="res://动画图片素材/女巫师/小女巫.png"
+dest_files=["res://.godot/imported/小女巫.png-72325a0d82f6ebe08698f136b31af7df.ctex"]
 
 [params]
 
