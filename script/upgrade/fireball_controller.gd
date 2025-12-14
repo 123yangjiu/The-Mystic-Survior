@@ -2,12 +2,12 @@ extends  Node
 const MAX_RANGE=250
 @export var fireball:PackedScene
 
-var Damage=19#定义火球的伤害
+var Damage=18#定义火球的伤害
 var base_wait_time#定义基础冷却
 var number=1#火球数量
 var speed=0.05#火球的速度
 var amout=4#初始穿透个数
-var ball_size=1.2#初始化火球大小
+var ball_size=1.0#初始化火球大小
 var volume:=5
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
@@ -25,7 +25,7 @@ func on_timer_timeoout():
     
     )
     #get_first_node_in_group是拿到组里面的第一个节点，如果我们想要拿到player节点
-    #就要在player脚本中加入add_to_group("player")
+    #就要在player脚本中加入assssdd_to_group("player")
     enemies.sort_custom(func (a:Node2D,b:Node2D):
         var A_distance=a.global_position.distance_squared_to(player.global_position)
         var B_distance=b.global_position.distance_squared_to(player.global_position)
@@ -77,7 +77,7 @@ func on_ability_upgrade_add(upgrade:AbilityUpgrade,current_upgrade:Dictionary):
         amout+=2
         ball_size *=1.25
     if upgrade.ID=="火球力速":
-        Damage*=1.2
+        Damage*=1.15
         var persent_reduction=current_upgrade["火球力速"]["quantity"]*.15
         volume =-persent_reduction*6
         $Timer.wait_time=base_wait_time*max((1-persent_reduction),0.1)
