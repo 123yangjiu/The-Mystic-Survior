@@ -1,8 +1,106 @@
-[gd_scene load_steps=4 format=3 uid="uid://ci3fodbprfo2x"]
+[gd_scene load_steps=18 format=3 uid="uid://ci3fodbprfo2x"]
 
 [ext_resource type="Script" uid="uid://dhi6irssr0s2a" path="res://script/文本及ui显示/victoryscreen.gd" id="1_73tji"]
 [ext_resource type="Texture2D" uid="uid://bpsdycqrk75ie" path="res://动画图片素材/UI/旗帜.png" id="2_03008"]
 [ext_resource type="Texture2D" uid="uid://d35xkrfjuc6fu" path="res://动画图片素材/UI/Victory第1.5版.png" id="3_03008"]
+[ext_resource type="Texture2D" uid="uid://np0ujogifk4b" path="res://动画图片素材/女巫师/小女巫_胜利.png" id="4_fq4wr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_30wqp"]
+atlas = ExtResource("4_fq4wr")
+region = Rect2(0, 0, 20, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4fuvt"]
+atlas = ExtResource("4_fq4wr")
+region = Rect2(20, 0, 20, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2otoq"]
+atlas = ExtResource("4_fq4wr")
+region = Rect2(40, 0, 20, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8iq2h"]
+atlas = ExtResource("4_fq4wr")
+region = Rect2(60, 0, 20, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cudyw"]
+atlas = ExtResource("4_fq4wr")
+region = Rect2(80, 0, 20, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hsfnw"]
+atlas = ExtResource("4_fq4wr")
+region = Rect2(100, 0, 20, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3mp5n"]
+atlas = ExtResource("4_fq4wr")
+region = Rect2(120, 0, 20, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8gmmg"]
+atlas = ExtResource("4_fq4wr")
+region = Rect2(140, 0, 20, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtvv6"]
+atlas = ExtResource("4_fq4wr")
+region = Rect2(160, 0, 20, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jugxf"]
+atlas = ExtResource("4_fq4wr")
+region = Rect2(180, 0, 20, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5tus4"]
+atlas = ExtResource("4_fq4wr")
+region = Rect2(200, 0, 20, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mqomm"]
+atlas = ExtResource("4_fq4wr")
+region = Rect2(220, 0, 20, 29)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bk5cs"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_30wqp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4fuvt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2otoq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8iq2h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cudyw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hsfnw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3mp5n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8gmmg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vtvv6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jugxf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5tus4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mqomm")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 8.0
+}]
 
 [node name="Victoryscreen" type="CanvasLayer"]
 process_mode = 3
@@ -103,3 +201,11 @@ text = "离开"
 autowrap_mode = 1
 icon_alignment = 1
 expand_icon = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(312, 91)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_bk5cs")
+animation = &"new_animation"
+autoplay = "new_animation"
+frame_progress = 0.16880465
