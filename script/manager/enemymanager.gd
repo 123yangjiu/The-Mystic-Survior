@@ -22,6 +22,7 @@ func on_time_out():
 	entities_Layer.add_child(enemy)
 	enemy.global_position=spawn_position
 func on_more_difficulty(difficulty:int):
+
 	var entities_Layer=get_tree().get_first_node_in_group("实体图层")
 	var player=get_tree().get_first_node_in_group("player")
 	$Timer.wait_time = (max(min_gap, base_time_gap * exp(-decay * difficulty)))*1.15
@@ -80,7 +81,7 @@ func on_more_difficulty(difficulty:int):
 			# 3. 最终位置
 			kill_enemy.global_position = player.global_position + Vector2.RIGHT.rotated(angle) * radius
 	pass
-	if difficulty==13:
+	if difficulty>=13:
 		var kill_enemy = kill_cirle_enemy[2].instantiate() as Node2D
 		entities_Layer.add_child(kill_enemy)
 		var angle := TAU / 3
