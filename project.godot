@@ -13,6 +13,9 @@ config_version=5
 config/name="类吸血鬼demo尝试"
 run/main_scene="uid://yy0os3e5cvfu"
 config/features=PackedStringArray("4.5", "Forward Plus")
+boot_splash/fullsize=false
+boot_splash/use_filter=false
+config/icon="uid://b3g8r6j1r7m23"
 
 [autoload]
 

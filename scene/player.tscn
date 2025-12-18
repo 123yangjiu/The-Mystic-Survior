@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://b8orbduoade27"]
+[gd_scene load_steps=28 format=3 uid="uid://b8orbduoade27"]
 
 [ext_resource type="Script" uid="uid://cftr1t220lj12" path="res://script/player.gd" id="1_hjaqi"]
 [ext_resource type="PackedScene" uid="uid://b0v42bl82qnrr" path="res://scene/ability/sword_ability/sword_ability_controller.tscn" id="2_fvtld"]
@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://crcg0u1elatvt" path="res://scene/ability/ring_ability/ring_ability.tscn" id="7_ml7e8"]
 [ext_resource type="Script" uid="uid://b085c5vup7duv" path="res://script/拾取范围.gd" id="8_g2vtq"]
 [ext_resource type="Texture2D" uid="uid://bhn043cbs8vkk" path="res://动画图片素材/女巫师/小女巫.png" id="10_ihjo1"]
+[ext_resource type="Texture2D" uid="uid://dkqr60limdl3s" path="res://动画图片素材/女巫师/小女巫_黑边.png" id="11_34jf3"]
+[ext_resource type="AudioStream" uid="uid://546e7ynhd8tu" path="res://scene/受击.wav" id="12_dk1vr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ihjo1"]
 atlas = ExtResource("10_ihjo1")
@@ -26,6 +28,22 @@ region = Rect2(128, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u7b46"]
 atlas = ExtResource("10_ihjo1")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4wxg"]
+atlas = ExtResource("11_34jf3")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bup7g"]
+atlas = ExtResource("11_34jf3")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ja17"]
+atlas = ExtResource("11_34jf3")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v4iqv"]
+atlas = ExtResource("11_34jf3")
 region = Rect2(192, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u7b46"]
@@ -50,7 +68,24 @@ animations = [{
 }],
 "loop": true,
 "name": &"run",
-"speed": 10.0
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j4wxg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bup7g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ja17")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v4iqv")
+}],
+"loop": true,
+"name": &"run_black",
+"speed": 8.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fvtld"]
@@ -100,7 +135,7 @@ position = Vector2(-4, 4)
 scale = Vector2(1.4342026, 1.2283583)
 sprite_frames = SubResource("SpriteFrames_u7b46")
 animation = &"run"
-frame_progress = 0.35564202
+frame_progress = 0.04168747
 flip_h = true
 
 [node name="拾取范围" type="Area2D" parent="."]
@@ -143,3 +178,6 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_s4jxa")
 max_value = 1.0
 value = 0.5
 show_percentage = false
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_dk1vr")

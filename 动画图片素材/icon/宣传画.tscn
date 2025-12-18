@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://6fnylj4pdgvr"]
+
+[ext_resource type="Texture2D" uid="uid://bktlw3677o6gj" path="res://动画图片素材/icon/头像.png" id="1_p6a6j"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_i2sl5"]
+line_spacing = 6.0
+paragraph_spacing = 3.0
+font_size = 24
+font_color = Color(0.48165002, 0.78, 0.11699998, 1)
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="头像" type="Sprite2D" parent="."]
+position = Vector2(284, 187)
+texture = ExtResource("1_p6a6j")
+
+[node name="Label" type="Label" parent="头像"]
+offset_left = -86.0
+offset_top = 18.0
+offset_right = 82.0
+offset_bottom = 42.0
+theme_override_font_sizes/font_size = 24
+text = "女 巫 幸 存 者"
+label_settings = SubResource("LabelSettings_i2sl5")

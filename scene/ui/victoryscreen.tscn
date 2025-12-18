@@ -208,4 +208,4 @@ scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_bk5cs")
 animation = &"new_animation"
 autoplay = "new_animation"
-frame_progress = 0.16880465
+frame_progress = 0.75067914
