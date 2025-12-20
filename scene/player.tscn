@@ -94,8 +94,8 @@ radius = 24.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_s4jxa"]
 radius = 7.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_oh5ij"]
-radius = 4.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_34jf3"]
+size = Vector2(17, 21.961147)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ct4mp"]
 bg_color = Color(0.24705882, 0.14901961, 0.19215687, 1)
@@ -152,15 +152,13 @@ collision_layer = 0
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hurtrange"]
-visible = false
 position = Vector2(0, 5)
 shape = SubResource("CircleShape2D_s4jxa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(0, 5)
+position = Vector2(-1.5, 4.016241)
 scale = Vector2(1, 1.0032482)
-shape = SubResource("CircleShape2D_oh5ij")
+shape = SubResource("RectangleShape2D_34jf3")
 
 [node name="伤害间隔计时器" type="Timer" parent="."]
 wait_time = 0.5
