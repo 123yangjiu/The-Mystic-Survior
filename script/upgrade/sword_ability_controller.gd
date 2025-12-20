@@ -52,7 +52,7 @@ func on_timer_timeoout():
 		sword_instance.rotation = -dir_to_player.angle()
 		var collision_gap =sword_instance.collision_shape_2d_2.global_position-sword_instance.global_position
 
-		sword_instance.global_position-=collision_gap/4
+		sword_instance.global_position-=collision_gap/3
 
 
 # 再拿最近的那只

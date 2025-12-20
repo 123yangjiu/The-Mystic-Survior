@@ -1,5 +1,11 @@
 extends Node
 const SPAWN_R=300
+#地图边界尺寸
+const left_limit=-2700
+const top_limit = -2000
+const right_limit =2160
+const bottom_limit = 2360
+
 @export var kill_cirle_enemy:Array[PackedScene]
 var chosen_enemy_scene:PackedScene
 var min_gap=0.07
@@ -17,6 +23,7 @@ func on_time_out():
 	#的怪物
 	var random_direction=Vector2.RIGHT.rotated(randf_range(0,TAU))
 	var spawn_position=player.global_position+random_direction*SPAWN_R
+	spawn_position=limit_position(spawn_position)
 	var enemy=chosen_enemy_scene.instantiate() as Node2D
 	var entities_Layer=get_tree().get_first_node_in_group("实体图层")
 	entities_Layer.add_child(enemy)
@@ -90,4 +97,11 @@ func on_more_difficulty(difficulty:int):
 		# 3. 最终位置
 		kill_enemy.global_position = player.global_position + Vector2.RIGHT.rotated(angle) * (radius+50)
 		#加入女巫
-		
+
+func limit_position(which_position)->Vector2:
+	var final_position:Vector2
+	final_position.x= min(right_limit,which_position.x)
+	final_position.x = max(left_limit,which_position.x)
+	final_position.y = min(bottom_limit,which_position.y)
+	final_position.y = max(top_limit,which_position.y)
+	return final_position

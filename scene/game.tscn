@@ -33,7 +33,7 @@
 
 [node name="game" type="Node2D"]
 script = ExtResource("1_ve786")
-metadata/_edit_horizontal_guides_ = [-33.0, -2095.0, 2460.0]
+metadata/_edit_horizontal_guides_ = [-33.0, -2095.0, 2460.0, 2460.0]
 metadata/_edit_vertical_guides_ = [-2879.0, 2267.0]
 
 [node name="TileMap" type="Node2D" parent="."]
