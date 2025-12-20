@@ -30,3 +30,6 @@ func emit_increase_blood(number:float):#发射信号的函数这样写是为了�
 var the_first=0
 @warning_ignore("unused_signal")
 signal the_first_damage()
+
+signal game_stop
+signal player_died

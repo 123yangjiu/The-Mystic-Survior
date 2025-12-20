@@ -3,6 +3,7 @@ class_name holy_right_ruling
 #@onready var hitbox_component: HitboxComponent = $"hitbox component"
 #@onready var animation_player: AnimationPlayer = $AnimationPlayer
 @export var stop_screen:PackedScene
+
 func _ready() -> void:
 	change_direction()
 	#测试内容
@@ -18,5 +19,6 @@ func _process(_delta: float) -> void:
 
 
 func stop_game()->void:
+	GameEvent.game_stop.emit()
 	var screen=stop_screen.instantiate()
 	add_child(screen)

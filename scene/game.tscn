@@ -124,18 +124,23 @@ all_music = [NodePath("MainTheme"), NodePath("TheFirst"), NodePath("WithWolf"), 
 
 [node name="MainTheme" type="AudioStreamPlayer" parent="MusicManager"]
 stream = ExtResource("19_b8t8i")
+bus = &"Music"
 
 [node name="TheFirst" type="AudioStreamPlayer" parent="MusicManager"]
 stream = ExtResource("19_pp3pk")
+bus = &"Music"
 
 [node name="WithWolf" type="AudioStreamPlayer" parent="MusicManager"]
 stream = ExtResource("20_b8t8i")
 volume_db = -5.0
+bus = &"Music"
 
 [node name="WithGorlen" type="AudioStreamPlayer" parent="MusicManager"]
 stream = ExtResource("21_355h4")
 volume_db = 2.0
+bus = &"Music"
 
 [node name="TheFinal" type="AudioStreamPlayer" parent="MusicManager"]
 stream = ExtResource("26_ca6q5")
 volume_db = 3.0
+bus = &"Music"

@@ -14,6 +14,10 @@ func _ready() -> void:
 	GameEvent.more_difficulty.connect(on_more_difficulty)
 	GameEvent.the_first_damage.connect(on_the_first_damage)
 	gametimemanager.the_second_music.connect(the_second)
+	GameEvent.game_stop.connect(stop_music)
+	GameEvent.player_died.connect(stop_music)
+	gametimemanager.victory.connect(stop_music)
+	
 
 func on_more_difficulty(difficulty := 0)->void:
 	match difficulty:
@@ -40,3 +44,8 @@ func play(which_music:AudioStreamPlayer,wait_music:AudioStreamPlayer=null)->void
 		for music:AudioStreamPlayer in all_music:
 			if ! music==which_music:
 				music.stop()
+
+func stop_music()->void:
+	print("kaishi")
+	for music:AudioStreamPlayer in all_music:
+		music.stop()

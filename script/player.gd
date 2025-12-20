@@ -101,6 +101,7 @@ func on_health_change():
 	health_bar.value=health_component.get_health_persent()
 
 func on_died()->void:
+	GameEvent.player_died.emit()
 	var screen=died_screen.instantiate()
 	get_viewport().add_child(screen)
 

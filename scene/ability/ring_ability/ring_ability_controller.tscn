@@ -13,3 +13,4 @@ wait_time = 4.5
 stream = ExtResource("2_00eck")
 volume_db = 4.0
 pitch_scale = 1.25
+bus = &"Sound"
