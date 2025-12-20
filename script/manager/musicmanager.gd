@@ -1,7 +1,6 @@
 class_name MusicManager
 extends Node
 
-@onready var main_theme: AudioStreamPlayer = $MainTheme
 @onready var the_first: AudioStreamPlayer = $TheFirst
 @onready var with_wolf: AudioStreamPlayer = $WithWolf
 @onready var with_gorlen: AudioStreamPlayer = $WithGorlen
@@ -16,7 +15,7 @@ func _ready() -> void:
 	gametimemanager.the_second_music.connect(the_second)
 	GameEvent.game_stop.connect(stop_music)
 	GameEvent.player_died.connect(stop_music)
-	gametimemanager.victory.connect(stop_music)
+	#gametimemanager.victory.connect(stop_music)
 	
 
 func on_more_difficulty(difficulty := 0)->void:

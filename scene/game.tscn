@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://yy0os3e5cvfu"]
+[gd_scene load_steps=31 format=4 uid="uid://yy0os3e5cvfu"]
 
 [ext_resource type="Script" uid="uid://rt8ham21rr6r" path="res://script/game.gd" id="1_ve786"]
 [ext_resource type="PackedScene" uid="uid://b5kpt3fnkjki1" path="res://scene/ui/暂停.tscn" id="2_0halo"]
@@ -25,7 +25,6 @@
 [ext_resource type="PackedScene" uid="uid://cc3x2b78lonqh" path="res://scene/enemy/mushroomenemy.tscn" id="17_kv4hp"]
 [ext_resource type="PackedScene" uid="uid://dg0lowfwv0dg3" path="res://scene/enemy/骑士.tscn" id="18_0jy4g"]
 [ext_resource type="Script" uid="uid://cbv3aa54oasir" path="res://script/manager/musicmanager.gd" id="18_1it6f"]
-[ext_resource type="AudioStream" uid="uid://c5uulbfvf0wpc" path="res://动画图片素材/back_music/Brand New.wav" id="19_b8t8i"]
 [ext_resource type="AudioStream" uid="uid://d3fqo15a0me7k" path="res://动画图片素材/back_music/Groovy Moves.wav" id="19_pp3pk"]
 [ext_resource type="AudioStream" uid="uid://ddda7n23il1ly" path="res://动画图片素材/back_music/Earth Turns To Our Feet.wav" id="20_b8t8i"]
 [ext_resource type="AudioStream" uid="uid://ndho2y6dc21m" path="res://动画图片素材/back_music/Ariadne's Thread.wav" id="21_355h4"]
@@ -120,11 +119,7 @@ position = Vector2(61, 282)
 [node name="MusicManager" type="Node" parent="." node_paths=PackedStringArray("all_music")]
 process_mode = 3
 script = ExtResource("18_1it6f")
-all_music = [NodePath("MainTheme"), NodePath("TheFirst"), NodePath("WithWolf"), NodePath("WithGorlen"), NodePath("TheFinal")]
-
-[node name="MainTheme" type="AudioStreamPlayer" parent="MusicManager"]
-stream = ExtResource("19_b8t8i")
-bus = &"Music"
+all_music = [NodePath(""), NodePath("TheFirst"), NodePath("WithWolf"), NodePath("WithGorlen"), NodePath("TheFinal")]
 
 [node name="TheFirst" type="AudioStreamPlayer" parent="MusicManager"]
 stream = ExtResource("19_pp3pk")
