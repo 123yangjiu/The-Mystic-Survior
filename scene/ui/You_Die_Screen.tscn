@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://co66107rpg80r"]
+[gd_scene load_steps=5 format=3 uid="uid://co66107rpg80r"]
 
 [ext_resource type="Script" uid="uid://dhi6irssr0s2a" path="res://script/文本及ui显示/victoryscreen.gd" id="1_u23xs"]
 [ext_resource type="Texture2D" uid="uid://d1ue7ojv75eip" path="res://动画图片素材/UI/You_die.png" id="2_nqmcm"]
 [ext_resource type="Theme" uid="uid://bak7nt8mttr06" path="res://resource/theme/black_theme.tres" id="3_q6lwb"]
+[ext_resource type="AudioStream" uid="uid://dtfqdospxtd34" path="res://动画图片素材/back_music/Failure Sound WAV.wav" id="4_jjjup"]
 
 [node name="You_Die_Screen" type="CanvasLayer"]
 process_mode = 3
@@ -69,3 +70,7 @@ size_flags_horizontal = 4
 theme = ExtResource("3_q6lwb")
 theme_override_font_sizes/font_size = 36
 text = "离开"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_jjjup")
+bus = &"Music"

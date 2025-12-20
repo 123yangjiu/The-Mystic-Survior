@@ -15,3 +15,4 @@ wait_time = 2.5
 stream = ExtResource("3_p64c4")
 volume_db = -5.0
 pitch_scale = 2.5
+bus = &"Sound"

@@ -4,6 +4,7 @@ extends Node
 @onready var timer: Timer = $Timer
 #@onready var difficulty_timer: Timer = $difficulty_timer
 signal the_second_music#启动第二个音乐
+signal victory
 var one_shot:=false
 
 func _ready() -> void:
@@ -15,5 +16,8 @@ func get_time_elaspsed():
         the_second_music.emit()
     return timer.wait_time-timer.time_left
 func on_timer_timeout():
-    var victory_screen_instance=victory_screen.instantiate()
-    add_child(victory_screen_instance)
+
+	victory.emit()
+	var victory_screen_instance=victory_screen.instantiate()
+	add_child(victory_screen_instance)
+

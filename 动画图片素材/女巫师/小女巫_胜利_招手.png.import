@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7xdagd4gqxh5"
-path="res://.godot/imported/icon.png-7ac6032b1a6bb249ab57212b44130e28.ctex"
+uid="uid://w4uxnl1m2tpl"
+path="res://.godot/imported/小女巫_胜利_招手.png-0e759047b466aef1744e76f45a1fdfc4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://动画图片素材/icon/icon.png"
-dest_files=["res://.godot/imported/icon.png-7ac6032b1a6bb249ab57212b44130e28.ctex"]
+source_file="res://动画图片素材/女巫师/小女巫_胜利_招手.png"
+dest_files=["res://.godot/imported/小女巫_胜利_招手.png-0e759047b466aef1744e76f45a1fdfc4.ctex"]
 
 [params]
 

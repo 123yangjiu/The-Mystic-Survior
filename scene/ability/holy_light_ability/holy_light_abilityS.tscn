@@ -406,7 +406,9 @@ disabled = true
 
 [node name="挥剑" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_xf82j")
+bus = &"Sound"
 
 [node name="汇集" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_xf82j")
 pitch_scale = 1.2
+bus = &"Sound"

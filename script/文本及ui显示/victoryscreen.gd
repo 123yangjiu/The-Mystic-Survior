@@ -1,9 +1,14 @@
 extends CanvasLayer
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
 func _ready() -> void:
-    get_tree().paused = true
-    %restart.pressed.connect(on_restart_press)
-    %quit.pressed.connect(on_quit_press)
+
+	get_tree().paused = true
+	%restart.pressed.connect(on_restart_press)
+	%quit.pressed.connect(on_quit_press)
+	await get_tree().create_timer(0.6).timeout
+	audio_stream_player.play()
+
 
 func on_restart_press():
     await get_tree().create_timer(0.1).timeout
