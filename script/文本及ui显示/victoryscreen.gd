@@ -22,5 +22,5 @@ func on_restart_press():
 	pass
 
 func  on_quit_press():
-    get_tree().quit()
-    pass
+	get_tree().quit()
+	pass

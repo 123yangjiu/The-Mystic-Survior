@@ -22,20 +22,20 @@ func _ready() -> void:
 
 
 func on_more_difficulty(difficulty := 0)->void:
-    match difficulty:
-        6:
-            play(with_wolf)
-        11:
-            play(with_gorlen,with_wolf)
-        15:
-            play(the_final,with_gorlen)
+	match difficulty:
+		6:
+			play(with_wolf)
+		11:
+			play(with_gorlen,with_wolf)
+		15:
+			play(the_final,with_gorlen)
 
 
 func on_the_first_damage()->void:
-    play(the_first)
+	play(the_first)
 
 func the_second()->void:
-    play(with_wolf,the_first)
+	play(with_wolf,the_first)
 
 func play(which_music:AudioStreamPlayer,wait_music:AudioStreamPlayer=null)->void:
 	if wait_music:
