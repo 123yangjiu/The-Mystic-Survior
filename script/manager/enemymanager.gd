@@ -14,10 +14,21 @@ var rand_R=450#包围半径
 @onready var enemyfiliter: EnemyFiliter = $"../enemyfiliter"
 var base_time_gap
 func _ready() -> void:
-	base_time_gap=$Timer.wait_time
-	$Timer.timeout.connect(on_time_out)
-	GameEvent.more_difficulty.connect(on_more_difficulty)
+    base_time_gap=$Timer.wait_time
+    $Timer.timeout.connect(on_time_out)
+    GameEvent.more_difficulty.connect(on_more_difficulty)
 func on_time_out():
+
+    chosen_enemy_scene=enemyfiliter.random_chose()#
+    var player=get_tree().get_first_node_in_group("player")#通过筛选器选出这次要生成
+    #的怪物
+    var random_direction=Vector2.RIGHT.rotated(randf_range(0,TAU))
+    var spawn_position=player.global_position+random_direction*SPAWN_R
+    var enemy=chosen_enemy_scene.instantiate() as Node2D
+    var entities_Layer=get_tree().get_first_node_in_group("实体图层")
+    entities_Layer.add_child(enemy)
+    enemy.global_position=spawn_position
+
 	chosen_enemy_scene=enemyfiliter.random_chose()#
 	var player=get_tree().get_first_node_in_group("player")#通过筛选器选出这次要生成
 	#的怪物
@@ -105,3 +116,4 @@ func limit_position(which_position)->Vector2:
 	final_position.y = min(bottom_limit,which_position.y)
 	final_position.y = max(top_limit,which_position.y)
 	return final_position
+
