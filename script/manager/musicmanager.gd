@@ -9,14 +9,17 @@ extends Node
 
 @export var all_music:Array[AudioStreamPlayer]
 
+var a_stop_music:AudioStreamPlayer
+var a_stop_time:float
+
 func _ready() -> void:
 	GameEvent.more_difficulty.connect(on_more_difficulty)
 	GameEvent.the_first_damage.connect(on_the_first_damage)
 	gametimemanager.the_second_music.connect(the_second)
 	GameEvent.game_stop.connect(stop_music)
 	GameEvent.player_died.connect(stop_music)
-	#gametimemanager.victory.connect(stop_music)
-	
+	GameEvent.stop_end.connect(on_stop_end)
+
 
 func on_more_difficulty(difficulty := 0)->void:
 	match difficulty:
@@ -45,6 +48,11 @@ func play(which_music:AudioStreamPlayer,wait_music:AudioStreamPlayer=null)->void
 				music.stop()
 
 func stop_music()->void:
-	print("kaishi")
 	for music:AudioStreamPlayer in all_music:
-		music.stop()
+		if music.playing:
+			a_stop_music=music
+			music.stream_paused=true
+
+func on_stop_end()->void:
+	if a_stop_music:
+		a_stop_music.stream_paused=false

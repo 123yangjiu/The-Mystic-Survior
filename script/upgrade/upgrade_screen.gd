@@ -2,7 +2,10 @@ extends CanvasLayer
 signal upgrade_selected(upgrade:AbilityUpgrade)
 @export var upgrade_card_scene:PackedScene
 @onready var card_container: HBoxContainer = $MarginContainer/CardContainer
+
+@export var stop_screen:PackedScene
 func _ready() -> void:
+	GameEvent.paused+=1
 	get_tree().paused=true
 	#暂停主场景树的时候这个显示屏节点也会被暂停所以在属性里面打开always总是运行这个节点
 func Set_Ability_Upgrade(upgrades:Array[AbilityUpgrade]):#传入选项这个函数负责打印
@@ -21,8 +24,18 @@ func on_upgrade_select(upgrade:AbilityUpgrade):
 	var children= get_parent().get_children()
 	if children.size()>=2:
 		return
-	get_tree().paused=false
+	if GameEvent.paused>0:
+		GameEvent.paused-=1
+		if GameEvent.paused==0:
+			get_tree().paused=false
 	#选择完能力之后游戏继续进行
 	queue_free()#选择完能力之后关掉能力升级显示屏
 	
 	pass
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("暂停"):
+		get_viewport().set_input_as_handled()
+		GameEvent.game_stop.emit()
+		var screen=stop_screen.instantiate()
+		add_child(screen)

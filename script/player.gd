@@ -17,10 +17,11 @@ var enter_body_number_30_hurt=30
 var enter_body_number_47_hurt=47
 
 
-
-var direction:Vector2
+var direction:=Vector2(0,0)
 var vec:Vector2
 var is_run:=false:set=set_is_run
+#手机移动
+var is_touch:=false
 func _ready() -> void:
 	# ① 形状是否存在
 	GameEvent.ability_upgrade_add.connect(on_ability_upgrade_add)
@@ -36,7 +37,8 @@ func _ready() -> void:
 	
 @export var MAX_speed=120
 func _physics_process(_delta: float) -> void:
-	direction=get_move_direction().normalized()
+	if !is_touch:
+		direction=get_move_direction().normalized()
 	velocity=direction*MAX_speed
 	if direction.length() != 0.0:
 		is_run=true

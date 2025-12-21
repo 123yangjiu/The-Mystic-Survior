@@ -1,10 +1,9 @@
 extends Node
 @onready var difficulty_timer: Timer = $difficulty_timer
+var paused:=0
 
 func _ready() -> void:
 	difficulty_timer.timeout.connect(emit_more_difficulty)
-	
-
 signal experience_bottle_collected(number:float)#吃到经验瓶时发出信号
 func emit_increase_experience(number:float):#发射信号的函数这样写是为了控制经验瓶的经验多少
 	experience_bottle_collected.emit(number)
@@ -31,5 +30,9 @@ var the_first=0
 @warning_ignore("unused_signal")
 signal the_first_damage()
 
+@warning_ignore("unused_signal")
 signal game_stop
+@warning_ignore("unused_signal")
+signal stop_end
+@warning_ignore("unused_signal")
 signal player_died

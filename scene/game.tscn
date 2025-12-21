@@ -31,7 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://d1xy0buqa0l3x" path="res://scene/enemy/女巫.tscn" id="24_0halo"]
 [ext_resource type="AudioStream" uid="uid://bdo817fx5or0" path="res://动画图片素材/back_music/Neon Skyscrapers.ogg" id="26_ca6q5"]
 
-[node name="game" type="Node2D"]
+[node name="game" type="Node2D" groups=["主游戏"]]
 script = ExtResource("1_ve786")
 stop_screen = ExtResource("2_0halo")
 metadata/_edit_horizontal_guides_ = [-33.0, -2095.0, 2460.0, 2460.0]
@@ -103,14 +103,6 @@ position = Vector2(-23, 270)
 scale = Vector2(1, 0.9772806)
 MAX_speed = 115
 
-[node name="Camera2D2" type="Camera2D" parent="实体/player"]
-position = Vector2(4, 4.0929594)
-limit_left = -2879
-limit_top = -2095
-limit_right = 2267
-limit_bottom = 2460
-position_smoothing_enabled = true
-
 [node name="前景" type="Node" parent="." groups=["前景图层"]]
 
 [node name="box" parent="前景" instance=ExtResource("13_5g16k")]
@@ -119,7 +111,7 @@ position = Vector2(61, 282)
 [node name="MusicManager" type="Node" parent="." node_paths=PackedStringArray("all_music")]
 process_mode = 3
 script = ExtResource("18_1it6f")
-all_music = [NodePath(""), NodePath("TheFirst"), NodePath("WithWolf"), NodePath("WithGorlen"), NodePath("TheFinal")]
+all_music = [NodePath("TheFirst"), NodePath("WithWolf"), NodePath("WithGorlen"), NodePath("TheFinal")]
 
 [node name="TheFirst" type="AudioStreamPlayer" parent="MusicManager"]
 stream = ExtResource("19_pp3pk")
