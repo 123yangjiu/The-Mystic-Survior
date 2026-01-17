@@ -4,6 +4,9 @@ var is_drag:=false #记录拖拽状态
 @onready var yao_gan: Sprite2D = $YaoGan
 @export var player:Player
 
+func _ready() -> void:
+	GameEvent._paused.connect(_on_paused)
+
 func _input(event: InputEvent) -> void:
 	if event is InputEventScreenTouch and event.is_pressed():
 		_process_touch(event)
@@ -34,4 +37,7 @@ func _process_released(_event:InputEvent)->void:
 	if player:
 		player.is_touch=false
 	is_drag=false
+	self.visible=false
+
+func _on_paused()->void:
 	self.visible=false

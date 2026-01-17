@@ -29,16 +29,7 @@ func on_time_out():
 	entities_Layer.add_child(enemy)
 	enemy.global_position=spawn_position
 
-	#chosen_enemy_scene=enemyfiliter.random_chose()#
-	#var player=get_tree().get_first_node_in_group("player")#通过筛选器选出这次要生成
-	##的怪物
-	#var random_direction=Vector2.RIGHT.rotated(randf_range(0,TAU))
-	#var spawn_position=player.global_position+random_direction*SPAWN_R
-	#spawn_position=limit_position(spawn_position)
-	#var enemy=chosen_enemy_scene.instantiate() as Node2D
-	#var entities_Layer=get_tree().get_first_node_in_group("实体图层")
-	#entities_Layer.add_child(enemy)
-	#enemy.global_position=spawn_position
+
 func on_more_difficulty(difficulty:int):
 
 	var entities_Layer=get_tree().get_first_node_in_group("实体图层")

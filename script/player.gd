@@ -1,5 +1,6 @@
 extends CharacterBody2D
 class_name Player
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var health_component: HealthComponent = $health_component
 @onready var health_bar: ProgressBar = $HealthBar
@@ -101,6 +102,7 @@ func on_time_out():#没有走出敌人攻击范围就再次造成伤害daw
 
 func on_health_change():
 	health_bar.value=health_component.get_health_persent()
+	audio_stream_player_2d.play()
 
 func on_died()->void:
 

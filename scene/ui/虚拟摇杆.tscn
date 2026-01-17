@@ -6,6 +6,7 @@
 
 [node name="虚拟摇杆" type="Sprite2D"]
 visible = false
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_cvih0")
 script = ExtResource("2_i1i8g")
 

@@ -1,6 +1,6 @@
 extends Node
 @onready var difficulty_timer: Timer = $difficulty_timer
-var paused:=0
+var paused:=0:set=set_paused
 
 func _ready() -> void:
 	difficulty_timer.timeout.connect(emit_more_difficulty)
@@ -29,10 +29,15 @@ func emit_increase_blood(number:float):#发射信号的函数这样写是为了�
 var the_first=0
 @warning_ignore("unused_signal")
 signal the_first_damage()
-
 @warning_ignore("unused_signal")
-signal game_stop
+signal game_stop #管理双重暂停，例如当升级时再按暂停
 @warning_ignore("unused_signal")
 signal stop_end
 @warning_ignore("unused_signal")
 signal player_died
+
+signal _paused #当paused+1时发出信号
+#当游戏暂停时发出一些信号
+func set_paused(value)->void:
+	if value>paused:
+		_paused.emit()
