@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://cr32ffcse8os3"]
+
+[ext_resource type="Script" uid="uid://dyo1scdlv4n7e" path="res://script/文本及ui显示/settingscreen.gd" id="1_ge732"]
+[ext_resource type="PackedScene" uid="uid://djyv3a54a2tlj" path="res://scene/ui/change_screen.tscn" id="2_ge732"]
+[ext_resource type="PackedScene" uid="uid://do5j6tqexbgan" path="res://scene/ui/Master_bar.tscn" id="3_ghmbv"]
+[ext_resource type="PackedScene" uid="uid://y0d83doilca2" path="res://scene/ui/music_bar.tscn" id="4_5xyoi"]
+[ext_resource type="PackedScene" uid="uid://8snn1li86mb5" path="res://scene/ui/sound_bar.tscn" id="5_cljgu"]
+
+[node name="Settingscreen" type="CanvasLayer"]
+layer = 3
+script = ExtResource("1_ge732")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.15, 0.15, 0.15, 0.8627451)
+
+[node name="Change_screen" parent="." instance=ExtResource("2_ge732")]
+offset_left = 103.0
+offset_top = 21.0
+offset_right = 153.0
+offset_bottom = 41.0
+scale = Vector2(1.5, 1.5)
+
+[node name="SoundBus" type="Node2D" parent="."]
+position = Vector2(-526, -182)
+scale = Vector2(1.5, 1.5)
+
+[node name="Master" parent="SoundBus" instance=ExtResource("3_ghmbv")]
+offset_left = 431.0
+offset_top = 180.0
+offset_right = 536.0
+offset_bottom = 192.0
+
+[node name="Music" parent="SoundBus" instance=ExtResource("4_5xyoi")]
+offset_left = 431.0
+offset_top = 207.0
+offset_right = 536.0
+offset_bottom = 219.0
+
+[node name="Sound" parent="SoundBus" instance=ExtResource("5_cljgu")]
+offset_left = 431.0
+offset_top = 233.0
+offset_right = 536.0
+offset_bottom = 245.0

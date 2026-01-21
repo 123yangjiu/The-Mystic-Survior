@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5oni5ikgr5pr"
-path="res://.godot/imported/奔跑女巫.png-884d3f84233f9bef553e08d7ee61a901.ctex"
+uid="uid://6kklrx7nytpq"
+path="res://.godot/imported/noita_no_background.png-aa093012c5c3a994176e2137caedc8d5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://动画图片素材/icon/奔跑女巫.png"
-dest_files=["res://.godot/imported/奔跑女巫.png-884d3f84233f9bef553e08d7ee61a901.ctex"]
+source_file="res://动画图片素材/icon/noita_no_background.png"
+dest_files=["res://.godot/imported/noita_no_background.png-aa093012c5c3a994176e2137caedc8d5.ctex"]
 
 [params]
 

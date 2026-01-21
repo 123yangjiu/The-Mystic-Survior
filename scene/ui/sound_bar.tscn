@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://8snn1li86mb5"]
+
+[ext_resource type="Texture2D" uid="uid://ha5mt27odjym" path="res://动画图片素材/UI/progressbar.png" id="1_cuemi"]
+[ext_resource type="Texture2D" uid="uid://b4tmm8ndrlbip" path="res://动画图片素材/UI/ball2.png" id="2_p84qg"]
+[ext_resource type="Script" uid="uid://bl0fkh3ewfft6" path="res://script/文本及ui显示/dragbutton.gd" id="3_33iei"]
+
+[node name="DragBar" type="TextureProgressBar"]
+offset_right = 105.0
+offset_bottom = 12.0
+scale = Vector2(2, 2)
+value = 50.0
+texture_under = ExtResource("1_cuemi")
+texture_progress = ExtResource("1_cuemi")
+tint_progress = Color(0.12, 0.12, 0.12, 1)
+
+[node name="Button" type="Sprite2D" parent="."]
+position = Vector2(52.75, 5.75)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("2_p84qg")
+script = ExtResource("3_33iei")
+bus_name = "Sound"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = -38.5
+offset_top = -15.5
+offset_right = 1.5
+offset_bottom = 26.5
+text = "音效"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Anchor" type="Node2D" parent="."]
+
+[node name="Begin" type="Node2D" parent="Anchor"]
+position = Vector2(2, 6)
+scale = Vector2(0.5, 0.5)
+
+[node name="End" type="Node2D" parent="Anchor"]
+position = Vector2(101, 6)
+scale = Vector2(0.5, 0.5)
+
+[node name="Up" type="Node2D" parent="Anchor"]
+position = Vector2(53, 1)
+
+[node name="Down" type="Node2D" parent="Anchor"]
+position = Vector2(53, 11)

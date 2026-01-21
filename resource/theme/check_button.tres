@@ -1,0 +1,47 @@
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://d4ha65cmqmkam"]
+
+[ext_resource type="FontFile" uid="uid://dxxikqhefg8kj" path="res://resource/theme/Silver.ttf" id="1_2smqv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8myso"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hrwr4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3kvke"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gvj4x"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s1uk4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hoxn5"]
+
+[resource]
+default_font = ExtResource("1_2smqv")
+default_font_size = 20
+CheckButton/colors/button_checked_color = Color(0, 0, 0, 1)
+CheckButton/colors/button_unchecked_color = Color(0, 0, 0, 1)
+CheckButton/colors/font_color = Color(0, 0, 0, 1)
+CheckButton/colors/font_disabled_color = Color(0, 0, 0, 1)
+CheckButton/colors/font_focus_color = Color(0, 0, 0, 1)
+CheckButton/colors/font_hover_color = Color(0, 0, 0, 1)
+CheckButton/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+CheckButton/colors/font_outline_color = Color(0, 0, 0, 1)
+CheckButton/colors/font_pressed_color = Color(0, 0, 0, 1)
+CheckButton/constants/check_v_offset = 0
+CheckButton/constants/h_separation = 0
+CheckButton/constants/outline_size = 0
+CheckButton/font_sizes/font_size = 20
+CheckButton/fonts/font = ExtResource("1_2smqv")
+CheckButton/icons/checked = null
+CheckButton/icons/checked_disabled = null
+CheckButton/icons/checked_disabled_mirrored = null
+CheckButton/icons/checked_mirrored = null
+CheckButton/icons/unchecked = null
+CheckButton/icons/unchecked_disabled = null
+CheckButton/icons/unchecked_disabled_mirrored = null
+CheckButton/icons/unchecked_mirrored = null
+CheckButton/styles/disabled = SubResource("StyleBoxFlat_8myso")
+CheckButton/styles/focus = SubResource("StyleBoxFlat_hrwr4")
+CheckButton/styles/hover = SubResource("StyleBoxFlat_3kvke")
+CheckButton/styles/hover_pressed = SubResource("StyleBoxFlat_gvj4x")
+CheckButton/styles/normal = SubResource("StyleBoxFlat_s1uk4")
+CheckButton/styles/pressed = SubResource("StyleBoxFlat_hoxn5")

@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://c68mua7fii8ye"]
+[gd_scene load_steps=7 format=3 uid="uid://c68mua7fii8ye"]
 
 [ext_resource type="Texture2D" uid="uid://bnggolumsatoe" path="res://动画图片素材/UI/屏幕截图 2025-12-20 131227.png" id="1_0r7w1"]
 [ext_resource type="Texture2D" uid="uid://bu0vl6xmgnpud" path="res://动画图片素材/UI/标题.png" id="1_644ku"]
 [ext_resource type="Script" uid="uid://dda5cs3qdq8a7" path="res://script/文本及ui显示/主界面.gd" id="1_qwg81"]
+[ext_resource type="PackedScene" uid="uid://cr32ffcse8os3" path="res://动画图片素材/UI/settingscreen.tscn" id="2_kfxea"]
 [ext_resource type="Theme" uid="uid://5bh541wa60l3" path="res://resource/theme/green_theme.tres" id="3_ddj0q"]
 [ext_resource type="AudioStream" uid="uid://c5uulbfvf0wpc" path="res://动画图片素材/back_music/Brand New.wav" id="5_i5olb"]
 
@@ -14,6 +15,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qwg81")
+setting_screen = ExtResource("2_kfxea")
 
 [node name="Back" type="TextureRect" parent="."]
 self_modulate = Color(0.5, 0.5, 0.5, 1)
@@ -33,9 +35,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -226.0
-offset_top = 43.0
+offset_top = 23.0
 offset_right = 226.5
-offset_bottom = 143.0
+offset_bottom = 123.0
 grow_horizontal = 2
 texture = ExtResource("1_644ku")
 
@@ -48,13 +50,23 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -90.0
-offset_top = 5.0
-offset_right = 90.0
-offset_bottom = 65.0
+offset_top = -38.0
+offset_right = 90.000305
+offset_bottom = 22.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_ddj0q")
 text = "开始游戏"
+
+[node name="Setting" type="Button" parent="."]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 0
+offset_left = 270.0
+offset_top = 217.0
+offset_right = 370.0
+offset_bottom = 267.0
+theme = ExtResource("3_ddj0q")
+text = "设置"
 
 [node name="离开" type="Button" parent="."]
 custom_minimum_size = Vector2(100, 50)
@@ -65,9 +77,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -50.0
-offset_top = 82.0
+offset_top = 100.0
 offset_right = 50.0
-offset_bottom = 132.0
+offset_bottom = 150.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_ddj0q")
@@ -79,4 +91,5 @@ stream = ExtResource("5_i5olb")
 bus = &"Music"
 
 [connection signal="button_up" from="开始" to="." method="_on_开始_button_up"]
+[connection signal="button_up" from="Setting" to="." method="_on_setting_button_up"]
 [connection signal="button_up" from="离开" to="." method="_on_离开_button_up"]
