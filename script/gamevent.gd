@@ -41,3 +41,4 @@ signal _paused #当paused+1时发出信号
 func set_paused(value)->void:
 	if value>paused:
 		_paused.emit()
+	paused=value

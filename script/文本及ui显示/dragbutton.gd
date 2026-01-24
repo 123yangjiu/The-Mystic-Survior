@@ -13,6 +13,8 @@ var ready_position_x:float :set=set_current_position
 @export var bus_name:String
 
 func _input(event: InputEvent) -> void:
+	if event != InputEventMouseButton:
+		return
 	var _position = event.position#检测鼠标是不是在检测范围内点击的
 	if _position.y<up.global_position.y or _position.y>down.global_position.y or _position.x>end.global_position.x or _position.x< begin.global_position.x:
 		return
