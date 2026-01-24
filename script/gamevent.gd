@@ -39,5 +39,8 @@ signal player_died
 signal _paused #当paused+1时发出信号
 #当游戏暂停时发出一些信号
 func set_paused(value)->void:
-    if value>paused:
-        _paused.emit()
+
+	if value>paused:
+		_paused.emit()
+	paused=value
+
