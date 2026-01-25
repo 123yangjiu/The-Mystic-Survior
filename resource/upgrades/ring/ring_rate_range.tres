@@ -6,5 +6,8 @@
 script = ExtResource("1_qj2er")
 ID = "环的大速"
 Sort = "环"
-name = "梦想上五环"
-Description = "增加死灵法环的大小15%并缩短20%的CD"
+name = "透支魔力"
+Description = "死灵法环的大小增大15%
+并使生成时间-20%
+
+——但是透支的那份10分钟后再结算（"

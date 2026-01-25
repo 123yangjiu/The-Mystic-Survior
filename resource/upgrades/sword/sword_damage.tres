@@ -6,5 +6,5 @@
 script = ExtResource("1_447qx")
 ID = "剑的伤害"
 Sort = "剑"
-name = "让你的剑更加硬刚"
-Description = "增加剑的伤害35%"
+name = "刚猛大宝剑"
+Description = "剑的伤害3增加5%"

@@ -6,5 +6,5 @@
 script = ExtResource("1_rwman")
 ID = "光剑变大"
 Sort = "光剑"
-name = "☆闪☆耀☆"
-Description = "增大光剑大小25%"
+name = "光的大小？"
+Description = "光剑的大小增加25%"

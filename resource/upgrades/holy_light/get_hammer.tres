@@ -6,5 +6,5 @@
 script = ExtResource("1_2gxql")
 ID = "解锁光剑"
 Sort = "光剑"
-name = "咖喱剑"
-Description = "解锁光剑！在你的头顶凝聚圣光成剑，砸下造成大量伤害"
+name = "☆闪☆耀☆"
+Description = "你学会了闪光魔法！你的头顶会形成光剑，砍下造成巨量（迫真）伤害！"
