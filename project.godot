@@ -13,7 +13,6 @@ config_version=5
 config/name="神秘幸存者"
 run/main_scene="uid://c68mua7fii8ye"
 config/features=PackedStringArray("4.5", "Forward Plus")
-boot_splash/fullsize=false
 boot_splash/use_filter=false
 config/icon="uid://b5oni5ikgr5pr"
 

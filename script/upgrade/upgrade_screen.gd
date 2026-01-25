@@ -34,7 +34,8 @@ func on_upgrade_select(upgrade:AbilityUpgrade):
 	pass
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("暂停"):
+	if event.is_action_released("暂停"):
+		GameEvent.paused+=1
 		get_viewport().set_input_as_handled()
 		GameEvent.game_stop.emit()
 		var screen=stop_screen.instantiate()

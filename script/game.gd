@@ -16,11 +16,13 @@ func change_direction():
 		self.scale.x=-1
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("暂停"):
+	if event.is_action_released("暂停"):
 		get_viewport().set_input_as_handled()
 		stop_game()
 
 func stop_game()->void:
+	GameEvent.paused+=1
+	get_tree().paused=true
 	GameEvent.game_stop.emit()
 	var screen=stop_screen.instantiate()
 	add_child(screen)

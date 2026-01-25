@@ -43,6 +43,7 @@ Button/styles/normal = SubResource("StyleBoxFlat_cljgu")
 Button/styles/pressed = SubResource("StyleBoxFlat_efkqj")
 
 [node name="Settingscreen" type="CanvasLayer"]
+process_mode = 3
 layer = 3
 script = ExtResource("1_ge732")
 
