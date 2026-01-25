@@ -5,15 +5,15 @@ class_name Game
 @export var stop_screen:PackedScene
 
 func _ready() -> void:
-    change_direction()
-    #测试内容
-    #Engine.time_scale=2
+	change_direction()
+	#测试内容
+	#Engine.time_scale=2
 
 func change_direction():
 
-    var player=get_tree().get_first_node_in_group("player") as  Player
-    if player.direction.x<0:
-        self.scale.x=-1
+	var player=get_tree().get_first_node_in_group("player") as  Player
+	if player.direction.x<0:
+		self.scale.x=-1
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_released("暂停"):
