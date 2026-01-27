@@ -126,9 +126,9 @@ visible = false
 shape = SubResource("CircleShape2D_elmko")
 
 [node name="rush_duration" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 1.7999999999999998
 one_shot = true
 
 [node name="rush_interval" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 6.0
 one_shot = true
