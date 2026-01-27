@@ -10,9 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://b7lj8mwnd703c" path="res://scene/ability/ring_ability/ring_ability_controller.tscn" id="6_2fvbb"]
 [ext_resource type="PackedScene" uid="uid://crcg0u1elatvt" path="res://scene/ability/ring_ability/ring_ability.tscn" id="7_ml7e8"]
 [ext_resource type="Script" uid="uid://b085c5vup7duv" path="res://script/拾取范围.gd" id="8_g2vtq"]
-[ext_resource type="Texture2D" uid="uid://bhn043cbs8vkk" path="res://动画图片素材/女巫师/小女巫.png" id="10_ihjo1"]
-[ext_resource type="Texture2D" uid="uid://dkqr60limdl3s" path="res://动画图片素材/女巫师/小女巫_黑边.png" id="11_34jf3"]
-[ext_resource type="AudioStream" uid="uid://bnbuawlex5u51" path="res://动画图片素材/sound/Hurt.wav" id="13_u7b46"]
+[ext_resource type="Texture2D" uid="uid://bhn043cbs8vkk" path="res://sucai/女巫师/小女巫.png" id="10_ihjo1"]
+[ext_resource type="Texture2D" uid="uid://dkqr60limdl3s" path="res://sucai/女巫师/小女巫_黑边.png" id="11_34jf3"]
+[ext_resource type="AudioStream" uid="uid://bnbuawlex5u51" path="res://sucai/sound/Hurt.wav" id="13_u7b46"]
 [ext_resource type="PackedScene" uid="uid://c7kjkebvjcpyo" path="res://scene/ui/虚拟摇杆.tscn" id="14_u7b46"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ihjo1"]

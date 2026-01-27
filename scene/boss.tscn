@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://dmpby4vf0jtmo"]
 
 [ext_resource type="Script" uid="uid://c4qoebpka5oyc" path="res://script/enemy/main_enemy/boss.gd" id="1_et0im"]
-[ext_resource type="Texture2D" uid="uid://bfvdbq4tsdn8e" path="res://动画图片素材/boss/RockFlameBoss.png" id="2_285t0"]
+[ext_resource type="Texture2D" uid="uid://bfvdbq4tsdn8e" path="res://sucai/boss/RockFlameBoss.png" id="2_285t0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_et0im"]
 radius = 100.18346

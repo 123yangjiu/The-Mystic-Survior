@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dj6b6r84um8kc" path="res://script/enemy/main_enemy/gorlen.gd" id="1_23bhl"]
 [ext_resource type="PackedScene" uid="uid://decyru6mnkuga" path="res://scene/游戏功能组件/hurtboxcomponent.tscn" id="2_60ack"]
-[ext_resource type="Texture2D" uid="uid://bmxqf0ab5k4hw" path="res://动画图片素材/Character_sheet.png" id="3_d7sbi"]
+[ext_resource type="Texture2D" uid="uid://bmxqf0ab5k4hw" path="res://sucai/Character_sheet.png" id="3_d7sbi"]
 [ext_resource type="PackedScene" uid="uid://bnactnfyipltl" path="res://scene/游戏功能组件/health_component.tscn" id="4_iuixe"]
 [ext_resource type="PackedScene" uid="uid://c0i7tc6xpk0n8" path="res://scene/游戏功能组件/drop_component.tscn" id="5_qgpht"]
 [ext_resource type="PackedScene" uid="uid://g6ks4dc6kpht" path="res://scene/游戏功能组件/velocity_component.tscn" id="6_60ack"]

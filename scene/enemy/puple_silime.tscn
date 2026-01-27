@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dwtjrw2m20xr2" path="res://script/enemy/main_enemy/puple_silime.gd" id="1_v4vgx"]
 [ext_resource type="PackedScene" uid="uid://decyru6mnkuga" path="res://scene/游戏功能组件/hurtboxcomponent.tscn" id="2_botv0"]
-[ext_resource type="Texture2D" uid="uid://dnerhjpn8tfgc" path="res://动画图片素材/slime/slime_purple.png" id="3_v4vgx"]
+[ext_resource type="Texture2D" uid="uid://dnerhjpn8tfgc" path="res://sucai/slime/slime_purple.png" id="3_v4vgx"]
 [ext_resource type="PackedScene" uid="uid://bnactnfyipltl" path="res://scene/游戏功能组件/health_component.tscn" id="4_68pxt"]
 [ext_resource type="PackedScene" uid="uid://c0i7tc6xpk0n8" path="res://scene/游戏功能组件/drop_component.tscn" id="5_2bdwh"]
 [ext_resource type="PackedScene" uid="uid://i5imcyd15vix" path="res://scene/游戏 物件/exprience_bottle  .tscn" id="6_68pxt"]

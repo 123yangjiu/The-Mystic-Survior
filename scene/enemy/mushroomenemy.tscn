@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c5ld8jykbg6p4" path="res://script/enemy/mushroomenemy.gd" id="1_ry05w"]
 [ext_resource type="PackedScene" uid="uid://decyru6mnkuga" path="res://scene/游戏功能组件/hurtboxcomponent.tscn" id="2_g74f1"]
-[ext_resource type="Texture2D" uid="uid://cpxpef8s5wt6m" path="res://动画图片素材/新蘑菇/Mushroom-Run.png" id="2_ry05w"]
+[ext_resource type="Texture2D" uid="uid://cpxpef8s5wt6m" path="res://sucai/新蘑菇/Mushroom-Run.png" id="2_ry05w"]
 [ext_resource type="PackedScene" uid="uid://bnactnfyipltl" path="res://scene/游戏功能组件/health_component.tscn" id="3_1vn3o"]
 [ext_resource type="PackedScene" uid="uid://c0i7tc6xpk0n8" path="res://scene/游戏功能组件/drop_component.tscn" id="4_ry05w"]
 [ext_resource type="Script" uid="uid://6viyb8hj8ocd" path="res://scene/游戏功能组件/猫头鹰掉落.gd" id="5_xhrya"]

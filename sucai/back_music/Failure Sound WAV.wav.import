@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dtfqdospxtd34"
+path="res://.godot/imported/Failure Sound WAV.wav-25a55fc78bd19c55f29366bffef1bcdd.sample"
+
+[deps]
+
+source_file="res://sucai/back_music/Failure Sound WAV.wav"
+dest_files=["res://.godot/imported/Failure Sound WAV.wav-25a55fc78bd19c55f29366bffef1bcdd.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
