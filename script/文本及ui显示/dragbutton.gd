@@ -14,18 +14,18 @@ var ready_position_x:float :set=set_current_position
 
 func _input(event: InputEvent) -> void:
 
-	if event != InputEventMouseButton:
-		return
-	var _position = event.position#检测鼠标是不是在检测范围内点击的
-	if _position.y<up.global_position.y or _position.y>down.global_position.y or _position.x>end.global_position.x or _position.x< begin.global_position.x:
-		return
-	if event is InputEventScreenTouch and event.is_pressed():
-		_process_touch(event)
-	elif is_drag:
-		if event is InputEventScreenDrag:
-			_process_drag(event)
-		elif  event is InputEventScreenTouch and event.is_released():
-			_process_released(event)
+    if event != InputEventMouseButton:
+        return
+    var _position = event.position#检测鼠标是不是在检测范围内点击的
+    if _position.y<up.global_position.y or _position.y>down.global_position.y or _position.x>end.global_position.x or _position.x< begin.global_position.x:
+        return
+    if event is InputEventScreenTouch and event.is_pressed():
+        _process_touch(event)
+    elif is_drag:
+        if event is InputEventScreenDrag:
+            _process_drag(event)
+        elif  event is InputEventScreenTouch and event.is_released():
+            _process_released(event)
 
 
 func _process_touch(event:InputEvent)->void:
