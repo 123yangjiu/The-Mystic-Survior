@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://buqog17qtp4og"]
 
 [ext_resource type="Script" uid="uid://ci4fj0kmlpy0b" path="res://script/文本及ui显示/experience_bar.gd" id="1_cpnko"]
-[ext_resource type="Texture2D" uid="uid://c0hu72gfs65cn" path="res://动画图片素材/UI/经验条.png" id="2_moi4u"]
+[ext_resource type="Texture2D" uid="uid://c0hu72gfs65cn" path="res://sucai/UI/经验条.png" id="2_moi4u"]
 
 [node name="experience_Bar" type="CanvasLayer"]
 script = ExtResource("1_cpnko")

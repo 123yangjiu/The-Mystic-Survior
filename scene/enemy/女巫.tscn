@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c4rg2s1ijtbwu" path="res://script/enemy/main_enemy/骑士.gd" id="1_26ybq"]
 [ext_resource type="PackedScene" uid="uid://decyru6mnkuga" path="res://scene/游戏功能组件/hurtboxcomponent.tscn" id="2_sjem4"]
-[ext_resource type="Texture2D" uid="uid://dw82kbe2cly30" path="res://动画图片素材/邪恶女巫.png" id="3_hx8ut"]
+[ext_resource type="Texture2D" uid="uid://dw82kbe2cly30" path="res://sucai/邪恶女巫.png" id="3_hx8ut"]
 [ext_resource type="PackedScene" uid="uid://bnactnfyipltl" path="res://scene/游戏功能组件/health_component.tscn" id="4_chtff"]
 [ext_resource type="PackedScene" uid="uid://c0i7tc6xpk0n8" path="res://scene/游戏功能组件/drop_component.tscn" id="5_ikh0l"]
 [ext_resource type="PackedScene" uid="uid://f15fc5ggcq0l" path="res://scene/游戏 物件/bonus_bottle.tscn" id="6_kvwgc"]

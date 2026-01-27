@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bkt1tfijctn8m"
+path="res://.godot/imported/Show Them All.ogg-af26646ba8a309729780f77c539aeb09.oggvorbisstr"
+
+[deps]
+
+source_file="res://sucai/back_music/Show Them All.ogg"
+dest_files=["res://.godot/imported/Show Them All.ogg-af26646ba8a309729780f77c539aeb09.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

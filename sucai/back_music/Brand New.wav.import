@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c5uulbfvf0wpc"
+path="res://.godot/imported/Brand New.wav-2bdb37e5a16bfd3066545189582a964a.sample"
+
+[deps]
+
+source_file="res://sucai/back_music/Brand New.wav"
+dest_files=["res://.godot/imported/Brand New.wav-2bdb37e5a16bfd3066545189582a964a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

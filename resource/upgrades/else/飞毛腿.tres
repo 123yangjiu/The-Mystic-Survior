@@ -6,5 +6,5 @@
 script = ExtResource("1_k105c")
 ID = "飞毛腿"
 Sort = "角色能力"
-name = "快过B蓝狼"
-Description = "增加角色移动速度15%"
+name = "我和B蓝狼比移速"
+Description = "角色移动速度增加15%"

@@ -1,11 +1,11 @@
 [gd_resource type="TileSet" load_steps=13 format=3 uid="uid://ogx41dwx6784"]
 
-[ext_resource type="Texture2D" uid="uid://hom1idtk1vw8" path="res://动画图片素材/草地城堡风格的背景/Top_Down/Texture/TX Tileset Grass.png" id="1_vqq3v"]
-[ext_resource type="Texture2D" uid="uid://cdy582h2ah3wc" path="res://动画图片素材/草地城堡风格的背景/Top_Down/Texture/TX Plant.png" id="2_pq5vo"]
-[ext_resource type="Texture2D" uid="uid://b78rpntvdpx8n" path="res://动画图片素材/草地城堡风格的背景/Top_Down/Texture/TX Props.png" id="3_5fl42"]
-[ext_resource type="Texture2D" uid="uid://dplfrc4wirrhq" path="res://动画图片素材/草地城堡风格的背景/Top_Down/Texture/TX Struct.png" id="4_75awe"]
-[ext_resource type="Texture2D" uid="uid://p0gsxceyha7n" path="res://动画图片素材/草地城堡风格的背景/Top_Down/Texture/TX Tileset Stone Ground.png" id="5_tabgr"]
-[ext_resource type="Texture2D" uid="uid://d4e260adjcv6a" path="res://动画图片素材/草地城堡风格的背景/Top_Down/Texture/TX Tileset Wall.png" id="6_pq5vo"]
+[ext_resource type="Texture2D" uid="uid://hom1idtk1vw8" path="res://sucai/草地城堡风格的背景/Top_Down/Texture/TX Tileset Grass.png" id="1_vqq3v"]
+[ext_resource type="Texture2D" uid="uid://cdy582h2ah3wc" path="res://sucai/草地城堡风格的背景/Top_Down/Texture/TX Plant.png" id="2_pq5vo"]
+[ext_resource type="Texture2D" uid="uid://b78rpntvdpx8n" path="res://sucai/草地城堡风格的背景/Top_Down/Texture/TX Props.png" id="3_5fl42"]
+[ext_resource type="Texture2D" uid="uid://dplfrc4wirrhq" path="res://sucai/草地城堡风格的背景/Top_Down/Texture/TX Struct.png" id="4_75awe"]
+[ext_resource type="Texture2D" uid="uid://p0gsxceyha7n" path="res://sucai/草地城堡风格的背景/Top_Down/Texture/TX Tileset Stone Ground.png" id="5_tabgr"]
+[ext_resource type="Texture2D" uid="uid://d4e260adjcv6a" path="res://sucai/草地城堡风格的背景/Top_Down/Texture/TX Tileset Wall.png" id="6_pq5vo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yk3to"]
 resource_name = "草地"

@@ -1,9 +1,9 @@
 [gd_resource type="Theme" load_steps=8 format=3 uid="uid://dbgauou15hq13"]
 
-[ext_resource type="Texture2D" uid="uid://b8cvc7tkn20k1" path="res://动画图片素材/UI/长按钮_第二版.png" id="1_cjv63"]
+[ext_resource type="Texture2D" uid="uid://b8cvc7tkn20k1" path="res://sucai/UI/长按钮_第二版.png" id="1_cjv63"]
 [ext_resource type="FontFile" uid="uid://ceoy0esmffpt8" path="res://resource/theme/fusion-pixel-12px-monospaced-zh_hans.ttf" id="1_jbdqx"]
-[ext_resource type="Texture2D" uid="uid://c0hu72gfs65cn" path="res://动画图片素材/UI/经验条.png" id="2_4hdpd"]
-[ext_resource type="Texture2D" uid="uid://ysxp3l632yv1" path="res://动画图片素材/UI/经验条_覆盖.png" id="3_jt1um"]
+[ext_resource type="Texture2D" uid="uid://c0hu72gfs65cn" path="res://sucai/UI/经验条.png" id="2_4hdpd"]
+[ext_resource type="Texture2D" uid="uid://ysxp3l632yv1" path="res://sucai/UI/经验条_覆盖.png" id="3_jt1um"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4hdpd"]
 texture = ExtResource("1_cjv63")

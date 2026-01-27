@@ -6,5 +6,5 @@
 script = ExtResource("1_riffn")
 ID = "更多愤怒"
 Sort = "天堂"
-name = "天堂幸福指数下降"
-Description = "每次多生成两次天堂之怒"
+name = "愤怒的感染力"
+Description = "每次会多生成两个天！堂！之！怒！"

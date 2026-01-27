@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dinfbs806yuka" path="res://script/upgrade/upgrade_screen.gd" id="1_0l67n"]
 [ext_resource type="PackedScene" uid="uid://c6t5pqka2y0xc" path="res://scene/ui/abilityupgradecard.tscn" id="2_bkjao"]
-[ext_resource type="PackedScene" uid="uid://b5kpt3fnkjki1" path="res://scene/ui/暂停.tscn" id="3_icf4o"]
+[ext_resource type="PackedScene" uid="uid://cr32ffcse8os3" path="res://scene/ui/settingscreen.tscn" id="3_icf4o"]
 
 [node name="UpgradeScreen" type="CanvasLayer"]
 process_mode = 3

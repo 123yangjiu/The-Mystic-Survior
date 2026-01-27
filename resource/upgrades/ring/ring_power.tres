@@ -7,5 +7,5 @@ script = ExtResource("1_avqlo")
 ID = "环的伤害"
 Sort = "环"
 name = "全攻死灵师"
-Description = "增加死灵法环25%伤害
-“同事都是恩人，巴不得对方死，死灵术士说完就把旧同事都杀了“"
+Description = "死灵法环的伤害增加25%
+"

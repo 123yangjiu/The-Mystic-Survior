@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d24270xd2qhtf" path="res://script/enemy/main_enemy/猫头鹰.gd" id="1_ysij7"]
 [ext_resource type="PackedScene" uid="uid://decyru6mnkuga" path="res://scene/游戏功能组件/hurtboxcomponent.tscn" id="2_0uyp4"]
-[ext_resource type="Texture2D" uid="uid://1nyfiavgxiia" path="res://动画图片素材/黑暗猫头鹰/Aurigaidlewithshadow-Sheet.png" id="3_ysij7"]
+[ext_resource type="Texture2D" uid="uid://1nyfiavgxiia" path="res://sucai/黑暗猫头鹰/Aurigaidlewithshadow-Sheet.png" id="3_ysij7"]
 [ext_resource type="PackedScene" uid="uid://bnactnfyipltl" path="res://scene/游戏功能组件/health_component.tscn" id="4_2yh8p"]
 [ext_resource type="PackedScene" uid="uid://c0i7tc6xpk0n8" path="res://scene/游戏功能组件/drop_component.tscn" id="5_0fgf1"]
 [ext_resource type="Script" uid="uid://6viyb8hj8ocd" path="res://scene/游戏功能组件/猫头鹰掉落.gd" id="6_r8cvu"]
