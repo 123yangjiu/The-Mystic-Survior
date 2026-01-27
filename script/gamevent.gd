@@ -39,7 +39,17 @@ signal player_died
 signal _paused #当paused+1时发出信号
 #当游戏暂停时发出一些信号
 func set_paused(value)->void:
-
 	if value>paused:
 		_paused.emit()
 	paused=value
+
+var master_db 
+var sound_db
+var music_db
+func record_db(_name:String,value)->void:
+	if _name=="Sound":
+		sound_db=value
+	elif  _name =="Master":
+		master_db=value
+	elif _name=="Music":
+		music_db=value

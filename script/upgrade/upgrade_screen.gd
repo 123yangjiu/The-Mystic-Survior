@@ -32,7 +32,7 @@ func Set_Ability_Upgrade(upgrades:Array[AbilityUpgrade]):#传入选项这个函�
 			ready_ability = upgrade
 			ready_card=card_instance
 
-func on_upgrade_select(upgrade:AbilityUpgrade):
+func on_upgrade_select(upgrade:AbilityUpgrade,_card:AbilityCard):
 	upgrade_selected.emit(upgrade)#把这个选项传出到其他地方，显示屏不负责
 	#更改升级后的数值
 	var children= get_parent().get_children()
@@ -84,5 +84,5 @@ func _input(event: InputEvent) -> void:
 		ready_card._on_texture_rect_mouse_exited()
 		new_card._on_texture_rect_mouse_entered()
 	elif event.is_action_pressed("confirm"):
-		on_upgrade_select(ready_ability)
+		on_upgrade_select(ready_ability,null)
 	
