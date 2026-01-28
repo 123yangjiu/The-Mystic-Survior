@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://c68mua7fii8ye"]
+[gd_scene load_steps=8 format=3 uid="uid://c68mua7fii8ye"]
 
-[ext_resource type="Texture2D" uid="uid://bnggolumsatoe" path="res://sucai/UI/屏幕截图 2025-12-20 131227.png" id="1_0r7w1"]
+[ext_resource type="Texture2D" uid="uid://bnggolumsatoe" path="res://sucai/background/1.png" id="1_0r7w1"]
 [ext_resource type="Texture2D" uid="uid://bu0vl6xmgnpud" path="res://sucai/UI/标题.png" id="1_644ku"]
 [ext_resource type="Script" uid="uid://dda5cs3qdq8a7" path="res://script/文本及ui显示/主界面.gd" id="1_qwg81"]
 [ext_resource type="PackedScene" uid="uid://cr32ffcse8os3" path="res://scene/ui/settingscreen.tscn" id="2_kfxea"]
 [ext_resource type="Theme" uid="uid://5bh541wa60l3" path="res://resource/theme/green_theme.tres" id="3_ddj0q"]
+[ext_resource type="PackedScene" uid="uid://bmvpkn3tw3evw" path="res://scene/ui/brochure.tscn" id="3_hmyiv"]
 [ext_resource type="AudioStream" uid="uid://c5uulbfvf0wpc" path="res://sucai/back_music/Brand New.wav" id="5_i5olb"]
 
 [node name="主界面" type="Control"]
@@ -16,6 +17,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qwg81")
 setting_screen = ExtResource("2_kfxea")
+brochure = ExtResource("3_hmyiv")
 
 [node name="Back" type="TextureRect" parent="."]
 self_modulate = Color(0.5, 0.5, 0.5, 1)
@@ -90,6 +92,17 @@ text = "离开
 stream = ExtResource("5_i5olb")
 bus = &"Music"
 
+[node name="Brochure" type="Button" parent="."]
+custom_minimum_size = Vector2(180, 60)
+layout_mode = 0
+offset_left = 29.0
+offset_top = 244.0
+offset_right = 209.0
+offset_bottom = 304.0
+theme = ExtResource("3_ddj0q")
+text = "操作指南"
+
 [connection signal="button_up" from="开始" to="." method="_on_开始_button_up"]
 [connection signal="button_up" from="Setting" to="." method="_on_setting_button_up"]
 [connection signal="button_up" from="离开" to="." method="_on_离开_button_up"]
+[connection signal="button_down" from="Brochure" to="." method="_on_brochure_button_down"]

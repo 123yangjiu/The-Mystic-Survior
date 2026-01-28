@@ -17,7 +17,7 @@ func _ready() -> void:
 	GameEvent.the_first_damage.connect(on_the_first_damage)
 	gametimemanager.the_second_music.connect(the_second)
 	GameEvent.game_stop.connect(stop_music)
-	GameEvent.player_died.connect(stop_music)
+	#GameEvent.player_died.connect(stop_music)
 	GameEvent.stop_end.connect(on_stop_end)
 
 
