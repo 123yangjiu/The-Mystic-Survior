@@ -13,9 +13,9 @@ var enter_body_number_47=0
 var rad_hurt=randf_range(-3,3)
 
 var enter_body_number_10_hurt=10
-var enter_body_number_17_hurt=17
-var enter_body_number_30_hurt=30
-var enter_body_number_47_hurt=47
+var enter_body_number_17_hurt=15
+var enter_body_number_30_hurt=25
+var enter_body_number_47_hurt=40
 
 
 var direction:=Vector2(0,0)
@@ -87,8 +87,9 @@ func on_body_exited(enterbody:Node2D):
 	if ori_acceleration !=0:
 		enterbody.velocity_component.acceleration =1
 		await get_tree().create_timer(0.8).timeout
-		if enterbody.velocity_component.acceleration ==1:
-			enterbody.velocity_component.acceleration=ori_acceleration
+		if enterbody:
+			if enterbody.velocity_component.acceleration ==1:
+				enterbody.velocity_component.acceleration=ori_acceleration
 
 func damage_manager():
 	var totle_nmber=enter_body_number_10+enter_body_number_17+enter_body_number_30\

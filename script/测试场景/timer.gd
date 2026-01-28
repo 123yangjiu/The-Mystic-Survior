@@ -5,8 +5,7 @@ extends Timer
 
 
 func _on_timeout() -> void:
-	var number = 实体.get_children().size()-1
+	var number = 实体.get_child_count()-1
 	GameEvent.current_monster=number
-	print("现在难度：",GameEvent.difficulty)
-	print("现在出怪量：",GameEvent.current_monster)
-	pass # Replace with function body.
+	print("当前难度：",GameEvent.difficulty)
+	print("当前刷怪：",GameEvent.current_monster)

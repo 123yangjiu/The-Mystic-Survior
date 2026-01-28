@@ -104,8 +104,6 @@ position = Vector2(-23, 270)
 scale = Vector2(1, 0.9772806)
 MAX_speed = 115
 
-[node name="骑士" parent="实体" instance=ExtResource("18_0jy4g")]
-
 [node name="前景" type="Node" parent="." groups=["前景图层"]]
 
 [node name="box" parent="前景" instance=ExtResource("13_5g16k")]
