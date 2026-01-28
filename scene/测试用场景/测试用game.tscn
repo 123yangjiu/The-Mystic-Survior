@@ -18,7 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://b8orbduoade27" path="res://scene/player.tscn" id="15_ch78n"]
 [ext_resource type="Script" uid="uid://cao0d8jgcrhwk" path="res://script/测试场景/测试用upgrademanager.gd" id="15_h48kl"]
 [ext_resource type="PackedScene" uid="uid://kwbt2wo8phu5" path="res://scene/测试用场景/测试用box.tscn" id="16_kudbt"]
-[ext_resource type="Script" path="res://resource/ability_upgrade.gd" id="16_ufowh"]
+[ext_resource type="Script" uid="uid://dmyfvo2eu1rj2" path="res://resource/ability_upgrade.gd" id="16_ufowh"]
 [ext_resource type="Resource" uid="uid://blc0x1fuyqqd8" path="res://resource/upgrades/sword/sword_rate.tres" id="17_mcuiq"]
 [ext_resource type="Script" uid="uid://dmwfixnlvdupe" path="res://script/测试场景/测试用操作者.gd" id="17_wdb4m"]
 [ext_resource type="Resource" uid="uid://oclytr2qthx8" path="res://resource/upgrades/sword/sword_damage.tres" id="18_wlm2r"]
@@ -396,6 +396,8 @@ experience_manager = NodePath("../experiencemanager")
 script = ExtResource("15_h48kl")
 upgrade_pool = Array[ExtResource("16_ufowh")]([ExtResource("17_mcuiq"), ExtResource("18_wlm2r"), ExtResource("19_bajcs"), ExtResource("20_rr4dp"), ExtResource("21_45yv1"), ExtResource("22_acha4"), ExtResource("23_pbpbm"), ExtResource("24_tkwvv"), ExtResource("25_ekiqg"), ExtResource("26_wo850"), ExtResource("27_40dpe"), ExtResource("28_4xk21"), ExtResource("29_0lbpo"), ExtResource("30_1ath1"), ExtResource("31_ypcgk"), ExtResource("32_xfjms"), ExtResource("33_g1f6a"), ExtResource("34_6lq15"), ExtResource("35_4k1xf"), ExtResource("36_ase8p"), ExtResource("37_4v241"), ExtResource("38_7bo1d")])
 experience_manager = NodePath("../experiencemanager")
+inital_upgrade_export = Array[ExtResource("16_ufowh")]([])
+initial_sort = ""
 
 [node name="实体" type="Node" parent="." groups=["实体图层"]]
 
@@ -406,7 +408,7 @@ position = Vector2(284, 105)
 scale = Vector2(1, 0.9772806)
 MAX_speed = 115
 
-[node name="Camera2D2" type="Camera2D" parent="实体/player"]
+[node name="Camera2D3" type="Camera2D" parent="实体/player"]
 position = Vector2(4, 4.0929594)
 position_smoothing_enabled = true
 
