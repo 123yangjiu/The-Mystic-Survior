@@ -16,6 +16,7 @@ var rand_R=450#包围半径
 @onready var enemyfiliter: EnemyFiliter = $"../enemyfiliter"
 var base_time_gap
 func _ready() -> void:
+
 	base_time_gap=$Timer.wait_time
 	$Timer.timeout.connect(on_time_out)
 	GameEvent.more_difficulty.connect(on_more_difficulty)
@@ -129,3 +130,4 @@ func on_mush_appear()->void:
 	SPAWN_R=300
 	if $Timer.wait_time >ori_time:
 		$Timer.wait_time=ori_time
+
