@@ -10,15 +10,25 @@ extends Sprite2D
 
 var is_drag:=false
 var ready_position_x:float :set=set_current_position
+var is_ready:=false
 @export var bus_name:String
+func _ready() -> void:
+	if bus_name=="Sound" and GameEvent.sound_db:
+		ready_position_x = GameEvent.sound_db
+	elif  bus_name =="Master" and GameEvent.master_db:
+		ready_position_x = GameEvent.master_db
+	elif bus_name=="Music" and GameEvent.music_db:
+		ready_position_x = GameEvent.music_db
+
 
 func _input(event: InputEvent) -> void:
 
-	if event != InputEventMouseButton:
+	if !is_ready:
+		return
+	if ! event.is_action_pressed("click"):
 		return
 	var _position = event.position#检测鼠标是不是在检测范围内点击的
-	if _position.y<up.global_position.y or _position.y>down.global_position.y or _position.x>end.global_position.x or _position.x< begin.global_position.x:
-		return
+
 	if event is InputEventScreenTouch and event.is_pressed():
 		_process_touch(event)
 	elif is_drag:
@@ -32,12 +42,10 @@ func _process_touch(event:InputEvent)->void:
 	if is_drag:
 		return
 	ready_position_x=event.position.x
-	self.global_position.x=ready_position_x
 	is_drag=true
 
 func _process_drag(event:InputEvent)->void:
 	ready_position_x=event.position.x
-	self.global_position.x= ready_position_x
 
 func _process_released(_event:InputEvent)->void:
 	is_drag=false
@@ -55,3 +63,6 @@ func set_current_position(value):
 	# 限制在 -80 到 6 dB 之间
 	db_value = clamp(db_value, -80, 6)
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index(bus_name),db_value)
+	self.global_position.x=ready_position_x
+	GameEvent.record_db(bus_name,value)
+	

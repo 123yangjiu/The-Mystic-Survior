@@ -5,10 +5,11 @@
 [ext_resource type="Theme" uid="uid://bak7nt8mttr06" path="res://resource/theme/black_theme.tres" id="3_q6lwb"]
 [ext_resource type="AudioStream" uid="uid://dtfqdospxtd34" path="res://sucai/back_music/Failure Sound WAV.wav" id="4_jjjup"]
 
-[node name="You_Die_Screen" type="CanvasLayer"]
+[node name="You_Die_Screen" type="CanvasLayer" node_paths=PackedStringArray("audioplayer")]
 process_mode = 3
 layer = 2
 script = ExtResource("1_u23xs")
+audioplayer = NodePath("AudioStreamPlayer")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(318, 175)

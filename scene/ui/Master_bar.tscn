@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://do5j6tqexbgan"]
+[gd_scene load_steps=5 format=3 uid="uid://do5j6tqexbgan"]
 
 [ext_resource type="Texture2D" uid="uid://ha5mt27odjym" path="res://sucai/UI/progressbar.png" id="1_syaaq"]
+[ext_resource type="Script" uid="uid://c6ibi3brn32i6" path="res://script/文本及ui显示/sound_bar.gd" id="2_2oi5y"]
 [ext_resource type="Texture2D" uid="uid://b4tmm8ndrlbip" path="res://sucai/UI/ball2.png" id="2_owrry"]
 [ext_resource type="Script" uid="uid://bl0fkh3ewfft6" path="res://script/文本及ui显示/dragbutton.gd" id="3_2oi5y"]
 
@@ -12,6 +13,7 @@ value = 50.0
 texture_under = ExtResource("1_syaaq")
 texture_progress = ExtResource("1_syaaq")
 tint_progress = Color(0.12, 0.12, 0.12, 1)
+script = ExtResource("2_2oi5y")
 
 [node name="Button" type="Sprite2D" parent="."]
 position = Vector2(52.75, 5.75)
@@ -21,6 +23,7 @@ script = ExtResource("3_2oi5y")
 bus_name = "Master"
 
 [node name="Label" type="Label" parent="."]
+modulate = Color(0.5, 0.5, 0.5, 1)
 layout_mode = 0
 offset_left = -38.5
 offset_top = -15.5
@@ -45,3 +48,6 @@ position = Vector2(53, 1)
 
 [node name="Down" type="Node2D" parent="Anchor"]
 position = Vector2(53, 11)
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

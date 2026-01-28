@@ -75,9 +75,10 @@ collision_layer = 40
 collision_mask = 33
 script = ExtResource("1_ysij7")
 
-[node name="Hurtboxcomponent" parent="." node_paths=PackedStringArray("health_component") groups=["enemy"] instance=ExtResource("2_0uyp4")]
+[node name="Hurtboxcomponent" parent="." node_paths=PackedStringArray("health_component", "velocity_component") groups=["enemy"] instance=ExtResource("2_0uyp4")]
 collision_layer = 4
 health_component = NodePath("../health_component")
+velocity_component = NodePath("../velocity_component")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Hurtboxcomponent"]
 shape = SubResource("CircleShape2D_vcrpj")
@@ -108,4 +109,3 @@ shape = SubResource("CircleShape2D_8egh0")
 
 [node name="velocity_component" parent="." instance=ExtResource("8_q10tu")]
 speed = 80
-acceleration = 11.0
