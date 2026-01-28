@@ -7,6 +7,6 @@ class_name Swordability
 #hitbox_component变成了Swordability的一种属性
 
 func the_first_damage()->void:
-    if GameEvent.the_first==0:
-        GameEvent.the_first+=1
-        GameEvent.the_first_damage.emit()
+	if GameEvent.the_first==0:
+		GameEvent.the_first+=1
+		GameEvent.the_first_damage.emit()

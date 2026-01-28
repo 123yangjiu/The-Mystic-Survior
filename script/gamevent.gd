@@ -43,7 +43,8 @@ func set_paused(value)->void:
 		_paused.emit()
 	paused=value
 
-var master_db 
+#用于记录音量有关数据
+var master_db  
 var sound_db
 var music_db
 func record_db(_name:String,value)->void:
@@ -53,3 +54,9 @@ func record_db(_name:String,value)->void:
 		master_db=value
 	elif _name=="Music":
 		music_db=value
+
+@warning_ignore("unused_signal")
+signal mush_appear #当蘑菇出现时@enemyproducer
+
+#限制出怪量
+var current_monster :=0.0

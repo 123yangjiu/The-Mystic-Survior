@@ -2,9 +2,10 @@ extends Area2D
 class_name HutboxComponent
 @onready var animated_sprite_2d: AnimatedSprite2D = get_parent().get_node("AnimatedSprite2D")
 
-
 @export var health_component:Node
+
 var floating_text_scene=preload("res://scene/ui/floatingtext.tscn")
+
 func _ready() -> void:
 	area_entered.connect(on_area_enter)
 func on_area_enter(other_area:Area2D):
@@ -17,6 +18,12 @@ func on_area_enter(other_area:Area2D):
 	get_tree().get_first_node_in_group("前景图层").add_child(floating_text)
 	floating_text.global_position=global_position
 	floating_text.start(str(hitbox_component.damage))
+	#if  velocity_component:
+		#var ori_acceleration = velocity_component.acceleration
+		#if ori_acceleration!=0:
+			#velocity_component.acceleration=0
+			#await get_tree().create_timer(0.8).timeout
+			#velocity_component.acceleration=ori_acceleration
 
 #var flash_tween: Tween		  # 你的精灵
 #func flash_white(duration := 0.12) -> void:

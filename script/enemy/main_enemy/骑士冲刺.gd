@@ -1,5 +1,6 @@
 extends Area2D
 @onready var velocity_component: Velocity_controller = $"../velocity_component"
+@onready var hurtboxcomponent: HutboxComponent = $"../Hurtboxcomponent"
 
 var can_rush := false
 
@@ -17,16 +18,15 @@ func on_body_enter(_area: Node2D) -> void:
 	$"../rush_interval".start()   # 启动 2 s 循环
 
 func on_body_exited(_area: Node2D) -> void:
-	print("不能冲刺")
 	if not _area.is_in_group("player"): return
 	can_rush = false
 	velocity_component.speed = 45
-	velocity_component.acceleration = 7
+	velocity_component.acceleration = 3
 
 func do_rush():
-	velocity_component.speed = 600
-	velocity_component.acceleration = 2
-	$"../rush_duration".start()   # 2 s 后结束本次冲刺
+	velocity_component.speed = 550
+	velocity_component.acceleration = 4
+	$"../rush_duration".start()   # 1.8 s 后结束本次冲刺
 
 func end_rush():
 	velocity_component.speed = 45

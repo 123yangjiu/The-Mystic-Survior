@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://yy0os3e5cvfu"]
+[gd_scene load_steps=32 format=4 uid="uid://yy0os3e5cvfu"]
 
 [ext_resource type="Script" uid="uid://rt8ham21rr6r" path="res://script/game.gd" id="1_ve786"]
 [ext_resource type="PackedScene" uid="uid://cr32ffcse8os3" path="res://scene/ui/settingscreen.tscn" id="2_0halo"]
@@ -30,6 +30,7 @@
 [ext_resource type="AudioStream" uid="uid://ndho2y6dc21m" path="res://sucai/back_music/Ariadne's Thread.wav" id="21_355h4"]
 [ext_resource type="PackedScene" uid="uid://d1xy0buqa0l3x" path="res://scene/enemy/女巫.tscn" id="24_0halo"]
 [ext_resource type="AudioStream" uid="uid://bdo817fx5or0" path="res://sucai/back_music/Neon Skyscrapers.ogg" id="26_ca6q5"]
+[ext_resource type="Script" uid="uid://dx0x8onwy1rcq" path="res://script/测试场景/timer.gd" id="31_0halo"]
 
 [node name="game" type="Node2D" groups=["主游戏"]]
 script = ExtResource("1_ve786")
@@ -103,6 +104,8 @@ position = Vector2(-23, 270)
 scale = Vector2(1, 0.9772806)
 MAX_speed = 115
 
+[node name="骑士" parent="实体" instance=ExtResource("18_0jy4g")]
+
 [node name="前景" type="Node" parent="." groups=["前景图层"]]
 
 [node name="box" parent="前景" instance=ExtResource("13_5g16k")]
@@ -131,3 +134,10 @@ bus = &"Music"
 stream = ExtResource("26_ca6q5")
 volume_db = 3.0
 bus = &"Music"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+script = ExtResource("31_0halo")
+
+[connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]

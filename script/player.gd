@@ -83,6 +83,12 @@ func on_body_exited(enterbody:Node2D):
 		enter_body_number_30-=1
 	if enterbody.is_in_group("终极"):
 		enter_body_number_47-=1
+	var ori_acceleration = enterbody.velocity_component.acceleration
+	if ori_acceleration !=0:
+		enterbody.velocity_component.acceleration =1
+		await get_tree().create_timer(0.8).timeout
+		if enterbody.velocity_component.acceleration ==1:
+			enterbody.velocity_component.acceleration=ori_acceleration
 
 func damage_manager():
 	var totle_nmber=enter_body_number_10+enter_body_number_17+enter_body_number_30\
@@ -94,7 +100,7 @@ func damage_manager():
 	enter_body_number_17_hurt*enter_body_number_17\
 	+enter_body_number_30*enter_body_number_30_hurt\
 	+enter_body_number_47*enter_body_number_47_hurt+rad_hurt)
-	print(health_component.current_health)
+	audio_stream_player_2d.play()
 	$"伤害间隔计时器".start()
 
 func on_time_out():#没有走出敌人攻击范围就再次造成伤害daw
@@ -102,7 +108,6 @@ func on_time_out():#没有走出敌人攻击范围就再次造成伤害daw
 
 func on_health_change():
 	health_bar.value=health_component.get_health_persent()
-	audio_stream_player_2d.play()
 
 func on_died()->void:
 

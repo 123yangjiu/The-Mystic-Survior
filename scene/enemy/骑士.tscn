@@ -71,7 +71,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ntng8"]
-radius = 17.11374
+radius = 17.001839
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_elmko"]
 radius = 57.781265
@@ -99,8 +99,7 @@ autoplay = "run"
 frame_progress = 0.8870586
 
 [node name="对角色造成伤害的碰撞" type="CollisionShape2D" parent="." groups=["enemy"]]
-visible = false
-position = Vector2(-4.7683716e-07, 4.7683716e-07)
+position = Vector2(-5.684342e-14, 1.6666666)
 scale = Vector2(0.47134686, 0.4559797)
 shape = SubResource("CircleShape2D_ntng8")
 
@@ -113,7 +112,7 @@ drop_thing = Array[PackedScene]([ExtResource("6_gpn6s"), ExtResource("7_d3vui")]
 health_component = NodePath("../health_component")
 
 [node name="velocity_component" parent="." instance=ExtResource("8_nduui")]
-speed = 45
+speed = 50
 acceleration = 7.0
 
 [node name="冲刺范围" type="Area2D" parent="."]
