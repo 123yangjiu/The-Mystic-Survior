@@ -25,9 +25,9 @@
 [ext_resource type="PackedScene" uid="uid://cc3x2b78lonqh" path="res://scene/enemy/mushroomenemy.tscn" id="17_kv4hp"]
 [ext_resource type="PackedScene" uid="uid://dg0lowfwv0dg3" path="res://scene/enemy/骑士.tscn" id="18_0jy4g"]
 [ext_resource type="Script" uid="uid://cbv3aa54oasir" path="res://script/manager/musicmanager.gd" id="18_1it6f"]
-[ext_resource type="AudioStream" uid="uid://d3fqo15a0me7k" path="res://sucai/back_music/Groovy Moves.wav" id="19_pp3pk"]
-[ext_resource type="AudioStream" uid="uid://ddda7n23il1ly" path="res://sucai/back_music/Earth Turns To Our Feet.wav" id="20_b8t8i"]
-[ext_resource type="AudioStream" uid="uid://ndho2y6dc21m" path="res://sucai/back_music/Ariadne's Thread.wav" id="21_355h4"]
+[ext_resource type="AudioStream" path="res://sucai/back_music/Groovy Moves.wav" id="19_pp3pk"]
+[ext_resource type="AudioStream" path="res://sucai/back_music/Earth Turns To Our Feet.wav" id="20_b8t8i"]
+[ext_resource type="AudioStream" path="res://sucai/back_music/Ariadne's Thread.wav" id="21_355h4"]
 [ext_resource type="PackedScene" uid="uid://d1xy0buqa0l3x" path="res://scene/enemy/女巫.tscn" id="24_0halo"]
 [ext_resource type="AudioStream" uid="uid://bdo817fx5or0" path="res://sucai/back_music/Neon Skyscrapers.ogg" id="26_ca6q5"]
 [ext_resource type="Script" uid="uid://dx0x8onwy1rcq" path="res://script/测试场景/timer.gd" id="31_0halo"]
@@ -109,10 +109,9 @@ MAX_speed = 115
 [node name="box" parent="前景" instance=ExtResource("13_5g16k")]
 position = Vector2(61, 282)
 
-[node name="MusicManager" type="Node" parent="." node_paths=PackedStringArray("all_music")]
+[node name="MusicManager" type="Node" parent="."]
 process_mode = 3
 script = ExtResource("18_1it6f")
-all_music = [NodePath("TheFirst"), NodePath("WithWolf"), NodePath("WithGorlen"), NodePath("TheFinal")]
 
 [node name="TheFirst" type="AudioStreamPlayer" parent="MusicManager"]
 stream = ExtResource("19_pp3pk")

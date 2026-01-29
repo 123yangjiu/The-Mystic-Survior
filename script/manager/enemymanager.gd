@@ -32,7 +32,7 @@ func on_time_out():
 	entities_Layer.add_child(enemy)
 	enemy.global_position=spawn_position
 	if target_time:
-		$Timer.wait_time=target_time*pow(1.2,GameEvent.current_monster/max_monster)
+		$Timer.wait_time=target_time*pow(7,GameEvent.current_monster/max_monster)
 	
 	
 func on_more_difficulty(difficulty:int):
