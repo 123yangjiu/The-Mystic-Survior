@@ -34,17 +34,17 @@ func Set_Ability_Upgrade(upgrades:Array[AbilityUpgrade]):#传入选项这个函�
 
 
 func on_upgrade_select(upgrade:AbilityUpgrade,_card:AbilityCard):
-    upgrade_selected.emit(upgrade)#把这个选项传出到其他地方，显示屏不负责
-    #更改升级后的数值
-    var children= get_parent().get_children()
-    if children.size()>=2:
-        return
-    if GameEvent.paused>0:
-        GameEvent.paused-=1
-        if GameEvent.paused==0:
-            get_tree().paused=false
-    #选择完能力之后游戏继续进行
-    queue_free()#选择完能力之后关掉能力升级显示屏
+	upgrade_selected.emit(upgrade)#把这个选项传出到其他地方，显示屏不负责
+	#更改升级后的数值
+	var children= get_parent().get_children()
+	if children.size()>=2:
+		return
+	if GameEvent.paused>0:
+		GameEvent.paused-=1
+		if GameEvent.paused==0:
+			get_tree().paused=false
+	#选择完能力之后游戏继续进行
+	queue_free()#选择完能力之后关掉能力升级显示屏
 
 
 func on_upgrade_ready(upgrade:AbilityUpgrade,card:AbilityCard)->void:
@@ -90,4 +90,3 @@ func _input(event: InputEvent) -> void:
 	elif event.is_action_pressed("confirm"):
 		on_upgrade_select(ready_ability,null)
 	
-
