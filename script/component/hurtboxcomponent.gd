@@ -12,12 +12,15 @@ func on_area_enter(other_area:Area2D):
 	if not other_area is HitboxComponent:
 		return
 	var hitbox_component:=other_area as HitboxComponent
-	health_component.damage(hitbox_component.damage)
+	var new_damage = hitbox_component.damage
+	if ! GameEvent.is_hard:
+		new_damage=floori(float(new_damage)*1.1)+1 
+	health_component.damage(new_damage)
 	#flash_white()
 	var floating_text=floating_text_scene.instantiate() as Node2D
 	get_tree().get_first_node_in_group("前景图层").add_child(floating_text)
 	floating_text.global_position=global_position
-	floating_text.start(str(hitbox_component.damage))
+	floating_text.start(str(new_damage))
 	#if  velocity_component:
 		#var ori_acceleration = velocity_component.acceleration
 		#if ori_acceleration!=0:

@@ -35,6 +35,11 @@ func _ready() -> void:
 	#改变实时发出信号让血条实时变化
 	health_bar.value=health_component.get_health_persent()#初始化血量为满血
 	GameEvent.blood_bottle_collected.connect(on_blood_bottle_collected)
+	if ! GameEvent.is_hard:
+		enter_body_number_10_hurt=6
+		enter_body_number_17_hurt=10
+		enter_body_number_30_hurt=15
+		enter_body_number_47_hurt=20
 	
 @export var MAX_speed=120
 func _physics_process(_delta: float) -> void:

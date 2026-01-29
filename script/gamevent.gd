@@ -62,4 +62,5 @@ signal mush_appear #当蘑菇出现时@enemyproducer
 #限制出怪量
 var current_monster :=0.0
 
+#简单模式：1.怪物移速下降10%；2.刷怪速度下降很多；3.玩家伤害提高10%;4.玩家受伤减少1半
 var is_hard:=false
