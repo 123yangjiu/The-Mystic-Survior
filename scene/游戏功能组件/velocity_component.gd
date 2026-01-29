@@ -3,6 +3,12 @@ class_name Velocity_controller
 @export var speed:int=40
 @export var acceleration:float=5
 var velocity=Vector2.ZERO
+
+func _ready() -> void:
+	if ! GameEvent.is_hard:
+		var new_speed = float(speed)*9/10
+		speed = floor(new_speed)
+
 func accelerate_to_player():
 	var owner_2D=owner as Node2D
 	var player=get_tree().get_first_node_in_group("player")

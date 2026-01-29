@@ -11,7 +11,7 @@
 layer = 2
 script = ExtResource("1_kq4tr")
 current = NodePath("the_first")
-all = [NodePath("the_first"), NodePath("the_second"), NodePath("the_third"), NodePath("the_end")]
+all = [NodePath("the_first"), NodePath("the_second"), NodePath("the_third"), NodePath("the_end"), null]
 metadata/_edit_vertical_guides_ = [-121.0]
 
 [node name="the_first" type="Node2D" parent="."]
@@ -88,6 +88,8 @@ offset_bottom = 113.0
 theme_override_font_sizes/font_size = 24
 text = "好了，你已经掌握了游戏的基础操作了，
 现在只需要想办法存活10分钟就好了"
+
+[node name="the_second_third" type="Node2D" parent="."]
 
 [node name="Next" type="Button" parent="."]
 custom_minimum_size = Vector2(125, 50)

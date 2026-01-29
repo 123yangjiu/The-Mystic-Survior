@@ -61,3 +61,5 @@ signal mush_appear #当蘑菇出现时@enemyproducer
 
 #限制出怪量
 var current_monster :=0.0
+
+var is_hard:=false

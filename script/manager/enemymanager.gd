@@ -16,11 +16,13 @@ var rand_R=450#包围半径
 @onready var enemyfiliter: EnemyFiliter = $"../enemyfiliter"
 var base_time_gap
 func _ready() -> void:
-
 	base_time_gap=$Timer.wait_time
 	$Timer.timeout.connect(on_time_out)
 	GameEvent.more_difficulty.connect(on_more_difficulty)
 	GameEvent.mush_appear.connect(on_mush_appear)
+	if !GameEvent.is_hard:
+		min_gap =0.2
+		decay = 0.15
 func on_time_out():
 	chosen_enemy_scene=enemyfiliter.random_chose()#
 	var player=get_tree().get_first_node_in_group("player")#通过筛选器选出这次要生成
