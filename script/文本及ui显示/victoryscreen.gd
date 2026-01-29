@@ -14,6 +14,7 @@ var tips_array:Array[String] =[
 
 func _ready() -> void:
 
+
 	GameEvent.paused+=1
 	get_tree().paused = true
 	%restart.pressed.connect(on_restart_press)
@@ -22,6 +23,7 @@ func _ready() -> void:
 	var tip = "Tips:"+tips_array.get(index)
 	tips.text=tip
 	await get_tree().create_timer(0.5).timeout
+
 
 
 func on_restart_press():
