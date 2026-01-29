@@ -3,9 +3,8 @@ extends CharacterBody2D
 @onready var health_component:HealthComponent = $health_component
 @onready var velocity_component: Node = $velocity_component
 func _ready() -> void:
-    $Timer.timeout.connect(on_time_out)
+	$Timer.timeout.connect(on_time_out)
 func _physics_process(_delta: float) -> void:
-
 	velocity_component.accelerate_to_player()
 	velocity_component.move(self)
 	if velocity.x<0:
@@ -15,7 +14,7 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 func get_player_position():
-    var player=get_tree().get_first_node_in_group("player")
-    return (player.global_position - global_position).normalized()
+	var player=get_tree().get_first_node_in_group("player")
+	return (player.global_position - global_position).normalized()
 func on_time_out():
-    self.queue_free()
+	self.queue_free()

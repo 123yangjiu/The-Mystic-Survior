@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cr32ffcse8os3" path="res://scene/ui/settingscreen.tscn" id="2_kfxea"]
 [ext_resource type="Theme" uid="uid://5bh541wa60l3" path="res://resource/theme/green_theme.tres" id="3_ddj0q"]
 [ext_resource type="PackedScene" uid="uid://bmvpkn3tw3evw" path="res://scene/ui/brochure.tscn" id="3_hmyiv"]
-[ext_resource type="AudioStream" uid="uid://c5uulbfvf0wpc" path="res://sucai/back_music/Brand New.wav" id="5_i5olb"]
+[ext_resource type="AudioStream" uid="uid://drwd3vjuweyx" path="res://sucai/back_music/Brand New_0.wav" id="7_hmyiv"]
 
 [node name="主界面" type="Control"]
 layout_mode = 3
@@ -89,7 +89,7 @@ text = "离开
 "
 
 [node name="MainTheme" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_i5olb")
+stream = ExtResource("7_hmyiv")
 bus = &"Music"
 
 [node name="Brochure" type="Button" parent="."]
