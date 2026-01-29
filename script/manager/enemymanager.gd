@@ -130,4 +130,3 @@ func on_mush_appear()->void:
 	SPAWN_R=300
 	if $Timer.wait_time >ori_time:
 		$Timer.wait_time=ori_time
-
