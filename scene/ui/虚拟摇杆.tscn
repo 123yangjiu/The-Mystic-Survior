@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bs6517j8258bc" path="res://sucai/UI/虚拟摇杆_盘.png" id="1_cvih0"]
 [ext_resource type="Texture2D" uid="uid://dyoxcmu0epu42" path="res://sucai/UI/虚拟摇杆_杆.png" id="2_2kwdo"]
-[ext_resource type="Script" uid="uid://c1nekyxiilkrr" path="res://script/文本及ui显示/虚拟摇杆.gd" id="2_i1i8g"]
+[ext_resource type="Script" uid="uid://denjnombijd1a" path="res://scene/ui/虚拟摇杆2.gd" id="2_i1i8g"]
 
 [node name="虚拟摇杆" type="Sprite2D"]
 visible = false

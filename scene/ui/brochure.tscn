@@ -1,0 +1,125 @@
+[gd_scene load_steps=7 format=3 uid="uid://bmvpkn3tw3evw"]
+
+[ext_resource type="Script" uid="uid://cmlkc53pw60mt" path="res://script/文本及ui显示/brochure.gd" id="1_kq4tr"]
+[ext_resource type="Texture2D" uid="uid://byke6gg7gat4j" path="res://sucai/video/Screenshot_20260129_022929.jpg" id="2_ix68m"]
+[ext_resource type="Texture2D" uid="uid://cr5xjkl5ry57h" path="res://sucai/video/屏幕截图 2026-01-29 023452.png" id="2_n0psw"]
+[ext_resource type="Texture2D" uid="uid://cxipndnmyyx23" path="res://sucai/video/屏幕截图 2026-01-29 023725.png" id="3_n0psw"]
+[ext_resource type="Texture2D" uid="uid://bnggolumsatoe" path="res://sucai/background/1.png" id="4_x3mo8"]
+[ext_resource type="Theme" uid="uid://5bh541wa60l3" path="res://resource/theme/green_theme.tres" id="5_gfpkr"]
+
+[node name="Brochure" type="CanvasLayer" node_paths=PackedStringArray("current", "all")]
+layer = 2
+script = ExtResource("1_kq4tr")
+current = NodePath("the_first")
+all = [NodePath("the_first"), NodePath("the_second"), NodePath("the_third"), NodePath("the_end"), null]
+metadata/_edit_vertical_guides_ = [-121.0]
+
+[node name="the_first" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="the_first"]
+position = Vector2(331, 184)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_ix68m")
+region_enabled = true
+region_rect = Rect2(1013, 77, 1126, 652)
+
+[node name="Action" type="Label" parent="the_first"]
+offset_left = 77.0
+offset_top = 90.0
+offset_right = 365.0
+offset_bottom = 141.0
+theme_override_font_sizes/font_size = 24
+text = "电脑：上下左右或WASD移动
+手机直接触屏出虚拟摇杆"
+
+[node name="the_second" type="Node2D" parent="."]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="the_second"]
+position = Vector2(320, 207)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_n0psw")
+region_enabled = true
+region_rect = Rect2(362, 97, 1194, 725)
+
+[node name="Experence" type="Label" parent="the_second"]
+offset_left = 320.0
+offset_top = 161.0
+offset_right = 608.0
+offset_bottom = 239.0
+theme_override_font_sizes/font_size = 24
+text = "靠近怪物自动攻击，将怪物
+打败后会掉落经验瓶，拾取
+一定量后你就能升级了"
+
+[node name="the_third" type="Node2D" parent="."]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="the_third"]
+position = Vector2(306, 209)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_n0psw")
+region_enabled = true
+region_rect = Rect2(199, 208, 1470, 726)
+
+[node name="Upgrade" type="Label" parent="the_third"]
+offset_left = 37.0
+offset_top = 24.0
+offset_right = 613.0
+offset_bottom = 156.0
+theme_override_font_sizes/font_size = 24
+text = "每次升级你都能从三种能力里挑一个，获得新攻击能力
+还能再解锁新的强化能力，获取一定量后你就强得没边
+了！"
+
+[node name="the_end" type="Node2D" parent="."]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="the_end"]
+position = Vector2(322, 218)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_x3mo8")
+
+[node name="End" type="Label" parent="the_end"]
+offset_left = 184.0
+offset_top = 62.0
+offset_right = 616.0
+offset_bottom = 113.0
+theme_override_font_sizes/font_size = 24
+text = "好了，你已经掌握了游戏的基础操作了，
+现在只需要想办法存活10分钟就好了"
+
+[node name="the_second_third" type="Node2D" parent="."]
+
+[node name="Next" type="Button" parent="."]
+custom_minimum_size = Vector2(125, 50)
+offset_left = 505.0
+offset_top = 295.0
+offset_right = 630.0
+offset_bottom = 345.0
+theme = ExtResource("5_gfpkr")
+text = "下一页"
+
+[node name="Pre" type="Button" parent="."]
+visible = false
+custom_minimum_size = Vector2(125, 50)
+offset_left = 10.0
+offset_top = 295.0
+offset_right = 135.0
+offset_bottom = 345.0
+theme = ExtResource("5_gfpkr")
+text = "上一页"
+
+[node name="Exit" type="Button" parent="."]
+visible = false
+custom_minimum_size = Vector2(90, 50)
+offset_left = 272.5
+offset_top = 300.0
+offset_right = 362.5
+offset_bottom = 350.0
+theme = ExtResource("5_gfpkr")
+text = "退出"
+
+[connection signal="button_down" from="Next" to="." method="_on_nect_button_down"]
+[connection signal="button_down" from="Pre" to="." method="_on_pre_button_down"]
+[connection signal="button_down" from="Exit" to="." method="_on_button_button_down"]

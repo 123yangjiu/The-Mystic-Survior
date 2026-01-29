@@ -17,24 +17,28 @@ var rand_R=450#包围半径
 var base_time_gap
 func _ready() -> void:
 
-    base_time_gap=$Timer.wait_time
-    $Timer.timeout.connect(on_time_out)
-    GameEvent.more_difficulty.connect(on_more_difficulty)
-    GameEvent.mush_appear.connect(on_mush_appear)
+	base_time_gap=$Timer.wait_time
+	$Timer.timeout.connect(on_time_out)
+	GameEvent.more_difficulty.connect(on_more_difficulty)
+	GameEvent.mush_appear.connect(on_mush_appear)
+	if !GameEvent.is_hard:
+		min_gap =0.2
+		decay = 0.15
 func on_time_out():
-    chosen_enemy_scene=enemyfiliter.random_chose()#
-    var player=get_tree().get_first_node_in_group("player")#通过筛选器选出这次要生成
-    #的怪物
-    var random_direction=Vector2.RIGHT.rotated(randf_range(0,TAU))
-    var spawn_position=player.global_position+random_direction*SPAWN_R
-    var enemy=chosen_enemy_scene.instantiate() as Node2D
-    var entities_Layer=get_tree().get_first_node_in_group("实体图层")
-    entities_Layer.add_child(enemy)
-    enemy.global_position=spawn_position
-    if target_time:
-        $Timer.wait_time=target_time*pow(1.2,GameEvent.current_monster/max_monster)
-    
-    
+	chosen_enemy_scene=enemyfiliter.random_chose()#
+	var player=get_tree().get_first_node_in_group("player")#通过筛选器选出这次要生成
+	#的怪物
+	var random_direction=Vector2.RIGHT.rotated(randf_range(0,TAU))
+	var spawn_position=player.global_position+random_direction*SPAWN_R
+	var enemy=chosen_enemy_scene.instantiate() as Node2D
+	var entities_Layer=get_tree().get_first_node_in_group("实体图层")
+	entities_Layer.add_child(enemy)
+	enemy.global_position=spawn_position
+	if target_time:
+		$Timer.wait_time=target_time*pow(7,GameEvent.current_monster/max_monster)
+	
+	
+
 func on_more_difficulty(difficulty:int):
     var entities_Layer=get_tree().get_first_node_in_group("实体图层")
     var player=get_tree().get_first_node_in_group("player")
@@ -122,11 +126,13 @@ func limit_position(which_position)->Vector2:
     return final_position
 
 func on_mush_appear()->void:
-    await get_tree().create_timer(1).timeout
-    var ori_time = $Timer.wait_time
-    $Timer.wait_time= ori_time*4/3
-    SPAWN_R = 250
-    await get_tree().create_timer(19).timeout
-    SPAWN_R=300
-    if $Timer.wait_time >ori_time:
-        $Timer.wait_time=ori_time
+
+	await get_tree().create_timer(1).timeout
+	var ori_time = $Timer.wait_time
+	$Timer.wait_time= ori_time*4/3
+	SPAWN_R = 250
+	await get_tree().create_timer(19).timeout
+	SPAWN_R=300
+	if $Timer.wait_time >ori_time:
+		$Timer.wait_time=ori_time
+

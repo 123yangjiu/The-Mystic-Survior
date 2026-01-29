@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://drcs7xaphbydr"
+path="res://.godot/imported/Ariadne's Thread_3.wav-2140c39b5a78fac51c16723d665c63ec.sample"
+
+[deps]
+
+source_file="res://sucai/back_music/Ariadne's Thread_3.wav"
+dest_files=["res://.godot/imported/Ariadne's Thread_3.wav-2140c39b5a78fac51c16723d665c63ec.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

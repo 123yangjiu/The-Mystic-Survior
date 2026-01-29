@@ -23,19 +23,16 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 
-    if !is_ready:
-        return
-    if ! event.is_action_pressed("click"):
-        return
-    var _position = event.position#检测鼠标是不是在检测范围内点击的
+	if !is_ready:
+		return
+	if event is InputEventScreenTouch and event.is_pressed():
+		_process_touch(event)
+	elif is_drag:
+		if event is InputEventScreenDrag:
+			_process_drag(event)
+		elif  event is InputEventScreenTouch and event.is_released():
+			_process_released(event)
 
-    if event is InputEventScreenTouch and event.is_pressed():
-        _process_touch(event)
-    elif is_drag:
-        if event is InputEventScreenDrag:
-            _process_drag(event)
-        elif  event is InputEventScreenTouch and event.is_released():
-            _process_released(event)
 
 
 func _process_touch(event:InputEvent)->void:

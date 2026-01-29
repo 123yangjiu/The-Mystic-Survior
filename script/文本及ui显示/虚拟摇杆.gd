@@ -7,6 +7,7 @@ var is_drag:=false #记录拖拽状态
 func _ready() -> void:
 	GameEvent._paused.connect(_on_paused)
 
+
 func _input(event: InputEvent) -> void:
 	if event is InputEventScreenTouch and event.is_pressed():
 		_process_touch(event)
