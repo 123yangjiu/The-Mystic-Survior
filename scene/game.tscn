@@ -137,4 +137,8 @@ wait_time = 5.0
 autostart = true
 script = ExtResource("31_0halo")
 
+[connection signal="finished" from="MusicManager/TheFirst" to="MusicManager" method="_on_the_first_finished"]
+[connection signal="finished" from="MusicManager/WithWolf" to="MusicManager" method="_on_with_wolf_finished"]
+[connection signal="finished" from="MusicManager/WithGorlen" to="MusicManager" method="_on_with_gorlen_finished"]
+[connection signal="finished" from="MusicManager/TheFinal" to="MusicManager" method="_on_the_final_finished"]
 [connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]

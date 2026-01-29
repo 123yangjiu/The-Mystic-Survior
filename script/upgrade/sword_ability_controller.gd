@@ -10,14 +10,13 @@ var volume =0
 func _ready() -> void:
 	base_wait_time=$Timer.wait_time
 	get_node("Timer").timeout.connect(on_timer_timeoout)
-	print(GameEvent.ability_upgrade_add.connect(on_ability_upgrade_add))
 	
 func on_timer_timeoout():
 
 	var player=get_tree().get_first_node_in_group("player") as Node2D
-	var enemies= get_tree().get_nodes_in_group("enemy")
+	var enemies:Array[Node]= get_tree().get_nodes_in_group("enemy")
 	enemies=enemies.filter(func(enemy:Node2D):#过滤掉不在范围内的敌人
-		return enemy.global_position.distance_squared_to(player.global_position)<pow(MAX_RANGE,2)
+		return enemy.global_position.distance_squared_to(player.global_position)<pow(320,2)
 	
 	)
 	#get_first_node_in_group是拿到组里面的第一个节点，如果我们想要拿到player节点
@@ -36,12 +35,12 @@ func on_timer_timeoout():
 	#var interval:=1
 	#if real_number>=3:
 		#interval=enemies.size()/(real_number-2)
-
 	for i in range(real_number):
 		var sword_instance = set_instance()
 		if enemies.is_empty():
 			sword_instance.queue_free()
 			return
+		#var enemy= enemies.get(i)
 		var enemy= enemies[i]
 		   
 
