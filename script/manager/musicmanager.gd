@@ -58,14 +58,14 @@ func on_stop_end()->void:
 		a_stop_music.stream_paused=false
 
 
-func _on_the_first_finished() -> void:
-	play(the_first)
-
-func _on_with_wolf_finished() -> void:
-	play(with_wolf)
-
-func _on_with_gorlen_finished() -> void:
-	play(with_gorlen)
-
-func _on_the_final_finished() -> void:
-	play(the_final)
+#func _on_the_first_finished() -> void:
+	#play(the_first)
+#
+#func _on_with_wolf_finished() -> void:
+	#play(with_wolf)
+#
+#func _on_with_gorlen_finished() -> void:
+	#play(with_gorlen)
+#
+#func _on_the_final_finished() -> void:
+	#play(the_final)
