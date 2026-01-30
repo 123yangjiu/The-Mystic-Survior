@@ -23,15 +23,15 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 
-	if !is_ready:
-		return
-	if event is InputEventScreenTouch and event.is_pressed():
-		_process_touch(event)
-	elif is_drag:
-		if event is InputEventScreenDrag:
-			_process_drag(event)
-		elif  event is InputEventScreenTouch and event.is_released():
-			_process_released(event)
+    if !is_ready:
+        return
+    if event is InputEventScreenTouch and event.is_pressed():
+        _process_touch(event)
+    elif is_drag:
+        if event is InputEventScreenDrag:
+            _process_drag(event)
+        elif  event is InputEventScreenTouch and event.is_released():
+            _process_released(event)
 
 
 
