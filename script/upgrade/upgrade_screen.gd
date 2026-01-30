@@ -53,6 +53,7 @@ func on_upgrade_ready(upgrade:AbilityUpgrade,card:AbilityCard)->void:
 	ready_ability=upgrade
 	ready_card=card
 
+
 func on_upgrade_no_ready(upgrade:AbilityUpgrade,card:AbilityCard)->void:
 	if ready_ability==upgrade:
 		ready_ability=null
