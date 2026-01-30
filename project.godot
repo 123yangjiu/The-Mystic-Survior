@@ -28,6 +28,10 @@ window/size/window_width_override=1920
 window/size/window_height_override=1080
 window/stretch/mode="viewport"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/GodotPrivacyPlugin/plugin.cfg")
+
 [gui]
 
 theme/custom="uid://dbgauou15hq13"
