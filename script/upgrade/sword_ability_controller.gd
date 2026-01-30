@@ -8,9 +8,10 @@ var number=1#定义基础剑的数量
 var volume =0
 
 func _ready() -> void:
-    base_wait_time=$Timer.wait_time
-    get_node("Timer").timeout.connect(on_timer_timeoout)
-    
+	base_wait_time=$Timer.wait_time
+	get_node("Timer").timeout.connect(on_timer_timeoout)
+	GameEvent.ability_upgrade_add.connect(on_ability_upgrade_add)
+
 func on_timer_timeoout():
 
     var player=get_tree().get_first_node_in_group("player") as Node2D
@@ -69,15 +70,16 @@ func set_instance()->Swordability:
     return sword_instance
 
 func on_ability_upgrade_add(upgrade:AbilityUpgrade,current_upgrade:Dictionary):
+	print("到这里")
+	#监听所有关于剑的升级
+	if upgrade.ID=="剑的速度":
+		var persent_reduction=current_upgrade["剑的速度"]["quantity"]*.2
+		$Timer.wait_time=max(base_wait_time*(1-persent_reduction),0.2)
+		if persent_reduction==1:
+			volume-=5
+		$Timer.start()
+	if upgrade.ID=="剑的伤害":
 
-    #监听所有关于剑的升级
-    if upgrade.ID=="剑的速度":
-        var persent_reduction=current_upgrade["剑的速度"]["quantity"]*.2
-        $Timer.wait_time=max(base_wait_time*(1-persent_reduction),0.2)
-        if persent_reduction==1:
-            volume-=5
-        $Timer.start()
-    if upgrade.ID=="剑的伤害":
 
         Damage=Damage*1.35
     if upgrade.ID=="剑的数量":

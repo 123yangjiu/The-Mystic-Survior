@@ -39,21 +39,21 @@ signal player_died
 signal _paused #当paused+1时发出信号
 #当游戏暂停时发出一些信号
 func set_paused(value)->void:
-    if value>paused:
-        _paused.emit()
-    paused=value
+	if value>paused:
+		_paused.emit()
+	paused=value
 
 #用于记录音量有关数据
 var master_db  
 var sound_db
 var music_db
 func record_db(_name:String,value)->void:
-    if _name=="Sound":
-        sound_db=value
-    elif  _name =="Master":
-        master_db=value
-    elif _name=="Music":
-        music_db=value
+	if _name=="Sound":
+		sound_db=value
+	elif  _name =="Master":
+		master_db=value
+	elif _name=="Music":
+		music_db=value
 
 
 @warning_ignore("unused_signal")
@@ -62,4 +62,5 @@ signal mush_appear #当蘑菇出现时@enemyproducer
 #限制出怪量
 var current_monster :=0.0
 
+#简单模式：1.怪物移速下降10%；2.刷怪速度下降很多；3.玩家伤害提高10%;4.玩家受伤减少1半
 var is_hard:=false

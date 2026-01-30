@@ -22,8 +22,8 @@ func _ready() -> void:
 	GameEvent.more_difficulty.connect(on_more_difficulty)
 	GameEvent.mush_appear.connect(on_mush_appear)
 	if !GameEvent.is_hard:
-		min_gap =0.2
-		decay = 0.15
+		min_gap =0.12
+		decay = 0.25
 func on_time_out():
 	chosen_enemy_scene=enemyfiliter.random_chose()#
 	var player=get_tree().get_first_node_in_group("player")#通过筛选器选出这次要生成

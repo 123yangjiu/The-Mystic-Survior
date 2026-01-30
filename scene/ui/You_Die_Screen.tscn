@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://co66107rpg80r"]
+[gd_scene load_steps=5 format=3 uid="uid://co66107rpg80r"]
 
 [ext_resource type="Script" uid="uid://dhi6irssr0s2a" path="res://script/文本及ui显示/victoryscreen.gd" id="1_u23xs"]
 [ext_resource type="Texture2D" uid="uid://d1ue7ojv75eip" path="res://sucai/UI/You_die.png" id="2_nqmcm"]
 [ext_resource type="Theme" uid="uid://bak7nt8mttr06" path="res://resource/theme/black_theme.tres" id="3_q6lwb"]
+[ext_resource type="PackedScene" uid="uid://bxsd6pwev6oei" path="res://scene/ui/change_nandu.tscn" id="4_jjjup"]
 
 [node name="You_Die_Screen" type="CanvasLayer"]
 process_mode = 3
@@ -76,3 +77,9 @@ offset_top = 303.0
 offset_right = 1160.0
 offset_bottom = 354.0
 text = "？"
+
+[node name="Change_screen" parent="." instance=ExtResource("4_jjjup")]
+offset_left = 89.0
+offset_top = 173.0
+offset_right = 139.0
+offset_bottom = 193.0
