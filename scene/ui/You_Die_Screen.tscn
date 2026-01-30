@@ -5,10 +5,11 @@
 [ext_resource type="Theme" uid="uid://bak7nt8mttr06" path="res://resource/theme/black_theme.tres" id="3_q6lwb"]
 [ext_resource type="PackedScene" uid="uid://bxsd6pwev6oei" path="res://scene/ui/change_nandu.tscn" id="4_jjjup"]
 
-[node name="You_Die_Screen" type="CanvasLayer"]
+[node name="You_Die_Screen" type="CanvasLayer" node_paths=PackedStringArray("tips")]
 process_mode = 3
 layer = 2
 script = ExtResource("1_u23xs")
+tips = NodePath("Tips")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(318, 175)

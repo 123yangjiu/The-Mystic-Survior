@@ -32,4 +32,4 @@ func move(character: CharacterBody2D):
 	velocity = input_dir * kept_speed
 	var max_slide = speed * 1.27
 	if velocity.length() > max_slide:
-		velocity = velocity.normalized() * max_slide
+		velocity = velocity.normalized() * speed
