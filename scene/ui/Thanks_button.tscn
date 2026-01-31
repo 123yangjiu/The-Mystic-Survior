@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://b7eap6117b3y4"]
+
+[ext_resource type="Theme" uid="uid://5bh541wa60l3" path="res://resource/theme/green_theme.tres" id="1_fxlpa"]
+[ext_resource type="Script" uid="uid://b2m8w30y3e17h" path="res://script/文本及ui显示/thanks_button.gd" id="2_o728v"]
+[ext_resource type="PackedScene" uid="uid://clhfimwk6xw1p" path="res://scene/ui/thanks_list.tscn" id="3_iygiu"]
+
+[node name="Button" type="Button"]
+custom_minimum_size = Vector2(180, 60)
+offset_left = 443.0
+offset_top = 14.0
+offset_right = 623.0
+offset_bottom = 74.0
+theme = ExtResource("1_fxlpa")
+text = "感谢名单"
+script = ExtResource("2_o728v")
+thanks_list = ExtResource("3_iygiu")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

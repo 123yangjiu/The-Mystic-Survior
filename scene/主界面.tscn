@@ -5,9 +5,9 @@
 [ext_resource type="Script" uid="uid://dda5cs3qdq8a7" path="res://script/文本及ui显示/主界面.gd" id="1_qwg81"]
 [ext_resource type="PackedScene" uid="uid://cr32ffcse8os3" path="res://scene/ui/settingscreen.tscn" id="2_kfxea"]
 [ext_resource type="Theme" uid="uid://5bh541wa60l3" path="res://resource/theme/green_theme.tres" id="3_ddj0q"]
-[ext_resource type="PackedScene" uid="uid://bmvpkn3tw3evw" path="res://scene/ui/brochure.tscn" id="3_hmyiv"]
 [ext_resource type="AudioStream" uid="uid://drwd3vjuweyx" path="res://sucai/back_music/Brand New_0.wav" id="7_hmyiv"]
 [ext_resource type="PackedScene" uid="uid://bxsd6pwev6oei" path="res://scene/ui/change_nandu.tscn" id="8_y4q5r"]
+[ext_resource type="PackedScene" uid="uid://bvbt0jr1g354u" path="res://scene/ui/tujian_button.tscn" id="9_qpoty"]
 
 [node name="主界面" type="Control"]
 layout_mode = 3
@@ -18,7 +18,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qwg81")
 setting_screen = ExtResource("2_kfxea")
-brochure = ExtResource("3_hmyiv")
 
 [node name="Back" type="TextureRect" parent="."]
 self_modulate = Color(0.5, 0.5, 0.5, 1)
@@ -93,16 +92,6 @@ text = "离开
 stream = ExtResource("7_hmyiv")
 bus = &"Music"
 
-[node name="Brochure" type="Button" parent="."]
-custom_minimum_size = Vector2(180, 60)
-layout_mode = 0
-offset_left = 29.0
-offset_top = 244.0
-offset_right = 209.0
-offset_bottom = 304.0
-theme = ExtResource("3_ddj0q")
-text = "操作指南"
-
 [node name="Change_screen" parent="." instance=ExtResource("8_y4q5r")]
 layout_mode = 0
 offset_left = 89.0
@@ -110,7 +99,13 @@ offset_top = 173.0
 offset_right = 139.0
 offset_bottom = 193.0
 
+[node name="Button" parent="." instance=ExtResource("9_qpoty")]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 242.0
+offset_right = 174.0
+offset_bottom = 292.0
+
 [connection signal="button_up" from="开始" to="." method="_on_开始_button_up"]
 [connection signal="button_up" from="Setting" to="." method="_on_setting_button_up"]
 [connection signal="button_up" from="离开" to="." method="_on_离开_button_up"]
-[connection signal="button_down" from="Brochure" to="." method="_on_brochure_button_down"]

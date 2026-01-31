@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://b8orbduoade27"]
+[gd_scene load_steps=30 format=3 uid="uid://b8orbduoade27"]
 
 [ext_resource type="Script" uid="uid://cftr1t220lj12" path="res://script/player.gd" id="1_hjaqi"]
 [ext_resource type="PackedScene" uid="uid://b0v42bl82qnrr" path="res://scene/ability/sword_ability/sword_ability_controller.tscn" id="2_fvtld"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://dkqr60limdl3s" path="res://sucai/女巫师/小女巫_黑边.png" id="11_34jf3"]
 [ext_resource type="AudioStream" uid="uid://bnbuawlex5u51" path="res://sucai/sound/Hurt.wav" id="13_u7b46"]
 [ext_resource type="PackedScene" uid="uid://c7kjkebvjcpyo" path="res://scene/ui/虚拟摇杆.tscn" id="14_u7b46"]
+[ext_resource type="PackedScene" uid="uid://x6wtjmpfecww" path="res://scene/ui/stop_button.tscn" id="15_j4wxg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ihjo1"]
 atlas = ExtResource("10_ihjo1")
@@ -195,3 +196,12 @@ layer = 2
 [node name="虚拟摇杆" parent="CanvasLayer" node_paths=PackedStringArray("player") instance=ExtResource("14_u7b46")]
 position = Vector2(0, -5)
 player = NodePath("../..")
+
+[node name="StopButton" parent="CanvasLayer" instance=ExtResource("15_j4wxg")]
+visible = false
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_right = 0.0
+grow_horizontal = 0

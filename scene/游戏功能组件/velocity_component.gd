@@ -6,7 +6,10 @@ var velocity=Vector2.ZERO
 
 func _ready() -> void:
 	if ! GameEvent.is_hard:
-		var new_speed = float(speed)*9/10
+		var new_speed = float(speed)*4/5
+		speed = floor(new_speed)
+	else :
+		var new_speed = float(speed)*44/50
 		speed = floor(new_speed)
 
 func accelerate_to_player():

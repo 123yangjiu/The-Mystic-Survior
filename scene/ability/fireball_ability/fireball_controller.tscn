@@ -9,7 +9,7 @@ script = ExtResource("1_dvaxo")
 fireball = ExtResource("2_de04s")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 1.6
+wait_time = 1.4
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_157to")

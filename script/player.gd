@@ -92,10 +92,12 @@ func on_body_exited(enterbody:Node2D):
 	var ori_acceleration = enterbody.velocity_component.acceleration
 	if ori_acceleration !=0:
 		enterbody.velocity_component.acceleration =1
-		await get_tree().create_timer(0.8).timeout
+		await get_tree().create_timer(1).timeout
 		if enterbody:
 			if enterbody.velocity_component.acceleration ==1:
 				enterbody.velocity_component.acceleration=ori_acceleration
+			if enterbody is Knight:
+				enterbody.冲刺范围.end_rush()
 
 func damage_manager():
 	var totle_nmber=enter_body_number_10+enter_body_number_17+enter_body_number_30\

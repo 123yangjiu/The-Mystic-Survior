@@ -16,7 +16,6 @@ var rand_R=450#包围半径
 @onready var enemyfiliter: EnemyFiliter = $"../enemyfiliter"
 var base_time_gap
 func _ready() -> void:
-
 	base_time_gap=$Timer.wait_time
 	$Timer.timeout.connect(on_time_out)
 	GameEvent.more_difficulty.connect(on_more_difficulty)
@@ -96,7 +95,6 @@ func on_more_difficulty(difficulty:int):
 			kill_enemy.global_position = player.global_position + Vector2.RIGHT.rotated(angle) * radius        
 	if  difficulty>=16 and difficulty<=17:
 		for i in 3:
-			await get_tree().create_timer(5.0).timeout
 			GameEvent.current_monster+=1
 			var kill_enemy = kill_cirle_enemy[1].instantiate() as Node2D
 			entities_Layer.add_child(kill_enemy)
@@ -105,8 +103,10 @@ func on_more_difficulty(difficulty:int):
 			var radius := float(rand_R) * randf_range(0.9, 1.1)
 			# 3. 最终位置
 			kill_enemy.global_position = player.global_position + Vector2.RIGHT.rotated(angle) * radius
+			if i < 2:  # 当 i = 0, 1 时等待，i = 2 时不等待
+				await get_tree().create_timer(4.0).timeout
 
-	if difficulty>=13:
+	if difficulty>=13 and difficulty%2 ==1:
 		GameEvent.current_monster+=1
 		var kill_enemy = kill_cirle_enemy[2].instantiate() as Node2D
 		entities_Layer.add_child(kill_enemy)

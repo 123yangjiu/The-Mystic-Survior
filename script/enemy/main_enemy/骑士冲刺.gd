@@ -1,3 +1,4 @@
+class_name ChongCi
 extends Area2D
 @onready var velocity_component: Velocity_controller = $"../velocity_component"
 @onready var hurtboxcomponent: HutboxComponent = $"../Hurtboxcomponent"

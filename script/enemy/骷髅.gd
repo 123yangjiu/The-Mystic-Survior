@@ -5,18 +5,18 @@ extends CharacterBody2D
 
 func _physics_process(_delta: float) -> void:
 
-    velocity_component.accelerate_to_player()
-    velocity_component.move(self)
-    if velocity.x<0:
-       
-        animated_sprite_2d.flip_h=true
-    if velocity.x>0:
-        
-        animated_sprite_2d.flip_h=false
+	velocity_component.accelerate_to_player()
+	velocity_component.move(self)
+	if velocity.x<0:
+	   
+		animated_sprite_2d.flip_h=true
+	if velocity.x>0:
+		
+		animated_sprite_2d.flip_h=false
 
-    
-    
-    move_and_slide()
+	
+	
+	move_and_slide()
 func get_player_position():
-    var player=get_tree().get_first_node_in_group("player")
-    return (player.global_position - global_position).normalized()
+	var player=get_tree().get_first_node_in_group("player")
+	return (player.global_position - global_position).normalized()

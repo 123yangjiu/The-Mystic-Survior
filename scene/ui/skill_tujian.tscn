@@ -1,0 +1,105 @@
+[gd_scene load_steps=32 format=3 uid="uid://c58yckyjy7xpa"]
+
+[ext_resource type="Script" uid="uid://boh2aiy8h4y46" path="res://script/文本及ui显示/skill_tujian.gd" id="1_bw8iv"]
+[ext_resource type="PackedScene" uid="uid://c6t5pqka2y0xc" path="res://scene/ui/abilityupgradecard.tscn" id="2_hdgep"]
+[ext_resource type="Script" uid="uid://dmyfvo2eu1rj2" path="res://resource/ability_upgrade.gd" id="3_wyphw"]
+[ext_resource type="Resource" uid="uid://oclytr2qthx8" path="res://resource/upgrades/sword/sword_damage.tres" id="4_e7bnn"]
+[ext_resource type="Resource" uid="uid://blc0x1fuyqqd8" path="res://resource/upgrades/sword/sword_rate.tres" id="5_ucao3"]
+[ext_resource type="Resource" uid="uid://bb008fs5wq31x" path="res://resource/upgrades/sword/sword_number.tres" id="6_aay3j"]
+[ext_resource type="Resource" uid="uid://dq2ug8ceqhgg0" path="res://resource/upgrades/fireball/get_fireball.tres" id="7_mabtl"]
+[ext_resource type="Resource" uid="uid://v5wroaoxtel4" path="res://resource/upgrades/fireball/fireballpower .tres" id="8_dpopx"]
+[ext_resource type="Resource" uid="uid://bqpb3vuil8nte" path="res://resource/upgrades/fireball/fireballnnumber.tres" id="9_8dpxf"]
+[ext_resource type="Resource" uid="uid://brv0twbh4faty" path="res://resource/upgrades/fireball/fireballchuantou  .tres" id="10_6wq5a"]
+[ext_resource type="Resource" uid="uid://dq68qtu5n06bt" path="res://resource/upgrades/heaven_fury/get_heaven_fury.tres" id="11_4rou3"]
+[ext_resource type="Resource" uid="uid://dladi3itxe508" path="res://resource/upgrades/heaven_fury/更强愤怒 .tres" id="12_ohvd8"]
+[ext_resource type="Resource" uid="uid://ccayapnq1hx0c" path="res://resource/upgrades/heaven_fury/更多愤怒 (2).tres" id="13_528nf"]
+[ext_resource type="Resource" uid="uid://bre1wbhgghbfl" path="res://resource/upgrades/heaven_fury/更快愤怒.tres" id="14_7xkpe"]
+[ext_resource type="Resource" uid="uid://oty2cgbisuck" path="res://resource/upgrades/holy_light/get_hammer.tres" id="15_sh81l"]
+[ext_resource type="Resource" uid="uid://c80ua6iia28p6" path="res://resource/upgrades/holy_light/hammer_power.tres" id="16_hfe5u"]
+[ext_resource type="Resource" uid="uid://cjjqnoy3whssy" path="res://resource/upgrades/holy_light/hammer_speed.tres" id="17_vis0a"]
+[ext_resource type="Resource" uid="uid://d4ai6yyxvaf2a" path="res://resource/upgrades/holy_light/larger.tres" id="18_bp314"]
+[ext_resource type="Resource" uid="uid://cvcyibysmviov" path="res://resource/upgrades/ring/get_ring.tres" id="19_xvc7j"]
+[ext_resource type="Resource" uid="uid://dy38bx8w4yshf" path="res://resource/upgrades/ring/ring_power.tres" id="20_58664"]
+[ext_resource type="Resource" uid="uid://bd0tr7xshvycr" path="res://resource/upgrades/ring/ring_rate_range.tres" id="21_yrgvd"]
+[ext_resource type="Resource" uid="uid://b5o283wr41dta" path="res://resource/upgrades/else/吸铁石.tres" id="22_3uk6w"]
+[ext_resource type="Resource" uid="uid://bbp5xqvgt1ubd" path="res://resource/upgrades/else/飞毛腿.tres" id="23_g2lnk"]
+[ext_resource type="Resource" uid="uid://cq6h3a5qtmde3" path="res://resource/upgrades/else/盔甲.tres" id="24_slx2f"]
+[ext_resource type="Resource" uid="uid://dn5ri83sm6i23" path="res://resource/upgrades/else/生命药水瓶.tres" id="25_il7tx"]
+[ext_resource type="PackedScene" uid="uid://b2yrm0y8rlo8e" path="res://scene/ui/exit_button.tscn" id="26_8dpxf"]
+[ext_resource type="Texture2D" uid="uid://dpo4ccauulmja" path="res://sucai/background/skill/sword.png" id="26_e7bnn"]
+[ext_resource type="Texture2D" uid="uid://4tv10algqnj7" path="res://sucai/background/skill/fire.png" id="27_ucao3"]
+[ext_resource type="Texture2D" uid="uid://86mokqg7fsnl" path="res://sucai/background/skill/heaven.png" id="28_aay3j"]
+[ext_resource type="Texture2D" uid="uid://bpsafaxcdqtsx" path="res://sucai/background/skill/light.png" id="29_mabtl"]
+[ext_resource type="Texture2D" uid="uid://6d2i2fi6p5hk" path="res://sucai/background/skill/ring.png" id="30_dpopx"]
+
+[node name="SkillTujian" type="CanvasLayer"]
+layer = 2
+script = ExtResource("1_bw8iv")
+upgrade_card_scene = ExtResource("2_hdgep")
+all_upgrade = Array[ExtResource("3_wyphw")]([ExtResource("4_e7bnn"), ExtResource("5_ucao3"), ExtResource("6_aay3j"), ExtResource("7_mabtl"), ExtResource("8_dpopx"), ExtResource("9_8dpxf"), ExtResource("10_6wq5a"), ExtResource("11_4rou3"), ExtResource("12_ohvd8"), ExtResource("13_528nf"), ExtResource("14_7xkpe"), ExtResource("15_sh81l"), ExtResource("16_hfe5u"), ExtResource("17_vis0a"), ExtResource("18_bp314"), ExtResource("19_xvc7j"), ExtResource("20_58664"), ExtResource("21_yrgvd"), ExtResource("22_3uk6w"), ExtResource("23_g2lnk"), ExtResource("24_slx2f"), ExtResource("25_il7tx")])
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2, 0.2, 0.2, 0.78431374)
+
+[node name="Exit" parent="." node_paths=PackedStringArray("root_node") instance=ExtResource("26_8dpxf")]
+offset_left = 294.0
+offset_top = 304.0
+offset_right = 384.0
+offset_bottom = 354.0
+root_node = NodePath("..")
+
+[node name="Tupian" type="Node2D" parent="."]
+
+[node name="Sword" type="Sprite2D" parent="Tupian"]
+position = Vector2(57, 32)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("26_e7bnn")
+region_enabled = true
+region_rect = Rect2(171.87952, 113.90745, 337.86426, 151.62912)
+
+[node name="Fire" type="Sprite2D" parent="Tupian"]
+position = Vector2(274, 60)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("27_ucao3")
+region_enabled = true
+region_rect = Rect2(63.607803, 49.806667, 529.5636, 215.72989)
+
+[node name="Heaven" type="Sprite2D" parent="Tupian"]
+position = Vector2(518, 46)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("28_aay3j")
+region_enabled = true
+region_rect = Rect2(63.607803, 49.806667, 401.25958, 326.72708)
+
+[node name="Light" type="Sprite2D" parent="Tupian"]
+position = Vector2(145, 319)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("29_mabtl")
+region_enabled = true
+region_rect = Rect2(48.924744, 9.46196, 826.8547, 270.37836)
+
+[node name="Ring" type="Sprite2D" parent="Tupian"]
+position = Vector2(514, 312)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("30_dpopx")
+region_enabled = true
+region_rect = Rect2(33.153137, 161.68558, 630.35876, 311.7078)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+custom_minimum_size = Vector2(130, 160)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 93.0
+offset_bottom = -98.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer"]
+custom_minimum_size = Vector2(150, 120)
+layout_mode = 2

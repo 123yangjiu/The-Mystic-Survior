@@ -55,7 +55,7 @@ offset_top = -3.0
 offset_bottom = -3.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.4, 0.4, 0.4, 0.7882353)
+color = Color(0.2, 0.2, 0.2, 0.7882353)
 
 [node name="Change_screen" parent="." instance=ExtResource("2_ge732")]
 offset_left = 279.0

@@ -15,6 +15,8 @@ func on_area_enter(other_area:Area2D):
 	var new_damage = hitbox_component.damage
 	if ! GameEvent.is_hard:
 		new_damage=floori(float(new_damage)*1.1)+1 
+	else :
+		new_damage=floori(float(new_damage)*0.99)+1
 	health_component.damage(new_damage)
 	#flash_white()
 	var floating_text=floating_text_scene.instantiate() as Node2D

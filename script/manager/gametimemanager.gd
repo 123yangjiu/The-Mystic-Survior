@@ -17,7 +17,6 @@ func get_time_elaspsed():
 	return timer.wait_time-timer.time_left
 
 func on_timer_timeout():
-
 	victory.emit()
 	var victory_screen_instance=victory_screen.instantiate()
 	add_child(victory_screen_instance)
