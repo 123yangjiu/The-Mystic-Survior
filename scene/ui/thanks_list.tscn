@@ -41,7 +41,7 @@ text = "
 以下素材均从itch.io网站获取
 
 Brackeys' Platformer Bundle 
-——by Brackeys
+——by Brackeys,analogStudios_ ,RottingPixels
 
 Kam's Free Music Pack 2 - Synthwave   
 ——by KameronGuajardoVGM
@@ -56,7 +56,11 @@ Swords & Blades Sound Pack
 ——by Leonardo Calvo
 
 Simple Music & SFX 
-——by foggysunrise"
+——by foggysunrise
+
+其他美术素材:
+Kenney
+"
 autowrap_mode = 2
 
 [node name="Label" type="Label" parent="Panel"]
