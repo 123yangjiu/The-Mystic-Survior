@@ -1,6 +1,6 @@
 [gd_scene load_steps=37 format=3 uid="uid://ccmf8dg5ymjjs"]
 
-[ext_resource type="Script" uid="uid://dj6b6r84um8kc" path="res://script/enemy/main_enemy/gorlen.gd" id="1_23bhl"]
+[ext_resource type="Script" uid="uid://rsl4jg827i3e" path="res://script/enemy/main_enemy/enemy_xiaotrue.gd" id="1_iuixe"]
 [ext_resource type="PackedScene" uid="uid://decyru6mnkuga" path="res://scene/游戏功能组件/hurtboxcomponent.tscn" id="2_60ack"]
 [ext_resource type="Texture2D" uid="uid://bmxqf0ab5k4hw" path="res://sucai/Character_sheet.png" id="3_d7sbi"]
 [ext_resource type="PackedScene" uid="uid://bnactnfyipltl" path="res://scene/游戏功能组件/health_component.tscn" id="4_iuixe"]
@@ -348,7 +348,7 @@ _data = {
 [node name="gorlen" type="CharacterBody2D" groups=["高级"]]
 collision_layer = 40
 collision_mask = 33
-script = ExtResource("1_23bhl")
+script = ExtResource("1_iuixe")
 
 [node name="Hurtboxcomponent" parent="." node_paths=PackedStringArray("health_component") groups=["enemy"] instance=ExtResource("2_60ack")]
 collision_layer = 4
@@ -392,4 +392,4 @@ libraries = {
 autoplay = "move"
 
 [node name="velocity_component" parent="." instance=ExtResource("6_60ack")]
-acceleration = 2.0
+speed = 50

@@ -76,11 +76,12 @@ radius = 17.001839
 [sub_resource type="CircleShape2D" id="CircleShape2D_elmko"]
 radius = 57.781265
 
-[node name="骑士" type="CharacterBody2D" groups=["终极"]]
+[node name="骑士" type="CharacterBody2D" node_paths=PackedStringArray("冲刺范围") groups=["终极"]]
 scale = Vector2(2.9948473, 3)
 collision_layer = 40
 collision_mask = 0
 script = ExtResource("1_gpn6s")
+"冲刺范围" = NodePath("冲刺范围")
 
 [node name="Hurtboxcomponent" parent="." node_paths=PackedStringArray("health_component") groups=["enemy"] instance=ExtResource("2_ij8k6")]
 collision_layer = 4
@@ -112,7 +113,7 @@ drop_thing = Array[PackedScene]([ExtResource("6_gpn6s"), ExtResource("7_d3vui")]
 health_component = NodePath("../health_component")
 
 [node name="velocity_component" parent="." instance=ExtResource("8_nduui")]
-speed = 50
+speed = 90
 acceleration = 7.0
 
 [node name="冲刺范围" type="Area2D" parent="."]

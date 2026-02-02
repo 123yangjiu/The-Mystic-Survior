@@ -1,8 +1,8 @@
 [gd_scene load_steps=18 format=3 uid="uid://b53artfqc50vr"]
 
-[ext_resource type="Script" uid="uid://d4g6a273bcr4q" path="res://script/enemy/main_enemy/enemy_script_template.gd" id="1_7e3xo"]
+[ext_resource type="Script" uid="uid://rsl4jg827i3e" path="res://script/enemy/main_enemy/enemy_xiaotrue.gd" id="1_7e3xo"]
 [ext_resource type="PackedScene" uid="uid://decyru6mnkuga" path="res://scene/游戏功能组件/hurtboxcomponent.tscn" id="1_eknvr"]
-[ext_resource type="Texture2D" uid="uid://dotk0sasi16mg" path="res://sucai/亡灵鳄梨/Avocado_sprite_sheet/avacado_character_sprite_sheet_transparent_矫正.png" id="2_13prn"]
+[ext_resource type="Texture2D" uid="uid://dotk0sasi16mg" path="res://sucai/亡灵鳄梨/avacado_character_sprite_sheet_transparent_矫正.png" id="2_13prn"]
 [ext_resource type="PackedScene" uid="uid://bnactnfyipltl" path="res://scene/游戏功能组件/health_component.tscn" id="2_jhxc5"]
 [ext_resource type="PackedScene" uid="uid://c0i7tc6xpk0n8" path="res://scene/游戏功能组件/drop_component.tscn" id="3_3lfw1"]
 [ext_resource type="PackedScene" uid="uid://i5imcyd15vix" path="res://scene/游戏 物件/exprience_bottle  .tscn" id="4_pjlxh"]
@@ -98,5 +98,5 @@ health_component = NodePath("../health_component")
 shape = SubResource("CircleShape2D_rb2m5")
 
 [node name="velocity_component" parent="." instance=ExtResource("6_vptrm")]
-speed = 80
-acceleration = null
+speed = 150
+acceleration = 8.0

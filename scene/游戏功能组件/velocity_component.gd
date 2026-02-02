@@ -29,10 +29,10 @@ func move(character: CharacterBody2D):
 	character.velocity = desired_vel
 	character.move_and_slide()
 
-	# 3. 🔥 只保留“沿输入方向”的分量，丢弃反弹/摩擦造成的额外速度
-	var input_dir = desired_vel.normalized()
-	var kept_speed = character.velocity.dot(input_dir)
-	velocity = input_dir * kept_speed
+	## 3. 🔥 只保留“沿输入方向”的分量，丢弃反弹/摩擦造成的额外速度
+	#var input_dir = desired_vel.normalized()
+	#var kept_speed = character.velocity.dot(input_dir)
+	#velocity = input_dir * kept_speed
 	var max_slide = speed * 1.27
 	if velocity.length() > max_slide:
 		velocity = velocity.normalized() * speed

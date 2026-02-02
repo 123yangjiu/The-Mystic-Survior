@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=3 uid="uid://dou6f0vkt4knk"]
 
-[ext_resource type="Script" uid="uid://ypllwj2v2bjc" path="res://script/enemy/骷髅.gd" id="1_fwp1t"]
+[ext_resource type="Script" uid="uid://rsl4jg827i3e" path="res://script/enemy/main_enemy/enemy_xiaotrue.gd" id="1_fwp1t"]
 [ext_resource type="PackedScene" uid="uid://decyru6mnkuga" path="res://scene/游戏功能组件/hurtboxcomponent.tscn" id="2_y1bq4"]
 [ext_resource type="Texture2D" uid="uid://dw82kbe2cly30" path="res://sucai/邪恶女巫.png" id="3_fwp1t"]
 [ext_resource type="PackedScene" uid="uid://bnactnfyipltl" path="res://scene/游戏功能组件/health_component.tscn" id="4_v253o"]
@@ -95,10 +95,9 @@ collision_layer = 40
 collision_mask = 33
 script = ExtResource("1_fwp1t")
 
-[node name="Hurtboxcomponent" parent="." node_paths=PackedStringArray("health_component", "velocity_component") groups=["enemy"] instance=ExtResource("2_y1bq4")]
+[node name="Hurtboxcomponent" parent="." node_paths=PackedStringArray("health_component") groups=["enemy"] instance=ExtResource("2_y1bq4")]
 collision_layer = 4
 health_component = NodePath("../health_component")
-velocity_component = NodePath("../velocity_component")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Hurtboxcomponent"]
 shape = SubResource("CircleShape2D_vcrpj")
@@ -123,8 +122,7 @@ scale = Vector2(1.9930668, 1.9930668)
 shape = SubResource("CircleShape2D_8egh0")
 
 [node name="velocity_component" parent="." instance=ExtResource("8_8plh2")]
-speed = 65
-acceleration = 8.0
+speed = 100
 
 [node name="对角色造成伤害的碰撞" type="CollisionShape2D" parent="." groups=["enemy"]]
 position = Vector2(-1, -9.536743e-07)

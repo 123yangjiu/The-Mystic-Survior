@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://b7m6v5bhfdkhq"]
+[gd_scene load_steps=47 format=3 uid="uid://b7m6v5bhfdkhq"]
 
 [ext_resource type="Script" uid="uid://rt8ham21rr6r" path="res://script/game.gd" id="1_4h26k"]
 [ext_resource type="Texture2D" uid="uid://hom1idtk1vw8" path="res://sucai/草地城堡风格的背景/Top_Down/Texture/TX Tileset Grass.png" id="2_wbt8i"]
@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://cptmnlexwivwt" path="res://scene/manager/enemyproducer.tscn" id="5_wttg5"]
 [ext_resource type="PackedScene" uid="uid://c0gjd680ncete" path="res://scene/manager/gametimemanager.tscn" id="9_cwx6g"]
 [ext_resource type="PackedScene" uid="uid://ci3fodbprfo2x" path="res://scene/ui/victoryscreen.tscn" id="10_xteuj"]
-[ext_resource type="TileSet" uid="uid://7j2lt71noofj" path="res://sucai/new_tile_set.tres" id="11_hxyqj"]
 [ext_resource type="PackedScene" uid="uid://clj43eql2an1f" path="res://scene/manager/experiencemanager.tscn" id="12_41cdt"]
 [ext_resource type="PackedScene" uid="uid://buqog17qtp4og" path="res://scene/ui/experience_bar.tscn" id="13_vsqd6"]
 [ext_resource type="PackedScene" uid="uid://b6jpe6qhci3ks" path="res://scene/manager/upgrademanager.tscn" id="14_btvex"]
@@ -382,11 +381,6 @@ script = null
 [node name="gametimemanager" parent="." instance=ExtResource("9_cwx6g")]
 victory_screen = ExtResource("10_xteuj")
 
-[node name="TileMap" type="TileMap" parent="gametimemanager"]
-position = Vector2(82, 141)
-tile_set = ExtResource("11_hxyqj")
-format = 2
-
 [node name="experiencemanager" parent="." instance=ExtResource("12_41cdt")]
 
 [node name="experience_Bar" parent="." node_paths=PackedStringArray("experience_manager") instance=ExtResource("13_vsqd6")]
@@ -413,9 +407,6 @@ position = Vector2(4, 4.0929594)
 position_smoothing_enabled = true
 
 [node name="前景" type="Node" parent="." groups=["前景图层"]]
-
-[node name="box" parent="前景" instance=ExtResource("16_kudbt")]
-position = Vector2(417, 237)
 
 [node name="测试用操作者" type="Node2D" parent="."]
 script = ExtResource("17_wdb4m")
@@ -448,6 +439,11 @@ offset_right = 711.0
 offset_bottom = 168.0
 text = "胜利"
 flat = true
+
+[node name="enemy" type="Node" parent="." groups=["enemylayer"]]
+
+[node name="box" parent="enemy" instance=ExtResource("16_kudbt")]
+position = Vector2(417, 237)
 
 [connection signal="button_up" from="测试用操作者/Upgrade" to="测试用操作者" method="_upgrade"]
 [connection signal="button_up" from="测试用操作者/Faliure" to="测试用操作者" method="_on_enemystart_button_up"]

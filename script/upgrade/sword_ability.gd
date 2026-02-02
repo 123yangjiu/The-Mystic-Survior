@@ -10,3 +10,9 @@ func the_first_damage()->void:
 	if GameEvent.the_first==0:
 		GameEvent.the_first+=1
 		GameEvent.the_first_damage.emit()
+
+
+
+func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
+	self.queue_free()
+	pass # Replace with function body.

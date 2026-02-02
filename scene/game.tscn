@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://yy0os3e5cvfu"]
+[gd_scene load_steps=33 format=4 uid="uid://yy0os3e5cvfu"]
 
 [ext_resource type="Script" uid="uid://rt8ham21rr6r" path="res://script/game.gd" id="1_ve786"]
 [ext_resource type="PackedScene" uid="uid://cr32ffcse8os3" path="res://scene/ui/settingscreen.tscn" id="2_0halo"]
@@ -12,7 +12,6 @@
 [ext_resource type="Resource" uid="uid://c6o5mfp0ul3mh" path="res://resource/enemy/purple_silime.tres" id="6_abp7u"]
 [ext_resource type="PackedScene" uid="uid://ci3fodbprfo2x" path="res://scene/ui/victoryscreen.tscn" id="6_jhlss"]
 [ext_resource type="Resource" uid="uid://bl6c65geij0ji" path="res://resource/enemy/邪恶鸭梨l.tres" id="7_he4o3"]
-[ext_resource type="TileSet" uid="uid://7j2lt71noofj" path="res://sucai/new_tile_set.tres" id="7_ww6yf"]
 [ext_resource type="PackedScene" uid="uid://clj43eql2an1f" path="res://scene/manager/experiencemanager.tscn" id="8_1it6f"]
 [ext_resource type="Resource" uid="uid://dcshkpdkqmlmv" path="res://resource/enemy/wolf.tres" id="8_yk3to"]
 [ext_resource type="Resource" uid="uid://ckcolpwqwrycv" path="res://resource/enemy/猫头鹰.tres" id="9_0halo"]
@@ -23,8 +22,10 @@
 [ext_resource type="Resource" uid="uid://c02spyysuegq7" path="res://resource/enemy/box.tres" id="11_kv4hp"]
 [ext_resource type="PackedScene" uid="uid://b2fnijcvbh7hg" path="res://scene/enemy/box.tscn" id="13_5g16k"]
 [ext_resource type="PackedScene" uid="uid://cc3x2b78lonqh" path="res://scene/enemy/mushroomenemy.tscn" id="17_kv4hp"]
+[ext_resource type="PackedScene" uid="uid://ccmf8dg5ymjjs" path="res://scene/enemy/gorlen.tscn" id="18_0halo"]
 [ext_resource type="PackedScene" uid="uid://dg0lowfwv0dg3" path="res://scene/enemy/骑士.tscn" id="18_0jy4g"]
 [ext_resource type="Script" uid="uid://cbv3aa54oasir" path="res://script/manager/musicmanager.gd" id="18_1it6f"]
+[ext_resource type="PackedScene" uid="uid://3yghqc3xt4xt" path="res://scene/enemy/wolf.tscn" id="19_8p2gu"]
 [ext_resource type="PackedScene" uid="uid://d1xy0buqa0l3x" path="res://scene/enemy/女巫.tscn" id="24_0halo"]
 [ext_resource type="AudioStream" uid="uid://bdo817fx5or0" path="res://sucai/back_music/Neon Skyscrapers.ogg" id="26_ca6q5"]
 [ext_resource type="AudioStream" uid="uid://bh60vvp7tmmti" path="res://sucai/back_music/Groovy Moves_1.wav" id="27_0halo"]
@@ -77,15 +78,10 @@ game_time_manager = NodePath("../gametimemanager")
 enemy_group = Array[ExtResource("4_ca6q5")]([ExtResource("5_yerfe"), ExtResource("6_abp7u"), ExtResource("7_he4o3"), ExtResource("8_yk3to"), ExtResource("9_0halo"), ExtResource("10_8p2gu"), ExtResource("11_kv4hp")])
 
 [node name="enemymanager" parent="." instance=ExtResource("4_ux4dc")]
-kill_cirle_enemy = Array[PackedScene]([ExtResource("17_kv4hp"), ExtResource("18_0jy4g"), ExtResource("24_0halo")])
+kill_cirle_enemy = Array[PackedScene]([ExtResource("17_kv4hp"), ExtResource("18_0jy4g"), ExtResource("24_0halo"), ExtResource("18_0halo"), ExtResource("19_8p2gu")])
 
 [node name="gametimemanager" parent="." instance=ExtResource("5_jrd6n")]
 victory_screen = ExtResource("6_jhlss")
-
-[node name="TileMap" type="TileMap" parent="gametimemanager"]
-position = Vector2(82, 141)
-tile_set = ExtResource("7_ww6yf")
-format = 2
 
 [node name="experiencemanager" parent="." instance=ExtResource("8_1it6f")]
 
@@ -97,17 +93,12 @@ experience_manager = NodePath("../experiencemanager")
 
 [node name="实体" type="Node" parent="." groups=["实体图层"]]
 
-[node name="player" parent="实体" instance=ExtResource("11_355h4")]
+[node name="player" parent="实体" groups=["enemy"] instance=ExtResource("11_355h4")]
 unique_name_in_owner = true
 y_sort_enabled = true
 position = Vector2(-23, 270)
 scale = Vector2(1, 0.9772806)
 MAX_speed = 115
-
-[node name="前景" type="Node" parent="." groups=["前景图层"]]
-
-[node name="box" parent="前景" instance=ExtResource("13_5g16k")]
-position = Vector2(61, 282)
 
 [node name="MusicManager" type="Node" parent="." node_paths=PackedStringArray("all_music")]
 process_mode = 3
@@ -137,6 +128,13 @@ bus = &"Music"
 wait_time = 5.0
 autostart = true
 script = ExtResource("31_0halo")
+
+[node name="enemy" type="Node" parent="." groups=["enemylayer"]]
+
+[node name="box" parent="enemy" groups=["enemy"] instance=ExtResource("13_5g16k")]
+position = Vector2(61, 282)
+
+[node name="前景" type="Node" parent="." groups=["前景图层"]]
 
 [connection signal="finished" from="MusicManager/TheFirst" to="MusicManager" method="_on_the_first_finished"]
 [connection signal="finished" from="MusicManager/WithWolf" to="MusicManager" method="_on_with_wolf_finished"]

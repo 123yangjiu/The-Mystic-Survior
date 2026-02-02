@@ -14,6 +14,14 @@ current = NodePath("the_first")
 all = [NodePath("the_first"), NodePath("the_second"), NodePath("the_third"), NodePath("the_end")]
 metadata/_edit_vertical_guides_ = [-121.0]
 
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2, 0.2, 0.2, 0.627451)
+
 [node name="the_first" type="Node2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="the_first"]

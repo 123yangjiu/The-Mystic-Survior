@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://crcg0u1elatvt"]
 
-[ext_resource type="Texture2D" uid="uid://cd88qbkxkrkd2" path="res://sucai/死灵法环.png" id="1_e3vcv"]
+[ext_resource type="Texture2D" uid="uid://cd88qbkxkrkd2" path="res://scene/ability/ring_ability/死灵法环.png" id="1_e3vcv"]
 [ext_resource type="Script" uid="uid://dv2iaaaqoycwe" path="res://script/upgrade/ring_ability.gd" id="1_jq0bu"]
 [ext_resource type="PackedScene" uid="uid://c4aqf7g3512kf" path="res://scene/游戏功能组件/hitbox_component.tscn" id="2_jq0bu"]
 

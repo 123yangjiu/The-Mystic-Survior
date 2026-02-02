@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://cxuy15d1s524"]
 
-[ext_resource type="Script" uid="uid://rsl4jg827i3e" path="res://script/enemy/main_enemy/slimer_2d.gd" id="1_8egh0"]
+[ext_resource type="Script" uid="uid://rsl4jg827i3e" path="res://script/enemy/main_enemy/enemy_xiaotrue.gd" id="1_8egh0"]
 [ext_resource type="PackedScene" uid="uid://decyru6mnkuga" path="res://scene/游戏功能组件/hurtboxcomponent.tscn" id="2_lgbb7"]
 [ext_resource type="Texture2D" uid="uid://br5m38aemvmux" path="res://sucai/slime/slime_green.png" id="3_qboba"]
 [ext_resource type="PackedScene" uid="uid://bnactnfyipltl" path="res://scene/游戏功能组件/health_component.tscn" id="4_x35gv"]
@@ -58,10 +58,9 @@ collision_layer = 40
 collision_mask = 33
 script = ExtResource("1_8egh0")
 
-[node name="Hurtboxcomponent" parent="." node_paths=PackedStringArray("health_component", "velocity_component") groups=["enemy"] instance=ExtResource("2_lgbb7")]
+[node name="Hurtboxcomponent" parent="." node_paths=PackedStringArray("health_component") groups=["enemy"] instance=ExtResource("2_lgbb7")]
 collision_layer = 4
 health_component = NodePath("../health_component")
-velocity_component = NodePath("../velocity_component")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Hurtboxcomponent"]
 shape = SubResource("CircleShape2D_vcrpj")
@@ -90,5 +89,5 @@ health_component = NodePath("../health_component")
 shape = SubResource("CircleShape2D_8egh0")
 
 [node name="velocity_component" parent="." instance=ExtResource("6_eh7t0")]
-speed = 50
+speed = 80
 acceleration = 4.0

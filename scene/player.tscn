@@ -198,7 +198,6 @@ position = Vector2(0, -5)
 player = NodePath("../..")
 
 [node name="StopButton" parent="CanvasLayer" instance=ExtResource("15_j4wxg")]
-visible = false
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0

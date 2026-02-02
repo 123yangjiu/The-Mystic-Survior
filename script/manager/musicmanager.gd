@@ -74,27 +74,26 @@ func on_stop_end()->void:
 	if a_stop_music:
 		a_stop_music.stream_paused=false
 
-
 func _on_the_first_finished() -> void:
 	if no_continue:
 		return
-	is_second=true
 	play(the_first)
+	is_second=true
 
 func _on_with_wolf_finished() -> void:
 	if no_continue:
 		return
-	is_second=true
 	play(with_wolf)
+	is_second=true
 
 func _on_with_gorlen_finished() -> void:
 	if no_continue:
 		return
-	is_second=true
 	play(with_gorlen)
+	is_second=true
 
 func _on_the_final_finished() -> void:
 	if no_continue:
 		return
-	is_second=true
 	play(the_final)
+	is_second=true

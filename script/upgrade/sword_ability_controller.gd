@@ -13,12 +13,10 @@ func _ready() -> void:
 	GameEvent.ability_upgrade_add.connect(on_ability_upgrade_add)
 
 func on_timer_timeoout():
-
 	var player=get_tree().get_first_node_in_group("player") as Node2D
-	var enemies:Array[Node]= get_tree().get_nodes_in_group("enemy")
+	var enemies:Array[Node]= get_tree().get_first_node_in_group("enemylayer").get_children()
 	enemies=enemies.filter(func(enemy:Node2D):#过滤掉不在范围内的敌人
-		return enemy.global_position.distance_squared_to(player.global_position)<pow(320,2)
-	
+		return enemy.global_position.distance_squared_to(player.global_position)<pow(260,2) 
 	)
 	#get_first_node_in_group是拿到组里面的第一个节点，如果我们想要拿到player节点
 	#就要在player脚本中加入add_to_group("player")
@@ -79,10 +77,7 @@ func on_ability_upgrade_add(upgrade:AbilityUpgrade,current_upgrade:Dictionary):
 			volume-=5
 		$Timer.start()
 	if upgrade.ID=="剑的伤害":
-
-
-		Damage=Damage*1.35
+		Damage=Damage*1.3
 	if upgrade.ID=="剑的数量":
 		number+=1
 		volume-=2
-	pass	

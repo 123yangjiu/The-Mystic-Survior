@@ -12,7 +12,7 @@ var initial_upgrade:Array[AbilityUpgrade]
 @export var initial_sort:String
 var initial_number
 func _ready():
-	get_initial_upgrade("环")
+	get_initial_upgrade("火球")
 	get_initial_upgrade(initial_sort)
 	inital_add_upgrade()
 func on_level_up(_current_level:int):#升级时展示卡片

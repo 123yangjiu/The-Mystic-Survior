@@ -40,6 +40,12 @@ func _ready() -> void:
 		enter_body_number_17_hurt=10
 		enter_body_number_30_hurt=15
 		enter_body_number_47_hurt=20
+	else :
+		enter_body_number_10_hurt=10
+		enter_body_number_17_hurt=15
+		enter_body_number_30_hurt=25
+		enter_body_number_47_hurt=40
+		
 	
 @export var MAX_speed=120
 func _physics_process(_delta: float) -> void:
@@ -78,6 +84,15 @@ func on_body_enter(enterbody:Node2D):
 	if enterbody.is_in_group("终极"):
 		enter_body_number_47+=1
 	damage_manager()#有新的敌人进入立刻造成伤害
+	var ori_acceleration = enterbody.velocity_component.acceleration
+	if ori_acceleration !=0:
+		enterbody.velocity_component.acceleration =1
+		await get_tree().create_timer(1).timeout
+		if enterbody:
+			if enterbody.velocity_component.acceleration ==1:
+				enterbody.velocity_component.acceleration=ori_acceleration
+			if enterbody is Knight:
+				enterbody.冲刺范围.end_rush()
 
 func on_body_exited(enterbody:Node2D):
 
@@ -89,15 +104,7 @@ func on_body_exited(enterbody:Node2D):
 		enter_body_number_30-=1
 	if enterbody.is_in_group("终极"):
 		enter_body_number_47-=1
-	var ori_acceleration = enterbody.velocity_component.acceleration
-	if ori_acceleration !=0:
-		enterbody.velocity_component.acceleration =1
-		await get_tree().create_timer(1).timeout
-		if enterbody:
-			if enterbody.velocity_component.acceleration ==1:
-				enterbody.velocity_component.acceleration=ori_acceleration
-			if enterbody is Knight:
-				enterbody.冲刺范围.end_rush()
+
 
 func damage_manager():
 	var totle_nmber=enter_body_number_10+enter_body_number_17+enter_body_number_30\

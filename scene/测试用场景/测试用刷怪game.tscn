@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=4 uid="uid://b3llp35tggm28"]
+[gd_scene load_steps=58 format=4 uid="uid://b3llp35tggm28"]
 
 [ext_resource type="Script" uid="uid://rt8ham21rr6r" path="res://script/game.gd" id="1_yfgcf"]
 [ext_resource type="Texture2D" uid="uid://hom1idtk1vw8" path="res://sucai/草地城堡风格的背景/Top_Down/Texture/TX Tileset Grass.png" id="2_tbbup"]
@@ -21,23 +21,18 @@
 [ext_resource type="PackedScene" uid="uid://d1xy0buqa0l3x" path="res://scene/enemy/女巫.tscn" id="19_53e2e"]
 [ext_resource type="PackedScene" uid="uid://c0gjd680ncete" path="res://scene/manager/gametimemanager.tscn" id="20_d78fv"]
 [ext_resource type="PackedScene" uid="uid://ci3fodbprfo2x" path="res://scene/ui/victoryscreen.tscn" id="21_rhc3t"]
-[ext_resource type="TileSet" uid="uid://7j2lt71noofj" path="res://sucai/new_tile_set.tres" id="22_p5yts"]
 [ext_resource type="PackedScene" uid="uid://clj43eql2an1f" path="res://scene/manager/experiencemanager.tscn" id="23_cgobw"]
 [ext_resource type="PackedScene" uid="uid://buqog17qtp4og" path="res://scene/ui/experience_bar.tscn" id="24_i1n54"]
 [ext_resource type="PackedScene" uid="uid://b6jpe6qhci3ks" path="res://scene/manager/upgrademanager.tscn" id="25_28c8f"]
 [ext_resource type="Script" uid="uid://cao0d8jgcrhwk" path="res://script/测试场景/测试用upgrademanager.gd" id="26_h5y0k"]
 [ext_resource type="PackedScene" uid="uid://b8orbduoade27" path="res://scene/player.tscn" id="26_ongrl"]
 [ext_resource type="PackedScene" uid="uid://b2fnijcvbh7hg" path="res://scene/enemy/box.tscn" id="27_u0fqj"]
-[ext_resource type="Script" path="res://resource/ability_upgrade.gd" id="27_wo6w5"]
+[ext_resource type="Script" uid="uid://dmyfvo2eu1rj2" path="res://resource/ability_upgrade.gd" id="27_wo6w5"]
 [ext_resource type="Resource" uid="uid://cq6h3a5qtmde3" path="res://resource/upgrades/else/盔甲.tres" id="28_28c8f"]
 [ext_resource type="Script" uid="uid://cbv3aa54oasir" path="res://script/manager/musicmanager.gd" id="28_c2ktl"]
 [ext_resource type="Resource" uid="uid://b5o283wr41dta" path="res://resource/upgrades/else/吸铁石.tres" id="29_ongrl"]
-[ext_resource type="AudioStream" uid="uid://c5uulbfvf0wpc" path="res://sucai/back_music/Brand New.wav" id="29_qxf28"]
-[ext_resource type="AudioStream" uid="uid://d3fqo15a0me7k" path="res://sucai/back_music/Groovy Moves.wav" id="30_cps6i"]
 [ext_resource type="Resource" uid="uid://bbp5xqvgt1ubd" path="res://resource/upgrades/else/飞毛腿.tres" id="30_u0fqj"]
-[ext_resource type="AudioStream" uid="uid://ddda7n23il1ly" path="res://sucai/back_music/Earth Turns To Our Feet.wav" id="31_7wohf"]
 [ext_resource type="Resource" uid="uid://dn5ri83sm6i23" path="res://resource/upgrades/else/生命药水瓶.tres" id="31_c2ktl"]
-[ext_resource type="AudioStream" uid="uid://ndho2y6dc21m" path="res://sucai/back_music/Ariadne's Thread.wav" id="32_dp6ra"]
 [ext_resource type="Resource" uid="uid://cvcyibysmviov" path="res://resource/upgrades/ring/get_ring.tres" id="32_qxf28"]
 [ext_resource type="Resource" uid="uid://dy38bx8w4yshf" path="res://resource/upgrades/ring/ring_power.tres" id="33_cps6i"]
 [ext_resource type="AudioStream" uid="uid://bdo817fx5or0" path="res://sucai/back_music/Neon Skyscrapers.ogg" id="33_nuppw"]
@@ -461,11 +456,6 @@ kill_cirle_enemy = Array[PackedScene]([ExtResource("17_m1e6c"), ExtResource("18_
 [node name="gametimemanager" parent="." instance=ExtResource("20_d78fv")]
 victory_screen = ExtResource("21_rhc3t")
 
-[node name="TileMap" type="TileMap" parent="gametimemanager"]
-position = Vector2(82, 141)
-tile_set = ExtResource("22_p5yts")
-format = 2
-
 [node name="experiencemanager" parent="." instance=ExtResource("23_cgobw")]
 
 [node name="experience_Bar" parent="." node_paths=PackedStringArray("experience_manager") instance=ExtResource("24_i1n54")]
@@ -488,7 +478,7 @@ position = Vector2(-23, 270)
 scale = Vector2(1, 0.9772806)
 MAX_speed = 115
 
-[node name="Camera2D2" type="Camera2D" parent="实体/player"]
+[node name="Camera2D3" type="Camera2D" parent="实体/player"]
 position = Vector2(4, 4.0929594)
 position_smoothing_enabled = true
 
@@ -503,17 +493,13 @@ script = ExtResource("28_c2ktl")
 all_music = [NodePath("MainTheme"), NodePath("TheFirst"), NodePath("WithWolf"), NodePath("WithGorlen"), NodePath("TheFinal")]
 
 [node name="MainTheme" type="AudioStreamPlayer" parent="MusicManager"]
-stream = ExtResource("29_qxf28")
 
 [node name="TheFirst" type="AudioStreamPlayer" parent="MusicManager"]
-stream = ExtResource("30_cps6i")
 
 [node name="WithWolf" type="AudioStreamPlayer" parent="MusicManager"]
-stream = ExtResource("31_7wohf")
 volume_db = -5.0
 
 [node name="WithGorlen" type="AudioStreamPlayer" parent="MusicManager"]
-stream = ExtResource("32_dp6ra")
 volume_db = 2.0
 
 [node name="TheFinal" type="AudioStreamPlayer" parent="MusicManager"]

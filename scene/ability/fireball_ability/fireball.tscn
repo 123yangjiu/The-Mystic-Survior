@@ -1,14 +1,14 @@
 [gd_scene load_steps=19 format=3 uid="uid://cbdxmcmld8om5"]
 
 [ext_resource type="Script" uid="uid://bigm83ou6qlra" path="res://script/upgrade/fireball.gd" id="1_eoyyy"]
-[ext_resource type="Texture2D" uid="uid://xmg75pmcojwu" path="res://sucai/Red Fire/Fire1.png" id="2_6vuyq"]
+[ext_resource type="Texture2D" uid="uid://xmg75pmcojwu" path="res://scene/ability/fireball_ability/Red Fire/Fire1.png" id="2_6vuyq"]
 [ext_resource type="PackedScene" uid="uid://c4aqf7g3512kf" path="res://scene/游戏功能组件/hitbox_component.tscn" id="3_kauq7"]
-[ext_resource type="Texture2D" uid="uid://b1s826suj4gg4" path="res://sucai/Red Fire/Fire2.png" id="3_ow0vf"]
-[ext_resource type="Texture2D" uid="uid://ovh2th4fxw26" path="res://sucai/Red Fire/Fire3.png" id="4_f07e6"]
-[ext_resource type="Texture2D" uid="uid://dkdtq3i5ejlti" path="res://sucai/Red Fire/Fire4.png" id="5_3mw7v"]
-[ext_resource type="Texture2D" uid="uid://vbqgjo7m4o1m" path="res://sucai/Red Fire/Fire5.png" id="6_3mw7v"]
-[ext_resource type="Texture2D" uid="uid://bro57y2xhk7x5" path="res://sucai/Red Fire/Fire6.png" id="7_fht1s"]
-[ext_resource type="Texture2D" uid="uid://ruetqfc1rm5f" path="res://sucai/Red Fire/Fire7.png" id="8_pyk27"]
+[ext_resource type="Texture2D" uid="uid://b1s826suj4gg4" path="res://scene/ability/fireball_ability/Red Fire/Fire2.png" id="3_ow0vf"]
+[ext_resource type="Texture2D" uid="uid://ovh2th4fxw26" path="res://scene/ability/fireball_ability/Red Fire/Fire3.png" id="4_f07e6"]
+[ext_resource type="Texture2D" uid="uid://dkdtq3i5ejlti" path="res://scene/ability/fireball_ability/Red Fire/Fire4.png" id="5_3mw7v"]
+[ext_resource type="Texture2D" uid="uid://vbqgjo7m4o1m" path="res://scene/ability/fireball_ability/Red Fire/Fire5.png" id="6_3mw7v"]
+[ext_resource type="Texture2D" uid="uid://bro57y2xhk7x5" path="res://scene/ability/fireball_ability/Red Fire/Fire6.png" id="7_fht1s"]
+[ext_resource type="Texture2D" uid="uid://ruetqfc1rm5f" path="res://scene/ability/fireball_ability/Red Fire/Fire7.png" id="8_pyk27"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fht1s"]
 atlas = ExtResource("2_6vuyq")
