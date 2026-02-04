@@ -3,7 +3,7 @@ const MAX_RANGE=150
 @export var heaven_fury:PackedScene
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
-var Damage=25#定义天堂之怒的伤害
+var Damage=22#定义天堂之怒的伤害
 var base_wait_time#定义基础冷却
 var number=2#定义基础剑的数量
 var volume:=-5

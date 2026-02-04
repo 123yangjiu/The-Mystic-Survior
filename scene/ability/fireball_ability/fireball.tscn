@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cbdxmcmld8om5"]
+[gd_scene format=3 uid="uid://cbdxmcmld8om5"]
 
 [ext_resource type="Script" uid="uid://bigm83ou6qlra" path="res://script/upgrade/fireball.gd" id="1_eoyyy"]
 [ext_resource type="Texture2D" uid="uid://xmg75pmcojwu" path="res://scene/ability/fireball_ability/Red Fire/Fire1.png" id="2_6vuyq"]
@@ -70,19 +70,24 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_pyk27"]
 radius = 17.029387
 
-[node name="fireball" type="Node2D"]
+[node name="fireball" type="Node2D" unique_id=1385986616]
 scale = Vector2(0.8, 0.8)
 script = ExtResource("1_eoyyy")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1438306060]
 sprite_frames = SubResource("SpriteFrames_fht1s")
 autoplay = "default"
 frame_progress = 0.9472984
 
-[node name="hitbox component" parent="." instance=ExtResource("3_kauq7")]
+[node name="hitbox component" parent="." unique_id=1891865347 instance=ExtResource("3_kauq7")]
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox component"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox component" unique_id=1140648171]
 position = Vector2(0, 8)
 scale = Vector2(0.51070356, 0.49922538)
 shape = SubResource("CircleShape2D_pyk27")
+
+[node name="Timer" type="Timer" parent="." unique_id=2003274513]
+wait_time = 6.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

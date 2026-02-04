@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://b8orbduoade27"]
+[gd_scene format=3 uid="uid://b8orbduoade27"]
 
 [ext_resource type="Script" uid="uid://cftr1t220lj12" path="res://script/player.gd" id="1_hjaqi"]
 [ext_resource type="PackedScene" uid="uid://b0v42bl82qnrr" path="res://scene/ability/sword_ability/sword_ability_controller.tscn" id="2_fvtld"]
@@ -110,29 +110,29 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0.24705882, 0.14901961, 0.19215687, 1)
 
-[node name="player" type="CharacterBody2D"]
+[node name="player" type="CharacterBody2D" unique_id=1660106028]
 position = Vector2(0, -5)
 collision_layer = 2
 script = ExtResource("1_hjaqi")
 died_screen = ExtResource("2_ihjo1")
 
-[node name="abilitymanager" type="Node" parent="."]
+[node name="abilitymanager" type="Node" parent="." unique_id=740251432]
 
-[node name="sword_ability_controller" parent="abilitymanager" instance=ExtResource("2_fvtld")]
+[node name="sword_ability_controller" parent="abilitymanager" unique_id=1753941225 instance=ExtResource("2_fvtld")]
 
-[node name="Fireball_controller" parent="abilitymanager" instance=ExtResource("4_oh5ij")]
+[node name="Fireball_controller" parent="abilitymanager" unique_id=2080377210 instance=ExtResource("4_oh5ij")]
 
-[node name="heaven_fury_controller" parent="abilitymanager" instance=ExtResource("5_hp4bs")]
+[node name="heaven_fury_controller" parent="abilitymanager" unique_id=645868440 instance=ExtResource("5_hp4bs")]
 
-[node name="light_ability_controller" parent="abilitymanager" instance=ExtResource("5_g2vtq")]
+[node name="light_ability_controller" parent="abilitymanager" unique_id=635805307 instance=ExtResource("5_g2vtq")]
 
-[node name="ring_ability_controller" parent="abilitymanager" instance=ExtResource("6_2fvbb")]
+[node name="ring_ability_controller" parent="abilitymanager" unique_id=1636932544 instance=ExtResource("6_2fvbb")]
 ring_ability = ExtResource("7_ml7e8")
 
-[node name="health_component" parent="." instance=ExtResource("3_ct4mp")]
+[node name="health_component" parent="." unique_id=407961385 instance=ExtResource("3_ct4mp")]
 max_health = 100.0
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1084851264]
 position = Vector2(-4, 4)
 scale = Vector2(1.4342026, 1.2283583)
 sprite_frames = SubResource("SpriteFrames_u7b46")
@@ -140,33 +140,33 @@ animation = &"run"
 frame_progress = 0.04168747
 flip_h = true
 
-[node name="拾取范围" type="Area2D" parent="."]
+[node name="拾取范围" type="Area2D" parent="." unique_id=574412971]
 collision_layer = 16
 collision_mask = 0
 script = ExtResource("8_g2vtq")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="拾取范围"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="拾取范围" unique_id=1260822585]
 position = Vector2(0, 5)
 shape = SubResource("CircleShape2D_fvtld")
 
-[node name="hurtrange" type="Area2D" parent="."]
+[node name="hurtrange" type="Area2D" parent="." unique_id=821529349]
 collision_layer = 0
 collision_mask = 8
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtrange"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtrange" unique_id=499668767]
 position = Vector2(0, 5)
 shape = SubResource("CircleShape2D_s4jxa")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1605254454]
 position = Vector2(-1.5, 4.016241)
 scale = Vector2(1, 1.0032482)
 shape = SubResource("RectangleShape2D_34jf3")
 
-[node name="伤害间隔计时器" type="Timer" parent="."]
+[node name="伤害间隔计时器" type="Timer" parent="." unique_id=1831198781]
 wait_time = 0.5
 one_shot = true
 
-[node name="HealthBar" type="ProgressBar" parent="."]
+[node name="HealthBar" type="ProgressBar" parent="." unique_id=1611554477]
 custom_minimum_size = Vector2(32, 8)
 offset_left = -15.000001
 offset_top = -23.0
@@ -179,25 +179,27 @@ max_value = 1.0
 value = 0.5
 show_percentage = false
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1401671078]
 stream = ExtResource("13_u7b46")
 bus = &"Sound"
 
-[node name="Camera2D2" type="Camera2D" parent="."]
+[node name="Camera2D2" type="Camera2D" parent="." unique_id=85677335]
 limit_left = -2879
 limit_top = -2095
 limit_right = 2267
 limit_bottom = 2460
 position_smoothing_enabled = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=591978213]
 layer = 2
 
-[node name="虚拟摇杆" parent="CanvasLayer" node_paths=PackedStringArray("player") instance=ExtResource("14_u7b46")]
+[node name="虚拟摇杆" parent="CanvasLayer" unique_id=512370967 node_paths=PackedStringArray("player") instance=ExtResource("14_u7b46")]
 position = Vector2(0, -5)
 player = NodePath("../..")
 
-[node name="StopButton" parent="CanvasLayer" instance=ExtResource("15_j4wxg")]
+[node name="StopButton" parent="CanvasLayer" unique_id=169065267 instance=ExtResource("15_j4wxg")]
+process_mode = 3
+visible = false
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0

@@ -4,7 +4,6 @@ extends TextureButton
 
 func _on_pressed() -> void:
 	stop_game()
-
 func stop_game()->void:
 	GameEvent.paused+=1
 	get_tree().paused=true
