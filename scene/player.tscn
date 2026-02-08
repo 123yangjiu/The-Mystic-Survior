@@ -131,6 +131,7 @@ died_screen = ExtResource("2_ihjo1")
 ring_ability = ExtResource("7_ml7e8")
 
 [node name="AllGunAbilityController" parent="abilitymanager" unique_id=1977481990 instance=ExtResource("9_bup7g")]
+z_index = 1
 
 [node name="health_component" parent="." unique_id=407961385 instance=ExtResource("3_ct4mp")]
 max_health = 100.0

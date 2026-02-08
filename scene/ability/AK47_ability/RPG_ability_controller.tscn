@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dyt1wwieyphkl" path="res://scene/ability/AK47_ability/resource/RPG/RPG.png" id="1_ymree"]
 [ext_resource type="Script" uid="uid://bu2mv03wue4b1" path="res://scene/ability/AK47_ability/ak_47_ability_controller.gd" id="2_u7xio"]
 [ext_resource type="PackedScene" uid="uid://n4as4qw7qe06" path="res://scene/ability/AK47_ability/bullet.tscn" id="3_e40ut"]
-[ext_resource type="AudioStream" uid="uid://7ymh2gld51sp" path="res://scene/ability/AK47_ability/resource/Sniper_Rifle/Shotgun_Shot-002.wav" id="4_6ovt5"]
+[ext_resource type="AudioStream" uid="uid://7ymh2gld51sp" path="res://scene/ability/AK47_ability/resource/shot_gun/Shotgun_Shot-002.wav" id="4_6ovt5"]
 [ext_resource type="AudioStream" uid="uid://dgykqv36x8xqj" path="res://scene/ability/AK47_ability/resource/RPG/Rocket_Equip.wav" id="5_3eytq"]
 [ext_resource type="AudioStream" uid="uid://b64lq0onxxvcw" path="res://scene/ability/AK47_ability/resource/Shotgun_Pump.wav" id="6_q2ca5"]
 

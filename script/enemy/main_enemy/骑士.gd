@@ -2,7 +2,7 @@ class_name Knight
 extends CharacterBody2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var health_component:HealthComponent = $health_component
-@onready var velocity_component: Node = $velocity_component
+@onready var velocity_component:Velocity_controller = $velocity_component
 @export var 冲刺范围: ChongCi
 
 

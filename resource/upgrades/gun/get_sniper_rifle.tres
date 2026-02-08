@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="AbilityUpgrade" format=3 uid="uid://mrbbx2kub2ka"]
+
+[ext_resource type="Script" uid="uid://dmyfvo2eu1rj2" path="res://resource/ability_upgrade.gd" id="1_vlere"]
+
+[resource]
+script = ExtResource("1_vlere")
+ID = "解锁狙击枪"
+Sort = "枪1"
+name = "起大狙了"
+self_lock = 1
+lock_code = 1
+Description = "你起了一把大狙！它会锁头敌人中的最强者！"
+metadata/_custom_type_script = "uid://dmyfvo2eu1rj2"

@@ -24,11 +24,13 @@ func on_ability_upgrade_add(upgrade:AbilityUpgrade,_current_upgrade:Dictionary):
 		gun_index=0
 	elif upgrade.ID =="解锁霰弹枪":
 		gun_index=1
+	elif upgrade.ID =="解锁狙击枪":
+		gun_index=2
 	if gun_index >=0:
 		for i in get_children():
 			i.queue_free()
 		var gun = all_gun[gun_index].instantiate() as AK47AbilityController
 		add_child(gun)
 		gun.damage_range=damage_range
-		gun.number_range_range=number_range
+		gun.number_range=number_range
 		gun.wait_range=wait_range

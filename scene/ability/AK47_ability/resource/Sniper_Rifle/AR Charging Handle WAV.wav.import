@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://br5gl0hbp18uo"
+path="res://.godot/imported/AR Charging Handle WAV.wav-f897956d10fd62fe1b9f560fde2e11f3.sample"
+
+[deps]
+
+source_file="res://scene/ability/AK47_ability/resource/Sniper_Rifle/AR Charging Handle WAV.wav"
+dest_files=["res://.godot/imported/AR Charging Handle WAV.wav-f897956d10fd62fe1b9f560fde2e11f3.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

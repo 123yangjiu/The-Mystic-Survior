@@ -1,23 +1,24 @@
 [gd_scene format=3 uid="uid://bwytb40malx0h"]
 
 [ext_resource type="Texture2D" uid="uid://3m5b3fjbr24n" path="res://scene/ability/AK47_ability/resource/Sniper_Rifle/Sniper_Rifle.png" id="1_5casq"]
-[ext_resource type="Script" uid="uid://bu2mv03wue4b1" path="res://scene/ability/AK47_ability/ak_47_ability_controller.gd" id="2_15jvq"]
+[ext_resource type="Script" uid="uid://cc0j6nhy3l2xk" path="res://script/upgrade/sniper_rifle_ability_controller.gd" id="2_t1j2y"]
 [ext_resource type="PackedScene" uid="uid://n4as4qw7qe06" path="res://scene/ability/AK47_ability/bullet.tscn" id="3_8ymbv"]
-[ext_resource type="AudioStream" uid="uid://7ymh2gld51sp" path="res://scene/ability/AK47_ability/resource/Sniper_Rifle/Shotgun_Shot-002.wav" id="4_ngf7t"]
+[ext_resource type="AudioStream" uid="uid://bess3sbyamihu" path="res://scene/ability/AK47_ability/resource/Sniper_Rifle/fire.wav" id="4_15jvq"]
 [ext_resource type="AudioStream" uid="uid://dgykqv36x8xqj" path="res://scene/ability/AK47_ability/resource/RPG/Rocket_Equip.wav" id="5_d7lc7"]
+[ext_resource type="AudioStream" uid="uid://baqsusvffw05l" path="res://scene/ability/AK47_ability/resource/Sniper_Rifle/change_bullet.wav" id="6_5casq"]
 [ext_resource type="AudioStream" uid="uid://b64lq0onxxvcw" path="res://scene/ability/AK47_ability/resource/Shotgun_Pump.wav" id="6_o4f2b"]
+[ext_resource type="AudioStream" uid="uid://cbhssm3quqj8k" path="res://scene/ability/AK47_ability/resource/Sniper_Rifle/bullet_island.wav" id="8_8ymbv"]
 
 [node name="SniperRifleAbilityController" type="Sprite2D" unique_id=2039636434]
 texture = ExtResource("1_5casq")
-script = ExtResource("2_15jvq")
+script = ExtResource("2_t1j2y")
 ability = ExtResource("3_8ymbv")
 
 [node name="Reload" type="Timer" parent="." unique_id=2077055730]
-wait_time = 5.0
+wait_time = 7.0
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2055677243]
-stream = ExtResource("4_ngf7t")
-volume_db = -14.0
+stream = ExtResource("4_15jvq")
 bus = &"Sound"
 
 [node name="Zidan" type="Node2D" parent="." unique_id=1799512530]
@@ -39,12 +40,22 @@ bus = &"Sound"
 
 [node name="ZidanNumber" type="Label" parent="." unique_id=1740660800]
 self_modulate = Color(1, 0.7445, 0.26999998, 1)
-offset_left = -20.0
-offset_top = -21.0
-offset_right = 20.0
-offset_bottom = 3.0
-text = "30"
+offset_left = -22.0
+offset_top = -23.0
+offset_right = 18.0
+offset_bottom = 1.0
+text = "5"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="lashuan" type="AudioStreamPlayer2D" parent="." unique_id=1559575469]
+stream = ExtResource("6_5casq")
+bus = &"Sound"
+
+[node name="bullet" type="AudioStreamPlayer2D" parent="." unique_id=471223934]
+stream = ExtResource("8_8ymbv")
+volume_db = 6.0
+pitch_scale = 0.8
+bus = &"Sound"
 
 [connection signal="finished" from="ChangeBullet2" to="." method="_on_change_bullet_2_finished"]
