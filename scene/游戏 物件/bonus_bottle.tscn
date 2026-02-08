@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://f15fc5ggcq0l"]
+[gd_scene format=3 uid="uid://f15fc5ggcq0l"]
 
 [ext_resource type="Script" uid="uid://b6dajqt1n115x" path="res://script/掉落物相关/bonus_bottle.gd" id="1_1pgvs"]
 [ext_resource type="Texture2D" uid="uid://b3b8liidxohs6" path="res://sucai/迷你地牢素材/used/tile_0114.png" id="2_ah40l"]
@@ -6,18 +6,18 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r71ra"]
 size = Vector2(12, 15)
 
-[node name="BonusBottle" type="Node2D"]
+[node name="BonusBottle" type="Node2D" unique_id=883448431]
 scale = Vector2(1.4, 1.4)
 script = ExtResource("1_1pgvs")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1012609578]
 texture = ExtResource("2_ah40l")
 region_rect = Rect2(466, 361, 20, 26)
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=688444729]
 collision_layer = 0
 collision_mask = 16
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=823362335]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_r71ra")

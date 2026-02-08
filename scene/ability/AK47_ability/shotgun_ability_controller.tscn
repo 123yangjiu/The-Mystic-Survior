@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://fqpwlqso0ple"]
+
+[ext_resource type="Texture2D" uid="uid://6w628sb81mp" path="res://scene/ability/AK47_ability/resource/shot_gun/shot_gun.png" id="1_boluh"]
+[ext_resource type="Script" uid="uid://dw0rf2iv44wk" path="res://script/upgrade/shotgun_ability_controller.gd" id="2_tjw1q"]
+[ext_resource type="PackedScene" uid="uid://n4as4qw7qe06" path="res://scene/ability/AK47_ability/bullet.tscn" id="3_boluh"]
+[ext_resource type="AudioStream" uid="uid://7ymh2gld51sp" path="res://scene/ability/AK47_ability/resource/Sniper_Rifle/Shotgun_Shot-002.wav" id="4_a0h28"]
+[ext_resource type="AudioStream" uid="uid://dgykqv36x8xqj" path="res://scene/ability/AK47_ability/resource/RPG/Rocket_Equip.wav" id="5_caplp"]
+[ext_resource type="AudioStream" uid="uid://bf3qqladugmke" path="res://scene/ability/AK47_ability/resource/shot_gun/AK Rack WAV.wav" id="6_boluh"]
+
+[node name="ShotGunAbilityController" type="Sprite2D" unique_id=2039636434]
+texture = ExtResource("1_boluh")
+script = ExtResource("2_tjw1q")
+ability = ExtResource("3_boluh")
+
+[node name="Reload" type="Timer" parent="." unique_id=2077055730]
+wait_time = 2.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2055677243]
+stream = ExtResource("4_a0h28")
+bus = &"Sound"
+
+[node name="Zidan" type="Node2D" parent="." unique_id=1799512530]
+position = Vector2(17, -0.5)
+
+[node name="Continue" type="Timer" parent="." unique_id=260647562]
+wait_time = 0.3
+
+[node name="ChangeBullet1" type="AudioStreamPlayer2D" parent="." unique_id=1767572656]
+stream = ExtResource("5_caplp")
+volume_db = -2.0
+bus = &"Sound"
+
+[node name="ChangeBullet2" type="AudioStreamPlayer2D" parent="." unique_id=1333645441]
+stream = ExtResource("6_boluh")
+volume_db = -4.0
+pitch_scale = 1.5
+bus = &"Sound"
+
+[node name="ZidanNumber" type="Label" parent="." unique_id=1740660800]
+self_modulate = Color(1, 0.7445, 0.26999998, 1)
+offset_left = -20.0
+offset_top = -21.0
+offset_right = 20.0
+offset_bottom = 3.0
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="finished" from="ChangeBullet2" to="." method="_on_change_bullet_2_finished"]

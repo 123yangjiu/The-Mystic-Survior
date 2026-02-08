@@ -15,6 +15,5 @@ func on_area_enter(area:Area2D):
 		ammout-=1
 	if ammout==0:
 		queue_free()
-
 func _on_timer_timeout() -> void:
 	queue_free()

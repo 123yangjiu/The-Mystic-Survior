@@ -1,10 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://bvbt0jr1g354u"]
+[gd_scene format=3 uid="uid://bvbt0jr1g354u"]
 
 [ext_resource type="Theme" uid="uid://5bh541wa60l3" path="res://resource/theme/green_theme.tres" id="1_t4cxa"]
 [ext_resource type="Script" uid="uid://c78m07jellbsv" path="res://script/文本及ui显示/tujian_button.gd" id="2_wbn0u"]
 [ext_resource type="PackedScene" uid="uid://fiu7e6h1ip2a" path="res://scene/ui/tujian.tscn" id="3_3d5ty"]
 
-[node name="Zhinan" type="Button"]
+[node name="Zhinan" type="Button" unique_id=778113867]
 custom_minimum_size = Vector2(100, 50)
 offset_left = -1.0
 offset_right = 99.0

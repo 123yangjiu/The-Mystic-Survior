@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://d1xy0buqa0l3x"]
+[gd_scene format=3 uid="uid://d1xy0buqa0l3x"]
 
 [ext_resource type="Script" uid="uid://rsl4jg827i3e" path="res://script/enemy/main_enemy/enemy_xiaotrue.gd" id="1_ks07s"]
 [ext_resource type="PackedScene" uid="uid://decyru6mnkuga" path="res://scene/游戏功能组件/hurtboxcomponent.tscn" id="2_sjem4"]
@@ -63,21 +63,21 @@ radius = 17.11374
 [sub_resource type="CircleShape2D" id="CircleShape2D_elmko"]
 radius = 65.79316
 
-[node name="女巫" type="CharacterBody2D" groups=["终极"]]
+[node name="女巫" type="CharacterBody2D" unique_id=1071289824 groups=["终极"]]
 scale = Vector2(2.9948473, 3)
 collision_layer = 40
 collision_mask = 0
 script = ExtResource("1_ks07s")
 
-[node name="Hurtboxcomponent" parent="." node_paths=PackedStringArray("health_component") groups=["enemy"] instance=ExtResource("2_sjem4")]
+[node name="Hurtboxcomponent" parent="." unique_id=1541358785 node_paths=PackedStringArray("health_component") groups=["enemy"] instance=ExtResource("2_sjem4")]
 collision_layer = 4
 health_component = NodePath("../health_component")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Hurtboxcomponent"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Hurtboxcomponent" unique_id=12831898]
 visible = false
 shape = SubResource("CircleShape2D_vcrpj")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["enemy"]]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1790568390 groups=["enemy"]]
 position = Vector2(0, -1.0000005)
 scale = Vector2(0.125, 0.1)
 sprite_frames = SubResource("SpriteFrames_fq6t5")
@@ -85,34 +85,34 @@ animation = &"run"
 autoplay = "run"
 frame_progress = 0.85888934
 
-[node name="对角色造成伤害的碰撞" type="CollisionShape2D" parent="." groups=["enemy"]]
+[node name="对角色造成伤害的碰撞" type="CollisionShape2D" parent="." unique_id=1050619799 groups=["enemy"]]
 visible = false
 position = Vector2(-4.7683716e-07, 4.7683716e-07)
 scale = Vector2(0.47134686, 0.4559797)
 shape = SubResource("CircleShape2D_ntng8")
 
-[node name="health_component" parent="." instance=ExtResource("4_chtff")]
+[node name="health_component" parent="." unique_id=18632350 instance=ExtResource("4_chtff")]
 max_health = 1200.0
 
-[node name="drop_component" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("5_ikh0l")]
+[node name="drop_component" parent="." unique_id=674284187 node_paths=PackedStringArray("health_component") instance=ExtResource("5_ikh0l")]
 drop_range = 3
 drop_thing = Array[PackedScene]([ExtResource("6_kvwgc"), ExtResource("7_vxbbd")])
 health_component = NodePath("../health_component")
 
-[node name="velocity_component" parent="." instance=ExtResource("8_ihm2e")]
+[node name="velocity_component" parent="." unique_id=1191545137 instance=ExtResource("8_ihm2e")]
 speed = 120
 acceleration = 7.0
 
-[node name="召唤范围" type="Area2D" parent="."]
+[node name="召唤范围" type="Area2D" parent="." unique_id=670301607]
 scale = Vector2(0.91859394, 0.91859394)
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("9_hx8ut")
 enemy = ExtResource("10_ks07s")
 
-[node name="召唤判定" type="CollisionShape2D" parent="召唤范围"]
+[node name="召唤判定" type="CollisionShape2D" parent="召唤范围" unique_id=1338899413]
 shape = SubResource("CircleShape2D_elmko")
 
-[node name="spawn_interval" type="Timer" parent="."]
+[node name="spawn_interval" type="Timer" parent="." unique_id=1310236154]
 wait_time = 5.0
 one_shot = true

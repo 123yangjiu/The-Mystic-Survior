@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cc3x2b78lonqh"]
+[gd_scene format=3 uid="uid://cc3x2b78lonqh"]
 
 [ext_resource type="Script" uid="uid://c5ld8jykbg6p4" path="res://script/enemy/mushroomenemy.gd" id="1_ry05w"]
 [ext_resource type="PackedScene" uid="uid://decyru6mnkuga" path="res://scene/游戏功能组件/hurtboxcomponent.tscn" id="2_g74f1"]

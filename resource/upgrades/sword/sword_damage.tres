@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=2 format=3 uid="uid://oclytr2qthx8"]
+[gd_resource type="Resource" script_class="AbilityUpgrade" format=3 uid="uid://oclytr2qthx8"]
 
 [ext_resource type="Script" uid="uid://dmyfvo2eu1rj2" path="res://resource/ability_upgrade.gd" id="1_447qx"]
 
@@ -6,5 +6,6 @@
 script = ExtResource("1_447qx")
 ID = "剑的伤害"
 Sort = "剑"
+is_init = true
 name = "刚猛大宝剑"
 Description = "剑的伤害增加30%"

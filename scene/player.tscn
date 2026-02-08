@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://b7lj8mwnd703c" path="res://scene/ability/ring_ability/ring_ability_controller.tscn" id="6_2fvbb"]
 [ext_resource type="PackedScene" uid="uid://crcg0u1elatvt" path="res://scene/ability/ring_ability/ring_ability.tscn" id="7_ml7e8"]
 [ext_resource type="Script" uid="uid://b085c5vup7duv" path="res://script/拾取范围.gd" id="8_g2vtq"]
+[ext_resource type="PackedScene" uid="uid://ki5crcnykid1" path="res://scene/ability/AK47_ability/all_gun_ability_controller.tscn" id="9_bup7g"]
 [ext_resource type="Texture2D" uid="uid://bhn043cbs8vkk" path="res://sucai/女巫师/小女巫.png" id="10_ihjo1"]
 [ext_resource type="Texture2D" uid="uid://dkqr60limdl3s" path="res://sucai/女巫师/小女巫_黑边.png" id="11_34jf3"]
 [ext_resource type="AudioStream" uid="uid://bnbuawlex5u51" path="res://sucai/sound/Hurt.wav" id="13_u7b46"]
@@ -116,7 +117,7 @@ collision_layer = 2
 script = ExtResource("1_hjaqi")
 died_screen = ExtResource("2_ihjo1")
 
-[node name="abilitymanager" type="Node" parent="." unique_id=740251432]
+[node name="abilitymanager" type="Node2D" parent="." unique_id=756819111]
 
 [node name="sword_ability_controller" parent="abilitymanager" unique_id=1753941225 instance=ExtResource("2_fvtld")]
 
@@ -128,6 +129,8 @@ died_screen = ExtResource("2_ihjo1")
 
 [node name="ring_ability_controller" parent="abilitymanager" unique_id=1636932544 instance=ExtResource("6_2fvbb")]
 ring_ability = ExtResource("7_ml7e8")
+
+[node name="AllGunAbilityController" parent="abilitymanager" unique_id=1977481990 instance=ExtResource("9_bup7g")]
 
 [node name="health_component" parent="." unique_id=407961385 instance=ExtResource("3_ct4mp")]
 max_health = 100.0

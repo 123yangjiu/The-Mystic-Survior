@@ -1,17 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://b6vs7ye342hb6"]
+[gd_scene format=3 uid="uid://b6vs7ye342hb6"]
 
 [ext_resource type="Script" uid="uid://dm86jujt6mibn" path="res://script/upgrade/heaven_fruy_controller.gd" id="1_rhfot"]
 [ext_resource type="PackedScene" uid="uid://baqnf2psyqdqg" path="res://scene/ability/heaven_fruy/heaven_fruy.tscn" id="2_smcwq"]
 [ext_resource type="AudioStream" uid="uid://btghn341ml73s" path="res://scene/ability/heaven_fruy/heaven_sound.wav" id="3_p64c4"]
 
-[node name="heaven_fury_controller" type="Node2D"]
+[node name="heaven_fury_controller" type="Node2D" unique_id=442825532]
 script = ExtResource("1_rhfot")
 heaven_fury = ExtResource("2_smcwq")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=1138931321]
 wait_time = 2.5
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=544887289]
 stream = ExtResource("3_p64c4")
 volume_db = -5.0
 pitch_scale = 2.5

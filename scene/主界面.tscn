@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c68mua7fii8ye"]
+[gd_scene format=3 uid="uid://c68mua7fii8ye"]
 
 [ext_resource type="Texture2D" uid="uid://bnggolumsatoe" path="res://sucai/background/1.png" id="1_0r7w1"]
 [ext_resource type="Texture2D" uid="uid://bu0vl6xmgnpud" path="res://sucai/UI/标题.png" id="1_644ku"]
@@ -7,9 +7,10 @@
 [ext_resource type="Theme" uid="uid://5bh541wa60l3" path="res://resource/theme/green_theme.tres" id="3_ddj0q"]
 [ext_resource type="AudioStream" uid="uid://drwd3vjuweyx" path="res://sucai/back_music/Brand New_0.wav" id="7_hmyiv"]
 [ext_resource type="PackedScene" uid="uid://bxsd6pwev6oei" path="res://scene/ui/change_nandu.tscn" id="8_y4q5r"]
+[ext_resource type="PackedScene" uid="uid://fiu7e6h1ip2a" path="res://scene/ui/tujian.tscn" id="9_ipqar"]
 [ext_resource type="PackedScene" uid="uid://bvbt0jr1g354u" path="res://scene/ui/tujian_button.tscn" id="9_qpoty"]
 
-[node name="主界面" type="Control"]
+[node name="主界面" type="Control" unique_id=152706506]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -19,7 +20,7 @@ grow_vertical = 2
 script = ExtResource("1_qwg81")
 setting_screen = ExtResource("2_kfxea")
 
-[node name="Back" type="TextureRect" parent="."]
+[node name="Back" type="TextureRect" parent="." unique_id=55006179]
 self_modulate = Color(0.5, 0.5, 0.5, 1)
 layout_mode = 1
 anchors_preset = 15
@@ -30,7 +31,7 @@ grow_vertical = 2
 texture = ExtResource("1_0r7w1")
 expand_mode = 1
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=17469068]
 custom_minimum_size = Vector2(452.5, 100)
 layout_mode = 1
 anchors_preset = 5
@@ -43,7 +44,7 @@ offset_bottom = 123.0
 grow_horizontal = 2
 texture = ExtResource("1_644ku")
 
-[node name="开始" type="Button" parent="."]
+[node name="开始" type="Button" parent="." unique_id=363068489]
 custom_minimum_size = Vector2(180, 60)
 layout_mode = 1
 anchors_preset = 8
@@ -60,7 +61,7 @@ grow_vertical = 2
 theme = ExtResource("3_ddj0q")
 text = "开始游戏"
 
-[node name="Setting" type="Button" parent="."]
+[node name="Setting" type="Button" parent="." unique_id=1355226060]
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 0
 offset_left = 270.0
@@ -70,7 +71,7 @@ offset_bottom = 267.0
 theme = ExtResource("3_ddj0q")
 text = "设置"
 
-[node name="离开" type="Button" parent="."]
+[node name="离开" type="Button" parent="." unique_id=2138140275]
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 1
 anchors_preset = 8
@@ -88,23 +89,24 @@ theme = ExtResource("3_ddj0q")
 text = "离开
 "
 
-[node name="MainTheme" type="AudioStreamPlayer" parent="."]
+[node name="MainTheme" type="AudioStreamPlayer" parent="." unique_id=1450907370]
 stream = ExtResource("7_hmyiv")
 bus = &"Music"
 
-[node name="Change_screen" parent="." instance=ExtResource("8_y4q5r")]
+[node name="Change_screen" parent="." unique_id=659675003 instance=ExtResource("8_y4q5r")]
 layout_mode = 0
 offset_left = 89.0
 offset_top = 173.0
 offset_right = 139.0
 offset_bottom = 193.0
 
-[node name="Button" parent="." instance=ExtResource("9_qpoty")]
+[node name="Button" parent="." unique_id=413955022 instance=ExtResource("9_qpoty")]
 layout_mode = 0
 offset_left = 74.0
 offset_top = 242.0
 offset_right = 174.0
 offset_bottom = 292.0
+tujian = ExtResource("9_ipqar")
 
 [connection signal="button_up" from="开始" to="." method="_on_开始_button_up"]
 [connection signal="button_up" from="Setting" to="." method="_on_setting_button_up"]

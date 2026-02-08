@@ -19,9 +19,9 @@ func _ready() -> void:
 	GameEvent.more_difficulty.connect(on_more_difficulty)
 	GameEvent.the_first_damage.connect(on_the_first_damage)
 	gametimemanager.the_second_music.connect(the_second)
-	GameEvent.game_stop.connect(stop_music)
+	GameEvent.always_stop.connect(stop_music)
 	#GameEvent.player_died.connect(stop_music)
-	GameEvent.stop_end.connect(on_stop_end)
+	GameEvent.always_start.connect(on_stop_end)
 
 
 func on_more_difficulty(difficulty := 0)->void:
@@ -41,7 +41,6 @@ func on_more_difficulty(difficulty := 0)->void:
 		15:
 			play(the_final,with_gorlen)
 			no_continue=false
-
 
 func on_the_first_damage()->void:
 	play(the_first)

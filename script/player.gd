@@ -49,6 +49,7 @@ func _ready() -> void:
 	
 @export var MAX_speed=120
 func _physics_process(_delta: float) -> void:
+	GameEvent.play_global_position=global_position
 	if !is_touch:
 		direction=get_move_direction().normalized()
 	velocity=direction*MAX_speed
@@ -129,7 +130,6 @@ func on_health_change():
 
 
 func on_died()->void:
-
 	GameEvent.player_died.emit()
 	var screen=died_screen.instantiate()
 	get_viewport().add_child(screen)
@@ -146,6 +146,6 @@ func on_ability_upgrade_add(upgrade:AbilityUpgrade,current_upgrade:Dictionary):
 		enter_body_number_30_hurt=30*(1-0.07*current_upgrade["盔甲"]["quantity"])
 		enter_body_number_47_hurt=47*(1-0.07*current_upgrade["盔甲"]["quantity"])
 		health_component.max_health*=1.1
-		print(health_component.max_health)
+		health_component.current_health*=1.1
 	if upgrade.ID=="飞毛腿":
 		MAX_speed*=1.15

@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=2 format=3 uid="uid://dq68qtu5n06bt"]
+[gd_resource type="Resource" script_class="AbilityUpgrade" format=3 uid="uid://dq68qtu5n06bt"]
 
-[ext_resource type="Script" path="res://resource/ability_upgrade.gd" id="1_020i1"]
+[ext_resource type="Script" uid="uid://dmyfvo2eu1rj2" path="res://resource/ability_upgrade.gd" id="1_020i1"]
 
 [resource]
 script = ExtResource("1_020i1")
 ID = "解锁天堂之怒"
 Sort = "天堂"
+is_init = true
+is_unlock = true
 name = "天！堂！之！怒！"
 Description = "你得到了天界的力量！你的周围会随机生成两个天！堂！之！怒！
 "

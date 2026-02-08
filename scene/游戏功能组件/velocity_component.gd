@@ -14,10 +14,7 @@ func _ready() -> void:
 
 func accelerate_to_player():
 	var owner_2D=owner as Node2D
-	var player=get_tree().get_first_node_in_group("player")
-	if !player:
-		return
-	var direction=(player.global_position-owner_2D.global_position).normalized()
+	var direction=(GameEvent.play_global_position-owner_2D.global_position).normalized()
 	accelerate_to_direction(direction)
 func accelerate_to_direction(direction:Vector2):
 	var desired_velocity=direction*speed

@@ -8,13 +8,12 @@ func _ready() -> void:
 	#AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"),-6)
 	await get_tree().create_timer(0.2).timeout
 	main_theme.play()
-	
 
 func _on_开始_button_up() -> void:
 	get_tree().paused= false
 	GameEvent.difficulty=1
 	GameEvent.the_first=0
-	get_tree().change_scene_to_file("res://scene/game.tscn")
+	get_tree().change_scene_to_file("res://scene/game.scn")
 	GameEvent.difficulty_timer.start()
 	queue_free()
 

@@ -33,7 +33,7 @@ func on_restart_press():
 	get_tree().paused= false
 	GameEvent.difficulty=1
 	GameEvent.the_first=0
-	get_tree().change_scene_to_file("res://scene/game.tscn")
+	get_tree().change_scene_to_file("res://scene/game.scn")
 	GameEvent.difficulty_timer.start()
 	queue_free()
 	pass

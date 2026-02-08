@@ -68,7 +68,6 @@ func set_instance()->Swordability:
 	return sword_instance
 
 func on_ability_upgrade_add(upgrade:AbilityUpgrade,current_upgrade:Dictionary):
-	print("到这里")
 	#监听所有关于剑的升级
 	if upgrade.ID=="剑的速度":
 		var persent_reduction=current_upgrade["剑的速度"]["quantity"]*.2

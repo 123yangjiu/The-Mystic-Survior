@@ -53,18 +53,11 @@ func on_timer_timeoout():
 		fury_instance.global_position =player.global_position
 		var ran_R=randf_range(60,90)
 		fury_instance.global_position += Vector2.RIGHT.rotated(randf_range(0, TAU)) * ran_R
-		
-	
 
 # 再拿最近的那只
-	
 
-	
 func on_ability_upgrade_add(upgrade:AbilityUpgrade,current_upgrade:Dictionary):
 
-
-
-	
 	if upgrade.ID=="更快愤怒":
 		var persent_reduction=current_upgrade["更快愤怒"]["quantity"]*.2
 		volume=-5-persent_reduction*10

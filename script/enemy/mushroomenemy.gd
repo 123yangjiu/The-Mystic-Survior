@@ -5,7 +5,6 @@ extends CharacterBody2D
 func _ready() -> void:
 	$Timer.timeout.connect(on_time_out)
 func _physics_process(_delta: float) -> void:
-
 	velocity_component.accelerate_to_player()
 	velocity_component.move(self)
 	if velocity.x<0:

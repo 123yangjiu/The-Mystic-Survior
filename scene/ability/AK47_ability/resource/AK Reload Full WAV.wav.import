@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://68ao0e1xfi4o"
+path="res://.godot/imported/AK Reload Full WAV.wav-9680c7b915db670e9e43d755c50c571f.sample"
+
+[deps]
+
+source_file="res://scene/ability/AK47_ability/resource/AK Reload Full WAV.wav"
+dest_files=["res://.godot/imported/AK Reload Full WAV.wav-9680c7b915db670e9e43d755c50c571f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

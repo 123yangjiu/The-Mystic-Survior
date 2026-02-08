@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="AbilityUpgrade" format=3 uid="uid://j41hiigk5pdq"]
+
+[ext_resource type="Script" uid="uid://dmyfvo2eu1rj2" path="res://resource/ability_upgrade.gd" id="1_f34ry"]
+
+[resource]
+script = ExtResource("1_f34ry")
+ID = "枪的弹夹"
+Sort = "枪"
+name = "快速扩容弹夹"
+Description = "各个枪的子弹数量增加20%
+换弹速度-10%
+
+——火箭筒一效果改为范围增大20%"
+metadata/_custom_type_script = "uid://dmyfvo2eu1rj2"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cr32ffcse8os3"]
+[gd_scene format=3 uid="uid://cr32ffcse8os3"]
 
 [ext_resource type="Script" uid="uid://dyo1scdlv4n7e" path="res://script/文本及ui显示/settingscreen.gd" id="1_ge732"]
 [ext_resource type="PackedScene" uid="uid://djyv3a54a2tlj" path="res://scene/ui/change_screen.tscn" id="2_ge732"]
@@ -42,12 +42,12 @@ Button/styles/hover = SubResource("StyleBoxFlat_5xyoi")
 Button/styles/normal = SubResource("StyleBoxFlat_cljgu")
 Button/styles/pressed = SubResource("StyleBoxFlat_efkqj")
 
-[node name="Settingscreen" type="CanvasLayer"]
+[node name="Settingscreen" type="CanvasLayer" unique_id=2013600972]
 process_mode = 3
 layer = 3
 script = ExtResource("1_ge732")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=464053512]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -57,44 +57,44 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.2, 0.2, 0.2, 0.7882353)
 
-[node name="Change_screen" parent="." instance=ExtResource("2_ge732")]
+[node name="Change_screen" parent="." unique_id=309037944 instance=ExtResource("2_ge732")]
 offset_left = 279.0
 offset_top = 50.0
 offset_right = 329.0
 offset_bottom = 70.0
 scale = Vector2(1.5, 1.5)
 
-[node name="SoundBus" type="Node2D" parent="."]
+[node name="SoundBus" type="Node2D" parent="." unique_id=360939152]
 process_mode = 3
 position = Vector2(296, 203)
 scale = Vector2(1.5, 1.5)
 
-[node name="Master" parent="SoundBus" instance=ExtResource("3_ghmbv")]
+[node name="Master" parent="SoundBus" unique_id=392021447 instance=ExtResource("3_ghmbv")]
 offset_left = -50.0
 offset_top = -31.333344
 offset_right = 55.0
 offset_bottom = -19.333344
 
-[node name="Music" parent="SoundBus" instance=ExtResource("4_5xyoi")]
+[node name="Music" parent="SoundBus" unique_id=256725673 instance=ExtResource("4_5xyoi")]
 offset_left = -50.0
 offset_top = -4.3333435
 offset_right = 55.0
 offset_bottom = 7.6666565
 
-[node name="Sound" parent="SoundBus" instance=ExtResource("5_cljgu")]
+[node name="Sound" parent="SoundBus" unique_id=521257834 instance=ExtResource("5_cljgu")]
 offset_left = -50.0
 offset_top = 21.666656
 offset_right = 55.0
 offset_bottom = 33.666656
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="Button" parent="." unique_id=843017270]
 offset_left = 279.0
 offset_top = 308.0
 offset_right = 350.0
 offset_bottom = 343.0
 theme = SubResource("Theme_efkqj")
 
-[node name="Label" type="Label" parent="Button"]
+[node name="Label" type="Label" parent="Button" unique_id=438277953]
 process_mode = 4
 layout_mode = 0
 offset_left = 1.0

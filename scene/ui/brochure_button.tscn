@@ -1,10 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://bpkwk5owtcco0"]
+[gd_scene format=3 uid="uid://bpkwk5owtcco0"]
 
 [ext_resource type="Theme" uid="uid://5bh541wa60l3" path="res://resource/theme/green_theme.tres" id="1_jhwou"]
 [ext_resource type="Script" uid="uid://lwgpwcotuy2d" path="res://script/文本及ui显示/brochure_button.gd" id="2_vut1q"]
 [ext_resource type="PackedScene" uid="uid://bmvpkn3tw3evw" path="res://scene/ui/brochure.tscn" id="3_qcol1"]
 
-[node name="Brochure" type="Button"]
+[node name="Brochure" type="Button" unique_id=887643300]
 custom_minimum_size = Vector2(180, 60)
 offset_right = 180.0
 offset_bottom = 60.0
