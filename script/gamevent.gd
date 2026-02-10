@@ -1,6 +1,9 @@
 extends Node
 @onready var difficulty_timer: Timer = $difficulty_timer
 
+#展示是否开启游戏
+var is_start:=false
+
 func _ready() -> void:
 	difficulty_timer.timeout.connect(emit_more_difficulty)
 signal experience_bottle_collected(number:float)#吃到经验瓶时发出信号
@@ -9,6 +12,8 @@ func emit_increase_experience(number:float):#发射信号的函数这样写是�
 
 signal ability_upgrade_add(upgrade:AbilityUpgrade,current_upgrade:Dictionary)
 #能力升级信号，传出改变的能力和能力字典
+@export var upgrade_pool:Array[AbilityUpgrade]
+
 func emit_ability_upgrade_add(upgrade:AbilityUpgrade,current_upgrade:Dictionary):
 	await get_tree().process_frame
 	ability_upgrade_add.emit(upgrade,current_upgrade)
@@ -78,7 +83,25 @@ func record_db(_name:String,value)->void:
 #限制出怪量
 var current_monster :=0.0
 
-#简单模式：1.怪物移速下降10%；2.刷怪速度下降很多；3.玩家伤害提高10%;4.玩家受伤减少1半
+var play_global_position:=Vector2(0,0)
+
+signal mode_change
+#普通模式：1.怪物移速下降10%；2.刷怪速度下降很多；3.玩家伤害提高10%;4.玩家受伤减少1半
 var is_hard:=false
 
-var play_global_position:=Vector2(0,0)
+#简单模式:
+var easy_mode:Dictionary[String,Variant]={
+	"is_slow":false,
+	"is_initial":false,
+	"is_ascend":false
+}
+var mode_index:=-1 :set=set_mode
+func set_mode(value)->void:
+	mode_index=value
+	if mode_index!=0:
+		for i in easy_mode:
+			easy_mode[i] =false
+		print("艺术案件：",easy_mode)
+	if mode_index!=2:
+		is_hard=false
+	mode_change.emit()

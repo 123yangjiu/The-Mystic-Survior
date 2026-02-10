@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://5odfsqq8r60t"]
+
+[ext_resource type="Script" uid="uid://dyo1scdlv4n7e" path="res://script/文本及ui显示/settingscreen.gd" id="1_a3dry"]
+[ext_resource type="PackedScene" uid="uid://djyv3a54a2tlj" path="res://scene/ui/change_screen.tscn" id="2_bisql"]
+[ext_resource type="PackedScene" uid="uid://do5j6tqexbgan" path="res://scene/ui/Master_bar.tscn" id="3_5esk3"]
+[ext_resource type="PackedScene" uid="uid://y0d83doilca2" path="res://scene/ui/music_bar.tscn" id="4_uv570"]
+[ext_resource type="PackedScene" uid="uid://8snn1li86mb5" path="res://scene/ui/sound_bar.tscn" id="5_8c06s"]
+[ext_resource type="Theme" uid="uid://5bh541wa60l3" path="res://resource/theme/green_theme.tres" id="6_q08lb"]
+[ext_resource type="PackedScene" uid="uid://c4odu6gj71lxh" path="res://scene/ui/return_to_maintheme.tscn" id="7_1fpl6"]
+
+[node name="Settingscreen" type="CanvasLayer" unique_id=2013600972]
+process_mode = 3
+layer = 3
+script = ExtResource("1_a3dry")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=464053512]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2, 0.2, 0.2, 0.7882353)
+
+[node name="Change_screen" parent="." unique_id=309037944 instance=ExtResource("2_bisql")]
+custom_minimum_size = Vector2(50, 20)
+offset_left = 279.0
+offset_top = 35.0
+offset_right = 329.0
+offset_bottom = 55.0
+scale = Vector2(1.5, 1.5)
+
+[node name="SoundBus" type="Node2D" parent="." unique_id=360939152]
+process_mode = 3
+position = Vector2(296, 180)
+scale = Vector2(1.5, 1.5)
+
+[node name="Master" parent="SoundBus" unique_id=392021447 instance=ExtResource("3_5esk3")]
+offset_left = -50.0
+offset_top = -31.333344
+offset_right = 55.0
+offset_bottom = -19.333344
+
+[node name="Music" parent="SoundBus" unique_id=256725673 instance=ExtResource("4_uv570")]
+offset_left = -50.0
+offset_top = -4.3333435
+offset_right = 55.0
+offset_bottom = 7.6666565
+
+[node name="Sound" parent="SoundBus" unique_id=521257834 instance=ExtResource("5_8c06s")]
+offset_left = -50.0
+offset_top = 21.666656
+offset_right = 55.0
+offset_bottom = 33.666656
+
+[node name="Button" type="Button" parent="." unique_id=843017270]
+custom_minimum_size = Vector2(100, 50)
+offset_left = 393.0
+offset_top = 285.0
+offset_right = 493.0
+offset_bottom = 335.0
+theme = ExtResource("6_q08lb")
+text = "退出"
+
+[node name="Label" type="Label" parent="Button" unique_id=438277953]
+process_mode = 4
+visible = false
+layout_mode = 0
+offset_left = 1.0
+offset_top = -2.0
+offset_right = 73.0
+offset_bottom = 34.0
+theme_override_font_sizes/font_size = 36
+text = "退出"
+
+[node name="Return" parent="." unique_id=887643300 instance=ExtResource("7_1fpl6")]
+custom_minimum_size = Vector2(205, 50)
+offset_left = 81.0
+offset_top = 286.0
+offset_right = 286.0
+offset_bottom = 336.0
+
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

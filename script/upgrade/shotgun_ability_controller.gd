@@ -1,6 +1,6 @@
 extends AK47AbilityController
 
-
+var check_range :=100.0
 var bullet_number:=10.0
 var max_angle :=PI/6
 
@@ -10,12 +10,12 @@ func _ready() -> void:
 	number = 2
 	fire_interval=0.15
 	turn_interval =0.05
-	position=Vector2(9.0,6.0)
-	recoil_po =return_randf(0.5,0.5)
+	init_position=Vector2(9.0,6.0)
+	recoil_po =return_randf(0.3,0.5,false)
 	recoil_ro_degrees=return_randf(-20,-20)
 	#伤害，大小,速度
-	init_damage =15
-	init_scale=Vector2(1.0,1.0)
+	init_damage =10
+	init_scale=Vector2(2.0,1.5)
 	speed =15
 	#基础参数
 	base_wait_time=reload.wait_time
@@ -27,6 +27,10 @@ func _ready() -> void:
 	reload.timeout.connect(on_reload_out)
 	_continue.timeout.connect(on_reload_out)
 	GameEvent.ability_upgrade_add.connect(on_ability_upgrade_add)
+	var player = get_tree().get_first_node_in_group("实体图层").get_child(0)
+	remove_child(zidan_number)
+	player.add_child.call_deferred(zidan_number)
+	zidan_number.position=Vector2(-20.0,-40.0)
 	on_reload_out()
 
 func while_attack(enemies:Array[Node])->void:
@@ -46,6 +50,28 @@ func while_attack(enemies:Array[Node])->void:
 		if current_number<=0:
 			start_reload()
 			return
+
+func check_enemy()->Array[Node]:
+	var enemies:Array[Node]= get_tree().get_first_node_in_group("enemylayer").get_children()
+	enemies=enemies.filter(func(enemy:Node2D):#过滤掉不在范围内的敌人
+		return enemy.global_position.distance_squared_to(GameEvent.play_global_position)<pow(260,2) 
+	)
+	#get_first_node_in_group是拿到组里面的第一个节点，如果我们想要拿到player节点
+	#找到聚堆的小怪群
+	var enemies_clone := enemies.duplicate()
+	enemies.sort_custom(func (a:Node2D,b:Node2D):
+		var a_global_position := a.global_position
+		var b_global_position := b.global_position
+		var A:=0
+		var B:=0
+		for another_enemy in enemies_clone:
+			if another_enemy.global_position.distance_squared_to(a_global_position)<pow(check_range,2):
+				A+=1
+			if another_enemy.global_position.distance_squared_to(b_global_position)<pow(check_range,2):
+				B+=1
+		return A>B
+	)
+	return enemies
 
 func attack(enemy_global_position)->void:
 	#找到落脚点

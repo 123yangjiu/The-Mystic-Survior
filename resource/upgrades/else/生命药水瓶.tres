@@ -6,6 +6,5 @@
 script = ExtResource("1_tv43d")
 ID = "增加生命瓶"
 Sort = "角色能力"
-is_init = true
 name = "活...活下去"
 Description = "掉落生命药水的概率增加100%（现在，是指数"

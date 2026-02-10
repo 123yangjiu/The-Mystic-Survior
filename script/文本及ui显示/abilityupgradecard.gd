@@ -16,7 +16,6 @@ func on_gui_input(event:InputEvent):#传入输入事件
 	if event.is_action_pressed("click"):
 		selected.emit()
 
-
 func _on_texture_rect_mouse_entered() -> void:
 	modulate = Color(1.0, 1.0, 1.0, 1.0)
 	in_ready.emit()

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dkuq8ttuynstw"]
+
+[ext_resource type="Theme" uid="uid://5bh541wa60l3" path="res://resource/theme/green_theme.tres" id="1_opyt5"]
+
+[node name="Name" type="Button" unique_id=887643300]
+custom_minimum_size = Vector2(180, 60)
+offset_right = 180.0
+offset_bottom = 60.0
+theme = ExtResource("1_opyt5")
+text = "请输入文本"

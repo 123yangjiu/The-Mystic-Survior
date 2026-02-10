@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://b2yrm0y8rlo8e"]
+[gd_scene format=3 uid="uid://b2yrm0y8rlo8e"]
 
 [ext_resource type="Theme" uid="uid://5bh541wa60l3" path="res://resource/theme/green_theme.tres" id="1_4tvj6"]
 [ext_resource type="Script" uid="uid://beqpvidblmek3" path="res://script/文本及ui显示/exit_button.gd" id="2_2hgvx"]
 
-[node name="Exit" type="Button"]
+[node name="Exit" type="Button" unique_id=935601484]
 custom_minimum_size = Vector2(90, 50)
 offset_left = 9.0
 offset_top = 302.0

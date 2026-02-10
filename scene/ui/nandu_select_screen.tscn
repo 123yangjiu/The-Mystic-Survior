@@ -1,0 +1,213 @@
+[gd_scene format=3 uid="uid://bcl7q5l1pi6um"]
+
+[ext_resource type="Texture2D" uid="uid://bnsuipu308xow" path="res://sucai/background/简单.png" id="1_ca8ti"]
+[ext_resource type="Script" uid="uid://14032qo5ai0j" path="res://scene/ui/nandu_select_screen.gd" id="1_x0d57"]
+[ext_resource type="Texture2D" uid="uid://ctv6qoahoumm5" path="res://sucai/background/5.png" id="2_fu04h"]
+[ext_resource type="Theme" uid="uid://brtk7glajnjmp" path="res://resource/theme/no_theme.tres" id="4_j0ofd"]
+[ext_resource type="Texture2D" uid="uid://culg2ve4o2l0v" path="res://sucai/UI/arrow.png" id="5_x0d57"]
+[ext_resource type="PackedScene" uid="uid://sehmsexlfear" path="res://scene/ui/change_speed.tscn" id="6_pay3p"]
+[ext_resource type="PackedScene" uid="uid://defj455iu2c6i" path="res://scene/ui/change_nandu/change_initial.tscn" id="7_u71r3"]
+[ext_resource type="PackedScene" uid="uid://dv6caff4cc6t8" path="res://scene/ui/change_nandu/change_ascend.tscn" id="8_w3w8d"]
+[ext_resource type="PackedScene" uid="uid://d5e5o1xdxw5m" path="res://scene/ui/change_nandu/confirm.tscn" id="10_i0o6x"]
+
+[node name="NanduSelect" type="CanvasLayer" unique_id=543739001 node_paths=PackedStringArray("all_mode", "initial_node")]
+layer = 2
+script = ExtResource("1_x0d57")
+all_mode = [NodePath("简单模式"), NodePath("普通模式"), NodePath("困难模式")]
+initial_node = NodePath("普通模式")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1238339868]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2, 0.2, 0.2, 0.88235295)
+
+[node name="简单模式" type="Control" parent="." unique_id=1196422521]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="简单模式" unique_id=595038098]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_top = 15.0
+offset_right = 100.0
+offset_bottom = 95.0
+grow_horizontal = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="Label" type="Label" parent="简单模式/VBoxContainer" unique_id=467494544]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "简单模式"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="简单模式/VBoxContainer" unique_id=1822246068]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "请选择你的外挂"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="简单模式" unique_id=821728961]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -165.0
+offset_top = -51.0
+offset_right = -115.0
+offset_bottom = 109.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+
+[node name="Change_screen" parent="简单模式/VBoxContainer2" unique_id=1353719358 instance=ExtResource("6_pay3p")]
+layout_mode = 2
+
+[node name="Change_speed" parent="简单模式/VBoxContainer2" unique_id=1803826499 instance=ExtResource("7_u71r3")]
+layout_mode = 2
+
+[node name="Change_speed2" parent="简单模式/VBoxContainer2" unique_id=1347228913 instance=ExtResource("8_w3w8d")]
+layout_mode = 2
+
+[node name="普通模式" type="Control" parent="." unique_id=84420071]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="普通模式" unique_id=1138364786]
+position = Vector2(319, 228)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_ca8ti")
+region_enabled = true
+region_rect = Rect2(914.60205, 425.1562, 753.50415, 451.15765)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="普通模式" unique_id=1204773736]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -132.0
+offset_top = 15.0
+offset_right = 132.0
+offset_bottom = 95.0
+grow_horizontal = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="Label" type="Label" parent="普通模式/VBoxContainer" unique_id=900862548]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "普通模式"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="普通模式/VBoxContainer" unique_id=1300233312]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "非常地普通，非常地友好"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="困难模式" type="Control" parent="." unique_id=66960882]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="困难模式" unique_id=1681480919]
+position = Vector2(327, 262)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_fu04h")
+region_enabled = true
+region_rect = Rect2(1015.4103, 671.385, 844.1455, 336.4007)
+
+[node name="Label3" type="Label" parent="困难模式" unique_id=494728298]
+visible = false
+modulate = Color(0.56, 0.56, 0.56, 1)
+layout_mode = 0
+offset_left = 459.0
+offset_top = 104.0
+offset_right = 615.0
+offset_bottom = 131.0
+text = "这游戏实际上是先有困
+难模式再有普通模式的"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="困难模式" unique_id=1396547756]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 189.0
+offset_top = 16.0
+offset_right = 453.0
+offset_bottom = 165.0
+grow_horizontal = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="Label" type="Label" parent="困难模式/VBoxContainer" unique_id=672235328]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "困难模式"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="困难模式/VBoxContainer" unique_id=921757505]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "1.怪物移速上升10%；
+2.刷怪速度上升很多；
+3.玩家伤害下降10%;
+4.玩家受伤增加接近一倍"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Confirm" parent="." unique_id=887643300 instance=ExtResource("10_i0o6x")]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -50.0
+offset_bottom = 0.0
+grow_vertical = 0
+
+[node name="turn_right" type="Button" parent="." unique_id=212351830]
+offset_left = 516.0
+offset_top = 16.0
+offset_right = 560.0
+offset_bottom = 56.0
+scale = Vector2(2, 2)
+theme = ExtResource("4_j0ofd")
+icon = ExtResource("5_x0d57")
+
+[node name="turn_left" type="Button" parent="." unique_id=991331773]
+offset_left = 117.0
+offset_top = 16.0
+offset_right = 161.0
+offset_bottom = 56.0
+scale = Vector2(-2, 2)
+theme = ExtResource("4_j0ofd")
+icon = ExtResource("5_x0d57")
+
+[connection signal="pressed" from="Confirm" to="." method="_on_name_pressed"]
+[connection signal="pressed" from="turn_right" to="." method="_on_turn_right_pressed"]
+[connection signal="pressed" from="turn_left" to="." method="_on_turn_left_pressed"]

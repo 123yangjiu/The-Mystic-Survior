@@ -1,13 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://7wj0rs3qyh6d"]
+[gd_scene format=3 uid="uid://7wj0rs3qyh6d"]
 
 [ext_resource type="Texture2D" uid="uid://bnsuipu308xow" path="res://sucai/background/简单.png" id="1_c1cla"]
 [ext_resource type="Texture2D" uid="uid://ctv6qoahoumm5" path="res://sucai/background/5.png" id="2_njype"]
 [ext_resource type="PackedScene" uid="uid://b2yrm0y8rlo8e" path="res://scene/ui/exit_button.tscn" id="3_m5ba6"]
 
-[node name="NanduShuoming" type="CanvasLayer"]
+[node name="NanduShuoming" type="CanvasLayer" unique_id=543739001]
 layer = 2
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1238339868]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -15,22 +15,22 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.2, 0.2, 0.2, 0.88235295)
 
-[node name="Line2D" type="Line2D" parent="."]
+[node name="Line2D" type="Line2D" parent="." unique_id=1326763736]
 position = Vector2(-50, 0)
 points = PackedVector2Array(320, 360, 320, 0)
 default_color = Color(0.4, 0.4, 0.4, 1)
 
-[node name="普通模式" type="Node2D" parent="."]
+[node name="普通模式" type="Node2D" parent="." unique_id=380617870]
 position = Vector2(-23, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="普通模式"]
+[node name="Sprite2D" type="Sprite2D" parent="普通模式" unique_id=1976937339]
 position = Vector2(159, 190)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_c1cla")
 region_enabled = true
 region_rect = Rect2(1081.6648, 561.56305, 349.95984, 223.06207)
 
-[node name="Label" type="Label" parent="普通模式"]
+[node name="Label" type="Label" parent="普通模式" unique_id=900862548]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -44,23 +44,23 @@ size_flags_horizontal = 0
 theme_override_font_sizes/font_size = 24
 text = "普通模式"
 
-[node name="Label2" type="Label" parent="普通模式"]
+[node name="Label2" type="Label" parent="普通模式" unique_id=1300233312]
 offset_left = 93.0
 offset_top = 50.0
 offset_right = 225.0
 offset_bottom = 62.0
 text = "非常地和谐，非常地友好"
 
-[node name="困难模式" type="Node2D" parent="."]
+[node name="困难模式" type="Node2D" parent="." unique_id=1988124269]
 
-[node name="Sprite2D" type="Sprite2D" parent="困难模式"]
+[node name="Sprite2D" type="Sprite2D" parent="困难模式" unique_id=1681480919]
 position = Vector2(458, 245)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_njype")
 region_enabled = true
 region_rect = Rect2(1063.3545, 607.5633, 648.4363, 432.29083)
 
-[node name="Label" type="Label" parent="困难模式"]
+[node name="Label" type="Label" parent="困难模式" unique_id=2098713103]
 offset_left = 411.0
 offset_top = 9.0
 offset_right = 507.0
@@ -68,7 +68,7 @@ offset_bottom = 33.0
 theme_override_font_sizes/font_size = 24
 text = "困难模式"
 
-[node name="Label2" type="Label" parent="困难模式"]
+[node name="Label2" type="Label" parent="困难模式" unique_id=41034461]
 offset_left = 402.0
 offset_top = 61.0
 offset_right = 846.0
@@ -78,7 +78,7 @@ text = "1.怪物移速上升10%；
 3.玩家伤害下降10%;
 4.玩家受伤增加接近一倍"
 
-[node name="Label3" type="Label" parent="困难模式"]
+[node name="Label3" type="Label" parent="困难模式" unique_id=494728298]
 modulate = Color(0.56, 0.56, 0.56, 1)
 offset_left = 514.0
 offset_top = 21.0
@@ -87,7 +87,7 @@ offset_bottom = 48.0
 text = "这游戏实际上是先有困
 难模式再有普通模式的"
 
-[node name="Exit" parent="." node_paths=PackedStringArray("root_node") instance=ExtResource("3_m5ba6")]
+[node name="Exit" parent="." unique_id=869907157 node_paths=PackedStringArray("root_node") instance=ExtResource("3_m5ba6")]
 offset_left = 2.0
 offset_top = 308.0
 offset_right = 92.0

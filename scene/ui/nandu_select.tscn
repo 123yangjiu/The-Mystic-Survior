@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://c56r3vhi7cpoo"]
+
+[ext_resource type="Theme" uid="uid://5bh541wa60l3" path="res://resource/theme/green_theme.tres" id="1_stn0u"]
+[ext_resource type="Script" uid="uid://cdcxtcufogc2d" path="res://script/文本及ui显示/nandu_select.gd" id="2_fimhn"]
+[ext_resource type="PackedScene" uid="uid://bcl7q5l1pi6um" path="res://scene/ui/nandu_select_screen.tscn" id="3_2qbyb"]
+
+[node name="NanduSelect" type="Button" unique_id=887643300]
+custom_minimum_size = Vector2(180, 60)
+offset_right = 180.0
+offset_bottom = 60.0
+theme = ExtResource("1_stn0u")
+text = "选择难度"
+script = ExtResource("2_fimhn")
+screen = ExtResource("3_2qbyb")
+
+[node name="Label" type="Label" parent="." unique_id=842973039]
+modulate = Color(0.9, 0.9, 0.9, 1)
+layout_mode = 0
+offset_left = 53.0
+offset_top = -45.0
+offset_right = 125.0
+offset_bottom = -9.0
+text = "普通"

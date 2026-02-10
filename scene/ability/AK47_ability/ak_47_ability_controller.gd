@@ -36,7 +36,7 @@ var speed =20
 var speed_range :=1.0
 
 #冷却，音量,基础位置，从自身节点获得的变量，勿在此改变
-var init_position:Vector2
+var init_position:=Vector2(0.0,1.0)
 
 var base_wait_time:float
 var wait_range :=1.0 :set = set_wait_range
@@ -55,8 +55,7 @@ func _ready() -> void:
 	number = 30
 	fire_interval=0.05
 	turn_interval =0.05
-	position = Vector2(4.0,6.0)
-	recoil_po =return_randf(0.1,0.1)
+	recoil_po =return_randf(0.1,0.2,false)
 	recoil_ro_degrees=return_randf(-10,-5)
 	#伤害，大小,速度
 	init_damage =15
@@ -72,6 +71,10 @@ func _ready() -> void:
 	reload.timeout.connect(on_reload_out)
 	_continue.timeout.connect(on_reload_out)
 	GameEvent.ability_upgrade_add.connect(on_ability_upgrade_add)
+	var player = get_tree().get_first_node_in_group("实体图层").get_child(0)
+	remove_child(zidan_number)
+	player.add_child.call_deferred(zidan_number)
+	zidan_number.position=Vector2(-20.0,-40.0)
 	#开始射击
 	on_reload_out()
 
@@ -109,7 +112,10 @@ func check_enemy()->Array[Node]:
 	return enemies
 
 func while_attack(enemies:Array[Node])->void:
-	for i in range(int(number*number_range)+1):
+	var real_number = int(number)
+	if number_range!=1.0:
+		real_number=int(number*number_range)+1
+	for i in range(real_number):
 		#找到敌人，并排除各种问题
 		var enemy = before_attack_find_enemy(enemies)
 		if enemy:

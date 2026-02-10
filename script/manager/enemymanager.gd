@@ -40,6 +40,24 @@ func on_more_difficulty(difficulty:int):
 	var player=get_tree().get_first_node_in_group("player")
 	$Timer.wait_time = (max(min_gap, base_time_gap * exp(-decay * difficulty)))*1.15
 	target_time=$Timer.wait_time
+	if difficulty==3:
+		var kill_enemy = kill_cirle_enemy[6].instantiate() as Node2D
+		entities_Layer.add_child(kill_enemy)
+		var angle := TAU*randf()
+		# 2. 半径加 ±10% 随机，避免太机械
+		var radius := float(rand_R) * randf_range(0.2,0.4)
+		# 3. 最终位置
+		kill_enemy.global_position = player.global_position + Vector2.RIGHT.rotated(angle) * radius
+	if difficulty==5:
+		var now_player_position = GameEvent.play_global_position
+		for i in 50:
+			var kill_enemy = kill_cirle_enemy[5].instantiate() as Node2D
+			entities_Layer.add_child(kill_enemy)
+			var angle := TAU*i/ 20
+			var radius := float(rand_R) * 0.7
+			# 3. 最终位置
+			kill_enemy.global_position = now_player_position + Vector2.RIGHT.rotated(angle) * radius
+			await get_tree().create_timer(0.1).timeout
 	if difficulty==8:
 		on_mush_appear()
 		for i in 80:
@@ -77,15 +95,16 @@ func on_more_difficulty(difficulty:int):
 			# 3. 最终位置
 			kill_enemy.global_position = player.global_position + Vector2.RIGHT.rotated(angle) * radius
 	elif difficulty==14:
-		for i in 40:
+		var now_player_position = GameEvent.play_global_position
+		for i in 50:
 			var kill_enemy = kill_cirle_enemy[4].instantiate() as Node2D
 			entities_Layer.add_child(kill_enemy)
-			var angle := TAU*i/ 40
+			var angle := TAU*i/ 20
 			# 2. 半径加 ±10% 随机，避免太机械
-			var radius := float(rand_R) * 0.5
+			var radius := float(rand_R) * 0.7
 			# 3. 最终位置
-			kill_enemy.global_position = player.global_position + Vector2.RIGHT.rotated(angle) * radius
-			await get_tree().create_timer(0.5).timeout
+			kill_enemy.global_position = now_player_position + Vector2.RIGHT.rotated(angle) * radius
+			await get_tree().create_timer(0.1).timeout
 	elif  difficulty==15:
 		on_mush_appear()
 		for i in 80:

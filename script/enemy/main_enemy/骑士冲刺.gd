@@ -4,9 +4,11 @@ extends Area2D
 @onready var hurtboxcomponent: HutboxComponent = $"../Hurtboxcomponent"
 
 var can_rush := false
-var rush_speed:=850
+var rush_speed:=850.0
 
 func _ready() -> void:
+	if GameEvent.easy_mode.is_slow:
+		rush_speed *=0.9
 	body_entered.connect(on_body_enter)
 	body_exited.connect(on_body_exited)
 	$"../rush_duration".timeout.connect(end_rush)
@@ -26,7 +28,7 @@ func on_body_exited(_area: Node2D) -> void:
 	velocity_component.acceleration = 7
 
 func do_rush():
-	velocity_component.speed = 850
+	velocity_component.speed = int(rush_speed)
 	velocity_component.acceleration = 3
 	$"../rush_duration".start()   # 1.8 s 后结束本次冲刺
 

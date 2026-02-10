@@ -1,27 +1,27 @@
 [gd_scene format=3 uid="uid://c20o3d2yxx4lv"]
 
 [ext_resource type="Texture2D" uid="uid://dyt1wwieyphkl" path="res://scene/ability/AK47_ability/resource/RPG/RPG.png" id="1_ymree"]
-[ext_resource type="Script" uid="uid://bu2mv03wue4b1" path="res://scene/ability/AK47_ability/ak_47_ability_controller.gd" id="2_u7xio"]
-[ext_resource type="PackedScene" uid="uid://n4as4qw7qe06" path="res://scene/ability/AK47_ability/bullet.tscn" id="3_e40ut"]
-[ext_resource type="AudioStream" uid="uid://7ymh2gld51sp" path="res://scene/ability/AK47_ability/resource/shot_gun/Shotgun_Shot-002.wav" id="4_6ovt5"]
+[ext_resource type="Script" uid="uid://bmgsdnh4q2syg" path="res://script/upgrade/rpg_ability_controller.gd" id="2_x34q7"]
+[ext_resource type="PackedScene" uid="uid://dm8b5ckjom6te" path="res://scene/ability/AK47_ability/rocket.tscn" id="3_tlwfg"]
+[ext_resource type="AudioStream" uid="uid://c8fphc6c2rtnp" path="res://scene/ability/AK47_ability/resource/RPG/Rocket_Shot-001.wav" id="4_tlwfg"]
 [ext_resource type="AudioStream" uid="uid://dgykqv36x8xqj" path="res://scene/ability/AK47_ability/resource/RPG/Rocket_Equip.wav" id="5_3eytq"]
 [ext_resource type="AudioStream" uid="uid://b64lq0onxxvcw" path="res://scene/ability/AK47_ability/resource/Shotgun_Pump.wav" id="6_q2ca5"]
 
 [node name="RPGAbilityController" type="Sprite2D" unique_id=2039636434]
 texture = ExtResource("1_ymree")
-script = ExtResource("2_u7xio")
-ability = ExtResource("3_e40ut")
+script = ExtResource("2_x34q7")
+ability = ExtResource("3_tlwfg")
 
 [node name="Reload" type="Timer" parent="." unique_id=2077055730]
-wait_time = 5.0
+wait_time = 4.5
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2055677243]
-stream = ExtResource("4_6ovt5")
+stream = ExtResource("4_tlwfg")
 volume_db = -14.0
 bus = &"Sound"
 
 [node name="Zidan" type="Node2D" parent="." unique_id=1799512530]
-position = Vector2(25, 0.5)
+position = Vector2(25, 0)
 
 [node name="Continue" type="Timer" parent="." unique_id=260647562]
 wait_time = 0.3
@@ -34,10 +34,11 @@ bus = &"Sound"
 [node name="ChangeBullet2" type="AudioStreamPlayer2D" parent="." unique_id=1333645441]
 stream = ExtResource("6_q2ca5")
 volume_db = -4.0
-pitch_scale = 1.5
+pitch_scale = 1.2
 bus = &"Sound"
 
 [node name="ZidanNumber" type="Label" parent="." unique_id=1740660800]
+visible = false
 self_modulate = Color(1, 0.7445, 0.26999998, 1)
 offset_left = -20.0
 offset_top = -21.0

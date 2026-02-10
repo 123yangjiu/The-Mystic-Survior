@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://c58yckyjy7xpa"]
+[gd_scene format=3 uid="uid://c58yckyjy7xpa"]
 
 [ext_resource type="Script" uid="uid://boh2aiy8h4y46" path="res://script/文本及ui显示/skill_tujian.gd" id="1_bw8iv"]
 [ext_resource type="PackedScene" uid="uid://c6t5pqka2y0xc" path="res://scene/ui/abilityupgradecard.tscn" id="2_hdgep"]
@@ -24,21 +24,30 @@
 [ext_resource type="Resource" uid="uid://b5o283wr41dta" path="res://resource/upgrades/else/吸铁石.tres" id="22_3uk6w"]
 [ext_resource type="Resource" uid="uid://bbp5xqvgt1ubd" path="res://resource/upgrades/else/飞毛腿.tres" id="23_g2lnk"]
 [ext_resource type="Resource" uid="uid://cq6h3a5qtmde3" path="res://resource/upgrades/else/盔甲.tres" id="24_slx2f"]
-[ext_resource type="Resource" uid="uid://dn5ri83sm6i23" path="res://resource/upgrades/else/生命药水瓶.tres" id="25_il7tx"]
+[ext_resource type="Resource" uid="uid://bm5728iq6c8ra" path="res://resource/upgrades/gun/get_gun.tres" id="25_7xkpe"]
 [ext_resource type="PackedScene" uid="uid://b2yrm0y8rlo8e" path="res://scene/ui/exit_button.tscn" id="26_8dpxf"]
 [ext_resource type="Texture2D" uid="uid://dpo4ccauulmja" path="res://sucai/background/skill/sword.png" id="26_e7bnn"]
+[ext_resource type="Resource" uid="uid://j41hiigk5pdq" path="res://resource/upgrades/gun/gun_bigger.tres" id="26_sh81l"]
+[ext_resource type="Resource" uid="uid://dn81f21hebidn" path="res://resource/upgrades/gun/gun_damage.tres" id="27_hfe5u"]
 [ext_resource type="Texture2D" uid="uid://4tv10algqnj7" path="res://sucai/background/skill/fire.png" id="27_ucao3"]
 [ext_resource type="Texture2D" uid="uid://86mokqg7fsnl" path="res://sucai/background/skill/heaven.png" id="28_aay3j"]
+[ext_resource type="Resource" uid="uid://cpuhurkw2l4bp" path="res://resource/upgrades/gun/get_shotgun.tres" id="28_vis0a"]
+[ext_resource type="Resource" uid="uid://mrbbx2kub2ka" path="res://resource/upgrades/gun/get_sniper_rifle.tres" id="29_bp314"]
 [ext_resource type="Texture2D" uid="uid://bpsafaxcdqtsx" path="res://sucai/background/skill/light.png" id="29_mabtl"]
 [ext_resource type="Texture2D" uid="uid://6d2i2fi6p5hk" path="res://sucai/background/skill/ring.png" id="30_dpopx"]
+[ext_resource type="Resource" uid="uid://dgtmnrikh6nqu" path="res://resource/upgrades/gun/get_rocket.tres" id="30_xvc7j"]
+[ext_resource type="Texture2D" uid="uid://bp8e6iruf1st8" path="res://sucai/background/skill/ak.png" id="37_sh81l"]
+[ext_resource type="Texture2D" uid="uid://cm2xfjxt2u0es" path="res://sucai/background/skill/shotgun.png" id="38_hfe5u"]
+[ext_resource type="Texture2D" uid="uid://byosm5oi4klg1" path="res://sucai/background/skill/sniper.png" id="39_vis0a"]
+[ext_resource type="Texture2D" uid="uid://40xlttlufoaw" path="res://sucai/background/skill/RPG.png" id="40_bp314"]
 
-[node name="SkillTujian" type="CanvasLayer"]
+[node name="SkillTujian" type="CanvasLayer" unique_id=1350505999]
 layer = 2
 script = ExtResource("1_bw8iv")
 upgrade_card_scene = ExtResource("2_hdgep")
-all_upgrade = Array[ExtResource("3_wyphw")]([ExtResource("4_e7bnn"), ExtResource("5_ucao3"), ExtResource("6_aay3j"), ExtResource("7_mabtl"), ExtResource("8_dpopx"), ExtResource("9_8dpxf"), ExtResource("10_6wq5a"), ExtResource("11_4rou3"), ExtResource("12_ohvd8"), ExtResource("13_528nf"), ExtResource("14_7xkpe"), ExtResource("15_sh81l"), ExtResource("16_hfe5u"), ExtResource("17_vis0a"), ExtResource("18_bp314"), ExtResource("19_xvc7j"), ExtResource("20_58664"), ExtResource("21_yrgvd"), ExtResource("22_3uk6w"), ExtResource("23_g2lnk"), ExtResource("24_slx2f"), ExtResource("25_il7tx")])
+all_upgrade = Array[ExtResource("3_wyphw")]([ExtResource("4_e7bnn"), ExtResource("5_ucao3"), ExtResource("6_aay3j"), ExtResource("7_mabtl"), ExtResource("8_dpopx"), ExtResource("9_8dpxf"), ExtResource("10_6wq5a"), ExtResource("11_4rou3"), ExtResource("12_ohvd8"), ExtResource("13_528nf"), ExtResource("14_7xkpe"), ExtResource("15_sh81l"), ExtResource("16_hfe5u"), ExtResource("17_vis0a"), ExtResource("18_bp314"), ExtResource("19_xvc7j"), ExtResource("20_58664"), ExtResource("21_yrgvd"), ExtResource("25_7xkpe"), ExtResource("26_sh81l"), ExtResource("27_hfe5u"), ExtResource("28_vis0a"), ExtResource("29_bp314"), ExtResource("30_xvc7j"), ExtResource("22_3uk6w"), ExtResource("24_slx2f"), ExtResource("23_g2lnk")])
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1056391145]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -46,60 +55,92 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.2, 0.2, 0.2, 0.78431374)
 
-[node name="Exit" parent="." node_paths=PackedStringArray("root_node") instance=ExtResource("26_8dpxf")]
-offset_left = 294.0
-offset_top = 304.0
-offset_right = 384.0
-offset_bottom = 354.0
+[node name="Exit" parent="." unique_id=779574605 node_paths=PackedStringArray("root_node") instance=ExtResource("26_8dpxf")]
+offset_left = 280.0
+offset_top = 310.0
+offset_right = 370.0
+offset_bottom = 360.0
 root_node = NodePath("..")
 
-[node name="Tupian" type="Node2D" parent="."]
+[node name="Tupian" type="Node2D" parent="." unique_id=1637943305]
+position = Vector2(1, 272)
 
-[node name="Sword" type="Sprite2D" parent="Tupian"]
-position = Vector2(57, 32)
-scale = Vector2(0.3, 0.3)
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=884149035]
+custom_minimum_size = Vector2(130, 250)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer" unique_id=89188224]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/VBoxContainer" unique_id=1362112698]
+custom_minimum_size = Vector2(150, 120)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ScrollContainer/VBoxContainer" unique_id=773558761]
+custom_minimum_size = Vector2(150, 100)
+layout_mode = 2
+
+[node name="Sword" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer2" unique_id=1498773466]
+position = Vector2(641, 63)
+scale = Vector2(0.9, 0.9)
 texture = ExtResource("26_e7bnn")
 region_enabled = true
-region_rect = Rect2(171.87952, 113.90745, 337.86426, 151.62912)
+region_rect = Rect2(171.87952, 113.90745, 344.2865, 135.42621)
 
-[node name="Fire" type="Sprite2D" parent="Tupian"]
-position = Vector2(274, 60)
-scale = Vector2(0.3, 0.3)
+[node name="Fire" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer2" unique_id=69231313]
+position = Vector2(1005, 67)
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("27_ucao3")
 region_enabled = true
-region_rect = Rect2(63.607803, 49.806667, 529.5636, 215.72989)
+region_rect = Rect2(63.607803, 83.667, 544.39154, 151.33334)
 
-[node name="Heaven" type="Sprite2D" parent="Tupian"]
-position = Vector2(518, 46)
-scale = Vector2(0.3, 0.3)
+[node name="Heaven" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer2" unique_id=1919793673]
+position = Vector2(782, 115)
+scale = Vector2(0.8, 0.6)
 texture = ExtResource("28_aay3j")
 region_enabled = true
-region_rect = Rect2(63.607803, 49.806667, 401.25958, 326.72708)
+region_rect = Rect2(121.33264, 43.166992, 343.53473, 333.36676)
 
-[node name="Light" type="Sprite2D" parent="Tupian"]
-position = Vector2(145, 319)
-scale = Vector2(0.3, 0.3)
+[node name="Light" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer2" unique_id=1460291871]
+position = Vector2(889, 67)
+scale = Vector2(0.5, 0.6)
 texture = ExtResource("29_mabtl")
 region_enabled = true
 region_rect = Rect2(48.924744, 9.46196, 826.8547, 270.37836)
 
-[node name="Ring" type="Sprite2D" parent="Tupian"]
-position = Vector2(514, 312)
-scale = Vector2(0.3, 0.3)
+[node name="Ring" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer2" unique_id=1341857026]
+position = Vector2(1090, 167)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("30_dpopx")
 region_enabled = true
-region_rect = Rect2(33.153137, 161.68558, 630.35876, 311.7078)
+region_rect = Rect2(33.153137, 194.04471, 637.18097, 279.34866)
 
-[node name="ScrollContainer" type="ScrollContainer" parent="."]
-custom_minimum_size = Vector2(130, 160)
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 93.0
-offset_bottom = -98.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Gun" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer2" unique_id=805208808]
+position = Vector2(-254, -18)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("37_sh81l")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer"]
-custom_minimum_size = Vector2(150, 120)
-layout_mode = 2
+[node name="shotgun" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer2/Gun" unique_id=1855324114]
+position = Vector2(404.2858, 1.4285715)
+texture = ExtResource("38_hfe5u")
+region_enabled = true
+region_rect = Rect2(98.66594, 73.833626, 397.61877, 186.15308)
+
+[node name="sniper" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer2/Gun" unique_id=1084252688]
+position = Vector2(848.3333, 5.0000033)
+scale = Vector2(0.6, 1)
+texture = ExtResource("39_vis0a")
+region_enabled = true
+region_rect = Rect2(9.945343, 19.790695, 784.31104, 174.80469)
+
+[node name="rpg" type="Sprite2D" parent="ScrollContainer/VBoxContainer/HBoxContainer2/Gun" unique_id=1889087335]
+position = Vector2(1361.6666, 5.0000043)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("40_bp314")
+region_enabled = true
+region_rect = Rect2(15.031952, 69.46331, 671.7114, 226.27005)

@@ -2,7 +2,8 @@ extends AK47AbilityController
 
 @onready var lashuan: AudioStreamPlayer2D = $lashuan
 @onready var bullet: AudioStreamPlayer2D = $bullet
-
+@onready var lashuan_2: AudioStreamPlayer2D = $lashuan2
+var lashuan_2_pitch
 
 func _ready() -> void:
 	#射程，子弹数量，射击间隔，转头间隔，位置和后坐力
@@ -10,8 +11,8 @@ func _ready() -> void:
 	number = 3
 	fire_interval=1.0
 	turn_interval =0.02
-	position = Vector2(9.0,4.0)
-	recoil_po =return_randf(0.1,0.1)
+	init_position = Vector2(6.0,-3.0)
+	recoil_po =return_randf(0.1,0.3,false)
 	recoil_ro_degrees=return_randf(-20,-20)
 	#伤害，大小,速度
 	init_damage =200
@@ -22,10 +23,15 @@ func _ready() -> void:
 	volume=audio.volume_db
 	change_1_pitch = change_bullet_1.pitch_scale
 	change_2_pitch = change_bullet_2.pitch_scale
+	lashuan_2_pitch=lashuan_2.pitch_scale
 	init_position=self.position
 	reload.timeout.connect(on_reload_out)
 	_continue.timeout.connect(on_reload_out)
 	GameEvent.ability_upgrade_add.connect(on_ability_upgrade_add)
+	var player = get_tree().get_first_node_in_group("实体图层").get_child(0)
+	remove_child(zidan_number)
+	player.add_child.call_deferred(zidan_number)
+	zidan_number.position=Vector2(-20.0,-40.0)
 	on_reload_out()
 
 #专打终极
@@ -66,7 +72,6 @@ func attack(enemy_global_position:Vector2)->void:
 	ability_instance.amount=100
 	var tween =create_tween().bind_node(ability_instance)
 	tween.tween_property(ability_instance,"scale",ability_instance.scale+Vector2(ability_instance.scale.x*2,0),0.05)
-	
 
 func after_attack(enemy_global_position:Vector2)->void:
 	current_number-=1
@@ -83,3 +88,16 @@ func after_attack(enemy_global_position:Vector2)->void:
 		await lashuan.finished
 	else :
 		pass
+
+func set_wait_range(value)->void:
+	wait_range=value
+	change_bullet_1.pitch_scale = change_1_pitch/wait_range
+	change_bullet_2.pitch_scale = change_2_pitch/wait_range
+	lashuan_2.pitch_scale = change_2_pitch/wait_range
+
+func _on_change_bullet_2_finished() -> void:
+	if ! reload.is_stopped():
+		if reload.time_left <=1:
+			lashuan_2.play()
+			return
+		change_bullet_2.play()

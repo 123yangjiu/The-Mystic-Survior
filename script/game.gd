@@ -19,7 +19,7 @@ func change_direction():
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_released("暂停"):
-		get_viewport().set_input_as_handled()
-		GameEvent.stop_game(true)
+		#get_viewport().set_input_as_handled()
+		#GameEvent.stop_game(true)
 		var screen=stop_screen.instantiate()
 		add_child(screen)

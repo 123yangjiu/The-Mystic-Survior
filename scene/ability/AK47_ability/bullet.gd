@@ -1,4 +1,5 @@
 extends FlyThing
+
 #方向和速度
 #var direction:=Vector2(1.0,1.0)
 #var speed =5
@@ -15,5 +16,6 @@ func on_area_enter(area:Area2D):
 		queue_free()
 func _physics_process(_delta: float) -> void:
 	global_position+=direction*speed
+
 func on_time_out()->void:
 	queue_free()

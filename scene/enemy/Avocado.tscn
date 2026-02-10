@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://b53artfqc50vr"]
+[gd_scene format=3 uid="uid://b53artfqc50vr"]
 
 [ext_resource type="Script" uid="uid://rsl4jg827i3e" path="res://script/enemy/main_enemy/enemy_xiaotrue.gd" id="1_7e3xo"]
 [ext_resource type="PackedScene" uid="uid://decyru6mnkuga" path="res://scene/游戏功能组件/hurtboxcomponent.tscn" id="1_eknvr"]
@@ -61,20 +61,20 @@ radius = 12.857142
 [sub_resource type="CircleShape2D" id="CircleShape2D_rb2m5"]
 radius = 8.0
 
-[node name="Avocado" type="CharacterBody2D" groups=["初级"]]
+[node name="Avocado" type="CharacterBody2D" unique_id=1053169283 groups=["初级"]]
 scale = Vector2(0.7, 0.7)
 collision_layer = 40
 collision_mask = 33
 script = ExtResource("1_7e3xo")
 
-[node name="Hurtboxcomponent" parent="." node_paths=PackedStringArray("health_component") groups=["enemy"] instance=ExtResource("1_eknvr")]
+[node name="Hurtboxcomponent" parent="." unique_id=1030427869 node_paths=PackedStringArray("health_component") groups=["enemy"] instance=ExtResource("1_eknvr")]
 collision_layer = 4
 health_component = NodePath("../health_component")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Hurtboxcomponent"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Hurtboxcomponent" unique_id=1087769240]
 shape = SubResource("CircleShape2D_7e3xo")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["enemy"]]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1688632931 groups=["enemy"]]
 position = Vector2(0, 4)
 scale = Vector2(1.2553042, 1.0013652)
 sprite_frames = SubResource("SpriteFrames_fq6t5")
@@ -82,21 +82,21 @@ animation = &"run"
 autoplay = "run"
 frame_progress = 0.3293694
 
-[node name="对角色造成伤害的碰撞" type="CollisionShape2D" parent="." groups=["enemy"]]
+[node name="对角色造成伤害的碰撞" type="CollisionShape2D" parent="." unique_id=628525645 groups=["enemy"]]
 position = Vector2(0, 9.999999)
 shape = SubResource("CircleShape2D_sc8rp")
 
-[node name="health_component" parent="." instance=ExtResource("2_jhxc5")]
+[node name="health_component" parent="." unique_id=28427556 instance=ExtResource("2_jhxc5")]
 max_health = 42.0
 
-[node name="drop_component" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("3_3lfw1")]
+[node name="drop_component" parent="." unique_id=1947292528 node_paths=PackedStringArray("health_component") instance=ExtResource("3_3lfw1")]
 drop_range = 2
 drop_thing = Array[PackedScene]([ExtResource("4_pjlxh"), ExtResource("5_2w5ch")])
 health_component = NodePath("../health_component")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1003268134]
 shape = SubResource("CircleShape2D_rb2m5")
 
-[node name="velocity_component" parent="." instance=ExtResource("6_vptrm")]
+[node name="velocity_component" parent="." unique_id=507134816 instance=ExtResource("6_vptrm")]
 speed = 150
 acceleration = 8.0

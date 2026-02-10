@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_aa462")
 ID = "盔甲"
-Sort = "角色技能"
+Sort = "角色能力"
 is_init = true
 name = "纯御"
 Description = "受到伤害-7%

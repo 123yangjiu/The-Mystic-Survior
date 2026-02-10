@@ -5,6 +5,7 @@ class_name Player
 @onready var health_component: HealthComponent = $health_component
 @onready var health_bar: ProgressBar = $HealthBar
 @export var died_screen:PackedScene
+@onready var all_gun_ability_controller: AllGunAbilityController = $abilitymanager/AllGunAbilityController
 
 var enter_body_number_10=0
 var enter_body_number_17=0
@@ -59,8 +60,10 @@ func _physics_process(_delta: float) -> void:
 		is_run=false
 	move_and_slide()
 	if direction.x<0:
+		animated_sprite_2d.offset.x=0.0
 		animated_sprite_2d.flip_h=false
 	if direction.x>0:
+		animated_sprite_2d.offset.x=-4.0
 		animated_sprite_2d.flip_h=true
 func set_is_run(value)->void:
 	if is_run!= value:

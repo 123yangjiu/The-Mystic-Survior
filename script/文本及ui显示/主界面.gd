@@ -3,9 +3,8 @@ extends Control
 @export var setting_screen:PackedScene
 
 func _ready() -> void:
-	#AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"),-6)
-	#AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Sound"),-6)
-	#AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"),-6)
+	GameEvent.is_start=false
+	GameEvent.start(true)
 	await get_tree().create_timer(0.2).timeout
 	main_theme.play()
 
@@ -13,6 +12,7 @@ func _on_开始_button_up() -> void:
 	get_tree().paused= false
 	GameEvent.difficulty=1
 	GameEvent.the_first=0
+	GameEvent.is_start=true
 	get_tree().change_scene_to_file("res://scene/game.scn")
 	GameEvent.difficulty_timer.start()
 	queue_free()

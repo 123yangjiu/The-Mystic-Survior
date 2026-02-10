@@ -1,0 +1,150 @@
+[gd_scene format=3 uid="uid://dm8b5ckjom6te"]
+
+[ext_resource type="Script" uid="uid://lbqci8if5ayv" path="res://script/upgrade/rocket.gd" id="1_e7o43"]
+[ext_resource type="PackedScene" uid="uid://c4aqf7g3512kf" path="res://scene/游戏功能组件/hitbox_component.tscn" id="2_e7o43"]
+[ext_resource type="Texture2D" uid="uid://be7mldja5tr25" path="res://scene/ability/AK47_ability/resource/RPG/rocket.png" id="3_bveje"]
+[ext_resource type="Texture2D" uid="uid://bwtxwbblelxpb" path="res://scene/ability/AK47_ability/resource/RPG/explosion-b.png" id="4_e7o43"]
+[ext_resource type="AudioStream" uid="uid://7wetuw2ve8m3" path="res://scene/ability/AK47_ability/resource/RPG/Rocket_Explosion-004.wav" id="5_1pmwx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6syyt"]
+size = Vector2(30, 8.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bveje"]
+radius = 60.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1pmwx"]
+atlas = ExtResource("4_e7o43")
+region = Rect2(80, 0, 80, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pwfc5"]
+atlas = ExtResource("4_e7o43")
+region = Rect2(160, 0, 80, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n61ap"]
+atlas = ExtResource("4_e7o43")
+region = Rect2(240, 0, 80, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wtmoi"]
+atlas = ExtResource("4_e7o43")
+region = Rect2(320, 0, 80, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_222aa"]
+atlas = ExtResource("4_e7o43")
+region = Rect2(400, 0, 80, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_66ehv"]
+atlas = ExtResource("4_e7o43")
+region = Rect2(480, 0, 80, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_74fcs"]
+atlas = ExtResource("4_e7o43")
+region = Rect2(560, 0, 80, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1hiif"]
+atlas = ExtResource("4_e7o43")
+region = Rect2(640, 0, 80, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m1ot4"]
+atlas = ExtResource("4_e7o43")
+region = Rect2(720, 0, 80, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3a83"]
+atlas = ExtResource("4_e7o43")
+region = Rect2(800, 0, 80, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wsw0c"]
+atlas = ExtResource("4_e7o43")
+region = Rect2(880, 0, 80, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2wx4n"]
+atlas = ExtResource("4_e7o43")
+region = Rect2(960, 0, 80, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wtr3p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1pmwx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pwfc5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n61ap")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wtmoi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_222aa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_66ehv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_74fcs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1hiif")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m1ot4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i3a83")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wsw0c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2wx4n")
+}],
+"loop": false,
+"name": &"explotion",
+"speed": 12.0
+}]
+
+[node name="Rocket" type="Node2D" unique_id=81678627 node_paths=PackedStringArray("hitbox_component", "timer")]
+script = ExtResource("1_e7o43")
+hitbox_component = NodePath("hitbox component")
+timer = NodePath("Timer")
+
+[node name="hitbox component" parent="." unique_id=971448297 instance=ExtResource("2_e7o43")]
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox component" unique_id=739219092]
+position = Vector2(14, 0.25)
+shape = SubResource("RectangleShape2D_6syyt")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1069465408]
+position = Vector2(14, -2)
+scale = Vector2(2, 1.5)
+texture = ExtResource("3_bveje")
+
+[node name="Timer" type="Timer" parent="." unique_id=1503254485]
+wait_time = 5.0
+autostart = true
+
+[node name="hitbox component2" parent="." unique_id=874950924 instance=ExtResource("2_e7o43")]
+collision_mask = 4
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox component2" unique_id=810990678]
+position = Vector2(14, 0)
+shape = SubResource("CircleShape2D_bveje")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="hitbox component2" unique_id=1770526037]
+visible = false
+self_modulate = Color(1, 1, 1, 0.78431374)
+position = Vector2(13, -7)
+scale = Vector2(2, 3)
+sprite_frames = SubResource("SpriteFrames_wtr3p")
+animation = &"explotion"
+frame = 11
+frame_progress = 1.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1833762548]
+stream = ExtResource("5_1pmwx")
+pitch_scale = 0.8
+bus = &"Sound"

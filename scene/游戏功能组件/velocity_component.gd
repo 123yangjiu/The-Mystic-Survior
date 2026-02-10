@@ -11,6 +11,9 @@ func _ready() -> void:
 	else :
 		var new_speed = float(speed)*44/50
 		speed = floor(new_speed)
+	if GameEvent.easy_mode.is_slow == true:
+		var new_speed = float(speed)*9/10
+		speed = floor(new_speed)
 
 func accelerate_to_player():
 	var owner_2D=owner as Node2D

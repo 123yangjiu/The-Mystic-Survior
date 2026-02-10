@@ -34,8 +34,7 @@ bus = &"Sound"
 
 [node name="ChangeBullet2" type="AudioStreamPlayer2D" parent="." unique_id=1333645441]
 stream = ExtResource("6_o4f2b")
-volume_db = -4.0
-pitch_scale = 1.5
+pitch_scale = 1.2
 bus = &"Sound"
 
 [node name="ZidanNumber" type="Label" parent="." unique_id=1740660800]
@@ -54,8 +53,14 @@ bus = &"Sound"
 
 [node name="bullet" type="AudioStreamPlayer2D" parent="." unique_id=471223934]
 stream = ExtResource("8_8ymbv")
-volume_db = 6.0
+volume_db = 8.0
 pitch_scale = 0.8
+bus = &"Sound"
+
+[node name="lashuan2" type="AudioStreamPlayer2D" parent="." unique_id=918507492]
+stream = ExtResource("6_5casq")
+volume_db = 5.0
+pitch_scale = 0.9
 bus = &"Sound"
 
 [connection signal="finished" from="ChangeBullet2" to="." method="_on_change_bullet_2_finished"]

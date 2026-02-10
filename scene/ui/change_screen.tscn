@@ -1,8 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://djyv3a54a2tlj"]
+[gd_scene format=3 uid="uid://djyv3a54a2tlj"]
 
 [ext_resource type="Theme" uid="uid://brtk7glajnjmp" path="res://resource/theme/no_theme.tres" id="1_5oakw"]
 [ext_resource type="Texture2D" uid="uid://bhjmdeamnulcw" path="res://sucai/UI/checkbutton-Sheet.png" id="1_gfjsm"]
-[ext_resource type="Script" uid="uid://cneqhi8ho5mht" path="res://script/文本及ui显示/change_screen.gd" id="1_ryvts"]
+[ext_resource type="Script" uid="uid://cneqhi8ho5mht" path="res://script/change/change_screen.gd" id="1_ryvts"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c6q57"]
 atlas = ExtResource("1_gfjsm")
@@ -75,7 +75,7 @@ animations = [{
 "speed": 18.0
 }]
 
-[node name="Change_screen" type="Button"]
+[node name="Change_screen" type="Button" unique_id=1603881200]
 offset_left = 285.0
 offset_top = 17.0
 offset_right = 335.0
@@ -83,12 +83,12 @@ offset_bottom = 37.0
 theme = ExtResource("1_5oakw")
 script = ExtResource("1_ryvts")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1192942698]
 position = Vector2(25.00003, 10)
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_ge732")
 
-[node name="Fullscreen" type="Label" parent="."]
+[node name="Right" type="Label" parent="." unique_id=346346938]
 modulate = Color(0, 0, 0, 1)
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 0
@@ -101,7 +101,7 @@ text = "全屏"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Window" type="Label" parent="."]
+[node name="Left" type="Label" parent="." unique_id=1578271352]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 0
 offset_left = -58.0
@@ -112,5 +112,3 @@ theme_override_font_sizes/font_size = 24
 text = "窗口"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[connection signal="button_up" from="." to="." method="_on_button_up"]

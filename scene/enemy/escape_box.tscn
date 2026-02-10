@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://r753wp2st35x"]
+
+[ext_resource type="Script" uid="uid://cr5hh7e48t0du" path="res://scene/enemy/escape_box.gd" id="1_3ja5m"]
+[ext_resource type="PackedScene" uid="uid://decyru6mnkuga" path="res://scene/游戏功能组件/hurtboxcomponent.tscn" id="2_myob4"]
+[ext_resource type="Texture2D" uid="uid://ccw1sevq6qydv" path="res://sucai/迷你地牢素材/used/tile_0089.png" id="3_l4f3i"]
+[ext_resource type="Texture2D" uid="uid://bopbigjlqgvr8" path="res://sucai/迷你地牢素材/used/tile_0090.png" id="4_8ai82"]
+[ext_resource type="Texture2D" uid="uid://byrikbil0dp1x" path="res://sucai/迷你地牢素材/used/tile_0091.png" id="5_ibtlt"]
+[ext_resource type="Texture2D" uid="uid://b1tvv6dq2k6no" path="res://sucai/迷你地牢素材/used/tile_0092.png" id="6_2sepu"]
+[ext_resource type="PackedScene" uid="uid://bnactnfyipltl" path="res://scene/游戏功能组件/health_component.tscn" id="7_tq3r5"]
+[ext_resource type="PackedScene" uid="uid://g6ks4dc6kpht" path="res://scene/游戏功能组件/velocity_component.tscn" id="8_csynj"]
+[ext_resource type="Script" uid="uid://tjaflxnpe5iy" path="res://特殊掉落.gd" id="9_6os7e"]
+[ext_resource type="PackedScene" uid="uid://i5imcyd15vix" path="res://scene/游戏 物件/exprience_bottle  .tscn" id="10_8ifii"]
+[ext_resource type="PackedScene" uid="uid://daaqcmminiyk1" path="res://scene/游戏 物件/blood_bottle .tscn" id="11_1d5pr"]
+[ext_resource type="PackedScene" uid="uid://f15fc5ggcq0l" path="res://scene/游戏 物件/bonus_bottle.tscn" id="12_y58w1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vcrpj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wxa6r"]
+atlas = ExtResource("3_l4f3i")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cji6c"]
+atlas = ExtResource("4_8ai82")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_84al2"]
+atlas = ExtResource("5_ibtlt")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x65gu"]
+atlas = ExtResource("6_2sepu")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fq6t5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wxa6r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cji6c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_84al2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x65gu")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ntng8"]
+radius = 10.607901
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8egh0"]
+radius = 5.0
+
+[node name="box" type="CharacterBody2D" unique_id=1483921173 groups=["初级"]]
+collision_layer = 40
+collision_mask = 33
+script = ExtResource("1_3ja5m")
+
+[node name="Hurtboxcomponent" parent="." unique_id=845240906 node_paths=PackedStringArray("health_component") groups=["enemy"] instance=ExtResource("2_myob4")]
+collision_layer = 4
+health_component = NodePath("../health_component")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Hurtboxcomponent" unique_id=564238404]
+shape = SubResource("CircleShape2D_vcrpj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=197691247 groups=["enemy"]]
+position = Vector2(0, -1.9999995)
+scale = Vector2(1.2553042, 1.0013652)
+sprite_frames = SubResource("SpriteFrames_fq6t5")
+animation = &"run"
+autoplay = "run"
+frame_progress = 0.41755745
+
+[node name="对角色造成伤害的碰撞" type="CollisionShape2D" parent="." unique_id=479685579 groups=["enemy"]]
+position = Vector2(-4.7683716e-07, 4.7683716e-07)
+scale = Vector2(0.47134686, 0.4559797)
+shape = SubResource("CircleShape2D_ntng8")
+
+[node name="health_component" parent="." unique_id=1000174377 instance=ExtResource("7_tq3r5")]
+max_health = 300.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=792209466]
+shape = SubResource("CircleShape2D_8egh0")
+
+[node name="velocity_component" parent="." unique_id=84853678 instance=ExtResource("8_csynj")]
+speed = 105
+acceleration = 8.0
+
+[node name="特殊掉落" type="Node" parent="." unique_id=1040710141 node_paths=PackedStringArray("health_component")]
+script = ExtResource("9_6os7e")
+drop_persent = 0.8
+drop_thing = Array[PackedScene]([ExtResource("10_8ifii"), ExtResource("11_1d5pr"), ExtResource("12_y58w1")])
+health_component = NodePath("../health_component")
