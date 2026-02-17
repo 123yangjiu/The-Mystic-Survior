@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://r753wp2st35x"]
 
-[ext_resource type="Script" uid="uid://cr5hh7e48t0du" path="res://scene/enemy/escape_box.gd" id="1_3ja5m"]
+[ext_resource type="Script" uid="uid://cr5hh7e48t0du" path="res://script/enemy/escape_box.gd" id="1_3ja5m"]
 [ext_resource type="PackedScene" uid="uid://decyru6mnkuga" path="res://scene/游戏功能组件/hurtboxcomponent.tscn" id="2_myob4"]
 [ext_resource type="Texture2D" uid="uid://ccw1sevq6qydv" path="res://sucai/迷你地牢素材/used/tile_0089.png" id="3_l4f3i"]
 [ext_resource type="Texture2D" uid="uid://bopbigjlqgvr8" path="res://sucai/迷你地牢素材/used/tile_0090.png" id="4_8ai82"]
@@ -8,10 +8,11 @@
 [ext_resource type="Texture2D" uid="uid://b1tvv6dq2k6no" path="res://sucai/迷你地牢素材/used/tile_0092.png" id="6_2sepu"]
 [ext_resource type="PackedScene" uid="uid://bnactnfyipltl" path="res://scene/游戏功能组件/health_component.tscn" id="7_tq3r5"]
 [ext_resource type="PackedScene" uid="uid://g6ks4dc6kpht" path="res://scene/游戏功能组件/velocity_component.tscn" id="8_csynj"]
-[ext_resource type="Script" uid="uid://tjaflxnpe5iy" path="res://特殊掉落.gd" id="9_6os7e"]
-[ext_resource type="PackedScene" uid="uid://i5imcyd15vix" path="res://scene/游戏 物件/exprience_bottle  .tscn" id="10_8ifii"]
-[ext_resource type="PackedScene" uid="uid://daaqcmminiyk1" path="res://scene/游戏 物件/blood_bottle .tscn" id="11_1d5pr"]
-[ext_resource type="PackedScene" uid="uid://f15fc5ggcq0l" path="res://scene/游戏 物件/bonus_bottle.tscn" id="12_y58w1"]
+[ext_resource type="PackedScene" uid="uid://i5imcyd15vix" path="res://scene/游戏物件/exprience_bottle.tscn" id="10_8ifii"]
+[ext_resource type="PackedScene" uid="uid://daaqcmminiyk1" path="res://scene/游戏物件/blood_bottle.tscn" id="11_1d5pr"]
+[ext_resource type="PackedScene" uid="uid://f15fc5ggcq0l" path="res://scene/游戏物件/bonus_bottle.tscn" id="12_y58w1"]
+[ext_resource type="PackedScene" uid="uid://c0i7tc6xpk0n8" path="res://scene/游戏功能组件/drop_component.tscn" id="13_l4f3i"]
+[ext_resource type="Script" uid="uid://dgnjbnswkh1hb" path="res://scene/游戏功能组件/box_drop_component.gd" id="14_8ai82"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vcrpj"]
 
@@ -89,11 +90,15 @@ max_health = 300.0
 shape = SubResource("CircleShape2D_8egh0")
 
 [node name="velocity_component" parent="." unique_id=84853678 instance=ExtResource("8_csynj")]
-speed = 105
+speed = 85
 acceleration = 8.0
 
-[node name="特殊掉落" type="Node" parent="." unique_id=1040710141 node_paths=PackedStringArray("health_component")]
-script = ExtResource("9_6os7e")
-drop_persent = 0.8
-drop_thing = Array[PackedScene]([ExtResource("10_8ifii"), ExtResource("11_1d5pr"), ExtResource("12_y58w1")])
+[node name="drop_component" parent="." unique_id=533420198 node_paths=PackedStringArray("health_component") instance=ExtResource("13_l4f3i")]
+script = ExtResource("14_8ai82")
+drop_thingandpersent = Dictionary[PackedScene, float]({
+ExtResource("10_8ifii"): 0.8,
+ExtResource("11_1d5pr"): 0.1,
+ExtResource("12_y58w1"): 0.2
+})
+drop_range = 5
 health_component = NodePath("../health_component")

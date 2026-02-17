@@ -6,6 +6,7 @@ class_name Player
 @onready var health_bar: ProgressBar = $HealthBar
 @export var died_screen:PackedScene
 @onready var all_gun_ability_controller: AllGunAbilityController = $abilitymanager/AllGunAbilityController
+@onready var light_ability_controller: Node2D = $abilitymanager/light_ability_controller
 
 var enter_body_number_10=0
 var enter_body_number_17=0
@@ -36,7 +37,7 @@ func _ready() -> void:
 	#改变实时发出信号让血条实时变化
 	health_bar.value=health_component.get_health_persent()#初始化血量为满血
 	GameEvent.blood_bottle_collected.connect(on_blood_bottle_collected)
-	if ! GameEvent.is_hard:
+	if ! GameEvent.mode_index>=2:
 		enter_body_number_10_hurt=6
 		enter_body_number_17_hurt=10
 		enter_body_number_30_hurt=15
@@ -62,9 +63,12 @@ func _physics_process(_delta: float) -> void:
 	if direction.x<0:
 		animated_sprite_2d.offset.x=0.0
 		animated_sprite_2d.flip_h=false
+		GameEvent.play_right=false
 	if direction.x>0:
 		animated_sprite_2d.offset.x=-4.0
 		animated_sprite_2d.flip_h=true
+		light_ability_controller.scale.x=1
+		GameEvent.play_right=true
 func set_is_run(value)->void:
 	if is_run!= value:
 		match value:

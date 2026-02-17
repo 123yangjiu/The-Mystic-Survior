@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://x6wtjmpfecww"]
 
 [ext_resource type="Texture2D" uid="uid://2m2rr8d36dxo" path="res://sucai/UI/暂停.png" id="1_1l2nq"]
-[ext_resource type="Script" uid="uid://xtnovbr1m08j" path="res://script/文本及ui显示/stop_button.gd" id="2_k62rx"]
+[ext_resource type="Script" uid="uid://xtnovbr1m08j" path="res://script/文本及ui显示/button/stop_button.gd" id="2_k62rx"]
 [ext_resource type="PackedScene" uid="uid://5odfsqq8r60t" path="res://scene/ui/settingscreen_ingame.tscn" id="3_k62rx"]
 
 [node name="StopButton" type="TextureButton" unique_id=1247685650]

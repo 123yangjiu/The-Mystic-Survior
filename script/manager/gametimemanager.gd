@@ -8,6 +8,9 @@ signal victory
 var one_shot:=false
 
 func _ready() -> void:
+	if GameEvent.hard_mode[GameEvent.HARD_MODE.is_long]:
+		timer.wait_time=900
+		timer.start()
 	timer.timeout.connect(on_timer_timeout)
 func get_time_elaspsed():
 	var time= timer.wait_time-timer.time_left

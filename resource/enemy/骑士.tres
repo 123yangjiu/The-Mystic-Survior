@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="EnemyUnlockEntry" load_steps=3 format=3 uid="uid://bwvsf8rcctefe"]
+[gd_resource type="Resource" script_class="EnemyUnlockEntry" format=3 uid="uid://bwvsf8rcctefe"]
 
 [ext_resource type="PackedScene" uid="uid://dg0lowfwv0dg3" path="res://scene/enemy/骑士.tscn" id="1_wo67c"]
 [ext_resource type="Script" uid="uid://b8kynvj5xuaby" path="res://resource/enemy/enemy.gd" id="2_6stlx"]
@@ -8,3 +8,4 @@ script = ExtResource("2_6stlx")
 scene = ExtResource("1_wo67c")
 unlock_difficulty = 14
 weight = 2.5
+ID = 8

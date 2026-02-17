@@ -9,10 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://bnactnfyipltl" path="res://scene/游戏功能组件/health_component.tscn" id="7_7vn3c"]
 [ext_resource type="Script" uid="uid://4soj2oikgoom" path="res://script/测试场景/测试用health_component.gd" id="8_25m3l"]
 [ext_resource type="PackedScene" uid="uid://g6ks4dc6kpht" path="res://scene/游戏功能组件/velocity_component.tscn" id="8_r5nn1"]
-[ext_resource type="Script" uid="uid://tjaflxnpe5iy" path="res://特殊掉落.gd" id="9_sg1qh"]
-[ext_resource type="PackedScene" uid="uid://i5imcyd15vix" path="res://scene/游戏 物件/exprience_bottle  .tscn" id="10_jat28"]
-[ext_resource type="PackedScene" uid="uid://daaqcmminiyk1" path="res://scene/游戏 物件/blood_bottle .tscn" id="11_3xbq8"]
-[ext_resource type="PackedScene" uid="uid://f15fc5ggcq0l" path="res://scene/游戏 物件/bonus_bottle.tscn" id="12_s0lfp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vcrpj"]
 
@@ -91,12 +87,6 @@ max_health = 999999999.0
 shape = SubResource("CircleShape2D_8egh0")
 
 [node name="velocity_component" parent="." unique_id=320291160 instance=ExtResource("8_r5nn1")]
-
-[node name="特殊掉落" type="Node" parent="." unique_id=322254968 node_paths=PackedStringArray("health_component")]
-script = ExtResource("9_sg1qh")
-drop_persent = 0.8
-drop_thing = Array[PackedScene]([ExtResource("10_jat28"), ExtResource("11_3xbq8"), ExtResource("12_s0lfp")])
-health_component = NodePath("../health_component")
 
 [node name="Label" type="Label" parent="." unique_id=1746240753]
 offset_left = -48.0

@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://bnactnfyipltl" path="res://scene/游戏功能组件/health_component.tscn" id="4_iuixe"]
 [ext_resource type="PackedScene" uid="uid://c0i7tc6xpk0n8" path="res://scene/游戏功能组件/drop_component.tscn" id="5_qgpht"]
 [ext_resource type="PackedScene" uid="uid://g6ks4dc6kpht" path="res://scene/游戏功能组件/velocity_component.tscn" id="6_60ack"]
-[ext_resource type="Script" uid="uid://ynxy18f6xc5n" path="res://scene/游戏功能组件/石头人掉落.gd" id="6_d7sbi"]
-[ext_resource type="PackedScene" uid="uid://f15fc5ggcq0l" path="res://scene/游戏 物件/bonus_bottle.tscn" id="7_iuixe"]
+[ext_resource type="PackedScene" uid="uid://f15fc5ggcq0l" path="res://scene/游戏物件/bonus_bottle.tscn" id="7_iuixe"]
+[ext_resource type="PackedScene" uid="uid://daaqcmminiyk1" path="res://scene/游戏物件/blood_bottle.tscn" id="7_qgpht"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vcrpj"]
 radius = 36.0
@@ -376,8 +376,10 @@ disabled = true
 max_health = 200.0
 
 [node name="drop_component" parent="." unique_id=580805814 node_paths=PackedStringArray("health_component") instance=ExtResource("5_qgpht")]
-script = ExtResource("6_d7sbi")
-drop_thing = ExtResource("7_iuixe")
+drop_thingandpersent = Dictionary[PackedScene, float]({
+ExtResource("7_iuixe"): 0.3,
+ExtResource("7_qgpht"): 0.1
+})
 health_component = NodePath("../health_component")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=39238020]
@@ -390,4 +392,3 @@ libraries/ = SubResource("AnimationLibrary_8yfii")
 autoplay = &"move"
 
 [node name="velocity_component" parent="." unique_id=1132711392 instance=ExtResource("6_60ack")]
-speed = 50

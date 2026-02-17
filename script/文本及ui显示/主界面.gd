@@ -9,7 +9,7 @@ func _ready() -> void:
 	main_theme.play()
 
 func _on_开始_button_up() -> void:
-	get_tree().paused= false
+	GameEvent.paused=0
 	GameEvent.difficulty=1
 	GameEvent.the_first=0
 	GameEvent.is_start=true

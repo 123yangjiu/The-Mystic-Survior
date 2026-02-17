@@ -7,7 +7,7 @@ var can_rush := false
 var rush_speed:=850.0
 
 func _ready() -> void:
-	if GameEvent.easy_mode.is_slow:
+	if GameEvent.easy_mode[GameEvent.EASY_MODE.is_slow]:
 		rush_speed *=0.9
 	body_entered.connect(on_body_enter)
 	body_exited.connect(on_body_exited)

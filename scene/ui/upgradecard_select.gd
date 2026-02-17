@@ -13,7 +13,7 @@ func set_ability_upgrade(upgrade:AbilityUpgrade):
 
 func _gui_input(event: InputEvent) -> void:
 	if event.is_action_pressed("click"):
-		GameEvent.easy_mode.is_initial=self_upgrade
+		GameEvent.easy_mode[GameEvent.EASY_MODE.is_initial] =self_upgrade
 		free_object.queue_free()
 
 func _on_texture_rect_mouse_entered() -> void:

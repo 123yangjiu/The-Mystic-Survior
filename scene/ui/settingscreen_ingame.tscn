@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://8snn1li86mb5" path="res://scene/ui/sound_bar.tscn" id="5_8c06s"]
 [ext_resource type="Theme" uid="uid://5bh541wa60l3" path="res://resource/theme/green_theme.tres" id="6_q08lb"]
 [ext_resource type="PackedScene" uid="uid://c4odu6gj71lxh" path="res://scene/ui/return_to_maintheme.tscn" id="7_1fpl6"]
+[ext_resource type="PackedScene" uid="uid://drdfjqj1e2kg4" path="res://scene/ui/setting/change_yaogan.tscn" id="8_bisql"]
 
 [node name="Settingscreen" type="CanvasLayer" unique_id=2013600972]
 process_mode = 3
@@ -55,13 +56,13 @@ offset_right = 55.0
 offset_bottom = 33.666656
 
 [node name="Button" type="Button" parent="." unique_id=843017270]
-custom_minimum_size = Vector2(100, 50)
+custom_minimum_size = Vector2(165, 50)
 offset_left = 393.0
 offset_top = 285.0
 offset_right = 493.0
 offset_bottom = 335.0
 theme = ExtResource("6_q08lb")
-text = "退出"
+text = "返回游戏"
 
 [node name="Label" type="Label" parent="Button" unique_id=438277953]
 process_mode = 4
@@ -80,5 +81,11 @@ offset_left = 81.0
 offset_top = 286.0
 offset_right = 286.0
 offset_bottom = 336.0
+
+[node name="ChangeYaogan" parent="." unique_id=1603881200 instance=ExtResource("8_bisql")]
+offset_left = 295.0
+offset_top = 99.0
+offset_right = 345.0
+offset_bottom = 119.0
 
 [connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

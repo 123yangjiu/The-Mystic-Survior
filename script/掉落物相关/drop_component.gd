@@ -1,27 +1,42 @@
+class_name DropComment
 extends Node
 
-@export_range(0,1) var drop_exprience_persent:float=0.7
-@export_range(0,1) var drop_blood_persent:float=0.04
+@export var drop_thingandpersent:Dictionary[PackedScene,float]={
+	preload("uid://i5imcyd15vix"):0.7,
+	preload("uid://daaqcmminiyk1"):0.04,
+	preload("uid://f15fc5ggcq0l"):0.0
+}
 @export var drop_range :=1
-@export var drop_thing:Array[PackedScene]
 @export var health_component:Node
+var all_dropthing:Array
+var all_droppresent:Array
 
 func _ready() -> void:
 	(health_component as HealthComponent).died.connect(on_died)
-	GameEvent.ability_upgrade_add.connect(on_ability_upgrade_add)
+	#GameEvent.ability_upgrade_add.connect(on_ability_upgrade_add)
+	for i in drop_thingandpersent.keys():
+		all_dropthing.append(i)
+		all_droppresent.append(drop_thingandpersent[i])
+
 func on_died():
 	var entities_Layer=get_tree().get_first_node_in_group("实体图层")
-	var spawn_position=(owner as Node2D).global_position
-	if randf()<drop_exprience_persent:
-		var experience_thing_instance=drop_thing[0].instantiate() as Node2D
-		call_deferred("add_bottle",entities_Layer,spawn_position,experience_thing_instance)
-	if randf()<drop_blood_persent:
-		var blood_thing_instance=drop_thing[1].instantiate() as Node2D
-		call_deferred("add_bottle",entities_Layer,spawn_position,blood_thing_instance)
-func on_ability_upgrade_add(upgrade:AbilityUpgrade,_current_upgrade:Dictionary):
-	#监听所有关于剑的升级
-	if upgrade.ID=="增加生命瓶":
-		drop_blood_persent+=drop_blood_persent
+	for i in drop_range:
+		for index in all_dropthing.size():
+			if randf()<all_droppresent[index]:
+				var drop_instance=all_dropthing[index].instantiate() as Node2D
+				call_deferred("add_bottle",entities_Layer,get_position(index),drop_instance)
+
 func add_bottle(entities_Layer:Node,spawn_position:Vector2,bottle_instance:Node2D):
 	entities_Layer.add_child(bottle_instance)
 	bottle_instance.global_position=spawn_position
+
+func get_position(index=0):
+	if index==0:
+		return (owner as Node2D).global_position
+	else:
+		var angle :float= TAU*index / 3.0
+		var random_R=get_rangR()
+		return (owner as Node2D).global_position+Vector2.RIGHT.rotated(angle) *float(random_R)
+
+func get_rangR():
+	return randf_range(5,10)

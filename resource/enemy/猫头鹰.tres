@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="EnemyUnlockEntry" load_steps=3 format=3 uid="uid://ckcolpwqwrycv"]
+[gd_resource type="Resource" script_class="EnemyUnlockEntry" format=3 uid="uid://ckcolpwqwrycv"]
 
 [ext_resource type="PackedScene" uid="uid://bcl20xpjeekut" path="res://scene/enemy/猫头鹰.tscn" id="1_si2b4"]
 [ext_resource type="Script" uid="uid://b8kynvj5xuaby" path="res://resource/enemy/enemy.gd" id="2_5do7b"]
@@ -7,4 +7,5 @@
 script = ExtResource("2_5do7b")
 scene = ExtResource("1_si2b4")
 unlock_difficulty = 8
-weight = 10.0
+weight = 1.5
+ID = 4

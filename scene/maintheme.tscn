@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://bu0vl6xmgnpud" path="res://sucai/UI/标题.png" id="4_1wghb"]
 [ext_resource type="Theme" uid="uid://5bh541wa60l3" path="res://resource/theme/green_theme.tres" id="5_w6isx"]
 [ext_resource type="AudioStream" uid="uid://drwd3vjuweyx" path="res://sucai/back_music/Brand New_0.wav" id="6_dggem"]
-[ext_resource type="PackedScene" uid="uid://bxsd6pwev6oei" path="res://scene/ui/change_nandu.tscn" id="7_bcyn3"]
 [ext_resource type="PackedScene" uid="uid://bvbt0jr1g354u" path="res://scene/ui/tujian_button.tscn" id="8_f5s45"]
 [ext_resource type="PackedScene" uid="uid://c56r3vhi7cpoo" path="res://scene/ui/nandu_select.tscn" id="9_prba8"]
 
@@ -92,14 +91,6 @@ text = "离开
 [node name="MainTheme" type="AudioStreamPlayer" parent="." unique_id=1450907370]
 stream = ExtResource("6_dggem")
 bus = &"Music"
-
-[node name="Change_screen" parent="." unique_id=659675003 instance=ExtResource("7_bcyn3")]
-visible = false
-layout_mode = 0
-offset_left = 89.0
-offset_top = 173.0
-offset_right = 139.0
-offset_bottom = 193.0
 
 [node name="Button" parent="." unique_id=413955022 instance=ExtResource("8_f5s45")]
 layout_mode = 0

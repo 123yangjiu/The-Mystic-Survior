@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cq1npoewigh57"]
 
 [ext_resource type="Theme" uid="uid://5bh541wa60l3" path="res://resource/theme/green_theme.tres" id="1_3uvqp"]
-[ext_resource type="Script" uid="uid://dp6rq2ogsknr8" path="res://script/文本及ui显示/skill_tujian_button.gd" id="2_2x4uw"]
+[ext_resource type="Script" uid="uid://dp6rq2ogsknr8" path="res://script/文本及ui显示/button/skill_tujian_button.gd" id="2_2x4uw"]
 [ext_resource type="PackedScene" uid="uid://c58yckyjy7xpa" path="res://scene/ui/skill_tujian.tscn" id="3_gvooo"]
 
 [node name="SkillTujian" type="Button" unique_id=647925618]

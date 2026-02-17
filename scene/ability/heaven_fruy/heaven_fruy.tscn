@@ -1,7 +1,7 @@
-[gd_scene load_steps=23 format=3 uid="uid://baqnf2psyqdqg"]
+[gd_scene format=3 uid="uid://baqnf2psyqdqg"]
 
 [ext_resource type="Texture2D" uid="uid://howlx124dvo5" path="res://scene/ability/heaven_fruy/Original size/Heaven's Fury Spritesheet.png" id="1_1tio6"]
-[ext_resource type="Script" uid="uid://0xwmfjjdyeit" path="res://scene/ability/heaven_fruy/heaven_fruy.gd" id="1_p16eu"]
+[ext_resource type="Script" uid="uid://fxejfxambckv" path="res://script/ability/heaven_fruy.gd" id="1_2p8la"]
 [ext_resource type="PackedScene" uid="uid://c4aqf7g3512kf" path="res://scene/游戏功能组件/hitbox_component.tscn" id="3_2p8la"]
 
 [sub_resource type="Animation" id="Animation_p16eu"]
@@ -237,22 +237,22 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_n6qmd"]
 radius = 22.0
 
-[node name="heaven_fruy" type="Node2D"]
-script = ExtResource("1_p16eu")
+[node name="heaven_fruy" type="Node2D" unique_id=1214928564 node_paths=PackedStringArray("hitbox_component", "animation_player")]
+script = ExtResource("1_2p8la")
+hitbox_component = NodePath("hitbox component")
+animation_player = NodePath("AnimationPlayer")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_2p8la")
-}
-autoplay = "shoot"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=896377794]
+libraries/ = SubResource("AnimationLibrary_2p8la")
+autoplay = &"shoot"
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1401567845]
 position = Vector2(0, -23)
 sprite_frames = SubResource("SpriteFrames_p7n1l")
 frame = 13
 
-[node name="hitbox component" parent="." instance=ExtResource("3_2p8la")]
+[node name="hitbox component" parent="." unique_id=1271204652 instance=ExtResource("3_2p8la")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox component"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox component" unique_id=1552483658]
 shape = SubResource("CircleShape2D_n6qmd")
 disabled = true

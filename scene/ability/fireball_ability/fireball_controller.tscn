@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://clk86unthnvj5"]
 
-[ext_resource type="Script" uid="uid://c8gdrjifusycy" path="res://script/upgrade/fireball_controller.gd" id="1_dvaxo"]
+[ext_resource type="Script" uid="uid://c8gdrjifusycy" path="res://script/ability/controller/fireball_controller.gd" id="1_dvaxo"]
 [ext_resource type="PackedScene" uid="uid://cbdxmcmld8om5" path="res://scene/ability/fireball_ability/fireball.tscn" id="2_de04s"]
 [ext_resource type="AudioStream" uid="uid://e2v05r1ognvx" path="res://scene/ability/fireball_ability/火球2.WAV" id="3_157to"]
 

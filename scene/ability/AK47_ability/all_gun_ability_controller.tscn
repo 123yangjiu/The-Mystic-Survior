@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ki5crcnykid1"]
 
-[ext_resource type="Script" uid="uid://cft2kq1xkflym" path="res://script/upgrade/all_gun_ability_controller.gd" id="1_6u0b3"]
+[ext_resource type="Script" uid="uid://cft2kq1xkflym" path="res://script/ability/controller/all_gun_ability_controller.gd" id="1_6u0b3"]
 [ext_resource type="PackedScene" uid="uid://ca8mol1vj7qlk" path="res://scene/ability/AK47_ability/ak_47_ability_controller.tscn" id="1_64fn2"]
 [ext_resource type="PackedScene" uid="uid://fqpwlqso0ple" path="res://scene/ability/AK47_ability/resource/shot_gun/shotgun_ability_controller.tscn" id="3_0knca"]
 [ext_resource type="PackedScene" uid="uid://bwytb40malx0h" path="res://scene/ability/AK47_ability/resource/Sniper_Rifle/sniper_rifle_ability_controller.tscn" id="4_kuiac"]

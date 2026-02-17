@@ -1,3 +1,4 @@
+class_name Enemy
 extends CharacterBody2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var health_component:HealthComponent = $health_component

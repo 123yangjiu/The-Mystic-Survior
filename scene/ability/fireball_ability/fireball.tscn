@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cbdxmcmld8om5"]
 
-[ext_resource type="Script" uid="uid://bigm83ou6qlra" path="res://script/upgrade/fireball.gd" id="1_eoyyy"]
+[ext_resource type="Script" uid="uid://bigm83ou6qlra" path="res://script/ability/fireball.gd" id="1_eoyyy"]
 [ext_resource type="Texture2D" uid="uid://xmg75pmcojwu" path="res://scene/ability/fireball_ability/Red Fire/Fire1.png" id="2_6vuyq"]
 [ext_resource type="PackedScene" uid="uid://c4aqf7g3512kf" path="res://scene/游戏功能组件/hitbox_component.tscn" id="3_kauq7"]
 [ext_resource type="Texture2D" uid="uid://b1s826suj4gg4" path="res://scene/ability/fireball_ability/Red Fire/Fire2.png" id="3_ow0vf"]

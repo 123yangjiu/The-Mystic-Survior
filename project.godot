@@ -24,6 +24,13 @@ config/icon="uid://b5oni5ikgr5pr"
 
 GameEvent="*res://scene/游戏事件/gameEvent.tscn"
 
+[copilot]
+
+provider="Ollama"
+endpoint="http://localhost:11434"
+model="deepseek-coder:6.7b"
+api_key=""
+
 [display]
 
 window/size/viewport_width=640

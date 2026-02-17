@@ -3,7 +3,7 @@ extends ChangeButton
 @export var skill:PackedScene
 
 func get_check_object():
-	return GameEvent.easy_mode.is_initial
+	return GameEvent.easy_mode[GameEvent.EASY_MODE.is_initial]
 func _on_button_up() -> void:
 	var screen = get_check_object()
 	if !screen:
@@ -17,7 +17,7 @@ func target()->void:
 	add_child(skill_screen)
 
 func back()->void:
-	GameEvent.easy_mode.is_initial=false
+	GameEvent.easy_mode[GameEvent.EASY_MODE.is_initial]=false
 
 func to_initial()->void:
 	self.button_up.connect(_on_button_up)

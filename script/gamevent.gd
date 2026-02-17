@@ -80,28 +80,56 @@ func record_db(_name:String,value)->void:
 	elif _name=="Music":
 		music_db=value
 
+#管理摇杆是否固定
+var is_fixed:=false
+
 #限制出怪量
 var current_monster :=0.0
 
 var play_global_position:=Vector2(0,0)
+var play_right:=true
+
+
+enum EASY_MODE{
+	is_slow,
+	is_initial,
+	is_ascend
+}
+enum HARD_MODE{
+	is_long,
+	is_erase_ability,
+	is_max_3,
+	is_more
+}
 
 signal mode_change
 #普通模式：1.怪物移速下降10%；2.刷怪速度下降很多；3.玩家伤害提高10%;4.玩家受伤减少1半
-var is_hard:=false
+#var is_hard:=false
 
 #简单模式:
-var easy_mode:Dictionary[String,Variant]={
-	"is_slow":false,
-	"is_initial":false,
-	"is_ascend":false
+var easy_mode:Dictionary[EASY_MODE,Variant]={
+	EASY_MODE.is_slow:false,
+	EASY_MODE.is_initial:false,
+	EASY_MODE.is_ascend:false
 }
+#0->简单，1-》普通，2-》困难，3-》挑战
 var mode_index:=-1 :set=set_mode
 func set_mode(value)->void:
 	mode_index=value
 	if mode_index!=0:
 		for i in easy_mode:
 			easy_mode[i] =false
-		print("艺术案件：",easy_mode)
 	if mode_index!=2:
-		is_hard=false
+		pass
+	if mode_index!=3:
+		for i in hard_mode:
+			hard_mode[i] =false
 	mode_change.emit()
+	
+#挑战模式：1.游戏时长加长5分钟；2.减少一个自带能力；3.所有能力最多使用三次；4.刷怪增加
+var hard_mode:Dictionary[HARD_MODE,Variant]={
+	HARD_MODE.is_long:false,
+	HARD_MODE.is_erase_ability:false,
+	HARD_MODE.is_max_3:false,
+	HARD_MODE.is_more:false
+}

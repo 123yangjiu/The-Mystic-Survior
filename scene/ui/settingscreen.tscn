@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://y0d83doilca2" path="res://scene/ui/music_bar.tscn" id="4_5xyoi"]
 [ext_resource type="PackedScene" uid="uid://8snn1li86mb5" path="res://scene/ui/sound_bar.tscn" id="5_cljgu"]
 [ext_resource type="Theme" uid="uid://5bh541wa60l3" path="res://resource/theme/green_theme.tres" id="6_qphwn"]
+[ext_resource type="PackedScene" uid="uid://drdfjqj1e2kg4" path="res://scene/ui/setting/change_yaogan.tscn" id="7_qphwn"]
 
 [node name="Settingscreen" type="CanvasLayer" unique_id=2013600972]
 process_mode = 3
@@ -32,7 +33,7 @@ scale = Vector2(1.5, 1.5)
 
 [node name="SoundBus" type="Node2D" parent="." unique_id=360939152]
 process_mode = 3
-position = Vector2(296, 180)
+position = Vector2(296, 198)
 scale = Vector2(1.5, 1.5)
 
 [node name="Master" parent="SoundBus" unique_id=392021447 instance=ExtResource("3_ghmbv")]
@@ -72,5 +73,11 @@ offset_right = 73.0
 offset_bottom = 34.0
 theme_override_font_sizes/font_size = 36
 text = "退出"
+
+[node name="ChangeYaogan" parent="." unique_id=1603881200 instance=ExtResource("7_qphwn")]
+offset_left = 295.0
+offset_top = 99.0
+offset_right = 345.0
+offset_bottom = 119.0
 
 [connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

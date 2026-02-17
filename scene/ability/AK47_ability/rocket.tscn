@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dm8b5ckjom6te"]
 
-[ext_resource type="Script" uid="uid://lbqci8if5ayv" path="res://script/upgrade/rocket.gd" id="1_e7o43"]
+[ext_resource type="Script" uid="uid://lbqci8if5ayv" path="res://script/ability/rocket.gd" id="1_e7o43"]
 [ext_resource type="PackedScene" uid="uid://c4aqf7g3512kf" path="res://scene/游戏功能组件/hitbox_component.tscn" id="2_e7o43"]
 [ext_resource type="Texture2D" uid="uid://be7mldja5tr25" path="res://scene/ability/AK47_ability/resource/RPG/rocket.png" id="3_bveje"]
 [ext_resource type="Texture2D" uid="uid://bwtxwbblelxpb" path="res://scene/ability/AK47_ability/resource/RPG/explosion-b.png" id="4_e7o43"]

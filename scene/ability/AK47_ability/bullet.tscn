@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://n4as4qw7qe06"]
 
-[ext_resource type="Script" uid="uid://iflf2kyf7645" path="res://scene/ability/AK47_ability/bullet.gd" id="1_6syyt"]
+[ext_resource type="Script" uid="uid://iflf2kyf7645" path="res://script/ability/bullet.gd" id="1_6syyt"]
 [ext_resource type="PackedScene" uid="uid://c4aqf7g3512kf" path="res://scene/游戏功能组件/hitbox_component.tscn" id="1_67ydp"]
 [ext_resource type="Texture2D" uid="uid://dsf466c4v7t2v" path="res://scene/ability/AK47_ability/resource/zidan.png" id="2_80ovh"]
 

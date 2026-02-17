@@ -17,16 +17,13 @@ func _ready() -> void:
 		return
 	initial_node.visible=true
 	current_node=initial_node
+	for node in all_mode:
+		if node != initial_node:
+			node.visible=false
 	
 
 func _on_name_pressed() -> void:
 	var current_index =all_mode.find(current_node)
-	match current_index:
-		1:
-			GameEvent.is_hard=false
-		2:
-			print("已执行")
-			GameEvent.is_hard=true
 	GameEvent.mode_index=current_index
 	queue_free()
 

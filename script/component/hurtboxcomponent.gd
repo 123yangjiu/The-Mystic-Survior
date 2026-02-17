@@ -13,7 +13,7 @@ func on_area_enter(other_area:Area2D):
 		return
 	var hitbox_component:=other_area as HitboxComponent
 	var new_damage = hitbox_component.damage
-	if ! GameEvent.is_hard:
+	if !  GameEvent.mode_index>=2:
 		new_damage=floori(float(new_damage)*1.1)+1 
 	else :
 		new_damage=floori(float(new_damage)*0.99)+1

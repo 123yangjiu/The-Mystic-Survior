@@ -1,12 +1,14 @@
 [gd_scene format=3 uid="uid://b6vs7ye342hb6"]
 
-[ext_resource type="Script" uid="uid://dm86jujt6mibn" path="res://script/upgrade/heaven_fruy_controller.gd" id="1_rhfot"]
+[ext_resource type="Script" uid="uid://dqrmpnnb0mu0y" path="res://script/ability/controller/heaven_fruy_controller2.gd" id="1_smcwq"]
 [ext_resource type="PackedScene" uid="uid://baqnf2psyqdqg" path="res://scene/ability/heaven_fruy/heaven_fruy.tscn" id="2_smcwq"]
 [ext_resource type="AudioStream" uid="uid://btghn341ml73s" path="res://scene/ability/heaven_fruy/heaven_sound.wav" id="3_p64c4"]
 
-[node name="heaven_fury_controller" type="Node2D" unique_id=442825532]
-script = ExtResource("1_rhfot")
-heaven_fury = ExtResource("2_smcwq")
+[node name="heaven_fury_controller" type="Node2D" unique_id=442825532 node_paths=PackedStringArray("timer", "audio")]
+script = ExtResource("1_smcwq")
+ability = ExtResource("2_smcwq")
+timer = NodePath("Timer")
+audio = NodePath("AudioStreamPlayer2D")
 
 [node name="Timer" type="Timer" parent="." unique_id=1138931321]
 wait_time = 2.5

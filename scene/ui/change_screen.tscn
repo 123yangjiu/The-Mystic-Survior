@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://brtk7glajnjmp" path="res://resource/theme/no_theme.tres" id="1_5oakw"]
 [ext_resource type="Texture2D" uid="uid://bhjmdeamnulcw" path="res://sucai/UI/checkbutton-Sheet.png" id="1_gfjsm"]
-[ext_resource type="Script" uid="uid://cneqhi8ho5mht" path="res://script/change/change_screen.gd" id="1_ryvts"]
+[ext_resource type="Script" uid="uid://cneqhi8ho5mht" path="res://script/class/change_screen.gd" id="1_ryvts"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c6q57"]
 atlas = ExtResource("1_gfjsm")

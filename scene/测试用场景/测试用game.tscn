@@ -46,6 +46,8 @@
 [ext_resource type="Resource" uid="uid://j41hiigk5pdq" path="res://resource/upgrades/gun/gun_bigger.tres" id="40_rr4dp"]
 [ext_resource type="Resource" uid="uid://cpuhurkw2l4bp" path="res://resource/upgrades/gun/get_shotgun.tres" id="41_45yv1"]
 [ext_resource type="Resource" uid="uid://mrbbx2kub2ka" path="res://resource/upgrades/gun/get_sniper_rifle.tres" id="42_45yv1"]
+[ext_resource type="PackedScene" uid="uid://r753wp2st35x" path="res://scene/enemy/escape_box.tscn" id="47_acha4"]
+[ext_resource type="PackedScene" uid="uid://b2fnijcvbh7hg" path="res://scene/enemy/box.tscn" id="48_pbpbm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gq3l0"]
 texture = ExtResource("2_wbt8i")
@@ -396,7 +398,7 @@ script = ExtResource("15_h48kl")
 upgrade_pool = Array[ExtResource("16_ufowh")]([ExtResource("17_mcuiq"), ExtResource("18_wlm2r"), ExtResource("19_bajcs"), ExtResource("20_rr4dp"), ExtResource("21_45yv1"), ExtResource("22_acha4"), ExtResource("23_pbpbm"), ExtResource("24_tkwvv"), ExtResource("25_ekiqg"), ExtResource("26_wo850"), ExtResource("27_40dpe"), ExtResource("28_4xk21"), ExtResource("29_0lbpo"), ExtResource("30_1ath1"), ExtResource("31_ypcgk"), ExtResource("32_xfjms"), ExtResource("33_g1f6a"), ExtResource("34_6lq15"), ExtResource("35_4k1xf"), ExtResource("36_ase8p"), ExtResource("37_4v241"), ExtResource("38_7bo1d"), ExtResource("38_wlm2r"), ExtResource("39_bajcs"), ExtResource("40_rr4dp"), ExtResource("41_45yv1"), ExtResource("42_45yv1")])
 experience_manager = NodePath("../experiencemanager")
 inital_upgrade_export = Array[ExtResource("16_ufowh")]([])
-initial_sort = "枪"
+initial_sort = "光剑"
 
 [node name="实体" type="Node" parent="." unique_id=712875686 groups=["实体图层"]]
 
@@ -410,8 +412,6 @@ MAX_speed = 115
 [node name="Camera2D3" type="Camera2D" parent="实体/player" unique_id=1280702266]
 position = Vector2(4, 4.0929594)
 position_smoothing_enabled = true
-
-[node name="前景" type="Node" parent="." unique_id=652181050 groups=["前景图层"]]
 
 [node name="测试用操作者" type="Node2D" parent="." unique_id=78757914]
 script = ExtResource("17_wdb4m")
@@ -449,6 +449,14 @@ flat = true
 
 [node name="box" parent="enemy" unique_id=1209996252 instance=ExtResource("16_kudbt")]
 position = Vector2(417, 237)
+
+[node name="box2" parent="enemy" unique_id=1483921173 instance=ExtResource("47_acha4")]
+position = Vector2(238, 143)
+
+[node name="box3" parent="enemy" unique_id=1432837753 instance=ExtResource("48_pbpbm")]
+position = Vector2(415, 139)
+
+[node name="前景" type="Node" parent="." unique_id=652181050 groups=["前景图层"]]
 
 [connection signal="button_up" from="测试用操作者/Upgrade" to="测试用操作者" method="_upgrade"]
 [connection signal="button_up" from="测试用操作者/Faliure" to="测试用操作者" method="_on_enemystart_button_up"]

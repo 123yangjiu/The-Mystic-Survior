@@ -10,30 +10,36 @@ var target_time:float
 
 @export var kill_cirle_enemy:Array[PackedScene]
 var chosen_enemy_scene:PackedScene
-var min_gap=0.07
-var decay =0.33
+var min_gap=0.12
+var decay =0.25
 var rand_R=450#包围半径
 @onready var enemyfiliter: EnemyFiliter = $"../enemyfiliter"
 var base_time_gap
+
 func _ready() -> void:
 	base_time_gap=$Timer.wait_time
 	$Timer.timeout.connect(on_time_out)
 	GameEvent.more_difficulty.connect(on_more_difficulty)
-	if !GameEvent.is_hard:
-		min_gap =0.12
-		decay = 0.25
+	match GameEvent.mode_index:
+		2:
+			min_gap =0.07
+			decay = 0.33
+		3:
+			if GameEvent.hard_mode[GameEvent.HARD_MODE.is_more]:
+				min_gap=0.04
+				decay=0.4
+
 func on_time_out():
 	chosen_enemy_scene=enemyfiliter.random_chose()#
-	var player=get_tree().get_first_node_in_group("player")#通过筛选器选出这次要生成
-	#的怪物
+#通过筛选器选出这次要生成的怪物
 	var random_direction=Vector2.RIGHT.rotated(randf_range(0,TAU))
-	var spawn_position=player.global_position+random_direction*SPAWN_R
+	var spawn_position=GameEvent.play_global_position+random_direction*SPAWN_R*randf_range(0.5,1)
 	var enemy=chosen_enemy_scene.instantiate() as Node2D
 	var entities_Layer=get_tree().get_first_node_in_group("enemylayer")
 	entities_Layer.add_child(enemy)
-	enemy.global_position=spawn_position
+	enemy.global_position=limit_position(spawn_position)
 	if target_time:
-		$Timer.wait_time=target_time*pow(7,GameEvent.current_monster/max_monster)
+		$Timer.wait_time=target_time*(exp(GameEvent.current_monster/max_monster)-0.2)
 
 func on_more_difficulty(difficulty:int):
 	var entities_Layer=get_tree().get_first_node_in_group("enemylayer")
@@ -48,17 +54,19 @@ func on_more_difficulty(difficulty:int):
 		var radius := float(rand_R) * randf_range(0.2,0.4)
 		# 3. 最终位置
 		kill_enemy.global_position = player.global_position + Vector2.RIGHT.rotated(angle) * radius
-	if difficulty==5:
+	elif difficulty==5:
 		var now_player_position = GameEvent.play_global_position
-		for i in 50:
+		for i in 75:
 			var kill_enemy = kill_cirle_enemy[5].instantiate() as Node2D
 			entities_Layer.add_child(kill_enemy)
 			var angle := TAU*i/ 20
 			var radius := float(rand_R) * 0.7
+			if i>40:
+				radius *=1.5
 			# 3. 最终位置
 			kill_enemy.global_position = now_player_position + Vector2.RIGHT.rotated(angle) * radius
 			await get_tree().create_timer(0.1).timeout
-	if difficulty==8:
+	elif difficulty==9:
 		on_mush_appear()
 		for i in 80:
 			var kill_enemy = kill_cirle_enemy[0].instantiate() as Node2D
@@ -126,6 +134,19 @@ func on_more_difficulty(difficulty:int):
 			kill_enemy.global_position = player.global_position + Vector2.RIGHT.rotated(angle) * radius
 			if i < 2:  # 当 i = 0, 1 时等待，i = 2 时不等待
 				await get_tree().create_timer(4.0).timeout
+	elif  difficulty==17:
+		var now_player_position = GameEvent.play_global_position
+		for i in 60:
+			var kill_enemy = kill_cirle_enemy[3].instantiate() as Node2D
+			entities_Layer.add_child(kill_enemy)
+			var angle := TAU *i/ 20
+			# 2. 半径加 ±10% 随机，避免太机械
+			var radius := float(rand_R) * randf_range(0.9, 1.1)
+			if i>30:
+				radius *=1.5
+			# 3. 最终位置
+			kill_enemy.global_position =  now_player_position + Vector2.RIGHT.rotated(angle) * radius
+			await get_tree().create_timer(0.15).timeout
 	if difficulty>=13 and difficulty%2 ==1:
 		var kill_enemy = kill_cirle_enemy[2].instantiate() as Node2D
 		entities_Layer.add_child(kill_enemy)
@@ -147,7 +168,7 @@ func limit_position(which_position)->Vector2:
 func on_mush_appear()->void:
 	await get_tree().create_timer(1).timeout
 	var ori_time = $Timer.wait_time
-	$Timer.wait_time= ori_time*5/4
+	$Timer.wait_time= (max(min_gap, base_time_gap * exp(-decay * GameEvent.difficulty*0.2)))*1.15
 	SPAWN_R = 250
 	await get_tree().create_timer(19).timeout
 	SPAWN_R=300

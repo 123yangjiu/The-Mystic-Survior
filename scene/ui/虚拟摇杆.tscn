@@ -1,14 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://c7kjkebvjcpyo"]
+[gd_scene format=3 uid="uid://c7kjkebvjcpyo"]
 
 [ext_resource type="Texture2D" uid="uid://bs6517j8258bc" path="res://sucai/UI/虚拟摇杆_盘.png" id="1_cvih0"]
 [ext_resource type="Texture2D" uid="uid://dyoxcmu0epu42" path="res://sucai/UI/虚拟摇杆_杆.png" id="2_2kwdo"]
 [ext_resource type="Script" uid="uid://denjnombijd1a" path="res://scene/ui/虚拟摇杆2.gd" id="2_i1i8g"]
 
-[node name="虚拟摇杆" type="Sprite2D"]
-visible = false
+[node name="虚拟摇杆" type="Sprite2D" unique_id=1285094799]
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_cvih0")
 script = ExtResource("2_i1i8g")
 
-[node name="YaoGan" type="Sprite2D" parent="."]
+[node name="YaoGan" type="Sprite2D" parent="." unique_id=1548777540]
 texture = ExtResource("2_2kwdo")

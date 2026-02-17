@@ -1,86 +1,38 @@
-[gd_scene load_steps=5 format=3 uid="uid://co66107rpg80r"]
+[gd_scene format=3 uid="uid://co66107rpg80r"]
 
-[ext_resource type="Script" uid="uid://dhi6irssr0s2a" path="res://script/文本及ui显示/victoryscreen.gd" id="1_u23xs"]
+[ext_resource type="Script" uid="uid://dhi6irssr0s2a" path="res://script/文本及ui显示/die_screen.gd" id="1_u23xs"]
 [ext_resource type="Texture2D" uid="uid://d1ue7ojv75eip" path="res://sucai/UI/You_die.png" id="2_nqmcm"]
 [ext_resource type="Theme" uid="uid://bak7nt8mttr06" path="res://resource/theme/black_theme.tres" id="3_q6lwb"]
-[ext_resource type="PackedScene" uid="uid://bxsd6pwev6oei" path="res://scene/ui/change_nandu.tscn" id="4_jjjup"]
+[ext_resource type="PackedScene" uid="uid://c4odu6gj71lxh" path="res://scene/ui/return_to_maintheme.tscn" id="4_jjjup"]
 
-[node name="You_Die_Screen" type="CanvasLayer" node_paths=PackedStringArray("tips")]
+[node name="You_Die_Screen" type="CanvasLayer" unique_id=446151037]
 process_mode = 3
 layer = 2
 script = ExtResource("1_u23xs")
-tips = NodePath("Tips")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1791574977]
 position = Vector2(318, 175)
 scale = Vector2(4, 4)
 texture = ExtResource("2_nqmcm")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
-self_modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(400, 100)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer"]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_top = 8
-theme_override_constants/margin_right = 8
-theme_override_constants/margin_bottom = 8
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 70)
-layout_mode = 2
-theme_override_font_sizes/font_size = 24
-horizontal_alignment = 1
-
-[node name="restart" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(175, 50)
-layout_mode = 2
-size_flags_horizontal = 4
-theme = ExtResource("3_q6lwb")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0.1, 0.1, 0.1, 1)
-theme_override_colors/font_pressed_color = Color(0.2, 0.2, 0.2, 1)
-theme_override_colors/font_hover_color = Color(0.1, 0.1, 0.1, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 36
-text = "重新开始"
-
-[node name="quit" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(125, 50)
-layout_mode = 2
-size_flags_horizontal = 4
-theme = ExtResource("3_q6lwb")
-theme_override_font_sizes/font_size = 36
-text = "离开"
-
-[node name="Tips" type="Label" parent="."]
+[node name="Tips" type="Label" parent="." unique_id=1598068769]
 offset_left = 20.0
 offset_top = 303.0
 offset_right = 1160.0
 offset_bottom = 354.0
 text = "？"
 
-[node name="Change_screen" parent="." instance=ExtResource("4_jjjup")]
-offset_left = 89.0
-offset_top = 173.0
-offset_right = 139.0
-offset_bottom = 193.0
+[node name="Return" parent="." unique_id=887643300 instance=ExtResource("4_jjjup")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -102.5
+offset_top = -1.0
+offset_right = 102.5
+offset_bottom = 69.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_q6lwb")
+theme_override_font_sizes/font_size = 36

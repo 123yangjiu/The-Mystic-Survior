@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://lae6sogmc22b" path="res://scene/ability/holy_light_ability/light_ability_controller.tscn" id="5_g2vtq"]
 [ext_resource type="PackedScene" uid="uid://b6vs7ye342hb6" path="res://scene/ability/heaven_fruy/heaven_fruy_controller.tscn" id="5_hp4bs"]
 [ext_resource type="PackedScene" uid="uid://b7lj8mwnd703c" path="res://scene/ability/ring_ability/ring_ability_controller.tscn" id="6_2fvbb"]
-[ext_resource type="PackedScene" uid="uid://crcg0u1elatvt" path="res://scene/ability/ring_ability/ring_ability.tscn" id="7_ml7e8"]
 [ext_resource type="Script" uid="uid://b085c5vup7duv" path="res://script/拾取范围.gd" id="8_g2vtq"]
 [ext_resource type="PackedScene" uid="uid://ki5crcnykid1" path="res://scene/ability/AK47_ability/all_gun_ability_controller.tscn" id="9_bup7g"]
 [ext_resource type="Texture2D" uid="uid://bhn043cbs8vkk" path="res://sucai/女巫师/小女巫.png" id="10_ihjo1"]
@@ -127,7 +126,6 @@ died_screen = ExtResource("2_ihjo1")
 [node name="light_ability_controller" parent="abilitymanager" unique_id=635805307 instance=ExtResource("5_g2vtq")]
 
 [node name="ring_ability_controller" parent="abilitymanager" unique_id=1636932544 instance=ExtResource("6_2fvbb")]
-ring_ability = ExtResource("7_ml7e8")
 
 [node name="AllGunAbilityController" parent="abilitymanager" unique_id=1977481990 instance=ExtResource("9_bup7g")]
 z_index = 1
@@ -199,11 +197,13 @@ position_smoothing_enabled = true
 layer = 2
 
 [node name="虚拟摇杆" parent="CanvasLayer" unique_id=512370967 node_paths=PackedStringArray("player") instance=ExtResource("14_u7b46")]
+visible = false
 position = Vector2(0, -5)
 player = NodePath("../..")
 
 [node name="StopButton" parent="CanvasLayer" unique_id=169065267 instance=ExtResource("15_j4wxg")]
 process_mode = 3
+visible = false
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0

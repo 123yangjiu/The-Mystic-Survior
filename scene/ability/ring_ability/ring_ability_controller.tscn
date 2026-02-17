@@ -1,15 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://b7lj8mwnd703c"]
+[gd_scene format=3 uid="uid://b7lj8mwnd703c"]
 
-[ext_resource type="Script" uid="uid://ciixs7nyyfhdb" path="res://script/upgrade/ring_ability_controller.gd" id="1_00eck"]
+[ext_resource type="Script" uid="uid://ciixs7nyyfhdb" path="res://script/ability/controller/ring_ability_controller.gd" id="1_00eck"]
 [ext_resource type="AudioStream" uid="uid://b4qhxuu7o4bdy" path="res://scene/ability/ring_ability/火环4.WAV" id="2_00eck"]
+[ext_resource type="PackedScene" uid="uid://crcg0u1elatvt" path="res://scene/ability/ring_ability/ring_ability.tscn" id="2_dvgk7"]
 
-[node name="ring_ability_controller" type="Node"]
+[node name="ring_ability_controller" type="Node" unique_id=1661698945]
 script = ExtResource("1_00eck")
+ring_ability = ExtResource("2_dvgk7")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=1254108780]
 wait_time = 4.5
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1113312468]
 stream = ExtResource("2_00eck")
 volume_db = 4.0
 pitch_scale = 1.25

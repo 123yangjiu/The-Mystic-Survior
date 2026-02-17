@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://fqpwlqso0ple"]
 
 [ext_resource type="Texture2D" uid="uid://6w628sb81mp" path="res://scene/ability/AK47_ability/resource/shot_gun/shot_gun.png" id="1_boluh"]
-[ext_resource type="Script" uid="uid://dw0rf2iv44wk" path="res://script/upgrade/shotgun_ability_controller.gd" id="2_tjw1q"]
+[ext_resource type="Script" uid="uid://dw0rf2iv44wk" path="res://script/ability/controller/shotgun_ability_controller.gd" id="2_tjw1q"]
 [ext_resource type="PackedScene" uid="uid://n4as4qw7qe06" path="res://scene/ability/AK47_ability/bullet.tscn" id="3_boluh"]
 [ext_resource type="AudioStream" uid="uid://7ymh2gld51sp" path="res://scene/ability/AK47_ability/resource/shot_gun/Shotgun_Shot-002.wav" id="4_a0h28"]
 [ext_resource type="AudioStream" uid="uid://dgykqv36x8xqj" path="res://scene/ability/AK47_ability/resource/RPG/Rocket_Equip.wav" id="5_caplp"]

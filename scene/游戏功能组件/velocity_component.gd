@@ -5,15 +5,14 @@ class_name Velocity_controller
 var velocity=Vector2.ZERO
 
 func _ready() -> void:
-	if ! GameEvent.is_hard:
-		var new_speed = float(speed)*4/5
-		speed = floor(new_speed)
-	else :
-		var new_speed = float(speed)*44/50
-		speed = floor(new_speed)
-	if GameEvent.easy_mode.is_slow == true:
-		var new_speed = float(speed)*9/10
-		speed = floor(new_speed)
+	match GameEvent.mode_index:
+		1:
+			if GameEvent.easy_mode[GameEvent.EASY_MODE.is_slow] == true:
+				var new_speed = float(speed)*0.9
+				speed = floor(new_speed)
+		2:
+			var new_speed = float(speed)*1.1
+			speed = floor(new_speed)
 
 func accelerate_to_player():
 	var owner_2D=owner as Node2D

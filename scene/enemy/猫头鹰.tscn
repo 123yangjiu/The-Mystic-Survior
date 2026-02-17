@@ -1,11 +1,13 @@
-[gd_scene load_steps=18 format=3 uid="uid://bcl20xpjeekut"]
+[gd_scene format=3 uid="uid://bcl20xpjeekut"]
 
-[ext_resource type="Script" uid="uid://dwtjrw2m20xr2" path="res://script/enemy/main_enemy/enemy_datrue.gd" id="1_r8cvu"]
+[ext_resource type="Script" uid="uid://rsl4jg827i3e" path="res://script/enemy/main_enemy/enemy_xiaotrue.gd" id="1_o64ug"]
 [ext_resource type="PackedScene" uid="uid://decyru6mnkuga" path="res://scene/游戏功能组件/hurtboxcomponent.tscn" id="2_0uyp4"]
 [ext_resource type="Texture2D" uid="uid://1nyfiavgxiia" path="res://sucai/黑暗猫头鹰/Aurigaidlewithshadow-Sheet.png" id="3_ysij7"]
 [ext_resource type="PackedScene" uid="uid://bnactnfyipltl" path="res://scene/游戏功能组件/health_component.tscn" id="4_2yh8p"]
 [ext_resource type="PackedScene" uid="uid://c0i7tc6xpk0n8" path="res://scene/游戏功能组件/drop_component.tscn" id="5_0fgf1"]
-[ext_resource type="Script" uid="uid://6viyb8hj8ocd" path="res://scene/游戏功能组件/猫头鹰掉落.gd" id="6_r8cvu"]
+[ext_resource type="PackedScene" uid="uid://i5imcyd15vix" path="res://scene/游戏物件/exprience_bottle.tscn" id="6_o64ug"]
+[ext_resource type="PackedScene" uid="uid://daaqcmminiyk1" path="res://scene/游戏物件/blood_bottle.tscn" id="7_j17ro"]
+[ext_resource type="PackedScene" uid="uid://f15fc5ggcq0l" path="res://scene/游戏物件/bonus_bottle.tscn" id="8_lhm8c"]
 [ext_resource type="PackedScene" uid="uid://g6ks4dc6kpht" path="res://scene/游戏功能组件/velocity_component.tscn" id="8_q10tu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vcrpj"]
@@ -70,42 +72,47 @@ radius = 17.11374
 [sub_resource type="CircleShape2D" id="CircleShape2D_8egh0"]
 radius = 2.5086966
 
-[node name="bird" type="CharacterBody2D" groups=["中级"]]
+[node name="bird" type="CharacterBody2D" unique_id=208904813 groups=["中级"]]
 collision_layer = 40
 collision_mask = 33
-script = ExtResource("1_r8cvu")
+script = ExtResource("1_o64ug")
 
-[node name="Hurtboxcomponent" parent="." node_paths=PackedStringArray("health_component") groups=["enemy"] instance=ExtResource("2_0uyp4")]
+[node name="Hurtboxcomponent" parent="." unique_id=1318102313 node_paths=PackedStringArray("health_component") groups=["enemy"] instance=ExtResource("2_0uyp4")]
 collision_layer = 4
 health_component = NodePath("../health_component")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Hurtboxcomponent"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Hurtboxcomponent" unique_id=1187529767]
 shape = SubResource("CircleShape2D_vcrpj")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=276724205]
 position = Vector2(0, 4.0000014)
-scale = Vector2(0.8, 0.638)
+scale = Vector2(-0.8, 0.638)
 sprite_frames = SubResource("SpriteFrames_fq6t5")
 animation = &"run"
 autoplay = "run"
 frame_progress = 0.87343234
 
-[node name="对角色造成伤害的碰撞" type="CollisionShape2D" parent="." groups=["enemy"]]
+[node name="对角色造成伤害的碰撞" type="CollisionShape2D" parent="." unique_id=1132181603 groups=["enemy"]]
 position = Vector2(-4.7683716e-07, 4.7683716e-07)
 scale = Vector2(0.47134686, 0.4559797)
 shape = SubResource("CircleShape2D_ntng8")
 
-[node name="health_component" parent="." instance=ExtResource("4_2yh8p")]
+[node name="health_component" parent="." unique_id=1101576993 instance=ExtResource("4_2yh8p")]
 max_health = 65.0
 
-[node name="drop_component" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("5_0fgf1")]
-script = ExtResource("6_r8cvu")
+[node name="drop_component" parent="." unique_id=151923382 node_paths=PackedStringArray("health_component") instance=ExtResource("5_0fgf1")]
+drop_thingandpersent = Dictionary[PackedScene, float]({
+ExtResource("6_o64ug"): 0.7,
+ExtResource("7_j17ro"): 0.04,
+ExtResource("8_lhm8c"): 0.05
+})
+drop_range = 2
 health_component = NodePath("../health_component")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=743277915]
 scale = Vector2(1.9930668, 1.9930668)
 shape = SubResource("CircleShape2D_8egh0")
 
-[node name="velocity_component" parent="." instance=ExtResource("8_q10tu")]
-speed = 160
+[node name="velocity_component" parent="." unique_id=713437500 instance=ExtResource("8_q10tu")]
+speed = 110
 acceleration = 7.0

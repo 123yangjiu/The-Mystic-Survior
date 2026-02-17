@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c20o3d2yxx4lv"]
 
 [ext_resource type="Texture2D" uid="uid://dyt1wwieyphkl" path="res://scene/ability/AK47_ability/resource/RPG/RPG.png" id="1_ymree"]
-[ext_resource type="Script" uid="uid://bmgsdnh4q2syg" path="res://script/upgrade/rpg_ability_controller.gd" id="2_x34q7"]
+[ext_resource type="Script" uid="uid://bmgsdnh4q2syg" path="res://script/ability/controller/rpg_ability_controller.gd" id="2_x34q7"]
 [ext_resource type="PackedScene" uid="uid://dm8b5ckjom6te" path="res://scene/ability/AK47_ability/rocket.tscn" id="3_tlwfg"]
 [ext_resource type="AudioStream" uid="uid://c8fphc6c2rtnp" path="res://scene/ability/AK47_ability/resource/RPG/Rocket_Shot-001.wav" id="4_tlwfg"]
 [ext_resource type="AudioStream" uid="uid://dgykqv36x8xqj" path="res://scene/ability/AK47_ability/resource/RPG/Rocket_Equip.wav" id="5_3eytq"]
@@ -13,7 +13,7 @@ script = ExtResource("2_x34q7")
 ability = ExtResource("3_tlwfg")
 
 [node name="Reload" type="Timer" parent="." unique_id=2077055730]
-wait_time = 4.5
+wait_time = 4.0
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2055677243]
 stream = ExtResource("4_tlwfg")

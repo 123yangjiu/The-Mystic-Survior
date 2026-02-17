@@ -14,17 +14,29 @@ var initial_upgrade:AbilityUpgrade
 func _ready():
 	upgrade_pool=GameEvent.upgrade_pool
 	experience_manager.level_up.connect(on_level_up)
+	var unlock_pool:Array[AbilityUpgrade]
 	for ability in upgrade_pool:
 		if ability.is_init:
-			can_chose_pool.append(ability)
+			if ability.is_unlock:
+				unlock_pool.append(ability)
+			else:
+				can_chose_pool.append(ability)
+		if ability==upgrade_pool[-1]:
+			unlock_pool.shuffle()
+			for i in unlock_pool.slice(0,4):
+				can_chose_pool.append(i)
 		#初始化选择池子,选择剑类的选项和所有解锁新武器的选项
-	if GameEvent.easy_mode.is_initial:
-		initial_upgrade=GameEvent.easy_mode.is_initial
+	if GameEvent.easy_mode[GameEvent.EASY_MODE.is_initial]:
+		initial_upgrade=GameEvent.easy_mode[GameEvent.EASY_MODE.is_initial]
 		add_upgrade(initial_upgrade)
-	if GameEvent.easy_mode.is_ascend:
+	elif GameEvent.hard_mode[GameEvent.HARD_MODE.is_max_3]:
+		mystrious_probality=-1.0
+	if GameEvent.easy_mode[GameEvent.EASY_MODE.is_ascend]:
 		for ability in can_chose_pool:
 			if ability.Sort=="角色能力":
 				add_upgrade(ability)
+	elif GameEvent.hard_mode[GameEvent.HARD_MODE.is_erase_ability]:
+		can_chose_pool.erase(GameEvent.hard_mode[GameEvent.HARD_MODE.is_erase_ability])
 
 func on_level_up(_current_level:int):#升级时展示卡片
 	upgrade_list.clear() 

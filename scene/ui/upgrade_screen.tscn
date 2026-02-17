@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c04cbhvknqekg"]
 
-[ext_resource type="Script" uid="uid://dinfbs806yuka" path="res://script/upgrade/upgrade_screen.gd" id="1_0l67n"]
-[ext_resource type="PackedScene" uid="uid://ctf48co4ahm0d" path="res://resource/screen/upgrade_card.scn" id="2_icf4o"]
+[ext_resource type="Script" uid="uid://dinfbs806yuka" path="res://script/文本及ui显示/upgrade/upgrade_screen.gd" id="1_0l67n"]
+[ext_resource type="PackedScene" uid="uid://c6t5pqka2y0xc" path="res://scene/ui/abilityupgradecard.tscn" id="2_icf4o"]
 [ext_resource type="PackedScene" uid="uid://5odfsqq8r60t" path="res://scene/ui/settingscreen_ingame.tscn" id="3_icf4o"]
 
 [node name="UpgradeScreen" type="CanvasLayer" unique_id=47086436]

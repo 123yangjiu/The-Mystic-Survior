@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c6t5pqka2y0xc"]
 
-[ext_resource type="Script" uid="uid://dq7lf2puo2cmq" path="res://script/文本及ui显示/abilityupgradecard.gd" id="1_6couw"]
+[ext_resource type="Script" uid="uid://dq7lf2puo2cmq" path="res://script/文本及ui显示/upgrade/abilityupgradecard.gd" id="1_6couw"]
 [ext_resource type="Texture2D" uid="uid://byv42g6d74pvx" path="res://sucai/UI/ability_card第2.75版.png" id="2_pu7i7"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_pu7i7"]

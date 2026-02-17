@@ -5,8 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://cpxpef8s5wt6m" path="res://sucai/新蘑菇/Mushroom-Run.png" id="2_ry05w"]
 [ext_resource type="PackedScene" uid="uid://bnactnfyipltl" path="res://scene/游戏功能组件/health_component.tscn" id="3_1vn3o"]
 [ext_resource type="PackedScene" uid="uid://c0i7tc6xpk0n8" path="res://scene/游戏功能组件/drop_component.tscn" id="4_ry05w"]
-[ext_resource type="Script" uid="uid://6viyb8hj8ocd" path="res://scene/游戏功能组件/猫头鹰掉落.gd" id="5_xhrya"]
+[ext_resource type="PackedScene" uid="uid://i5imcyd15vix" path="res://scene/游戏物件/exprience_bottle.tscn" id="6_eao75"]
+[ext_resource type="PackedScene" uid="uid://daaqcmminiyk1" path="res://scene/游戏物件/blood_bottle.tscn" id="7_rji2m"]
 [ext_resource type="PackedScene" uid="uid://g6ks4dc6kpht" path="res://scene/游戏功能组件/velocity_component.tscn" id="7_xhrya"]
+[ext_resource type="PackedScene" uid="uid://f15fc5ggcq0l" path="res://scene/游戏物件/bonus_bottle.tscn" id="8_yuaj2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xhrya"]
 atlas = ExtResource("2_ry05w")
@@ -112,16 +114,22 @@ shape = SubResource("CircleShape2D_rji2m")
 max_health = 500.0
 
 [node name="drop_component" parent="." unique_id=1655054699 node_paths=PackedStringArray("health_component") instance=ExtResource("4_ry05w")]
-script = ExtResource("5_xhrya")
+drop_thingandpersent = Dictionary[PackedScene, float]({
+ExtResource("6_eao75"): 1.1,
+ExtResource("7_rji2m"): 0.1,
+ExtResource("8_yuaj2"): 0.1
+})
+drop_range = 2
 health_component = NodePath("../health_component")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=987935147]
 position = Vector2(0, 3)
 scale = Vector2(3.273428, -3.0441794)
 shape = SubResource("CircleShape2D_yuaj2")
+disabled = true
 
 [node name="velocity_component" parent="." unique_id=2102833200 instance=ExtResource("7_xhrya")]
-speed = 7
+speed = 6
 acceleration = 11.0
 
 [node name="Timer" type="Timer" parent="." unique_id=762862053]
