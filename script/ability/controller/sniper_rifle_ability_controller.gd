@@ -5,7 +5,7 @@ extends AK47AbilityController
 @onready var lashuan_2: AudioStreamPlayer2D = $lashuan2
 var lashuan_2_pitch
 
-func _ready() -> void:
+func set_variable()->void:
 	#射程，子弹数量，射击间隔，转头间隔，位置和后坐力
 	max_range=300
 	number = 3
@@ -19,20 +19,7 @@ func _ready() -> void:
 	init_scale=Vector2(3.0,2.0)
 	speed =30
 	#设置基础参数
-	base_wait_time=reload.wait_time
-	volume=audio.volume_db
-	change_1_pitch = change_bullet_1.pitch_scale
-	change_2_pitch = change_bullet_2.pitch_scale
 	lashuan_2_pitch=lashuan_2.pitch_scale
-	init_position=self.position
-	reload.timeout.connect(on_reload_out)
-	_continue.timeout.connect(on_reload_out)
-	GameEvent.ability_upgrade_add.connect(on_ability_upgrade_add)
-	var player = get_tree().get_first_node_in_group("实体图层").get_child(0)
-	remove_child(zidan_number)
-	player.add_child.call_deferred(zidan_number)
-	zidan_number.position=Vector2(-20.0,-40.0)
-	on_reload_out()
 
 #专打终极
 func check_enemy()->Array[Node]:
@@ -64,7 +51,8 @@ func while_attack(enemies:Array[Node])->void:
 		if i==0:
 			enemy = before_attack_find_enemy(enemies)
 		elif i>0:
-			enemy=before_attack_find_enemy(check_enemy())
+			var new_enemies = check_enemy()
+			enemy=before_attack_find_enemy(new_enemies)
 		if enemy:
 			var enemy_global_position = enemy.global_position
 			#将枪头对准enemy,再攻击
@@ -78,8 +66,6 @@ func while_attack(enemies:Array[Node])->void:
 		if current_number<=0:
 			start_reload()
 			return
-		
-
 
 func attack(enemy_global_position:Vector2)->void:
 	#找到落脚点
@@ -91,7 +77,7 @@ func attack(enemy_global_position:Vector2)->void:
 	bullet.play()
 	#设置基本属性
 	ability_instance.scale = init_scale*scale_range
-	ability_instance.hitbox_component.damage = int(init_damage*damage_range+randf_range(-3,3))
+	ability_instance.attack_component.damage = init_damage*damage_range
 	ability_instance.global_position=zidan.global_position
 	ability_instance.direction=(enemy_global_position-zidan.global_position).normalized()
 	ability_instance.rotation = ability_instance.direction.angle()

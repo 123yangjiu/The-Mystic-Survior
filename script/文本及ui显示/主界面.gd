@@ -9,19 +9,12 @@ func _ready() -> void:
 	main_theme.play()
 
 func _on_开始_button_up() -> void:
-	GameEvent.paused=0
-	GameEvent.difficulty=1
-	GameEvent.the_first=0
-	GameEvent.is_start=true
 	get_tree().change_scene_to_file("res://scene/game.scn")
-	GameEvent.difficulty_timer.start()
 	queue_free()
 
 func _on_离开_button_up() -> void:
 	get_tree().quit()
-	pass # Replace with function body.
 
 func _on_setting_button_up() -> void:
 	var _setting_screen = setting_screen.instantiate()
 	add_child(_setting_screen)
-	pass # Replace with function body.

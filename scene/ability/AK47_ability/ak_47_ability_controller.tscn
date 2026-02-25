@@ -1,16 +1,18 @@
 [gd_scene format=3 uid="uid://ca8mol1vj7qlk"]
 
-[ext_resource type="Script" uid="uid://bu2mv03wue4b1" path="res://script/class/ak_47_ability_controller.gd" id="1_o47fm"]
 [ext_resource type="Texture2D" uid="uid://by3r5ca7g4d5q" path="res://scene/ability/AK47_ability/resource/AK-47.png" id="2_ngotq"]
+[ext_resource type="Script" uid="uid://bp2m1u842wkj4" path="res://script/class/AK47_controller.gd" id="2_vl7y8"]
 [ext_resource type="PackedScene" uid="uid://n4as4qw7qe06" path="res://scene/ability/AK47_ability/bullet.tscn" id="3_4o3xm"]
 [ext_resource type="AudioStream" uid="uid://b5m1kusn4mdp4" path="res://scene/ability/AK47_ability/resource/762x39 Single WAV.wav" id="4_vl7y8"]
 [ext_resource type="AudioStream" uid="uid://dgykqv36x8xqj" path="res://scene/ability/AK47_ability/resource/RPG/Rocket_Equip.wav" id="5_ita5x"]
 [ext_resource type="AudioStream" uid="uid://b64lq0onxxvcw" path="res://scene/ability/AK47_ability/resource/Shotgun_Pump.wav" id="6_vl7y8"]
 
-[node name="AK47AbilityController" type="Sprite2D" unique_id=2039636434]
+[node name="AK47AbilityController" type="Sprite2D" unique_id=2039636434 node_paths=PackedStringArray("timer", "audio")]
 texture = ExtResource("2_ngotq")
-script = ExtResource("1_o47fm")
+script = ExtResource("2_vl7y8")
 ability = ExtResource("3_4o3xm")
+timer = NodePath("Reload")
+audio = NodePath("AudioStreamPlayer2D")
 
 [node name="Reload" type="Timer" parent="." unique_id=2077055730]
 wait_time = 5.0

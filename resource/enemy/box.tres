@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="EnemyUnlockEntry" format=3 uid="uid://c02spyysuegq7"]
+[gd_resource type="Resource" script_class="EnemyUnlockEntry" format=3 uid="uid://bkhu54afqw1yl"]
 
 [ext_resource type="PackedScene" uid="uid://b2fnijcvbh7hg" path="res://scene/enemy/box.tscn" id="1_pg576"]
 [ext_resource type="Script" uid="uid://b8kynvj5xuaby" path="res://resource/enemy/enemy.gd" id="2_3jwxj"]
@@ -6,6 +6,6 @@
 [resource]
 script = ExtResource("2_3jwxj")
 scene = ExtResource("1_pg576")
-unlock_difficulty = 5
-weight = 0.1
+unlock_difficulty = -4
+weight = 0.001
 ID = 6

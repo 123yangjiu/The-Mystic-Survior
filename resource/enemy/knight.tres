@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EnemyUnlockEntry" format=3 uid="uid://bwvsf8rcctefe"]
+
+[ext_resource type="PackedScene" uid="uid://d1xy0buqa0l3x" path="res://scene/enemy/witch.tscn" id="1_k6yrs"]
+[ext_resource type="Script" uid="uid://b8kynvj5xuaby" path="res://resource/enemy/enemy.gd" id="2_0fb2m"]
+
+[resource]
+script = ExtResource("2_0fb2m")
+scene = ExtResource("1_k6yrs")
+unlock_difficulty = -1
+ID = 8

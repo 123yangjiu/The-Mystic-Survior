@@ -4,8 +4,12 @@ extends Node
 #展示是否开启游戏
 var is_start:=false
 
-func _ready() -> void:
-	difficulty_timer.timeout.connect(emit_more_difficulty)
+var difficulty=1#初始难度等级为1
+signal more_difficulty(difficulty:int)
+func emit_more_difficulty():
+	difficulty+=1
+	more_difficulty.emit(difficulty)
+
 signal experience_bottle_collected(number:float)#吃到经验瓶时发出信号
 func emit_increase_experience(number:float):#发射信号的函数这样写是为了控制经验瓶的经验多少
 	experience_bottle_collected.emit(number)
@@ -19,12 +23,6 @@ func emit_ability_upgrade_add(upgrade:AbilityUpgrade,current_upgrade:Dictionary)
 	ability_upgrade_add.emit(upgrade,current_upgrade)
 	pass
 
-var difficulty=1#初始难度等级为1
-signal more_difficulty(difficulty:int)
-func emit_more_difficulty():
-	difficulty+=1
-	more_difficulty.emit(difficulty)
-	
 signal blood_bottle_collected(number:float)
 func emit_increase_blood(number:float):#发射信号的函数这样写是为了控制经验瓶的经验多少
 	blood_bottle_collected.emit(number)
@@ -103,10 +101,7 @@ enum HARD_MODE{
 }
 
 signal mode_change
-#普通模式：1.怪物移速下降10%；2.刷怪速度下降很多；3.玩家伤害提高10%;4.玩家受伤减少1半
-#var is_hard:=false
-
-#简单模式:
+#困难模式:1.怪物移速上升10%；2.刷怪速度下降很多；3.玩家伤害提高10%;4.玩家受伤减少1半
 var easy_mode:Dictionary[EASY_MODE,Variant]={
 	EASY_MODE.is_slow:false,
 	EASY_MODE.is_initial:false,
@@ -125,11 +120,14 @@ func set_mode(value)->void:
 		for i in hard_mode:
 			hard_mode[i] =false
 	mode_change.emit()
-	
-#挑战模式：1.游戏时长加长5分钟；2.减少一个自带能力；3.所有能力最多使用三次；4.刷怪增加
+#挑战模式：1.游戏时长加长5分钟；2.减少一个自带能力；3.所有能力最多获得三次；4.特殊事件及刷怪增多
 var hard_mode:Dictionary[HARD_MODE,Variant]={
 	HARD_MODE.is_long:false,
 	HARD_MODE.is_erase_ability:false,
 	HARD_MODE.is_max_3:false,
 	HARD_MODE.is_more:false
 }
+#特殊事件
+var is_co_disappear:=false
+signal collision_disappear
+signal collision_disappear_end

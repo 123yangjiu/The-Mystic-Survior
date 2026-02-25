@@ -11,7 +11,7 @@
 
 [node name="Settingscreen" type="CanvasLayer" unique_id=2013600972]
 process_mode = 3
-layer = 3
+layer = 100
 script = ExtResource("1_a3dry")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=464053512]

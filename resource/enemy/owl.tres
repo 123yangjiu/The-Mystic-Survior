@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EnemyUnlockEntry" format=3 uid="uid://ckcolpwqwrycv"]
+
+[ext_resource type="PackedScene" uid="uid://bcl20xpjeekut" path="res://scene/enemy/owl.tscn" id="1_si2b4"]
+[ext_resource type="Script" uid="uid://b8kynvj5xuaby" path="res://resource/enemy/enemy.gd" id="2_5do7b"]
+
+[resource]
+script = ExtResource("2_5do7b")
+scene = ExtResource("1_si2b4")
+unlock_difficulty = 8
+weight = 1.5
+ID = 4

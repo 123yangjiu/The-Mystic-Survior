@@ -1,7 +1,7 @@
 extends Node
 class_name EnemyFiliter
 @export var enemy_group:Array[EnemyUnlockEntry]
-var unlocked_group:Array[EnemyUnlockEntry]=[] #:set=set_unlocked_group
+var unlocked_group:Array[EnemyUnlockEntry]=[]
 var temporarily_group:Array[EnemyUnlockEntry]=[]
 var current_difficulty=1
 var all_weight=0
@@ -16,7 +16,6 @@ func enemy_filiter():
 	for enemy in enemy_group:
 		if enemy.unlock_difficulty==current_difficulty:#怪物等级在当前难度等级
 			#之内就把他们加入召唤池
-			print("加入成功")
 			unlocked_group.append(enemy)
 			all_weight +=enemy.weight
 		elif enemy.disapear_difficulty==current_difficulty:
@@ -34,17 +33,12 @@ func random_chose():
 	for enemy in unlocked_group:
 		roll-=enemy.weight
 		if roll<=0:
-			if enemy.ID==enemy.ALL_ID.box:
+			if enemy.ID==enemy.ALL_ID.escape_box:
 				unlocked_group.erase(enemy)
+				temporarily_group.append(enemy)
 				all_weight-=enemy.weight
 			return enemy.scene#拿到这次抽到的怪物
 
 func on_more_difficulty(difficulty):
 	current_difficulty=difficulty
 	enemy_filiter()
-
-#func set_unlocked_group(value:Array[EnemyUnlockEntry])->void:
-	#if value.size()>unlocked_group.size():
-		#all_weight +=value[-1].weight
-	#elif value.size()<unlocked_group.size():
-		#all_weight-=unlocked_group[-1].weight

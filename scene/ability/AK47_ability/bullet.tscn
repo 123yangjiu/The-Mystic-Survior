@@ -1,23 +1,16 @@
 [gd_scene format=3 uid="uid://n4as4qw7qe06"]
 
 [ext_resource type="Script" uid="uid://iflf2kyf7645" path="res://script/ability/bullet.gd" id="1_6syyt"]
-[ext_resource type="PackedScene" uid="uid://c4aqf7g3512kf" path="res://scene/游戏功能组件/hitbox_component.tscn" id="1_67ydp"]
 [ext_resource type="Texture2D" uid="uid://dsf466c4v7t2v" path="res://scene/ability/AK47_ability/resource/zidan.png" id="2_80ovh"]
+[ext_resource type="PackedScene" uid="uid://do1skrx74372j" path="res://scene/enemy_component/main_component/attack_component.tscn" id="4_n5r11"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6syyt"]
 size = Vector2(8, 2.5)
 
-[node name="Bullet" type="Node2D" unique_id=81678627 node_paths=PackedStringArray("hitbox_component", "timer")]
+[node name="Bullet" type="Node2D" unique_id=81678627 node_paths=PackedStringArray("attack_component", "timer")]
 script = ExtResource("1_6syyt")
-hitbox_component = NodePath("hitbox component")
+attack_component = NodePath("AttackComponent")
 timer = NodePath("Timer")
-
-[node name="hitbox component" parent="." unique_id=971448297 instance=ExtResource("1_67ydp")]
-collision_mask = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox component" unique_id=739219092]
-position = Vector2(3, 0.25)
-shape = SubResource("RectangleShape2D_6syyt")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1069465408]
 position = Vector2(4, 0)
@@ -26,3 +19,11 @@ texture = ExtResource("2_80ovh")
 [node name="Timer" type="Timer" parent="." unique_id=1503254485]
 wait_time = 4.0
 autostart = true
+
+[node name="AttackComponent" parent="." unique_id=2136703472 node_paths=PackedStringArray("collision_shape_2d") instance=ExtResource("4_n5r11")]
+collision_shape_2d = NodePath("CollisionShape2D")
+type = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackComponent" unique_id=739219092]
+position = Vector2(3, 0.25)
+shape = SubResource("RectangleShape2D_6syyt")

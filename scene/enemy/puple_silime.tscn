@@ -1,15 +1,15 @@
 [gd_scene format=3 uid="uid://dup0ew61sv1b8"]
 
 [ext_resource type="Script" uid="uid://rsl4jg827i3e" path="res://script/enemy/main_enemy/enemy_xiaotrue.gd" id="1_68pxt"]
-[ext_resource type="PackedScene" uid="uid://decyru6mnkuga" path="res://scene/游戏功能组件/hurtboxcomponent.tscn" id="2_botv0"]
 [ext_resource type="Texture2D" uid="uid://dnerhjpn8tfgc" path="res://sucai/slime/slime_purple.png" id="3_v4vgx"]
-[ext_resource type="PackedScene" uid="uid://bnactnfyipltl" path="res://scene/游戏功能组件/health_component.tscn" id="4_68pxt"]
-[ext_resource type="PackedScene" uid="uid://c0i7tc6xpk0n8" path="res://scene/游戏功能组件/drop_component.tscn" id="5_2bdwh"]
+[ext_resource type="PackedScene" uid="uid://bnactnfyipltl" path="res://scene/enemy_component/main_component/health_component.tscn" id="4_68pxt"]
+[ext_resource type="PackedScene" uid="uid://c0i7tc6xpk0n8" path="res://scene/enemy_component/main_component/drop_component.tscn" id="5_2bdwh"]
 [ext_resource type="PackedScene" uid="uid://i5imcyd15vix" path="res://scene/游戏物件/exprience_bottle.tscn" id="6_68pxt"]
-[ext_resource type="PackedScene" uid="uid://g6ks4dc6kpht" path="res://scene/游戏功能组件/velocity_component.tscn" id="6_botv0"]
+[ext_resource type="PackedScene" uid="uid://g6ks4dc6kpht" path="res://scene/enemy_component/main_component/velocity_component.tscn" id="6_botv0"]
 [ext_resource type="PackedScene" uid="uid://daaqcmminiyk1" path="res://scene/游戏物件/blood_bottle.tscn" id="7_2bdwh"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_vcrpj"]
+[ext_resource type="PackedScene" uid="uid://12uey86sh54o" path="res://scene/enemy_component/main_component/wound_component.tscn" id="8_kmadt"]
+[ext_resource type="PackedScene" uid="uid://do1skrx74372j" path="res://scene/enemy_component/main_component/attack_component.tscn" id="9_ug8u0"]
+[ext_resource type="PackedScene" uid="uid://nxifhy12ej5c" path="res://scene/enemy_component/main_component/collision_controller.tscn" id="10_8eatl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_botv0"]
 atlas = ExtResource("3_v4vgx")
@@ -47,23 +47,21 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ntng8"]
-radius = 10.607901
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kmadt"]
+size = Vector2(19, 13)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_8egh0"]
-radius = 5.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_lbbp5"]
+radius = 6.0
 
-[node name="purple_slimer" type="CharacterBody2D" unique_id=67483512 groups=["初级"]]
-collision_layer = 40
-collision_mask = 33
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jgr2i"]
+size = Vector2(12, 10)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mon6h"]
+
+[node name="purple_slimer" type="CharacterBody2D" unique_id=67483512]
+collision_layer = 8
+collision_mask = 9
 script = ExtResource("1_68pxt")
-
-[node name="Hurtboxcomponent" parent="." unique_id=772109726 node_paths=PackedStringArray("health_component") groups=["enemy"] instance=ExtResource("2_botv0")]
-collision_layer = 4
-health_component = NodePath("../health_component")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Hurtboxcomponent" unique_id=1691506318]
-shape = SubResource("CircleShape2D_vcrpj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1298585231 groups=["enemy"]]
 position = Vector2(0, -4.9999995)
@@ -73,24 +71,43 @@ animation = &"run"
 autoplay = "run"
 frame_progress = 0.26975
 
-[node name="对角色造成伤害的碰撞" type="CollisionShape2D" parent="." unique_id=2051922215 groups=["enemy"]]
-position = Vector2(-4.7683716e-07, 4.7683716e-07)
-scale = Vector2(0.47134686, 0.4559797)
-shape = SubResource("CircleShape2D_ntng8")
-
 [node name="health_component" parent="." unique_id=416265677 instance=ExtResource("4_68pxt")]
 max_health = 32.0
 
-[node name="drop_component" parent="." unique_id=1997461466 node_paths=PackedStringArray("health_component") instance=ExtResource("5_2bdwh")]
+[node name="drop_component" parent="." unique_id=1997461466 instance=ExtResource("5_2bdwh")]
 drop_thingandpersent = Dictionary[PackedScene, float]({
 ExtResource("6_68pxt"): 0.8,
 ExtResource("7_2bdwh"): 0.04
 })
-health_component = NodePath("../health_component")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1652256211]
-shape = SubResource("CircleShape2D_8egh0")
 
 [node name="velocity_component" parent="." unique_id=1736951552 instance=ExtResource("6_botv0")]
-speed = 70
+speed = 70.0
 acceleration = 8.0
+turn_rate = 3.5
+
+[node name="WoundComponent" parent="." unique_id=1971662021 node_paths=PackedStringArray("collision_shape_2d") instance=ExtResource("8_kmadt")]
+visible = false
+collision_shape_2d = NodePath("CollisionShape2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WoundComponent" unique_id=413233670]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_kmadt")
+
+[node name="AttackComponent" parent="." unique_id=2136703472 node_paths=PackedStringArray("collision_shape_2d") instance=ExtResource("9_ug8u0")]
+visible = false
+collision_shape_2d = NodePath("CollisionShape2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackComponent" unique_id=1764017238]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_lbbp5")
+
+[node name="CollisionController" parent="." unique_id=387055937 node_paths=PackedStringArray("collision_shape_2d") instance=ExtResource("10_8eatl")]
+collision_shape_2d = NodePath("CollisionShape2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionController" unique_id=1840060425]
+shape = SubResource("RectangleShape2D_jgr2i")
+
+[node name="Test" type="CollisionShape2D" parent="." unique_id=1418442058]
+visible = false
+shape = SubResource("CircleShape2D_mon6h")
+disabled = true

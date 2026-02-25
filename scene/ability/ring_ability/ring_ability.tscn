@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cd88qbkxkrkd2" path="res://scene/ability/ring_ability/死灵法环.png" id="1_e3vcv"]
 [ext_resource type="Script" uid="uid://dv2iaaaqoycwe" path="res://script/ability/ring_ability.gd" id="1_jq0bu"]
-[ext_resource type="PackedScene" uid="uid://c4aqf7g3512kf" path="res://scene/游戏功能组件/hitbox_component.tscn" id="2_jq0bu"]
+[ext_resource type="PackedScene" uid="uid://do1skrx74372j" path="res://scene/enemy_component/main_component/attack_component.tscn" id="4_s3bgp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s3bgp"]
 atlas = ExtResource("1_e3vcv")
@@ -78,10 +78,11 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_uu33b"]
 radius = 67.01593
 
-[node name="ring_ability" type="Node2D"]
+[node name="ring_ability" type="Node2D" unique_id=793403631 node_paths=PackedStringArray("attack_component")]
 script = ExtResource("1_jq0bu")
+attack_component = NodePath("AttackComponent")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2046188378]
 position = Vector2(1, 0)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_6tk77")
@@ -90,10 +91,11 @@ frame = 8
 frame_progress = 1.0
 offset = Vector2(0, -20)
 
-[node name="hitbox component" parent="." instance=ExtResource("2_jq0bu")]
-collision_mask = 4
+[node name="AttackComponent" parent="." unique_id=2136703472 node_paths=PackedStringArray("collision_shape_2d") instance=ExtResource("4_s3bgp")]
+collision_shape_2d = NodePath("CollisionShape2D")
+type = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox component"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackComponent" unique_id=2009195712]
 position = Vector2(0, 1)
 scale = Vector2(1.0788372, -0.9850134)
 shape = SubResource("CircleShape2D_uu33b")

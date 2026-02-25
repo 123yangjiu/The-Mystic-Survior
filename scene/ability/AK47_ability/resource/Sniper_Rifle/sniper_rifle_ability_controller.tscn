@@ -2,17 +2,19 @@
 
 [ext_resource type="Texture2D" uid="uid://3m5b3fjbr24n" path="res://scene/ability/AK47_ability/resource/Sniper_Rifle/Sniper_Rifle.png" id="1_5casq"]
 [ext_resource type="Script" uid="uid://cc0j6nhy3l2xk" path="res://script/ability/controller/sniper_rifle_ability_controller.gd" id="2_t1j2y"]
-[ext_resource type="PackedScene" uid="uid://n4as4qw7qe06" path="res://scene/ability/AK47_ability/bullet.tscn" id="3_8ymbv"]
+[ext_resource type="PackedScene" uid="uid://n4as4qw7qe06" path="res://scene/ability/AK47_ability/bullet.tscn" id="3_vl1j0"]
 [ext_resource type="AudioStream" uid="uid://bess3sbyamihu" path="res://scene/ability/AK47_ability/resource/Sniper_Rifle/fire.wav" id="4_15jvq"]
 [ext_resource type="AudioStream" uid="uid://dgykqv36x8xqj" path="res://scene/ability/AK47_ability/resource/RPG/Rocket_Equip.wav" id="5_d7lc7"]
 [ext_resource type="AudioStream" uid="uid://baqsusvffw05l" path="res://scene/ability/AK47_ability/resource/Sniper_Rifle/change_bullet.wav" id="6_5casq"]
 [ext_resource type="AudioStream" uid="uid://b64lq0onxxvcw" path="res://scene/ability/AK47_ability/resource/Shotgun_Pump.wav" id="6_o4f2b"]
 [ext_resource type="AudioStream" uid="uid://cbhssm3quqj8k" path="res://scene/ability/AK47_ability/resource/Sniper_Rifle/bullet_island.wav" id="8_8ymbv"]
 
-[node name="SniperRifleAbilityController" type="Sprite2D" unique_id=2039636434]
+[node name="SniperRifleAbilityController" type="Sprite2D" unique_id=2039636434 node_paths=PackedStringArray("timer", "audio")]
 texture = ExtResource("1_5casq")
 script = ExtResource("2_t1j2y")
-ability = ExtResource("3_8ymbv")
+ability = ExtResource("3_vl1j0")
+timer = NodePath("Reload")
+audio = NodePath("AudioStreamPlayer2D")
 
 [node name="Reload" type="Timer" parent="." unique_id=2077055730]
 wait_time = 7.0

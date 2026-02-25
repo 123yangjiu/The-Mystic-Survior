@@ -29,7 +29,7 @@ func on_ability_upgrade_add(upgrade:AbilityUpgrade,_current_upgrade:Dictionary):
 	elif upgrade.ID =="解锁RPG":
 		gun_index=3
 	if gun_index >=0:
-		for i:AK47AbilityController in get_children():
+		for i in get_children():
 			i.zidan_number.queue_free()
 			i.queue_free()
 		var gun = all_gun[gun_index].instantiate() as AK47AbilityController

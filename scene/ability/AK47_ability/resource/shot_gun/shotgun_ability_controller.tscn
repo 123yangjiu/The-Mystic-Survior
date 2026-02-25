@@ -2,15 +2,17 @@
 
 [ext_resource type="Texture2D" uid="uid://6w628sb81mp" path="res://scene/ability/AK47_ability/resource/shot_gun/shot_gun.png" id="1_boluh"]
 [ext_resource type="Script" uid="uid://dw0rf2iv44wk" path="res://script/ability/controller/shotgun_ability_controller.gd" id="2_tjw1q"]
-[ext_resource type="PackedScene" uid="uid://n4as4qw7qe06" path="res://scene/ability/AK47_ability/bullet.tscn" id="3_boluh"]
+[ext_resource type="PackedScene" uid="uid://n4as4qw7qe06" path="res://scene/ability/AK47_ability/bullet.tscn" id="3_x3j88"]
 [ext_resource type="AudioStream" uid="uid://7ymh2gld51sp" path="res://scene/ability/AK47_ability/resource/shot_gun/Shotgun_Shot-002.wav" id="4_a0h28"]
 [ext_resource type="AudioStream" uid="uid://dgykqv36x8xqj" path="res://scene/ability/AK47_ability/resource/RPG/Rocket_Equip.wav" id="5_caplp"]
 [ext_resource type="AudioStream" uid="uid://bf3qqladugmke" path="res://scene/ability/AK47_ability/resource/shot_gun/AK Rack WAV.wav" id="6_boluh"]
 
-[node name="ShotGunAbilityController" type="Sprite2D" unique_id=2039636434]
+[node name="ShotGunAbilityController" type="Sprite2D" unique_id=2039636434 node_paths=PackedStringArray("timer", "audio")]
 texture = ExtResource("1_boluh")
 script = ExtResource("2_tjw1q")
-ability = ExtResource("3_boluh")
+ability = ExtResource("3_x3j88")
+timer = NodePath("Reload")
+audio = NodePath("AudioStreamPlayer2D")
 
 [node name="Reload" type="Timer" parent="." unique_id=2077055730]
 wait_time = 3.0
@@ -28,13 +30,12 @@ wait_time = 0.3
 [node name="ChangeBullet1" type="AudioStreamPlayer2D" parent="." unique_id=1767572656]
 stream = ExtResource("5_caplp")
 volume_db = -2.0
-pitch_scale = 1.5
 bus = &"Sound"
 
 [node name="ChangeBullet2" type="AudioStreamPlayer2D" parent="." unique_id=1333645441]
 stream = ExtResource("6_boluh")
 volume_db = -4.0
-pitch_scale = 1.2
+pitch_scale = 1.1
 bus = &"Sound"
 
 [node name="ZidanNumber" type="Label" parent="." unique_id=1740660800]

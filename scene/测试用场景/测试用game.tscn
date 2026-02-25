@@ -36,16 +36,17 @@
 [ext_resource type="Resource" uid="uid://ccayapnq1hx0c" path="res://resource/upgrades/heaven_fury/更多愤怒 (2).tres" id="31_ypcgk"]
 [ext_resource type="Resource" uid="uid://dladi3itxe508" path="res://resource/upgrades/heaven_fury/更强愤怒 .tres" id="32_xfjms"]
 [ext_resource type="Resource" uid="uid://bre1wbhgghbfl" path="res://resource/upgrades/heaven_fury/更快愤怒.tres" id="33_g1f6a"]
-[ext_resource type="Resource" uid="uid://oty2cgbisuck" path="res://resource/upgrades/holy_light/get_hammer.tres" id="34_6lq15"]
-[ext_resource type="Resource" uid="uid://c80ua6iia28p6" path="res://resource/upgrades/holy_light/hammer_power.tres" id="35_4k1xf"]
-[ext_resource type="Resource" uid="uid://cjjqnoy3whssy" path="res://resource/upgrades/holy_light/hammer_speed.tres" id="36_ase8p"]
-[ext_resource type="Resource" uid="uid://d4ai6yyxvaf2a" path="res://resource/upgrades/holy_light/larger.tres" id="37_4v241"]
+[ext_resource type="Resource" uid="uid://oty2cgbisuck" path="res://resource/upgrades/holy_light/get_light.tres" id="34_6lq15"]
+[ext_resource type="Resource" uid="uid://c80ua6iia28p6" path="res://resource/upgrades/holy_light/light_power.tres" id="35_4k1xf"]
+[ext_resource type="Resource" uid="uid://cjjqnoy3whssy" path="res://resource/upgrades/holy_light/light_speed.tres" id="36_ase8p"]
+[ext_resource type="Resource" uid="uid://d4ai6yyxvaf2a" path="res://resource/upgrades/holy_light/light_bigger.tres" id="37_4v241"]
 [ext_resource type="Resource" uid="uid://bd0tr7xshvycr" path="res://resource/upgrades/ring/ring_rate_range.tres" id="38_7bo1d"]
 [ext_resource type="Resource" uid="uid://bm5728iq6c8ra" path="res://resource/upgrades/gun/get_gun.tres" id="38_wlm2r"]
 [ext_resource type="Resource" uid="uid://dn81f21hebidn" path="res://resource/upgrades/gun/gun_damage.tres" id="39_bajcs"]
 [ext_resource type="Resource" uid="uid://j41hiigk5pdq" path="res://resource/upgrades/gun/gun_bigger.tres" id="40_rr4dp"]
 [ext_resource type="Resource" uid="uid://cpuhurkw2l4bp" path="res://resource/upgrades/gun/get_shotgun.tres" id="41_45yv1"]
 [ext_resource type="Resource" uid="uid://mrbbx2kub2ka" path="res://resource/upgrades/gun/get_sniper_rifle.tres" id="42_45yv1"]
+[ext_resource type="Resource" uid="uid://dgtmnrikh6nqu" path="res://resource/upgrades/gun/get_rocket.tres" id="43_tkwvv"]
 [ext_resource type="PackedScene" uid="uid://r753wp2st35x" path="res://scene/enemy/escape_box.tscn" id="47_acha4"]
 [ext_resource type="PackedScene" uid="uid://b2fnijcvbh7hg" path="res://scene/enemy/box.tscn" id="48_pbpbm"]
 
@@ -395,10 +396,10 @@ experience_manager = NodePath("../experiencemanager")
 
 [node name="Upgrademanager" parent="." unique_id=2103649368 node_paths=PackedStringArray("experience_manager") instance=ExtResource("14_btvex")]
 script = ExtResource("15_h48kl")
-upgrade_pool = Array[ExtResource("16_ufowh")]([ExtResource("17_mcuiq"), ExtResource("18_wlm2r"), ExtResource("19_bajcs"), ExtResource("20_rr4dp"), ExtResource("21_45yv1"), ExtResource("22_acha4"), ExtResource("23_pbpbm"), ExtResource("24_tkwvv"), ExtResource("25_ekiqg"), ExtResource("26_wo850"), ExtResource("27_40dpe"), ExtResource("28_4xk21"), ExtResource("29_0lbpo"), ExtResource("30_1ath1"), ExtResource("31_ypcgk"), ExtResource("32_xfjms"), ExtResource("33_g1f6a"), ExtResource("34_6lq15"), ExtResource("35_4k1xf"), ExtResource("36_ase8p"), ExtResource("37_4v241"), ExtResource("38_7bo1d"), ExtResource("38_wlm2r"), ExtResource("39_bajcs"), ExtResource("40_rr4dp"), ExtResource("41_45yv1"), ExtResource("42_45yv1")])
+upgrade_pool = Array[ExtResource("16_ufowh")]([ExtResource("17_mcuiq"), ExtResource("18_wlm2r"), ExtResource("19_bajcs"), ExtResource("20_rr4dp"), ExtResource("21_45yv1"), ExtResource("22_acha4"), ExtResource("23_pbpbm"), ExtResource("24_tkwvv"), ExtResource("25_ekiqg"), ExtResource("26_wo850"), ExtResource("27_40dpe"), ExtResource("28_4xk21"), ExtResource("29_0lbpo"), ExtResource("30_1ath1"), ExtResource("31_ypcgk"), ExtResource("32_xfjms"), ExtResource("33_g1f6a"), ExtResource("34_6lq15"), ExtResource("35_4k1xf"), ExtResource("36_ase8p"), ExtResource("37_4v241"), ExtResource("38_7bo1d"), ExtResource("38_wlm2r"), ExtResource("39_bajcs"), ExtResource("40_rr4dp"), ExtResource("41_45yv1"), ExtResource("42_45yv1"), ExtResource("43_tkwvv")])
 experience_manager = NodePath("../experiencemanager")
 inital_upgrade_export = Array[ExtResource("16_ufowh")]([])
-initial_sort = "光剑"
+initial_sort = "枪"
 
 [node name="实体" type="Node" parent="." unique_id=712875686 groups=["实体图层"]]
 

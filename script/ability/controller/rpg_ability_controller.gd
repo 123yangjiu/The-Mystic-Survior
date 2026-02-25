@@ -4,7 +4,7 @@ extends AK47AbilityController
 var check_range :=100.0
 var expolotion_damage :=50
 
-func _ready() -> void:
+func set_variable()->void:
 	#射程，子弹数量，射击间隔，转头间隔，位置
 	max_range=125
 	number = 1
@@ -17,21 +17,6 @@ func _ready() -> void:
 	init_damage = 15
 	init_scale=Vector2(1.0,1.0)
 	speed =8
-	#基础参数
-	base_wait_time=reload.wait_time
-	volume=audio.volume_db
-	change_1_pitch = change_bullet_1.pitch_scale
-	change_2_pitch = change_bullet_2.pitch_scale
-	init_position=self.position
-	#连接参数
-	reload.timeout.connect(on_reload_out)
-	_continue.timeout.connect(on_reload_out)
-	GameEvent.ability_upgrade_add.connect(on_ability_upgrade_add)
-	var player = get_tree().get_first_node_in_group("实体图层").get_child(0)
-	remove_child(zidan_number)
-	player.add_child.call_deferred(zidan_number)
-	zidan_number.position=Vector2(-20.0,-40.0)
-	on_reload_out()
 
 func check_enemy()->Array[Node]:
 	var enemies:Array[Node]= get_tree().get_first_node_in_group("enemylayer").get_children()
@@ -40,7 +25,7 @@ func check_enemy()->Array[Node]:
 	)
 	#get_first_node_in_group是拿到组里面的第一个节点，如果我们想要拿到player节点
 	#找到聚堆的小怪群
-	var enemies_clone := enemies.duplicate()
+	var enemies_clone := enemies.duplicate(true)
 	enemies.sort_custom(func (a:Node2D,b:Node2D):
 		var a_global_position := a.global_position
 		var b_global_position := b.global_position
@@ -74,9 +59,9 @@ func attack(enemy_global_position:Vector2)->void:
 	audio.play()
 	#设置基本属性
 	#ability_instance.scale = init_scale*scale_range
-	ability_instance.hitbox_component.damage = int(init_damage*damage_range+randf_range(-3,3))
-	ability_instance.hitbox_component_2.damage = int(expolotion_damage*damage_range+randf_range(-3,3))
-	ability_instance.hitbox_component_2.scale = init_scale*number_range
+	ability_instance.attack_component.damage = init_damage*damage_range
+	ability_instance.attack_component_2.damage = expolotion_damage*damage_range
+	ability_instance.attack_component_2.scale = init_scale*number_range
 	ability_instance.global_position=zidan.global_position
 	ability_instance.direction=(enemy_global_position-zidan.global_position).normalized()
 	ability_instance.rotation = ability_instance.direction.angle()

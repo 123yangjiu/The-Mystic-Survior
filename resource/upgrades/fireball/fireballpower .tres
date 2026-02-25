@@ -7,6 +7,5 @@ script = ExtResource("1_k45xu")
 ID = "火球大速"
 Sort = "火球"
 name = "速猛火球"
-Description = "你的火球冷却-15%，
-并使火球大小增加20%！
+Description = "你的火球冷却-20%，还会增大20%！
 "

@@ -7,10 +7,12 @@
 [ext_resource type="AudioStream" uid="uid://dgykqv36x8xqj" path="res://scene/ability/AK47_ability/resource/RPG/Rocket_Equip.wav" id="5_3eytq"]
 [ext_resource type="AudioStream" uid="uid://b64lq0onxxvcw" path="res://scene/ability/AK47_ability/resource/Shotgun_Pump.wav" id="6_q2ca5"]
 
-[node name="RPGAbilityController" type="Sprite2D" unique_id=2039636434]
+[node name="RPGAbilityController" type="Sprite2D" unique_id=2039636434 node_paths=PackedStringArray("timer", "audio")]
 texture = ExtResource("1_ymree")
 script = ExtResource("2_x34q7")
 ability = ExtResource("3_tlwfg")
+timer = NodePath("Reload")
+audio = NodePath("AudioStreamPlayer2D")
 
 [node name="Reload" type="Timer" parent="." unique_id=2077055730]
 wait_time = 4.0

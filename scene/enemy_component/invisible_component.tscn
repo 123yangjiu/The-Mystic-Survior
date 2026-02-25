@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cfqd8a0jo088w"]
+
+[ext_resource type="Script" uid="uid://djxis15pxf860" path="res://script/enemy_component/invisible_component.gd" id="1_xu2aa"]
+
+[node name="InvisibleComponent" type="Node2D" unique_id=1867220068]
+script = ExtResource("1_xu2aa")
+
+[node name="Durat" type="Timer" parent="." unique_id=339113990]
+wait_time = 0.6
+one_shot = true
+
+[node name="Inter" type="Timer" parent="." unique_id=1779676249]
+wait_time = 1.5
+one_shot = true
+
+[connection signal="timeout" from="Durat" to="." method="_on_durat_timeout"]
+[connection signal="timeout" from="Inter" to="." method="_on_inter_timeout"]

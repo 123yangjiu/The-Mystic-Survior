@@ -7,27 +7,26 @@ func set_variable()->void:
 	max_range=200
 	number = 1
 	#伤害，大小,速度
-	init_damage =26
+	init_damage =29.0
 
-func attack()->void:
-	var ability_instance= ability.instantiate() as LightAbility
-	var foreground = get_tree().get_first_node_in_group("前景图层")
-	foreground.add_child(ability_instance)#加入到场景中
-	ability_instance.scale= init_scale*scale_range
-	ability_instance.hitbox_component.damage =int(init_damage*damage_range+randf_range(-5,5))
-	ability_instance.global_position = return_position()
-	var db_value = volume+20 * log(volume_range) / log(10)
-	db_value = clamp(db_value, -80, 6)
+func return_position():
+	return GameEvent.play_global_position +Vector2(0,-20)
 
 func on_ability_upgrade_add(upgrade:AbilityUpgrade,_current_upgrade:Dictionary):
 	if upgrade.ID=="光的速度":
 		wait_range -=0.2
 		timer.wait_time=max(base_wait_time*wait_range,base_wait_time*0.1)
-		volume_range -=0.05
 	if upgrade.ID=="光的力量":
-		damage_range*=1.2
+		damage_range*=1.3
 	if upgrade.ID=="解锁光剑":
-		$Timer.start()
+		timer.start()
 	if upgrade.ID=="光剑变大":
-		scale_range*=1.2
-		max_range *=1.2
+		scale_range*=1.30
+		max_range *=1.30
+
+func set_base(instance,_target_position:Vector2)->void:
+	if audio:
+		audio.play()
+	instance.scale.y= init_scale.y*scale_range
+	instance.attack_component.damage = init_damage*damage_range
+	instance.global_position = return_position()

@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dd62abo0ond38"]
+
+[ext_resource type="Script" uid="uid://bceirhkq8l43h" path="res://script/enemy_component/chid_component/with_animation_attack_component.gd" id="1_b8l6u"]
+[ext_resource type="Script" uid="uid://1jtm0pwuxppv" path="res://script/enemy_component/inside_scene/inside_collision.gd" id="2_fwfdb"]
+
+[node name="AnimationAttackComponent" type="Node2D" unique_id=2136703472]
+script = ExtResource("1_b8l6u")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=157919665]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("2_fwfdb")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://dm8b5ckjom6te"]
 
 [ext_resource type="Script" uid="uid://lbqci8if5ayv" path="res://script/ability/rocket.gd" id="1_e7o43"]
-[ext_resource type="PackedScene" uid="uid://c4aqf7g3512kf" path="res://scene/游戏功能组件/hitbox_component.tscn" id="2_e7o43"]
 [ext_resource type="Texture2D" uid="uid://be7mldja5tr25" path="res://scene/ability/AK47_ability/resource/RPG/rocket.png" id="3_bveje"]
 [ext_resource type="Texture2D" uid="uid://bwtxwbblelxpb" path="res://scene/ability/AK47_ability/resource/RPG/explosion-b.png" id="4_e7o43"]
 [ext_resource type="AudioStream" uid="uid://7wetuw2ve8m3" path="res://scene/ability/AK47_ability/resource/RPG/Rocket_Explosion-004.wav" id="5_1pmwx"]
+[ext_resource type="PackedScene" uid="uid://do1skrx74372j" path="res://scene/enemy_component/main_component/attack_component.tscn" id="6_pwfc5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6syyt"]
 size = Vector2(30, 8.5)
@@ -104,17 +104,10 @@ animations = [{
 "speed": 12.0
 }]
 
-[node name="Rocket" type="Node2D" unique_id=81678627 node_paths=PackedStringArray("hitbox_component", "timer")]
+[node name="Rocket" type="Node2D" unique_id=81678627 node_paths=PackedStringArray("attack_component", "timer")]
 script = ExtResource("1_e7o43")
-hitbox_component = NodePath("hitbox component")
+attack_component = NodePath("AttackComponent")
 timer = NodePath("Timer")
-
-[node name="hitbox component" parent="." unique_id=971448297 instance=ExtResource("2_e7o43")]
-collision_mask = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox component" unique_id=739219092]
-position = Vector2(14, 0.25)
-shape = SubResource("RectangleShape2D_6syyt")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1069465408]
 position = Vector2(14, -2)
@@ -125,16 +118,28 @@ texture = ExtResource("3_bveje")
 wait_time = 5.0
 autostart = true
 
-[node name="hitbox component2" parent="." unique_id=874950924 instance=ExtResource("2_e7o43")]
-collision_mask = 4
-monitoring = false
-monitorable = false
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1833762548]
+stream = ExtResource("5_1pmwx")
+pitch_scale = 0.8
+bus = &"Sound"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox component2" unique_id=810990678]
+[node name="AttackComponent" parent="." unique_id=2136703472 node_paths=PackedStringArray("collision_shape_2d") instance=ExtResource("6_pwfc5")]
+collision_shape_2d = NodePath("CollisionShape2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackComponent" unique_id=739219092]
+position = Vector2(14, 0.25)
+shape = SubResource("RectangleShape2D_6syyt")
+
+[node name="AttackComponent2" parent="." unique_id=145860812 node_paths=PackedStringArray("collision_shape_2d") instance=ExtResource("6_pwfc5")]
+collision_shape_2d = NodePath("CollisionShape2D")
+type = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackComponent2" unique_id=810990678]
 position = Vector2(14, 0)
 shape = SubResource("CircleShape2D_bveje")
+disabled = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="hitbox component2" unique_id=1770526037]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AttackComponent2" unique_id=1770526037]
 visible = false
 self_modulate = Color(1, 1, 1, 0.78431374)
 position = Vector2(13, -7)
@@ -143,8 +148,3 @@ sprite_frames = SubResource("SpriteFrames_wtr3p")
 animation = &"explotion"
 frame = 11
 frame_progress = 1.0
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1833762548]
-stream = ExtResource("5_1pmwx")
-pitch_scale = 0.8
-bus = &"Sound"

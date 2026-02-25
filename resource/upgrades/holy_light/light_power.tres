@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AbilityUpgrade" format=3 uid="uid://c80ua6iia28p6"]
+
+[ext_resource type="Script" uid="uid://dmyfvo2eu1rj2" path="res://resource/ability_upgrade.gd" id="1_fpa04"]
+
+[resource]
+script = ExtResource("1_fpa04")
+ID = "光的力量"
+Sort = "光剑"
+name = "光的力量！"
+Description = "光剑的伤害增加30%"

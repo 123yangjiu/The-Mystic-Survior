@@ -1,0 +1,232 @@
+[gd_scene format=3 uid="uid://dou6f0vkt4knk"]
+
+[ext_resource type="Script" uid="uid://rsl4jg827i3e" path="res://script/enemy/main_enemy/enemy_xiaotrue.gd" id="1_fwp1t"]
+[ext_resource type="Texture2D" uid="uid://dw82kbe2cly30" path="res://sucai/邪恶女巫.png" id="3_fwp1t"]
+[ext_resource type="PackedScene" uid="uid://bnactnfyipltl" path="res://scene/enemy_component/main_component/health_component.tscn" id="4_v253o"]
+[ext_resource type="PackedScene" uid="uid://c0i7tc6xpk0n8" path="res://scene/enemy_component/main_component/drop_component.tscn" id="5_qtk83"]
+[ext_resource type="PackedScene" uid="uid://i5imcyd15vix" path="res://scene/游戏物件/exprience_bottle.tscn" id="6_taaij"]
+[ext_resource type="PackedScene" uid="uid://daaqcmminiyk1" path="res://scene/游戏物件/blood_bottle.tscn" id="7_nviri"]
+[ext_resource type="PackedScene" uid="uid://g6ks4dc6kpht" path="res://scene/enemy_component/main_component/velocity_component.tscn" id="8_8plh2"]
+[ext_resource type="PackedScene" uid="uid://f15fc5ggcq0l" path="res://scene/游戏物件/bonus_bottle.tscn" id="8_y1bq4"]
+[ext_resource type="PackedScene" uid="uid://12uey86sh54o" path="res://scene/enemy_component/main_component/wound_component.tscn" id="9_fj1ko"]
+[ext_resource type="PackedScene" uid="uid://do1skrx74372j" path="res://scene/enemy_component/main_component/attack_component.tscn" id="10_mjawj"]
+[ext_resource type="PackedScene" uid="uid://nxifhy12ej5c" path="res://scene/enemy_component/main_component/collision_controller.tscn" id="11_3lgsf"]
+[ext_resource type="PackedScene" uid="uid://dd62abo0ond38" path="res://scene/enemy_component/child_component/animation_attack_component.tscn" id="12_mjawj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y1bq4"]
+atlas = ExtResource("3_fwp1t")
+region = Rect2(192, 768, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i0jlx"]
+atlas = ExtResource("3_fwp1t")
+region = Rect2(384, 768, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v253o"]
+atlas = ExtResource("3_fwp1t")
+region = Rect2(576, 768, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qtk83"]
+atlas = ExtResource("3_fwp1t")
+region = Rect2(768, 768, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_taaij"]
+atlas = ExtResource("3_fwp1t")
+region = Rect2(0, 960, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nviri"]
+atlas = ExtResource("3_fwp1t")
+region = Rect2(192, 960, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8plh2"]
+atlas = ExtResource("3_fwp1t")
+region = Rect2(384, 960, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p4ctr"]
+atlas = ExtResource("3_fwp1t")
+region = Rect2(576, 960, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kh6oe"]
+atlas = ExtResource("3_fwp1t")
+region = Rect2(768, 960, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fj1ko"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y1bq4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i0jlx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v253o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qtk83")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_taaij")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nviri")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8plh2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p4ctr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kh6oe")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fj1ko"]
+size = Vector2(24.471638, 57.807175)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mjawj"]
+size = Vector2(18.713604, 48.433037)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3lgsf"]
+size = Vector2(17.274097, 26.560055)
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_fj1ko"]
+points = PackedVector2Array(-25, -45, 30, -35, 40, -30, 35, 20)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5oxth"]
+radius = 150.0
+
+[sub_resource type="Animation" id="Animation_mjawj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationAttackComponent/CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_fj1ko"]
+resource_name = "attack"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationAttackComponent/CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.4, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [false, true]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [&"run", 1.0, false],
+"method": &"play"
+}, {
+"args": [],
+"method": &"stop"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mjawj"]
+_data = {
+&"RESET": SubResource("Animation_mjawj"),
+&"attack": SubResource("Animation_fj1ko")
+}
+
+[node name="Skeleton" type="CharacterBody2D" unique_id=1153114175]
+scale = Vector2(0.6946818, 0.640059)
+collision_layer = 8
+collision_mask = 9
+motion_mode = 1
+script = ExtResource("1_fwp1t")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=559742458 groups=["enemy"]]
+position = Vector2(0, -14)
+scale = Vector2(0.47173703, 0.4204492)
+sprite_frames = SubResource("SpriteFrames_fj1ko")
+animation = &"run"
+frame = 8
+frame_progress = 1.0
+
+[node name="health_component" parent="." unique_id=1429621634 instance=ExtResource("4_v253o")]
+max_health = 100.0
+
+[node name="drop_component" parent="." unique_id=1796909343 instance=ExtResource("5_qtk83")]
+drop_thingandpersent = Dictionary[PackedScene, float]({
+ExtResource("6_taaij"): 1.0,
+ExtResource("7_nviri"): 0.04,
+ExtResource("8_y1bq4"): 0.0
+})
+drop_range = 2
+
+[node name="velocity_component" parent="." unique_id=1643099296 instance=ExtResource("8_8plh2")]
+speed = 70.0
+acceleration = 10.0
+
+[node name="WoundComponent" parent="." unique_id=1971662021 node_paths=PackedStringArray("collision_shape_2d") instance=ExtResource("9_fj1ko")]
+visible = false
+collision_shape_2d = NodePath("CollisionShape2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WoundComponent" unique_id=533363186]
+position = Vector2(-0.71975416, -3.9058912)
+scale = Vector2(0.99999994, 1)
+shape = SubResource("RectangleShape2D_fj1ko")
+
+[node name="AttackComponent" parent="." unique_id=2136703472 node_paths=PackedStringArray("collision_shape_2d") instance=ExtResource("10_mjawj")]
+visible = false
+collision_shape_2d = NodePath("CollisionShape2D")
+damage = 18.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackComponent" unique_id=1408896903]
+position = Vector2(-0.7197536, -3.9058907)
+scale = Vector2(0.99999994, 1)
+shape = SubResource("RectangleShape2D_mjawj")
+
+[node name="CollisionController" parent="." unique_id=387055937 node_paths=PackedStringArray("collision_shape_2d") instance=ExtResource("11_3lgsf")]
+collision_shape_2d = NodePath("CollisionShape2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionController" unique_id=909065960]
+position = Vector2(8.580136e-08, -3.90589)
+scale = Vector2(0.99999994, 1)
+shape = SubResource("RectangleShape2D_3lgsf")
+
+[node name="AnimationAttackComponent" parent="." unique_id=671336853 node_paths=PackedStringArray("collision_shape_2d") instance=ExtResource("12_mjawj")]
+visible = false
+collision_shape_2d = NodePath("CollisionShape2D")
+damage = 15.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimationAttackComponent" unique_id=1223136325]
+position = Vector2(-0.7197536, -3.9058907)
+shape = SubResource("ConvexPolygonShape2D_fj1ko")
+disabled = true
+
+[node name="Test" type="CollisionShape2D" parent="." unique_id=378606698]
+visible = false
+scale = Vector2(0.9999999, 1)
+shape = SubResource("CircleShape2D_5oxth")
+disabled = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1360045759]
+libraries/ = SubResource("AnimationLibrary_mjawj")
+autoplay = &"attack"

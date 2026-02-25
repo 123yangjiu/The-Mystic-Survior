@@ -1,10 +1,14 @@
 extends AbilityController
 class_name FlyAbilityController
-
+#速度
 var speed =20
 var speed_range :=1.0
+#穿透数量
+var amount:=1
 
-var enemy_position:Vector2
+func on_timer_timeout():
+	var enemies=check_enemy()
+	while_attack(enemies)
 
 func check_enemy()->Array[Node]:
 	var enemies:Array[Node]= get_tree().get_first_node_in_group("enemylayer").get_children()
@@ -28,8 +32,8 @@ func while_attack(enemies:Array[Node])->void:
 		#找到敌人，并排除各种问题
 		var enemy = before_attack_find_enemy(enemies)
 		if enemy:
-			enemy_position = enemy.global_position
-			attack()
+			var enemy_position = enemy.global_position
+			attack(enemy_position)
 		else:
 			return
 
@@ -46,5 +50,17 @@ func before_attack_find_enemy(enemies:Array[Node]):
 	var enemy :Node2D= enemies[n]
 	return enemy
 
+func set_base(instance:FlyThing,target_position:Vector2)->void:
+	if audio:
+		audio.play()
+	#设置基本属性
+	instance.scale = init_scale*scale_range
+	instance.attack_component.damage = init_damage*damage_range
+	instance.global_position= return_position()
+	instance.direction=(target_position-GameEvent.play_global_position).normalized()
+	instance.rotation = instance.direction.angle()
+	instance.speed =speed*speed_range
+	instance.amount =amount
+
 func return_position():
-	return enemy_position
+	return GameEvent.play_global_position

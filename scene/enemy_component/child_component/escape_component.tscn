@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://n86spb22tera"]
+
+[ext_resource type="Script" uid="uid://b8t72k1d6mimy" path="res://script/enemy_component/chid_component/escape_component.gd" id="1_bl5uy"]
+
+[node name="EscapeComponent" type="Node2D" unique_id=1472663570]
+script = ExtResource("1_bl5uy")

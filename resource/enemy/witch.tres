@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EnemyUnlockEntry" format=3 uid="uid://t5kejwdjuxx"]
+
+[ext_resource type="PackedScene" uid="uid://dg0lowfwv0dg3" path="res://scene/enemy/knight.tscn" id="1_cm2db"]
+[ext_resource type="Script" uid="uid://b8kynvj5xuaby" path="res://resource/enemy/enemy.gd" id="2_mnlgg"]
+
+[resource]
+script = ExtResource("2_mnlgg")
+scene = ExtResource("1_cm2db")
+unlock_difficulty = -1
+ID = 10

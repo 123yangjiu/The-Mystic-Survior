@@ -4,9 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://cbdxmcmld8om5" path="res://scene/ability/fireball_ability/fireball.tscn" id="2_de04s"]
 [ext_resource type="AudioStream" uid="uid://e2v05r1ognvx" path="res://scene/ability/fireball_ability/火球2.WAV" id="3_157to"]
 
-[node name="Fireball_controller" type="Node" unique_id=1452098033]
+[node name="Fireball_controller" type="Node2D" unique_id=1763893496 node_paths=PackedStringArray("timer", "audio")]
 script = ExtResource("1_dvaxo")
-fireball = ExtResource("2_de04s")
+ability = ExtResource("2_de04s")
+timer = NodePath("Timer")
+audio = NodePath("AudioStreamPlayer2D")
 
 [node name="Timer" type="Timer" parent="." unique_id=176679720]
 wait_time = 1.4

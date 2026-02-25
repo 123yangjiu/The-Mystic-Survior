@@ -22,7 +22,7 @@ config/icon="uid://b5oni5ikgr5pr"
 
 [autoload]
 
-GameEvent="*res://scene/游戏事件/gameEvent.tscn"
+GameEvent="*res://scene/game_event.tscn"
 
 [copilot]
 
@@ -112,10 +112,11 @@ pointing/emulate_touch_from_mouse=true
 [layer_names]
 
 2d_physics/layer_1="地形"
-2d_physics/layer_2="玩家"
-2d_physics/layer_3="敌人"
+2d_physics/layer_2="玩家受伤区域"
+2d_physics/layer_3="敌人受伤区域"
 2d_physics/layer_4="敌人碰撞区域"
 2d_physics/layer_5="玩家拾取区"
+2d_physics/layer_6="玩家实体"
 
 [rendering]
 

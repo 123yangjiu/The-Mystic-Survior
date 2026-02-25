@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://boijj7keu3l5o"]
+
+[ext_resource type="Script" uid="uid://dkuhlmdpsvgum" path="res://script/enemy_component/chid_component/player_wound_component.gd" id="1_dmljr"]
+[ext_resource type="Script" uid="uid://1jtm0pwuxppv" path="res://script/enemy_component/inside_scene/inside_collision.gd" id="2_vmorl"]
+[ext_resource type="AudioStream" uid="uid://bnbuawlex5u51" path="res://sucai/sound/Hurt.wav" id="3_vmorl"]
+
+[node name="WoundComponent" type="Node2D" unique_id=1971662021]
+script = ExtResource("1_dmljr")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=847993684]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("2_vmorl")
+
+[node name="HurtInterval" type="Timer" parent="." unique_id=1651161221]
+wait_time = 0.5
+one_shot = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2096402894]
+stream = ExtResource("3_vmorl")
+
+[connection signal="timeout" from="HurtInterval" to="." method="_on_hurt_interval_timeout"]

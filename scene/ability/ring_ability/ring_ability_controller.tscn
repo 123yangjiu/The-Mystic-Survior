@@ -4,9 +4,11 @@
 [ext_resource type="AudioStream" uid="uid://b4qhxuu7o4bdy" path="res://scene/ability/ring_ability/火环4.WAV" id="2_00eck"]
 [ext_resource type="PackedScene" uid="uid://crcg0u1elatvt" path="res://scene/ability/ring_ability/ring_ability.tscn" id="2_dvgk7"]
 
-[node name="ring_ability_controller" type="Node" unique_id=1661698945]
+[node name="ring_ability_controller" type="Node2D" unique_id=1689557069 node_paths=PackedStringArray("timer", "audio")]
 script = ExtResource("1_00eck")
-ring_ability = ExtResource("2_dvgk7")
+ability = ExtResource("2_dvgk7")
+timer = NodePath("Timer")
+audio = NodePath("AudioStreamPlayer2D")
 
 [node name="Timer" type="Timer" parent="." unique_id=1254108780]
 wait_time = 4.5

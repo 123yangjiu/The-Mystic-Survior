@@ -1,5 +1,5 @@
 extends CharacterBody2D
-@onready var velocity_component: Velocity_controller = $velocity_component
+@onready var velocity_component: VelocityController = $velocity_component
 @onready var health_component: = $health_component
 @onready var label: Label = $Label
 

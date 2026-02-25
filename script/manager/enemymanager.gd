@@ -5,20 +5,25 @@ const left_limit=-2700
 const top_limit = -2000
 const right_limit =2160
 const bottom_limit = 2360
-var max_monster :float=900.0
-var target_time:float
-
+@onready var timer: Timer = $Timer
 @export var kill_cirle_enemy:Array[PackedScene]
-var chosen_enemy_scene:PackedScene
+@export var special_enemy:Array[EnemyUnlockEntry]
+#最大怪物数量
+var max_monster :float=900.0
+#最小刷怪间隔
 var min_gap=0.12
 var decay =0.25
+var target_time:float
+
+var chosen_enemy_scene:PackedScene
+
 var rand_R=450#包围半径
 @onready var enemyfiliter: EnemyFiliter = $"../enemyfiliter"
 var base_time_gap
 
 func _ready() -> void:
-	base_time_gap=$Timer.wait_time
-	$Timer.timeout.connect(on_time_out)
+	base_time_gap=timer.wait_time
+	timer.timeout.connect(on_time_out)
 	GameEvent.more_difficulty.connect(on_more_difficulty)
 	match GameEvent.mode_index:
 		2:
@@ -39,13 +44,13 @@ func on_time_out():
 	entities_Layer.add_child(enemy)
 	enemy.global_position=limit_position(spawn_position)
 	if target_time:
-		$Timer.wait_time=target_time*(exp(GameEvent.current_monster/max_monster)-0.2)
+		timer.wait_time=target_time*(exp(GameEvent.current_monster/max_monster)-0.2)
 
 func on_more_difficulty(difficulty:int):
 	var entities_Layer=get_tree().get_first_node_in_group("enemylayer")
 	var player=get_tree().get_first_node_in_group("player")
-	$Timer.wait_time = (max(min_gap, base_time_gap * exp(-decay * difficulty)))*1.15
-	target_time=$Timer.wait_time
+	timer.wait_time = (max(min_gap, base_time_gap * exp(-decay * difficulty)))*1.15
+	target_time=timer.wait_time
 	if difficulty==3:
 		var kill_enemy = kill_cirle_enemy[6].instantiate() as Node2D
 		entities_Layer.add_child(kill_enemy)
@@ -167,10 +172,10 @@ func limit_position(which_position)->Vector2:
 
 func on_mush_appear()->void:
 	await get_tree().create_timer(1).timeout
-	var ori_time = $Timer.wait_time
-	$Timer.wait_time= (max(min_gap, base_time_gap * exp(-decay * GameEvent.difficulty*0.2)))*1.15
+	var ori_time = timer.wait_time
+	timer.wait_time= (max(min_gap, base_time_gap * exp(-decay * GameEvent.difficulty*0.2)))*1.15
 	SPAWN_R = 250
 	await get_tree().create_timer(19).timeout
 	SPAWN_R=300
-	if $Timer.wait_time >ori_time:
-		$Timer.wait_time=ori_time
+	if timer.wait_time >ori_time:
+		timer.wait_time=ori_time

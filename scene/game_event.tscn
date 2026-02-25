@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://byrfr2i02s1sk"]
+
+[ext_resource type="Script" uid="uid://beqg6eyavy01k" path="res://script/gamevent.gd" id="1_yrl0y"]
+[ext_resource type="Script" uid="uid://dmyfvo2eu1rj2" path="res://resource/ability_upgrade.gd" id="2_tb2mb"]
+[ext_resource type="Resource" uid="uid://blc0x1fuyqqd8" path="res://resource/upgrades/sword/sword_rate.tres" id="3_pxxb8"]
+[ext_resource type="Resource" uid="uid://bb008fs5wq31x" path="res://resource/upgrades/sword/sword_number.tres" id="4_03pc0"]
+[ext_resource type="Resource" uid="uid://oclytr2qthx8" path="res://resource/upgrades/sword/sword_damage.tres" id="5_35wdu"]
+[ext_resource type="Resource" uid="uid://oty2cgbisuck" path="res://resource/upgrades/holy_light/get_light.tres" id="6_82gj3"]
+[ext_resource type="Resource" uid="uid://c80ua6iia28p6" path="res://resource/upgrades/holy_light/light_power.tres" id="7_uh5dj"]
+[ext_resource type="Resource" uid="uid://cjjqnoy3whssy" path="res://resource/upgrades/holy_light/light_speed.tres" id="8_wssjq"]
+[ext_resource type="Resource" uid="uid://d4ai6yyxvaf2a" path="res://resource/upgrades/holy_light/light_bigger.tres" id="9_22uj0"]
+[ext_resource type="Resource" uid="uid://dq2ug8ceqhgg0" path="res://resource/upgrades/fireball/get_fireball.tres" id="10_5qp8m"]
+[ext_resource type="Resource" uid="uid://dq68qtu5n06bt" path="res://resource/upgrades/heaven_fury/get_heaven_fury.tres" id="11_e1gm4"]
+[ext_resource type="Resource" uid="uid://brv0twbh4faty" path="res://resource/upgrades/fireball/fireballchuantou  .tres" id="12_3ne6c"]
+[ext_resource type="Resource" uid="uid://bqpb3vuil8nte" path="res://resource/upgrades/fireball/fireballnnumber.tres" id="13_q8mot"]
+[ext_resource type="Resource" uid="uid://v5wroaoxtel4" path="res://resource/upgrades/fireball/fireballpower .tres" id="14_38l7a"]
+[ext_resource type="Resource" uid="uid://b5o283wr41dta" path="res://resource/upgrades/else/吸铁石.tres" id="15_7ypyw"]
+[ext_resource type="Resource" uid="uid://ccayapnq1hx0c" path="res://resource/upgrades/heaven_fury/更多愤怒 (2).tres" id="16_fdmk4"]
+[ext_resource type="Resource" uid="uid://dladi3itxe508" path="res://resource/upgrades/heaven_fury/更强愤怒 .tres" id="17_vg13k"]
+[ext_resource type="Resource" uid="uid://bre1wbhgghbfl" path="res://resource/upgrades/heaven_fury/更快愤怒.tres" id="18_ykekp"]
+[ext_resource type="Resource" uid="uid://cq6h3a5qtmde3" path="res://resource/upgrades/else/盔甲.tres" id="19_ggiwx"]
+[ext_resource type="Resource" uid="uid://bbp5xqvgt1ubd" path="res://resource/upgrades/else/飞毛腿.tres" id="20_433l8"]
+[ext_resource type="Resource" uid="uid://cvcyibysmviov" path="res://resource/upgrades/ring/get_ring.tres" id="21_uxg5h"]
+[ext_resource type="Resource" uid="uid://dy38bx8w4yshf" path="res://resource/upgrades/ring/ring_power.tres" id="22_8xfd1"]
+[ext_resource type="Resource" uid="uid://bd0tr7xshvycr" path="res://resource/upgrades/ring/ring_rate_range.tres" id="23_xv26x"]
+[ext_resource type="Resource" uid="uid://bm5728iq6c8ra" path="res://resource/upgrades/gun/get_gun.tres" id="24_cx57s"]
+[ext_resource type="Resource" uid="uid://dn81f21hebidn" path="res://resource/upgrades/gun/gun_damage.tres" id="25_ei3rv"]
+[ext_resource type="Resource" uid="uid://j41hiigk5pdq" path="res://resource/upgrades/gun/gun_bigger.tres" id="26_0gw0x"]
+[ext_resource type="Resource" uid="uid://cpuhurkw2l4bp" path="res://resource/upgrades/gun/get_shotgun.tres" id="27_6c018"]
+[ext_resource type="Resource" uid="uid://mrbbx2kub2ka" path="res://resource/upgrades/gun/get_sniper_rifle.tres" id="28_1vuug"]
+[ext_resource type="Resource" uid="uid://dgtmnrikh6nqu" path="res://resource/upgrades/gun/get_rocket.tres" id="29_ft214"]
+
+[node name="GameEvent" type="Node" unique_id=1932009286]
+script = ExtResource("1_yrl0y")
+upgrade_pool = Array[ExtResource("2_tb2mb")]([ExtResource("15_7ypyw"), ExtResource("20_433l8"), ExtResource("19_ggiwx"), ExtResource("5_35wdu"), ExtResource("3_pxxb8"), ExtResource("4_03pc0"), ExtResource("10_5qp8m"), ExtResource("14_38l7a"), ExtResource("13_q8mot"), ExtResource("12_3ne6c"), ExtResource("11_e1gm4"), ExtResource("17_vg13k"), ExtResource("16_fdmk4"), ExtResource("18_ykekp"), ExtResource("6_82gj3"), ExtResource("7_uh5dj"), ExtResource("8_wssjq"), ExtResource("9_22uj0"), ExtResource("21_uxg5h"), ExtResource("22_8xfd1"), ExtResource("23_xv26x"), ExtResource("24_cx57s"), ExtResource("26_0gw0x"), ExtResource("25_ei3rv"), ExtResource("27_6c018"), ExtResource("28_1vuug"), ExtResource("29_ft214")])
+
+[node name="difficulty_timer" type="Timer" parent="." unique_id=710909234]
+wait_time = 37.0
+
+[connection signal="timeout" from="difficulty_timer" to="." method="emit_more_difficulty"]

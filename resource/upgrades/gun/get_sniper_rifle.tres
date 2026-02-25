@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_vlere")
 ID = "解锁狙击枪"
-Sort = "枪"
+Sort = "枪1"
 name = "起大狙了"
 self_lock = 1
 lock_code = 1

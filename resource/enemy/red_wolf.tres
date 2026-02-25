@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="EnemyUnlockEntry" format=3 uid="uid://bktp5mcm6ea6c"]
 
-[ext_resource type="PackedScene" uid="uid://cc2wlol2swean" path="res://scene/enemy/red_wolf_initial.tscn" id="1_6ltto"]
+[ext_resource type="PackedScene" uid="uid://cc2wlol2swean" path="res://scene/enemy/red_wolf.tscn" id="1_6ltto"]
 [ext_resource type="Script" uid="uid://b8kynvj5xuaby" path="res://resource/enemy/enemy.gd" id="2_obhyn"]
 
 [resource]

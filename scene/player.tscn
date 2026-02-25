@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cftr1t220lj12" path="res://script/player.gd" id="1_hjaqi"]
 [ext_resource type="PackedScene" uid="uid://b0v42bl82qnrr" path="res://scene/ability/sword_ability/sword_ability_controller.tscn" id="2_fvtld"]
 [ext_resource type="PackedScene" uid="uid://co66107rpg80r" path="res://scene/ui/You_Die_Screen.tscn" id="2_ihjo1"]
-[ext_resource type="PackedScene" uid="uid://bnactnfyipltl" path="res://scene/游戏功能组件/health_component.tscn" id="3_ct4mp"]
+[ext_resource type="PackedScene" uid="uid://bnactnfyipltl" path="res://scene/enemy_component/main_component/health_component.tscn" id="3_ct4mp"]
 [ext_resource type="PackedScene" uid="uid://clk86unthnvj5" path="res://scene/ability/fireball_ability/fireball_controller.tscn" id="4_oh5ij"]
 [ext_resource type="PackedScene" uid="uid://lae6sogmc22b" path="res://scene/ability/holy_light_ability/light_ability_controller.tscn" id="5_g2vtq"]
 [ext_resource type="PackedScene" uid="uid://b6vs7ye342hb6" path="res://scene/ability/heaven_fruy/heaven_fruy_controller.tscn" id="5_hp4bs"]
@@ -12,9 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://ki5crcnykid1" path="res://scene/ability/AK47_ability/all_gun_ability_controller.tscn" id="9_bup7g"]
 [ext_resource type="Texture2D" uid="uid://bhn043cbs8vkk" path="res://sucai/女巫师/小女巫.png" id="10_ihjo1"]
 [ext_resource type="Texture2D" uid="uid://dkqr60limdl3s" path="res://sucai/女巫师/小女巫_黑边.png" id="11_34jf3"]
-[ext_resource type="AudioStream" uid="uid://bnbuawlex5u51" path="res://sucai/sound/Hurt.wav" id="13_u7b46"]
 [ext_resource type="PackedScene" uid="uid://c7kjkebvjcpyo" path="res://scene/ui/虚拟摇杆.tscn" id="14_u7b46"]
 [ext_resource type="PackedScene" uid="uid://x6wtjmpfecww" path="res://scene/ui/stop_button.tscn" id="15_j4wxg"]
+[ext_resource type="PackedScene" uid="uid://boijj7keu3l5o" path="res://scene/enemy_component/child_component/player_wound_component.tscn" id="16_4ja17"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ihjo1"]
 atlas = ExtResource("10_ihjo1")
@@ -90,15 +90,6 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_fvtld"]
-radius = 24.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_s4jxa"]
-radius = 7.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_34jf3"]
-size = Vector2(17, 21.961147)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ct4mp"]
 bg_color = Color(0.24705882, 0.14901961, 0.19215687, 1)
 
@@ -110,8 +101,18 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0.24705882, 0.14901961, 0.19215687, 1)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_fvtld"]
+radius = 20.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s4jxa"]
+radius = 7.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j4wxg"]
+size = Vector2(17, 21.961147)
+
 [node name="player" type="CharacterBody2D" unique_id=1660106028]
-collision_layer = 2
+collision_layer = 32
+collision_mask = 0
 script = ExtResource("1_hjaqi")
 died_screen = ExtResource("2_ihjo1")
 
@@ -131,8 +132,12 @@ died_screen = ExtResource("2_ihjo1")
 z_index = 1
 position = Vector2(2, 2)
 
-[node name="health_component" parent="." unique_id=407961385 instance=ExtResource("3_ct4mp")]
-max_health = 100.0
+[node name="Camera2D2" type="Camera2D" parent="." unique_id=85677335]
+limit_left = -2879
+limit_top = -2095
+limit_right = 2267
+limit_bottom = 2460
+position_smoothing_enabled = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1084851264]
 scale = Vector2(1.4342026, 1.2283583)
@@ -140,34 +145,6 @@ sprite_frames = SubResource("SpriteFrames_u7b46")
 animation = &"run"
 offset = Vector2(-4, 0)
 flip_h = true
-
-[node name="拾取范围" type="Area2D" parent="." unique_id=574412971]
-position = Vector2(-1, -3)
-collision_layer = 16
-collision_mask = 0
-script = ExtResource("8_g2vtq")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="拾取范围" unique_id=1260822585]
-position = Vector2(0, 5)
-shape = SubResource("CircleShape2D_fvtld")
-
-[node name="hurtrange" type="Area2D" parent="." unique_id=821529349]
-position = Vector2(-2, -2)
-collision_layer = 0
-collision_mask = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtrange" unique_id=499668767]
-position = Vector2(0, 5)
-shape = SubResource("CircleShape2D_s4jxa")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1605254454]
-position = Vector2(-3, 0)
-scale = Vector2(1, 1.0032482)
-shape = SubResource("RectangleShape2D_34jf3")
-
-[node name="伤害间隔计时器" type="Timer" parent="." unique_id=1831198781]
-wait_time = 0.5
-one_shot = true
 
 [node name="HealthBar" type="ProgressBar" parent="." unique_id=1611554477]
 custom_minimum_size = Vector2(32, 8)
@@ -182,16 +159,25 @@ max_value = 1.0
 value = 0.5
 show_percentage = false
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1401671078]
-stream = ExtResource("13_u7b46")
-bus = &"Sound"
+[node name="拾取范围" type="Area2D" parent="." unique_id=574412971]
+position = Vector2(-1, -3)
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("8_g2vtq")
 
-[node name="Camera2D2" type="Camera2D" parent="." unique_id=85677335]
-limit_left = -2879
-limit_top = -2095
-limit_right = 2267
-limit_bottom = 2460
-position_smoothing_enabled = true
+[node name="CollisionShape2D" type="CollisionShape2D" parent="拾取范围" unique_id=1260822585]
+position = Vector2(0, 5)
+shape = SubResource("CircleShape2D_fvtld")
+
+[node name="health_component" parent="." unique_id=407961385 instance=ExtResource("3_ct4mp")]
+max_health = 100.0
+
+[node name="WoundComponent" parent="." unique_id=1167899555 node_paths=PackedStringArray("collision_shape_2d") instance=ExtResource("16_4ja17")]
+collision_shape_2d = NodePath("CollisionShape2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WoundComponent" unique_id=396939106]
+position = Vector2(-2, 2)
+shape = SubResource("CircleShape2D_s4jxa")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=591978213]
 layer = 2
@@ -210,3 +196,7 @@ anchor_right = 1.0
 offset_left = -40.0
 offset_right = 0.0
 grow_horizontal = 0
+
+[node name="Test" type="CollisionShape2D" parent="." unique_id=1605254454]
+position = Vector2(-3, 0)
+shape = SubResource("RectangleShape2D_j4wxg")

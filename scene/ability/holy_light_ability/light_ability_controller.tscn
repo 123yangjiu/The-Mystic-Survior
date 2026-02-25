@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://lae6sogmc22b"]
 
 [ext_resource type="Script" uid="uid://2ol48jsjon7h" path="res://script/ability/controller/light_ability_controller.gd" id="1_qqoi7"]
-[ext_resource type="PackedScene" uid="uid://s1i31vfh2lr5" path="res://scene/ability/holy_light_ability/holy_light_abilityS.tscn" id="2_8x2dm"]
+[ext_resource type="PackedScene" uid="uid://s1i31vfh2lr5" path="res://scene/ability/holy_light_ability/holy_light_ability.tscn" id="2_8x2dm"]
 
 [node name="light_ability_controller" type="Node2D" unique_id=502361110 node_paths=PackedStringArray("timer")]
 script = ExtResource("1_qqoi7")

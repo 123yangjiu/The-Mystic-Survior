@@ -1,20 +1,16 @@
 [gd_scene format=3 uid="uid://b2fnijcvbh7hg"]
 
 [ext_resource type="Script" uid="uid://rsl4jg827i3e" path="res://script/enemy/main_enemy/enemy_xiaotrue.gd" id="1_s6cpb"]
-[ext_resource type="PackedScene" uid="uid://decyru6mnkuga" path="res://scene/游戏功能组件/hurtboxcomponent.tscn" id="2_8rq5f"]
 [ext_resource type="Texture2D" uid="uid://ccw1sevq6qydv" path="res://sucai/迷你地牢素材/used/tile_0089.png" id="3_c336l"]
 [ext_resource type="Texture2D" uid="uid://bopbigjlqgvr8" path="res://sucai/迷你地牢素材/used/tile_0090.png" id="4_7u1is"]
-[ext_resource type="PackedScene" uid="uid://bnactnfyipltl" path="res://scene/游戏功能组件/health_component.tscn" id="4_bpx8c"]
+[ext_resource type="PackedScene" uid="uid://bnactnfyipltl" path="res://scene/enemy_component/main_component/health_component.tscn" id="4_bpx8c"]
 [ext_resource type="Texture2D" uid="uid://byrikbil0dp1x" path="res://sucai/迷你地牢素材/used/tile_0091.png" id="5_j0tct"]
-[ext_resource type="PackedScene" uid="uid://i5imcyd15vix" path="res://scene/游戏物件/exprience_bottle.tscn" id="6_bpx8c"]
 [ext_resource type="Texture2D" uid="uid://b1tvv6dq2k6no" path="res://sucai/迷你地牢素材/used/tile_0092.png" id="6_wjwl7"]
-[ext_resource type="PackedScene" uid="uid://daaqcmminiyk1" path="res://scene/游戏物件/blood_bottle.tscn" id="7_18obl"]
-[ext_resource type="PackedScene" uid="uid://g6ks4dc6kpht" path="res://scene/游戏功能组件/velocity_component.tscn" id="8_cq32u"]
-[ext_resource type="PackedScene" uid="uid://f15fc5ggcq0l" path="res://scene/游戏物件/bonus_bottle.tscn" id="12_7u1is"]
-[ext_resource type="PackedScene" uid="uid://c0i7tc6xpk0n8" path="res://scene/游戏功能组件/drop_component.tscn" id="13_j0tct"]
-[ext_resource type="Script" uid="uid://dgnjbnswkh1hb" path="res://scene/游戏功能组件/box_drop_component.gd" id="14_wjwl7"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_vcrpj"]
+[ext_resource type="PackedScene" uid="uid://be8s642qctci6" path="res://scene/enemy_component/child_component/box_drop_component.tscn" id="8_c336l"]
+[ext_resource type="PackedScene" uid="uid://g6ks4dc6kpht" path="res://scene/enemy_component/main_component/velocity_component.tscn" id="8_cq32u"]
+[ext_resource type="PackedScene" uid="uid://do1skrx74372j" path="res://scene/enemy_component/main_component/attack_component.tscn" id="14_cji6c"]
+[ext_resource type="PackedScene" uid="uid://12uey86sh54o" path="res://scene/enemy_component/main_component/wound_component.tscn" id="14_wxa6r"]
+[ext_resource type="PackedScene" uid="uid://nxifhy12ej5c" path="res://scene/enemy_component/main_component/collision_controller.tscn" id="15_wxa6r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wxa6r"]
 atlas = ExtResource("3_c336l")
@@ -52,23 +48,21 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ntng8"]
-radius = 10.607901
+[sub_resource type="CircleShape2D" id="CircleShape2D_cji6c"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_8egh0"]
-radius = 5.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_wjwl7"]
+radius = 8.0
 
-[node name="box" type="CharacterBody2D" unique_id=1432837753 groups=["初级"]]
-collision_layer = 40
-collision_mask = 33
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wxa6r"]
+size = Vector2(16, 12)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wxa6r"]
+
+[node name="box" type="CharacterBody2D" unique_id=527451269]
+collision_layer = 0
+collision_mask = 0
+motion_mode = 1
 script = ExtResource("1_s6cpb")
-
-[node name="Hurtboxcomponent" parent="." unique_id=232536307 node_paths=PackedStringArray("health_component") groups=["enemy"] instance=ExtResource("2_8rq5f")]
-collision_layer = 4
-health_component = NodePath("../health_component")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Hurtboxcomponent" unique_id=503420916]
-shape = SubResource("CircleShape2D_vcrpj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=404708831 groups=["enemy"]]
 position = Vector2(0, -1.9999995)
@@ -78,25 +72,38 @@ animation = &"run"
 autoplay = "run"
 frame_progress = 0.41755745
 
-[node name="对角色造成伤害的碰撞" type="CollisionShape2D" parent="." unique_id=127476583 groups=["enemy"]]
-position = Vector2(-4.7683716e-07, 4.7683716e-07)
-scale = Vector2(0.47134686, 0.4559797)
-shape = SubResource("CircleShape2D_ntng8")
-
 [node name="health_component" parent="." unique_id=1900297266 instance=ExtResource("4_bpx8c")]
 max_health = 400.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1907022015]
-shape = SubResource("CircleShape2D_8egh0")
-
 [node name="velocity_component" parent="." unique_id=444129889 instance=ExtResource("8_cq32u")]
+speed = 60.0
 
-[node name="drop_component" parent="." unique_id=2054117190 node_paths=PackedStringArray("health_component") instance=ExtResource("13_j0tct")]
-script = ExtResource("14_wjwl7")
-drop_thingandpersent = Dictionary[PackedScene, float]({
-ExtResource("6_bpx8c"): 0.8,
-ExtResource("7_18obl"): 0.1,
-ExtResource("12_7u1is"): 0.2
-})
-drop_range = 5
-health_component = NodePath("../health_component")
+[node name="box_drop_component" parent="." unique_id=662046197 instance=ExtResource("8_c336l")]
+
+[node name="WoundComponent" parent="." unique_id=1971662021 node_paths=PackedStringArray("collision_shape_2d") instance=ExtResource("14_wxa6r")]
+visible = false
+collision_shape_2d = NodePath("CollisionShape2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WoundComponent" unique_id=1421021015]
+shape = SubResource("CircleShape2D_cji6c")
+
+[node name="AttackComponent" parent="." unique_id=2136703472 node_paths=PackedStringArray("collision_shape_2d") instance=ExtResource("14_cji6c")]
+visible = false
+collision_shape_2d = NodePath("CollisionShape2D")
+damage = 15.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackComponent" unique_id=965601176]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_wjwl7")
+
+[node name="CollisionController" parent="." unique_id=387055937 node_paths=PackedStringArray("collision_shape_2d") instance=ExtResource("15_wxa6r")]
+collision_shape_2d = NodePath("CollisionShape2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionController" unique_id=1035040246]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_wxa6r")
+
+[node name="Test" type="CollisionShape2D" parent="." unique_id=413355030]
+visible = false
+shape = SubResource("CircleShape2D_wxa6r")
+disabled = true

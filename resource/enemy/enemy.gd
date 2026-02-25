@@ -12,7 +12,8 @@ enum ALL_ID{
 	escape_box,
 	knight,
 	red_wolf,
-	witch
+	witch,
+	mushroom
 }
 
 @export var scene: PackedScene

@@ -8,6 +8,6 @@ ID = "吸铁石"
 Sort = "角色能力"
 is_init = true
 name = "吸铁石"
-Description = "拾取范围增大30%
+Description = "拾取范围+100%
 
 ——其实是吸水石"
