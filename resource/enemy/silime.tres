@@ -8,3 +8,4 @@ script = ExtResource("2_24d4i")
 scene = ExtResource("1_jnx5h")
 weight = 1.0
 disapear_difficulty = 6
+max_health = 13.0

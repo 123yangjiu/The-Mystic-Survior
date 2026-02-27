@@ -44,15 +44,16 @@ func on_ability_upgrade_add(upgrade:AbilityUpgrade,_current_upgrade:Dictionary):
 	if upgrade.ID=="火球大速":
 		scale_range *=1.2
 		set_speed(0.2)
+		color_A-=5
 	if upgrade.ID=="火球数量":
 		number+=1
-		color_A -=20 
+		color_A -=5
 	if upgrade.ID=="解锁火球":
 		timer.start()
 
 func set_plus(ability_instance,target_position)->void:
 	ability_instance.rotation = ability_instance.direction.angle() -deg_to_rad(90)
-	ability_instance.modulate.a8 =color_A /scale_range
+	ability_instance.modulate.a8 =color_A
 	if (target_position-GameEvent.play_global_position).length_squared() >17000:
 		ability_instance.speed =speed*speed_range*3
 	else :

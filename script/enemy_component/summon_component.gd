@@ -38,13 +38,13 @@ func summon()->void:
 		var enemy_position:Vector2
 		match summon_type:
 			TYPE.near_player:
-				enemy_position = GameEvent.play_global_position+Vector2(randf(),0).rotated(randf_range(0,TAU))*spawn_r
+				enemy_position = GameEvent.play_global_position+Vector2(randfn(0.8,0.1),0).rotated(randf_range(0,TAU))*spawn_r
 			TYPE.near_self:
 				var _owner=owner as Enemy
-				enemy_position = _owner.global_position+Vector2(randf(),0).rotated(randf_range(0,TAU))*spawn_r
+				enemy_position = _owner.global_position+Vector2(randfn(0.8,0.1),0).rotated(randf_range(0,TAU))*spawn_r
 			_:
 				var _owner=owner as Enemy
-				enemy_position = _owner.global_position+Vector2(randf(),0).rotated(randf_range(0,TAU))*spawn_r
+				enemy_position = _owner.global_position+Vector2(randfn(0.8,0.1),0).rotated(randf_range(0,TAU))*spawn_r
 		enemy_layer.add_child(enemy_instance)
 		enemy_instance.global_position = enemy_position
 

@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://byrikbil0dp1x" path="res://sucai/迷你地牢素材/used/tile_0091.png" id="5_ibtlt"]
 [ext_resource type="Texture2D" uid="uid://b1tvv6dq2k6no" path="res://sucai/迷你地牢素材/used/tile_0092.png" id="6_2sepu"]
 [ext_resource type="PackedScene" uid="uid://bnactnfyipltl" path="res://scene/enemy_component/main_component/health_component.tscn" id="7_tq3r5"]
+[ext_resource type="PackedScene" uid="uid://cyxnkvdq3ry2h" path="res://scene/enemy_component/main_component/effect_component.tscn" id="12_3ja5m"]
 [ext_resource type="PackedScene" uid="uid://do1skrx74372j" path="res://scene/enemy_component/main_component/attack_component.tscn" id="13_8ai82"]
 [ext_resource type="PackedScene" uid="uid://12uey86sh54o" path="res://scene/enemy_component/main_component/wound_component.tscn" id="14_ibtlt"]
 [ext_resource type="PackedScene" uid="uid://n86spb22tera" path="res://scene/enemy_component/child_component/escape_component.tscn" id="14_l4f3i"]
@@ -108,3 +109,5 @@ shape = SubResource("RectangleShape2D_ibtlt")
 visible = false
 shape = SubResource("CircleShape2D_2sepu")
 disabled = true
+
+[node name="EffectComponent" parent="." unique_id=629594475 instance=ExtResource("12_3ja5m")]

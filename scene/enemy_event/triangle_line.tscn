@@ -8,6 +8,7 @@ all_enemy = NodePath("AllEnemy")
 type = 1
 
 [node name="AllEnemy" type="Node2D" parent="." unique_id=1250037972]
+position = Vector2(-95, 0)
 
 [node name="Enemy" type="Node2D" parent="AllEnemy" unique_id=533274058]
 position = Vector2(95, 0)
@@ -70,4 +71,51 @@ rotation = 1.5707964
 
 [node name="Enemy17" type="Node2D" parent="AllEnemy" unique_id=877897014]
 position = Vector2(-60.999992, -160)
+rotation = 1.5707964
+
+[node name="Enemy9" type="Node2D" parent="AllEnemy" unique_id=1210940656]
+position = Vector2(-29, 80)
+rotation = 1.5707964
+
+[node name="Enemy18" type="Node2D" parent="AllEnemy" unique_id=1205854108]
+position = Vector2(-28.999996, 40)
+rotation = 1.5707964
+
+[node name="Enemy20" type="Node2D" parent="AllEnemy" unique_id=2043259834]
+position = Vector2(-28.999996, 0)
+rotation = 1.5707964
+
+[node name="Enemy21" type="Node2D" parent="AllEnemy" unique_id=1083171450]
+position = Vector2(-28.999992, -40)
+rotation = 1.5707964
+
+[node name="Enemy22" type="Node2D" parent="AllEnemy" unique_id=2136143147]
+position = Vector2(-28.999992, -80)
+rotation = 1.5707964
+
+[node name="Enemy23" type="Node2D" parent="AllEnemy" unique_id=1387652325]
+position = Vector2(0, 40)
+rotation = 1.5707964
+
+[node name="Enemy24" type="Node2D" parent="AllEnemy" unique_id=756237714]
+rotation = 1.5707964
+
+[node name="Enemy25" type="Node2D" parent="AllEnemy" unique_id=713813225]
+position = Vector2(3.8146973e-06, -40)
+rotation = 1.5707964
+
+[node name="Enemy26" type="Node2D" parent="AllEnemy" unique_id=833726459]
+position = Vector2(30, 40)
+rotation = 1.5707964
+
+[node name="Enemy27" type="Node2D" parent="AllEnemy" unique_id=718734194]
+position = Vector2(30, 0)
+rotation = 1.5707964
+
+[node name="Enemy28" type="Node2D" parent="AllEnemy" unique_id=1522206544]
+position = Vector2(30.000004, -40)
+rotation = 1.5707964
+
+[node name="Enemy29" type="Node2D" parent="AllEnemy" unique_id=1390806234]
+position = Vector2(60, 0)
 rotation = 1.5707964

@@ -6,7 +6,7 @@ func set_variable()->void:
 	max_range=150
 	number = 3
 	#伤害，大小,速度
-	init_damage =22.0
+	init_damage =18.0
 
 func return_position():
 	var ran_R=randfn(60,10)

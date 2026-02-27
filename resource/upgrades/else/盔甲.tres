@@ -8,5 +8,5 @@ ID = "盔甲"
 Sort = "角色能力"
 is_init = true
 name = "纯御"
-Description = "受到伤害-7%
+Description = "受到伤害-8%
 并增大10%生命值上限"

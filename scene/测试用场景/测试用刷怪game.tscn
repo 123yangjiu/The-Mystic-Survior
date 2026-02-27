@@ -32,7 +32,7 @@
 [ext_resource type="Script" uid="uid://cbv3aa54oasir" path="res://script/manager/musicmanager.gd" id="28_c2ktl"]
 [ext_resource type="Resource" uid="uid://b5o283wr41dta" path="res://resource/upgrades/else/吸铁石.tres" id="29_ongrl"]
 [ext_resource type="Resource" uid="uid://bbp5xqvgt1ubd" path="res://resource/upgrades/else/飞毛腿.tres" id="30_u0fqj"]
-[ext_resource type="Resource" uid="uid://dn5ri83sm6i23" path="res://resource/upgrades/else/生命药水瓶.tres" id="31_c2ktl"]
+[ext_resource type="Resource" uid="uid://dn5ri83sm6i23" path="res://resource/upgrades/else/掉率增加.tres" id="31_c2ktl"]
 [ext_resource type="Resource" uid="uid://cvcyibysmviov" path="res://resource/upgrades/ring/get_ring.tres" id="32_qxf28"]
 [ext_resource type="Resource" uid="uid://dy38bx8w4yshf" path="res://resource/upgrades/ring/ring_power.tres" id="33_cps6i"]
 [ext_resource type="AudioStream" uid="uid://bdo817fx5or0" path="res://sucai/back_music/Neon Skyscrapers.ogg" id="33_nuppw"]

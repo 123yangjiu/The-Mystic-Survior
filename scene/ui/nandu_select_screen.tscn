@@ -6,14 +6,17 @@
 [ext_resource type="Theme" uid="uid://brtk7glajnjmp" path="res://resource/theme/no_theme.tres" id="4_j0ofd"]
 [ext_resource type="Texture2D" uid="uid://culg2ve4o2l0v" path="res://sucai/UI/arrow.png" id="5_x0d57"]
 [ext_resource type="PackedScene" uid="uid://sehmsexlfear" path="res://scene/ui/change_speed.tscn" id="6_pay3p"]
+[ext_resource type="PackedScene" uid="uid://dt77ktjxtftev" path="res://scene/ui/change_nandu/challenge/erase_initial.tscn" id="7_i0o6x"]
 [ext_resource type="PackedScene" uid="uid://defj455iu2c6i" path="res://scene/ui/change_nandu/change_initial.tscn" id="7_u71r3"]
+[ext_resource type="PackedScene" uid="uid://cub2e4udp4ogd" path="res://scene/ui/change_nandu/challenge/longer.tscn" id="8_lygij"]
 [ext_resource type="PackedScene" uid="uid://dv6caff4cc6t8" path="res://scene/ui/change_nandu/change_ascend.tscn" id="8_w3w8d"]
+[ext_resource type="PackedScene" uid="uid://bj0db4nojqtjj" path="res://scene/ui/change_nandu/challenge/limit_number.tscn" id="9_kgfj1"]
 [ext_resource type="PackedScene" uid="uid://d5e5o1xdxw5m" path="res://scene/ui/change_nandu/confirm.tscn" id="10_i0o6x"]
 
 [node name="NanduSelect" type="CanvasLayer" unique_id=543739001 node_paths=PackedStringArray("all_mode", "initial_node")]
 layer = 2
 script = ExtResource("1_x0d57")
-all_mode = [NodePath("简单模式"), NodePath("普通模式"), NodePath("困难模式")]
+all_mode = [NodePath("简单模式"), NodePath("普通模式"), NodePath("困难模式"), NodePath("挑战模式")]
 initial_node = NodePath("普通模式")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1238339868]
@@ -76,13 +79,13 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 50
 
-[node name="Change_screen" parent="简单模式/VBoxContainer2" unique_id=1353719358 instance=ExtResource("6_pay3p")]
+[node name="ChangeSpeed" parent="简单模式/VBoxContainer2" unique_id=1353719358 instance=ExtResource("6_pay3p")]
 layout_mode = 2
 
-[node name="Change_speed" parent="简单模式/VBoxContainer2" unique_id=1803826499 instance=ExtResource("7_u71r3")]
+[node name="ChangeAttack" parent="简单模式/VBoxContainer2" unique_id=1803826499 instance=ExtResource("7_u71r3")]
 layout_mode = 2
 
-[node name="Change_speed2" parent="简单模式/VBoxContainer2" unique_id=1347228913 instance=ExtResource("8_w3w8d")]
+[node name="ChangeInitial" parent="简单模式/VBoxContainer2" unique_id=1347228913 instance=ExtResource("8_w3w8d")]
 layout_mode = 2
 
 [node name="普通模式" type="Control" parent="." unique_id=84420071]
@@ -216,7 +219,7 @@ vertical_alignment = 1
 [node name="Label2" type="Label" parent="挑战模式/VBoxContainer" unique_id=1239564635]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
-text = "请选择你的挑战"
+text = "你要迎接怎样的挑战"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -235,13 +238,13 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 50
 
-[node name="Change_screen" parent="挑战模式/VBoxContainer2" unique_id=636291763 instance=ExtResource("6_pay3p")]
+[node name="EraseInitial" parent="挑战模式/VBoxContainer2" unique_id=372820034 instance=ExtResource("7_i0o6x")]
 layout_mode = 2
 
-[node name="Change_speed" parent="挑战模式/VBoxContainer2" unique_id=1861060064 instance=ExtResource("7_u71r3")]
+[node name="Longer" parent="挑战模式/VBoxContainer2" unique_id=1479317819 instance=ExtResource("8_lygij")]
 layout_mode = 2
 
-[node name="Change_speed2" parent="挑战模式/VBoxContainer2" unique_id=790388571 instance=ExtResource("8_w3w8d")]
+[node name="LimitNumber" parent="挑战模式/VBoxContainer2" unique_id=988264165 instance=ExtResource("9_kgfj1")]
 layout_mode = 2
 
 [node name="Confirm" parent="." unique_id=887643300 instance=ExtResource("10_i0o6x")]

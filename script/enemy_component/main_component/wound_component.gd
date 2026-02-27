@@ -47,11 +47,11 @@ func set_inside_area(value:Array[AreaInComponent])->void:
 	inside_area=value
 
 func on_be_attacked(damage:float)->void:
-	match GameEvent.mode_index:
-		2,3:
-			damage=damage*1.1
-		_:
-			pass
+	#match GameEvent.mode_index:
+		#2,3:
+			#damage=damage*1.1
+		#_:
+			#pass
 	var new_damage = int(damage*wound_degree)+1
 	wound_effect(new_damage)
 

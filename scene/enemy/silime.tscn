@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c0i7tc6xpk0n8" path="res://scene/enemy_component/main_component/drop_component.tscn" id="5_5tc53"]
 [ext_resource type="PackedScene" uid="uid://g6ks4dc6kpht" path="res://scene/enemy_component/main_component/velocity_component.tscn" id="6_eh7t0"]
 [ext_resource type="PackedScene" uid="uid://do1skrx74372j" path="res://scene/enemy_component/main_component/attack_component.tscn" id="9_1vw1q"]
+[ext_resource type="PackedScene" uid="uid://cyxnkvdq3ry2h" path="res://scene/enemy_component/main_component/effect_component.tscn" id="9_s5pc1"]
 [ext_resource type="PackedScene" uid="uid://nxifhy12ej5c" path="res://scene/enemy_component/main_component/collision_controller.tscn" id="11_1vw1q"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iwl80"]
@@ -107,3 +108,6 @@ shape = SubResource("RectangleShape2D_1vw1q")
 visible = false
 shape = SubResource("CircleShape2D_1vw1q")
 disabled = true
+
+[node name="EffectComponent" parent="." unique_id=629594475 instance=ExtResource("9_s5pc1")]
+position = Vector2(0, -2)

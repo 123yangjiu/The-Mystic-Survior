@@ -76,7 +76,7 @@ animations = [{
 "speed": 18.0
 }]
 
-[node name="Change_speed" type="Button" unique_id=1353719358]
+[node name="ChangeAttack" type="Button" unique_id=1353719358]
 custom_minimum_size = Vector2(50, 20)
 offset_left = 285.0
 offset_top = 17.0

@@ -12,6 +12,7 @@ enum TYPE{
 @export_category("给谁用的")
 @export var type:=TYPE.enemy
 
+var damage_range:=1.0
 
 func initial()->void:
 	for node in get_children():
@@ -25,6 +26,11 @@ func initial()->void:
 			area_2d.set_collision_mask_value(2,true)
 			area_2d.set_collision_mask_value(3,false)
 		TYPE.ability:
+			match GameEvent.mode_index:
+				2,3:
+					damage_range =0.9
+				_:
+					pass
 			area_2d.set_collision_mask_value(3,true)
 			area_2d.set_collision_mask_value(2,false)
 	set_other()
@@ -33,8 +39,9 @@ func set_other()->void:
 	pass
 
 func pass_damage()->float:
-	damage += randf_range(-damage/9.0,damage/9.0)
-	return damage
+	var real_damage = damage*damage_range
+	real_damage += randf_range(-real_damage/9.0,real_damage/9.0)
+	return real_damage
 
 func _on_area_2d_area_entered(area:Area2D) -> void:
 	if ! area is AreaInComponent:

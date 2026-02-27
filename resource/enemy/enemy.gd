@@ -13,7 +13,8 @@ enum ALL_ID{
 	knight,
 	red_wolf,
 	witch,
-	mushroom
+	mushroom,
+	undead
 }
 
 @export var scene: PackedScene
@@ -21,3 +22,4 @@ enum ALL_ID{
 @export var weight:float
 @export var ID:ALL_ID
 @export var disapear_difficulty:int=100
+@export var max_health:float

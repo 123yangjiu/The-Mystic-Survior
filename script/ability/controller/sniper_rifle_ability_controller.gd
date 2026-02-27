@@ -25,7 +25,7 @@ func set_variable()->void:
 func check_enemy()->Array[Node]:
 	var enemies:Array[Node]= get_tree().get_first_node_in_group("enemylayer").get_children()
 	enemies=enemies.filter(func(enemy:Node2D):#过滤掉不在范围内的敌人
-		return enemy.global_position.distance_squared_to(GameEvent.play_global_position)<pow(260,2) 
+		return enemy.global_position.distance_squared_to(GameEvent.play_global_position)<pow(260,2) and enemy is Enemy
 	)
 	#get_first_node_in_group是拿到组里面的第一个节点，如果我们想要拿到player节点
 	#就要在player脚本中加入add_to_group("player")
@@ -35,9 +35,17 @@ func check_enemy()->Array[Node]:
 		return A_distance< B_distance
 	)
 	enemies.sort_custom(func (a:Node2D,b:Node2D):
-		var is_A_level = a.is_in_group("终极")
-		var is_B_level = b.is_in_group("终极")
-		return is_A_level and ! is_B_level
+		var _a =  a as Enemy
+		var _b = b as Enemy
+		var a_damage
+		var b_damage
+		for component in _a.all_component:
+			if component is AttackComponent:
+				a_damage=component.damage
+		for component in _b.all_component:
+			if component is AttackComponent:
+				b_damage=component.damage
+		return a_damage>b_damage
 	)
 	return enemies
 

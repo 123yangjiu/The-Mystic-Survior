@@ -125,6 +125,7 @@ bus = &"Sound"
 
 [node name="AttackComponent" parent="." unique_id=2136703472 node_paths=PackedStringArray("collision_shape_2d") instance=ExtResource("6_pwfc5")]
 collision_shape_2d = NodePath("CollisionShape2D")
+type = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackComponent" unique_id=739219092]
 position = Vector2(14, 0.25)

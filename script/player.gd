@@ -49,6 +49,7 @@ func _physics_process(_delta: float) -> void:
 		animated_sprite_2d.flip_h=true
 		light_ability_controller.scale.x=1
 		GameEvent.play_right=true
+
 func set_is_run(value)->void:
 	if is_run!= value:
 		match value:
@@ -79,7 +80,7 @@ func on_blood_bottle_collected(blood:int):
 
 func on_ability_upgrade_add(upgrade:AbilityUpgrade,_current_upgrade:Dictionary):
 	if upgrade.ID=="盔甲":
-		var percent = wound_component.current_wound_degree*0.07
+		var percent = wound_component.current_wound_degree*0.08
 		wound_component.wound_degree -=percent
 		health_component.max_health*=1.1
 		health_component.current_health*=1.1

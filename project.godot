@@ -117,6 +117,7 @@ pointing/emulate_touch_from_mouse=true
 2d_physics/layer_4="敌人碰撞区域"
 2d_physics/layer_5="玩家拾取区"
 2d_physics/layer_6="玩家实体"
+2d_physics/layer_9="蘑菇碰撞层"
 
 [rendering]
 

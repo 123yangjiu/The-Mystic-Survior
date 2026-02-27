@@ -8,16 +8,19 @@ extends EnemyComponent
 @onready var interval_timer: Timer = $RushInterval
 var velocity_component:VelocityController
 var collision_component:CollisionComponent
+@export var animation_sprite:AnimatedSprite2D
 
 @export_category("基础属性")
 @export var rush_duration :=0.6
 @export var rush_interval :=3.0
 @export var rush_speed :=500.0
+@export var is_animation:=false
 
 var ori_speed:float
 var ori_acceleration:float
 var ori_turn_rate:float
 var player_in:=false
+
 
 func initial()->void:
 	duration_timer.wait_time=rush_duration
@@ -34,6 +37,7 @@ func initial()->void:
 			velocity_component=component
 		elif component is CollisionComponent:
 			collision_component=component
+	animation_sprite=_owner.animated_sprite_2d
 
 func _on_rush_duration_timeout() -> void:
 	pass_ori()
@@ -60,15 +64,31 @@ func _on_rush_interval_timeout() -> void:
 		velocity_component.speed = rush_speed
 		velocity_component.turn_rate =0
 		velocity_component.acceleration *= rush_speed/ori_speed
+		if animation_sprite:
+			animation_sprite.play("real_rush")
+			await animation_sprite.animation_finished
+			if player_in:
+				animation_sprite.play("rush_walk")
+			else :
+				animation_sprite.play("run")
+
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if ! body is Player or ! velocity_component:
 		return
 	#玩家进入
 	player_in=true
+	if animation_sprite:
+		animation_sprite.play("rush_ready")
+		await animation_sprite.animation_finished
+		if player_in:
+			animation_sprite.play("rush_walk")
 	interval_timer.start()
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if ! body is Player:
 		return
 	player_in=false
+	interval_timer.stop()
+	if animation_sprite:
+		animation_sprite.play("run")

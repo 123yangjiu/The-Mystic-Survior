@@ -1,5 +1,18 @@
 extends Resource
 class_name AbilityUpgrade
+
+enum SOST_TYPE{
+	角色能力,
+	火球,
+	枪,
+	天堂之怒,
+	光剑,
+	环,
+	剑
+}
+
+
+
 @export var ID:String
 @export var Sort:String
 @export var is_init:=false

@@ -18,3 +18,9 @@ collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1867618124]
 shape = SubResource("CircleShape2D_gb8wy")
+
+[node name="Timer" type="Timer" parent="." unique_id=1690479727]
+wait_time = 120.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -57,8 +57,8 @@ func move(character:Enemy):
 	# 2. 交给物理处理碰撞、滑动
 	character.velocity = desired_vel
 	character.move_and_slide()
-	if character.velocity.length() > speed*1.27:
-		character.velocity = character.velocity.normalized()*speed 
+	if character.velocity.length() > speed*2.0:
+		character.velocity = character.velocity.normalized()*speed*1.5 
 
 func set_speed(value)->void:
 	match GameEvent.mode_index:

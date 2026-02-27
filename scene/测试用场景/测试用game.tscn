@@ -25,7 +25,7 @@
 [ext_resource type="Resource" uid="uid://cq6h3a5qtmde3" path="res://resource/upgrades/else/盔甲.tres" id="20_rr4dp"]
 [ext_resource type="Resource" uid="uid://b5o283wr41dta" path="res://resource/upgrades/else/吸铁石.tres" id="21_45yv1"]
 [ext_resource type="Resource" uid="uid://bbp5xqvgt1ubd" path="res://resource/upgrades/else/飞毛腿.tres" id="22_acha4"]
-[ext_resource type="Resource" uid="uid://dn5ri83sm6i23" path="res://resource/upgrades/else/生命药水瓶.tres" id="23_pbpbm"]
+[ext_resource type="Resource" uid="uid://dn5ri83sm6i23" path="res://resource/upgrades/else/掉率增加.tres" id="23_pbpbm"]
 [ext_resource type="Resource" uid="uid://cvcyibysmviov" path="res://resource/upgrades/ring/get_ring.tres" id="24_tkwvv"]
 [ext_resource type="Resource" uid="uid://dy38bx8w4yshf" path="res://resource/upgrades/ring/ring_power.tres" id="25_ekiqg"]
 [ext_resource type="Resource" uid="uid://brv0twbh4faty" path="res://resource/upgrades/fireball/fireballchuantou  .tres" id="26_wo850"]

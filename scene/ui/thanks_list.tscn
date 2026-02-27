@@ -1,11 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://clhfimwk6xw1p"]
+[gd_scene format=3 uid="uid://clhfimwk6xw1p"]
 
 [ext_resource type="PackedScene" uid="uid://b2yrm0y8rlo8e" path="res://scene/ui/exit_button.tscn" id="1_ck3ao"]
 
-[node name="ThanksList" type="CanvasLayer"]
+[node name="ThanksList" type="CanvasLayer" unique_id=270978153]
 layer = 2
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=703651343]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -13,14 +13,14 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.2, 0.2, 0.2, 0.8627451)
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="Panel" parent="." unique_id=92425174]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Panel"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel" unique_id=991421263]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -33,12 +33,11 @@ grow_horizontal = 2
 grow_vertical = 2
 horizontal_scroll_mode = 0
 
-[node name="Label" type="Label" parent="Panel/ScrollContainer"]
+[node name="Label" type="Label" parent="Panel/ScrollContainer" unique_id=1255733288]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 24
-text = "
-以下素材均从itch.io网站获取
+text = "以下素材均从itch.io网站获取
 
 Brackeys' Platformer Bundle 
 ——by Brackeys,analogStudios_ ,RottingPixels
@@ -61,12 +60,27 @@ Simple Music & SFX
 Forest Monsters 2D Pixel Art
 ——by MonoPixelArt
 
+Superior Sound FX: Lasers and Explosions
+——by SoireeGames
+
+Snake's SECOND Authentic Gun Sounds Pack
+——by SnakeF8
+
+Snake's Authentic Gun Sounds
+——by SnakeF8
+
+High-Quality Gun Sound Effects Pack
+——by Capbuu Games
+
+Boss: Mecha-Stone Golem [FREE]
+——by Kronovi-
+
 其他美术素材:
 Kenney
 "
 autowrap_mode = 2
 
-[node name="Label" type="Label" parent="Panel"]
+[node name="Label" type="Label" parent="Panel" unique_id=1902880380]
 layout_mode = 0
 offset_left = 49.0
 offset_top = 20.0
@@ -75,7 +89,7 @@ offset_bottom = 46.0
 theme_override_font_sizes/font_size = 24
 text = "感谢所有免费素材创作者们🙏"
 
-[node name="Exit" parent="." node_paths=PackedStringArray("root_node") instance=ExtResource("1_ck3ao")]
+[node name="Exit" parent="." unique_id=1494283925 node_paths=PackedStringArray("root_node") instance=ExtResource("1_ck3ao")]
 offset_left = 499.0
 offset_top = 9.0
 offset_right = 589.0

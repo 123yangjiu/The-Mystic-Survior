@@ -29,10 +29,11 @@
 [ext_resource type="Resource" uid="uid://cpuhurkw2l4bp" path="res://resource/upgrades/gun/get_shotgun.tres" id="27_6c018"]
 [ext_resource type="Resource" uid="uid://mrbbx2kub2ka" path="res://resource/upgrades/gun/get_sniper_rifle.tres" id="28_1vuug"]
 [ext_resource type="Resource" uid="uid://dgtmnrikh6nqu" path="res://resource/upgrades/gun/get_rocket.tres" id="29_ft214"]
+[ext_resource type="Resource" uid="uid://dn5ri83sm6i23" path="res://resource/upgrades/else/掉率增加.tres" id="30_5qr4r"]
 
 [node name="GameEvent" type="Node" unique_id=1932009286]
 script = ExtResource("1_yrl0y")
-upgrade_pool = Array[ExtResource("2_tb2mb")]([ExtResource("15_7ypyw"), ExtResource("20_433l8"), ExtResource("19_ggiwx"), ExtResource("5_35wdu"), ExtResource("3_pxxb8"), ExtResource("4_03pc0"), ExtResource("10_5qp8m"), ExtResource("14_38l7a"), ExtResource("13_q8mot"), ExtResource("12_3ne6c"), ExtResource("11_e1gm4"), ExtResource("17_vg13k"), ExtResource("16_fdmk4"), ExtResource("18_ykekp"), ExtResource("6_82gj3"), ExtResource("7_uh5dj"), ExtResource("8_wssjq"), ExtResource("9_22uj0"), ExtResource("21_uxg5h"), ExtResource("22_8xfd1"), ExtResource("23_xv26x"), ExtResource("24_cx57s"), ExtResource("26_0gw0x"), ExtResource("25_ei3rv"), ExtResource("27_6c018"), ExtResource("28_1vuug"), ExtResource("29_ft214")])
+upgrade_pool = Array[ExtResource("2_tb2mb")]([ExtResource("15_7ypyw"), ExtResource("20_433l8"), ExtResource("19_ggiwx"), ExtResource("5_35wdu"), ExtResource("3_pxxb8"), ExtResource("4_03pc0"), ExtResource("10_5qp8m"), ExtResource("14_38l7a"), ExtResource("13_q8mot"), ExtResource("12_3ne6c"), ExtResource("11_e1gm4"), ExtResource("17_vg13k"), ExtResource("16_fdmk4"), ExtResource("18_ykekp"), ExtResource("6_82gj3"), ExtResource("7_uh5dj"), ExtResource("8_wssjq"), ExtResource("9_22uj0"), ExtResource("21_uxg5h"), ExtResource("22_8xfd1"), ExtResource("23_xv26x"), ExtResource("24_cx57s"), ExtResource("26_0gw0x"), ExtResource("25_ei3rv"), ExtResource("27_6c018"), ExtResource("28_1vuug"), ExtResource("29_ft214"), ExtResource("30_5qr4r")])
 
 [node name="difficulty_timer" type="Timer" parent="." unique_id=710909234]
 wait_time = 37.0

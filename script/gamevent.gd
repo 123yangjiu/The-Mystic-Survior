@@ -10,9 +10,15 @@ func emit_more_difficulty():
 	difficulty+=1
 	more_difficulty.emit(difficulty)
 
+var increase_percent:=1.0
+
 signal experience_bottle_collected(number:float)#吃到经验瓶时发出信号
 func emit_increase_experience(number:float):#发射信号的函数这样写是为了控制经验瓶的经验多少
 	experience_bottle_collected.emit(number)
+
+signal blood_bottle_collected(number:float)
+func emit_increase_blood(number:float):#发射信号的函数这样写是为了控制经验瓶的经验多少
+	blood_bottle_collected.emit(number)
 
 signal ability_upgrade_add(upgrade:AbilityUpgrade,current_upgrade:Dictionary)
 #能力升级信号，传出改变的能力和能力字典
@@ -21,11 +27,9 @@ signal ability_upgrade_add(upgrade:AbilityUpgrade,current_upgrade:Dictionary)
 func emit_ability_upgrade_add(upgrade:AbilityUpgrade,current_upgrade:Dictionary):
 	await get_tree().process_frame
 	ability_upgrade_add.emit(upgrade,current_upgrade)
-	pass
+	if upgrade.ID == "增加掉率":
+		increase_percent*=1.2
 
-signal blood_bottle_collected(number:float)
-func emit_increase_blood(number:float):#发射信号的函数这样写是为了控制经验瓶的经验多少
-	blood_bottle_collected.emit(number)
 
 #用于在第一次攻击后启动音乐
 var the_first=0
@@ -79,15 +83,17 @@ func record_db(_name:String,value)->void:
 		music_db=value
 
 #管理摇杆是否固定
-var is_fixed:=false
+var is_fixed:=false :set=set_fixed
+signal yaogan_fixed(is_fix:bool)
 
-#限制出怪量
-var current_monster :=0.0
+func set_fixed(value)->void:
+	yaogan_fixed.emit(value)
+	is_fixed=value
 
 var play_global_position:=Vector2(0,0)
 var play_right:=true
 
-
+#游戏难度
 enum EASY_MODE{
 	is_slow,
 	is_initial,
@@ -96,12 +102,12 @@ enum EASY_MODE{
 enum HARD_MODE{
 	is_long,
 	is_erase_ability,
-	is_max_3,
+	is_max_4,
 	is_more
 }
 
 signal mode_change
-#困难模式:1.怪物移速上升10%；2.刷怪速度下降很多；3.玩家伤害提高10%;4.玩家受伤减少1半
+#困难模式:1.怪物移速上升10%；2.刷怪速度下降很多；3.玩家下降10%;4.玩家受伤增加1半
 var easy_mode:Dictionary[EASY_MODE,Variant]={
 	EASY_MODE.is_slow:false,
 	EASY_MODE.is_initial:false,
@@ -120,14 +126,16 @@ func set_mode(value)->void:
 		for i in hard_mode:
 			hard_mode[i] =false
 	mode_change.emit()
-#挑战模式：1.游戏时长加长5分钟；2.减少一个自带能力；3.所有能力最多获得三次；4.特殊事件及刷怪增多
+#挑战模式：1.游戏时长加长5分钟；2.减少一个自带能力；3.所有能力最多获得三次;
 var hard_mode:Dictionary[HARD_MODE,Variant]={
 	HARD_MODE.is_long:false,
 	HARD_MODE.is_erase_ability:false,
-	HARD_MODE.is_max_3:false,
+	HARD_MODE.is_max_4:false,
 	HARD_MODE.is_more:false
 }
 #特殊事件
 var is_co_disappear:=false
+@warning_ignore("unused_signal")
 signal collision_disappear
+@warning_ignore("unused_signal")
 signal collision_disappear_end

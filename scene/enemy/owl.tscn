@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://do1skrx74372j" path="res://scene/enemy_component/main_component/attack_component.tscn" id="10_snfm1"]
 [ext_resource type="PackedScene" uid="uid://nxifhy12ej5c" path="res://scene/enemy_component/main_component/collision_controller.tscn" id="11_1xig6"]
 [ext_resource type="PackedScene" uid="uid://cfqd8a0jo088w" path="res://scene/enemy_component/invisible_component.tscn" id="12_5os0a"]
+[ext_resource type="PackedScene" uid="uid://cyxnkvdq3ry2h" path="res://scene/enemy_component/main_component/effect_component.tscn" id="13_7w8lk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o64ug"]
 atlas = ExtResource("3_ysij7")
@@ -127,7 +128,8 @@ ExtResource("8_lhm8c"): 0.04
 drop_range = 2
 
 [node name="velocity_component" parent="." unique_id=713437500 instance=ExtResource("8_q10tu")]
-speed = 85.0
+speed = 95.0
+acceleration = 8.0
 turn_rate = 3.5
 
 [node name="WoundComponent" parent="." unique_id=1971662021 node_paths=PackedStringArray("collision_shape_2d") instance=ExtResource("9_lhm8c")]
@@ -164,3 +166,5 @@ visible = false
 scale = Vector2(0.9999999, 1)
 shape = SubResource("CircleShape2D_b6tb4")
 disabled = true
+
+[node name="EffectComponent" parent="." unique_id=629594475 instance=ExtResource("13_7w8lk")]

@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://do1skrx74372j" path="res://scene/enemy_component/main_component/attack_component.tscn" id="10_mjawj"]
 [ext_resource type="PackedScene" uid="uid://nxifhy12ej5c" path="res://scene/enemy_component/main_component/collision_controller.tscn" id="11_3lgsf"]
 [ext_resource type="PackedScene" uid="uid://dd62abo0ond38" path="res://scene/enemy_component/child_component/animation_attack_component.tscn" id="12_mjawj"]
+[ext_resource type="PackedScene" uid="uid://cyxnkvdq3ry2h" path="res://scene/enemy_component/main_component/effect_component.tscn" id="13_3lgsf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y1bq4"]
 atlas = ExtResource("3_fwp1t")
@@ -79,7 +80,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kh6oe")
 }],
-"loop": true,
+"loop": false,
 "name": &"run",
 "speed": 10.0
 }]
@@ -116,7 +117,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_fj1ko"]
 resource_name = "attack"
-length = 0.8
+length = 0.9
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -125,7 +126,7 @@ tracks/0/path = NodePath("AnimationAttackComponent/CollisionShape2D:disabled")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.4, 0.8),
+"times": PackedFloat32Array(0.75, 0.8),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [false, true]
@@ -204,6 +205,7 @@ scale = Vector2(0.99999994, 1)
 shape = SubResource("RectangleShape2D_mjawj")
 
 [node name="CollisionController" parent="." unique_id=387055937 node_paths=PackedStringArray("collision_shape_2d") instance=ExtResource("11_3lgsf")]
+visible = false
 collision_shape_2d = NodePath("CollisionShape2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionController" unique_id=909065960]
@@ -212,7 +214,6 @@ scale = Vector2(0.99999994, 1)
 shape = SubResource("RectangleShape2D_3lgsf")
 
 [node name="AnimationAttackComponent" parent="." unique_id=671336853 node_paths=PackedStringArray("collision_shape_2d") instance=ExtResource("12_mjawj")]
-visible = false
 collision_shape_2d = NodePath("CollisionShape2D")
 damage = 15.0
 
@@ -230,3 +231,6 @@ disabled = true
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1360045759]
 libraries/ = SubResource("AnimationLibrary_mjawj")
 autoplay = &"attack"
+
+[node name="EffectComponent" parent="." unique_id=629594475 instance=ExtResource("13_3lgsf")]
+position = Vector2(0, -14.061204)

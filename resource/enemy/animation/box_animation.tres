@@ -1,0 +1,42 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://yllbkhnqlq2e"]
+
+[ext_resource type="Texture2D" uid="uid://ccw1sevq6qydv" path="res://sucai/迷你地牢素材/used/tile_0089.png" id="1_5jd4x"]
+[ext_resource type="Texture2D" uid="uid://bopbigjlqgvr8" path="res://sucai/迷你地牢素材/used/tile_0090.png" id="2_8vuoe"]
+[ext_resource type="Texture2D" uid="uid://byrikbil0dp1x" path="res://sucai/迷你地牢素材/used/tile_0091.png" id="3_7d6ny"]
+[ext_resource type="Texture2D" uid="uid://b1tvv6dq2k6no" path="res://sucai/迷你地牢素材/used/tile_0092.png" id="4_vkyg8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wxa6r"]
+atlas = ExtResource("1_5jd4x")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cji6c"]
+atlas = ExtResource("2_8vuoe")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_84al2"]
+atlas = ExtResource("3_7d6ny")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x65gu"]
+atlas = ExtResource("4_vkyg8")
+region = Rect2(0, 0, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wxa6r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cji6c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_84al2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x65gu")
+}],
+"loop": true,
+"name": &"run",
+"speed": 6.0
+}]

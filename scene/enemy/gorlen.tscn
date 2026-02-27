@@ -9,59 +9,25 @@
 [ext_resource type="PackedScene" uid="uid://daaqcmminiyk1" path="res://scene/游戏物件/blood_bottle.tscn" id="7_qgpht"]
 [ext_resource type="PackedScene" uid="uid://12uey86sh54o" path="res://scene/enemy_component/main_component/wound_component.tscn" id="9_1vwlk"]
 [ext_resource type="PackedScene" uid="uid://do1skrx74372j" path="res://scene/enemy_component/main_component/attack_component.tscn" id="10_ta48a"]
+[ext_resource type="PackedScene" uid="uid://cyxnkvdq3ry2h" path="res://scene/enemy_component/main_component/effect_component.tscn" id="11_1vwlk"]
 [ext_resource type="PackedScene" uid="uid://nxifhy12ej5c" path="res://scene/enemy_component/main_component/collision_controller.tscn" id="11_q6l2o"]
+[ext_resource type="PackedScene" uid="uid://0uu7d2cwajsq" path="res://scene/enemy_component/disappear_component.tscn" id="12_ta48a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1vwlk"]
 atlas = ExtResource("3_d7sbi")
-region = Rect2(100, 0, 100, 100)
+region = Rect2(0, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ta48a"]
 atlas = ExtResource("3_d7sbi")
-region = Rect2(200, 0, 100, 100)
+region = Rect2(100, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q6l2o"]
 atlas = ExtResource("3_d7sbi")
-region = Rect2(300, 0, 100, 100)
+region = Rect2(200, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bbrri"]
 atlas = ExtResource("3_d7sbi")
-region = Rect2(100, 300, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_m5e4t"]
-atlas = ExtResource("3_d7sbi")
-region = Rect2(200, 300, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7viam"]
-atlas = ExtResource("3_d7sbi")
-region = Rect2(300, 300, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3kvui"]
-atlas = ExtResource("3_d7sbi")
-region = Rect2(400, 300, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hmn4c"]
-atlas = ExtResource("3_d7sbi")
-region = Rect2(500, 300, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vcnax"]
-atlas = ExtResource("3_d7sbi")
-region = Rect2(600, 300, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pghib"]
-atlas = ExtResource("3_d7sbi")
-region = Rect2(700, 300, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qgpht"]
-atlas = ExtResource("3_d7sbi")
-region = Rect2(100, 300, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_b1ivo"]
-atlas = ExtResource("3_d7sbi")
-region = Rect2(200, 300, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xpvs0"]
-atlas = ExtResource("3_d7sbi")
-region = Rect2(300, 300, 100, 100)
+region = Rect2(300, 0, 100, 100)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fq6t5"]
 animations = [{
@@ -77,48 +43,10 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_bbrri")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_m5e4t")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7viam")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3kvui")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hmn4c")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vcnax")
-}, {
-"duration": 20.0,
-"texture": SubResource("AtlasTexture_pghib")
-}],
-"loop": false,
-"name": &"run",
-"speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qgpht")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_b1ivo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xpvs0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_b1ivo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qgpht")
 }],
 "loop": true,
-"name": &"walk",
-"speed": 3.0
+"name": &"run",
+"speed": 7.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vcrpj"]
@@ -142,9 +70,9 @@ script = ExtResource("1_iuixe")
 position = Vector2(0, -4.9999995)
 scale = Vector2(2.2, 1.755)
 sprite_frames = SubResource("SpriteFrames_fq6t5")
-animation = &"walk"
-autoplay = "walk"
-frame = 4
+animation = &"run"
+autoplay = "run"
+frame_progress = 0.7836832
 
 [node name="health_component" parent="." unique_id=555444483 instance=ExtResource("4_iuixe")]
 max_health = 300.0
@@ -188,3 +116,9 @@ shape = SubResource("CircleShape2D_wyu8d")
 visible = false
 shape = SubResource("CircleShape2D_7viam")
 disabled = true
+
+[node name="EffectComponent" parent="." unique_id=629594475 instance=ExtResource("11_1vwlk")]
+position = Vector2(0, -34)
+
+[node name="DisappearComponent" parent="." unique_id=184462013 instance=ExtResource("12_ta48a")]
+disappear_time = 45.0

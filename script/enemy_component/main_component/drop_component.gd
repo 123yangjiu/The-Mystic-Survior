@@ -10,6 +10,7 @@ extends EnemyComponent
 var all_dropthing:Array
 var all_droppresent:Array
 
+
 func initial()->void:
 	for i in drop_thingandpersent.keys():
 		all_dropthing.append(i)
@@ -23,7 +24,7 @@ func on_died():
 	var entities_Layer=get_tree().get_first_node_in_group("实体图层")
 	for i in drop_range:
 		for index in all_dropthing.size():
-			if randf()<all_droppresent[index]:
+			if randf()<all_droppresent[index]*GameEvent.increase_percent:
 				var drop_instance=all_dropthing[index].instantiate() as Node2D
 				call_deferred("add_bottle",entities_Layer,_get_position(index,i),drop_instance)
 

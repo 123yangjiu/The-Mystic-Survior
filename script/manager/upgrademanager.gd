@@ -8,6 +8,7 @@ var upgrade_list: Array[AbilityUpgrade]#把抽中的三个能力放到一个列�
 var current_upgrade={}#一个字典存放当前所有的能力buff
 var mystrious_pool:Array[AbilityUpgrade]=[]#放置已被选完4次的能力，给予很低的概率获取第5次
 var mystrious_probality:=0.02
+var limit_int:=3
 
 var initial_upgrade:AbilityUpgrade
 
@@ -26,16 +27,17 @@ func _ready():
 			for i in unlock_pool.slice(0,4):
 				can_chose_pool.append(i)
 		#初始化选择池子,选择剑类的选项和所有解锁新武器的选项
+	#设置困难和简单模式
 	if GameEvent.easy_mode[GameEvent.EASY_MODE.is_initial]:
 		initial_upgrade=GameEvent.easy_mode[GameEvent.EASY_MODE.is_initial]
 		add_upgrade(initial_upgrade)
-	elif GameEvent.hard_mode[GameEvent.HARD_MODE.is_max_3]:
-		mystrious_probality=-1.0
+	if GameEvent.hard_mode[GameEvent.HARD_MODE.is_max_4]:
+		limit_int=2
 	if GameEvent.easy_mode[GameEvent.EASY_MODE.is_ascend]:
 		for ability in can_chose_pool:
 			if ability.Sort=="角色能力":
 				add_upgrade(ability)
-	elif GameEvent.hard_mode[GameEvent.HARD_MODE.is_erase_ability]:
+	if GameEvent.hard_mode[GameEvent.HARD_MODE.is_erase_ability]:
 		can_chose_pool.erase(GameEvent.hard_mode[GameEvent.HARD_MODE.is_erase_ability])
 
 func on_level_up(_current_level:int):#升级时展示卡片
@@ -71,8 +73,10 @@ func add_upgrade(upgrade:AbilityUpgrade):#这个字典控制已经有的能力
 			"quantity":1   #如果之前没有选过这种能力那把他加入字典
 		}
 	else:
+		#选到3次的能力加入神秘池子
 		if current_upgrade[upgrade.ID]["quantity"]>1:
-			if current_upgrade[upgrade.ID]["quantity"]>3:
+			#再次从神秘池子选到的能力去除
+			if current_upgrade[upgrade.ID]["quantity"]>limit_int:
 				for Upgrade in mystrious_pool:
 					if Upgrade.ID==upgrade.ID:
 						mystrious_pool.erase(Upgrade)
@@ -81,7 +85,8 @@ func add_upgrade(upgrade:AbilityUpgrade):#这个字典控制已经有的能力
 					can_chose_pool.erase(Upgrade)
 					mystrious_pool.append(Upgrade)
 					break
-		current_upgrade[upgrade.ID]["quantity"]+=1#如果已经选过了就实现叠加把这个buff的数量加1
+		#如果已经选过了就实现叠加把这个buff的数量加1
+		current_upgrade[upgrade.ID]["quantity"]+=1
 	#检测是否是解锁类型的，然后删除这个能力，加入其他加强能力
 	if upgrade.is_unlock:
 		can_chose_pool.erase(upgrade)

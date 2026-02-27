@@ -2,5 +2,5 @@
 
 [ext_resource type="Script" uid="uid://46ingrya2sxu" path="res://script/enemy_component/chid_component/solid_collision_controller.gd" id="1_npvmp"]
 
-[node name="CollisionController" type="Node2D" unique_id=387055937]
+[node name="SpecialCollisionController" type="Node2D" unique_id=387055937]
 script = ExtResource("1_npvmp")

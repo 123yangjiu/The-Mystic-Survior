@@ -1,10 +1,11 @@
 [gd_resource type="Resource" script_class="EnemyUnlockEntry" format=3 uid="uid://t5kejwdjuxx"]
 
-[ext_resource type="PackedScene" uid="uid://dg0lowfwv0dg3" path="res://scene/enemy/knight.tscn" id="1_cm2db"]
+[ext_resource type="PackedScene" uid="uid://d1xy0buqa0l3x" path="res://scene/enemy/witch.tscn" id="1_cm2db"]
 [ext_resource type="Script" uid="uid://b8kynvj5xuaby" path="res://resource/enemy/enemy.gd" id="2_mnlgg"]
 
 [resource]
 script = ExtResource("2_mnlgg")
 scene = ExtResource("1_cm2db")
-unlock_difficulty = -1
+unlock_difficulty = -13
 ID = 10
+max_health = 1200.0

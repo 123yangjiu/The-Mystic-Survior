@@ -10,3 +10,4 @@ unlock_difficulty = 6
 weight = 2.0
 ID = 3
 disapear_difficulty = 17
+max_health = 30.0

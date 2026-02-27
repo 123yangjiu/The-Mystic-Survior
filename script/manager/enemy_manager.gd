@@ -2,10 +2,12 @@ class_name EnemyManager
 extends Node
 enum ALL_SHAPE{
 	arrow,
-	triangle
+	tited,
+	gappy
 }
 
 @export var normal_enemy:Array[EnemyUnlockEntry]
+@export var special_enemy:Array[EnemyUnlockEntry]
 @export var all_enemy:Array[EnemyUnlockEntry]
 @export var all_shape:Array[PackedScene]
 @onready var normal_timer: Timer = $Normal
@@ -25,7 +27,7 @@ var decay =0.15
 #最大怪物数量
 var max_monster :float=900.0
 var target_health:float
-var all_health:float
+var all_health:=0.0
 
 func _ready() -> void:
 	enemy_layer = get_tree().get_first_node_in_group("enemylayer")
@@ -33,20 +35,21 @@ func _ready() -> void:
 	GameEvent.more_difficulty.connect(on_more_difficulty)
 	match GameEvent.mode_index:
 		2:
-			decay = 0.2
+			decay = 0.23
 		3:
-			if GameEvent.hard_mode[GameEvent.HARD_MODE.is_more]:
-				min_gap_difficulty=23
-				decay=0.4
+			if GameEvent.hard_mode[GameEvent.HARD_MODE.is_long]:
+				min_gap_difficulty=19
 		_:
 			decay=0.15
 	enemy_filiter()
 	normal_timer.start()
+	check_health_timer.start()
 
 func enemy_filiter():
 	if ! will_back_group.is_empty():
 		for enemy in will_back_group:
 			unlocked_group.append(enemy)
+			all_weight+=enemy.weight
 	for enemy in normal_enemy:
 		if enemy.unlock_difficulty==GameEvent.difficulty:#怪物等级在当前难度等级
 			#之内就把他们加入召唤池
@@ -74,20 +77,28 @@ func random_chose():
 			return enemy.scene#拿到这次抽到的怪物
 
 func on_more_difficulty(difficulty):
-	target_health= check_health()
 	if difficulty<=min_gap_difficulty:
 		target_time = base_wait_time * exp(-decay * (difficulty-1))
 		normal_timer.wait_time=target_time
-	if difficulty==4:
-		check_health_timer.start()
+	if difficulty==3:
 		special_timer.start()
 	enemy_filiter()
+	await get_tree().create_timer(0.5).timeout
+	set_target_health()
 
 func _on_check_health_timeout() -> void:
 	all_health= check_health()
 	if target_time:
-		var percent = all_health/target_health
-		normal_timer.wait_time = target_time*exp(percent-1.5)
+		var percent = clamp(all_health/target_health,0.1,2.0)
+		normal_timer.wait_time = target_time*percent
+
+func set_target_health()->void:
+	var number = min(GameEvent.difficulty*8,150)
+	var the_health:=0.0
+	for enemy in unlocked_group:
+		var weight = enemy.weight
+		the_health += enemy.max_health*number*weight/all_weight
+	target_health=the_health
 
 func check_health()->float:
 	var _all_health=0.0
@@ -96,11 +107,4 @@ func check_health()->float:
 			for component in enemy.all_component:
 				if component is HealthComponent:
 					_all_health +=component.max_health
-	_all_health = min(_all_health,50)
 	return _all_health
-
-func _special_event(just_look:=false):
-	if just_look:
-		return 1
-	else :
-		pass

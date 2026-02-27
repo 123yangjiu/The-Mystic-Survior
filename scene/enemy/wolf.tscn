@@ -102,7 +102,7 @@ ExtResource("8_s8r85"): 0.0
 drop_range = 3
 
 [node name="velocity_component" parent="." unique_id=1839392008 instance=ExtResource("6_qrbsc")]
-speed = 110.0
+speed = 120.0
 acceleration = 8.0
 turn_rate = 3.0
 

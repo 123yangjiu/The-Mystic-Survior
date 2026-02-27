@@ -7,6 +7,7 @@ script = ExtResource("1_pf8sf")
 all_enemy = NodePath("AllEnemy")
 
 [node name="AllEnemy" type="Node2D" parent="." unique_id=1250037972]
+position = Vector2(-205, 0)
 
 [node name="Enemy" type="Node2D" parent="AllEnemy" unique_id=533274058]
 position = Vector2(205, 0)
@@ -67,3 +68,69 @@ position = Vector2(110, 100)
 
 [node name="Enemy19" type="Node2D" parent="AllEnemy" unique_id=349217047]
 position = Vector2(80, 130)
+
+[node name="Enemy9" type="Node2D" parent="AllEnemy" unique_id=379568628]
+position = Vector2(124, -40)
+
+[node name="Enemy20" type="Node2D" parent="AllEnemy" unique_id=1907952511]
+position = Vector2(84, -40)
+
+[node name="Enemy21" type="Node2D" parent="AllEnemy" unique_id=980850138]
+position = Vector2(44, -40)
+
+[node name="Enemy22" type="Node2D" parent="AllEnemy" unique_id=1044966725]
+position = Vector2(4, -40)
+
+[node name="Enemy23" type="Node2D" parent="AllEnemy" unique_id=640361283]
+position = Vector2(-36, -40)
+
+[node name="Enemy24" type="Node2D" parent="AllEnemy" unique_id=969410728]
+position = Vector2(-76, -40)
+
+[node name="Enemy25" type="Node2D" parent="AllEnemy" unique_id=484355938]
+position = Vector2(-116, -40)
+
+[node name="Enemy26" type="Node2D" parent="AllEnemy" unique_id=1223913058]
+position = Vector2(-156, -40)
+
+[node name="Enemy27" type="Node2D" parent="AllEnemy" unique_id=798876788]
+position = Vector2(-196, -40)
+
+[node name="Enemy28" type="Node2D" parent="AllEnemy" unique_id=1548005436]
+position = Vector2(-236, -40)
+
+[node name="Enemy29" type="Node2D" parent="AllEnemy" unique_id=2142705728]
+position = Vector2(-276, -40)
+
+[node name="Enemy30" type="Node2D" parent="AllEnemy" unique_id=1677559822]
+position = Vector2(126, 40)
+
+[node name="Enemy31" type="Node2D" parent="AllEnemy" unique_id=2013252312]
+position = Vector2(86, 40)
+
+[node name="Enemy32" type="Node2D" parent="AllEnemy" unique_id=519412372]
+position = Vector2(46, 40)
+
+[node name="Enemy33" type="Node2D" parent="AllEnemy" unique_id=1318507849]
+position = Vector2(6, 40)
+
+[node name="Enemy34" type="Node2D" parent="AllEnemy" unique_id=1464452292]
+position = Vector2(-34, 40)
+
+[node name="Enemy35" type="Node2D" parent="AllEnemy" unique_id=1346600543]
+position = Vector2(-74, 40)
+
+[node name="Enemy36" type="Node2D" parent="AllEnemy" unique_id=1194902610]
+position = Vector2(-114, 40)
+
+[node name="Enemy37" type="Node2D" parent="AllEnemy" unique_id=738445458]
+position = Vector2(-154, 40)
+
+[node name="Enemy38" type="Node2D" parent="AllEnemy" unique_id=1608086048]
+position = Vector2(-194, 40)
+
+[node name="Enemy39" type="Node2D" parent="AllEnemy" unique_id=1083399448]
+position = Vector2(-234, 40)
+
+[node name="Enemy40" type="Node2D" parent="AllEnemy" unique_id=242456900]
+position = Vector2(-274, 40)

@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_xewhn")
 ID = "解锁RPG"
-Sort = "枪1"
+Sort = "枪"
 name = "这个劲大"
 self_lock = 1
 lock_code = 1

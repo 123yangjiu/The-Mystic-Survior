@@ -14,6 +14,7 @@ func _ready() -> void:
 		is_fixed=true
 		self.visible=true
 		self.position=Vector2(102.0,267.0)
+	GameEvent.yaogan_fixed.connect(on_fix_change)
 	GameEvent._paused.connect(_on_paused)
 
 func _input(event: InputEvent) -> void:
@@ -106,3 +107,17 @@ func set_is_drag(value)->void:
 	if is_fixed:
 		return
 	is_drag=value
+
+func on_fix_change(fixed:bool)->void:
+	match is_fixed:
+		true:
+			match fixed:
+				false:
+					is_fixed=false
+					self.visible=false
+		false:
+			match fixed:
+				true:
+					is_fixed=true
+					self.visible=true
+					self.position=Vector2(102.0,267.0)

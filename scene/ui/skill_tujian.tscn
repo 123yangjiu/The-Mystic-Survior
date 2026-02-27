@@ -36,6 +36,7 @@
 [ext_resource type="Texture2D" uid="uid://bpsafaxcdqtsx" path="res://sucai/background/skill/light.png" id="29_mabtl"]
 [ext_resource type="Texture2D" uid="uid://6d2i2fi6p5hk" path="res://sucai/background/skill/ring.png" id="30_dpopx"]
 [ext_resource type="Resource" uid="uid://dgtmnrikh6nqu" path="res://resource/upgrades/gun/get_rocket.tres" id="30_xvc7j"]
+[ext_resource type="Resource" uid="uid://dn5ri83sm6i23" path="res://resource/upgrades/else/掉率增加.tres" id="31_xvc7j"]
 [ext_resource type="Texture2D" uid="uid://bp8e6iruf1st8" path="res://sucai/background/skill/ak.png" id="37_sh81l"]
 [ext_resource type="Texture2D" uid="uid://cm2xfjxt2u0es" path="res://sucai/background/skill/shotgun.png" id="38_hfe5u"]
 [ext_resource type="Texture2D" uid="uid://byosm5oi4klg1" path="res://sucai/background/skill/sniper.png" id="39_vis0a"]
@@ -45,7 +46,7 @@
 layer = 2
 script = ExtResource("1_bw8iv")
 upgrade_card_scene = ExtResource("2_hdgep")
-all_upgrade = Array[ExtResource("3_wyphw")]([ExtResource("4_e7bnn"), ExtResource("5_ucao3"), ExtResource("6_aay3j"), ExtResource("7_mabtl"), ExtResource("8_dpopx"), ExtResource("9_8dpxf"), ExtResource("10_6wq5a"), ExtResource("11_4rou3"), ExtResource("12_ohvd8"), ExtResource("13_528nf"), ExtResource("14_7xkpe"), ExtResource("15_sh81l"), ExtResource("16_hfe5u"), ExtResource("17_vis0a"), ExtResource("18_bp314"), ExtResource("19_xvc7j"), ExtResource("20_58664"), ExtResource("21_yrgvd"), ExtResource("25_7xkpe"), ExtResource("26_sh81l"), ExtResource("27_hfe5u"), ExtResource("28_vis0a"), ExtResource("29_bp314"), ExtResource("30_xvc7j"), ExtResource("22_3uk6w"), ExtResource("24_slx2f"), ExtResource("23_g2lnk")])
+all_upgrade = Array[ExtResource("3_wyphw")]([ExtResource("4_e7bnn"), ExtResource("5_ucao3"), ExtResource("6_aay3j"), ExtResource("7_mabtl"), ExtResource("8_dpopx"), ExtResource("9_8dpxf"), ExtResource("10_6wq5a"), ExtResource("11_4rou3"), ExtResource("12_ohvd8"), ExtResource("13_528nf"), ExtResource("14_7xkpe"), ExtResource("15_sh81l"), ExtResource("16_hfe5u"), ExtResource("17_vis0a"), ExtResource("18_bp314"), ExtResource("19_xvc7j"), ExtResource("20_58664"), ExtResource("21_yrgvd"), ExtResource("25_7xkpe"), ExtResource("26_sh81l"), ExtResource("27_hfe5u"), ExtResource("28_vis0a"), ExtResource("29_bp314"), ExtResource("30_xvc7j"), ExtResource("22_3uk6w"), ExtResource("24_slx2f"), ExtResource("23_g2lnk"), ExtResource("31_xvc7j")])
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1056391145]
 anchors_preset = 15

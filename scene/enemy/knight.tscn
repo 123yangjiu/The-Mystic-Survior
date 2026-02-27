@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dg0lowfwv0dg3"]
 
 [ext_resource type="Script" uid="uid://rsl4jg827i3e" path="res://script/enemy/main_enemy/enemy_xiaotrue.gd" id="1_xiaok"]
+[ext_resource type="Texture2D" uid="uid://vh5v7ile6uc1" path="res://sucai/Knight/knight_dash.png" id="2_0mouk"]
 [ext_resource type="Texture2D" uid="uid://mybwidsudo2r" path="res://sucai/Knight/knight-Sheet_whitefx.png" id="3_elmko"]
 [ext_resource type="PackedScene" uid="uid://bnactnfyipltl" path="res://scene/enemy_component/main_component/health_component.tscn" id="4_hhqmu"]
 [ext_resource type="PackedScene" uid="uid://c0i7tc6xpk0n8" path="res://scene/enemy_component/main_component/drop_component.tscn" id="5_7fhkn"]
@@ -11,7 +12,20 @@
 [ext_resource type="PackedScene" uid="uid://12uey86sh54o" path="res://scene/enemy_component/main_component/wound_component.tscn" id="10_xiaok"]
 [ext_resource type="PackedScene" uid="uid://do1skrx74372j" path="res://scene/enemy_component/main_component/attack_component.tscn" id="11_k4x40"]
 [ext_resource type="PackedScene" uid="uid://nxifhy12ej5c" path="res://scene/enemy_component/main_component/collision_controller.tscn" id="12_0mouk"]
+[ext_resource type="PackedScene" uid="uid://cyxnkvdq3ry2h" path="res://scene/enemy_component/main_component/effect_component.tscn" id="13_0mouk"]
 [ext_resource type="PackedScene" uid="uid://bm0ksndtbc7c5" path="res://scene/enemy_component/rush_component.tscn" id="13_k4x40"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0mouk"]
+atlas = ExtResource("3_elmko")
+region = Rect2(180, 180, 90, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bkhf5"]
+atlas = ExtResource("3_elmko")
+region = Rect2(270, 180, 90, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cmuv5"]
+atlas = ExtResource("3_elmko")
+region = Rect2(360, 180, 90, 90)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2umt1"]
 atlas = ExtResource("3_elmko")
@@ -41,8 +55,50 @@ region = Rect2(450, 90, 90, 90)
 atlas = ExtResource("3_elmko")
 region = Rect2(540, 90, 90, 90)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_rq03w"]
+atlas = ExtResource("2_0mouk")
+region = Rect2(0, 0, 90, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r8vvw"]
+atlas = ExtResource("2_0mouk")
+region = Rect2(90, 0, 90, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_06v4k"]
+atlas = ExtResource("2_0mouk")
+region = Rect2(180, 0, 90, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uvkxi"]
+atlas = ExtResource("2_0mouk")
+region = Rect2(180, 0, 90, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e3iw2"]
+atlas = ExtResource("2_0mouk")
+region = Rect2(270, 0, 90, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2g6x"]
+atlas = ExtResource("2_0mouk")
+region = Rect2(360, 0, 90, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_enqk6"]
+atlas = ExtResource("2_0mouk")
+region = Rect2(450, 0, 90, 90)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_fq6t5"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0mouk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bkhf5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cmuv5")
+}],
+"loop": false,
+"name": &"real_rush",
+"speed": 3.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2umt1")
@@ -68,6 +124,37 @@ animations = [{
 "loop": true,
 "name": &"run",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rq03w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r8vvw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_06v4k")
+}],
+"loop": false,
+"name": &"rush_ready",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uvkxi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e3iw2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g2g6x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_enqk6")
+}],
+"loop": true,
+"name": &"rush_walk",
+"speed": 6.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xiaok"]
@@ -80,7 +167,7 @@ radius = 8.687976
 size = Vector2(10.351114, 17.666668)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0mouk"]
-radius = 75.0
+radius = 70.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uvkxi"]
 radius = 150.0
@@ -95,12 +182,11 @@ script = ExtResource("1_xiaok")
 position = Vector2(0, -1.0000005)
 scale = Vector2(0.8, 0.638)
 sprite_frames = SubResource("SpriteFrames_fq6t5")
-animation = &"run"
+animation = &"real_rush"
 autoplay = "run"
-frame_progress = 0.10319869
 
 [node name="health_component" parent="." unique_id=1614735274 instance=ExtResource("4_hhqmu")]
-max_health = 800.0
+max_health = 1000.0
 
 [node name="drop_component" parent="." unique_id=891120592 instance=ExtResource("5_7fhkn")]
 drop_thingandpersent = Dictionary[PackedScene, float]({
@@ -111,7 +197,7 @@ ExtResource("6_gpn6s"): 0.1
 drop_range = 3
 
 [node name="velocity_component" parent="." unique_id=1627718359 instance=ExtResource("8_nduui")]
-speed = 80.0
+speed = 105.0
 acceleration = 7.0
 turn_rate = 8.0
 
@@ -127,7 +213,7 @@ shape = SubResource("CircleShape2D_xiaok")
 [node name="AttackComponent" parent="." unique_id=2136703472 node_paths=PackedStringArray("collision_shape_2d") instance=ExtResource("11_k4x40")]
 visible = false
 collision_shape_2d = NodePath("CollisionShape2D")
-damage = 23.0
+damage = 42.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackComponent" unique_id=10909008]
 position = Vector2(0.33390683, 1.6666667)
@@ -143,8 +229,12 @@ position = Vector2(0.5008602, 1.8333335)
 scale = Vector2(0.9999999, 1)
 shape = SubResource("RectangleShape2D_06v4k")
 
-[node name="RushComponent" parent="." unique_id=2077482623 node_paths=PackedStringArray("collision_shape") instance=ExtResource("13_k4x40")]
+[node name="RushComponent" parent="." unique_id=2077482623 node_paths=PackedStringArray("collision_shape", "animation_sprite") instance=ExtResource("13_k4x40")]
 collision_shape = NodePath("CollisionShape2D")
+animation_sprite = NodePath("../AnimatedSprite2D")
+rush_interval = 2.5
+rush_speed = 600.0
+is_animation = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RushComponent" unique_id=1395934061]
 shape = SubResource("CircleShape2D_0mouk")
@@ -154,3 +244,6 @@ visible = false
 scale = Vector2(0.9999999, 1)
 shape = SubResource("CircleShape2D_uvkxi")
 disabled = true
+
+[node name="EffectComponent" parent="." unique_id=629594475 instance=ExtResource("13_0mouk")]
+scale = Vector2(0.3, 0.3)

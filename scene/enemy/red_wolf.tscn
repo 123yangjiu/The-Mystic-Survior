@@ -76,7 +76,7 @@ size = Vector2(45, 25)
 radius = 12.0415945
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8dvhv"]
-radius = 150.0
+radius = 200.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gp7yn"]
 radius = 150.0
@@ -104,8 +104,8 @@ turn_rate = 4.0
 [node name="drop_component" parent="." unique_id=1025857586 instance=ExtResource("5_8dqby")]
 drop_thingandpersent = Dictionary[PackedScene, float]({
 ExtResource("6_ontlg"): 0.0,
-ExtResource("7_aa0cy"): 0.15,
-ExtResource("8_me35u"): 0.15
+ExtResource("7_aa0cy"): 0.05,
+ExtResource("8_me35u"): 0.05
 })
 drop_range = 2
 

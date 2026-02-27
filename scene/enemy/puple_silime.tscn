@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://12uey86sh54o" path="res://scene/enemy_component/main_component/wound_component.tscn" id="8_kmadt"]
 [ext_resource type="PackedScene" uid="uid://do1skrx74372j" path="res://scene/enemy_component/main_component/attack_component.tscn" id="9_ug8u0"]
 [ext_resource type="PackedScene" uid="uid://nxifhy12ej5c" path="res://scene/enemy_component/main_component/collision_controller.tscn" id="10_8eatl"]
+[ext_resource type="PackedScene" uid="uid://cyxnkvdq3ry2h" path="res://scene/enemy_component/main_component/effect_component.tscn" id="11_ug8u0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_botv0"]
 atlas = ExtResource("3_v4vgx")
@@ -111,3 +112,6 @@ shape = SubResource("RectangleShape2D_jgr2i")
 visible = false
 shape = SubResource("CircleShape2D_mon6h")
 disabled = true
+
+[node name="EffectComponent" parent="." unique_id=629594475 instance=ExtResource("11_ug8u0")]
+position = Vector2(0, -2)

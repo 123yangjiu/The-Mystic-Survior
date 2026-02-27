@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://12uey86sh54o" path="res://scene/enemy_component/main_component/wound_component.tscn" id="7_qmctf"]
 [ext_resource type="PackedScene" uid="uid://f15fc5ggcq0l" path="res://scene/游戏物件/bonus_bottle.tscn" id="7_yw55r"]
 [ext_resource type="PackedScene" uid="uid://nxifhy12ej5c" path="res://scene/enemy_component/main_component/collision_controller.tscn" id="8_torm2"]
+[ext_resource type="PackedScene" uid="uid://cyxnkvdq3ry2h" path="res://scene/enemy_component/main_component/effect_component.tscn" id="12_s2k5x"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qmctf"]
 atlas = ExtResource("2_13prn")
@@ -124,3 +125,5 @@ shape = SubResource("CircleShape2D_qmctf")
 visible = false
 shape = SubResource("CircleShape2D_7e3xo")
 disabled = true
+
+[node name="EffectComponent" parent="." unique_id=629594475 instance=ExtResource("12_s2k5x")]

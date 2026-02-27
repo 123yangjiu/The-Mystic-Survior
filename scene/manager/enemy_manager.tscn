@@ -16,20 +16,23 @@
 [ext_resource type="Resource" uid="uid://t5kejwdjuxx" path="res://resource/enemy/witch.tres" id="12_dxqt4"]
 [ext_resource type="PackedScene" uid="uid://cmtbivbjtrdc1" path="res://scene/enemy_event/arrow_line.tscn" id="14_61i4e"]
 [ext_resource type="Resource" uid="uid://bbhoy3dpu0svy" path="res://resource/enemy/mushroom.tres" id="14_q5qsi"]
-[ext_resource type="PackedScene" uid="uid://ch6sll41jwprf" path="res://scene/enemy_event/triangle_line.tscn" id="15_t65ep"]
+[ext_resource type="Resource" uid="uid://cj0igdud0tmjh" path="res://resource/enemy/undead.tres" id="15_tmr65"]
+[ext_resource type="PackedScene" uid="uid://ugy1pljxk7i0" path="res://scene/enemy_event/gappy_line.tscn" id="16_q5qsi"]
+[ext_resource type="PackedScene" uid="uid://uyasx8hy1oac" path="res://scene/enemy_event/titled_line.tscn" id="17_0i1ta"]
 
 [node name="EnemyManager" type="Node" unique_id=1015220876]
 script = ExtResource("1_vlakn")
 normal_enemy = Array[ExtResource("2_ttu6g")]([ExtResource("3_p63pb"), ExtResource("4_dxqt4"), ExtResource("5_kwy0r"), ExtResource("6_61i4e"), ExtResource("7_t65ep"), ExtResource("8_q5qsi"), ExtResource("9_0i1ta"), ExtResource("10_tmr65")])
-all_enemy = Array[ExtResource("2_ttu6g")]([ExtResource("3_p63pb"), ExtResource("4_dxqt4"), ExtResource("5_kwy0r"), ExtResource("6_61i4e"), ExtResource("7_t65ep"), ExtResource("8_q5qsi"), ExtResource("9_0i1ta"), ExtResource("10_tmr65"), ExtResource("11_dxqt4"), ExtResource("12_dxqt4"), ExtResource("11_p63pb"), ExtResource("14_q5qsi")])
-all_shape = Array[PackedScene]([ExtResource("14_61i4e"), ExtResource("15_t65ep")])
+special_enemy = Array[ExtResource("2_ttu6g")]([ExtResource("11_p63pb"), ExtResource("12_dxqt4"), ExtResource("15_tmr65")])
+all_enemy = Array[ExtResource("2_ttu6g")]([ExtResource("3_p63pb"), ExtResource("4_dxqt4"), ExtResource("5_kwy0r"), ExtResource("6_61i4e"), ExtResource("7_t65ep"), ExtResource("8_q5qsi"), ExtResource("9_0i1ta"), ExtResource("10_tmr65"), ExtResource("11_dxqt4"), ExtResource("12_dxqt4"), ExtResource("11_p63pb"), ExtResource("14_q5qsi"), ExtResource("15_tmr65")])
+all_shape = Array[PackedScene]([ExtResource("14_61i4e"), ExtResource("16_q5qsi"), ExtResource("17_0i1ta")])
 
 [node name="EnemyProducer" type="Node" parent="." unique_id=1023889621 node_paths=PackedStringArray("enemy_manager")]
 script = ExtResource("2_lenjj")
 enemy_manager = NodePath("..")
 
 [node name="CheckHealth" type="Timer" parent="EnemyProducer" unique_id=1658483975]
-wait_time = 4.0
+wait_time = 2.0
 
 [node name="Normal" type="Timer" parent="." unique_id=1945998218]
 wait_time = 1.5

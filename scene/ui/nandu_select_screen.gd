@@ -1,7 +1,6 @@
 extends CanvasLayer
 @onready var turn_left: Button = $turn_left
 @onready var turn_right: Button = $turn_right
-@onready var 简单模式: Control = $简单模式
 
 @export var all_mode:Array[Control]
 @export var initial_node:Control

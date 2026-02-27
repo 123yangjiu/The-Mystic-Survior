@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://12uey86sh54o" path="res://scene/enemy_component/main_component/wound_component.tscn" id="12_ljx7n"]
 [ext_resource type="PackedScene" uid="uid://do1skrx74372j" path="res://scene/enemy_component/main_component/attack_component.tscn" id="13_ff46a"]
 [ext_resource type="PackedScene" uid="uid://nxifhy12ej5c" path="res://scene/enemy_component/main_component/collision_controller.tscn" id="13_hcj85"]
+[ext_resource type="PackedScene" uid="uid://cyxnkvdq3ry2h" path="res://scene/enemy_component/main_component/effect_component.tscn" id="14_76xwk"]
 [ext_resource type="PackedScene" uid="uid://jb4clv2kbpah" path="res://scene/enemy_component/summon_component.tscn" id="14_ljx7n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ks07s"]
@@ -67,7 +68,7 @@ size = Vector2(8.3476715, 14.333334)
 size = Vector2(5.008603, 12)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6nsvd"]
-radius = 93.82782
+radius = 120.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l56cb"]
 radius = 150.0
@@ -133,6 +134,7 @@ shape = SubResource("RectangleShape2D_7826l")
 [node name="SummonComponent" parent="." unique_id=997544220 node_paths=PackedStringArray("collision_shape") instance=ExtResource("14_ljx7n")]
 collision_shape = NodePath("CollisionShape2D")
 summon_enemy = ExtResource("10_ks07s")
+spawn_r = 90.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SummonComponent" unique_id=946387808]
 shape = SubResource("CircleShape2D_6nsvd")
@@ -142,3 +144,7 @@ visible = false
 scale = Vector2(0.9999999, 1)
 shape = SubResource("CircleShape2D_l56cb")
 disabled = true
+
+[node name="EffectComponent" parent="." unique_id=629594475 instance=ExtResource("14_76xwk")]
+position = Vector2(0, -3.3333333)
+scale = Vector2(0.3, 0.3)

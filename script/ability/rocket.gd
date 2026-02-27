@@ -1,7 +1,7 @@
 class_name Rocket
 extends FlyThing
 @onready var attack_component_2: AttackComponent = $AttackComponent2
-@onready var collision_shape_2d: CollisionShape2D = $AttackComponent2/CollisionShape2D
+var collision_shape_2d: CollisionShape2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AttackComponent2/AnimatedSprite2D
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
@@ -13,11 +13,12 @@ func _ready() -> void:
 	amount=100
 	attack_component.area_2d.area_entered.connect(on_area_enter)
 	timer.timeout.connect(on_timer_out)
+	collision_shape_2d = attack_component_2.collision_shape_2d
 
 func _physics_process(_delta: float) -> void:
 	global_position+=direction*speed
-	var gap=(self.global_position-dir_enemy_global_position).length()
-	if gap<20 and speed!=0:
+	var gap=(self.global_position-dir_enemy_global_position).length_squared()
+	if gap<1000 and speed!=0:
 		speed=0
 		expolation()
 
