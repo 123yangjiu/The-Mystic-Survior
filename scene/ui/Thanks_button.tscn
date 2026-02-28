@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://b7eap6117b3y4"]
+[gd_scene load_steps=0 format=3 uid="uid://b7eap6117b3y4"]
 
 [ext_resource type="Theme" uid="uid://5bh541wa60l3" path="res://resource/theme/green_theme.tres" id="1_fxlpa"]
 [ext_resource type="Script" uid="uid://b2m8w30y3e17h" path="res://script/文本及ui显示/button/thanks_button.gd" id="2_o728v"]

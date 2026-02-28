@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://sehmsexlfear"]
+[gd_scene load_steps=0 format=3 uid="uid://sehmsexlfear"]
 
 [ext_resource type="Theme" uid="uid://brtk7glajnjmp" path="res://resource/theme/no_theme.tres" id="1_dqslh"]
 [ext_resource type="Script" uid="uid://cthiselse8363" path="res://script/change/change_speed.gd" id="2_dqslh"]

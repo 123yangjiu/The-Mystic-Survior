@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bvbt0jr1g354u"]
+[gd_scene load_steps=0 format=3 uid="uid://bvbt0jr1g354u"]
 
 [ext_resource type="Theme" uid="uid://5bh541wa60l3" path="res://resource/theme/green_theme.tres" id="1_t4cxa"]
 [ext_resource type="Script" uid="uid://c78m07jellbsv" path="res://script/文本及ui显示/button/tujian_button.gd" id="2_wbn0u"]

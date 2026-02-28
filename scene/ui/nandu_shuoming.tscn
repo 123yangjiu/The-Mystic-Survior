@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://7wj0rs3qyh6d"]
+[gd_scene load_steps=0 format=3 uid="uid://7wj0rs3qyh6d"]
 
 [ext_resource type="Texture2D" uid="uid://bnsuipu308xow" path="res://sucai/background/简单.png" id="1_c1cla"]
 [ext_resource type="Texture2D" uid="uid://ctv6qoahoumm5" path="res://sucai/background/5.png" id="2_njype"]

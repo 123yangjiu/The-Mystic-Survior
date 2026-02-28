@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://c4odu6gj71lxh"]
+[gd_scene load_steps=0 format=3 uid="uid://c4odu6gj71lxh"]
 
 [ext_resource type="Theme" uid="uid://5bh541wa60l3" path="res://resource/theme/green_theme.tres" id="1_6qods"]
 [ext_resource type="Script" uid="uid://fedhvxt2q3w5" path="res://script/文本及ui显示/return_to_maintheme.gd" id="2_ttghe"]

@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bcl20xpjeekut"]
+[gd_scene load_steps=0 format=3 uid="uid://bcl20xpjeekut"]
 
 [ext_resource type="Script" uid="uid://rsl4jg827i3e" path="res://script/enemy/main_enemy/enemy_xiaotrue.gd" id="1_o64ug"]
 [ext_resource type="Texture2D" uid="uid://1nyfiavgxiia" path="res://sucai/黑暗猫头鹰/Aurigaidlewithshadow-Sheet.png" id="3_ysij7"]

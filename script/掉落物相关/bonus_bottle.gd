@@ -4,11 +4,11 @@ func _ready():
     $Area2D.area_entered.connect(on_area_entered)
 func tween_collect(persent:float,start_position:Vector2):
 
-	global_position=start_position.lerp(GameEvent.play_global_position,persent)
+    global_position=start_position.lerp(GameEvent.play_global_position,persent)
 
 func collect():
-	GameEvent.emit_increase_experience(35)
-	queue_free()
+    GameEvent.emit_increase_experience(35)
+    queue_free()
 
 
 

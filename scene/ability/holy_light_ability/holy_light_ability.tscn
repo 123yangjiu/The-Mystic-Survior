@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://s1i31vfh2lr5"]
+[gd_scene load_steps=0 format=4 uid="uid://s1i31vfh2lr5"]
 
 [ext_resource type="Script" uid="uid://povge0m0ojnx" path="res://script/ability/light_ability.gd" id="1_im8mf"]
 [ext_resource type="Texture2D" uid="uid://c4hluc4fovntv" path="res://scene/ability/holy_light_ability/Cast Spell 102-DownCut All.png" id="2_koqwj"]

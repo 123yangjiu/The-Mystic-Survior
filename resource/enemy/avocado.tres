@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="EnemyUnlockEntry" format=3 uid="uid://bl6c65geij0ji"]
+[gd_resource type="Resource" script_class="EnemyUnlockEntry" load_steps=0 format=3 uid="uid://bl6c65geij0ji"]
 
 [ext_resource type="PackedScene" uid="uid://b53artfqc50vr" path="res://scene/enemy/avocado.tscn" id="1_kldm8"]
 [ext_resource type="Script" uid="uid://b8kynvj5xuaby" path="res://resource/enemy/enemy.gd" id="2_mytem"]

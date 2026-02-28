@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="EnemyUnlockEntry" format=3 uid="uid://c02spyysuegq7"]
+[gd_resource type="Resource" script_class="EnemyUnlockEntry" load_steps=0 format=3 uid="uid://qv48nrelfx8f"]
 
 [ext_resource type="PackedScene" uid="uid://r753wp2st35x" path="res://scene/enemy/escape_box.tscn" id="1_pg576"]
 [ext_resource type="Script" uid="uid://b8kynvj5xuaby" path="res://resource/enemy/enemy.gd" id="2_3jwxj"]

@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dg0lowfwv0dg3"]
+[gd_scene load_steps=0 format=3 uid="uid://dg0lowfwv0dg3"]
 
 [ext_resource type="Script" uid="uid://rsl4jg827i3e" path="res://script/enemy/main_enemy/enemy_xiaotrue.gd" id="1_xiaok"]
 [ext_resource type="Texture2D" uid="uid://vh5v7ile6uc1" path="res://sucai/Knight/knight_dash.png" id="2_0mouk"]

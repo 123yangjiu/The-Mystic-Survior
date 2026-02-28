@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://byrfr2i02s1sk"]
+[gd_scene load_steps=0 format=3 uid="uid://byrfr2i02s1sk"]
 
 [ext_resource type="Script" uid="uid://beqg6eyavy01k" path="res://script/gamevent.gd" id="1_yrl0y"]
 [ext_resource type="Script" uid="uid://dmyfvo2eu1rj2" path="res://resource/ability_upgrade.gd" id="2_tb2mb"]

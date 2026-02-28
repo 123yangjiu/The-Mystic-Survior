@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://c58yckyjy7xpa"]
+[gd_scene load_steps=0 format=3 uid="uid://c58yckyjy7xpa"]
 
 [ext_resource type="Script" uid="uid://boh2aiy8h4y46" path="res://script/文本及ui显示/skill_tujian.gd" id="1_bw8iv"]
 [ext_resource type="PackedScene" uid="uid://c6t5pqka2y0xc" path="res://scene/ui/abilityupgradecard.tscn" id="2_hdgep"]

@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://c68mua7fii8ye"]
+[gd_scene load_steps=0 format=3 uid="uid://c68mua7fii8ye"]
 
 [ext_resource type="Script" uid="uid://dda5cs3qdq8a7" path="res://script/文本及ui显示/主界面.gd" id="1_dlbke"]
 [ext_resource type="PackedScene" uid="uid://cr32ffcse8os3" path="res://scene/ui/settingscreen.tscn" id="2_prba8"]

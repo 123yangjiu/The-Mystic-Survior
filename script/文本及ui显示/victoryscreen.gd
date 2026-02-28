@@ -1,3 +1,3 @@
 extends CanvasLayer
 func _ready() -> void:
-	GameEvent.stop_game()
+    GameEvent.stop_game()

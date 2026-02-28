@@ -1,4 +1,4 @@
-[gd_resource type="Theme" format=3 uid="uid://brtk7glajnjmp"]
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://brtk7glajnjmp"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7cedj"]
 draw_center = false
