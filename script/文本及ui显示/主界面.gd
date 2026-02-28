@@ -9,7 +9,7 @@ func _ready() -> void:
 	main_theme.play()
 
 func _on_开始_button_up() -> void:
-	get_tree().change_scene_to_file("res://scene/game_2.scn")
+	get_tree().change_scene_to_file("res://scene/game.scn")
 	queue_free()
 
 func _on_离开_button_up() -> void:

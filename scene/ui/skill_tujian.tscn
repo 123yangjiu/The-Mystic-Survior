@@ -35,7 +35,7 @@
 [ext_resource type="Texture2D" uid="uid://bpsafaxcdqtsx" path="res://sucai/background/skill/light.png" id="29_mabtl"]
 [ext_resource type="Texture2D" uid="uid://6d2i2fi6p5hk" path="res://sucai/background/skill/ring.png" id="30_dpopx"]
 [ext_resource type="Resource" uid="uid://dgtmnrikh6nqu" path="res://resource/upgrades/gun/get_rocket.tres" id="30_xvc7j"]
-[ext_resource type="Resource" uid="uid://dn5ri83sm6i23" path="res://resource/upgrades/else/掉率增加.tres" id="31_xvc7j"]
+[ext_resource type="Resource" uid="uid://dn5ri83sm6i23" path="res://resource/upgrades/else/药效增强.tres" id="31_xvc7j"]
 [ext_resource type="Texture2D" uid="uid://bp8e6iruf1st8" path="res://sucai/background/skill/ak.png" id="37_sh81l"]
 [ext_resource type="Texture2D" uid="uid://cm2xfjxt2u0es" path="res://sucai/background/skill/shotgun.png" id="38_hfe5u"]
 [ext_resource type="Texture2D" uid="uid://byosm5oi4klg1" path="res://sucai/background/skill/sniper.png" id="39_vis0a"]

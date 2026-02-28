@@ -12,6 +12,7 @@ func start_game()->void:
 	GameEvent.the_first=0
 	GameEvent.is_start=true
 	GameEvent.is_co_disappear=false
+	GameEvent.increase_percent = 1.0
 	GameEvent.difficulty_timer.start()
 
 

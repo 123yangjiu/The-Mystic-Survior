@@ -4,7 +4,7 @@ signal level_up(new_level:int)
 var current_experience=0
 var current_level=1
 var target_experience=4
-var experience_gap=7
+var experience_gap=5
 func _ready():
 	GameEvent.experience_bottle_collected.connect(on_experience_collect)
 	#当捡到经验瓶的信号发出的时候链接触发经验增长函数的函数ss

@@ -1,6 +1,7 @@
 extends Node2D
 func _ready():
 	$Area2D.area_entered.connect(on_area_entered)
+	GameEvent.ability_upgrade_add
 func tween_collect(persent:float,start_position:Vector2):
 	global_position=start_position.lerp(GameEvent.play_global_position,persent)
 

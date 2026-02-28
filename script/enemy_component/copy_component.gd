@@ -26,10 +26,11 @@ func initial()->void:
 func copy()->void:
 	var n:=0
 	for i in number:
-		var another_self = owner.duplicate() as Enemy
-		set_copy_object(another_self)
-		another_self.global_position=_get_position(n)
-		n+=1
+		if owner:
+			var another_self = owner.duplicate() as Enemy
+			set_copy_object(another_self)
+			another_self.global_position=_get_position(n)
+			n+=1
 
 func _get_position(i:=0)->Vector2:
 	var _owner = owner as Node2D
@@ -50,10 +51,10 @@ func _on_copy_body_entered(body: Node2D) -> void:
 
 func set_copy_object(another_self:Enemy)->void:
 	var _owner = owner as Enemy
-	another_self.scale *=gap_percent
 	var near_component_instance =near_component.instantiate()
 	var enemy_player = get_tree().get_first_node_in_group("enemylayer")
 	enemy_player.add_child(another_self)
+	another_self.scale *=gap_percent
 	if ! another_self.is_node_ready():
 		await another_self.ready
 	for component:EnemyComponent in another_self.all_component:

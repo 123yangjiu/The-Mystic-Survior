@@ -14,11 +14,11 @@ var increase_percent:=1.0
 
 signal experience_bottle_collected(number:float)#吃到经验瓶时发出信号
 func emit_increase_experience(number:float):#发射信号的函数这样写是为了控制经验瓶的经验多少
-	experience_bottle_collected.emit(number)
+	experience_bottle_collected.emit(number*increase_percent)
 
 signal blood_bottle_collected(number:float)
 func emit_increase_blood(number:float):#发射信号的函数这样写是为了控制经验瓶的经验多少
-	blood_bottle_collected.emit(number)
+	blood_bottle_collected.emit(number*increase_percent)
 
 signal ability_upgrade_add(upgrade:AbilityUpgrade,current_upgrade:Dictionary)
 #能力升级信号，传出改变的能力和能力字典
@@ -27,8 +27,8 @@ signal ability_upgrade_add(upgrade:AbilityUpgrade,current_upgrade:Dictionary)
 func emit_ability_upgrade_add(upgrade:AbilityUpgrade,current_upgrade:Dictionary):
 	await get_tree().process_frame
 	ability_upgrade_add.emit(upgrade,current_upgrade)
-	if upgrade.ID == "增加掉率":
-		increase_percent*=1.2
+	if upgrade.ID=="增强效果":
+		increase_percent*=1.3
 
 
 #用于在第一次攻击后启动音乐

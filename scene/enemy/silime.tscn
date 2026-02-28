@@ -10,6 +10,17 @@
 [ext_resource type="PackedScene" uid="uid://cyxnkvdq3ry2h" path="res://scene/enemy_component/main_component/effect_component.tscn" id="9_s5pc1"]
 [ext_resource type="PackedScene" uid="uid://nxifhy12ej5c" path="res://scene/enemy_component/main_component/collision_controller.tscn" id="11_1vw1q"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_jk3np"]
+radius = 6.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_33n5x"]
+radius = 8.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1vw1q"]
+size = Vector2(10, 9)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1vw1q"]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_iwl80"]
 atlas = ExtResource("3_qboba")
 region = Rect2(0, 24, 24, 24)
@@ -46,30 +57,11 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_jk3np"]
-radius = 6.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_33n5x"]
-radius = 8.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1vw1q"]
-size = Vector2(10, 9)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_1vw1q"]
-
 [node name="slime" type="CharacterBody2D" unique_id=469746941]
 collision_layer = 0
 collision_mask = 0
 motion_mode = 1
 script = ExtResource("1_8egh0")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1007166172 groups=["enemy"]]
-position = Vector2(0, -4.9999995)
-scale = Vector2(1.2553042, 1.0013652)
-sprite_frames = SubResource("SpriteFrames_fq6t5")
-animation = &"run"
-autoplay = "run"
-frame_progress = 0.50348395
 
 [node name="health_component" parent="." unique_id=903636027 instance=ExtResource("4_x35gv")]
 max_health = 13.0
@@ -111,3 +103,11 @@ disabled = true
 
 [node name="EffectComponent" parent="." unique_id=629594475 instance=ExtResource("9_s5pc1")]
 position = Vector2(0, -2)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1007166172 groups=["enemy"]]
+position = Vector2(0, -4.9999995)
+scale = Vector2(1.2553042, 1.0013652)
+sprite_frames = SubResource("SpriteFrames_fq6t5")
+animation = &"run"
+autoplay = "run"
+frame_progress = 0.50348395

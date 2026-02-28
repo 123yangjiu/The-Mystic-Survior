@@ -9,9 +9,9 @@ var all_threat_event:Array[Callable]=[]
 #生成时与玩家的距离
 var SPAWN_R=350
 #地图边界尺寸
-const left_limit = -2700
+const left_limit = -2850
 const top_limit = -2000
-const right_limit = 2160
+const right_limit = 2220
 const bottom_limit = 2360
 
 func _ready() -> void:
@@ -157,10 +157,8 @@ func circle_surround(enemy:EnemyUnlockEntry,s_radius:=420.0,number:=70.0,wait_ti
 
 func limit_position(which_position)->Vector2:
 	var final_position:Vector2
-	final_position.x= min(right_limit,which_position.x)
-	final_position.x = max(left_limit,which_position.x)
-	final_position.y = min(bottom_limit,which_position.y)
-	final_position.y = max(top_limit,which_position.y)
+	final_position.x=clamp(which_position.x,left_limit,right_limit)
+	final_position.y = clamp(which_position.y,top_limit,bottom_limit)
 	return final_position
 #特殊事件
 func mushroom_circle()->void:

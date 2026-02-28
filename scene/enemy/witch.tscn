@@ -134,7 +134,7 @@ shape = SubResource("RectangleShape2D_7826l")
 [node name="SummonComponent" parent="." unique_id=997544220 node_paths=PackedStringArray("collision_shape") instance=ExtResource("14_ljx7n")]
 collision_shape = NodePath("CollisionShape2D")
 summon_enemy = ExtResource("10_ks07s")
-spawn_r = 90.0
+spawn_r = 120.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SummonComponent" unique_id=946387808]
 shape = SubResource("CircleShape2D_6nsvd")
