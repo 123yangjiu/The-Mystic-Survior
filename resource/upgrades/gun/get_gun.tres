@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="AbilityUpgrade" format=3 uid="uid://bm5728iq6c8ra"]
+
+[ext_resource type="Script" uid="uid://dmyfvo2eu1rj2" path="res://resource/ability_upgrade.gd" id="1_c8xb7"]
+
+[resource]
+script = ExtResource("1_c8xb7")
+ID = "解锁枪"
+Sort = "枪"
+is_init = true
+is_unlock = true
+name = "魔法驱动枪也是魔法"
+Description = "你得到一把枪！它会自动攻击最近的敌人直到弹夹清空！"
+metadata/_custom_type_script = "uid://dmyfvo2eu1rj2"

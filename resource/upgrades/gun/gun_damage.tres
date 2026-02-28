@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="AbilityUpgrade" format=3 uid="uid://dn81f21hebidn"]
+
+[ext_resource type="Script" uid="uid://dmyfvo2eu1rj2" path="res://resource/ability_upgrade.gd" id="1_indfd"]
+
+[resource]
+script = ExtResource("1_indfd")
+ID = "枪的伤害"
+Sort = "枪"
+name = "升级打磨"
+Description = "每发子弹的伤害增加30%"
+metadata/_custom_type_script = "uid://dmyfvo2eu1rj2"

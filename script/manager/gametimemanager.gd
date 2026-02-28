@@ -8,7 +8,10 @@ signal victory
 var one_shot:=false
 
 func _ready() -> void:
-    timer.timeout.connect(on_timer_timeout)
+	if GameEvent.hard_mode[GameEvent.HARD_MODE.is_long]:
+		timer.wait_time=900
+		timer.start()
+	timer.timeout.connect(on_timer_timeout)
 func get_time_elaspsed():
     var time= timer.wait_time-timer.time_left
     if one_shot==false and time>=178.0:
@@ -17,7 +20,6 @@ func get_time_elaspsed():
     return timer.wait_time-timer.time_left
 
 func on_timer_timeout():
-
-    victory.emit()
-    var victory_screen_instance=victory_screen.instantiate()
-    add_child(victory_screen_instance)
+	victory.emit()
+	var victory_screen_instance=victory_screen.instantiate()
+	add_child(victory_screen_instance)

@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bm0ksndtbc7c5"]
+
+[ext_resource type="Script" uid="uid://b8ovy4hm7bnom" path="res://script/enemy_component/rush_component.gd" id="1_lbgfc"]
+
+[node name="RushComponent" type="Node2D" unique_id=2077482623]
+script = ExtResource("1_lbgfc")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=914532874]
+collision_layer = 0
+collision_mask = 32
+
+[node name="RushDuration" type="Timer" parent="." unique_id=1279977387]
+wait_time = 0.4
+one_shot = true
+
+[node name="RushInterval" type="Timer" parent="." unique_id=244976921]
+wait_time = 2.5
+one_shot = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="RushDuration" to="." method="_on_rush_duration_timeout"]
+[connection signal="timeout" from="RushInterval" to="." method="_on_rush_interval_timeout"]

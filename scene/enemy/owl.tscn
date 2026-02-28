@@ -1,0 +1,170 @@
+[gd_scene format=3 uid="uid://bcl20xpjeekut"]
+
+[ext_resource type="Script" uid="uid://rsl4jg827i3e" path="res://script/enemy/main_enemy/enemy_xiaotrue.gd" id="1_o64ug"]
+[ext_resource type="Texture2D" uid="uid://1nyfiavgxiia" path="res://sucai/黑暗猫头鹰/Aurigaidlewithshadow-Sheet.png" id="3_ysij7"]
+[ext_resource type="PackedScene" uid="uid://bnactnfyipltl" path="res://scene/enemy_component/main_component/health_component.tscn" id="4_2yh8p"]
+[ext_resource type="PackedScene" uid="uid://c0i7tc6xpk0n8" path="res://scene/enemy_component/main_component/drop_component.tscn" id="5_0fgf1"]
+[ext_resource type="PackedScene" uid="uid://i5imcyd15vix" path="res://scene/游戏物件/exprience_bottle.tscn" id="6_o64ug"]
+[ext_resource type="PackedScene" uid="uid://daaqcmminiyk1" path="res://scene/游戏物件/blood_bottle.tscn" id="7_j17ro"]
+[ext_resource type="PackedScene" uid="uid://f15fc5ggcq0l" path="res://scene/游戏物件/bonus_bottle.tscn" id="8_lhm8c"]
+[ext_resource type="PackedScene" uid="uid://g6ks4dc6kpht" path="res://scene/enemy_component/main_component/velocity_component.tscn" id="8_q10tu"]
+[ext_resource type="PackedScene" uid="uid://12uey86sh54o" path="res://scene/enemy_component/main_component/wound_component.tscn" id="9_lhm8c"]
+[ext_resource type="PackedScene" uid="uid://do1skrx74372j" path="res://scene/enemy_component/main_component/attack_component.tscn" id="10_snfm1"]
+[ext_resource type="PackedScene" uid="uid://nxifhy12ej5c" path="res://scene/enemy_component/main_component/collision_controller.tscn" id="11_1xig6"]
+[ext_resource type="PackedScene" uid="uid://cfqd8a0jo088w" path="res://scene/enemy_component/invisible_component.tscn" id="12_5os0a"]
+[ext_resource type="PackedScene" uid="uid://cyxnkvdq3ry2h" path="res://scene/enemy_component/main_component/effect_component.tscn" id="13_7w8lk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o64ug"]
+atlas = ExtResource("3_ysij7")
+region = Rect2(0, 0, 150, 108)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j17ro"]
+atlas = ExtResource("3_ysij7")
+region = Rect2(150, 0, 150, 108)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lhm8c"]
+atlas = ExtResource("3_ysij7")
+region = Rect2(300, 0, 150, 108)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_snfm1"]
+atlas = ExtResource("3_ysij7")
+region = Rect2(450, 0, 150, 108)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1xig6"]
+atlas = ExtResource("3_ysij7")
+region = Rect2(600, 0, 150, 108)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u84n8"]
+atlas = ExtResource("3_ysij7")
+region = Rect2(750, 0, 150, 108)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fq6t5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o64ug")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j17ro")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lhm8c")
+}, {
+"duration": 4.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_snfm1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1xig6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u84n8")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o64ug")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j17ro")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lhm8c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_snfm1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1xig6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u84n8")
+}],
+"loop": true,
+"name": &"run_2",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lhm8c"]
+size = Vector2(40.000004, 21)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lhm8c"]
+radius = 11.000002
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_snfm1"]
+radius = 7.0000005
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b6tb4"]
+radius = 150.0
+
+[node name="Owl" type="CharacterBody2D" unique_id=208904813 groups=["中级"]]
+collision_layer = 8
+collision_mask = 9
+motion_mode = 1
+script = ExtResource("1_o64ug")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=276724205]
+position = Vector2(0, 4.0000014)
+scale = Vector2(-0.8, 0.638)
+sprite_frames = SubResource("SpriteFrames_fq6t5")
+animation = &"run_2"
+autoplay = "run"
+frame_progress = 0.100192465
+
+[node name="health_component" parent="." unique_id=1101576993 instance=ExtResource("4_2yh8p")]
+max_health = 55.0
+
+[node name="drop_component" parent="." unique_id=151923382 instance=ExtResource("5_0fgf1")]
+drop_thingandpersent = Dictionary[PackedScene, float]({
+ExtResource("6_o64ug"): 0.0,
+ExtResource("7_j17ro"): 0.01,
+ExtResource("8_lhm8c"): 0.04
+})
+drop_range = 2
+
+[node name="velocity_component" parent="." unique_id=713437500 instance=ExtResource("8_q10tu")]
+speed = 95.0
+acceleration = 8.0
+turn_rate = 3.5
+
+[node name="WoundComponent" parent="." unique_id=1971662021 node_paths=PackedStringArray("collision_shape_2d") instance=ExtResource("9_lhm8c")]
+visible = false
+collision_shape_2d = NodePath("CollisionShape2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WoundComponent" unique_id=238981169]
+position = Vector2(-1.9999998, -3.5000002)
+scale = Vector2(0.9999999, 1)
+shape = SubResource("RectangleShape2D_lhm8c")
+
+[node name="AttackComponent" parent="." unique_id=2136703472 node_paths=PackedStringArray("collision_shape_2d") instance=ExtResource("10_snfm1")]
+collision_shape_2d = NodePath("CollisionShape2D")
+damage = 15.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackComponent" unique_id=161499891]
+position = Vector2(3, -5)
+scale = Vector2(0.9999999, 1)
+shape = SubResource("CircleShape2D_lhm8c")
+
+[node name="CollisionController" parent="." unique_id=387055937 node_paths=PackedStringArray("collision_shape_2d") instance=ExtResource("11_1xig6")]
+collision_shape_2d = NodePath("CollisionShape2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionController" unique_id=766936623]
+position = Vector2(3, -2)
+scale = Vector2(0.9999999, 1)
+shape = SubResource("CircleShape2D_snfm1")
+
+[node name="InvisibleComponent" parent="." unique_id=1867220068 instance=ExtResource("12_5os0a")]
+visible = false
+
+[node name="Test" type="CollisionShape2D" parent="." unique_id=1255552320]
+visible = false
+scale = Vector2(0.9999999, 1)
+shape = SubResource("CircleShape2D_b6tb4")
+disabled = true
+
+[node name="EffectComponent" parent="." unique_id=629594475 instance=ExtResource("13_7w8lk")]

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="EnemyUnlockEntry" format=3 uid="uid://bktp5mcm6ea6c"]
+
+[ext_resource type="PackedScene" uid="uid://cc2wlol2swean" path="res://scene/enemy/red_wolf.tscn" id="1_6ltto"]
+[ext_resource type="Script" uid="uid://b8kynvj5xuaby" path="res://resource/enemy/enemy.gd" id="2_obhyn"]
+
+[resource]
+script = ExtResource("2_obhyn")
+scene = ExtResource("1_6ltto")
+unlock_difficulty = 18
+weight = 0.4
+ID = 9
+max_health = 100.0
+metadata/_custom_type_script = "uid://b8kynvj5xuaby"

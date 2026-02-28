@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="AbilityUpgrade" format=3 uid="uid://dn5ri83sm6i23"]
+
+[ext_resource type="Script" uid="uid://dmyfvo2eu1rj2" path="res://resource/ability_upgrade.gd" id="1_r7ak7"]
+
+[resource]
+script = ExtResource("1_r7ak7")
+ID = "增强效果"
+Sort = "角色能力"
+is_init = true
+name = "好日子还在后头呢"
+Description = "所有颜色瓶子的效果增强30%"

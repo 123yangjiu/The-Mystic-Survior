@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EnemyUnlockEntry" format=3 uid="uid://bwvsf8rcctefe"]
+
+[ext_resource type="PackedScene" uid="uid://dg0lowfwv0dg3" path="res://scene/enemy/knight.tscn" id="1_k6yrs"]
+[ext_resource type="Script" uid="uid://b8kynvj5xuaby" path="res://resource/enemy/enemy.gd" id="2_0fb2m"]
+
+[resource]
+script = ExtResource("2_0fb2m")
+scene = ExtResource("1_k6yrs")
+unlock_difficulty = -11
+ID = 8
+max_health = 1000.0

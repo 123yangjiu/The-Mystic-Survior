@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://cyxnkvdq3ry2h"]
+
+[ext_resource type="Script" uid="uid://b48q7wssbrmhc" path="res://script/enemy_component/main_component/effect_component.gd" id="1_nm13r"]
+[ext_resource type="Texture2D" uid="uid://bjqhgm87ct3r2" path="res://sucai/wolf/run.png" id="2_ae0f7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_da1gx"]
+atlas = ExtResource("2_ae0f7")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qqp1r"]
+atlas = ExtResource("2_ae0f7")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dvp45"]
+atlas = ExtResource("2_ae0f7")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5v3k5"]
+atlas = ExtResource("2_ae0f7")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d6484"]
+atlas = ExtResource("2_ae0f7")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tc2cr"]
+atlas = ExtResource("2_ae0f7")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wncbb"]
+atlas = ExtResource("2_ae0f7")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_da1gx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_da1gx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qqp1r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dvp45")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5v3k5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d6484")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tc2cr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wncbb")
+}],
+"loop": true,
+"name": &"wolf",
+"speed": 10.0
+}]
+
+[node name="EffectComponent" type="Node2D" unique_id=629594475]
+show_behind_parent = true
+position = Vector2(0, -5)
+script = ExtResource("1_nm13r")
+
+[node name="WolfAnimation" type="AnimatedSprite2D" parent="." unique_id=1441160863]
+visible = false
+modulate = Color(1, 1, 1, 0.5882353)
+show_behind_parent = true
+position = Vector2(0, 7.9999995)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_da1gx")
+animation = &"wolf"

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://g6ks4dc6kpht"]
+
+[ext_resource type="Script" uid="uid://bwh3xm15t5ow3" path="res://script/enemy_component/main_component/velocity_component.gd" id="1_6ra3j"]
+
+[node name="velocity_component" type="Node2D" unique_id=715622741]
+script = ExtResource("1_6ra3j")

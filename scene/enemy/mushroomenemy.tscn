@@ -1,12 +1,18 @@
-[gd_scene load_steps=20 format=3 uid="uid://cc3x2b78lonqh"]
+[gd_scene format=3 uid="uid://cc3x2b78lonqh"]
 
-[ext_resource type="Script" uid="uid://c5ld8jykbg6p4" path="res://script/enemy/mushroomenemy.gd" id="1_ry05w"]
-[ext_resource type="PackedScene" uid="uid://decyru6mnkuga" path="res://scene/游戏功能组件/hurtboxcomponent.tscn" id="2_g74f1"]
+[ext_resource type="Script" uid="uid://rsl4jg827i3e" path="res://script/enemy/main_enemy/enemy_xiaotrue.gd" id="1_eao75"]
 [ext_resource type="Texture2D" uid="uid://cpxpef8s5wt6m" path="res://sucai/新蘑菇/Mushroom-Run.png" id="2_ry05w"]
-[ext_resource type="PackedScene" uid="uid://bnactnfyipltl" path="res://scene/游戏功能组件/health_component.tscn" id="3_1vn3o"]
-[ext_resource type="PackedScene" uid="uid://c0i7tc6xpk0n8" path="res://scene/游戏功能组件/drop_component.tscn" id="4_ry05w"]
-[ext_resource type="Script" uid="uid://6viyb8hj8ocd" path="res://scene/游戏功能组件/猫头鹰掉落.gd" id="5_xhrya"]
-[ext_resource type="PackedScene" uid="uid://g6ks4dc6kpht" path="res://scene/游戏功能组件/velocity_component.tscn" id="7_xhrya"]
+[ext_resource type="PackedScene" uid="uid://bnactnfyipltl" path="res://scene/enemy_component/main_component/health_component.tscn" id="3_1vn3o"]
+[ext_resource type="PackedScene" uid="uid://c0i7tc6xpk0n8" path="res://scene/enemy_component/main_component/drop_component.tscn" id="4_ry05w"]
+[ext_resource type="PackedScene" uid="uid://i5imcyd15vix" path="res://scene/游戏物件/exprience_bottle.tscn" id="6_eao75"]
+[ext_resource type="PackedScene" uid="uid://daaqcmminiyk1" path="res://scene/游戏物件/blood_bottle.tscn" id="7_rji2m"]
+[ext_resource type="PackedScene" uid="uid://f15fc5ggcq0l" path="res://scene/游戏物件/bonus_bottle.tscn" id="8_yuaj2"]
+[ext_resource type="PackedScene" uid="uid://12uey86sh54o" path="res://scene/enemy_component/main_component/wound_component.tscn" id="10_c1mce"]
+[ext_resource type="PackedScene" uid="uid://0uu7d2cwajsq" path="res://scene/enemy_component/disappear_component.tscn" id="10_rji2m"]
+[ext_resource type="PackedScene" uid="uid://do1skrx74372j" path="res://scene/enemy_component/main_component/attack_component.tscn" id="11_j2b56"]
+[ext_resource type="PackedScene" uid="uid://g6ks4dc6kpht" path="res://scene/enemy_component/main_component/velocity_component.tscn" id="13_eel5c"]
+[ext_resource type="PackedScene" uid="uid://clll2adpdaq13" path="res://scene/enemy_component/child_component/special_collision_controller.tscn" id="13_j2b56"]
+[ext_resource type="PackedScene" uid="uid://cyxnkvdq3ry2h" path="res://scene/enemy_component/main_component/effect_component.tscn" id="13_qeenr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xhrya"]
 atlas = ExtResource("2_ry05w")
@@ -69,61 +75,78 @@ animations = [{
 }],
 "loop": true,
 "name": &"new_animation",
-"speed": 5.0
+"speed": 8.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_eao75"]
-radius = 13.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_j2b56"]
+radius = 12.270936
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_rji2m"]
-radius = 17.11374
+[sub_resource type="CircleShape2D" id="CircleShape2D_qeenr"]
+radius = 9.203201
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_yuaj2"]
-radius = 2.5086966
+[sub_resource type="CircleShape2D" id="CircleShape2D_c1mce"]
+radius = 12.270936
 
-[node name="mushroomenemy" type="CharacterBody2D" groups=["终极"]]
+[sub_resource type="CircleShape2D" id="CircleShape2D_neebi"]
+
+[node name="MushroomEnemy" type="CharacterBody2D" unique_id=1246397991]
 scale = Vector2(1.6298676, 1.5427694)
-collision_layer = 40
-collision_mask = 33
-script = ExtResource("1_ry05w")
+collision_layer = 8
+collision_priority = 5.0
+script = ExtResource("1_eao75")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1360482320]
 position = Vector2(0, -9.07459)
 scale = Vector2(-0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_1vn3o")
 animation = &"new_animation"
 autoplay = "new_animation"
-frame_progress = 0.587092
+frame_progress = 0.83788526
 
-[node name="Hurtboxcomponent" parent="." node_paths=PackedStringArray("health_component") groups=["enemy"] instance=ExtResource("2_g74f1")]
-collision_layer = 4
-health_component = NodePath("../health_component")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Hurtboxcomponent"]
-position = Vector2(0, 2)
-shape = SubResource("CircleShape2D_eao75")
-
-[node name="对角色造成伤害的碰撞" type="CollisionShape2D" parent="." groups=["enemy"]]
-position = Vector2(0, 2.9999998)
-scale = Vector2(0.47134686, 0.4559797)
-shape = SubResource("CircleShape2D_rji2m")
-
-[node name="health_component" parent="." instance=ExtResource("3_1vn3o")]
+[node name="health_component" parent="." unique_id=1459291990 instance=ExtResource("3_1vn3o")]
 max_health = 500.0
 
-[node name="drop_component" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("4_ry05w")]
-script = ExtResource("5_xhrya")
-health_component = NodePath("../health_component")
+[node name="drop_component" parent="." unique_id=1655054699 instance=ExtResource("4_ry05w")]
+drop_thingandpersent = Dictionary[PackedScene, float]({
+ExtResource("6_eao75"): 1.1,
+ExtResource("7_rji2m"): 0.1,
+ExtResource("8_yuaj2"): 0.1
+})
+drop_range = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 3)
-scale = Vector2(3.273428, -3.0441794)
-shape = SubResource("CircleShape2D_yuaj2")
+[node name="velocity_component" parent="." unique_id=1600467630 instance=ExtResource("13_eel5c")]
+speed = 10.0
+turn_rate = 0.0
 
-[node name="velocity_component" parent="." instance=ExtResource("7_xhrya")]
-speed = 7
-acceleration = 11.0
+[node name="DisappearComponent" parent="." unique_id=184462013 instance=ExtResource("10_rji2m")]
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 20.0
-autostart = true
+[node name="WoundComponent" parent="." unique_id=1971662021 node_paths=PackedStringArray("collision_shape_2d") instance=ExtResource("10_c1mce")]
+visible = false
+collision_shape_2d = NodePath("CollisionShape2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WoundComponent" unique_id=1750870135]
+position = Vector2(1.2270936, 1.29637)
+shape = SubResource("CircleShape2D_j2b56")
+
+[node name="AttackComponent" parent="." unique_id=2136703472 node_paths=PackedStringArray("collision_shape_2d") instance=ExtResource("11_j2b56")]
+visible = false
+collision_shape_2d = NodePath("CollisionShape2D")
+damage = 30.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackComponent" unique_id=724336727]
+position = Vector2(1.2270936, 1.944555)
+shape = SubResource("CircleShape2D_qeenr")
+
+[node name="SpecialCollisionController" parent="." unique_id=1839374063 node_paths=PackedStringArray("collision_shape_2d") instance=ExtResource("13_j2b56")]
+collision_shape_2d = NodePath("CollisionShape2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpecialCollisionController" unique_id=274858330]
+position = Vector2(0.6135468, 1.944555)
+shape = SubResource("CircleShape2D_c1mce")
+
+[node name="Test" type="CollisionShape2D" parent="." unique_id=191498211]
+visible = false
+shape = SubResource("CircleShape2D_neebi")
+disabled = true
+
+[node name="EffectComponent" parent="." unique_id=629594475 instance=ExtResource("13_qeenr")]

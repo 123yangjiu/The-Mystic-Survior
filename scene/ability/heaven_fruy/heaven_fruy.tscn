@@ -1,8 +1,8 @@
-[gd_scene load_steps=23 format=3 uid="uid://baqnf2psyqdqg"]
+[gd_scene format=3 uid="uid://baqnf2psyqdqg"]
 
 [ext_resource type="Texture2D" uid="uid://howlx124dvo5" path="res://scene/ability/heaven_fruy/Original size/Heaven's Fury Spritesheet.png" id="1_1tio6"]
-[ext_resource type="Script" uid="uid://0xwmfjjdyeit" path="res://scene/ability/heaven_fruy/heaven_fruy.gd" id="1_p16eu"]
-[ext_resource type="PackedScene" uid="uid://c4aqf7g3512kf" path="res://scene/游戏功能组件/hitbox_component.tscn" id="3_2p8la"]
+[ext_resource type="Script" uid="uid://fxejfxambckv" path="res://script/ability/heaven_fruy.gd" id="1_2p8la"]
+[ext_resource type="PackedScene" uid="uid://do1skrx74372j" path="res://scene/enemy_component/main_component/attack_component.tscn" id="4_2p8la"]
 
 [sub_resource type="Animation" id="Animation_p16eu"]
 length = 0.001
@@ -33,26 +33,26 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("hitbox component/CollisionShape2D:disabled")
+tracks/2/path = NodePath("AnimatedSprite2D:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"update": 0,
+"values": [Vector2(1, 1)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("AnimatedSprite2D:scale")
+tracks/3/path = NodePath("AttackComponent/CollisionShape2D:disabled")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_kgs8r"]
@@ -86,40 +86,40 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("hitbox component/CollisionShape2D:disabled")
+tracks/2/path = NodePath("AnimatedSprite2D:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.45, 0.65),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [true, false, false, true]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("AnimatedSprite2D:scale")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.65),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(0.3, 0.3), Vector2(0.3, 0.3)]
 }
-tracks/4/type = "method"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath(".")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
 "times": PackedFloat32Array(0.65),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
 "method": &"queue_free"
 }]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AttackComponent/CollisionShape2D:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.05, 0.25, 0.45, 0.65),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, false, false, true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2p8la"]
@@ -237,22 +237,24 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_n6qmd"]
 radius = 22.0
 
-[node name="heaven_fruy" type="Node2D"]
-script = ExtResource("1_p16eu")
+[node name="heaven_fruy" type="Node2D" unique_id=1214928564 node_paths=PackedStringArray("attack_component", "animation_player")]
+script = ExtResource("1_2p8la")
+attack_component = NodePath("AttackComponent")
+animation_player = NodePath("AnimationPlayer")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_2p8la")
-}
-autoplay = "shoot"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=896377794]
+libraries/ = SubResource("AnimationLibrary_2p8la")
+autoplay = &"shoot"
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1401567845]
 position = Vector2(0, -23)
 sprite_frames = SubResource("SpriteFrames_p7n1l")
 frame = 13
 
-[node name="hitbox component" parent="." instance=ExtResource("3_2p8la")]
+[node name="AttackComponent" parent="." unique_id=2136703472 node_paths=PackedStringArray("collision_shape_2d") instance=ExtResource("4_2p8la")]
+collision_shape_2d = NodePath("CollisionShape2D")
+type = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox component"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackComponent" unique_id=1531986594]
 shape = SubResource("CircleShape2D_n6qmd")
 disabled = true

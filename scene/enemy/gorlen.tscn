@@ -1,128 +1,37 @@
-[gd_scene load_steps=37 format=3 uid="uid://ccmf8dg5ymjjs"]
+[gd_scene format=3 uid="uid://ccmf8dg5ymjjs"]
 
-[ext_resource type="Script" uid="uid://dj6b6r84um8kc" path="res://script/enemy/main_enemy/gorlen.gd" id="1_23bhl"]
-[ext_resource type="PackedScene" uid="uid://decyru6mnkuga" path="res://scene/游戏功能组件/hurtboxcomponent.tscn" id="2_60ack"]
+[ext_resource type="Script" uid="uid://rsl4jg827i3e" path="res://script/enemy/main_enemy/enemy_xiaotrue.gd" id="1_iuixe"]
 [ext_resource type="Texture2D" uid="uid://bmxqf0ab5k4hw" path="res://sucai/Character_sheet.png" id="3_d7sbi"]
-[ext_resource type="PackedScene" uid="uid://bnactnfyipltl" path="res://scene/游戏功能组件/health_component.tscn" id="4_iuixe"]
-[ext_resource type="PackedScene" uid="uid://c0i7tc6xpk0n8" path="res://scene/游戏功能组件/drop_component.tscn" id="5_qgpht"]
-[ext_resource type="PackedScene" uid="uid://g6ks4dc6kpht" path="res://scene/游戏功能组件/velocity_component.tscn" id="6_60ack"]
-[ext_resource type="Script" uid="uid://ynxy18f6xc5n" path="res://scene/游戏功能组件/石头人掉落.gd" id="6_d7sbi"]
-[ext_resource type="PackedScene" uid="uid://f15fc5ggcq0l" path="res://scene/游戏 物件/bonus_bottle.tscn" id="7_iuixe"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_vcrpj"]
-radius = 36.0
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_iuixe"]
-atlas = ExtResource("3_d7sbi")
-region = Rect2(0, 300, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qgpht"]
-atlas = ExtResource("3_d7sbi")
-region = Rect2(100, 300, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_b1ivo"]
-atlas = ExtResource("3_d7sbi")
-region = Rect2(200, 300, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xpvs0"]
-atlas = ExtResource("3_d7sbi")
-region = Rect2(300, 300, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8yfii"]
-atlas = ExtResource("3_d7sbi")
-region = Rect2(400, 300, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1duvn"]
-atlas = ExtResource("3_d7sbi")
-region = Rect2(500, 300, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ngswb"]
-atlas = ExtResource("3_d7sbi")
-region = Rect2(600, 300, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ie18s"]
-atlas = ExtResource("3_d7sbi")
-region = Rect2(700, 300, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wyu8d"]
-atlas = ExtResource("3_d7sbi")
-region = Rect2(0, 0, 100, 100)
+[ext_resource type="PackedScene" uid="uid://bnactnfyipltl" path="res://scene/enemy_component/main_component/health_component.tscn" id="4_iuixe"]
+[ext_resource type="PackedScene" uid="uid://c0i7tc6xpk0n8" path="res://scene/enemy_component/main_component/drop_component.tscn" id="5_qgpht"]
+[ext_resource type="PackedScene" uid="uid://g6ks4dc6kpht" path="res://scene/enemy_component/main_component/velocity_component.tscn" id="6_60ack"]
+[ext_resource type="PackedScene" uid="uid://f15fc5ggcq0l" path="res://scene/游戏物件/bonus_bottle.tscn" id="7_iuixe"]
+[ext_resource type="PackedScene" uid="uid://daaqcmminiyk1" path="res://scene/游戏物件/blood_bottle.tscn" id="7_qgpht"]
+[ext_resource type="PackedScene" uid="uid://12uey86sh54o" path="res://scene/enemy_component/main_component/wound_component.tscn" id="9_1vwlk"]
+[ext_resource type="PackedScene" uid="uid://do1skrx74372j" path="res://scene/enemy_component/main_component/attack_component.tscn" id="10_ta48a"]
+[ext_resource type="PackedScene" uid="uid://cyxnkvdq3ry2h" path="res://scene/enemy_component/main_component/effect_component.tscn" id="11_1vwlk"]
+[ext_resource type="PackedScene" uid="uid://nxifhy12ej5c" path="res://scene/enemy_component/main_component/collision_controller.tscn" id="11_q6l2o"]
+[ext_resource type="PackedScene" uid="uid://0uu7d2cwajsq" path="res://scene/enemy_component/disappear_component.tscn" id="12_ta48a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1vwlk"]
 atlas = ExtResource("3_d7sbi")
-region = Rect2(100, 0, 100, 100)
+region = Rect2(0, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ta48a"]
 atlas = ExtResource("3_d7sbi")
-region = Rect2(200, 0, 100, 100)
+region = Rect2(100, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q6l2o"]
 atlas = ExtResource("3_d7sbi")
-region = Rect2(300, 0, 100, 100)
+region = Rect2(200, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bbrri"]
 atlas = ExtResource("3_d7sbi")
-region = Rect2(100, 300, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_m5e4t"]
-atlas = ExtResource("3_d7sbi")
-region = Rect2(200, 300, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7viam"]
-atlas = ExtResource("3_d7sbi")
-region = Rect2(300, 300, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3kvui"]
-atlas = ExtResource("3_d7sbi")
-region = Rect2(400, 300, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hmn4c"]
-atlas = ExtResource("3_d7sbi")
-region = Rect2(500, 300, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vcnax"]
-atlas = ExtResource("3_d7sbi")
-region = Rect2(600, 300, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pghib"]
-atlas = ExtResource("3_d7sbi")
-region = Rect2(700, 300, 100, 100)
+region = Rect2(300, 0, 100, 100)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fq6t5"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_iuixe")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qgpht")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_b1ivo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xpvs0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8yfii")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1duvn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ngswb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ie18s")
-}],
-"loop": true,
-"name": &"hit",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wyu8d")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_1vwlk")
 }, {
@@ -134,262 +43,82 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_bbrri")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_m5e4t")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7viam")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3kvui")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hmn4c")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vcnax")
-}, {
-"duration": 20.0,
-"texture": SubResource("AtlasTexture_pghib")
 }],
-"loop": false,
+"loop": true,
 "name": &"run",
-"speed": 10.0
+"speed": 7.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_vcrpj"]
+radius = 39.012817
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_ntng8"]
-radius = 50.53937
+radius = 29.017237
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_8egh0"]
-radius = 12.583558
+[sub_resource type="CircleShape2D" id="CircleShape2D_wyu8d"]
+radius = 30.0
 
-[sub_resource type="Animation" id="Animation_xpvs0"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [6]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimationPlayer:speed_scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [1.0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Hurtboxcomponent/CollisionShape2D2:disabled")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("对角色造成伤害的碰撞:disabled")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("AnimatedSprite2D:modulate")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("AnimatedSprite2D:scale")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(2.2, 1.755)]
-}
+[sub_resource type="CircleShape2D" id="CircleShape2D_7viam"]
 
-[sub_resource type="Animation" id="Animation_wyu8d"]
-resource_name = "flash"
-length = 0.2
-step = 0.05
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(3.2944162, 3.2944162, 3.2944162, 1), Color(1.353256, 1.353256, 1.353256, 1)]
-}
+[node name="gorlen" type="CharacterBody2D" unique_id=1993204809 groups=["高级"]]
+collision_layer = 8
+collision_mask = 9
+motion_mode = 1
+script = ExtResource("1_iuixe")
 
-[sub_resource type="Animation" id="Animation_iuixe"]
-resource_name = "hit"
-
-[sub_resource type="Animation" id="Animation_b1ivo"]
-resource_name = "gorlen"
-length = 2.0
-loop_mode = 1
-step = 0.05
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(-0.03333333, 0.049999997, 0.15, 0.25, 0.35, 0.45, 0.55, 0.65, 0.75, 0.85, 0.95, 1.95),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 6, 3, 4, 5, 6, 7, 8, 10, 10, 10]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimationPlayer:speed_scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1, 2.05),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0.5999999999999996, 0.5999999999999996, 0.4000000000000003]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Hurtboxcomponent/CollisionShape2D2:disabled")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 1, 1.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, true, false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("对角色造成伤害的碰撞:disabled")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 1, 2.05),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, true, true]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("AnimatedSprite2D:scale")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 2.05),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(2.2, 1.755), Vector2(2.2, 1.755)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_8yfii"]
-_data = {
-&"RESET": SubResource("Animation_xpvs0"),
-&"flash": SubResource("Animation_wyu8d"),
-&"hit": SubResource("Animation_iuixe"),
-&"move": SubResource("Animation_b1ivo")
-}
-
-[node name="gorlen" type="CharacterBody2D" groups=["高级"]]
-collision_layer = 40
-collision_mask = 33
-script = ExtResource("1_23bhl")
-
-[node name="Hurtboxcomponent" parent="." node_paths=PackedStringArray("health_component") groups=["enemy"] instance=ExtResource("2_60ack")]
-collision_layer = 4
-health_component = NodePath("../health_component")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Hurtboxcomponent"]
-position = Vector2(0, -5)
-shape = SubResource("CircleShape2D_vcrpj")
-disabled = true
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["enemy"]]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1871702201 groups=["enemy"]]
 position = Vector2(0, -4.9999995)
 scale = Vector2(2.2, 1.755)
 sprite_frames = SubResource("SpriteFrames_fq6t5")
-animation = &"hit"
-frame = 6
+animation = &"run"
+autoplay = "run"
+frame_progress = 0.7836832
 
-[node name="对角色造成伤害的碰撞" type="CollisionShape2D" parent="." groups=["enemy"]]
-position = Vector2(-4.7683716e-07, -5.9999995)
-scale = Vector2(0.47134686, 0.4559797)
+[node name="health_component" parent="." unique_id=555444483 instance=ExtResource("4_iuixe")]
+max_health = 300.0
+
+[node name="drop_component" parent="." unique_id=580805814 instance=ExtResource("5_qgpht")]
+drop_thingandpersent = Dictionary[PackedScene, float]({
+ExtResource("7_iuixe"): 0.2,
+ExtResource("7_qgpht"): 0.04
+})
+
+[node name="velocity_component" parent="." unique_id=1132711392 instance=ExtResource("6_60ack")]
+speed = 30.0
+turn_rate = 10.0
+
+[node name="WoundComponent" parent="." unique_id=1971662021 node_paths=PackedStringArray("collision_shape_2d") instance=ExtResource("9_1vwlk")]
+visible = false
+collision_shape_2d = NodePath("CollisionShape2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WoundComponent" unique_id=1409281617]
+position = Vector2(-1, -8)
+shape = SubResource("CircleShape2D_vcrpj")
+
+[node name="AttackComponent" parent="." unique_id=2136703472 node_paths=PackedStringArray("collision_shape_2d") instance=ExtResource("10_ta48a")]
+visible = false
+collision_shape_2d = NodePath("CollisionShape2D")
+damage = 20.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackComponent" unique_id=1933576149]
+position = Vector2(-1, -9)
 shape = SubResource("CircleShape2D_ntng8")
+
+[node name="CollisionController" parent="." unique_id=387055937 node_paths=PackedStringArray("collision_shape_2d") instance=ExtResource("11_q6l2o")]
+visible = false
+collision_shape_2d = NodePath("CollisionShape2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionController" unique_id=1182561442]
+position = Vector2(-1, -8)
+shape = SubResource("CircleShape2D_wyu8d")
+
+[node name="Test" type="CollisionShape2D" parent="." unique_id=1154782352]
+visible = false
+shape = SubResource("CircleShape2D_7viam")
 disabled = true
 
-[node name="health_component" parent="." instance=ExtResource("4_iuixe")]
-max_health = 150.0
+[node name="EffectComponent" parent="." unique_id=629594475 instance=ExtResource("11_1vwlk")]
+position = Vector2(0, -34)
 
-[node name="drop_component" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("5_qgpht")]
-script = ExtResource("6_d7sbi")
-drop_thing = ExtResource("7_iuixe")
-health_component = NodePath("../health_component")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -6)
-scale = Vector2(1.9930668, 1.9930668)
-shape = SubResource("CircleShape2D_8egh0")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_8yfii")
-}
-autoplay = "move"
-
-[node name="velocity_component" parent="." instance=ExtResource("6_60ack")]
-acceleration = 2.0
+[node name="DisappearComponent" parent="." unique_id=184462013 instance=ExtResource("12_ta48a")]
+disappear_time = 45.0

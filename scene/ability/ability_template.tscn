@@ -1,6 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://1waob1bolqtk"]
+[gd_scene format=3 uid="uid://1waob1bolqtk"]
 
-[ext_resource type="Script" uid="uid://b1w6aiu8k6jho" path="res://script/upgrade/sword_ability.gd" id="1_7myls"]
+[ext_resource type="Script" uid="uid://b1w6aiu8k6jho" path="res://script/ability/sword_ability.gd" id="1_7myls"]
 [ext_resource type="PackedScene" uid="uid://c4aqf7g3512kf" path="res://scene/游戏功能组件/hitbox_component.tscn" id="9_0j75x"]
 
 [sub_resource type="Animation" id="Animation_rt8kj"]

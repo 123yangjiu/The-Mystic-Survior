@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="EnemyUnlockEntry" load_steps=3 format=3 uid="uid://dcshkpdkqmlmv"]
+[gd_resource type="Resource" script_class="EnemyUnlockEntry" format=3 uid="uid://dcshkpdkqmlmv"]
 
 [ext_resource type="PackedScene" uid="uid://3yghqc3xt4xt" path="res://scene/enemy/wolf.tscn" id="1_heuco"]
 [ext_resource type="Script" uid="uid://b8kynvj5xuaby" path="res://resource/enemy/enemy.gd" id="2_4ibxh"]
@@ -7,4 +7,7 @@
 script = ExtResource("2_4ibxh")
 scene = ExtResource("1_heuco")
 unlock_difficulty = 6
-weight = 15.0
+weight = 2.0
+ID = 3
+disapear_difficulty = 17
+max_health = 30.0

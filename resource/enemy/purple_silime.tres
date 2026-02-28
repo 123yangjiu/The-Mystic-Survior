@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="EnemyUnlockEntry" load_steps=3 format=3 uid="uid://c6o5mfp0ul3mh"]
+[gd_resource type="Resource" script_class="EnemyUnlockEntry" format=3 uid="uid://c6o5mfp0ul3mh"]
 
 [ext_resource type="PackedScene" uid="uid://dup0ew61sv1b8" path="res://scene/enemy/puple_silime.tscn" id="1_4a8pv"]
 [ext_resource type="Script" uid="uid://b8kynvj5xuaby" path="res://resource/enemy/enemy.gd" id="1_yubma"]
@@ -7,4 +7,7 @@
 script = ExtResource("1_yubma")
 scene = ExtResource("1_4a8pv")
 unlock_difficulty = 2
-weight = 20.0
+weight = 2.0
+ID = 1
+disapear_difficulty = 8
+max_health = 32.0

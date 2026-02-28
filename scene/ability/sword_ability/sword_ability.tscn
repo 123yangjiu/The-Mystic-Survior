@@ -1,9 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://bawo0mh4gaicu"]
+[gd_scene format=3 uid="uid://bawo0mh4gaicu"]
 
 [ext_resource type="Texture2D" uid="uid://bx6rlx10cm75k" path="res://scene/ability/sword_ability/tile_0104.png" id="1_l440w"]
-[ext_resource type="Script" uid="uid://b1w6aiu8k6jho" path="res://script/upgrade/sword_ability.gd" id="1_lcf15"]
-[ext_resource type="PackedScene" uid="uid://c4aqf7g3512kf" path="res://scene/游戏功能组件/hitbox_component.tscn" id="2_rt8kj"]
+[ext_resource type="Script" uid="uid://b1w6aiu8k6jho" path="res://script/ability/sword_ability.gd" id="1_lcf15"]
 [ext_resource type="AudioStream" uid="uid://ych53kwihfmf" path="res://scene/ability/sword_ability/Sword Slide 03.wav" id="4_fogpa"]
+[ext_resource type="PackedScene" uid="uid://do1skrx74372j" path="res://scene/enemy_component/main_component/attack_component.tscn" id="5_qo48y"]
 
 [sub_resource type="Animation" id="Animation_rt8kj"]
 length = 0.001
@@ -34,26 +34,26 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("hitbox component/CollisionShape2D2:disabled")
+tracks/2/path = NodePath("AudioStreamPlayer2D:playing")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/3/path = NodePath("AttackComponent/CollisionShape2D:disabled")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_l440w"]
@@ -84,57 +84,57 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(0, 0), Vector2(1.2, 1.2), Vector2(1, 1), Vector2(2, 2), Vector2(1, 1), Vector2(0, 0)]
 }
-tracks/2/type = "method"
+tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath(".")
+tracks/2/path = NodePath("AudioStreamPlayer2D:playing")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.75),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"queue_redraw"
-}]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("hitbox component/CollisionShape2D2:disabled")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [true, false, true]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("AudioStreamPlayer2D:playing")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
 }
-tracks/5/type = "method"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath(".")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
 "times": PackedFloat32Array(0.2),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
 "method": &"the_first_damage"
 }]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.75),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AttackComponent/CollisionShape2D:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.4, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lcf15"]
@@ -143,31 +143,33 @@ _data = {
 &"swing": SubResource("Animation_l440w")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fogpa"]
-size = Vector2(35.85644, 22.548313)
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_fogpa"]
+points = PackedVector2Array(0, -18, 17, -15, 30, 0, 20, 26, 0, 30)
 
-[node name="sword_ability" type="Node2D"]
+[node name="sword_ability" type="Node2D" unique_id=2013728779 node_paths=PackedStringArray("attack_component")]
 script = ExtResource("1_lcf15")
+attack_component = NodePath("AttackComponent")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1063762052]
 texture = ExtResource("1_l440w")
 offset = Vector2(0, -8)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_lcf15")
-}
-autoplay = "swing"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1596029239]
+libraries/ = SubResource("AnimationLibrary_lcf15")
+autoplay = &"swing"
 
-[node name="hitbox component" parent="." instance=ExtResource("2_rt8kj")]
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="hitbox component"]
-position = Vector2(13.5, 0.5)
-scale = Vector2(0.75300276, 1.1087304)
-shape = SubResource("RectangleShape2D_fogpa")
-disabled = true
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=30162255]
 stream = ExtResource("4_fogpa")
 volume_db = -2.0
 bus = &"Sound"
+
+[node name="AttackComponent" parent="." unique_id=2136703472 node_paths=PackedStringArray("collision_shape_2d") instance=ExtResource("5_qo48y")]
+collision_shape_2d = NodePath("CollisionShape2D")
+type = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackComponent" unique_id=1644917832]
+shape = SubResource("ConvexPolygonShape2D_fogpa")
+disabled = true
+
+[node name="End" type="Node2D" parent="." unique_id=1205179284]
+position = Vector2(30, 0)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://b6jpe6qhci3ks"]
+[gd_scene format=3 uid="uid://b6jpe6qhci3ks"]
 
 [ext_resource type="Script" uid="uid://bdwovou02auiw" path="res://script/manager/upgrademanager.gd" id="1_n8va6"]
 [ext_resource type="Script" uid="uid://dmyfvo2eu1rj2" path="res://resource/ability_upgrade.gd" id="2_in5fl"]
@@ -6,11 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://c04cbhvknqekg" path="res://scene/ui/upgrade_screen.tscn" id="4_in5fl"]
 [ext_resource type="Resource" uid="uid://oclytr2qthx8" path="res://resource/upgrades/sword/sword_damage.tres" id="4_mb64u"]
 [ext_resource type="Resource" uid="uid://bb008fs5wq31x" path="res://resource/upgrades/sword/sword_number.tres" id="5_tou26"]
-[ext_resource type="Resource" uid="uid://oty2cgbisuck" path="res://resource/upgrades/holy_light/get_hammer.tres" id="6_r42tk"]
+[ext_resource type="Resource" uid="uid://oty2cgbisuck" path="res://resource/upgrades/holy_light/get_light.tres" id="6_r42tk"]
 [ext_resource type="Resource" uid="uid://dq68qtu5n06bt" path="res://resource/upgrades/heaven_fury/get_heaven_fury.tres" id="7_fsyq4"]
-[ext_resource type="Resource" uid="uid://cjjqnoy3whssy" path="res://resource/upgrades/holy_light/hammer_speed.tres" id="8_60bj4"]
-[ext_resource type="Resource" uid="uid://c80ua6iia28p6" path="res://resource/upgrades/holy_light/hammer_power.tres" id="8_v45oq"]
-[ext_resource type="Resource" uid="uid://d4ai6yyxvaf2a" path="res://resource/upgrades/holy_light/larger.tres" id="9_4lfsa"]
+[ext_resource type="Resource" uid="uid://cjjqnoy3whssy" path="res://resource/upgrades/holy_light/light_speed.tres" id="8_60bj4"]
+[ext_resource type="Resource" uid="uid://c80ua6iia28p6" path="res://resource/upgrades/holy_light/light_power.tres" id="8_v45oq"]
 [ext_resource type="Resource" uid="uid://dq2ug8ceqhgg0" path="res://resource/upgrades/fireball/get_fireball.tres" id="9_fsyq4"]
 [ext_resource type="Resource" uid="uid://brv0twbh4faty" path="res://resource/upgrades/fireball/fireballchuantou  .tres" id="11_qg2ea"]
 [ext_resource type="Resource" uid="uid://bqpb3vuil8nte" path="res://resource/upgrades/fireball/fireballnnumber.tres" id="12_k0v83"]
@@ -19,14 +18,14 @@
 [ext_resource type="Resource" uid="uid://ccayapnq1hx0c" path="res://resource/upgrades/heaven_fury/更多愤怒 (2).tres" id="15_u8tnl"]
 [ext_resource type="Resource" uid="uid://dladi3itxe508" path="res://resource/upgrades/heaven_fury/更强愤怒 .tres" id="16_dqfs1"]
 [ext_resource type="Resource" uid="uid://bre1wbhgghbfl" path="res://resource/upgrades/heaven_fury/更快愤怒.tres" id="17_onse2"]
-[ext_resource type="Resource" uid="uid://dn5ri83sm6i23" path="res://resource/upgrades/else/生命药水瓶.tres" id="18_dqfs1"]
+[ext_resource type="Resource" uid="uid://dn5ri83sm6i23" path="res://resource/upgrades/else/药效增强.tres" id="18_dqfs1"]
 [ext_resource type="Resource" uid="uid://cq6h3a5qtmde3" path="res://resource/upgrades/else/盔甲.tres" id="19_onse2"]
 [ext_resource type="Resource" uid="uid://bbp5xqvgt1ubd" path="res://resource/upgrades/else/飞毛腿.tres" id="20_u0m20"]
 [ext_resource type="Resource" uid="uid://cvcyibysmviov" path="res://resource/upgrades/ring/get_ring.tres" id="22_f4rvf"]
 [ext_resource type="Resource" uid="uid://dy38bx8w4yshf" path="res://resource/upgrades/ring/ring_power.tres" id="23_7t6fe"]
 [ext_resource type="Resource" uid="uid://bd0tr7xshvycr" path="res://resource/upgrades/ring/ring_rate_range.tres" id="24_p8jtb"]
 
-[node name="Upgrademanager" type="Node"]
+[node name="Upgrademanager" type="Node" unique_id=203097645]
 script = ExtResource("1_n8va6")
-upgrade_pool = Array[ExtResource("2_in5fl")]([ExtResource("3_mb64u"), ExtResource("5_tou26"), ExtResource("4_mb64u"), ExtResource("6_r42tk"), ExtResource("8_v45oq"), ExtResource("8_60bj4"), ExtResource("9_4lfsa"), ExtResource("9_fsyq4"), ExtResource("7_fsyq4"), ExtResource("11_qg2ea"), ExtResource("12_k0v83"), ExtResource("13_mqvp1"), ExtResource("14_k0v83"), ExtResource("15_u8tnl"), ExtResource("16_dqfs1"), ExtResource("17_onse2"), ExtResource("18_dqfs1"), ExtResource("19_onse2"), ExtResource("20_u0m20"), ExtResource("22_f4rvf"), ExtResource("23_7t6fe"), ExtResource("24_p8jtb")])
+upgrade_pool = Array[ExtResource("2_in5fl")]([ExtResource("3_mb64u"), ExtResource("5_tou26"), ExtResource("4_mb64u"), ExtResource("6_r42tk"), ExtResource("8_v45oq"), ExtResource("8_60bj4"), ExtResource("9_fsyq4"), ExtResource("7_fsyq4"), ExtResource("11_qg2ea"), ExtResource("12_k0v83"), ExtResource("13_mqvp1"), ExtResource("14_k0v83"), ExtResource("15_u8tnl"), ExtResource("16_dqfs1"), ExtResource("17_onse2"), ExtResource("18_dqfs1"), ExtResource("19_onse2"), ExtResource("20_u0m20"), ExtResource("22_f4rvf"), ExtResource("23_7t6fe"), ExtResource("24_p8jtb")])
 upgrade_screen_scene = ExtResource("4_in5fl")

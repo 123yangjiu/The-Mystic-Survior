@@ -1,53 +1,19 @@
-[gd_scene load_steps=11 format=3 uid="uid://cr32ffcse8os3"]
+[gd_scene format=3 uid="uid://cr32ffcse8os3"]
 
 [ext_resource type="Script" uid="uid://dyo1scdlv4n7e" path="res://script/文本及ui显示/settingscreen.gd" id="1_ge732"]
 [ext_resource type="PackedScene" uid="uid://djyv3a54a2tlj" path="res://scene/ui/change_screen.tscn" id="2_ge732"]
 [ext_resource type="PackedScene" uid="uid://do5j6tqexbgan" path="res://scene/ui/Master_bar.tscn" id="3_ghmbv"]
 [ext_resource type="PackedScene" uid="uid://y0d83doilca2" path="res://scene/ui/music_bar.tscn" id="4_5xyoi"]
 [ext_resource type="PackedScene" uid="uid://8snn1li86mb5" path="res://scene/ui/sound_bar.tscn" id="5_cljgu"]
+[ext_resource type="Theme" uid="uid://5bh541wa60l3" path="res://resource/theme/green_theme.tres" id="6_qphwn"]
+[ext_resource type="PackedScene" uid="uid://drdfjqj1e2kg4" path="res://scene/ui/setting/change_yaogan.tscn" id="7_qphwn"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xp53h"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5xyoi"]
-bg_color = Color(0.75, 0.75, 0.75, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cljgu"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_efkqj"]
-bg_color = Color(0.9, 0.9, 0.9, 1)
-
-[sub_resource type="Theme" id="Theme_efkqj"]
-Button/colors/font_color = Color(0, 0, 0, 1)
-Button/colors/font_disabled_color = Color(0, 0, 0, 1)
-Button/colors/font_focus_color = Color(0, 0, 0, 1)
-Button/colors/font_hover_color = Color(0, 0, 0, 1)
-Button/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-Button/colors/font_outline_color = Color(0, 0, 0, 1)
-Button/colors/font_pressed_color = Color(0, 0, 0, 1)
-Button/colors/icon_disabled_color = Color(0, 0, 0, 1)
-Button/colors/icon_focus_color = Color(0, 0, 0, 1)
-Button/colors/icon_hover_color = Color(0, 0, 0, 1)
-Button/colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
-Button/colors/icon_normal_color = Color(0, 0, 0, 1)
-Button/colors/icon_pressed_color = Color(0, 0, 0, 1)
-Button/constants/align_to_largest_stylebox = 0
-Button/constants/h_separation = 0
-Button/constants/icon_max_width = 0
-Button/constants/outline_size = 0
-Button/font_sizes/font_size = 16
-Button/fonts/font = null
-Button/styles/disabled = SubResource("StyleBoxFlat_xp53h")
-Button/styles/focus = SubResource("StyleBoxFlat_5xyoi")
-Button/styles/hover = SubResource("StyleBoxFlat_5xyoi")
-Button/styles/normal = SubResource("StyleBoxFlat_cljgu")
-Button/styles/pressed = SubResource("StyleBoxFlat_efkqj")
-
-[node name="Settingscreen" type="CanvasLayer"]
+[node name="Settingscreen" type="CanvasLayer" unique_id=2013600972]
 process_mode = 3
 layer = 3
 script = ExtResource("1_ge732")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=464053512]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -55,47 +21,51 @@ offset_top = -3.0
 offset_bottom = -3.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.4, 0.4, 0.4, 0.7882353)
+color = Color(0.2, 0.2, 0.2, 0.7882353)
 
-[node name="Change_screen" parent="." instance=ExtResource("2_ge732")]
+[node name="Change_screen" parent="." unique_id=309037944 instance=ExtResource("2_ge732")]
+custom_minimum_size = Vector2(50, 20)
 offset_left = 279.0
-offset_top = 50.0
+offset_top = 35.0
 offset_right = 329.0
-offset_bottom = 70.0
+offset_bottom = 55.0
 scale = Vector2(1.5, 1.5)
 
-[node name="SoundBus" type="Node2D" parent="."]
+[node name="SoundBus" type="Node2D" parent="." unique_id=360939152]
 process_mode = 3
-position = Vector2(296, 203)
+position = Vector2(296, 198)
 scale = Vector2(1.5, 1.5)
 
-[node name="Master" parent="SoundBus" instance=ExtResource("3_ghmbv")]
+[node name="Master" parent="SoundBus" unique_id=392021447 instance=ExtResource("3_ghmbv")]
 offset_left = -50.0
 offset_top = -31.333344
 offset_right = 55.0
 offset_bottom = -19.333344
 
-[node name="Music" parent="SoundBus" instance=ExtResource("4_5xyoi")]
+[node name="Music" parent="SoundBus" unique_id=256725673 instance=ExtResource("4_5xyoi")]
 offset_left = -50.0
 offset_top = -4.3333435
 offset_right = 55.0
 offset_bottom = 7.6666565
 
-[node name="Sound" parent="SoundBus" instance=ExtResource("5_cljgu")]
+[node name="Sound" parent="SoundBus" unique_id=521257834 instance=ExtResource("5_cljgu")]
 offset_left = -50.0
 offset_top = 21.666656
 offset_right = 55.0
 offset_bottom = 33.666656
 
-[node name="Button" type="Button" parent="."]
-offset_left = 279.0
-offset_top = 308.0
-offset_right = 350.0
-offset_bottom = 343.0
-theme = SubResource("Theme_efkqj")
+[node name="Button" type="Button" parent="." unique_id=843017270]
+custom_minimum_size = Vector2(100, 50)
+offset_left = 273.0
+offset_top = 285.0
+offset_right = 373.0
+offset_bottom = 335.0
+theme = ExtResource("6_qphwn")
+text = "退出"
 
-[node name="Label" type="Label" parent="Button"]
+[node name="Label" type="Label" parent="Button" unique_id=438277953]
 process_mode = 4
+visible = false
 layout_mode = 0
 offset_left = 1.0
 offset_top = -2.0
@@ -103,5 +73,11 @@ offset_right = 73.0
 offset_bottom = 34.0
 theme_override_font_sizes/font_size = 36
 text = "退出"
+
+[node name="ChangeYaogan" parent="." unique_id=1603881200 instance=ExtResource("7_qphwn")]
+offset_left = 295.0
+offset_top = 99.0
+offset_right = 345.0
+offset_bottom = 119.0
 
 [connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

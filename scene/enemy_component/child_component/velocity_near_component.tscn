@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dedbm3f2745dw"]
+
+[ext_resource type="Script" uid="uid://b7hr4vgfrdfsc" path="res://script/enemy_component/chid_component/velocity_near_component.gd" id="1_4xfuo"]
+
+[node name="VelocityNearComponent" type="Node2D" unique_id=2127528853]
+script = ExtResource("1_4xfuo")

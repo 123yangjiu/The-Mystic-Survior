@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://bgx1tdpm0hhvs"]
+
+[ext_resource type="Script" uid="uid://bn5pq5tjytvqi" path="res://scene/ui/upgradecard_select.gd" id="1_8x6wt"]
+[ext_resource type="Texture2D" uid="uid://byv42g6d74pvx" path="res://sucai/UI/ability_card第2.75版.png" id="2_0vt1l"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pu7i7"]
+font_size = 12
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="abilityupgradecard" type="PanelContainer" unique_id=324022204]
+process_mode = 3
+modulate = Color(1, 1, 1, 0.78431374)
+custom_minimum_size = Vector2(120, 150)
+script = ExtResource("1_8x6wt")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=368820472]
+layout_mode = 2
+texture = ExtResource("2_0vt1l")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=275907842]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="VBoxContainer" unique_id=323665157]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 12
+label_settings = SubResource("LabelSettings_pu7i7")
+horizontal_alignment = 1
+vertical_alignment = 2
+autowrap_mode = 1
+
+[node name="DescriptionLabel" type="Label" parent="VBoxContainer" unique_id=600507817]
+custom_minimum_size = Vector2(110, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[connection signal="mouse_entered" from="." to="." method="_on_texture_rect_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_texture_rect_mouse_exited"]

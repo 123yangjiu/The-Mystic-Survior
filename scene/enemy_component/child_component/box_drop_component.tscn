@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://be8s642qctci6"]
+
+[ext_resource type="Script" uid="uid://dgnjbnswkh1hb" path="res://script/enemy_component/chid_component/box_drop_component.gd" id="1_fl164"]
+[ext_resource type="PackedScene" uid="uid://i5imcyd15vix" path="res://scene/游戏物件/exprience_bottle.tscn" id="2_8jlky"]
+[ext_resource type="PackedScene" uid="uid://daaqcmminiyk1" path="res://scene/游戏物件/blood_bottle.tscn" id="3_dkts1"]
+[ext_resource type="PackedScene" uid="uid://f15fc5ggcq0l" path="res://scene/游戏物件/bonus_bottle.tscn" id="4_0nxlq"]
+
+[node name="box_drop_component" type="Node2D" unique_id=662046197]
+script = ExtResource("1_fl164")
+drop_thingandpersent = Dictionary[PackedScene, float]({
+ExtResource("2_8jlky"): 0.8,
+ExtResource("3_dkts1"): 0.1,
+ExtResource("4_0nxlq"): 0.4
+})
+drop_range = 5

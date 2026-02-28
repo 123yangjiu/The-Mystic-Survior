@@ -1,26 +1,30 @@
 extends Sprite2D
 
-var is_drag := false  # 记录拖拽状态
+var is_drag := false  :set=set_is_drag# 记录拖拽状态
 var touch_id := -1    # 记录当前控制摇杆的手指ID
 @onready var yao_gan: Sprite2D = $YaoGan
 @export var player: Player
 
 # 存储所有活动触摸点
 var active_touches := {}
+var is_fixed:=false
 
 func _ready() -> void:
+	if GameEvent.is_fixed:
+		is_fixed=true
+		self.visible=true
+		self.position=Vector2(102.0,267.0)
+	GameEvent.yaogan_fixed.connect(on_fix_change)
 	GameEvent._paused.connect(_on_paused)
 
 func _input(event: InputEvent) -> void:
 	# 处理触摸开始
 	if event is InputEventScreenTouch and event.is_pressed():
 		_process_touch_start(event)
-	
 	# 处理触摸拖动 - 只有当这个触摸点控制摇杆时才处理
 	elif event is InputEventScreenDrag:
 		if event.index == touch_id:  # 只处理控制摇杆的手指
 			_process_drag(event)
-	
 	# 处理触摸结束
 	elif event is InputEventScreenTouch and event.is_released():
 		_process_touch_end(event)
@@ -47,6 +51,12 @@ func _process_touch_start(event: InputEventScreenTouch) -> void:
 			player.is_touch = true
 	
 	# 如果还没有手指控制摇杆
+	elif is_fixed:
+		touch_id = event.index
+		# 重置摇杆位置
+		yao_gan.position = Vector2.ZERO
+		if player:
+			player.is_touch = true
 	elif not is_drag:
 		touch_id = event.index
 		self.global_position = event.position
@@ -75,15 +85,39 @@ func _process_drag(event: InputEventScreenDrag) -> void:
 
 func _process_touch_end(event: InputEventScreenTouch) -> void:
 	# 如果松开的是控制摇杆的手指
-	if event.index == touch_id:
+	if is_fixed:
 		if player:
 			player.is_touch = false
-		
+		touch_id = -1
+		yao_gan.position=Vector2.ZERO
+	elif event.index == touch_id:
+		if player:
+			player.is_touch = false
 		is_drag = false
 		touch_id = -1
 		self.visible = false
 
 func _on_paused() -> void:
-	self.visible = false
-	is_drag = false
-	touch_id = -1
+	if !is_fixed:
+		self.visible = false
+		is_drag = false
+		touch_id = -1
+
+func set_is_drag(value)->void:
+	if is_fixed:
+		return
+	is_drag=value
+
+func on_fix_change(fixed:bool)->void:
+	match is_fixed:
+		true:
+			match fixed:
+				false:
+					is_fixed=false
+					self.visible=false
+		false:
+			match fixed:
+				true:
+					is_fixed=true
+					self.visible=true
+					self.position=Vector2(102.0,267.0)

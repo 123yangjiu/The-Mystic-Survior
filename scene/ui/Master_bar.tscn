@@ -1,11 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://do5j6tqexbgan"]
+[gd_scene format=3 uid="uid://do5j6tqexbgan"]
 
 [ext_resource type="Texture2D" uid="uid://ha5mt27odjym" path="res://sucai/UI/progressbar.png" id="1_syaaq"]
 [ext_resource type="Script" uid="uid://c6ibi3brn32i6" path="res://script/文本及ui显示/sound_bar.gd" id="2_2oi5y"]
 [ext_resource type="Texture2D" uid="uid://b4tmm8ndrlbip" path="res://sucai/UI/ball2.png" id="2_owrry"]
-[ext_resource type="Script" uid="uid://bl0fkh3ewfft6" path="res://script/文本及ui显示/dragbutton.gd" id="3_2oi5y"]
+[ext_resource type="Script" uid="uid://bl0fkh3ewfft6" path="res://script/文本及ui显示/button/dragbutton.gd" id="3_2oi5y"]
 
-[node name="DragBar" type="TextureProgressBar"]
+[node name="DragBar" type="TextureProgressBar" unique_id=743396597]
 offset_right = 105.0
 offset_bottom = 12.0
 scale = Vector2(2, 2)
@@ -15,14 +15,14 @@ texture_progress = ExtResource("1_syaaq")
 tint_progress = Color(0.12, 0.12, 0.12, 1)
 script = ExtResource("2_2oi5y")
 
-[node name="Button" type="Sprite2D" parent="."]
+[node name="Button" type="Sprite2D" parent="." unique_id=590634472]
 position = Vector2(52.75, 5.75)
 scale = Vector2(1.25, 1.25)
 texture = ExtResource("2_owrry")
 script = ExtResource("3_2oi5y")
 bus_name = "Master"
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=1392636388]
 modulate = Color(0.5, 0.5, 0.5, 1)
 layout_mode = 0
 offset_left = -38.5
@@ -33,20 +33,20 @@ text = "主音量"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Anchor" type="Node2D" parent="."]
+[node name="Anchor" type="Node2D" parent="." unique_id=1446399483]
 
-[node name="Begin" type="Node2D" parent="Anchor"]
+[node name="Begin" type="Node2D" parent="Anchor" unique_id=1702938836]
 position = Vector2(2, 6)
 scale = Vector2(0.5, 0.5)
 
-[node name="End" type="Node2D" parent="Anchor"]
+[node name="End" type="Node2D" parent="Anchor" unique_id=1399942288]
 position = Vector2(101, 6)
 scale = Vector2(0.5, 0.5)
 
-[node name="Up" type="Node2D" parent="Anchor"]
+[node name="Up" type="Node2D" parent="Anchor" unique_id=516601476]
 position = Vector2(53, 1)
 
-[node name="Down" type="Node2D" parent="Anchor"]
+[node name="Down" type="Node2D" parent="Anchor" unique_id=2048674904]
 position = Vector2(53, 11)
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

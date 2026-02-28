@@ -1,13 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://cptmnlexwivwt"]
+[gd_scene format=3 uid="uid://cptmnlexwivwt"]
 
 [ext_resource type="Script" uid="uid://fa0ak1csqele" path="res://script/manager/enemymanager.gd" id="1_osh64"]
 [ext_resource type="PackedScene" uid="uid://cc3x2b78lonqh" path="res://scene/enemy/mushroomenemy.tscn" id="2_4vo5e"]
-[ext_resource type="PackedScene" uid="uid://dg0lowfwv0dg3" path="res://scene/enemy/骑士.tscn" id="8_hlkyc"]
+[ext_resource type="PackedScene" uid="uid://dg0lowfwv0dg3" path="res://scene/enemy/knight.tscn" id="8_hlkyc"]
 
-[node name="enemymanager" type="Node"]
+[node name="enemymanager" type="Node" unique_id=1804161129]
 script = ExtResource("1_osh64")
 kill_cirle_enemy = Array[PackedScene]([ExtResource("2_4vo5e"), ExtResource("8_hlkyc")])
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=682297059]
 wait_time = 1.4
 autostart = true

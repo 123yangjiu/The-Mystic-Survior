@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://clll2adpdaq13"]
+
+[ext_resource type="Script" uid="uid://46ingrya2sxu" path="res://script/enemy_component/chid_component/solid_collision_controller.gd" id="1_npvmp"]
+
+[node name="SpecialCollisionController" type="Node2D" unique_id=387055937]
+script = ExtResource("1_npvmp")

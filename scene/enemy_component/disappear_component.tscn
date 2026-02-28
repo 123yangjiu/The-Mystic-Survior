@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://0uu7d2cwajsq"]
+
+[ext_resource type="Script" uid="uid://b6ejhjqbs416e" path="res://script/component/disappear_component.gd" id="1_03g1q"]
+
+[node name="DisappearComponent" type="Node2D" unique_id=184462013]
+script = ExtResource("1_03g1q")
+
+[node name="Timer" type="Timer" parent="." unique_id=800936793]
+wait_time = 20.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

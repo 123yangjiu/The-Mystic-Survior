@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="EnemyUnlockEntry" format=3 uid="uid://c02spyysuegq7"]
+
+[ext_resource type="PackedScene" uid="uid://r753wp2st35x" path="res://scene/enemy/escape_box.tscn" id="1_pg576"]
+[ext_resource type="Script" uid="uid://b8kynvj5xuaby" path="res://resource/enemy/enemy.gd" id="2_3jwxj"]
+
+[resource]
+script = ExtResource("2_3jwxj")
+scene = ExtResource("1_pg576")
+unlock_difficulty = 5
+weight = 0.001
+ID = 7
+max_health = 300.0

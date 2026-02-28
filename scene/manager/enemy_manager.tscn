@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://dhpe0rjt1ry4r"]
+
+[ext_resource type="Script" uid="uid://ctop6k471xgun" path="res://script/manager/enemy_manager.gd" id="1_vlakn"]
+[ext_resource type="Script" uid="uid://bptd6w5318vkp" path="res://scene/manager/enemy_producer.gd" id="2_lenjj"]
+[ext_resource type="Script" uid="uid://b8kynvj5xuaby" path="res://resource/enemy/enemy.gd" id="2_ttu6g"]
+[ext_resource type="Resource" uid="uid://bxky4hcyjohvi" path="res://resource/enemy/silime.tres" id="3_p63pb"]
+[ext_resource type="Resource" uid="uid://c6o5mfp0ul3mh" path="res://resource/enemy/purple_silime.tres" id="4_dxqt4"]
+[ext_resource type="Resource" uid="uid://bl6c65geij0ji" path="res://resource/enemy/avocado.tres" id="5_kwy0r"]
+[ext_resource type="Resource" uid="uid://dcshkpdkqmlmv" path="res://resource/enemy/wolf.tres" id="6_61i4e"]
+[ext_resource type="Resource" uid="uid://ckcolpwqwrycv" path="res://resource/enemy/owl.tres" id="7_t65ep"]
+[ext_resource type="Resource" uid="uid://pff6k5t7ol3j" path="res://resource/enemy/gorlen.tres" id="8_q5qsi"]
+[ext_resource type="Resource" uid="uid://c02spyysuegq7" path="res://resource/enemy/escape_box.tres" id="9_0i1ta"]
+[ext_resource type="Resource" uid="uid://bktp5mcm6ea6c" path="res://resource/enemy/red_wolf.tres" id="10_tmr65"]
+[ext_resource type="Resource" uid="uid://bkhu54afqw1yl" path="res://resource/enemy/box.tres" id="11_dxqt4"]
+[ext_resource type="Resource" uid="uid://bwvsf8rcctefe" path="res://resource/enemy/knight.tres" id="11_p63pb"]
+[ext_resource type="Resource" uid="uid://t5kejwdjuxx" path="res://resource/enemy/witch.tres" id="12_dxqt4"]
+[ext_resource type="PackedScene" uid="uid://cmtbivbjtrdc1" path="res://scene/enemy_event/arrow_line.tscn" id="14_61i4e"]
+[ext_resource type="Resource" uid="uid://bbhoy3dpu0svy" path="res://resource/enemy/mushroom.tres" id="14_q5qsi"]
+[ext_resource type="Resource" uid="uid://cj0igdud0tmjh" path="res://resource/enemy/undead.tres" id="15_tmr65"]
+[ext_resource type="PackedScene" uid="uid://ugy1pljxk7i0" path="res://scene/enemy_event/gappy_line.tscn" id="16_q5qsi"]
+[ext_resource type="PackedScene" uid="uid://uyasx8hy1oac" path="res://scene/enemy_event/titled_line.tscn" id="17_0i1ta"]
+
+[node name="EnemyManager" type="Node" unique_id=1015220876]
+script = ExtResource("1_vlakn")
+normal_enemy = Array[ExtResource("2_ttu6g")]([ExtResource("3_p63pb"), ExtResource("4_dxqt4"), ExtResource("5_kwy0r"), ExtResource("6_61i4e"), ExtResource("7_t65ep"), ExtResource("8_q5qsi"), ExtResource("9_0i1ta"), ExtResource("10_tmr65")])
+special_enemy = Array[ExtResource("2_ttu6g")]([ExtResource("11_p63pb"), ExtResource("12_dxqt4"), ExtResource("15_tmr65")])
+all_enemy = Array[ExtResource("2_ttu6g")]([ExtResource("3_p63pb"), ExtResource("4_dxqt4"), ExtResource("5_kwy0r"), ExtResource("6_61i4e"), ExtResource("7_t65ep"), ExtResource("8_q5qsi"), ExtResource("9_0i1ta"), ExtResource("10_tmr65"), ExtResource("11_dxqt4"), ExtResource("12_dxqt4"), ExtResource("11_p63pb"), ExtResource("14_q5qsi"), ExtResource("15_tmr65")])
+all_shape = Array[PackedScene]([ExtResource("14_61i4e"), ExtResource("16_q5qsi"), ExtResource("17_0i1ta")])
+
+[node name="EnemyProducer" type="Node" parent="." unique_id=1023889621 node_paths=PackedStringArray("enemy_manager")]
+script = ExtResource("2_lenjj")
+enemy_manager = NodePath("..")
+
+[node name="CheckHealth" type="Timer" parent="EnemyProducer" unique_id=1658483975]
+wait_time = 2.0
+
+[node name="Normal" type="Timer" parent="." unique_id=1945998218]
+wait_time = 1.5
+
+[node name="Special" type="Timer" parent="." unique_id=1229890075]
+wait_time = 40.0
+
+[connection signal="timeout" from="EnemyProducer/CheckHealth" to="." method="_on_check_health_timeout"]
+[connection signal="timeout" from="Normal" to="EnemyProducer" method="_on_normal_timeout"]
+[connection signal="timeout" from="Special" to="EnemyProducer" method="_on_special_timeout"]

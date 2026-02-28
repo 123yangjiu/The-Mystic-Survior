@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cdpjl26uhvb5w"]
+
+[ext_resource type="PackedScene" uid="uid://b2yrm0y8rlo8e" path="res://scene/ui/exit_button.tscn" id="3_fp0k0"]
+
+[node name="Name" type="CanvasLayer" unique_id=543739001]
+layer = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1238339868]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2, 0.2, 0.2, 0.88235295)
+
+[node name="Exit" parent="." unique_id=869907157 node_paths=PackedStringArray("root_node") instance=ExtResource("3_fp0k0")]
+offset_left = 2.0
+offset_top = 308.0
+offset_right = 92.0
+offset_bottom = 358.0
+root_node = NodePath("..")

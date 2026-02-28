@@ -1,11 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://cytjt82x3vdwn"]
+[gd_scene format=3 uid="uid://cytjt82x3vdwn"]
 
-[ext_resource type="PackedScene" uid="uid://decyru6mnkuga" path="res://scene/游戏功能组件/hurtboxcomponent.tscn" id="2_71xyg"]
-[ext_resource type="PackedScene" uid="uid://bnactnfyipltl" path="res://scene/游戏功能组件/health_component.tscn" id="4_n2jsd"]
-[ext_resource type="PackedScene" uid="uid://c0i7tc6xpk0n8" path="res://scene/游戏功能组件/drop_component.tscn" id="5_dpmi2"]
-[ext_resource type="PackedScene" uid="uid://i5imcyd15vix" path="res://scene/游戏 物件/exprience_bottle  .tscn" id="6_xhvbf"]
-[ext_resource type="PackedScene" uid="uid://daaqcmminiyk1" path="res://scene/游戏 物件/blood_bottle .tscn" id="7_mqw3h"]
-[ext_resource type="PackedScene" uid="uid://g6ks4dc6kpht" path="res://scene/游戏功能组件/velocity_component.tscn" id="8_vk65t"]
+[ext_resource type="PackedScene" uid="uid://decyru6mnkuga" path="res://scene/enemy_component/hurtboxcomponent.tscn" id="2_71xyg"]
+[ext_resource type="PackedScene" uid="uid://bnactnfyipltl" path="res://scene/enemy_component/main_component/health_component.tscn" id="4_n2jsd"]
+[ext_resource type="PackedScene" uid="uid://c0i7tc6xpk0n8" path="res://scene/enemy_component/main_component/drop_component.tscn" id="5_dpmi2"]
+[ext_resource type="PackedScene" uid="uid://i5imcyd15vix" path="res://scene/游戏物件/exprience_bottle.tscn" id="6_xhvbf"]
+[ext_resource type="PackedScene" uid="uid://daaqcmminiyk1" path="res://scene/游戏物件/blood_bottle.tscn" id="7_mqw3h"]
+[ext_resource type="PackedScene" uid="uid://g6ks4dc6kpht" path="res://scene/enemy_component/main_component/velocity_component.tscn" id="8_vk65t"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fq6t5"]
 animations = [{

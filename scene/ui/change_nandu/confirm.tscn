@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://d5e5o1xdxw5m"]
+
+[ext_resource type="Theme" uid="uid://5bh541wa60l3" path="res://resource/theme/green_theme.tres" id="1_ttv7j"]
+
+[node name="Name" type="Button" unique_id=887643300]
+custom_minimum_size = Vector2(90, 50)
+offset_right = 90.0
+offset_bottom = 50.0
+theme = ExtResource("1_ttv7j")
+text = "确认"

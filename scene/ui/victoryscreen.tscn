@@ -1,111 +1,82 @@
-[gd_scene load_steps=5 format=3 uid="uid://ci3fodbprfo2x"]
+[gd_scene format=3 uid="uid://ci3fodbprfo2x"]
 
-[ext_resource type="Script" uid="uid://dhi6irssr0s2a" path="res://script/文本及ui显示/victoryscreen.gd" id="1_73tji"]
+[ext_resource type="Script" uid="uid://pr7e8kxkx428" path="res://script/文本及ui显示/victoryscreen.gd" id="1_73tji"]
 [ext_resource type="Texture2D" uid="uid://bpsdycqrk75ie" path="res://sucai/UI/旗帜.png" id="2_03008"]
 [ext_resource type="Texture2D" uid="uid://d35xkrfjuc6fu" path="res://sucai/UI/Victory第1.5版.png" id="3_03008"]
 [ext_resource type="Texture2D" uid="uid://w4uxnl1m2tpl" path="res://sucai/女巫师/小女巫_胜利_招手.png" id="4_fq4wr"]
+[ext_resource type="Theme" uid="uid://dbgauou15hq13" path="res://resource/theme/new_theme.tres" id="6_4fuvt"]
+[ext_resource type="PackedScene" uid="uid://c4odu6gj71lxh" path="res://scene/ui/return_to_maintheme.tscn" id="7_2otoq"]
 
-[node name="Victoryscreen" type="CanvasLayer"]
+[node name="Victoryscreen" type="CanvasLayer" unique_id=2121699376]
 process_mode = 3
 script = ExtResource("1_73tji")
 
-[node name="Qizi" type="Node2D" parent="."]
+[node name="Qizi" type="Node2D" parent="." unique_id=1088818697]
 
-[node name="Sprite2D" type="Sprite2D" parent="Qizi"]
+[node name="Sprite2D" type="Sprite2D" parent="Qizi" unique_id=354762576]
 position = Vector2(556.5, 137)
 scale = Vector2(2.5, 2.5)
 texture = ExtResource("2_03008")
 
-[node name="Sprite2D2" type="Sprite2D" parent="Qizi"]
+[node name="Sprite2D2" type="Sprite2D" parent="Qizi" unique_id=685444029]
 position = Vector2(556.5, 172)
 scale = Vector2(2.5, 2.5)
 texture = ExtResource("2_03008")
 
-[node name="Sprite2D3" type="Sprite2D" parent="Qizi"]
+[node name="Sprite2D3" type="Sprite2D" parent="Qizi" unique_id=415176427]
 position = Vector2(556.5, 207)
 scale = Vector2(2.5, 2.5)
 texture = ExtResource("2_03008")
 
-[node name="Sprite2D4" type="Sprite2D" parent="Qizi"]
+[node name="Sprite2D4" type="Sprite2D" parent="Qizi" unique_id=1618606087]
 position = Vector2(83.50001, 137)
 scale = Vector2(-2.5, 2.5)
 texture = ExtResource("2_03008")
 
-[node name="Sprite2D5" type="Sprite2D" parent="Qizi"]
+[node name="Sprite2D5" type="Sprite2D" parent="Qizi" unique_id=1960750372]
 position = Vector2(83.5, 172)
 scale = Vector2(-2.5, 2.5)
 texture = ExtResource("2_03008")
 
-[node name="Sprite2D6" type="Sprite2D" parent="Qizi"]
+[node name="Sprite2D6" type="Sprite2D" parent="Qizi" unique_id=2120813212]
 position = Vector2(83.5, 207)
 scale = Vector2(-2.5, 2.5)
 texture = ExtResource("2_03008")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1736761716]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer" unique_id=123355585]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(480, 270)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/PanelContainer"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/PanelContainer" unique_id=1822578028]
 layout_mode = 2
 texture = ExtResource("3_03008")
 expand_mode = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer"]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_top = 8
-theme_override_constants/margin_right = 8
-theme_override_constants/margin_bottom = 8
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 100)
-layout_mode = 2
-theme_override_font_sizes/font_size = 24
-horizontal_alignment = 1
-vertical_alignment = 2
-
-[node name="restart" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(200, 50)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_font_sizes/font_size = 36
-text = "重新开始"
-autowrap_mode = 1
-
-[node name="Label2" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 1
-
-[node name="quit" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(150, 50)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_font_sizes/font_size = 36
-text = "离开"
-autowrap_mode = 1
-icon_alignment = 1
-expand_icon = true
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=295097756]
 position = Vector2(319, 113)
 scale = Vector2(4, 4)
 texture = ExtResource("4_fq4wr")
+
+[node name="Return" parent="." unique_id=887643300 instance=ExtResource("7_2otoq")]
+offset_left = 217.0
+offset_top = 195.0
+offset_right = 422.0
+offset_bottom = 265.0
+theme = ExtResource("6_4fuvt")
+theme_override_colors/font_color = Color(0.9, 0.672, 0.17999998, 1)
+theme_override_colors/font_focus_color = Color(0.95, 0.67925, 0.09500002, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.68333334, 0, 1)
+theme_override_colors/font_hover_color = Color(0.95, 0.67925, 0.09500002, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.95, 0.67925, 0.09500002, 1)
+theme_override_colors/font_disabled_color = Color(0.95, 0.67925, 0.09500002, 1)
+theme_override_font_sizes/font_size = 36

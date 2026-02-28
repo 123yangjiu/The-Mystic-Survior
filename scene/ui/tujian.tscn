@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://fiu7e6h1ip2a"]
+
+[ext_resource type="PackedScene" uid="uid://bpkwk5owtcco0" path="res://scene/ui/brochure_button.tscn" id="1_x6job"]
+[ext_resource type="PackedScene" uid="uid://cq1npoewigh57" path="res://scene/ui/skill_tujian_button.tscn" id="2_17udk"]
+[ext_resource type="PackedScene" uid="uid://bbhrky8047rx0" path="res://scene/ui/nandu_shuoming_button.tscn" id="3_17udk"]
+[ext_resource type="PackedScene" uid="uid://b2yrm0y8rlo8e" path="res://scene/ui/exit_button.tscn" id="4_egv0l"]
+[ext_resource type="PackedScene" uid="uid://b7eap6117b3y4" path="res://scene/ui/Thanks_button.tscn" id="5_4qgl5"]
+
+[node name="Tujian" type="CanvasLayer" unique_id=1805386242]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1156206927]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2, 0.2, 0.2, 0.78431374)
+
+[node name="Brochure" parent="." unique_id=1006554423 instance=ExtResource("1_x6job")]
+offset_left = 93.0
+offset_top = 73.0
+offset_right = 273.0
+offset_bottom = 133.0
+
+[node name="SkillTujian" parent="." unique_id=512415181 instance=ExtResource("2_17udk")]
+offset_left = 329.0
+offset_top = 216.0
+offset_right = 509.0
+offset_bottom = 276.0
+
+[node name="NanduShuoming" parent="." unique_id=489857613 instance=ExtResource("3_17udk")]
+visible = false
+offset_left = 370.0
+offset_top = 257.0
+offset_right = 550.0
+offset_bottom = 317.0
+
+[node name="Exit" parent="." unique_id=88138139 node_paths=PackedStringArray("root_node") instance=ExtResource("4_egv0l")]
+root_node = NodePath("..")
+
+[node name="Button" parent="." unique_id=681521514 instance=ExtResource("5_4qgl5")]

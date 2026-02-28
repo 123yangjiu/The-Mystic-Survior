@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bbhrky8047rx0"]
+
+[ext_resource type="Theme" uid="uid://5bh541wa60l3" path="res://resource/theme/green_theme.tres" id="1_g7ew5"]
+[ext_resource type="Script" uid="uid://rrsljj1poccy" path="res://script/文本及ui显示/nandu_shuoming_button.gd" id="2_6ehob"]
+[ext_resource type="PackedScene" uid="uid://7wj0rs3qyh6d" path="res://scene/ui/nandu_shuoming.tscn" id="3_yi65v"]
+
+[node name="NanduShuoming" type="Button"]
+custom_minimum_size = Vector2(180, 60)
+offset_left = 25.0
+offset_top = 156.0
+offset_right = 205.0
+offset_bottom = 216.0
+theme = ExtResource("1_g7ew5")
+text = "难度说明"
+script = ExtResource("2_6ehob")
+nandu = ExtResource("3_yi65v")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

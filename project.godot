@@ -8,17 +8,28 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
 config/name="神秘幸存者"
 run/main_scene="uid://c68mua7fii8ye"
-config/features=PackedStringArray("4.5", "Forward Plus")
+config/features=PackedStringArray("4.6", "Forward Plus")
 boot_splash/use_filter=false
 config/icon="uid://b5oni5ikgr5pr"
 
 [autoload]
 
-GameEvent="*res://scene/游戏事件/gameEvent.tscn"
+GameEvent="*res://scene/game_event.tscn"
+
+[copilot]
+
+provider="Ollama"
+endpoint="http://localhost:11434"
+model="deepseek-coder:6.7b"
+api_key=""
 
 [display]
 
@@ -27,6 +38,10 @@ window/size/viewport_height=360
 window/size/window_width_override=1920
 window/size/window_height_override=1080
 window/stretch/mode="viewport"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/GodotPrivacyPlugin/plugin.cfg")
 
 [gui]
 
@@ -97,10 +112,12 @@ pointing/emulate_touch_from_mouse=true
 [layer_names]
 
 2d_physics/layer_1="地形"
-2d_physics/layer_2="玩家"
-2d_physics/layer_3="敌人"
+2d_physics/layer_2="玩家受伤区域"
+2d_physics/layer_3="敌人受伤区域"
 2d_physics/layer_4="敌人碰撞区域"
 2d_physics/layer_5="玩家拾取区"
+2d_physics/layer_6="玩家实体"
+2d_physics/layer_9="蘑菇碰撞层"
 
 [rendering]
 

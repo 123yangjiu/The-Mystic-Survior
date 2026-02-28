@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EnemyUnlockEntry" format=3 uid="uid://cj0igdud0tmjh"]
+
+[ext_resource type="PackedScene" uid="uid://b1qmhcs3u18tl" path="res://scene/enemy/undead.tscn" id="1_cecdx"]
+[ext_resource type="Script" uid="uid://b8kynvj5xuaby" path="res://resource/enemy/enemy.gd" id="2_kwi37"]
+
+[resource]
+script = ExtResource("2_kwi37")
+scene = ExtResource("1_cecdx")
+unlock_difficulty = -20
+ID = 12
+max_health = 1800.0

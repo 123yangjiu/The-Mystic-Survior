@@ -1,0 +1,150 @@
+[gd_scene format=3 uid="uid://d1xy0buqa0l3x"]
+
+[ext_resource type="Script" uid="uid://rsl4jg827i3e" path="res://script/enemy/main_enemy/enemy_xiaotrue.gd" id="1_ks07s"]
+[ext_resource type="Texture2D" uid="uid://dw82kbe2cly30" path="res://sucai/邪恶女巫.png" id="3_hx8ut"]
+[ext_resource type="PackedScene" uid="uid://bnactnfyipltl" path="res://scene/enemy_component/main_component/health_component.tscn" id="4_chtff"]
+[ext_resource type="PackedScene" uid="uid://c0i7tc6xpk0n8" path="res://scene/enemy_component/main_component/drop_component.tscn" id="5_ikh0l"]
+[ext_resource type="PackedScene" uid="uid://i5imcyd15vix" path="res://scene/游戏物件/exprience_bottle.tscn" id="6_10ayg"]
+[ext_resource type="PackedScene" uid="uid://f15fc5ggcq0l" path="res://scene/游戏物件/bonus_bottle.tscn" id="6_kvwgc"]
+[ext_resource type="PackedScene" uid="uid://daaqcmminiyk1" path="res://scene/游戏物件/blood_bottle.tscn" id="7_vxbbd"]
+[ext_resource type="PackedScene" uid="uid://g6ks4dc6kpht" path="res://scene/enemy_component/main_component/velocity_component.tscn" id="8_ihm2e"]
+[ext_resource type="PackedScene" uid="uid://dou6f0vkt4knk" path="res://scene/enemy/skeleton.tscn" id="10_ks07s"]
+[ext_resource type="PackedScene" uid="uid://12uey86sh54o" path="res://scene/enemy_component/main_component/wound_component.tscn" id="12_ljx7n"]
+[ext_resource type="PackedScene" uid="uid://do1skrx74372j" path="res://scene/enemy_component/main_component/attack_component.tscn" id="13_ff46a"]
+[ext_resource type="PackedScene" uid="uid://nxifhy12ej5c" path="res://scene/enemy_component/main_component/collision_controller.tscn" id="13_hcj85"]
+[ext_resource type="PackedScene" uid="uid://cyxnkvdq3ry2h" path="res://scene/enemy_component/main_component/effect_component.tscn" id="14_76xwk"]
+[ext_resource type="PackedScene" uid="uid://jb4clv2kbpah" path="res://scene/enemy_component/summon_component.tscn" id="14_ljx7n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ks07s"]
+atlas = ExtResource("3_hx8ut")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_10ayg"]
+atlas = ExtResource("3_hx8ut")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_doxqo"]
+atlas = ExtResource("3_hx8ut")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hcj85"]
+atlas = ExtResource("3_hx8ut")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ljx7n"]
+atlas = ExtResource("3_hx8ut")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fq6t5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ks07s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_10ayg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_doxqo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hcj85")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ljx7n")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dnewa"]
+size = Vector2(10.68502, 16.333334)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_76xwk"]
+size = Vector2(8.3476715, 14.333334)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7826l"]
+size = Vector2(5.008603, 12)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6nsvd"]
+radius = 120.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l56cb"]
+radius = 150.0
+
+[node name="Witch" type="CharacterBody2D" unique_id=1071289824]
+scale = Vector2(2.9948473, 3)
+collision_layer = 8
+collision_mask = 9
+motion_mode = 1
+script = ExtResource("1_ks07s")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1790568390 groups=["enemy"]]
+position = Vector2(0, -1.0000005)
+scale = Vector2(0.125, 0.1)
+sprite_frames = SubResource("SpriteFrames_fq6t5")
+animation = &"run"
+autoplay = "run"
+frame_progress = 0.53984517
+
+[node name="health_component" parent="." unique_id=18632350 instance=ExtResource("4_chtff")]
+max_health = 1200.0
+
+[node name="drop_component" parent="." unique_id=674284187 instance=ExtResource("5_ikh0l")]
+drop_thingandpersent = Dictionary[PackedScene, float]({
+ExtResource("6_10ayg"): 0.0,
+ExtResource("7_vxbbd"): 0.1,
+ExtResource("6_kvwgc"): 0.5
+})
+drop_range = 3
+
+[node name="velocity_component" parent="." unique_id=1191545137 instance=ExtResource("8_ihm2e")]
+speed = 90.0
+acceleration = 7.0
+turn_rate = 8.0
+
+[node name="WoundComponent" parent="." unique_id=1971662021 node_paths=PackedStringArray("collision_shape_2d") instance=ExtResource("12_ljx7n")]
+visible = false
+collision_shape_2d = NodePath("CollisionShape2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WoundComponent" unique_id=1505316489]
+position = Vector2(-1.0017197, 0.49999976)
+scale = Vector2(0.9999999, 1)
+shape = SubResource("RectangleShape2D_dnewa")
+
+[node name="AttackComponent" parent="." unique_id=2136703472 node_paths=PackedStringArray("collision_shape_2d") instance=ExtResource("13_ff46a")]
+visible = false
+collision_shape_2d = NodePath("CollisionShape2D")
+damage = 23.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackComponent" unique_id=1340015628]
+position = Vector2(-0.8347667, 0.16666675)
+scale = Vector2(0.9999999, 1)
+shape = SubResource("RectangleShape2D_76xwk")
+
+[node name="CollisionController" parent="." unique_id=387055937 node_paths=PackedStringArray("collision_shape_2d") instance=ExtResource("13_hcj85")]
+collision_shape_2d = NodePath("CollisionShape2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionController" unique_id=140211218]
+position = Vector2(-0.5008602, -1.5894572e-07)
+scale = Vector2(0.9999999, 1)
+shape = SubResource("RectangleShape2D_7826l")
+
+[node name="SummonComponent" parent="." unique_id=997544220 node_paths=PackedStringArray("collision_shape") instance=ExtResource("14_ljx7n")]
+collision_shape = NodePath("CollisionShape2D")
+summon_enemy = ExtResource("10_ks07s")
+spawn_r = 120.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SummonComponent" unique_id=946387808]
+shape = SubResource("CircleShape2D_6nsvd")
+
+[node name="Test" type="CollisionShape2D" parent="." unique_id=1495702885]
+visible = false
+scale = Vector2(0.9999999, 1)
+shape = SubResource("CircleShape2D_l56cb")
+disabled = true
+
+[node name="EffectComponent" parent="." unique_id=629594475 instance=ExtResource("14_76xwk")]
+position = Vector2(0, -3.3333333)
+scale = Vector2(0.3, 0.3)

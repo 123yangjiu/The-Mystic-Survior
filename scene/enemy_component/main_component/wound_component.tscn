@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://12uey86sh54o"]
+
+[ext_resource type="Script" uid="uid://bescgavc4v7so" path="res://script/enemy_component/main_component/wound_component.gd" id="1_wpiq0"]
+[ext_resource type="Script" uid="uid://1jtm0pwuxppv" path="res://script/enemy_component/inside_scene/inside_collision.gd" id="2_08un2"]
+
+[node name="WoundComponent" type="Node2D" unique_id=1971662021]
+script = ExtResource("1_wpiq0")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=847993684]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("2_08un2")
+
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

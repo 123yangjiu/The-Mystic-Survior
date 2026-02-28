@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bbctm8lc2symo"]
+
+[ext_resource type="Script" uid="uid://bds42w5nyyd12" path="res://script/enemy_component/chid_component/solid_velocity_component.gd" id="1_2brxv"]
+
+[node name="solid_velocity_component" type="Node2D" unique_id=715622741]
+script = ExtResource("1_2brxv")

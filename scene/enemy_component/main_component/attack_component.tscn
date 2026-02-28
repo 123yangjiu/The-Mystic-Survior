@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://do1skrx74372j"]
+
+[ext_resource type="Script" uid="uid://b0ruokmtntana" path="res://script/enemy_component/main_component/attack_component.gd" id="1_bm4xq"]
+[ext_resource type="Script" uid="uid://1jtm0pwuxppv" path="res://script/enemy_component/inside_scene/inside_collision.gd" id="2_kf5ga"]
+
+[node name="AttackComponent" type="Node2D" unique_id=2136703472]
+script = ExtResource("1_bm4xq")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=157919665]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("2_kf5ga")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

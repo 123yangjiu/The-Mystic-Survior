@@ -1,23 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://c04cbhvknqekg"]
+[gd_scene format=3 uid="uid://c04cbhvknqekg"]
 
-[ext_resource type="Script" uid="uid://dinfbs806yuka" path="res://script/upgrade/upgrade_screen.gd" id="1_0l67n"]
-[ext_resource type="PackedScene" uid="uid://c6t5pqka2y0xc" path="res://scene/ui/abilityupgradecard.tscn" id="2_bkjao"]
-[ext_resource type="PackedScene" uid="uid://cr32ffcse8os3" path="res://scene/ui/settingscreen.tscn" id="3_icf4o"]
+[ext_resource type="Script" uid="uid://dinfbs806yuka" path="res://script/文本及ui显示/upgrade/upgrade_screen.gd" id="1_0l67n"]
+[ext_resource type="PackedScene" uid="uid://c6t5pqka2y0xc" path="res://scene/ui/abilityupgradecard.tscn" id="2_icf4o"]
+[ext_resource type="PackedScene" uid="uid://5odfsqq8r60t" path="res://scene/ui/settingscreen_ingame.tscn" id="3_icf4o"]
 
-[node name="UpgradeScreen" type="CanvasLayer"]
+[node name="UpgradeScreen" type="CanvasLayer" unique_id=47086436]
 process_mode = 3
 script = ExtResource("1_0l67n")
-upgrade_card_scene = ExtResource("2_bkjao")
+upgrade_card_scene = ExtResource("2_icf4o")
 stop_screen = ExtResource("3_icf4o")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1239536034]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CardContainer" type="HBoxContainer" parent="MarginContainer"]
+[node name="CardContainer" type="HBoxContainer" parent="MarginContainer" unique_id=716952819]
 process_mode = 3
 layout_mode = 2
 size_flags_horizontal = 4
