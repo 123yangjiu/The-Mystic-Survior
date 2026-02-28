@@ -59,14 +59,13 @@ func on_stop_end()->void:
 
 
 #func _on_the_first_finished() -> void:
-	#play(the_first)
+    #play(the_first)
 #
 #func _on_with_wolf_finished() -> void:
-	#play(with_wolf)
+    #play(with_wolf)
 #
 #func _on_with_gorlen_finished() -> void:
-	#play(with_gorlen)
+    #play(with_gorlen)
 #
 #func _on_the_final_finished() -> void:
-	#play(the_final)
-
+    #play(the_final)

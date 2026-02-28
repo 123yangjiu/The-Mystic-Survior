@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://yy0os3e5cvfu"]
+[gd_scene load_steps=33 format=4 uid="uid://yy0os3e5cvfu"]
 
 [ext_resource type="Script" uid="uid://rt8ham21rr6r" path="res://script/game.gd" id="1_ve786"]
 [ext_resource type="PackedScene" uid="uid://cr32ffcse8os3" path="res://scene/ui/settingscreen.tscn" id="2_0halo"]
@@ -31,6 +31,7 @@
 [ext_resource type="AudioStream" uid="uid://cn3jcfk2hreus" path="res://sucai/back_music/Earth Turns To Our Feet_2.wav" id="28_8p2gu"]
 [ext_resource type="AudioStream" uid="uid://drcs7xaphbydr" path="res://sucai/back_music/Ariadne's Thread_3.wav" id="29_kv4hp"]
 [ext_resource type="Script" uid="uid://dx0x8onwy1rcq" path="res://script/测试场景/timer.gd" id="31_0halo"]
+[ext_resource type="PackedScene" uid="uid://bvkevrfjwtfw1" path="res://scene/ui/upgrade_record.tscn" id="32_8p2gu"]
 
 [node name="game" type="Node2D" groups=["主游戏"]]
 script = ExtResource("1_ve786")
@@ -136,6 +137,8 @@ bus = &"Music"
 wait_time = 5.0
 autostart = true
 script = ExtResource("31_0halo")
+
+[node name="CanvasLayer" parent="." instance=ExtResource("32_8p2gu")]
 
 [connection signal="finished" from="MusicManager/TheFirst" to="MusicManager" method="_on_the_first_finished"]
 [connection signal="finished" from="MusicManager/WithWolf" to="MusicManager" method="_on_with_wolf_finished"]

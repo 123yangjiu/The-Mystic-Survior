@@ -34,17 +34,17 @@ func Set_Ability_Upgrade(upgrades:Array[AbilityUpgrade]):#传入选项这个函�
 
 
 func on_upgrade_select(upgrade:AbilityUpgrade,_card:AbilityCard):
-	upgrade_selected.emit(upgrade)#把这个选项传出到其他地方，显示屏不负责
-	#更改升级后的数值
-	var children= get_parent().get_children()
-	if children.size()>=2:
-		return
-	if GameEvent.paused>0:
-		GameEvent.paused-=1
-		if GameEvent.paused==0:
-			get_tree().paused=false
-	#选择完能力之后游戏继续进行
-	queue_free()#选择完能力之后关掉能力升级显示屏
+    upgrade_selected.emit(upgrade)#把这个选项传出到其他地方，显示屏不负责
+    #更改升级后的数值
+    var children= get_parent().get_children()
+    if children.size()>=2:
+        return
+    if GameEvent.paused>0:
+        GameEvent.paused-=1
+        if GameEvent.paused==0:
+            get_tree().paused=false
+    #选择完能力之后游戏继续进行
+    queue_free()#选择完能力之后关掉能力升级显示屏
 
 
 func on_upgrade_ready(upgrade:AbilityUpgrade,card:AbilityCard)->void:
@@ -64,31 +64,30 @@ func on_upgrade_no_ready(upgrade:AbilityUpgrade,card:AbilityCard)->void:
 func _input(event: InputEvent) -> void:
 
 
-	if event.is_action_released("暂停"):
-		GameEvent.paused+=1
-		get_viewport().set_input_as_handled()
-		GameEvent.game_stop.emit()
-		var screen=stop_screen.instantiate()
-		add_child(screen)
-	elif event.is_action_released("left"):
-		if !ready_card:
-			ready_card=all_card.get(1)
-		var _index := all_card.find(ready_card)-1
-		if _index <0:
-			_index = all_card.size()+_index
-		var new_card = all_card.get(_index)
-		ready_card._on_texture_rect_mouse_exited()
-		new_card._on_texture_rect_mouse_entered()
-	elif event.is_action_released("right"):
-		if !ready_card:
-			ready_card=all_card.get(1)
-		var _index := all_card.find(ready_card)+1
-		if _index >all_card.size()-1:
-			_index-=all_card.size()
-		var new_card = all_card.get(_index)
-		ready_card._on_texture_rect_mouse_exited()
-		new_card._on_texture_rect_mouse_entered()
-	elif event.is_action_pressed("confirm"):
-		on_upgrade_select(ready_ability,null)
-	
-
+    if event.is_action_released("暂停"):
+        GameEvent.paused+=1
+        get_viewport().set_input_as_handled()
+        GameEvent.game_stop.emit()
+        var screen=stop_screen.instantiate()
+        add_child(screen)
+    elif event.is_action_released("left"):
+        if !ready_card:
+            ready_card=all_card.get(1)
+        var _index := all_card.find(ready_card)-1
+        if _index <0:
+            _index = all_card.size()+_index
+        var new_card = all_card.get(_index)
+        ready_card._on_texture_rect_mouse_exited()
+        new_card._on_texture_rect_mouse_entered()
+    elif event.is_action_released("right"):
+        if !ready_card:
+            ready_card=all_card.get(1)
+        var _index := all_card.find(ready_card)+1
+        if _index >all_card.size()-1:
+            _index-=all_card.size()
+        var new_card = all_card.get(_index)
+        ready_card._on_texture_rect_mouse_exited()
+        new_card._on_texture_rect_mouse_entered()
+    elif event.is_action_pressed("confirm"):
+        on_upgrade_select(ready_ability,null)
+    
