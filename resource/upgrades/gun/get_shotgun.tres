@@ -8,6 +8,5 @@ ID = "解锁霰弹枪"
 Sort = "枪"
 name = "开喷！"
 self_lock = 1
-lock_code = 1
 Description = "你的枪变为一把喷子！它每次攻击会喷射许多子弹！"
 metadata/_custom_type_script = "uid://dmyfvo2eu1rj2"

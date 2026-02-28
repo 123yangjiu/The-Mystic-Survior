@@ -10,7 +10,6 @@
 [ext_resource type="Resource" uid="uid://dq68qtu5n06bt" path="res://resource/upgrades/heaven_fury/get_heaven_fury.tres" id="7_fsyq4"]
 [ext_resource type="Resource" uid="uid://cjjqnoy3whssy" path="res://resource/upgrades/holy_light/light_speed.tres" id="8_60bj4"]
 [ext_resource type="Resource" uid="uid://c80ua6iia28p6" path="res://resource/upgrades/holy_light/light_power.tres" id="8_v45oq"]
-[ext_resource type="Resource" uid="uid://d4ai6yyxvaf2a" path="res://resource/upgrades/holy_light/light_bigger.tres" id="9_4lfsa"]
 [ext_resource type="Resource" uid="uid://dq2ug8ceqhgg0" path="res://resource/upgrades/fireball/get_fireball.tres" id="9_fsyq4"]
 [ext_resource type="Resource" uid="uid://brv0twbh4faty" path="res://resource/upgrades/fireball/fireballchuantou  .tres" id="11_qg2ea"]
 [ext_resource type="Resource" uid="uid://bqpb3vuil8nte" path="res://resource/upgrades/fireball/fireballnnumber.tres" id="12_k0v83"]
@@ -26,7 +25,7 @@
 [ext_resource type="Resource" uid="uid://dy38bx8w4yshf" path="res://resource/upgrades/ring/ring_power.tres" id="23_7t6fe"]
 [ext_resource type="Resource" uid="uid://bd0tr7xshvycr" path="res://resource/upgrades/ring/ring_rate_range.tres" id="24_p8jtb"]
 
-[node name="Upgrademanager" type="Node"]
+[node name="Upgrademanager" type="Node" unique_id=203097645]
 script = ExtResource("1_n8va6")
-upgrade_pool = Array[ExtResource("2_in5fl")]([ExtResource("3_mb64u"), ExtResource("5_tou26"), ExtResource("4_mb64u"), ExtResource("6_r42tk"), ExtResource("8_v45oq"), ExtResource("8_60bj4"), ExtResource("9_4lfsa"), ExtResource("9_fsyq4"), ExtResource("7_fsyq4"), ExtResource("11_qg2ea"), ExtResource("12_k0v83"), ExtResource("13_mqvp1"), ExtResource("14_k0v83"), ExtResource("15_u8tnl"), ExtResource("16_dqfs1"), ExtResource("17_onse2"), ExtResource("18_dqfs1"), ExtResource("19_onse2"), ExtResource("20_u0m20"), ExtResource("22_f4rvf"), ExtResource("23_7t6fe"), ExtResource("24_p8jtb")])
+upgrade_pool = Array[ExtResource("2_in5fl")]([ExtResource("3_mb64u"), ExtResource("5_tou26"), ExtResource("4_mb64u"), ExtResource("6_r42tk"), ExtResource("8_v45oq"), ExtResource("8_60bj4"), ExtResource("9_fsyq4"), ExtResource("7_fsyq4"), ExtResource("11_qg2ea"), ExtResource("12_k0v83"), ExtResource("13_mqvp1"), ExtResource("14_k0v83"), ExtResource("15_u8tnl"), ExtResource("16_dqfs1"), ExtResource("17_onse2"), ExtResource("18_dqfs1"), ExtResource("19_onse2"), ExtResource("20_u0m20"), ExtResource("22_f4rvf"), ExtResource("23_7t6fe"), ExtResource("24_p8jtb")])
 upgrade_screen_scene = ExtResource("4_in5fl")

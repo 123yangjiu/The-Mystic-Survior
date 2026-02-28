@@ -8,7 +8,6 @@
 [ext_resource type="Resource" uid="uid://oty2cgbisuck" path="res://resource/upgrades/holy_light/get_light.tres" id="6_82gj3"]
 [ext_resource type="Resource" uid="uid://c80ua6iia28p6" path="res://resource/upgrades/holy_light/light_power.tres" id="7_uh5dj"]
 [ext_resource type="Resource" uid="uid://cjjqnoy3whssy" path="res://resource/upgrades/holy_light/light_speed.tres" id="8_wssjq"]
-[ext_resource type="Resource" uid="uid://d4ai6yyxvaf2a" path="res://resource/upgrades/holy_light/light_bigger.tres" id="9_22uj0"]
 [ext_resource type="Resource" uid="uid://dq2ug8ceqhgg0" path="res://resource/upgrades/fireball/get_fireball.tres" id="10_5qp8m"]
 [ext_resource type="Resource" uid="uid://dq68qtu5n06bt" path="res://resource/upgrades/heaven_fury/get_heaven_fury.tres" id="11_e1gm4"]
 [ext_resource type="Resource" uid="uid://brv0twbh4faty" path="res://resource/upgrades/fireball/fireballchuantou  .tres" id="12_3ne6c"]
@@ -33,7 +32,7 @@
 
 [node name="GameEvent" type="Node" unique_id=1932009286]
 script = ExtResource("1_yrl0y")
-upgrade_pool = Array[ExtResource("2_tb2mb")]([ExtResource("15_7ypyw"), ExtResource("20_433l8"), ExtResource("19_ggiwx"), ExtResource("5_35wdu"), ExtResource("3_pxxb8"), ExtResource("4_03pc0"), ExtResource("10_5qp8m"), ExtResource("14_38l7a"), ExtResource("13_q8mot"), ExtResource("12_3ne6c"), ExtResource("11_e1gm4"), ExtResource("17_vg13k"), ExtResource("16_fdmk4"), ExtResource("18_ykekp"), ExtResource("6_82gj3"), ExtResource("7_uh5dj"), ExtResource("8_wssjq"), ExtResource("9_22uj0"), ExtResource("21_uxg5h"), ExtResource("22_8xfd1"), ExtResource("23_xv26x"), ExtResource("24_cx57s"), ExtResource("26_0gw0x"), ExtResource("25_ei3rv"), ExtResource("27_6c018"), ExtResource("28_1vuug"), ExtResource("29_ft214"), ExtResource("30_5qr4r")])
+upgrade_pool = Array[ExtResource("2_tb2mb")]([ExtResource("15_7ypyw"), ExtResource("20_433l8"), ExtResource("19_ggiwx"), ExtResource("5_35wdu"), ExtResource("3_pxxb8"), ExtResource("4_03pc0"), ExtResource("10_5qp8m"), ExtResource("14_38l7a"), ExtResource("13_q8mot"), ExtResource("12_3ne6c"), ExtResource("11_e1gm4"), ExtResource("17_vg13k"), ExtResource("16_fdmk4"), ExtResource("18_ykekp"), ExtResource("6_82gj3"), ExtResource("7_uh5dj"), ExtResource("8_wssjq"), ExtResource("21_uxg5h"), ExtResource("22_8xfd1"), ExtResource("23_xv26x"), ExtResource("24_cx57s"), ExtResource("26_0gw0x"), ExtResource("25_ei3rv"), ExtResource("27_6c018"), ExtResource("28_1vuug"), ExtResource("29_ft214"), ExtResource("30_5qr4r")])
 
 [node name="difficulty_timer" type="Timer" parent="." unique_id=710909234]
 wait_time = 37.0

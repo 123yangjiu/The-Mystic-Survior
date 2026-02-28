@@ -18,11 +18,10 @@ func on_ability_upgrade_add(upgrade:AbilityUpgrade,_current_upgrade:Dictionary):
 		timer.wait_time=max(base_wait_time*wait_range,base_wait_time*0.1)
 	if upgrade.ID=="光的力量":
 		damage_range*=1.3
+		scale_range*=1.20
+		max_range *=1.20
 	if upgrade.ID=="解锁光剑":
 		timer.start()
-	if upgrade.ID=="光剑变大":
-		scale_range*=1.30
-		max_range *=1.30
 
 func set_base(instance,_target_position:Vector2)->void:
 	if audio:

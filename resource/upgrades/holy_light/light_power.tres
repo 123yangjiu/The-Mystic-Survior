@@ -7,4 +7,4 @@ script = ExtResource("1_fpa04")
 ID = "光的力量"
 Sort = "光剑"
 name = "光的力量！"
-Description = "光剑的伤害增加30%"
+Description = "光剑的伤害增加30%,并且使长度增加20%"

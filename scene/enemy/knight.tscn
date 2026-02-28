@@ -191,8 +191,8 @@ max_health = 1000.0
 [node name="drop_component" parent="." unique_id=891120592 instance=ExtResource("5_7fhkn")]
 drop_thingandpersent = Dictionary[PackedScene, float]({
 ExtResource("6_elmko"): 0.0,
-ExtResource("7_d3vui"): 0.5,
-ExtResource("6_gpn6s"): 0.1
+ExtResource("7_d3vui"): 0.4,
+ExtResource("6_gpn6s"): 0.2
 })
 drop_range = 3
 

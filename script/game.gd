@@ -11,6 +11,7 @@ func start_game()->void:
 	GameEvent.difficulty=1
 	GameEvent.the_first=0
 	GameEvent.is_start=true
+	GameEvent.is_co_disappear=false
 	GameEvent.difficulty_timer.start()
 
 

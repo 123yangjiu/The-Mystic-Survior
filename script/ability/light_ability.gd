@@ -25,7 +25,9 @@ func flip()->void:
 		scale.x =- abs(scale.x)
 		if is_right:
 			scale.y *=-1
+			global_position=GameEvent.play_global_position+Vector2(0.0,21.0)
 	else :
 		scale.x =abs(scale.x)
 		if ! is_right:
 			scale.y *=-1
+			global_position=GameEvent.play_global_position+Vector2(0.0,21.0)

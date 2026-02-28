@@ -92,4 +92,4 @@ func set_speed(gap_range)->void:
 	db_value = clamp(db_value, -80, 6)
 	if audio:
 		audio.volume_db = db_value
-	timer.wait_time = max(base_wait_time*wait_range,wait_range*0.1)
+	timer.wait_time = max(base_wait_time*wait_range,base_wait_time*0.1)

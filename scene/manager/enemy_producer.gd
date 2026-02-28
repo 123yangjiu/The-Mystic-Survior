@@ -26,8 +26,6 @@ func _ready() -> void:
 	all_threat_event.append(boss_come)
 	#测试内容
 	await get_tree().create_timer(3.0).timeout
-	#mushroom_circle()
-	collision_disappear()
 
 func on_more_difficulty(difficulty):
 	#设置固定事件
@@ -137,7 +135,7 @@ func line_front(enemy:EnemyUnlockEntry,wave:=2,wait_time:=4.0,distance:=280.0)->
 func circle_interval(enemy:EnemyUnlockEntry,wave:=3,s_radius:=230.0,number:=18,wait_time:=0.09)->void:
 	for j in wave:
 		await circle_surround(enemy,s_radius*(10+j*2)/10,number,wait_time,false,pow(-1,j))
-		await get_tree().create_timer(0.2).timeout
+		await get_tree().create_timer(0.2,false).timeout
 
 func circle_surround(enemy:EnemyUnlockEntry,s_radius:=420.0,number:=70.0,wait_time:=0.0,is_slow:=true,direction:=1.0)->void:
 	for i in number:
@@ -155,7 +153,7 @@ func circle_surround(enemy:EnemyUnlockEntry,s_radius:=420.0,number:=70.0,wait_ti
 					component.speed *=0.5
 					component.turn_rate *=0.5
 		if wait_time!=0:
-			await get_tree().create_timer(wait_time).timeout
+			await get_tree().create_timer(wait_time,false).timeout
 
 func limit_position(which_position)->Vector2:
 	var final_position:Vector2
@@ -173,7 +171,7 @@ func mushroom_circle()->void:
 func collision_disappear()->void:
 	GameEvent.collision_disappear.emit()
 	GameEvent.is_co_disappear=true
-	await get_tree().create_timer(12).timeout
+	await get_tree().create_timer(12,false).timeout
 	GameEvent.collision_disappear_end.emit()
 	GameEvent.is_co_disappear=false
 
@@ -185,4 +183,4 @@ func boss_come()->void:
 			var index = randi_range(0,1)
 			enemy = enemy_manager.special_enemy.get(index)
 		single_appear(enemy)
-		await get_tree().create_timer(3.0).timeout
+		await get_tree().create_timer(3.0,false).timeout

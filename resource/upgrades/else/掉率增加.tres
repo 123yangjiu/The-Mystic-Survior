@@ -6,5 +6,6 @@
 script = ExtResource("1_d4nur")
 ID = "增加掉率"
 Sort = "角色能力"
+is_init = true
 name = "好日子还在后头呢"
 Description = "所有掉落物的掉落概率增加30%"

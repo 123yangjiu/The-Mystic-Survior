@@ -17,7 +17,6 @@
 [ext_resource type="Resource" uid="uid://oty2cgbisuck" path="res://resource/upgrades/holy_light/get_light.tres" id="15_sh81l"]
 [ext_resource type="Resource" uid="uid://c80ua6iia28p6" path="res://resource/upgrades/holy_light/light_power.tres" id="16_hfe5u"]
 [ext_resource type="Resource" uid="uid://cjjqnoy3whssy" path="res://resource/upgrades/holy_light/light_speed.tres" id="17_vis0a"]
-[ext_resource type="Resource" uid="uid://d4ai6yyxvaf2a" path="res://resource/upgrades/holy_light/light_bigger.tres" id="18_bp314"]
 [ext_resource type="Resource" uid="uid://cvcyibysmviov" path="res://resource/upgrades/ring/get_ring.tres" id="19_xvc7j"]
 [ext_resource type="Resource" uid="uid://dy38bx8w4yshf" path="res://resource/upgrades/ring/ring_power.tres" id="20_58664"]
 [ext_resource type="Resource" uid="uid://bd0tr7xshvycr" path="res://resource/upgrades/ring/ring_rate_range.tres" id="21_yrgvd"]
@@ -46,7 +45,7 @@
 layer = 2
 script = ExtResource("1_bw8iv")
 upgrade_card_scene = ExtResource("2_hdgep")
-all_upgrade = Array[ExtResource("3_wyphw")]([ExtResource("4_e7bnn"), ExtResource("5_ucao3"), ExtResource("6_aay3j"), ExtResource("7_mabtl"), ExtResource("8_dpopx"), ExtResource("9_8dpxf"), ExtResource("10_6wq5a"), ExtResource("11_4rou3"), ExtResource("12_ohvd8"), ExtResource("13_528nf"), ExtResource("14_7xkpe"), ExtResource("15_sh81l"), ExtResource("16_hfe5u"), ExtResource("17_vis0a"), ExtResource("18_bp314"), ExtResource("19_xvc7j"), ExtResource("20_58664"), ExtResource("21_yrgvd"), ExtResource("25_7xkpe"), ExtResource("26_sh81l"), ExtResource("27_hfe5u"), ExtResource("28_vis0a"), ExtResource("29_bp314"), ExtResource("30_xvc7j"), ExtResource("22_3uk6w"), ExtResource("24_slx2f"), ExtResource("23_g2lnk"), ExtResource("31_xvc7j")])
+all_upgrade = Array[ExtResource("3_wyphw")]([ExtResource("4_e7bnn"), ExtResource("5_ucao3"), ExtResource("6_aay3j"), ExtResource("7_mabtl"), ExtResource("8_dpopx"), ExtResource("9_8dpxf"), ExtResource("10_6wq5a"), ExtResource("11_4rou3"), ExtResource("12_ohvd8"), ExtResource("13_528nf"), ExtResource("14_7xkpe"), ExtResource("15_sh81l"), ExtResource("16_hfe5u"), ExtResource("17_vis0a"), ExtResource("19_xvc7j"), ExtResource("20_58664"), ExtResource("21_yrgvd"), ExtResource("25_7xkpe"), ExtResource("26_sh81l"), ExtResource("27_hfe5u"), ExtResource("28_vis0a"), ExtResource("29_bp314"), ExtResource("30_xvc7j"), ExtResource("22_3uk6w"), ExtResource("24_slx2f"), ExtResource("23_g2lnk"), ExtResource("31_xvc7j")])
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1056391145]
 anchors_preset = 15

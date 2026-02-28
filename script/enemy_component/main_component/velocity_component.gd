@@ -63,9 +63,10 @@ func move(character:Enemy):
 func set_speed(value)->void:
 	match GameEvent.mode_index:
 		0:
+			var new_speed = value
 			if GameEvent.easy_mode[GameEvent.EASY_MODE.is_slow] == true:
-				var new_speed = value*0.9
-				speed = new_speed
+				new_speed = value*0.9
+			speed = new_speed
 		2,3:
 			var new_speed = value*1.1
 			speed = new_speed
