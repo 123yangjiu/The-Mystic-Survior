@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="EnemyUnlockEntry" format=3 uid="uid://bbhoy3dpu0svy"]
+[gd_resource type="Resource" script_class="EnemyUnlockEntry" load_steps=0 format=3 uid="uid://bbhoy3dpu0svy"]
 
 [ext_resource type="PackedScene" uid="uid://cc3x2b78lonqh" path="res://scene/enemy/mushroomenemy.tscn" id="1_7sdbj"]
 [ext_resource type="Script" uid="uid://b8kynvj5xuaby" path="res://resource/enemy/enemy.gd" id="2_re03l"]

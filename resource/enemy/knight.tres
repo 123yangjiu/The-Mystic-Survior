@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="EnemyUnlockEntry" format=3 uid="uid://bwvsf8rcctefe"]
+[gd_resource type="Resource" script_class="EnemyUnlockEntry" load_steps=0 format=3 uid="uid://bwvsf8rcctefe"]
 
 [ext_resource type="PackedScene" uid="uid://dg0lowfwv0dg3" path="res://scene/enemy/knight.tscn" id="1_k6yrs"]
 [ext_resource type="Script" uid="uid://b8kynvj5xuaby" path="res://resource/enemy/enemy.gd" id="2_0fb2m"]

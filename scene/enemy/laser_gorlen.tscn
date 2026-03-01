@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://ds6dgydsoy0iu"]
+[gd_scene load_steps=0 format=3 uid="uid://ds6dgydsoy0iu"]
 
 [ext_resource type="Script" uid="uid://rsl4jg827i3e" path="res://script/enemy/main_enemy/enemy_xiaotrue.gd" id="1_hho4c"]
 [ext_resource type="Texture2D" uid="uid://bmxqf0ab5k4hw" path="res://sucai/enemy/gorlen/Character_sheet.png" id="2_ywgf1"]

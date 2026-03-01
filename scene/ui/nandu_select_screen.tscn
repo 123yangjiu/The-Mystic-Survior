@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bcl7q5l1pi6um"]
+[gd_scene load_steps=0 format=3 uid="uid://bcl7q5l1pi6um"]
 
 [ext_resource type="Texture2D" uid="uid://bnsuipu308xow" path="res://sucai/background/简单.png" id="1_ca8ti"]
 [ext_resource type="Script" uid="uid://14032qo5ai0j" path="res://scene/ui/nandu_select_screen.gd" id="1_x0d57"]

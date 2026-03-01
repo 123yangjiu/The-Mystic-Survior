@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://b1qmhcs3u18tl"]
+[gd_scene load_steps=0 format=3 uid="uid://b1qmhcs3u18tl"]
 
 [ext_resource type="Script" uid="uid://rsl4jg827i3e" path="res://script/enemy/main_enemy/enemy_xiaotrue.gd" id="1_5r1dr"]
 [ext_resource type="Texture2D" uid="uid://bcs3whjtswty2" path="res://sucai/png/idle2.png" id="2_5r1dr"]

@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://fiu7e6h1ip2a"]
+[gd_scene load_steps=0 format=3 uid="uid://fiu7e6h1ip2a"]
 
 [ext_resource type="PackedScene" uid="uid://bpkwk5owtcco0" path="res://scene/ui/brochure_button.tscn" id="1_x6job"]
 [ext_resource type="PackedScene" uid="uid://cq1npoewigh57" path="res://scene/ui/skill_tujian_button.tscn" id="2_17udk"]

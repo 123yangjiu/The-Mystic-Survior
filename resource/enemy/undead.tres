@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="EnemyUnlockEntry" format=3 uid="uid://cj0igdud0tmjh"]
+[gd_resource type="Resource" script_class="EnemyUnlockEntry" load_steps=0 format=3 uid="uid://cj0igdud0tmjh"]
 
 [ext_resource type="PackedScene" uid="uid://b1qmhcs3u18tl" path="res://scene/enemy/undead.tscn" id="1_cecdx"]
 [ext_resource type="Script" uid="uid://b8kynvj5xuaby" path="res://resource/enemy/enemy.gd" id="2_kwi37"]

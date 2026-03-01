@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dhpe0rjt1ry4r"]
+[gd_scene load_steps=0 format=3 uid="uid://dhpe0rjt1ry4r"]
 
 [ext_resource type="Script" uid="uid://ctop6k471xgun" path="res://script/manager/enemy_manager.gd" id="1_vlakn"]
 [ext_resource type="Script" uid="uid://bptd6w5318vkp" path="res://scene/manager/enemy_producer.gd" id="2_lenjj"]

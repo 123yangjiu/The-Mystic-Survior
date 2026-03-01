@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" format=3 uid="uid://yllbkhnqlq2e"]
+[gd_resource type="SpriteFrames" load_steps=9 format=3 uid="uid://yllbkhnqlq2e"]
 
 [ext_resource type="Texture2D" uid="uid://ccw1sevq6qydv" path="res://sucai/迷你地牢素材/used/tile_0089.png" id="1_5jd4x"]
 [ext_resource type="Texture2D" uid="uid://bopbigjlqgvr8" path="res://sucai/迷你地牢素材/used/tile_0090.png" id="2_8vuoe"]

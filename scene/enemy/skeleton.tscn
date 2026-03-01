@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dou6f0vkt4knk"]
+[gd_scene load_steps=0 format=3 uid="uid://dou6f0vkt4knk"]
 
 [ext_resource type="Script" uid="uid://rsl4jg827i3e" path="res://script/enemy/main_enemy/enemy_xiaotrue.gd" id="1_fwp1t"]
 [ext_resource type="Texture2D" uid="uid://dw82kbe2cly30" path="res://sucai/enemy/邪恶女巫.png" id="3_fwp1t"]
