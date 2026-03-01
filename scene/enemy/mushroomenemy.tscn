@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cc3x2b78lonqh"]
 
 [ext_resource type="Script" uid="uid://rsl4jg827i3e" path="res://script/enemy/main_enemy/enemy_xiaotrue.gd" id="1_eao75"]
-[ext_resource type="Texture2D" uid="uid://cpxpef8s5wt6m" path="res://sucai/新蘑菇/Mushroom-Run.png" id="2_ry05w"]
+[ext_resource type="Texture2D" uid="uid://cpxpef8s5wt6m" path="res://sucai/enemy/新蘑菇/Mushroom-Run.png" id="2_ry05w"]
 [ext_resource type="PackedScene" uid="uid://bnactnfyipltl" path="res://scene/enemy_component/main_component/health_component.tscn" id="3_1vn3o"]
 [ext_resource type="PackedScene" uid="uid://c0i7tc6xpk0n8" path="res://scene/enemy_component/main_component/drop_component.tscn" id="4_ry05w"]
 [ext_resource type="PackedScene" uid="uid://i5imcyd15vix" path="res://scene/游戏物件/exprience_bottle.tscn" id="6_eao75"]

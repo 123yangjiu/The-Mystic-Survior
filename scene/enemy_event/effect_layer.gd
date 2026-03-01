@@ -7,7 +7,8 @@ extends CanvasLayer
 @onready var end: Node2D = $End
 
 func _ready() -> void:
-	GameEvent.collision_disappear.connect(on_collision_disappear)
+	#GameEvent.collision_disappear.connect(on_collision_disappear)
+	pass
 
 func on_collision_disappear()->void:
 	audio_stream_player.play()

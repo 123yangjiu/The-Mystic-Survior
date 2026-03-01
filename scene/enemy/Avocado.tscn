@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b53artfqc50vr"]
 
 [ext_resource type="Script" uid="uid://rsl4jg827i3e" path="res://script/enemy/main_enemy/enemy_xiaotrue.gd" id="1_7e3xo"]
-[ext_resource type="Texture2D" uid="uid://dotk0sasi16mg" path="res://sucai/亡灵鳄梨/avacado_character_sprite_sheet_transparent_矫正.png" id="2_13prn"]
+[ext_resource type="Texture2D" uid="uid://dotk0sasi16mg" path="res://sucai/enemy/亡灵鳄梨/avacado_character_sprite_sheet_transparent_矫正.png" id="2_13prn"]
 [ext_resource type="PackedScene" uid="uid://bnactnfyipltl" path="res://scene/enemy_component/main_component/health_component.tscn" id="2_jhxc5"]
 [ext_resource type="PackedScene" uid="uid://c0i7tc6xpk0n8" path="res://scene/enemy_component/main_component/drop_component.tscn" id="3_3lfw1"]
 [ext_resource type="PackedScene" uid="uid://i5imcyd15vix" path="res://scene/游戏物件/exprience_bottle.tscn" id="5_886t3"]

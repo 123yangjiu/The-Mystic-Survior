@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vh5v7ile6uc1"
-path="res://.godot/imported/knight_dash.png-ffa5d669e627e3d2533588bde106a133.ctex"
+uid="uid://dnerhjpn8tfgc"
+path="res://.godot/imported/slime_purple.png-671744cba9253a7933135a567a6b29cb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sucai/Knight/knight_dash.png"
-dest_files=["res://.godot/imported/knight_dash.png-ffa5d669e627e3d2533588bde106a133.ctex"]
+source_file="res://sucai/enemy/slime/slime_purple.png"
+dest_files=["res://.godot/imported/slime_purple.png-671744cba9253a7933135a567a6b29cb.ctex"]
 
 [params]
 

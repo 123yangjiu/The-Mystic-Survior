@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnerhjpn8tfgc"
-path="res://.godot/imported/slime_purple.png-9824543670dd8fe691949e5b4de5bf99.ctex"
+uid="uid://ba08fgggijguw"
+path="res://.godot/imported/wolf_red.png-8a0b32c0e7ce06514b10a6db9c52bf2a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sucai/slime/slime_purple.png"
-dest_files=["res://.godot/imported/slime_purple.png-9824543670dd8fe691949e5b4de5bf99.ctex"]
+source_file="res://sucai/enemy/wolf/wolf_red.png"
+dest_files=["res://.godot/imported/wolf_red.png-8a0b32c0e7ce06514b10a6db9c52bf2a.ctex"]
 
 [params]
 

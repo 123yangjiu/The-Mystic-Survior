@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c85rj8kbkfbax"]
 
 [ext_resource type="Script" uid="uid://btocvhvfk42nm" path="res://script/class/turn_screen.gd" id="1_1wx4k"]
-[ext_resource type="Texture2D" uid="uid://bvm7b61unvrep" path="res://sucai/wolf/icon.png" id="2_07ljs"]
+[ext_resource type="Texture2D" uid="uid://bvm7b61unvrep" path="res://sucai/enemy/wolf/icon.png" id="2_07ljs"]
 [ext_resource type="Texture2D" uid="uid://bnsuipu308xow" path="res://sucai/background/简单.png" id="5_alfdo"]
 [ext_resource type="Texture2D" uid="uid://ctv6qoahoumm5" path="res://sucai/background/5.png" id="6_u3j6l"]
 [ext_resource type="PackedScene" uid="uid://d5e5o1xdxw5m" path="res://scene/ui/change_nandu/confirm.tscn" id="10_1fl1v"]

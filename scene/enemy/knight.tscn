@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dg0lowfwv0dg3"]
 
 [ext_resource type="Script" uid="uid://rsl4jg827i3e" path="res://script/enemy/main_enemy/enemy_xiaotrue.gd" id="1_xiaok"]
-[ext_resource type="Texture2D" uid="uid://vh5v7ile6uc1" path="res://sucai/Knight/knight_dash.png" id="2_0mouk"]
-[ext_resource type="Texture2D" uid="uid://mybwidsudo2r" path="res://sucai/Knight/knight-Sheet_whitefx.png" id="3_elmko"]
+[ext_resource type="Texture2D" uid="uid://vh5v7ile6uc1" path="res://sucai/enemy/Knight/knight_dash.png" id="2_0mouk"]
+[ext_resource type="Texture2D" uid="uid://mybwidsudo2r" path="res://sucai/enemy/Knight/knight-Sheet_whitefx.png" id="3_elmko"]
 [ext_resource type="PackedScene" uid="uid://bnactnfyipltl" path="res://scene/enemy_component/main_component/health_component.tscn" id="4_hhqmu"]
 [ext_resource type="PackedScene" uid="uid://c0i7tc6xpk0n8" path="res://scene/enemy_component/main_component/drop_component.tscn" id="5_7fhkn"]
 [ext_resource type="PackedScene" uid="uid://i5imcyd15vix" path="res://scene/游戏物件/exprience_bottle.tscn" id="6_elmko"]
@@ -166,8 +166,9 @@ radius = 8.687976
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_06v4k"]
 size = Vector2(10.351114, 17.666668)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_0mouk"]
-radius = 70.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0mouk"]
+radius = 39.0
+height = 139.57306
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uvkxi"]
 radius = 150.0
@@ -230,14 +231,15 @@ scale = Vector2(0.9999999, 1)
 shape = SubResource("RectangleShape2D_06v4k")
 
 [node name="RushComponent" parent="." unique_id=2077482623 node_paths=PackedStringArray("collision_shape", "animation_sprite") instance=ExtResource("13_k4x40")]
-collision_shape = NodePath("CollisionShape2D")
+collision_shape = NodePath("CollisionShape2D2")
 animation_sprite = NodePath("../AnimatedSprite2D")
 rush_interval = 2.5
 rush_speed = 600.0
 is_animation = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RushComponent" unique_id=1395934061]
-shape = SubResource("CircleShape2D_0mouk")
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="RushComponent" unique_id=1937955136]
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_0mouk")
 
 [node name="Test" type="CollisionShape2D" parent="." unique_id=1024972749]
 visible = false

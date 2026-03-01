@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dim58fw12nffs"]
+
+[ext_resource type="Script" uid="uid://dmlx366rwqets" path="res://script/enemy_component/ability_component.gd" id="1_hyt21"]
+
+[node name="sword_ability_controller" type="Node2D" unique_id=1232058442]
+script = ExtResource("1_hyt21")
+
+[node name="Timer" type="Timer" parent="." unique_id=1965552918]
+wait_time = 2.0
+autostart = true

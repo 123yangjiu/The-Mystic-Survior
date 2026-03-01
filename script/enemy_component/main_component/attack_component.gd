@@ -3,7 +3,8 @@ extends EnemyComponent
 
 enum TYPE{
 	enemy,
-	ability
+	ability,
+	enemy_ability
 }
 @onready var area_2d: AreaInComponent = $Area2D
 @export var collision_shape_2d: CollisionShape2D
@@ -19,10 +20,11 @@ func initial()->void:
 		if node == collision_shape_2d:
 			var ori_global_position = collision_shape_2d.global_position
 			remove_child(collision_shape_2d)
-			area_2d.add_child(collision_shape_2d)
-			collision_shape_2d.global_position=ori_global_position
+			#area_2d.add_child(collision_shape_2d)
+			area_2d.call_deferred("add_child",collision_shape_2d)
+			#collision_shape_2d.global_position=ori_global_position
 	match type:
-		TYPE.enemy:
+		TYPE.enemy,TYPE.enemy_ability:
 			area_2d.set_collision_mask_value(2,true)
 			area_2d.set_collision_mask_value(3,false)
 		TYPE.ability:
@@ -66,5 +68,5 @@ func _on_area_2d_area_entered(area:Area2D) -> void:
 					if velocity_component:
 						if velocity_component.turn_rate < ori_rate:
 							velocity_component.turn_rate = ori_rate
-		TYPE.ability:
+		TYPE.ability,TYPE.enemy_ability:
 			pass

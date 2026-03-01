@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cyxnkvdq3ry2h"]
 
 [ext_resource type="Script" uid="uid://b48q7wssbrmhc" path="res://script/enemy_component/main_component/effect_component.gd" id="1_nm13r"]
-[ext_resource type="Texture2D" uid="uid://bjqhgm87ct3r2" path="res://sucai/wolf/run.png" id="2_ae0f7"]
+[ext_resource type="Texture2D" uid="uid://bjqhgm87ct3r2" path="res://sucai/enemy/wolf/run.png" id="2_ae0f7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_da1gx"]
 atlas = ExtResource("2_ae0f7")
@@ -67,7 +67,7 @@ script = ExtResource("1_nm13r")
 
 [node name="WolfAnimation" type="AnimatedSprite2D" parent="." unique_id=1441160863]
 visible = false
-modulate = Color(1, 1, 1, 0.5882353)
+modulate = Color(1, 1, 1, 0.39215687)
 show_behind_parent = true
 position = Vector2(0, 7.9999995)
 scale = Vector2(0.8, 0.8)

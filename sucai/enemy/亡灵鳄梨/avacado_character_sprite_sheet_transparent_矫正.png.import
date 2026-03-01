@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvm7b61unvrep"
-path="res://.godot/imported/icon.png-cecd8cf0978c49f413c368bf4a9b676f.ctex"
+uid="uid://dotk0sasi16mg"
+path="res://.godot/imported/avacado_character_sprite_sheet_transparent_矫正.png-a3dbbca04b1eb6d258df71a22f9ec69e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sucai/wolf/icon.png"
-dest_files=["res://.godot/imported/icon.png-cecd8cf0978c49f413c368bf4a9b676f.ctex"]
+source_file="res://sucai/enemy/亡灵鳄梨/avacado_character_sprite_sheet_transparent_矫正.png"
+dest_files=["res://.godot/imported/avacado_character_sprite_sheet_transparent_矫正.png-a3dbbca04b1eb6d258df71a22f9ec69e.ctex"]
 
 [params]
 

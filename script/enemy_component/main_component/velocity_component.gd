@@ -3,6 +3,8 @@ class_name VelocityController
 @export var speed:float=0.0 :set=set_speed
 @export var acceleration:float=5
 @export var turn_rate:= 5.0   # 转向速度
+
+var need_direction_node:Node2D
 var is_initial:=true
 var velocity=Vector2.ZERO
 

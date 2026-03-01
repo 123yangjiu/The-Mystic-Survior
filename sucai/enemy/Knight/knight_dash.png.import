@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://utp7qg7xofwa"
-path="res://.godot/imported/aurigaascendedidlenoshadow-Sheet.png-fba3d673d2bf2391a9d73515f87dbf8b.ctex"
+uid="uid://vh5v7ile6uc1"
+path="res://.godot/imported/knight_dash.png-2bcd4a546e9ceb3594af6ecb545da2aa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sucai/黑暗猫头鹰/aurigaascendedidlenoshadow-Sheet.png"
-dest_files=["res://.godot/imported/aurigaascendedidlenoshadow-Sheet.png-fba3d673d2bf2391a9d73515f87dbf8b.ctex"]
+source_file="res://sucai/enemy/Knight/knight_dash.png"
+dest_files=["res://.godot/imported/knight_dash.png-2bcd4a546e9ceb3594af6ecb545da2aa.ctex"]
 
 [params]
 

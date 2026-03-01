@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://ckyp3yyromhq4"]
+
+[ext_resource type="Script" uid="uid://c4iso161ddnxy" path="res://script/enemy_component/chid_component/check_ability_component.gd" id="1_mob2y"]
+
+[node name="CheckAbilitykComponent" type="Node2D" unique_id=2136703472]
+script = ExtResource("1_mob2y")
+
+[node name="CheckArea" type="Area2D" parent="." unique_id=119651323]
+collision_layer = 0
+collision_mask = 32
+
+[node name="Timer" type="Timer" parent="." unique_id=76079776]
+one_shot = true
+
+[connection signal="body_entered" from="CheckArea" to="." method="_on_check_area_body_entered"]
+[connection signal="body_exited" from="CheckArea" to="." method="_on_check_area_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

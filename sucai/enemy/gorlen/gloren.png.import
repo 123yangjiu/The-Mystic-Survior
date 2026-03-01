@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dotk0sasi16mg"
-path="res://.godot/imported/avacado_character_sprite_sheet_transparent_矫正.png-058b0b5a7874f8522822587343664dbc.ctex"
+uid="uid://cdvly15ec124i"
+path="res://.godot/imported/gloren.png-921157be64225702e72833c18d0a6b8a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sucai/亡灵鳄梨/avacado_character_sprite_sheet_transparent_矫正.png"
-dest_files=["res://.godot/imported/avacado_character_sprite_sheet_transparent_矫正.png-058b0b5a7874f8522822587343664dbc.ctex"]
+source_file="res://sucai/enemy/gorlen/gloren.png"
+dest_files=["res://.godot/imported/gloren.png-921157be64225702e72833c18d0a6b8a.ctex"]
 
 [params]
 

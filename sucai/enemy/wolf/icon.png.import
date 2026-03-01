@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpxpef8s5wt6m"
-path="res://.godot/imported/Mushroom-Run.png-a528911758ff68c1a203370a06f96d13.ctex"
+uid="uid://bvm7b61unvrep"
+path="res://.godot/imported/icon.png-0107a452fa4326510c741d6f00e6a7b1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sucai/新蘑菇/Mushroom-Run.png"
-dest_files=["res://.godot/imported/Mushroom-Run.png-a528911758ff68c1a203370a06f96d13.ctex"]
+source_file="res://sucai/enemy/wolf/icon.png"
+dest_files=["res://.godot/imported/icon.png-0107a452fa4326510c741d6f00e6a7b1.ctex"]
 
 [params]
 

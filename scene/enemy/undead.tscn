@@ -336,11 +336,13 @@ points = PackedVector2Array(-38, -30, -35, -40, -20, -50, 0, -60, 20, -65, 45, -
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_enx4l"]
 points = PackedVector2Array(-68, 10, -40, 35, -20, 40, 0, 42, 20, 42, 45, 38, 75, 30, 90, 18, 98, 0, 92, -18, 75, -38, 75, 0, 58, 20, 30, 25, 0, 28, -30, 25)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_mxsgp"]
-radius = 112.11155
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s5fh6"]
+radius = 63.0
+height = 224.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_s5fh6"]
-radius = 170.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mxsgp"]
+radius = 120.0
+height = 350.0
 
 [node name="Undead" type="CharacterBody2D" unique_id=1993204809 groups=["高级"]]
 collision_layer = 8
@@ -404,17 +406,19 @@ shape = SubResource("ConvexPolygonShape2D_enx4l")
 disabled = true
 
 [node name="CheckAttackComponent" parent="." unique_id=1190550355 node_paths=PackedStringArray("check_collision", "animation_player") instance=ExtResource("14_s5fh6")]
-visible = false
 check_collision = NodePath("CollisionShape2D")
 animation_player = NodePath("../AnimationPlayer")
 damage = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CheckAttackComponent" unique_id=484819078]
-shape = SubResource("CircleShape2D_mxsgp")
+position = Vector2(-3, -10)
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_s5fh6")
 
 [node name="BlinkComponent" parent="." unique_id=2077482623 node_paths=PackedStringArray("animation_sprite", "collision_shape") instance=ExtResource("15_s5fh6")]
 animation_sprite = NodePath("../AnimatedSprite2D")
 collision_shape = NodePath("CollisionShape2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BlinkComponent" unique_id=1787896738]
-shape = SubResource("CircleShape2D_s5fh6")
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_mxsgp")

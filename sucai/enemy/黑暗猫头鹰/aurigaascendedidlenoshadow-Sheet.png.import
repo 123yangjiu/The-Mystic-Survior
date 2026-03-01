@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dw82kbe2cly30"
-path="res://.godot/imported/邪恶女巫.png-56b10ba813f6031799cc998719fe7ae7.ctex"
+uid="uid://utp7qg7xofwa"
+path="res://.godot/imported/aurigaascendedidlenoshadow-Sheet.png-f764ce86c893d684ee42b44dfa1f24c1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sucai/邪恶女巫.png"
-dest_files=["res://.godot/imported/邪恶女巫.png-56b10ba813f6031799cc998719fe7ae7.ctex"]
+source_file="res://sucai/enemy/黑暗猫头鹰/aurigaascendedidlenoshadow-Sheet.png"
+dest_files=["res://.godot/imported/aurigaascendedidlenoshadow-Sheet.png-f764ce86c893d684ee42b44dfa1f24c1.ctex"]
 
 [params]
 

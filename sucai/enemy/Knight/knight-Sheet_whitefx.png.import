@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://mybwidsudo2r"
-path="res://.godot/imported/knight-Sheet_whitefx.png-9ec6889653456d79b0cbf499b5a81035.ctex"
+path="res://.godot/imported/knight-Sheet_whitefx.png-38ed294b61dbbfdee5ae285d65622b4e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sucai/Knight/knight-Sheet_whitefx.png"
-dest_files=["res://.godot/imported/knight-Sheet_whitefx.png-9ec6889653456d79b0cbf499b5a81035.ctex"]
+source_file="res://sucai/enemy/Knight/knight-Sheet_whitefx.png"
+dest_files=["res://.godot/imported/knight-Sheet_whitefx.png-38ed294b61dbbfdee5ae285d65622b4e.ctex"]
 
 [params]
 

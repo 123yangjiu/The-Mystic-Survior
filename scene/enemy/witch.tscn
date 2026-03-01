@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d1xy0buqa0l3x"]
 
 [ext_resource type="Script" uid="uid://rsl4jg827i3e" path="res://script/enemy/main_enemy/enemy_xiaotrue.gd" id="1_ks07s"]
-[ext_resource type="Texture2D" uid="uid://dw82kbe2cly30" path="res://sucai/邪恶女巫.png" id="3_hx8ut"]
+[ext_resource type="Texture2D" uid="uid://dw82kbe2cly30" path="res://sucai/enemy/邪恶女巫.png" id="3_hx8ut"]
 [ext_resource type="PackedScene" uid="uid://bnactnfyipltl" path="res://scene/enemy_component/main_component/health_component.tscn" id="4_chtff"]
 [ext_resource type="PackedScene" uid="uid://c0i7tc6xpk0n8" path="res://scene/enemy_component/main_component/drop_component.tscn" id="5_ikh0l"]
 [ext_resource type="PackedScene" uid="uid://i5imcyd15vix" path="res://scene/游戏物件/exprience_bottle.tscn" id="6_10ayg"]
@@ -67,8 +67,9 @@ size = Vector2(8.3476715, 14.333334)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7826l"]
 size = Vector2(5.008603, 12)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_6nsvd"]
-radius = 120.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_76xwk"]
+radius = 66.66667
+height = 239.7451
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l56cb"]
 radius = 150.0
@@ -132,12 +133,13 @@ scale = Vector2(0.9999999, 1)
 shape = SubResource("RectangleShape2D_7826l")
 
 [node name="SummonComponent" parent="." unique_id=997544220 node_paths=PackedStringArray("collision_shape") instance=ExtResource("14_ljx7n")]
-collision_shape = NodePath("CollisionShape2D")
+collision_shape = NodePath("CollisionShape2D2")
 summon_enemy = ExtResource("10_ks07s")
 spawn_r = 120.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SummonComponent" unique_id=946387808]
-shape = SubResource("CircleShape2D_6nsvd")
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="SummonComponent" unique_id=1587135478]
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_76xwk")
 
 [node name="Test" type="CollisionShape2D" parent="." unique_id=1495702885]
 visible = false

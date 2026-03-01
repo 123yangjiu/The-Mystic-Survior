@@ -41,12 +41,15 @@ func on_more_difficulty(difficulty):
 		16:
 			var enemy = find_enemy(EnemyUnlockEntry.ALL_ID.knight)
 			circle_surround(enemy,500.0,3,5.0)
-		20:
+		18:
 			var enemy = find_enemy(EnemyUnlockEntry.ALL_ID.undead)
-			single_appear(enemy)
+			circle_surround(enemy,500.0,2,5.0)
 	if difficulty>=13 and difficulty%2 ==1:
-		var enemy = find_enemy(EnemyUnlockEntry.ALL_ID.witch)
-		single_appear(enemy)
+		if difficulty>=29:
+			boss_come()
+		else :
+			var enemy = find_enemy(EnemyUnlockEntry.ALL_ID.witch)
+			single_appear(enemy)
 		#加入女巫
 
 func _on_normal_timeout() -> void:

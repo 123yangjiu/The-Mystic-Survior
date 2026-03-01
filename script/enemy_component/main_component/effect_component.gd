@@ -17,7 +17,6 @@ func set_collision_disappear()->void:
 	if GameEvent.is_co_disappear:
 		_owner.animated_sprite_2d.modulate.a =0.6
 
-
 func on_collision_disappear()->void:
 	var _owner = owner as Enemy
 	if GameEvent.play_global_position <_owner.global_position:

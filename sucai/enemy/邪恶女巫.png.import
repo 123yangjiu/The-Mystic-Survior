@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1nyfiavgxiia"
-path="res://.godot/imported/Aurigaidlewithshadow-Sheet.png-3a5dd0a36ba392f1c7748e6b77919e7e.ctex"
+uid="uid://dw82kbe2cly30"
+path="res://.godot/imported/邪恶女巫.png-09a5cff7f770c6e0adf64bb086c07de3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sucai/黑暗猫头鹰/Aurigaidlewithshadow-Sheet.png"
-dest_files=["res://.godot/imported/Aurigaidlewithshadow-Sheet.png-3a5dd0a36ba392f1c7748e6b77919e7e.ctex"]
+source_file="res://sucai/enemy/邪恶女巫.png"
+dest_files=["res://.godot/imported/邪恶女巫.png-09a5cff7f770c6e0adf64bb086c07de3.ctex"]
 
 [params]
 

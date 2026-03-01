@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cc2wlol2swean"]
 
 [ext_resource type="Script" uid="uid://rsl4jg827i3e" path="res://script/enemy/main_enemy/enemy_xiaotrue.gd" id="1_1ou4j"]
-[ext_resource type="Texture2D" uid="uid://ba08fgggijguw" path="res://sucai/wolf/wolf_red.png" id="3_yd75g"]
+[ext_resource type="Texture2D" uid="uid://ba08fgggijguw" path="res://sucai/enemy/wolf/wolf_red.png" id="3_yd75g"]
 [ext_resource type="PackedScene" uid="uid://bnactnfyipltl" path="res://scene/enemy_component/main_component/health_component.tscn" id="4_u5nm4"]
 [ext_resource type="PackedScene" uid="uid://c0i7tc6xpk0n8" path="res://scene/enemy_component/main_component/drop_component.tscn" id="5_8dqby"]
 [ext_resource type="PackedScene" uid="uid://i5imcyd15vix" path="res://scene/游戏物件/exprience_bottle.tscn" id="6_ontlg"]

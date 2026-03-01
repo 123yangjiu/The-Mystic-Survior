@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjqhgm87ct3r2"
-path="res://.godot/imported/run.png-ace4aafb5f14254c2d47275d2aa8cdc7.ctex"
+uid="uid://c5pv16ay5lo7q"
+path="res://.godot/imported/Laser_sheet.png-c47546b90e3bcbfe5271b7a0b14879cf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sucai/wolf/run.png"
-dest_files=["res://.godot/imported/run.png-ace4aafb5f14254c2d47275d2aa8cdc7.ctex"]
+source_file="res://sucai/enemy/gorlen/Laser_sheet.png"
+dest_files=["res://.godot/imported/Laser_sheet.png-c47546b90e3bcbfe5271b7a0b14879cf.ctex"]
 
 [params]
 
