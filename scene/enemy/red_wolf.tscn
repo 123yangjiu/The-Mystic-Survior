@@ -127,6 +127,7 @@ shape = SubResource("CircleShape2D_khgf6")
 
 [node name="CopyComponent" parent="." unique_id=1334063376 node_paths=PackedStringArray("collision_shape_2d") instance=ExtResource("12_u5nm4")]
 collision_shape_2d = NodePath("CollisionShape2D")
+number = 1
 angle = 1.5699999999999998
 distance = 90
 

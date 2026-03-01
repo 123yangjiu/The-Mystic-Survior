@@ -135,7 +135,7 @@ func line_front(enemy:EnemyUnlockEntry,wave:=2,wait_time:=4.0,distance:=280.0)->
 		_shape.queue_free()
 		await get_tree().create_timer(wait_time).timeout
 
-func circle_interval(enemy:EnemyUnlockEntry,wave:=3,s_radius:=230.0,number:=18,wait_time:=0.09)->void:
+func circle_interval(enemy:EnemyUnlockEntry,wave:=3,s_radius:=260.0,number:=16,wait_time:=0.1)->void:
 	for j in wave:
 		await circle_surround(enemy,s_radius*(10+j*2)/10,number,wait_time,false,pow(-1,j))
 		await get_tree().create_timer(0.2,false).timeout

@@ -51,12 +51,16 @@ func _on_copy_body_entered(body: Node2D) -> void:
 
 func set_copy_object(another_self:Enemy)->void:
 	var _owner = owner as Enemy
-	var near_component_instance =near_component.instantiate()
+	var near_component_instance =near_component.instantiate() as VelocityController
 	var enemy_player = get_tree().get_first_node_in_group("enemylayer")
 	enemy_player.add_child(another_self)
 	another_self.scale *=gap_percent
 	if ! another_self.is_node_ready():
 		await another_self.ready
+	var self_velocity:VelocityController
+	for self_component in _owner.all_component:
+		if self_component is VelocityController:
+			self_velocity=self_component
 	for component:EnemyComponent in another_self.all_component:
 		if component is CopyComponent:
 			component.is_copy=true
@@ -65,7 +69,8 @@ func set_copy_object(another_self:Enemy)->void:
 			another_self.remove_child(component) 
 			another_self.add_child(near_component_instance)
 			near_component_instance.owner = another_self
-			near_component_instance.speed = component.speed*gap_percent
-			near_component_instance.acceleration =component.acceleration
-			near_component_instance.velocity =component.velocity
+			near_component_instance.speed = self_velocity.speed*gap_percent
+			near_component_instance.acceleration =self_velocity.acceleration*gap_percent
+			near_component_instance.turn_rate = self_velocity.turn_rate*gap_percent
+			near_component_instance.velocity =self_velocity.velocity*gap_percent
 	another_self.health_component.max_health =_owner.health_component.max_health*gap_percent
