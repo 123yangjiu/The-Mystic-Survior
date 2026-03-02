@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bmhhunaykr38a"
+path="res://.godot/imported/Enemy Approaches.wav-1bff1a6bf8c16c537a11909c863e841c.sample"
+
+[deps]
+
+source_file="res://sucai/back_music/main_theme/Enemy Approaches.wav"
+dest_files=["res://.godot/imported/Enemy Approaches.wav-1bff1a6bf8c16c537a11909c863e841c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

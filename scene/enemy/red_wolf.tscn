@@ -1,4 +1,4 @@
-[gd_scene load_steps=0 format=3 uid="uid://cc2wlol2swean"]
+[gd_scene format=3 uid="uid://cc2wlol2swean"]
 
 [ext_resource type="Script" uid="uid://rsl4jg827i3e" path="res://script/enemy/main_enemy/enemy_xiaotrue.gd" id="1_1ou4j"]
 [ext_resource type="Texture2D" uid="uid://ba08fgggijguw" path="res://sucai/enemy/wolf/wolf_red.png" id="3_yd75g"]
@@ -94,12 +94,12 @@ autoplay = "run"
 frame_progress = 0.4662893
 
 [node name="health_component" parent="." unique_id=1938155654 instance=ExtResource("4_u5nm4")]
-max_health = 100.0
+max_health = 90.0
 
 [node name="velocity_component" parent="." unique_id=1282821471 instance=ExtResource("9_bw7n5")]
-speed = 150.0
+speed = 135.0
 acceleration = 8.0
-turn_rate = 4.0
+turn_rate = 2.5
 
 [node name="drop_component" parent="." unique_id=1025857586 instance=ExtResource("5_8dqby")]
 drop_thingandpersent = Dictionary[PackedScene, float]({
@@ -120,7 +120,7 @@ shape = SubResource("RectangleShape2D_gp7yn")
 [node name="AttackComponent" parent="." unique_id=2136703472 node_paths=PackedStringArray("collision_shape_2d") instance=ExtResource("11_khgf6")]
 visible = false
 collision_shape_2d = NodePath("CollisionShape2D")
-damage = 30.0
+damage = 28.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackComponent" unique_id=1700450820]
 shape = SubResource("CircleShape2D_khgf6")

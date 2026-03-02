@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=13 format=3 uid="uid://ogx41dwx6784"]
+[gd_resource type="TileSet" format=3 uid="uid://ogx41dwx6784"]
 
 [ext_resource type="Texture2D" uid="uid://hom1idtk1vw8" path="res://sucai/草地城堡风格的背景/Top_Down/Texture/TX Tileset Grass.png" id="1_vqq3v"]
 [ext_resource type="Texture2D" uid="uid://cdy582h2ah3wc" path="res://sucai/草地城堡风格的背景/Top_Down/Texture/TX Plant.png" id="2_pq5vo"]

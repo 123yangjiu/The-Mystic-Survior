@@ -7,7 +7,7 @@ var lashuan_2_pitch
 
 func set_variable()->void:
 	#射程，子弹数量，射击间隔，转头间隔，位置和后坐力
-	max_range=300
+	max_range=350
 	number = 3
 	fire_interval=1.0
 	turn_interval =0.02

@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=8 format=3 uid="uid://dbgauou15hq13"]
+[gd_resource type="Theme" format=3 uid="uid://dbgauou15hq13"]
 
 [ext_resource type="Texture2D" uid="uid://b8cvc7tkn20k1" path="res://sucai/UI/长按钮_第二版.png" id="1_cjv63"]
 [ext_resource type="FontFile" uid="uid://ceoy0esmffpt8" path="res://resource/theme/fusion-pixel-12px-monospaced-zh_hans.ttf" id="1_jbdqx"]

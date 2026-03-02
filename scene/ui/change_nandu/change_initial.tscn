@@ -3,7 +3,7 @@
 [ext_resource type="Theme" uid="uid://brtk7glajnjmp" path="res://resource/theme/no_theme.tres" id="1_4n5iw"]
 [ext_resource type="Script" uid="uid://ccgrse1iyfw57" path="res://scene/ui/change_nandu/change_initial.gd" id="2_4n5iw"]
 [ext_resource type="Texture2D" uid="uid://bhjmdeamnulcw" path="res://sucai/UI/checkbutton-Sheet.png" id="3_486fq"]
-[ext_resource type="PackedScene" uid="uid://poq71m7mgiul" path="res://scene/ui/change_nandu/skill_select.tscn" id="3_xyoxb"]
+[ext_resource type="PackedScene" uid="uid://cmamxyrkgf5ku" path="res://scene/ui/change_nandu/easy_skill_select.tscn" id="3_xyoxb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c6q57"]
 atlas = ExtResource("3_486fq")

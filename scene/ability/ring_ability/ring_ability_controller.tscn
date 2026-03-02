@@ -11,7 +11,7 @@ timer = NodePath("Timer")
 audio = NodePath("AudioStreamPlayer2D")
 
 [node name="Timer" type="Timer" parent="." unique_id=1254108780]
-wait_time = 4.5
+wait_time = 4.800000000000001
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1113312468]
 stream = ExtResource("2_00eck")

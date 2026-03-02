@@ -44,6 +44,7 @@ func _ready() -> void:
 	enemy_filiter()
 	normal_timer.start()
 	check_health_timer.start()
+	
 
 func enemy_filiter():
 	if ! will_back_group.is_empty():
@@ -89,11 +90,11 @@ func on_more_difficulty(difficulty):
 func _on_check_health_timeout() -> void:
 	all_health= check_health()
 	if target_time:
-		var percent = clamp(all_health/target_health,0.1,2.0)
+		var percent = clamp(all_health/target_health,0.2,1.5)
 		normal_timer.wait_time = target_time*percent
 
 func set_target_health()->void:
-	var number = min(GameEvent.difficulty*8,150)
+	var number = min(GameEvent.difficulty*8,160)
 	var the_health:=0.0
 	for enemy in unlocked_group:
 		var weight = enemy.weight

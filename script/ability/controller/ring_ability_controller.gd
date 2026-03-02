@@ -23,6 +23,6 @@ func on_ability_upgrade_add(upgrade:AbilityUpgrade,_current_upgrade:Dictionary):
 		if timer.wait_time==wait_range*0.1:
 			_speed_scale=1.5
 	if upgrade.ID=="环的伤害":
-		damage_range*=1.45
+		damage_range*=1.3
 	if upgrade.ID=="解锁法环":
 		timer.start()

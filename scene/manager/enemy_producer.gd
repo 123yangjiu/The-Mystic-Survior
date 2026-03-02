@@ -4,6 +4,7 @@ extends Node
 
 var enemy_layer:Node
 #管理特殊事件
+var we_enemy:Array[EnemyUnlockEntry]
 var all_special_event:Array[Callable]=[]
 var all_threat_event:Array[Callable]=[]
 #生成时与玩家的距离
@@ -25,7 +26,6 @@ func _ready() -> void:
 	all_threat_event.append(collision_disappear)
 	all_threat_event.append(boss_come)
 	#测试内容
-	await get_tree().create_timer(3.0).timeout
 
 func on_more_difficulty(difficulty):
 	#设置固定事件
@@ -49,7 +49,7 @@ func on_more_difficulty(difficulty):
 			boss_come()
 		else :
 			var enemy = find_enemy(EnemyUnlockEntry.ALL_ID.witch)
-			single_appear(enemy)
+			single_appear(enemy,380.0)
 		#加入女巫
 
 func _on_normal_timeout() -> void:
@@ -94,11 +94,10 @@ func normal_special():
 	#再按照一定限度选取敌人
 	var ready_enemy:Array[EnemyUnlockEntry]
 	for enemy in enemy_manager.unlocked_group:
-		if enemy.unlock_difficulty<gap+1 and enemy.ID!=EnemyUnlockEntry.ALL_ID.escape_box:
+		if enemy.unlock_difficulty<gap+1 and enemy.ID!=EnemyUnlockEntry.ALL_ID.escape_box and enemy.ID != EnemyUnlockEntry.ALL_ID.laser_gorlen and enemy.ID != EnemyUnlockEntry.ALL_ID.red_wolf:
 			ready_enemy.append(enemy)
 	var choose_enemy = ready_enemy.pick_random()
 	event.call(choose_enemy)
-	print("一般事件：",rangdf_index)
 
 func real_special():
 	var event :Callable= all_threat_event.pick_random()
@@ -135,10 +134,10 @@ func line_front(enemy:EnemyUnlockEntry,wave:=2,wait_time:=4.0,distance:=280.0)->
 		_shape.queue_free()
 		await get_tree().create_timer(wait_time).timeout
 
-func circle_interval(enemy:EnemyUnlockEntry,wave:=3,s_radius:=260.0,number:=16,wait_time:=0.1)->void:
+func circle_interval(enemy:EnemyUnlockEntry,wave:=3,s_radius:=280.0,number:=16,wait_time:=0.1)->void:
 	for j in wave:
 		await circle_surround(enemy,s_radius*(10+j*2)/10,number,wait_time,false,pow(-1,j))
-		await get_tree().create_timer(0.2,false).timeout
+		await get_tree().create_timer(0.5,false).timeout
 
 func circle_surround(enemy:EnemyUnlockEntry,s_radius:=420.0,number:=70.0,wait_time:=0.0,is_slow:=true,direction:=1.0)->void:
 	for i in number:
@@ -165,9 +164,18 @@ func limit_position(which_position)->Vector2:
 	return final_position
 #特殊事件
 func mushroom_circle()->void:
+	SPAWN_R = 300
+	enemy_manager.check_health_timer.wait_time = 10.0
+	enemy_manager.check_health_timer.start()
+	enemy_manager.set_target_health()
+	enemy_manager._on_check_health_timeout()
 	var enemy = find_enemy(EnemyUnlockEntry.ALL_ID.mushroom)
 	circle_surround(enemy,450.0,55)
 	circle_surround(enemy,400.0,50)
+	await get_tree().create_timer(20,false).timeout
+	SPAWN_R=350
+	enemy_manager.check_health_timer.wait_time = 2.0
+	enemy_manager.check_health_timer.start()
 
 func collision_disappear()->void:
 	GameEvent.collision_disappear.emit()

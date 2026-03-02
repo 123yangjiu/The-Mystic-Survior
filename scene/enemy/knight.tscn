@@ -1,4 +1,4 @@
-[gd_scene load_steps=0 format=3 uid="uid://dg0lowfwv0dg3"]
+[gd_scene format=3 uid="uid://dg0lowfwv0dg3"]
 
 [ext_resource type="Script" uid="uid://rsl4jg827i3e" path="res://script/enemy/main_enemy/enemy_xiaotrue.gd" id="1_xiaok"]
 [ext_resource type="Texture2D" uid="uid://vh5v7ile6uc1" path="res://sucai/enemy/Knight/knight_dash.png" id="2_0mouk"]
@@ -167,8 +167,8 @@ radius = 8.687976
 size = Vector2(10.351114, 17.666668)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0mouk"]
-radius = 39.0
-height = 139.57306
+radius = 41.666668
+height = 146.25119
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uvkxi"]
 radius = 150.0
@@ -198,7 +198,7 @@ ExtResource("6_gpn6s"): 0.2
 drop_range = 3
 
 [node name="velocity_component" parent="." unique_id=1627718359 instance=ExtResource("8_nduui")]
-speed = 105.0
+speed = 125.0
 acceleration = 7.0
 turn_rate = 8.0
 

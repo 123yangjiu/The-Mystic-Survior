@@ -10,7 +10,7 @@
 size = Vector2(30, 8.5)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bveje"]
-radius = 60.0
+radius = 70.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1pmwx"]
 atlas = ExtResource("4_e7o43")
@@ -144,7 +144,7 @@ disabled = true
 visible = false
 self_modulate = Color(1, 1, 1, 0.78431374)
 position = Vector2(13, -7)
-scale = Vector2(2, 3)
+scale = Vector2(2.5, 3.75)
 sprite_frames = SubResource("SpriteFrames_wtr3p")
 animation = &"explotion"
 frame = 11

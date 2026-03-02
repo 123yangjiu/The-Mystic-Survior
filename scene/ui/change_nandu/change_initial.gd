@@ -17,7 +17,7 @@ func target()->void:
 	add_child(skill_screen)
 
 func back()->void:
-	GameEvent.easy_mode[GameEvent.EASY_MODE.is_initial]=false
+	GameEvent.easy_mode[GameEvent.EASY_MODE.is_initial] =false
 
 func to_initial()->void:
 	self.button_up.connect(_on_button_up)

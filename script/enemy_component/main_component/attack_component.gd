@@ -18,11 +18,9 @@ var damage_range:=1.0
 func initial()->void:
 	for node in get_children():
 		if node == collision_shape_2d:
-			var ori_global_position = collision_shape_2d.global_position
+			#var ori_global_position = collision_shape_2d.global_position
 			remove_child(collision_shape_2d)
-			#area_2d.add_child(collision_shape_2d)
 			area_2d.call_deferred("add_child",collision_shape_2d)
-			#collision_shape_2d.global_position=ori_global_position
 	match type:
 		TYPE.enemy,TYPE.enemy_ability:
 			area_2d.set_collision_mask_value(2,true)

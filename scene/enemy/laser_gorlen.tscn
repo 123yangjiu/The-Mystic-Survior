@@ -1,4 +1,4 @@
-[gd_scene load_steps=0 format=3 uid="uid://ds6dgydsoy0iu"]
+[gd_scene format=3 uid="uid://ds6dgydsoy0iu"]
 
 [ext_resource type="Script" uid="uid://rsl4jg827i3e" path="res://script/enemy/main_enemy/enemy_xiaotrue.gd" id="1_hho4c"]
 [ext_resource type="Texture2D" uid="uid://bmxqf0ab5k4hw" path="res://sucai/enemy/gorlen/Character_sheet.png" id="2_ywgf1"]
@@ -145,8 +145,8 @@ radius = 30.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_7viam"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2mnqa"]
-radius = 133.0
-height = 492.0
+radius = 111.0
+height = 412.0
 
 [node name="LaserGorlen" type="CharacterBody2D" unique_id=1993204809 groups=["高级"]]
 collision_layer = 8
@@ -155,12 +155,13 @@ motion_mode = 1
 script = ExtResource("1_hho4c")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1871702201 groups=["enemy"]]
+modulate = Color(0.7, 0.85, 1, 1)
 position = Vector2(0, -4.9999995)
 scale = Vector2(2.2, 1.755)
 sprite_frames = SubResource("SpriteFrames_fq6t5")
-animation = &"shoot"
+animation = &"run"
 autoplay = "run"
-frame_progress = 0.43550315
+frame_progress = 0.81066793
 
 [node name="health_component" parent="." unique_id=555444483 instance=ExtResource("3_l5wcj")]
 max_health = 500.0
@@ -172,8 +173,7 @@ ExtResource("6_ilpuc"): 0.04
 })
 
 [node name="velocity_component" parent="." unique_id=1132711392 instance=ExtResource("7_gfiv6")]
-speed = 50.0
-turn_rate = 10.0
+speed = 45.0
 
 [node name="WoundComponent" parent="." unique_id=1971662021 node_paths=PackedStringArray("collision_shape_2d") instance=ExtResource("8_ny5pf")]
 visible = false

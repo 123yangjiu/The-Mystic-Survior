@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dt77ktjxtftev"]
 
 [ext_resource type="Theme" uid="uid://brtk7glajnjmp" path="res://resource/theme/no_theme.tres" id="1_at0qy"]
-[ext_resource type="Script" uid="uid://ccgrse1iyfw57" path="res://scene/ui/change_nandu/change_initial.gd" id="2_k08xg"]
-[ext_resource type="PackedScene" uid="uid://ddkbpslcasdke" path="res://scene/ui/change_nandu/challenge/initial_select.tscn" id="3_at0qy"]
+[ext_resource type="Script" uid="uid://c0sglalcdnlkc" path="res://scene/ui/change_nandu/challenge/erase_initial.gd" id="2_cicf1"]
+[ext_resource type="PackedScene" uid="uid://poq71m7mgiul" path="res://scene/ui/change_nandu/challenge/skill_select.tscn" id="3_at0qy"]
 [ext_resource type="Texture2D" uid="uid://bhjmdeamnulcw" path="res://sucai/UI/checkbutton-Sheet.png" id="4_v87is"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c6q57"]
@@ -83,7 +83,7 @@ offset_top = 17.0
 offset_right = 335.0
 offset_bottom = 37.0
 theme = ExtResource("1_at0qy")
-script = ExtResource("2_k08xg")
+script = ExtResource("2_cicf1")
 skill = ExtResource("3_at0qy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1200808836]

@@ -60,10 +60,6 @@ region = Rect2(0, 1200, 300, 100)
 atlas = ExtResource("2_72ifx")
 region = Rect2(0, 1300, 300, 100)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ddeu2"]
-atlas = ExtResource("2_72ifx")
-region = Rect2(0, 1400, 300, 100)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_fx3bp"]
 animations = [{
 "frames": [{
@@ -95,6 +91,9 @@ animations = [{
 "texture": SubResource("AtlasTexture_xhqmi")
 }, {
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_xhqmi")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_3xe7t")
 }, {
 "duration": 1.0,
@@ -108,13 +107,10 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_1i02f")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ddeu2")
 }],
 "loop": false,
 "name": &"default",
-"speed": 7.0
+"speed": 6.0
 }]
 
 [sub_resource type="Animation" id="Animation_rt8kj"]
@@ -146,7 +142,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_l440w"]
 resource_name = "swing"
-length = 2.1
+length = 2.5
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -167,7 +163,7 @@ tracks/1/path = NodePath("AttackComponent/CollisionShape2D:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1.28, 2.1),
+"times": PackedFloat32Array(0, 1.6667, 2.3333),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [true, false, true]
@@ -179,7 +175,7 @@ tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(1.28, 2.1),
+"times": PackedFloat32Array(1.5, 2.4),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [],
@@ -214,7 +210,7 @@ _data = {
 size = Vector2(257, 20)
 
 [node name="LaserAbility" type="Node2D" unique_id=2013728779 node_paths=PackedStringArray("attack_component", "animation_player")]
-scale = Vector2(0.9, 0.9)
+scale = Vector2(0.8, 0.8)
 script = ExtResource("1_w0ard")
 attack_component = NodePath("AttackComponent")
 animation_player = NodePath("AnimationPlayer")

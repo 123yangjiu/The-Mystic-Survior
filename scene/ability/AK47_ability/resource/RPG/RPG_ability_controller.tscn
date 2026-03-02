@@ -15,7 +15,7 @@ timer = NodePath("Reload")
 audio = NodePath("AudioStreamPlayer2D")
 
 [node name="Reload" type="Timer" parent="." unique_id=2077055730]
-wait_time = 4.0
+wait_time = 3.0
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2055677243]
 stream = ExtResource("4_tlwfg")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=0 format=3 uid="uid://dhpe0rjt1ry4r"]
+[gd_scene format=3 uid="uid://dhpe0rjt1ry4r"]
 
 [ext_resource type="Script" uid="uid://ctop6k471xgun" path="res://script/manager/enemy_manager.gd" id="1_vlakn"]
 [ext_resource type="Script" uid="uid://bptd6w5318vkp" path="res://scene/manager/enemy_producer.gd" id="2_lenjj"]
@@ -9,7 +9,7 @@
 [ext_resource type="Resource" uid="uid://dcshkpdkqmlmv" path="res://resource/enemy/wolf.tres" id="6_61i4e"]
 [ext_resource type="Resource" uid="uid://ckcolpwqwrycv" path="res://resource/enemy/owl.tres" id="7_t65ep"]
 [ext_resource type="Resource" uid="uid://pff6k5t7ol3j" path="res://resource/enemy/gorlen.tres" id="8_q5qsi"]
-[ext_resource type="Resource" uid="uid://c02spyysuegq7" path="res://resource/enemy/escape_box.tres" id="9_0i1ta"]
+[ext_resource type="Resource" uid="uid://qv48nrelfx8f" path="res://resource/enemy/escape_box.tres" id="9_0i1ta"]
 [ext_resource type="Resource" uid="uid://bktp5mcm6ea6c" path="res://resource/enemy/red_wolf.tres" id="10_tmr65"]
 [ext_resource type="Resource" uid="uid://bkhu54afqw1yl" path="res://resource/enemy/box.tres" id="11_dxqt4"]
 [ext_resource type="Resource" uid="uid://bwvsf8rcctefe" path="res://resource/enemy/knight.tres" id="11_p63pb"]

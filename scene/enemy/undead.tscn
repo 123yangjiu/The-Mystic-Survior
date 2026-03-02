@@ -1,4 +1,4 @@
-[gd_scene load_steps=0 format=3 uid="uid://b1qmhcs3u18tl"]
+[gd_scene format=3 uid="uid://b1qmhcs3u18tl"]
 
 [ext_resource type="Script" uid="uid://rsl4jg827i3e" path="res://script/enemy/main_enemy/enemy_xiaotrue.gd" id="1_5r1dr"]
 [ext_resource type="Texture2D" uid="uid://bcs3whjtswty2" path="res://sucai/png/idle2.png" id="2_5r1dr"]
@@ -370,7 +370,7 @@ ExtResource("5_s5fh6"): 1.0
 drop_range = 3
 
 [node name="velocity_component" parent="." unique_id=1132711392 instance=ExtResource("7_bieux")]
-speed = 100.0
+speed = 120.0
 turn_rate = 10.0
 
 [node name="WoundComponent" parent="." unique_id=1971662021 node_paths=PackedStringArray("collision_shape_2d") instance=ExtResource("8_4118r")]
@@ -418,6 +418,7 @@ shape = SubResource("CapsuleShape2D_s5fh6")
 [node name="BlinkComponent" parent="." unique_id=2077482623 node_paths=PackedStringArray("animation_sprite", "collision_shape") instance=ExtResource("15_s5fh6")]
 animation_sprite = NodePath("../AnimatedSprite2D")
 collision_shape = NodePath("CollisionShape2D")
+distance = 75
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BlinkComponent" unique_id=1787896738]
 rotation = -1.5707964

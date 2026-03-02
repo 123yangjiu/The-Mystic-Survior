@@ -1,4 +1,4 @@
-[gd_scene load_steps=0 format=3 uid="uid://5odfsqq8r60t"]
+[gd_scene format=3 uid="uid://5odfsqq8r60t"]
 
 [ext_resource type="Script" uid="uid://dyo1scdlv4n7e" path="res://script/文本及ui显示/settingscreen.gd" id="1_a3dry"]
 [ext_resource type="PackedScene" uid="uid://djyv3a54a2tlj" path="res://scene/ui/change_screen.tscn" id="2_bisql"]
@@ -76,11 +76,12 @@ theme_override_font_sizes/font_size = 36
 text = "退出"
 
 [node name="Return" parent="." unique_id=887643300 instance=ExtResource("7_1fpl6")]
-custom_minimum_size = Vector2(205, 50)
-offset_left = 81.0
+custom_minimum_size = Vector2(165, 50)
+offset_left = 97.0
 offset_top = 286.0
-offset_right = 286.0
+offset_right = 262.0
 offset_bottom = 336.0
+text = "退出游戏"
 
 [node name="ChangeYaogan" parent="." unique_id=1603881200 instance=ExtResource("8_bisql")]
 offset_left = 295.0

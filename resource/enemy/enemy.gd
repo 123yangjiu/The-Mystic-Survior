@@ -14,7 +14,8 @@ enum ALL_ID{
 	red_wolf,
 	witch,
 	mushroom,
-	undead
+	undead,
+	laser_gorlen
 }
 
 @export var scene: PackedScene

@@ -1,6 +1,6 @@
 extends VelocityController
 
-@export var max_distance:=40000.0
+@export var max_distance:=30000.0
 
 var ori_speed:float
 
@@ -21,8 +21,8 @@ func get_player_direction()->Vector2:
 	var length =direction.length_squared()
 	if length < 5000.0:
 		can_escape=true
-	if length>max_distance:
-		var slow_percent = clamp(0.8-(max_distance-40000.0)/100000.0,0,0.8) 
+	if length>max_distance and can_escape:
+		var slow_percent = clamp(0.8-(length-max_distance)/10000.0,0,0.7) 
 		speed= ori_speed*slow_percent
 	else:
 		speed=ori_speed

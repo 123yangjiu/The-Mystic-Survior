@@ -1,4 +1,4 @@
-[gd_scene load_steps=0 format=3 uid="uid://d1xy0buqa0l3x"]
+[gd_scene format=3 uid="uid://d1xy0buqa0l3x"]
 
 [ext_resource type="Script" uid="uid://rsl4jg827i3e" path="res://script/enemy/main_enemy/enemy_xiaotrue.gd" id="1_ks07s"]
 [ext_resource type="Texture2D" uid="uid://dw82kbe2cly30" path="res://sucai/enemy/邪恶女巫.png" id="3_hx8ut"]
@@ -117,7 +117,7 @@ shape = SubResource("RectangleShape2D_dnewa")
 [node name="AttackComponent" parent="." unique_id=2136703472 node_paths=PackedStringArray("collision_shape_2d") instance=ExtResource("13_ff46a")]
 visible = false
 collision_shape_2d = NodePath("CollisionShape2D")
-damage = 23.0
+damage = 29.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackComponent" unique_id=1340015628]
 position = Vector2(-0.8347667, 0.16666675)
@@ -135,7 +135,7 @@ shape = SubResource("RectangleShape2D_7826l")
 [node name="SummonComponent" parent="." unique_id=997544220 node_paths=PackedStringArray("collision_shape") instance=ExtResource("14_ljx7n")]
 collision_shape = NodePath("CollisionShape2D2")
 summon_enemy = ExtResource("10_ks07s")
-spawn_r = 120.0
+spawn_r = 140.0
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="SummonComponent" unique_id=1587135478]
 rotation = -1.5707964

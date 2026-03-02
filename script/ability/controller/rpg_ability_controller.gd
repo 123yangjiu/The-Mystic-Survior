@@ -1,8 +1,8 @@
 extends AK47AbilityController
 
 #爆炸范围
-var check_range :=100.0
-var expolotion_damage :=50
+var check_range :=70.0
+var expolotion_damage :=60
 
 func set_variable()->void:
 	#射程，子弹数量，射击间隔，转头间隔，位置
@@ -32,9 +32,9 @@ func check_enemy()->Array[Node]:
 		var A:=0
 		var B:=0
 		for another_enemy in enemies_clone:
-			if another_enemy.global_position.distance_squared_to(a_global_position)<pow(check_range,2):
+			if another_enemy.global_position.distance_squared_to(a_global_position)<pow(check_range*number_range,2):
 				A+=1
-			if another_enemy.global_position.distance_squared_to(b_global_position)<pow(check_range,2):
+			if another_enemy.global_position.distance_squared_to(b_global_position)<pow(check_range*number_range,2):
 				B+=1
 		return A>B
 	)
