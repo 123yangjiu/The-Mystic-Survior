@@ -8,6 +8,6 @@ script = ExtResource("2_tir0i")
 scene = ExtResource("1_m2fm2")
 unlock_difficulty = 21
 weight = 0.02
-ID = 13
+ID = 14
 max_health = 500.0
 metadata/_custom_type_script = "uid://b8kynvj5xuaby"

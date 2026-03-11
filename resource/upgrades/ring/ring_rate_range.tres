@@ -1,6 +1,6 @@
-[gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=2 format=3 uid="uid://bd0tr7xshvycr"]
+[gd_resource type="Resource" script_class="AbilityUpgrade" format=3 uid="uid://bd0tr7xshvycr"]
 
-[ext_resource type="Script" path="res://resource/ability_upgrade.gd" id="1_qj2er"]
+[ext_resource type="Script" uid="uid://dmyfvo2eu1rj2" path="res://resource/ability_upgrade.gd" id="1_qj2er"]
 
 [resource]
 script = ExtResource("1_qj2er")
@@ -9,5 +9,4 @@ Sort = "环"
 name = "透支魔力"
 Description = "死灵法环的大小增大15%
 并使生成时间-20%
-
-——但是透支的那份10分钟后再结算（"
+"

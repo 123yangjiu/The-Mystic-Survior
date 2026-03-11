@@ -10,6 +10,7 @@ enum ALL_ID{
 	gorlen,
 	box,
 	escape_box,
+	skeleton,
 	knight,
 	red_wolf,
 	witch,

@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dobo7mvexp22k"]
+
+[ext_resource type="Theme" uid="uid://5bh541wa60l3" path="res://resource/theme/green_theme.tres" id="1_owovl"]
+[ext_resource type="Script" uid="uid://c78m07jellbsv" path="res://script/文本及ui显示/button/tujian_button.gd" id="2_nkq30"]
+[ext_resource type="PackedScene" uid="uid://fiu7e6h1ip2a" path="res://scene/ui/tujian.tscn" id="3_ijkqw"]
+
+[node name="TurnScreen" type="Button" unique_id=778113867]
+custom_minimum_size = Vector2(100, 50)
+offset_left = -1.0
+offset_right = 99.0
+offset_bottom = 50.0
+theme = ExtResource("1_owovl")
+text = "杂项"
+script = ExtResource("2_nkq30")
+tujian = ExtResource("3_ijkqw")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

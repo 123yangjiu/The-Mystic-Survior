@@ -9,14 +9,18 @@ var current_upgrade={}#一个字典存放当前所有的能力buff
 var mystrious_pool:Array[AbilityUpgrade]=[]#放置已被选完4次的能力，给予很低的概率获取第5次
 var mystrious_probality:=0.02
 var limit_int:=3
-
+var limit_number:=3
 var initial_upgrade:AbilityUpgrade
+
+var erase_ability:Array
 
 func _ready():
 	upgrade_pool=GameEvent.upgrade_pool
 	experience_manager.level_up.connect(on_level_up)
+	GameEvent.victory.connect(on_victory)
 	var unlock_pool:Array[AbilityUpgrade]
 	for ability in upgrade_pool:
+		ability.number=0
 		if ability.is_init:
 			if ability.is_unlock:
 				unlock_pool.append(ability)
@@ -33,16 +37,17 @@ func _ready():
 		add_upgrade(initial_upgrade)
 	if GameEvent.hard_mode[GameEvent.HARD_MODE.is_max_4]:
 		limit_int=2
+		mystrious_probality=-1
 	if GameEvent.easy_mode[GameEvent.EASY_MODE.is_ascend]:
 		for ability in can_chose_pool:
 			if ability.Sort=="角色能力":
 				add_upgrade(ability)
 	if GameEvent.hard_mode[GameEvent.HARD_MODE.is_erase_ability]:
-		can_chose_pool.erase(GameEvent.hard_mode[GameEvent.HARD_MODE.is_erase_ability])
+		limit_number=2
 
 func on_level_up(_current_level:int):#升级时展示卡片
 	upgrade_list.clear() 
-	while upgrade_list.size()<3: #让获得同一种能力五次非常困难
+	while upgrade_list.size()<randi_range(limit_number,3): #让获得同一种能力五次非常困难
 		if randf()<=mystrious_probality and mystrious_pool.size() !=0:
 			var chosen_upgrade=mystrious_pool.pick_random()
 			if not chosen_upgrade in upgrade_list:
@@ -55,7 +60,6 @@ func on_level_up(_current_level:int):#升级时展示卡片
 			#升级选项池子中随机抽取一个
 			if not chosen_upgrade in upgrade_list:
 				upgrade_list.append(chosen_upgrade)
-			
 			#转换成数组属性Array[AbillityUpgrade]
 			if chosen_upgrade==null:
 				return
@@ -76,7 +80,7 @@ func add_upgrade(upgrade:AbilityUpgrade):#这个字典控制已经有的能力
 		#选到3次的能力加入神秘池子
 		if current_upgrade[upgrade.ID]["quantity"]>1:
 			#再次从神秘池子选到的能力去除
-			if current_upgrade[upgrade.ID]["quantity"]>limit_int:
+			if current_upgrade[upgrade.ID]["quantity"]>limit_int or limit_int ==2:
 				for Upgrade in mystrious_pool:
 					if Upgrade.ID==upgrade.ID:
 						mystrious_pool.erase(Upgrade)
@@ -100,9 +104,26 @@ func add_upgrade(upgrade:AbilityUpgrade):#这个字典控制已经有的能力
 				no_chose_pool.erase(ability)
 				can_chose_pool.append(ability)
 	if upgrade.self_lock!=0:
-		can_chose_pool.erase(upgrade)
-		no_chose_pool.append(upgrade)
+		for ability in can_chose_pool:
+			if ability.self_lock ==upgrade.self_lock:
+				erase_ability.append(ability)
+		for ability in erase_ability:
+			can_chose_pool.erase(ability)
+			no_chose_pool.append(ability)
+		erase_ability.clear()
+	upgrade.number+=1
 	GameEvent.emit_ability_upgrade_add(upgrade,current_upgrade)
 
 func on_upgrade_selected(upgrade):
 	add_upgrade(upgrade)
+
+func on_victory()->void:
+	for ability_id in current_upgrade.keys():
+		var upgrade =current_upgrade[ability_id]["Resource"] as AbilityUpgrade
+		if upgrade.Sort == "角色能力":
+			return
+	match GameEvent.mode_index:
+		2:
+			AchievementManager.unlock_achievement(AchievementManager.AchievementID.just_weapon_ability_hard)
+		3:
+			AchievementManager.unlock_achievement(AchievementManager.AchievementID.just_weapon_ability_all_challenge)

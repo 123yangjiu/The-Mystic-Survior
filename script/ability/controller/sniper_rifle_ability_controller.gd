@@ -7,7 +7,7 @@ var lashuan_2_pitch
 
 func set_variable()->void:
 	#射程，子弹数量，射击间隔，转头间隔，位置和后坐力
-	max_range=350
+	max_range=400
 	number = 3
 	fire_interval=1.0
 	turn_interval =0.02
@@ -37,14 +37,15 @@ func check_enemy()->Array[Node]:
 	enemies.sort_custom(func (a:Node2D,b:Node2D):
 		var _a =  a as Enemy
 		var _b = b as Enemy
+		#检测最大生命值
 		var a_damage
 		var b_damage
 		for component in _a.all_component:
-			if component is AttackComponent:
-				a_damage=component.damage
+			if component is HealthComponent:
+				a_damage=component.max_health
 		for component in _b.all_component:
-			if component is AttackComponent:
-				b_damage=component.damage
+			if component is HealthComponent:
+				b_damage=component.max_health
 		return a_damage>b_damage
 	)
 	return enemies

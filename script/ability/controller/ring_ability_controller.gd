@@ -8,7 +8,7 @@ func set_variable()->void:
 	max_range=200
 	number = 2
 	#伤害，大小,速度
-	init_damage =13
+	init_damage =14
 
 func set_plus(ability_instance,_target_position)->void:
 	ability_instance.modulate.a8 =color_A /scale_range
@@ -23,6 +23,6 @@ func on_ability_upgrade_add(upgrade:AbilityUpgrade,_current_upgrade:Dictionary):
 		if timer.wait_time==wait_range*0.1:
 			_speed_scale=1.5
 	if upgrade.ID=="环的伤害":
-		damage_range*=1.3
+		damage_range*=1.35
 	if upgrade.ID=="解锁法环":
 		timer.start()

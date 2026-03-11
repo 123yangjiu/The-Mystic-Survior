@@ -23,6 +23,7 @@ config/icon="uid://b5oni5ikgr5pr"
 [autoload]
 
 GameEvent="*res://scene/game_event.tscn"
+AchievementManager="*uid://sgm8dvwec2by"
 
 [copilot]
 

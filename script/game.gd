@@ -3,7 +3,8 @@ class_name Game
 @export var stop_screen:PackedScene
 
 func _ready() -> void:
-	start_game()
+	if GameEvent.is_start==false:
+		start_game()
 
 func start_game()->void:
 	GameEvent.start(true)

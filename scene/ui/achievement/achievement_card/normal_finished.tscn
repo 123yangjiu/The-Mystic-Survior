@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://4h1w7cnwprjc"]
+
+[ext_resource type="Script" uid="uid://dch6ocbhlkd8c" path="res://script/achievement/achievement_card.gd" id="1_p7xsu"]
+[ext_resource type="Texture2D" uid="uid://cqlwcnsum3foq" path="res://sucai/achievement/victory_final.png" id="2_p7xsu"]
+
+[node name="Achievement" type="Control" unique_id=1338750327]
+custom_minimum_size = Vector2(230, 64)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 230.0
+offset_bottom = 64.0
+size_flags_horizontal = 4
+script = ExtResource("1_p7xsu")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=2055355190]
+custom_minimum_size = Vector2(230, 64)
+layout_mode = 0
+offset_right = 199.0
+offset_bottom = 64.0
+theme_override_constants/separation = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer" unique_id=936722461]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="HBoxContainer/PanelContainer" unique_id=2018746328]
+modulate = Color(0.6, 0.6, 0.6, 0.5882353)
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("2_p7xsu")
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=488053916]
+custom_minimum_size = Vector2(80, 32)
+layout_mode = 2
+theme_override_constants/separation = 7
+alignment = 1
+
+[node name="NameLabel" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=224935379]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "已非新手"
+
+[node name="DescribeLabel" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1750556191]
+modulate = Color(0.9, 0.9, 0.9, 1)
+layout_mode = 2
+text = "解锁条件：通关普通模式"

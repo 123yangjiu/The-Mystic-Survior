@@ -10,6 +10,14 @@ func _ready() -> void:
 
 func _on_开始_button_up() -> void:
 	get_tree().change_scene_to_file("res://scene/game.scn")
+	GameEvent.start(true)
+	GameEvent.paused=0
+	GameEvent.difficulty=1
+	GameEvent.the_first=0
+	GameEvent.is_start=true
+	GameEvent.is_co_disappear=false
+	GameEvent.increase_percent = 1.0
+	GameEvent.difficulty_timer.start()
 	queue_free()
 
 func _on_离开_button_up() -> void:

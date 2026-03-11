@@ -178,12 +178,13 @@ scale = Vector2(2.9948473, 3)
 collision_layer = 8
 collision_mask = 9
 script = ExtResource("1_xiaok")
+_id = 9
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1417210265 groups=["enemy"]]
 position = Vector2(0, -1.0000005)
 scale = Vector2(0.8, 0.638)
 sprite_frames = SubResource("SpriteFrames_fq6t5")
-animation = &"real_rush"
+animation = &"rush_ready"
 autoplay = "run"
 
 [node name="health_component" parent="." unique_id=1614735274 instance=ExtResource("4_hhqmu")]

@@ -28,7 +28,6 @@ func _ready() -> void:
 	health_component.health_change.connect(on_health_change)
 	health_component.died.connect(on_died)
 
-	
 @export var MAX_speed=120
 func _physics_process(_delta: float) -> void:
 	GameEvent.play_global_position=global_position
@@ -63,16 +62,13 @@ func get_move_direction():
 	var movement_y=Input.get_action_strength("down")-Input.get_action_strength("up")
 	return Vector2(movement_x,movement_y)
 
-
 func on_health_change():
 	health_bar.value=health_component.get_health_persent()
-
 
 func on_died()->void:
 	GameEvent.player_died.emit()
 	var screen=died_screen.instantiate()
 	get_viewport().add_child(screen)
-
 
 func on_blood_bottle_collected(blood:int):
 	health_component.current_health=min(health_component.max_health,health_component.current_health+blood)

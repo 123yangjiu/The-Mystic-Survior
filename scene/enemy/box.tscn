@@ -28,6 +28,7 @@ collision_layer = 0
 collision_mask = 0
 motion_mode = 1
 script = ExtResource("1_s6cpb")
+_id = 6
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=404708831 groups=["enemy"]]
 position = Vector2(0, -1.9999995)

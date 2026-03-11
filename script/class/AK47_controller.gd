@@ -63,8 +63,6 @@ func on_ability_upgrade_add(upgrade:AbilityUpgrade,_current_upgrade:Dictionary):
 	if upgrade.ID=="枪的弹夹":
 		number_range *=1.2
 		wait_range -=0.1
-	if upgrade.ID=="":
-		pass
 
 func on_timer_timeout()->void:
 	#保证换弹结束后不循环
@@ -80,9 +78,18 @@ func while_attack(enemies:Array[Node])->void:
 	var real_number = int(number)
 	if number_range!=1.0:
 		real_number=int(number*number_range)+1
+	var n=1
+	var new_enemies = enemies
 	for i in range(real_number):
 		#找到敌人，并排除各种问题
-		var enemy = before_attack_find_enemy(enemies)
+		var enemy = null
+		if i>n*10:
+			new_enemies = check_enemy()
+			enemy=before_attack_find_enemy(new_enemies)
+		else:
+			enemy = before_attack_find_enemy(new_enemies)
+		if i == n*10+10:
+			n+=1
 		if enemy:
 			var enemy_global_position = enemy.global_position
 			#将枪头对准enemy,再攻击

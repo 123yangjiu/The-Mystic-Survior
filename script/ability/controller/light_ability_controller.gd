@@ -7,7 +7,7 @@ func set_variable()->void:
 	max_range=200
 	number = 1
 	#伤害，大小,速度
-	init_damage =29.0
+	init_damage =34.0
 
 func return_position():
 	return GameEvent.play_global_position +Vector2(0,-20)

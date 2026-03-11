@@ -4,7 +4,6 @@ extends Node
 
 var enemy_layer:Node
 #管理特殊事件
-var we_enemy:Array[EnemyUnlockEntry]
 var all_special_event:Array[Callable]=[]
 var all_threat_event:Array[Callable]=[]
 #生成时与玩家的距离
@@ -52,7 +51,7 @@ func on_more_difficulty(difficulty):
 			single_appear(enemy,380.0)
 		#加入女巫
 
-func _on_normal_timeout() -> void:
+func _on_normal_timeout() -> void: 
 	#通过筛选器选出这次要生成的怪物
 	var chosen_enemy_scene=enemy_manager.random_chose()
 	var random_direction=Vector2.RIGHT.rotated(randf_range(0,TAU))

@@ -7,8 +7,7 @@ script = ExtResource("1_f34ry")
 ID = "枪的弹夹"
 Sort = "枪"
 name = "快速扩容弹夹"
-Description = "各个枪的子弹数量增加20%
-换弹速度-10%
+Description = "各个枪的子弹数量增加20%,换弹速度-10%
 
 ——火箭筒一效果改为范围增大20%"
 metadata/_custom_type_script = "uid://dmyfvo2eu1rj2"

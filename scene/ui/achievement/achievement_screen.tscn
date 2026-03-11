@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://rj2cm05d2sxi"]
+
+[ext_resource type="PackedScene" uid="uid://bojx7gcj2i8re" path="res://scene/ui/achievement/lots_finished_manager.tscn" id="2_vcbi4"]
+[ext_resource type="PackedScene" uid="uid://trhwxo8om45w" path="res://scene/ui/achievement/achievement_card/no_rush.tscn" id="3_f4a7o"]
+[ext_resource type="PackedScene" uid="uid://b2yrm0y8rlo8e" path="res://scene/ui/exit_button.tscn" id="31_kl8o1"]
+
+[node name="AchievementScreen" type="CanvasLayer" unique_id=1350505999]
+layer = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1056391145]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2, 0.2, 0.2, 0.78431374)
+
+[node name="Exit" parent="." unique_id=779574605 node_paths=PackedStringArray("root_node") instance=ExtResource("31_kl8o1")]
+offset_left = 22.0
+offset_top = 290.0
+offset_right = 112.0
+offset_bottom = 340.0
+root_node = NodePath("..")
+
+[node name="LotsCardManager" parent="." unique_id=76410955 instance=ExtResource("2_vcbi4")]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -58.0
+offset_bottom = -58.0
+grow_vertical = 2
+
+[node name="Achievement" parent="." unique_id=1338750327 instance=ExtResource("3_f4a7o")]
+visible = false
+offset_left = 192.0
+offset_top = -76.0
+offset_right = 477.0
+offset_bottom = -12.0

@@ -65,6 +65,7 @@ collision_layer = 8
 collision_mask = 9
 motion_mode = 1
 script = ExtResource("1_iuixe")
+_id = 5
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1871702201 groups=["enemy"]]
 position = Vector2(0, -4.9999995)
@@ -84,8 +85,7 @@ ExtResource("7_qgpht"): 0.04
 })
 
 [node name="velocity_component" parent="." unique_id=1132711392 instance=ExtResource("6_60ack")]
-speed = 30.0
-turn_rate = 10.0
+speed = 25.0
 
 [node name="WoundComponent" parent="." unique_id=1971662021 node_paths=PackedStringArray("collision_shape_2d") instance=ExtResource("9_1vwlk")]
 visible = false

@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bojx7gcj2i8re"]
+
+[ext_resource type="Script" uid="uid://dau6xj4nnfbue" path="res://script/achievement/lots_card_manager.gd" id="1_ii6mo"]
+[ext_resource type="PackedScene" uid="uid://4h1w7cnwprjc" path="res://scene/ui/achievement/achievement_card/normal_finished.tscn" id="2_qptuc"]
+[ext_resource type="PackedScene" uid="uid://dpitowcwemfw" path="res://scene/ui/achievement/achievement_card/hard_finished.tscn" id="3_4vmp8"]
+[ext_resource type="PackedScene" uid="uid://bda6et8hny7d7" path="res://scene/ui/achievement/achievement_card/all_challenge_finished.tscn" id="4_n6i1a"]
+
+[node name="LotsCardManager" type="Control" unique_id=76410955 node_paths=PackedStringArray("level_nodes")]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ii6mo")
+level_nodes = [NodePath("HBoxContainer/Achievement"), NodePath("HBoxContainer/Achievement2"), NodePath("HBoxContainer/Achievement3")]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=792516650]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Achievement" parent="HBoxContainer" unique_id=1338750327 instance=ExtResource("2_qptuc")]
+custom_minimum_size = Vector2(200, 64)
+layout_mode = 2
+
+[node name="Achievement2" parent="HBoxContainer" unique_id=545649360 instance=ExtResource("3_4vmp8")]
+custom_minimum_size = Vector2(200, 64)
+layout_mode = 2
+
+[node name="Achievement3" parent="HBoxContainer" unique_id=1711253232 instance=ExtResource("4_n6i1a")]
+layout_mode = 2

@@ -1,4 +1,4 @@
-[gd_scene load_steps=0 format=3 uid="uid://fiu7e6h1ip2a"]
+[gd_scene format=3 uid="uid://fiu7e6h1ip2a"]
 
 [ext_resource type="PackedScene" uid="uid://bpkwk5owtcco0" path="res://scene/ui/brochure_button.tscn" id="1_x6job"]
 [ext_resource type="PackedScene" uid="uid://cq1npoewigh57" path="res://scene/ui/skill_tujian_button.tscn" id="2_17udk"]
@@ -17,16 +17,16 @@ grow_vertical = 2
 color = Color(0.2, 0.2, 0.2, 0.78431374)
 
 [node name="Brochure" parent="." unique_id=1006554423 instance=ExtResource("1_x6job")]
-offset_left = 93.0
-offset_top = 73.0
-offset_right = 273.0
-offset_bottom = 133.0
+offset_left = 64.0
+offset_top = 46.0
+offset_right = 244.0
+offset_bottom = 106.0
 
 [node name="SkillTujian" parent="." unique_id=512415181 instance=ExtResource("2_17udk")]
-offset_left = 329.0
-offset_top = 216.0
-offset_right = 509.0
-offset_bottom = 276.0
+offset_left = 382.0
+offset_top = 249.0
+offset_right = 562.0
+offset_bottom = 309.0
 
 [node name="NanduShuoming" parent="." unique_id=489857613 instance=ExtResource("3_17udk")]
 visible = false

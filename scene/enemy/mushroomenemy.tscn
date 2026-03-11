@@ -94,6 +94,7 @@ scale = Vector2(1.6298676, 1.5427694)
 collision_layer = 8
 collision_priority = 5.0
 script = ExtResource("1_eao75")
+_id = 12
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1360482320]
 position = Vector2(0, -9.07459)
@@ -104,7 +105,7 @@ autoplay = "new_animation"
 frame_progress = 0.83788526
 
 [node name="health_component" parent="." unique_id=1459291990 instance=ExtResource("3_1vn3o")]
-max_health = 500.0
+max_health = 800.0
 
 [node name="drop_component" parent="." unique_id=1655054699 instance=ExtResource("4_ry05w")]
 drop_thingandpersent = Dictionary[PackedScene, float]({

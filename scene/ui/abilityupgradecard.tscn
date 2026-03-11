@@ -38,5 +38,18 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 1
 
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1144537650]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="NumberLabel" type="Label" parent="MarginContainer" unique_id=107952775]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "已获得次数:"
+horizontal_alignment = 1
+vertical_alignment = 2
+
 [connection signal="mouse_entered" from="." to="." method="_on_texture_rect_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_texture_rect_mouse_exited"]

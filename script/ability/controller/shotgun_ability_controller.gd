@@ -1,6 +1,6 @@
 extends AK47AbilityController
 
-var check_range :=100.0
+var check_range :=60.0
 var bullet_number:=10.0
 var max_angle :=PI/6
 
@@ -14,7 +14,7 @@ func set_variable()->void:
 	recoil_po =return_randf(0.3,0.5,false)
 	recoil_ro_degrees=return_randf(-20,-20)
 	#伤害，大小,速度
-	init_damage =8
+	init_damage =9
 	init_scale=Vector2(2.0,1.2)
 	speed =15
 

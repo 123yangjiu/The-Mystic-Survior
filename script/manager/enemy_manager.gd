@@ -44,7 +44,6 @@ func _ready() -> void:
 	enemy_filiter()
 	normal_timer.start()
 	check_health_timer.start()
-	
 
 func enemy_filiter():
 	if ! will_back_group.is_empty():

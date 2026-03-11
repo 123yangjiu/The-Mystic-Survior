@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://dnf1vggqq18of"]
+
+[ext_resource type="PackedScene" uid="uid://c2oxs46ajj6cv" path="res://scene/ui/setting/change_yaogan_position.tscn" id="5_qhx78"]
+[ext_resource type="PackedScene" uid="uid://drdfjqj1e2kg4" path="res://scene/ui/setting/change_yaogan.tscn" id="8_1sbg2"]
+[ext_resource type="PackedScene" uid="uid://i1627vvb6x7s" path="res://scene/ui/setting/change_light.tscn" id="9_gunei"]
+[ext_resource type="PackedScene" uid="uid://b2yrm0y8rlo8e" path="res://scene/ui/exit_button.tscn" id="10_p8d2h"]
+
+[node name="SettingScreen" type="CanvasLayer" unique_id=2013600972]
+process_mode = 3
+layer = 101
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=464053512]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2, 0.2, 0.2, 0.7882353)
+
+[node name="ChangeYaogan" parent="." unique_id=1603881200 instance=ExtResource("8_1sbg2")]
+offset_left = 283.0
+offset_top = 66.0
+offset_right = 333.0
+offset_bottom = 86.0
+scale = Vector2(1.5, 1.5)
+
+[node name="ChangeLight" parent="." unique_id=1782831152 instance=ExtResource("9_gunei")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -38.0
+offset_top = -6.0
+offset_right = 12.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+
+[node name="Exit" parent="." unique_id=935601484 node_paths=PackedStringArray("root_node") instance=ExtResource("10_p8d2h")]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -45.0
+offset_top = -75.0
+offset_right = 45.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "完成"
+root_node = NodePath("..")
+
+[node name="ChangeYaogan2" parent="." unique_id=2146023077 instance=ExtResource("5_qhx78")]
+visible = false
+offset_left = 415.0
+offset_top = 110.0
+offset_right = 465.0
+offset_bottom = 130.0

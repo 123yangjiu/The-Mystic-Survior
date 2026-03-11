@@ -349,6 +349,7 @@ collision_layer = 8
 collision_mask = 9
 motion_mode = 1
 script = ExtResource("1_5r1dr")
+_id = 13
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1871702201 groups=["enemy"]]
 scale = Vector2(2.2, 1.755)

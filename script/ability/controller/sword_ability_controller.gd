@@ -46,7 +46,7 @@ func on_ability_upgrade_add(upgrade:AbilityUpgrade,_current_upgrade:Dictionary):
 	if upgrade.ID=="剑的速度":
 		set_speed(0.2)
 	if upgrade.ID=="剑的伤害":
-		damage_range*=1.3
+		damage_range*=1.35
 	if upgrade.ID=="剑的数量":
 		number+=1
 		volume_range-=0.05

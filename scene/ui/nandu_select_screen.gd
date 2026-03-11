@@ -8,8 +8,9 @@ extends CanvasLayer
 var current_node:Control
 
 func _ready() -> void:
+	for i in all_mode:
+		i.visible=false
 	if GameEvent.mode_index!=-1:
-		initial_node.visible=false
 		current_node=all_mode.get(GameEvent.mode_index)
 		current_node.visible=true
 		check_index(GameEvent.mode_index)
@@ -19,7 +20,6 @@ func _ready() -> void:
 	for node in all_mode:
 		if node != initial_node:
 			node.visible=false
-	
 
 func _on_name_pressed() -> void:
 	var current_index =all_mode.find(current_node)

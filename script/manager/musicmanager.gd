@@ -48,6 +48,8 @@ func on_more_difficulty(difficulty := 0)->void:
 			play(after_final,the_final)
 			no_continue=false
 		21:
+			no_continue=true
+		22:
 			play(the_real_final,after_final)
 func on_the_first_damage()->void:
 	play(the_first)
@@ -64,6 +66,7 @@ func play(which_music:AudioStreamPlayer,wait_music:AudioStreamPlayer=null)->void
 	if wait_music:
 		if wait_music.playing:
 			await wait_music.finished
+			await get_tree().create_timer(1,false).timeout
 	if !which_music.playing:
 		which_music.play()
 		for music:AudioStreamPlayer in all_music:

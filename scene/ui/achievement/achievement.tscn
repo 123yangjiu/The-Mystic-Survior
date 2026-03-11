@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://catxv6syklrc"]
+
+[ext_resource type="Texture2D" uid="uid://6ng3ryqmfg83" path="res://sucai/achievement/basic_final.png" id="1_l51tm"]
+[ext_resource type="Script" uid="uid://dch6ocbhlkd8c" path="res://script/achievement/achievement_card.gd" id="1_ur8nd"]
+
+[node name="Achievement" type="Control" unique_id=1338750327]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -517.0
+offset_bottom = -328.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+script = ExtResource("1_ur8nd")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=2055355190]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_constants/separation = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer" unique_id=936722461]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="HBoxContainer/PanelContainer" unique_id=2018746328]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("1_l51tm")
+stretch_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=488053916]
+custom_minimum_size = Vector2(80, 32)
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="NameLabel" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=224935379]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "成就名字"
+
+[node name="DescribeLabel" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1750556191]
+layout_mode = 2
+theme_override_font_sizes/font_size = 5
+text = "成就描述"

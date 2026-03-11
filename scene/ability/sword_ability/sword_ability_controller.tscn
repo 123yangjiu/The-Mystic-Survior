@@ -9,5 +9,5 @@ ability = ExtResource("2_4y8i6")
 timer = NodePath("Timer")
 
 [node name="Timer" type="Timer" parent="." unique_id=1965552918]
-wait_time = 2.0
+wait_time = 1.7999999999999998
 autostart = true

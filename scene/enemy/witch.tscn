@@ -80,6 +80,7 @@ collision_layer = 8
 collision_mask = 9
 motion_mode = 1
 script = ExtResource("1_ks07s")
+_id = 11
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1790568390 groups=["enemy"]]
 position = Vector2(0, -1.0000005)

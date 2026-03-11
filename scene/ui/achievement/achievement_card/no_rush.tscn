@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://trhwxo8om45w"]
+
+[ext_resource type="Script" uid="uid://dch6ocbhlkd8c" path="res://script/achievement/achievement_card.gd" id="1_t3nbd"]
+[ext_resource type="Texture2D" uid="uid://3acj05r275as" path="res://sucai/achievement/no_rush.png" id="2_t3nbd"]
+
+[node name="Achievement" type="Control" unique_id=1338750327]
+custom_minimum_size = Vector2(285, 64)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 230.0
+offset_bottom = 64.0
+size_flags_horizontal = 4
+script = ExtResource("1_t3nbd")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=2055355190]
+custom_minimum_size = Vector2(285, 64)
+layout_mode = 0
+offset_right = 199.0
+offset_bottom = 64.0
+theme_override_constants/separation = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer" unique_id=936722461]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="HBoxContainer/PanelContainer" unique_id=2018746328]
+modulate = Color(0.6, 0.6, 0.6, 0.5882353)
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("2_t3nbd")
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=488053916]
+custom_minimum_size = Vector2(80, 32)
+layout_mode = 2
+alignment = 1
+
+[node name="NameLabel" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=224935379]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "你不能冲"
+
+[node name="DescribeLabel" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1750556191]
+modulate = Color(0.9, 0.9, 0.9, 1)
+layout_mode = 2
+theme_override_constants/line_spacing = 2
+text = "解锁条件：在困难模式以上，让骑士连续
+进入10次准备冲刺状态，而不发起冲锋
+"
+visible_characters = 37
+visible_ratio = 0.977

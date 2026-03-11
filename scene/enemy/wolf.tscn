@@ -82,6 +82,7 @@ collision_layer = 0
 collision_mask = 0
 motion_mode = 1
 script = ExtResource("1_sftq2")
+id = 3
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1198910335 groups=["enemy"]]
 scale = Vector2(0.8, 0.638)

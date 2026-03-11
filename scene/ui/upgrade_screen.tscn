@@ -19,6 +19,7 @@ grow_vertical = 2
 
 [node name="CardContainer" type="HBoxContainer" parent="MarginContainer" unique_id=716952819]
 process_mode = 3
+custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4

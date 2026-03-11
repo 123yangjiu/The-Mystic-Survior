@@ -9,6 +9,7 @@ texture = ExtResource("1_laexh")
 [resource]
 default_font = ExtResource("2_u0b23")
 default_font_size = 36
+Button/colors/font_color = Color(1, 1, 1, 1)
 Button/styles/disabled = SubResource("StyleBoxTexture_u0b23")
 Button/styles/focus = SubResource("StyleBoxTexture_u0b23")
 Button/styles/hover = SubResource("StyleBoxTexture_u0b23")

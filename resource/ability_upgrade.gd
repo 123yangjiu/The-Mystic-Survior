@@ -23,3 +23,4 @@ enum SOST_TYPE{
 #当有其他能力的lock_code与这个能力的self_lock相同时，将此能力再次加入升级池里
 @export var lock_code:=0
 @export_multiline var Description:String
+var number:=0

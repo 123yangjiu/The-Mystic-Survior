@@ -93,3 +93,5 @@ func set_speed(gap_range)->void:
 	if audio:
 		audio.volume_db = db_value
 	timer.wait_time = max(base_wait_time*wait_range,base_wait_time*0.1)
+	if wait_range==0.0:
+		AchievementManager.unlock_achievement(AchievementManager.AchievementID.no_CD)

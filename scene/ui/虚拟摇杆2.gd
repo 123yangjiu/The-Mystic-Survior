@@ -13,7 +13,10 @@ func _ready() -> void:
 	if GameEvent.is_fixed:
 		is_fixed=true
 		self.visible=true
-		self.position=Vector2(102.0,267.0)
+		if GameEvent.fix_right:
+			self.position=Vector2(540.0,267.0)
+		else :
+			self.position=Vector2(102.0,267.0)
 	GameEvent.yaogan_fixed.connect(on_fix_change)
 	GameEvent._paused.connect(_on_paused)
 
@@ -115,9 +118,17 @@ func on_fix_change(fixed:bool)->void:
 				false:
 					is_fixed=false
 					self.visible=false
+				true:
+					if GameEvent.fix_right:
+						self.position=Vector2(540.0,267.0)
+					else :
+						self.position=Vector2(102.0,267.0)
 		false:
 			match fixed:
 				true:
 					is_fixed=true
 					self.visible=true
-					self.position=Vector2(102.0,267.0)
+					if GameEvent.fix_right:
+						self.position=Vector2(540.0,267.0)
+					else :
+						self.position=Vector2(102.0,267.0)

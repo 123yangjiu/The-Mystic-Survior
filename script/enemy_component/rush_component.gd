@@ -20,7 +20,8 @@ var ori_speed:float
 var ori_acceleration:float
 var ori_turn_rate:float
 var player_in:=false
-
+#成就计数
+var number:=0
 
 func initial()->void:
 	duration_timer.wait_time=rush_duration
@@ -58,6 +59,7 @@ func pass_ori()->void:
 
 func _on_rush_interval_timeout() -> void:
 	if player_in:
+		number=0
 		duration_timer.start()
 		set_ori()
 		collision_component.collision_shape_2d.disabled=true
@@ -88,7 +90,13 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if ! body is Player:
 		return
+	if ! interval_timer.is_stopped():
+		number+=1
 	player_in=false
 	interval_timer.stop()
 	if animation_sprite:
 		animation_sprite.play("run")
+
+func _exit_tree() -> void:
+	if number>=6:
+		AchievementManager.unlock_achievement(AchievementManager.AchievementID.no_rush)

@@ -3,6 +3,9 @@ extends Node
 
 #展示是否开启游戏
 var is_start:=false
+#胜利信号
+@warning_ignore("unused_signal")
+signal victory
 
 var difficulty=1#初始难度等级为1
 signal more_difficulty(difficulty:int)
@@ -28,7 +31,7 @@ func emit_ability_upgrade_add(upgrade:AbilityUpgrade,current_upgrade:Dictionary)
 	await get_tree().process_frame
 	ability_upgrade_add.emit(upgrade,current_upgrade)
 	if upgrade.ID=="增强效果":
-		increase_percent*=1.3
+		increase_percent*=1.25
 
 
 #用于在第一次攻击后启动音乐
@@ -85,10 +88,16 @@ func record_db(_name:String,value)->void:
 #管理摇杆是否固定
 var is_fixed:=false :set=set_fixed
 signal yaogan_fixed(is_fix:bool)
+var fix_right:=false :set=set_right
 
 func set_fixed(value)->void:
 	yaogan_fixed.emit(value)
 	is_fixed=value
+
+func set_right(value)->void:
+	fix_right=value
+	yaogan_fixed.emit(is_fixed)
+
 
 var play_global_position:=Vector2(0,0)
 var play_right:=true
@@ -103,7 +112,6 @@ enum HARD_MODE{
 	is_long,
 	is_erase_ability,
 	is_max_4,
-	is_more
 }
 
 signal mode_change
@@ -131,7 +139,6 @@ var hard_mode:Dictionary[HARD_MODE,Variant]={
 	HARD_MODE.is_long:false,
 	HARD_MODE.is_erase_ability:false,
 	HARD_MODE.is_max_4:false,
-	HARD_MODE.is_more:false
 }
 #特殊事件
 var is_co_disappear:=false
@@ -139,3 +146,8 @@ var is_co_disappear:=false
 signal collision_disappear
 @warning_ignore("unused_signal")
 signal collision_disappear_end
+
+#成就计数
+var special_moster_dead_number:=0
+#光剑自动劈人
+var is_light_auto:=true

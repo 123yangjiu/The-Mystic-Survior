@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cslb62wkcw0py"]
+
+[ext_resource type="Theme" uid="uid://5bh541wa60l3" path="res://resource/theme/green_theme.tres" id="1_oe7dt"]
+[ext_resource type="Script" uid="uid://q1eey6dhfwyt" path="res://script/文本及ui显示/setting/turn_action_screen.gd" id="2_vqnn7"]
+[ext_resource type="PackedScene" uid="uid://dnf1vggqq18of" path="res://scene/ui/setting/action_settingscreen.tscn" id="3_oe7dt"]
+
+[node name="TurnScreen" type="Button" unique_id=778113867]
+custom_minimum_size = Vector2(180, 60)
+offset_left = -1.0
+offset_right = 99.0
+offset_bottom = 50.0
+theme = ExtResource("1_oe7dt")
+text = "操作设置"
+script = ExtResource("2_vqnn7")
+screen = ExtResource("3_oe7dt")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
