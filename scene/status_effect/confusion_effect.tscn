@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dg67o6jgtpxik"]
+
+[ext_resource type="Script" uid="uid://c4ir64mg7u8yg" path="res://script/status_effect/confusion_effect.gd" id="1_f4gqj"]
+
+[node name="ConfusionEffect" type="Node"]
+script = ExtResource("1_f4gqj")
+duration = 5.0
