@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bojx7gcj2i8re" path="res://scene/ui/achievement/lots_finished_manager.tscn" id="2_vcbi4"]
 [ext_resource type="PackedScene" uid="uid://trhwxo8om45w" path="res://scene/ui/achievement/achievement_card/no_rush.tscn" id="3_f4a7o"]
-[ext_resource type="PackedScene" uid="uid://b2yrm0y8rlo8e" path="res://scene/ui/exit_button.tscn" id="31_kl8o1"]
+[ext_resource type="PackedScene" uid="uid://b2yrm0y8rlo8e" path="res://scene/ui/button/exit_button.tscn" id="31_kl8o1"]
 
 [node name="AchievementScreen" type="CanvasLayer" unique_id=1350505999]
 layer = 2

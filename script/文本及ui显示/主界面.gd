@@ -9,7 +9,7 @@ func _ready() -> void:
 	main_theme.play()
 
 func _on_开始_button_up() -> void:
-	get_tree().change_scene_to_file("res://scene/game.scn")
+	get_tree().change_scene_to_file("res://scene/大场景/game.scn")
 	GameEvent.start(true)
 	GameEvent.paused=0
 	GameEvent.difficulty=1

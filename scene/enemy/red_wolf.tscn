@@ -4,9 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://ba08fgggijguw" path="res://sucai/enemy/wolf/wolf_red.png" id="3_yd75g"]
 [ext_resource type="PackedScene" uid="uid://bnactnfyipltl" path="res://scene/enemy_component/main_component/health_component.tscn" id="4_u5nm4"]
 [ext_resource type="PackedScene" uid="uid://c0i7tc6xpk0n8" path="res://scene/enemy_component/main_component/drop_component.tscn" id="5_8dqby"]
-[ext_resource type="PackedScene" uid="uid://i5imcyd15vix" path="res://scene/游戏物件/exprience_bottle.tscn" id="6_ontlg"]
-[ext_resource type="PackedScene" uid="uid://daaqcmminiyk1" path="res://scene/游戏物件/blood_bottle.tscn" id="7_aa0cy"]
-[ext_resource type="PackedScene" uid="uid://f15fc5ggcq0l" path="res://scene/游戏物件/bonus_bottle.tscn" id="8_me35u"]
+[ext_resource type="PackedScene" uid="uid://i5imcyd15vix" path="res://scene/瓶子/exprience_bottle.tscn" id="6_ontlg"]
+[ext_resource type="PackedScene" uid="uid://daaqcmminiyk1" path="res://scene/瓶子/blood_bottle.tscn" id="7_aa0cy"]
+[ext_resource type="PackedScene" uid="uid://f15fc5ggcq0l" path="res://scene/瓶子/bonus_bottle.tscn" id="8_me35u"]
 [ext_resource type="PackedScene" uid="uid://g6ks4dc6kpht" path="res://scene/enemy_component/main_component/velocity_component.tscn" id="9_bw7n5"]
 [ext_resource type="PackedScene" uid="uid://12uey86sh54o" path="res://scene/enemy_component/main_component/wound_component.tscn" id="11_gp7yn"]
 [ext_resource type="PackedScene" uid="uid://do1skrx74372j" path="res://scene/enemy_component/main_component/attack_component.tscn" id="11_khgf6"]
@@ -64,7 +64,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_r6j8l")
 }],
-"loop": true,
+"loop": 1,
 "name": &"run",
 "speed": 10.0
 }]

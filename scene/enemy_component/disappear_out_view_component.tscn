@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bsyb3sb3mrjn0"]
+
+[ext_resource type="Script" uid="uid://bm2nwf8pvcy5d" path="res://script/enemy_component/disappear_out_view_component.gd" id="1_kubee"]
+
+[node name="DisappearOutViewComponent" type="Node2D" unique_id=256895712]
+script = ExtResource("1_kubee")

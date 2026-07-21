@@ -102,8 +102,14 @@ func set_target_health()->void:
 
 func check_health()->float:
 	var _all_health=0.0
+	var dead_zone = get_viewport().get_visible_rect().grow(80.0)
 	for enemy in enemy_layer.get_children():
 		if enemy is Enemy:
+			#检测敌人是否已离开屏幕
+			if enemy.is_old:
+				if not dead_zone.has_point(enemy.get_global_transform_with_canvas().origin):
+					enemy.queue_free()
+					continue
 			for component in enemy.all_component:
 				if component is HealthComponent:
 					_all_health +=component.max_health

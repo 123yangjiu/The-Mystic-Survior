@@ -10,7 +10,11 @@ class_name Player
 @onready var all_gun_ability_controller: AllGunAbilityController = $abilitymanager/AllGunAbilityController
 @onready var light_ability_controller: Node2D = $abilitymanager/light_ability_controller
 
+@onready var camera_2d: Camera2D = $Camera2D
+
 @export var died_screen:PackedScene
+
+
 
 var direction:=Vector2(0,0)
 var vec:Vector2

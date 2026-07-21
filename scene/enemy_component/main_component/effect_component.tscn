@@ -55,7 +55,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wncbb")
 }],
-"loop": true,
+"loop": 1,
 "name": &"wolf",
 "speed": 10.0
 }]

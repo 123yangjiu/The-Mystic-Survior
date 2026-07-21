@@ -1,8 +1,8 @@
-[gd_scene load_steps=0 format=3 uid="uid://7wj0rs3qyh6d"]
+[gd_scene format=3 uid="uid://7wj0rs3qyh6d"]
 
 [ext_resource type="Texture2D" uid="uid://bnsuipu308xow" path="res://sucai/background/简单.png" id="1_c1cla"]
 [ext_resource type="Texture2D" uid="uid://ctv6qoahoumm5" path="res://sucai/background/5.png" id="2_njype"]
-[ext_resource type="PackedScene" uid="uid://b2yrm0y8rlo8e" path="res://scene/ui/exit_button.tscn" id="3_m5ba6"]
+[ext_resource type="PackedScene" uid="uid://b2yrm0y8rlo8e" path="res://scene/ui/button/exit_button.tscn" id="3_m5ba6"]
 
 [node name="NanduShuoming" type="CanvasLayer" unique_id=543739001]
 layer = 2

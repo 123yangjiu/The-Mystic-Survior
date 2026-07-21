@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://c2oxs46ajj6cv" path="res://scene/ui/setting/change_yaogan_position.tscn" id="5_qhx78"]
 [ext_resource type="PackedScene" uid="uid://drdfjqj1e2kg4" path="res://scene/ui/setting/change_yaogan.tscn" id="8_1sbg2"]
 [ext_resource type="PackedScene" uid="uid://i1627vvb6x7s" path="res://scene/ui/setting/change_light.tscn" id="9_gunei"]
-[ext_resource type="PackedScene" uid="uid://b2yrm0y8rlo8e" path="res://scene/ui/exit_button.tscn" id="10_p8d2h"]
+[ext_resource type="PackedScene" uid="uid://b2yrm0y8rlo8e" path="res://scene/ui/button/exit_button.tscn" id="10_p8d2h"]
 
 [node name="SettingScreen" type="CanvasLayer" unique_id=2013600972]
 process_mode = 3
@@ -13,11 +13,9 @@ layer = 101
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -3.0
-offset_bottom = -3.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.2, 0.2, 0.2, 0.7882353)
+color = Color(0.14901961, 0.14901961, 0.14901961, 1)
 
 [node name="ChangeYaogan" parent="." unique_id=1603881200 instance=ExtResource("8_1sbg2")]
 offset_left = 283.0

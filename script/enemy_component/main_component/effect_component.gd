@@ -29,8 +29,7 @@ func on_collision_disappear()->void:
 	tween.parallel().tween_property(wolf_animation,"position:y",-25,1.0)
 	await tween.finished
 	wolf_animation.visible=false
-	
-	
+
 
 func on_collision_disappear_end()->void:
 	var _owner = owner as Enemy

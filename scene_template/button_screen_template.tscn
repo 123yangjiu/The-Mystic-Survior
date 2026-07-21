@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cdpjl26uhvb5w"]
 
-[ext_resource type="PackedScene" uid="uid://b2yrm0y8rlo8e" path="res://scene/ui/exit_button.tscn" id="3_fp0k0"]
+[ext_resource type="PackedScene" uid="uid://b2yrm0y8rlo8e" path="res://scene/ui/button/exit_button.tscn" id="3_fp0k0"]
 
 [node name="Name" type="CanvasLayer" unique_id=543739001]
 layer = 2

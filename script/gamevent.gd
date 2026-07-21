@@ -1,6 +1,10 @@
 extends Node
 @onready var difficulty_timer: Timer = $difficulty_timer
 
+#---- 启动游戏需要 ----
+
+
+
 #展示是否开启游戏
 var is_start:=false
 #胜利信号
@@ -9,9 +13,11 @@ signal victory
 
 var difficulty=1#初始难度等级为1
 signal more_difficulty(difficulty:int)
+
 func emit_more_difficulty():
 	difficulty+=1
 	more_difficulty.emit(difficulty)
+
 
 var increase_percent:=1.0
 
@@ -41,7 +47,7 @@ signal the_first_damage()
 #用于在player死后传输信号
 @warning_ignore("unused_signal")
 signal player_died
-#暂停系统·
+#暂停系统
 var paused:=0:set=set_paused
 signal _paused #当paused+1时发出信号,表示游戏暂停
 signal always_stop #向设置了always的节点发送信号，表示暂停

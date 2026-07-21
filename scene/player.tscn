@@ -51,7 +51,7 @@ region = Rect2(192, 0, 64, 64)
 [sub_resource type="SpriteFrames" id="SpriteFrames_u7b46"]
 animations = [{
 "frames": [],
-"loop": true,
+"loop": 1,
 "name": &"new_animation",
 "speed": 5.0
 }, {
@@ -68,7 +68,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_u7b46")
 }],
-"loop": true,
+"loop": 1,
 "name": &"run",
 "speed": 8.0
 }, {
@@ -85,7 +85,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_v4iqv")
 }],
-"loop": true,
+"loop": 1,
 "name": &"run_black",
 "speed": 8.0
 }]
@@ -131,7 +131,7 @@ died_screen = ExtResource("2_ihjo1")
 z_index = 1
 position = Vector2(2, 2)
 
-[node name="Camera2D2" type="Camera2D" parent="." unique_id=85677335]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=85677335]
 limit_left = -2879
 limit_top = -2095
 limit_right = 2267

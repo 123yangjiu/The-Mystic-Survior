@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://clhfimwk6xw1p"]
 
-[ext_resource type="PackedScene" uid="uid://b2yrm0y8rlo8e" path="res://scene/ui/exit_button.tscn" id="1_ck3ao"]
+[ext_resource type="PackedScene" uid="uid://b2yrm0y8rlo8e" path="res://scene/ui/button/exit_button.tscn" id="1_ck3ao"]
 
 [node name="ThanksList" type="CanvasLayer" unique_id=270978153]
 layer = 2

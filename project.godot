@@ -16,13 +16,13 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 config/name="神秘幸存者"
 run/main_scene="uid://c68mua7fii8ye"
-config/features=PackedStringArray("4.6", "Forward Plus")
+config/features=PackedStringArray("4.7", "Forward Plus")
 boot_splash/use_filter=false
 config/icon="uid://b5oni5ikgr5pr"
 
 [autoload]
 
-GameEvent="*res://scene/game_event.tscn"
+GameEvent="*res://scene/大场景/game_event.tscn"
 AchievementManager="*uid://sgm8dvwec2by"
 
 [copilot]

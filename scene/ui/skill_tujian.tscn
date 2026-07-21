@@ -1,7 +1,7 @@
-[gd_scene load_steps=0 format=3 uid="uid://c58yckyjy7xpa"]
+[gd_scene format=3 uid="uid://c58yckyjy7xpa"]
 
 [ext_resource type="Script" uid="uid://boh2aiy8h4y46" path="res://script/文本及ui显示/skill_tujian.gd" id="1_bw8iv"]
-[ext_resource type="PackedScene" uid="uid://c6t5pqka2y0xc" path="res://scene/ui/abilityupgradecard.tscn" id="2_hdgep"]
+[ext_resource type="PackedScene" uid="uid://c6t5pqka2y0xc" path="res://scene/ui/ability/abilityupgradecard.tscn" id="2_hdgep"]
 [ext_resource type="Script" uid="uid://dmyfvo2eu1rj2" path="res://resource/ability_upgrade.gd" id="3_wyphw"]
 [ext_resource type="Resource" uid="uid://oclytr2qthx8" path="res://resource/upgrades/sword/sword_damage.tres" id="4_e7bnn"]
 [ext_resource type="Resource" uid="uid://blc0x1fuyqqd8" path="res://resource/upgrades/sword/sword_rate.tres" id="5_ucao3"]
@@ -24,7 +24,7 @@
 [ext_resource type="Resource" uid="uid://bbp5xqvgt1ubd" path="res://resource/upgrades/else/飞毛腿.tres" id="23_g2lnk"]
 [ext_resource type="Resource" uid="uid://cq6h3a5qtmde3" path="res://resource/upgrades/else/盔甲.tres" id="24_slx2f"]
 [ext_resource type="Resource" uid="uid://bm5728iq6c8ra" path="res://resource/upgrades/gun/get_gun.tres" id="25_7xkpe"]
-[ext_resource type="PackedScene" uid="uid://b2yrm0y8rlo8e" path="res://scene/ui/exit_button.tscn" id="26_8dpxf"]
+[ext_resource type="PackedScene" uid="uid://b2yrm0y8rlo8e" path="res://scene/ui/button/exit_button.tscn" id="26_8dpxf"]
 [ext_resource type="Texture2D" uid="uid://dpo4ccauulmja" path="res://sucai/background/skill/sword.png" id="26_e7bnn"]
 [ext_resource type="Resource" uid="uid://j41hiigk5pdq" path="res://resource/upgrades/gun/gun_bigger.tres" id="26_sh81l"]
 [ext_resource type="Resource" uid="uid://dn81f21hebidn" path="res://resource/upgrades/gun/gun_damage.tres" id="27_hfe5u"]

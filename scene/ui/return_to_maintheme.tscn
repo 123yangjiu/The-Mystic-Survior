@@ -1,8 +1,8 @@
-[gd_scene load_steps=0 format=3 uid="uid://c4odu6gj71lxh"]
+[gd_scene format=3 uid="uid://c4odu6gj71lxh"]
 
 [ext_resource type="Theme" uid="uid://5bh541wa60l3" path="res://resource/theme/green_theme.tres" id="1_6qods"]
 [ext_resource type="Script" uid="uid://fedhvxt2q3w5" path="res://script/文本及ui显示/return_to_maintheme.gd" id="2_ttghe"]
-[ext_resource type="PackedScene" uid="uid://c68mua7fii8ye" path="res://scene/maintheme.tscn" id="3_ddocp"]
+[ext_resource type="PackedScene" uid="uid://c68mua7fii8ye" path="res://scene/大场景/maintheme.tscn" id="3_ddocp"]
 
 [node name="Return" type="Button" unique_id=887643300]
 custom_minimum_size = Vector2(205, 70)
