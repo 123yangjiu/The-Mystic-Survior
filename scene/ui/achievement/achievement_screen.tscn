@@ -31,7 +31,6 @@ offset_bottom = -58.0
 grow_vertical = 2
 
 [node name="Achievement" parent="." unique_id=1338750327 instance=ExtResource("3_f4a7o")]
-visible = false
 offset_left = 192.0
 offset_top = -76.0
 offset_right = 477.0
