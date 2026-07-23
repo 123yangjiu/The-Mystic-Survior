@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cxi35mt4xu2dm"
-path="res://.godot/imported/summonIdle.png-fd70068a168e6527a65add33a9025208.ctex"
+path="res://.godot/imported/summonIdle.png-7ca9c5c152460970dc87b290c11e2284.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sucai/png/summonIdle.png"
-dest_files=["res://.godot/imported/summonIdle.png-fd70068a168e6527a65add33a9025208.ctex"]
+source_file="res://sucai/enemy/death/summonIdle.png"
+dest_files=["res://.godot/imported/summonIdle.png-7ca9c5c152460970dc87b290c11e2284.ctex"]
 
 [params]
 

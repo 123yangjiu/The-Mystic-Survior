@@ -181,7 +181,7 @@ shape = SubResource("CircleShape2D_s4jxa")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=591978213]
 layer = 2
 
-[node name="虚拟摇杆" parent="CanvasLayer" unique_id=512370967 node_paths=PackedStringArray("player") instance=ExtResource("14_u7b46")]
+[node name="虚拟摇杆" parent="CanvasLayer" unique_id=512370967 node_paths=PackedStringArray("player") groups=["yaogan"] instance=ExtResource("14_u7b46")]
 visible = false
 position = Vector2(0, -5)
 player = NodePath("../..")

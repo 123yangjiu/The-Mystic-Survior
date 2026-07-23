@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://f16715cpyfa0"
-path="res://.godot/imported/summon.png-351ab82f0578634555bf5c29aca847b5.ctex"
+path="res://.godot/imported/summon.png-96df468c1a1fb8c65a5124ace1a87a40.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sucai/png/summon.png"
-dest_files=["res://.godot/imported/summon.png-351ab82f0578634555bf5c29aca847b5.ctex"]
+source_file="res://sucai/enemy/death/summon.png"
+dest_files=["res://.godot/imported/summon.png-96df468c1a1fb8c65a5124ace1a87a40.ctex"]
 
 [params]
 

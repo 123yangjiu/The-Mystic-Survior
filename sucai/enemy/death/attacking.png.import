@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bfvdbq4tsdn8e"
-path="res://.godot/imported/RockFlameBoss.png-3b11b3bf2bbe7277c96561086c3e491a.ctex"
+uid="uid://b3xer6klmq4lo"
+path="res://.godot/imported/attacking.png-eeb59613225387c56340c4701612ffcd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sucai/boss/RockFlameBoss.png"
-dest_files=["res://.godot/imported/RockFlameBoss.png-3b11b3bf2bbe7277c96561086c3e491a.ctex"]
+source_file="res://sucai/enemy/death/attacking.png"
+dest_files=["res://.godot/imported/attacking.png-eeb59613225387c56340c4701612ffcd.ctex"]
 
 [params]
 

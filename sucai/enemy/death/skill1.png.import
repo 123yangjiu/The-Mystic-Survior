@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3xer6klmq4lo"
-path="res://.godot/imported/attacking.png-06f842b8416dff5ed6ff6d12e83065a3.ctex"
+uid="uid://h0vio0k5ketw"
+path="res://.godot/imported/skill1.png-3a2d0aa4317586b7fb3b1ec2b91266a6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sucai/png/attacking.png"
-dest_files=["res://.godot/imported/attacking.png-06f842b8416dff5ed6ff6d12e83065a3.ctex"]
+source_file="res://sucai/enemy/death/skill1.png"
+dest_files=["res://.godot/imported/skill1.png-3a2d0aa4317586b7fb3b1ec2b91266a6.ctex"]
 
 [params]
 

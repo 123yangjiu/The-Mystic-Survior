@@ -1,12 +1,5 @@
 # 在任意触发脚本中（敌人、陷阱、事件管理器等）：
 生成实例
 var _confusion := preload("res://scene/status_effect/confusion_effect.tscn").instantiate()
-定义信号
-signal my_trigger(target: Node)
-绑定信号
-func _ready():
-	my_trigger.connect(_confusion.listen)
-
-# 任意时机，发送信号：
-func _on_something_happened(player: Node):
-	my_trigger.emit(player)
+调用内部函数
+_confusion.attach_effect(self,5)

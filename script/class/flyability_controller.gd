@@ -11,7 +11,10 @@ func on_timer_timeout():
 	while_attack(enemies)
 
 func check_enemy()->Array[Node]:
-	var enemies:Array[Node]= get_tree().get_first_node_in_group("enemylayer").get_children()
+	var enemylayer = get_tree().get_first_node_in_group("enemylayer")
+	if ! enemylayer:
+		return []
+	var enemies:Array[Node]= enemylayer.get_children()
 	enemies=enemies.filter(func(enemy:Node2D):#过滤掉不在范围内的敌人
 		return enemy.global_position.distance_squared_to(GameEvent.play_global_position)<pow(260,2) 
 	)

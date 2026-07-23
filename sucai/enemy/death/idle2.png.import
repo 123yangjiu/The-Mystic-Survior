@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://h0vio0k5ketw"
-path="res://.godot/imported/skill1.png-45443e144df11a175ccf1db89a0d3d4e.ctex"
+uid="uid://bcs3whjtswty2"
+path="res://.godot/imported/idle2.png-3dbbc3b79c2cec4ca2926fb6f67515db.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sucai/png/skill1.png"
-dest_files=["res://.godot/imported/skill1.png-45443e144df11a175ccf1db89a0d3d4e.ctex"]
+source_file="res://sucai/enemy/death/idle2.png"
+dest_files=["res://.godot/imported/idle2.png-3dbbc3b79c2cec4ca2926fb6f67515db.ctex"]
 
 [params]
 

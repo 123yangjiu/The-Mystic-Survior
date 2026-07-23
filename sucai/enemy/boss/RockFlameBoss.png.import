@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcs3whjtswty2"
-path="res://.godot/imported/idle2.png-7e31917af78e9a894c2a280bd8f31a89.ctex"
+uid="uid://bfvdbq4tsdn8e"
+path="res://.godot/imported/RockFlameBoss.png-ee57998e1eb7f1da1fd5c27ebc53143a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sucai/png/idle2.png"
-dest_files=["res://.godot/imported/idle2.png-7e31917af78e9a894c2a280bd8f31a89.ctex"]
+source_file="res://sucai/enemy/boss/RockFlameBoss.png"
+dest_files=["res://.godot/imported/RockFlameBoss.png-ee57998e1eb7f1da1fd5c27ebc53143a.ctex"]
 
 [params]
 

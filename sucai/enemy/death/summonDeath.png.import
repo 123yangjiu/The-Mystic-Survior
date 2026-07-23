@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmbls86hceaif"
-path="res://.godot/imported/death.png-94fc54011708ad6e4c46701bd3c04632.ctex"
+uid="uid://4qd1fje64pjr"
+path="res://.godot/imported/summonDeath.png-9c0a5ee40798165606159c95126028a3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sucai/png/death.png"
-dest_files=["res://.godot/imported/death.png-94fc54011708ad6e4c46701bd3c04632.ctex"]
+source_file="res://sucai/enemy/death/summonDeath.png"
+dest_files=["res://.godot/imported/summonDeath.png-9c0a5ee40798165606159c95126028a3.ctex"]
 
 [params]
 

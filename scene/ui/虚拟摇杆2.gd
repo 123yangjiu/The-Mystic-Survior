@@ -1,3 +1,4 @@
+class_name VirtualThumbstick
 extends Sprite2D
 
 var is_drag := false  :set=set_is_drag# 记录拖拽状态
@@ -8,6 +9,15 @@ var touch_id := -1    # 记录当前控制摇杆的手指ID
 # 存储所有活动触摸点
 var active_touches := {}
 var is_fixed:=false
+
+#计算混乱状态
+var key_to_vector:Dictionary[String,Vector2]={
+	"up":Vector2(0,1),
+	"down":Vector2(0,-1),
+	"left":Vector2(-1,0),
+	"right":Vector2(1,0)
+	
+}
 
 func _ready() -> void:
 	if GameEvent.is_fixed:
@@ -78,13 +88,14 @@ func _process_drag(event: InputEventScreenDrag) -> void:
 		return
 	
 	var vector: Vector2 = (event.position - self.global_position) / 2
+
 	if vector.length() > 22:  # 如果距离差大于两圆半径之差
 		vector = vector.normalized() * 22
-	
+	var new_vector = get_right_vector(vector)
 	yao_gan.position = vector
 	
 	if player:
-		player.direction = vector.normalized()
+		player.direction = new_vector.normalized()
 
 func _process_touch_end(event: InputEventScreenTouch) -> void:
 	# 如果松开的是控制摇杆的手指
@@ -132,3 +143,15 @@ func on_fix_change(fixed:bool)->void:
 						self.position=Vector2(540.0,267.0)
 					else :
 						self.position=Vector2(102.0,267.0)
+
+func get_right_vector(vector:Vector2)->Vector2:
+	var new_vector:=Vector2(0,0)
+	if vector.x >=0:
+		new_vector += vector.x * key_to_vector.get("right",Vector2(1,0))
+	else :
+		new_vector += -vector.x * key_to_vector.get("left",Vector2(-1,0))
+	if vector.y >=0:
+		new_vector += vector.y * key_to_vector.get("up",Vector2(0,1))
+	else :
+		new_vector += -vector.y * key_to_vector.get("down",Vector2(0,-1))
+	return new_vector

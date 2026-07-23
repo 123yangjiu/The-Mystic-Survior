@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccgrt0hoancuc"
-path="res://.godot/imported/idle.png-ced014abf16c80a44c37328a5bb22fb8.ctex"
+uid="uid://cfevat15e5l0t"
+path="res://.godot/imported/summonAppear.png-c5db8de71237b17e31d796aa3d17c28c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sucai/png/idle.png"
-dest_files=["res://.godot/imported/idle.png-ced014abf16c80a44c37328a5bb22fb8.ctex"]
+source_file="res://sucai/enemy/death/summonAppear.png"
+dest_files=["res://.godot/imported/summonAppear.png-c5db8de71237b17e31d796aa3d17c28c.ctex"]
 
 [params]
 

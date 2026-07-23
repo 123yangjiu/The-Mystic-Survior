@@ -21,6 +21,8 @@ var vec:Vector2
 var is_run:=false:set=set_is_run
 #手机移动
 var is_touch:=false
+
+
 func _ready() -> void:
 	#添加分组
 	add_to_group("player")
@@ -31,6 +33,11 @@ func _ready() -> void:
 	GameEvent.ability_upgrade_add.connect(on_ability_upgrade_add)
 	health_component.health_change.connect(on_health_change)
 	health_component.died.connect(on_died)
+	
+	#混乱状态测试
+	var _confusion := preload("res://scene/status_effect/confusion_effect.tscn").instantiate() as EffectConfusion
+
+	_confusion.attach_effect(self,5)
 
 @export var MAX_speed=120
 func _physics_process(_delta: float) -> void:
