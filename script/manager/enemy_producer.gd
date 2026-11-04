@@ -2,6 +2,9 @@ extends Node
 
 @export var enemy_manager:EnemyManager
 
+@export var disappear_out_view_component:PackedScene
+
+
 var enemy_layer:Node
 #管理特殊事件
 var all_special_event:Array[Callable]=[]
@@ -24,6 +27,9 @@ func _ready() -> void:
 	all_threat_event.append(mushroom_circle) 
 	all_threat_event.append(collision_disappear)
 	all_threat_event.append(boss_come)
+	#箭线阵型要靠这个场景做"出屏回收"，没设就直接警告一次（别在每个敌人身上刷屏）
+	if ! disappear_out_view_component:
+		push_warning("enemy_producer: 没有设置 disappear_out_view_component，箭线阵型的出屏回收会失效")
 	#测试内容
 
 func on_more_difficulty(difficulty):
@@ -105,6 +111,22 @@ func real_special():
 func single_appear(enemy:EnemyUnlockEntry,distance:=500.0)->void:
 	circle_surround(enemy,distance,1)
 
+## 给一只敌人挂上"离开屏幕就回收"的组件（箭线阵型用）。
+## 注意：这里故意不做类型强转。之前写成 as DisappearComponent，但挂的场景其实换成了
+## DisappearOutViewComponent（两者是兄弟类），as 转不过去会**静默返回 null**，
+## 于是 add_child(null) 在运行两分钟后才开始报错。只判空、不强转，以后换组件也不会再踩。
+func attach_out_view_reaper(kill_enemy:Enemy) -> void:
+	if ! disappear_out_view_component:
+		return
+	var reaper := disappear_out_view_component.instantiate()
+	if reaper == null:
+		push_warning("enemy_producer: disappear_out_view_component 实例化失败，跳过出屏回收")
+		return
+	#先挂进场景树再设 owner：Godot 要求 owner 是节点在树里的祖先，
+	#节点还没进树就设 owner 会报 "Invalid owner. Owner must be an ancestor in the tree."
+	kill_enemy.add_child(reaper)
+	reaper.owner = kill_enemy
+
 func line_front(enemy:EnemyUnlockEntry,wave:=2,wait_time:=4.0,distance:=280.0)->void:
 	for i in wave:
 		var index = randi_range(0,enemy_manager.all_shape.size()-1)
@@ -126,10 +148,7 @@ func line_front(enemy:EnemyUnlockEntry,wave:=2,wait_time:=4.0,distance:=280.0)->
 					component.is_initial=false
 				elif component is CollisionComponent:
 					component.collision_shape_2d.disabled=true
-			var disappear_component = preload("uid://0uu7d2cwajsq").instantiate() as DisappearComponent
-			kill_enemy.add_child(disappear_component)
-			disappear_component.disappear_time=3.0
-			disappear_component.owner = kill_enemy
+			attach_out_view_reaper(kill_enemy)
 		_shape.queue_free()
 		await get_tree().create_timer(wait_time).timeout
 

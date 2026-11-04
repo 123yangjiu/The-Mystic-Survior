@@ -146,6 +146,7 @@ offset = Vector2(-4, 0)
 flip_h = true
 
 [node name="HealthBar" type="ProgressBar" parent="." unique_id=1611554477]
+visible = false
 custom_minimum_size = Vector2(32, 8)
 offset_left = -15.000001
 offset_top = -23.0
@@ -196,6 +197,6 @@ offset_left = -40.0
 offset_right = 0.0
 grow_horizontal = 0
 
-[node name="Test" type="CollisionShape2D" parent="." unique_id=1605254454]
+[node name="CollisionPlayer" type="CollisionShape2D" parent="." unique_id=1605254454]
 position = Vector2(-3, 0)
 shape = SubResource("RectangleShape2D_j4wxg")

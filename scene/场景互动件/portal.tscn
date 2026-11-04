@@ -1,12 +1,299 @@
 [gd_scene format=3 uid="uid://dul0jyxu80prl"]
 
-[ext_resource type="Script" uid="uid://clfxn5wpmxup0" path="res://script/场景互动件/portal.gd" id="1_alu2h"]
+[ext_resource type="Script" uid="uid://dn2v1eg3pvp3i" path="res://script/场景互动件/player_portal.gd" id="1_script"]
+[ext_resource type="PackedScene" uid="uid://dkttqyvljwlw2" path="res://scene/大场景/game.scn" id="2_target"]
+[ext_resource type="Texture2D" uid="uid://crg561g0ledmh" path="res://sucai/portal/Portal.png" id="3_portal"]
+[ext_resource type="Texture2D" uid="uid://iohbokp5ktr7" path="res://sucai/portal/Portal-Sheet.png" id="4_sheet"]
+[ext_resource type="Texture2D" uid="uid://dj58ypr768urw" path="res://sucai/portal/Particle Effect 1.png" id="5_spark"]
+[ext_resource type="Texture2D" uid="uid://cxtniwmdnub3d" path="res://sucai/portal/Particle Effect 2.png" id="6_dust"]
+[ext_resource type="Texture2D" uid="uid://ci72fp1oxgnbl" path="res://sucai/portal/Particle Effect 3.png" id="7_ring"]
 
-[node name="Portal" type="Node2D" unique_id=202667262]
-script = ExtResource("1_alu2h")
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_add"]
+blend_mode = 1
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1423683988]
+[sub_resource type="Gradient" id="Gradient_glow"]
+offsets = PackedFloat32Array(0, 0.35, 0.7, 1)
+colors = PackedColorArray(1, 1, 1, 0.85, 1, 1, 1, 0.45, 1, 1, 1, 0.12, 1, 1, 1, 0)
 
-[node name="Area2D" type="Area2D" parent="." unique_id=314407682]
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_glow"]
+gradient = SubResource("Gradient_glow")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
 
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1"]
+atlas = ExtResource("4_sheet")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2"]
+atlas = ExtResource("4_sheet")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f3"]
+atlas = ExtResource("4_sheet")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f4"]
+atlas = ExtResource("4_sheet")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f5"]
+atlas = ExtResource("4_sheet")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f6"]
+atlas = ExtResource("4_sheet")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_body"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_portal")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f6")
+}],
+"loop": 0,
+"name": &"close",
+"speed": 14.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_portal")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_portal")
+}],
+"loop": 0,
+"name": &"open",
+"speed": 14.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_fade"]
+offsets = PackedFloat32Array(0, 0.2, 0.7, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0.5, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_fade"]
+gradient = SubResource("Gradient_fade")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_swirl"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 24.0
+direction = Vector3(0, -1, 0)
+spread = 180.0
+flatness = 1.0
+initial_velocity_max = 2.0
+orbit_velocity_min = 120.0
+orbit_velocity_max = 210.0
+radial_velocity_min = -14.0
+radial_velocity_max = -5.0
+scale_min = 0.2
+scale_max = 0.32
+color = Color(0.7, 0.92, 1, 1)
+color_ramp = SubResource("GradientTexture1D_fade")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_spark"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(10, 2, 1)
+direction = Vector3(0, -1, 0)
+spread = 24.0
+initial_velocity_min = 10.0
+initial_velocity_max = 26.0
+gravity = Vector3(0, -14, 0)
+scale_min = 0.26
+scale_max = 0.44
+color = Color(0.6, 0.85, 1, 1)
+color_ramp = SubResource("GradientTexture1D_fade")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_dust"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 26.0
+direction = Vector3(0, -1, 0)
+spread = 180.0
+flatness = 1.0
+initial_velocity_min = 3.0
+initial_velocity_max = 9.0
+gravity = Vector3(0, -1.5, 0)
+scale_min = 0.22
+scale_max = 0.38
+color = Color(0.55, 0.8, 1, 1)
+color_ramp = SubResource("GradientTexture1D_fade")
+
+[sub_resource type="Gradient" id="Gradient_out"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_out"]
+gradient = SubResource("Gradient_out")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_burst"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 4.0
+spread = 180.0
+flatness = 1.0
+initial_velocity_min = 40.0
+initial_velocity_max = 95.0
+damping_min = 30.0
+damping_max = 60.0
+scale_min = 0.18
+scale_max = 0.35
+color = Color(0.75, 0.92, 1, 1)
+color_ramp = SubResource("GradientTexture1D_out")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_enter"]
+size = Vector2(26, 40)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_near"]
+radius = 92.0
+
+[node name="Portal" type="Node2D" unique_id=590431895]
+script = ExtResource("1_script")
+target_scene = ExtResource("2_target")
+
+[node name="Glow" type="Sprite2D" parent="." unique_id=2051523099]
+modulate = Color(0.35, 0.62, 1, 0.6)
+z_index = -2
+texture_filter = 2
+material = SubResource("CanvasItemMaterial_add")
+scale = Vector2(1.35, 1.75)
+texture = SubResource("GradientTexture2D_glow")
+
+[node name="AuraRing" type="Sprite2D" parent="." unique_id=1506666798]
+modulate = Color(0.6, 0.88, 1, 0.85)
+z_index = -1
+material = SubResource("CanvasItemMaterial_add")
+scale = Vector2(2.3, 2.3)
+texture = ExtResource("7_ring")
+
+[node name="PulseRing" type="Sprite2D" parent="." unique_id=146490150]
+modulate = Color(0.6, 0.88, 1, 0.5)
+z_index = -1
+material = SubResource("CanvasItemMaterial_add")
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("7_ring")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=122241609]
+sprite_frames = SubResource("SpriteFrames_body")
+animation = &"idle"
+
+[node name="Effects" type="Node2D" parent="." unique_id=111025176]
+
+[node name="Swirl" type="GPUParticles2D" parent="Effects" unique_id=1767761397]
+visible = false
+material = SubResource("CanvasItemMaterial_add")
+amount = 14
+texture = ExtResource("6_dust")
+lifetime = 1.6
+preprocess = 0.8
+visibility_rect = Rect2(-80, -80, 160, 160)
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_swirl")
+
+[node name="Sparks" type="GPUParticles2D" parent="Effects" unique_id=395653309]
+material = SubResource("CanvasItemMaterial_add")
+position = Vector2(0, 16)
+amount = 16
+texture = ExtResource("5_spark")
+lifetime = 1.3
+preprocess = 0.5
+visibility_rect = Rect2(-64, -80, 128, 140)
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_spark")
+
+[node name="Dust" type="GPUParticles2D" parent="Effects" unique_id=1750955529]
+material = SubResource("CanvasItemMaterial_add")
+texture = ExtResource("6_dust")
+lifetime = 3.0
+preprocess = 1.5
+visibility_rect = Rect2(-80, -80, 160, 160)
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_dust")
+
+[node name="Burst" type="GPUParticles2D" parent="." unique_id=1462202852]
+z_index = 1
+material = SubResource("CanvasItemMaterial_add")
+emitting = false
+amount = 24
+texture = ExtResource("6_dust")
+lifetime = 0.75
+one_shot = true
+explosiveness = 1.0
+randomness = 0.4
+visibility_rect = Rect2(-150, -150, 300, 300)
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_burst")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=963575438]
+visible = false
+collision_layer = 64
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1180520577]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_enter")
+
+[node name="NearArea2D" type="Area2D" parent="." unique_id=745253063]
+visible = false
+collision_layer = 0
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NearArea2D" unique_id=329357429]
+shape = SubResource("CircleShape2D_near")
+
+[node name="PortalName" type="Label" parent="." unique_id=1500123001]
+visible = false
+offset_left = -70.0
+offset_top = -56.0
+offset_right = 70.0
+offset_bottom = -34.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 12
+text = ""
+horizontal_alignment = 1
+vertical_alignment = 1

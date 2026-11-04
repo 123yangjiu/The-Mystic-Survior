@@ -1,0 +1,540 @@
+[
+  {
+    "acceleration": 3.0,
+    "animations": [
+      "run"
+    ],
+    "attack_type": 0,
+    "components": [
+      "health_component",
+      "velocity_component",
+      "drop_component",
+      "attack_component",
+      "wound_component",
+      "collision_component",
+      "effect_component"
+    ],
+    "damage": 6.0,
+    "data_max_health": 13.0,
+    "disapear_difficulty": 6,
+    "file": "silime",
+    "id": 0,
+    "id_name": "slime",
+    "max_health": 13.0,
+    "portrait": "images/enemies/silime.png",
+    "portrait_size": [
+      14,
+      12
+    ],
+    "root_name": "slime",
+    "scene": "res://scene/enemy/silime.tscn",
+    "speed": 60.0,
+    "sprite_source": "res://sucai/enemy/slime/slime_green.png",
+    "turn_rate": 3.0,
+    "unlock_difficulty": 1,
+    "weight": 1.0
+  },
+  {
+    "acceleration": 8.0,
+    "animations": [
+      "run"
+    ],
+    "attack_type": 0,
+    "components": [
+      "health_component",
+      "drop_component",
+      "velocity_component",
+      "wound_component",
+      "attack_component",
+      "collision_component",
+      "effect_component"
+    ],
+    "damage": 10.0,
+    "data_max_health": 32.0,
+    "disapear_difficulty": 8,
+    "file": "purple_silime",
+    "id": 1,
+    "id_name": "red_slime",
+    "max_health": 32.0,
+    "portrait": "images/enemies/purple_silime.png",
+    "portrait_size": [
+      14,
+      12
+    ],
+    "root_name": "purple_slimer",
+    "scene": "res://scene/enemy/puple_silime.tscn",
+    "speed": 70.0,
+    "sprite_source": "res://sucai/enemy/slime/slime_purple.png",
+    "turn_rate": 3.5,
+    "unlock_difficulty": 2,
+    "weight": 2.0
+  },
+  {
+    "acceleration": 8.0,
+    "animations": [
+      "run"
+    ],
+    "attack_type": 0,
+    "components": [
+      "health_component",
+      "drop_component",
+      "velocity_component",
+      "attack_component",
+      "wound_component",
+      "collision_component",
+      "effect_component"
+    ],
+    "damage": 10.0,
+    "data_max_health": 42.0,
+    "disapear_difficulty": 11,
+    "file": "avocado",
+    "id": 2,
+    "id_name": "avocado",
+    "max_health": 42.0,
+    "portrait": "images/enemies/avocado.png",
+    "portrait_size": [
+      34,
+      44
+    ],
+    "root_name": "Avocado",
+    "scene": "res://scene/enemy/avocado.tscn",
+    "speed": 100.0,
+    "sprite_source": "res://sucai/enemy/亡灵鳄梨/avacado_character_sprite_sheet_transparent_矫正.png",
+    "turn_rate": 4.0,
+    "unlock_difficulty": 4,
+    "weight": 1.5
+  },
+  {
+    "acceleration": 8.0,
+    "animations": [
+      "run"
+    ],
+    "attack_type": 0,
+    "components": [
+      "health_component",
+      "drop_component",
+      "velocity_component",
+      "wound_component",
+      "attack_component"
+    ],
+    "damage": 15.0,
+    "data_max_health": 30.0,
+    "disapear_difficulty": 17,
+    "file": "wolf",
+    "id": 3,
+    "id_name": "wolf",
+    "max_health": 30.0,
+    "portrait": "images/enemies/wolf.png",
+    "portrait_size": [
+      64,
+      30
+    ],
+    "root_name": "wolf",
+    "scene": "res://scene/enemy/wolf.tscn",
+    "speed": 120.0,
+    "sprite_source": "res://sucai/enemy/wolf/run.png",
+    "turn_rate": 3.0,
+    "unlock_difficulty": 6,
+    "weight": 2.0
+  },
+  {
+    "acceleration": 8.0,
+    "animations": [
+      "run",
+      "run_2"
+    ],
+    "attack_type": 0,
+    "components": [
+      "health_component",
+      "drop_component",
+      "velocity_component",
+      "wound_component",
+      "attack_component",
+      "collision_component",
+      "invisible_component",
+      "effect_component"
+    ],
+    "damage": 15.0,
+    "data_max_health": 55.0,
+    "disapear_difficulty": 30,
+    "file": "owl",
+    "id": 4,
+    "id_name": "owl",
+    "max_health": 55.0,
+    "portrait": "images/enemies/owl.png",
+    "portrait_size": [
+      56,
+      86
+    ],
+    "root_name": "Owl",
+    "scene": "res://scene/enemy/owl.tscn",
+    "speed": 95.0,
+    "sprite_source": "res://sucai/enemy/黑暗猫头鹰/Aurigaidlewithshadow-Sheet.png",
+    "turn_rate": 3.5,
+    "unlock_difficulty": 8,
+    "weight": 1.5
+  },
+  {
+    "acceleration": 5.0,
+    "animations": [
+      "run"
+    ],
+    "attack_type": 0,
+    "components": [
+      "health_component",
+      "drop_component",
+      "velocity_component",
+      "wound_component",
+      "attack_component",
+      "collision_component",
+      "effect_component",
+      "disappear_component"
+    ],
+    "damage": 20.0,
+    "data_max_health": 300.0,
+    "disapear_difficulty": 100,
+    "file": "gorlen",
+    "id": 5,
+    "id_name": "gorlen",
+    "max_health": 300.0,
+    "portrait": "images/enemies/gorlen.png",
+    "portrait_size": [
+      48,
+      46
+    ],
+    "root_name": "gorlen",
+    "scene": "res://scene/enemy/gorlen.tscn",
+    "speed": 25.0,
+    "sprite_source": "res://sucai/enemy/gorlen/Character_sheet.png",
+    "turn_rate": 5.0,
+    "unlock_difficulty": 11,
+    "weight": 0.4
+  },
+  {
+    "acceleration": 5.0,
+    "animations": [
+      "run"
+    ],
+    "attack_type": 0,
+    "components": [
+      "health_component",
+      "velocity_component",
+      "box_drop_component",
+      "wound_component",
+      "attack_component",
+      "collision_component",
+      "effect_component"
+    ],
+    "damage": 15.0,
+    "data_max_health": 500.0,
+    "disapear_difficulty": 100,
+    "file": "box",
+    "id": 6,
+    "id_name": "box",
+    "max_health": 500.0,
+    "portrait": "images/enemies/box.png",
+    "portrait_size": [
+      16,
+      14
+    ],
+    "root_name": "box",
+    "scene": "res://scene/enemy/box.tscn",
+    "speed": 60.0,
+    "sprite_source": "res://sucai/迷你地牢素材/used/tile_0089.png",
+    "turn_rate": 5.0,
+    "unlock_difficulty": -4,
+    "weight": 0.001
+  },
+  {
+    "acceleration": 5.0,
+    "animations": [
+      "run"
+    ],
+    "attack_type": 0,
+    "components": [
+      "health_component",
+      "box_drop_component",
+      "escape_component",
+      "wound_component",
+      "attack_component",
+      "collision_component",
+      "effect_component"
+    ],
+    "damage": 15.0,
+    "data_max_health": 300.0,
+    "disapear_difficulty": 100,
+    "file": "escape_box",
+    "id": 7,
+    "id_name": "escape_box",
+    "max_health": 300.0,
+    "portrait": "images/enemies/escape_box.png",
+    "portrait_size": [
+      16,
+      14
+    ],
+    "root_name": "EscapeBox",
+    "scene": "res://scene/enemy/escape_box.tscn",
+    "speed": 70.0,
+    "sprite_source": "res://sucai/迷你地牢素材/used/tile_0089.png",
+    "turn_rate": 3.0,
+    "unlock_difficulty": 5,
+    "weight": 0.001
+  },
+  {
+    "acceleration": 7.0,
+    "animations": [
+      "real_rush",
+      "run",
+      "rush_ready",
+      "rush_walk"
+    ],
+    "attack_type": 0,
+    "components": [
+      "health_component",
+      "drop_component",
+      "velocity_component",
+      "wound_component",
+      "attack_component",
+      "collision_component",
+      "rush_component",
+      "effect_component"
+    ],
+    "damage": 42.0,
+    "data_max_health": 1000.0,
+    "disapear_difficulty": 100,
+    "file": "knight",
+    "id": 9,
+    "id_name": "knight",
+    "max_health": 1000.0,
+    "portrait": "images/enemies/knight.png",
+    "portrait_size": [
+      61,
+      42
+    ],
+    "root_name": "Knight",
+    "scene": "res://scene/enemy/knight.tscn",
+    "speed": 125.0,
+    "sprite_source": "res://sucai/enemy/Knight/knight-Sheet_whitefx.png",
+    "turn_rate": 8.0,
+    "unlock_difficulty": -11,
+    "weight": 0.0
+  },
+  {
+    "acceleration": 8.0,
+    "animations": [
+      "run"
+    ],
+    "attack_type": 0,
+    "components": [
+      "health_component",
+      "velocity_component",
+      "drop_component",
+      "wound_component",
+      "attack_component",
+      "copy_component"
+    ],
+    "damage": 28.0,
+    "data_max_health": 90.0,
+    "disapear_difficulty": 100,
+    "file": "red_wolf",
+    "id": 10,
+    "id_name": "red_wolf",
+    "max_health": 90.0,
+    "portrait": "images/enemies/red_wolf.png",
+    "portrait_size": [
+      64,
+      30
+    ],
+    "root_name": "red_wolf",
+    "scene": "res://scene/enemy/red_wolf.tscn",
+    "speed": 140.0,
+    "sprite_source": "res://sucai/enemy/wolf/wolf_red.png",
+    "turn_rate": 2.5,
+    "unlock_difficulty": 18,
+    "weight": 0.4
+  },
+  {
+    "acceleration": 7.0,
+    "animations": [
+      "run"
+    ],
+    "attack_type": 0,
+    "components": [
+      "health_component",
+      "drop_component",
+      "velocity_component",
+      "wound_component",
+      "attack_component",
+      "collision_component",
+      "summon_component",
+      "effect_component"
+    ],
+    "damage": 29.0,
+    "data_max_health": 1200.0,
+    "disapear_difficulty": 100,
+    "file": "witch",
+    "id": 11,
+    "id_name": "witch",
+    "max_health": 1200.0,
+    "portrait": "images/enemies/witch.png",
+    "portrait_size": [
+      168,
+      174
+    ],
+    "root_name": "Witch",
+    "scene": "res://scene/enemy/witch.tscn",
+    "speed": 90.0,
+    "sprite_source": "res://sucai/enemy/邪恶女巫.png",
+    "turn_rate": 8.0,
+    "unlock_difficulty": -13,
+    "weight": 0.0
+  },
+  {
+    "acceleration": 5.0,
+    "animations": [
+      "new_animation"
+    ],
+    "attack_type": 0,
+    "components": [
+      "health_component",
+      "drop_component",
+      "velocity_component",
+      "disappear_component",
+      "wound_component",
+      "attack_component",
+      "solid_collision_controller",
+      "effect_component"
+    ],
+    "damage": 30.0,
+    "data_max_health": 500.0,
+    "disapear_difficulty": 100,
+    "file": "mushroom",
+    "id": 12,
+    "id_name": "mushroom",
+    "max_health": 800.0,
+    "portrait": "images/enemies/mushroom.png",
+    "portrait_size": [
+      30,
+      34
+    ],
+    "root_name": "MushroomEnemy",
+    "scene": "res://scene/enemy/mushroomenemy.tscn",
+    "speed": 10.0,
+    "sprite_source": "res://sucai/enemy/新蘑菇/Mushroom-Run.png",
+    "turn_rate": 0.0,
+    "unlock_difficulty": -1,
+    "weight": 0.0
+  },
+  {
+    "acceleration": 5.0,
+    "animations": [
+      "attack",
+      "blink",
+      "run"
+    ],
+    "attack_type": 0,
+    "components": [
+      "health_component",
+      "drop_component",
+      "velocity_component",
+      "wound_component",
+      "with_animation_attack_component",
+      "with_animation_attack_component",
+      "check_attack_component",
+      "blink_component"
+    ],
+    "damage": 25.0,
+    "data_max_health": 1800.0,
+    "disapear_difficulty": 100,
+    "file": "undead",
+    "id": 13,
+    "id_name": "undead",
+    "max_health": 1600.0,
+    "portrait": "images/enemies/undead.png",
+    "portrait_size": [
+      45,
+      62
+    ],
+    "root_name": "Undead",
+    "scene": "res://scene/enemy/undead.tscn",
+    "speed": 120.0,
+    "sprite_source": "res://sucai/enemy/death/attacking.png",
+    "turn_rate": 10.0,
+    "unlock_difficulty": -20,
+    "weight": 0.0
+  },
+  {
+    "acceleration": 5.0,
+    "animations": [
+      "run",
+      "shoot"
+    ],
+    "attack_type": 0,
+    "components": [
+      "health_component",
+      "drop_component",
+      "velocity_component",
+      "wound_component",
+      "attack_component",
+      "collision_component",
+      "effect_component",
+      "check_ability_component"
+    ],
+    "damage": 35.0,
+    "data_max_health": 500.0,
+    "disapear_difficulty": 100,
+    "file": "laser_gorlen",
+    "id": 14,
+    "id_name": "laser_gorlen",
+    "max_health": 500.0,
+    "portrait": "images/enemies/laser_gorlen.png",
+    "portrait_size": [
+      48,
+      46
+    ],
+    "root_name": "LaserGorlen",
+    "scene": "res://scene/enemy/laser_gorlen.tscn",
+    "speed": 45.0,
+    "sprite_source": "res://sucai/enemy/gorlen/gloren.png",
+    "turn_rate": 5.0,
+    "unlock_difficulty": 21,
+    "weight": 0.02
+  },
+  {
+    "acceleration": 10.0,
+    "animations": [
+      "run"
+    ],
+    "attack_type": 0,
+    "components": [
+      "health_component",
+      "drop_component",
+      "velocity_component",
+      "wound_component",
+      "attack_component",
+      "collision_component",
+      "with_animation_attack_component",
+      "effect_component"
+    ],
+    "damage": 18.0,
+    "data_max_health": 0.0,
+    "disapear_difficulty": 0,
+    "file": "skeleton",
+    "id": -1,
+    "id_name": "",
+    "max_health": 100.0,
+    "no_data": true,
+    "portrait": "images/enemies/skeleton.png",
+    "portrait_size": [
+      114,
+      132
+    ],
+    "root_name": "Skeleton",
+    "scene": "res://scene/enemy/skeleton.tscn",
+    "speed": 70.0,
+    "sprite_source": "res://sucai/enemy/邪恶女巫.png",
+    "turn_rate": 5.0,
+    "unlock_difficulty": 0,
+    "weight": 0.0
+  }
+]

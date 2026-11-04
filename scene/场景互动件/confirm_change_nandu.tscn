@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://cmudb1msq7d1"]
+
+[ext_resource type="Script" uid="uid://b6p1gpijunmbd" path="res://script/场景互动件/confirm_change_nandu.gd" id="1_2316e"]
+[ext_resource type="Texture2D" uid="uid://bqg6ree8lw8nn" path="res://sucai/迷你地牢素材/Tiles/tile_0061.png" id="2_xrk4w"]
+[ext_resource type="Texture2D" uid="uid://bixgsq835f8cs" path="res://sucai/UI/长按钮_绿.png" id="3_xrk4w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_glf3i"]
+atlas = ExtResource("2_xrk4w")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0c522"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_glf3i")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0c522"]
+size = Vector2(15, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_glf3i"]
+size = Vector2(32, 31)
+
+[node name="确认物体" type="Node2D" unique_id=1558736267 node_paths=PackedStringArray("collision_area", "check_area", "interval_timer")]
+script = ExtResource("1_2316e")
+collision_area = NodePath("CollisionArea")
+check_area = NodePath("CheckArea")
+interval_timer = NodePath("Interval")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1422960110]
+sprite_frames = SubResource("SpriteFrames_0c522")
+
+[node name="CollisionArea" type="Area2D" parent="." unique_id=1439840861]
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionArea" unique_id=1920147637]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_0c522")
+
+[node name="CheckArea" type="Area2D" parent="." unique_id=1238838146]
+collision_layer = 0
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckArea" unique_id=1079687223]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_glf3i")
+
+[node name="Interval" type="Timer" parent="." unique_id=448735714]
+wait_time = 0.5
+
+[node name="Nandu" type="Label" parent="." unique_id=919079032]
+modulate = Color(0.5, 1, 0.5, 1)
+offset_left = -20.0
+offset_top = -24.0
+offset_right = 20.0
+offset_bottom = -12.0
+text = "普通"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=758461099]
+offset_left = -94.0
+offset_top = -122.0
+offset_right = 97.0
+offset_bottom = -26.0
+texture = ExtResource("3_xrk4w")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="NanduDescription" type="Label" parent="TextureRect2" unique_id=1666439094]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -66.0
+offset_top = -7.5
+offset_right = 66.0
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "非常地普通，非常地友好"
+
+[node name="TextureRect" type="ColorRect" parent="." unique_id=180701169]
+visible = false
+offset_left = -94.0
+offset_top = -99.0
+offset_right = 97.0
+offset_bottom = -24.0
+color = Color(0, 0, 0, 0.7058824)

@@ -8,7 +8,6 @@ var health_component:HealthComponent
 var inside_area:Array[AreaInComponent] :set= set_inside_area
 #受伤效果
 var wound_degree:=1.0
-var floating_text_scene=preload("res://scene/ui/floatingtext.tscn")
 var is_flashing=false
 
 func _ready() -> void:
@@ -61,10 +60,8 @@ func wound_effect(damage:int)->void:
 	flash_white()
 
 func flash_text(damage:int)->void:
-	var floating_text=floating_text_scene.instantiate() as Node2D
-	get_tree().get_first_node_in_group("前景图层").add_child(floating_text)
-	floating_text.global_position=global_position
-	floating_text.start(str(damage))
+	#飘字走对象池复用，避免战斗中每挨一下都新建/销毁一个节点
+	FloatingTextPool.spawn(get_tree().get_first_node_in_group("前景图层"),global_position,str(damage))
 
 func flash_white(duration := 0.08):
 	if is_flashing:               #正在闪就直接返回

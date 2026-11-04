@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://dnlskexp2b658"]
+
+[ext_resource type="Script" uid="uid://dda6etdmks0fm" path="res://script/场景互动件/确认物体.gd" id="1_glf3i"]
+[ext_resource type="Texture2D" uid="uid://bqg6ree8lw8nn" path="res://sucai/迷你地牢素材/Tiles/tile_0061.png" id="1_ux0lq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_glf3i"]
+atlas = ExtResource("1_ux0lq")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0c522"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_glf3i")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0c522"]
+size = Vector2(15, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_glf3i"]
+size = Vector2(32, 31)
+
+[node name="确认物体" type="Node2D" unique_id=1558736267 node_paths=PackedStringArray("collision_area", "check_area")]
+script = ExtResource("1_glf3i")
+collision_area = NodePath("CollisionArea")
+check_area = NodePath("CheckArea")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1422960110]
+sprite_frames = SubResource("SpriteFrames_0c522")
+
+[node name="CollisionArea" type="Area2D" parent="." unique_id=1439840861]
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionArea" unique_id=1920147637]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_0c522")
+
+[node name="CheckArea" type="Area2D" parent="." unique_id=1238838146]
+collision_layer = 0
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckArea" unique_id=1079687223]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_glf3i")
+
+[node name="Interval" type="Timer" parent="." unique_id=448735714]
+wait_time = 0.5

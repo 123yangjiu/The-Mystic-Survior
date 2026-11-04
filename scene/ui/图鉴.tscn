@@ -1,0 +1,7 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://script/ui/codex.gd" id="1"]
+
+[node name="Codex" type="CanvasLayer"]
+layer = 100
+script = ExtResource("1")

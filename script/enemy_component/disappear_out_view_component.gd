@@ -5,13 +5,12 @@ extends EnemyComponent
 
 var is_entered :=false
 
-
-
 func _process(_delta: float) -> void:
 	if is_entered:
 		if ! is_in_rect():
+			print("已删除")
 			is_entered=false
-			queue_free()
+			owner.queue_free()
 	else :
 		if is_in_rect():
 			is_entered =true

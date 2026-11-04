@@ -1,0 +1,10 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" uid="uid://dul0jyxu80prl" path="res://scene/场景互动件/portal.tscn" id="1_portal"]
+[ext_resource type="PackedScene" path="res://scene/大场景/训练场.tscn" id="2_training"]
+
+[node name="TrainingPortal" instance=ExtResource("1_portal")]
+target_scene = ExtResource("2_training")
+start_run = false
+theme_color = Color(0.35, 0.95, 0.6, 1)
+portal_name = "训练场"

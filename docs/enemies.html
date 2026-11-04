@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>神秘幸存者 · 游戏资料库</title>
+<style>
+@font-face{font-family:"MysticPixel";src:url("../resource/theme/fusion-pixel-12px-monospaced-zh_hans.ttf") format("truetype");font-display:swap}
+:root{--bg:#0f131b;--panel:#171e2b;--panel2:#1e2736;--line:#2a3547;--text:#dbe4f0;--muted:#8b98ad;--accent:#5aa9ff;--purple:#a06cff;--green:#4ad295;--amber:#ffbe55}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:system-ui,"Segoe UI","Microsoft YaHei",sans-serif;font-size:15px;line-height:1.6}
+a{color:var(--accent)}
+code{font-size:12px;color:#a9c4e4;word-break:break-all}
+.wrap{max-width:1180px;margin:0 auto;padding:32px 20px 80px}
+header.top{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-end;justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:18px}
+h1{font-family:"MysticPixel",system-ui,sans-serif;font-size:24px;margin:0 0 6px;letter-spacing:1px}
+h1 span{color:var(--accent)}
+.sub{margin:0;color:var(--muted);font-size:13px}
+nav.tabs{display:flex;gap:8px;flex-wrap:wrap}
+.tab{background:var(--panel);border:1px solid var(--line);color:var(--muted);padding:8px 16px;border-radius:8px;font-size:13px;cursor:pointer}
+.tab.active{color:#0c1220;background:var(--accent);border-color:var(--accent);font-weight:600}
+section[hidden]{display:none}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:22px 0}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.stat b{display:block;font-size:22px;font-family:"MysticPixel",system-ui;line-height:1.2}
+.stat span{color:var(--muted);font-size:12px}
+h2{font-family:"MysticPixel",system-ui;font-size:12px;letter-spacing:1px;color:var(--accent);margin:34px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+h3.sec{font-size:15px;margin:26px 0 10px}
+.hint{color:var(--muted);font-size:12px;margin:6px 0 0}
+.gantt{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.g-row{display:grid;grid-template-columns:96px 1fr 64px;gap:10px;align-items:center;margin:5px 0;font-size:13px}
+.g-name{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.g-track{position:relative;height:14px;background:#141b26;border-radius:7px}
+.g-track i{position:absolute;top:0;bottom:0;border-radius:7px;background:linear-gradient(90deg,#3d6fa8,#5aa9ff)}
+.g-track i.event{background:linear-gradient(90deg,#6a4bb8,#a06cff);border-radius:50%}
+.g-range{color:var(--muted);font-size:12px;text-align:right}
+.g-axis{display:grid;grid-template-columns:96px 1fr 64px;gap:10px;color:var(--muted);font-size:11px;margin-top:8px}
+.g-axis .ticks{display:grid;grid-template-columns:repeat(30,1fr)}
+.g-axis .ticks span{text-align:center;font-size:10px}
+.legend{display:flex;gap:16px;flex-wrap:wrap;color:var(--muted);font-size:12px;margin-top:10px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:14px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px;cursor:pointer;transition:border-color .15s,transform .15s}
+.card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.card .head{display:flex;gap:12px;align-items:center}
+.portrait{width:96px;height:96px;flex:0 0 96px;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 45%,#223047,#141a25);border-radius:10px;overflow:hidden}
+.portrait img{image-rendering:pixelated}
+.card h3{margin:0;font-size:16px;display:flex;align-items:baseline;gap:7px;flex-wrap:wrap}
+.card h3 small{color:var(--muted);font-size:12px;font-weight:400}
+.chips{display:flex;gap:5px;flex-wrap:wrap;margin-top:6px}
+.chip{font-size:11px;padding:2px 8px;border-radius:999px;background:#202b3c;color:var(--muted);border:1px solid var(--line)}
+.chip.id{color:var(--amber);border-color:#4a3a1e;background:#2a2213}
+.chip.normal{color:var(--green);border-color:#1d4a38;background:#12261f}
+.chip.event{color:var(--purple);border-color:#3b2a63;background:#1d1733}
+.chip.disabled{color:var(--muted)}
+.chip.comp{color:#9fb4cf}
+.chip.sort{color:var(--accent);border-color:#1e3a5c;background:#132234}
+.stats4{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:12px 0 8px}
+.stats4 div{background:var(--panel2);border-radius:8px;padding:6px 8px;text-align:center}
+.stats4 dt{font-size:11px;color:var(--muted);margin:0}
+.stats4 dd{margin:1px 0 0;font-size:16px;font-weight:600;font-family:"MysticPixel",system-ui}
+.spawn{font-size:12px;color:var(--muted);margin:6px 0 8px;min-height:34px}
+.toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:16px 0}
+input[type=search],input[type=text],input[type=number],select,textarea{background:var(--panel);border:1px solid var(--line);color:var(--text);border-radius:8px;padding:8px 11px;font-size:14px;font-family:inherit;outline:none}
+input[type=search]{flex:1;min-width:180px}
+input:focus,select:focus,textarea:focus{border-color:var(--accent)}
+.filters{display:flex;gap:6px;flex-wrap:wrap}
+.pill{background:var(--panel);border:1px solid var(--line);color:var(--muted);border-radius:999px;padding:6px 13px;font-size:13px;cursor:pointer}
+.pill.on{color:var(--text);border-color:var(--accent);background:#16243a}
+dialog{border:1px solid var(--line);border-radius:14px;background:var(--panel);color:var(--text);max-width:640px;width:calc(100% - 32px);padding:0}
+dialog::backdrop{background:rgba(5,8,13,.75)}
+.dlg-head{display:flex;gap:16px;align-items:center;padding:18px 20px;border-bottom:1px solid var(--line)}
+.dlg-body{padding:16px 20px 22px}
+.dlg-body h4{margin:16px 0 6px;font-size:13px;color:var(--accent)}
+.dlg-body table{width:100%;border-collapse:collapse;font-size:13px}
+.dlg-body td{padding:4px 0;border-bottom:1px solid #222c3c;vertical-align:top}
+.dlg-body td:first-child{color:var(--muted);width:110px}
+.close{background:none;border:1px solid var(--line);color:var(--muted);font-size:18px;cursor:pointer;border-radius:6px;width:28px;height:28px;line-height:1}
+.ev{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:12px}
+.ev h4{margin:0 0 6px;font-size:15px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.ev p{margin:6px 0;font-size:13px;color:#c4d2e6}
+.ev .meta{color:var(--muted);font-size:12px}
+.diff-table{width:100%;border-collapse:collapse;font-size:13px;background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.diff-table th,.diff-table td{padding:9px 12px;border-bottom:1px solid var(--line);text-align:left}
+.diff-table th{color:var(--muted);font-weight:500;font-size:12px;background:#141b26}
+.diff-table tr:last-child td{border-bottom:none}
+.ab{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px}
+.ab h4{margin:0 0 4px;font-size:15px}
+.ab p{margin:6px 0 0;font-size:13px;color:#c4d2e6;white-space:pre-line}
+.ab .path{color:var(--muted);font-size:11px;margin-top:8px}
+.diy{display:grid;grid-template-columns:minmax(300px,400px) 1fr;gap:18px}
+@media(max-width:860px){.diy{grid-template-columns:1fr}}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px}
+.field{display:grid;grid-template-columns:86px 1fr;gap:10px;align-items:center;margin-bottom:10px}
+.field label{font-size:13px;color:var(--muted)}
+.field input{width:100%}
+.upload{display:flex;gap:12px;align-items:center;margin-bottom:14px}
+.upload .thumb{width:96px;height:96px;flex:0 0 96px;border:1px dashed var(--line);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:12px;overflow:hidden;background:#141a25}
+.upload .thumb img{image-rendering:pixelated;max-width:100%;max-height:100%}
+.upload .btn{background:var(--panel2);border:1px solid var(--line);color:var(--text);border-radius:8px;padding:7px 12px;font-size:13px;cursor:pointer}
+.upload .btn:hover{border-color:var(--accent)}
+.upload input[type=file]{display:none}
+textarea{width:100%;min-height:110px;resize:vertical}
+.behaviors{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 14px}
+.beh{background:var(--panel2);border:1px solid var(--line);color:var(--muted);border-radius:999px;padding:5px 11px;font-size:12px;cursor:pointer;user-select:none}
+.beh.on{color:var(--text);border-color:var(--accent);background:#16243a}
+.draft{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;position:sticky;top:20px}
+.draft .head{display:flex;gap:14px;align-items:center}
+.draft h3{margin:0;font-size:18px}
+.draft .mech{margin-top:12px;font-size:13px;color:#c4d2e6;white-space:pre-line;border-top:1px dashed var(--line);padding-top:10px;min-height:60px}
+.copy{background:var(--panel2);border:1px solid var(--line);color:var(--muted);border-radius:6px;font-size:11px;padding:4px 10px;cursor:pointer;margin-top:12px}
+.copy:hover{color:var(--text);border-color:var(--accent)}
+details{margin-top:14px;color:var(--muted);font-size:12px}
+summary{cursor:pointer;color:var(--accent);font-size:13px}
+details ol{padding-left:20px;line-height:1.8}
+footer{margin-top:50px;border-top:1px solid var(--line);padding-top:14px;color:var(--muted);font-size:12px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div>
+      <h1>神秘幸存者 · <span>游戏资料库</span></h1>
+      <p class="sub">数据从游戏运行时导出（<code>tools/dump_enemies.tscn</code> / <code>tools/dump_abilities.tscn</code>），以游戏内为准</p>
+    </div>
+    <nav class="tabs" id="tabs">
+      <button class="tab active" data-tab="enemies">敌人</button>
+      <button class="tab" data-tab="events">刷新事件</button>
+      <button class="tab" data-tab="abilities">玩家能力</button>
+      <button class="tab" data-tab="difficulty">难度设定</button>
+      <button class="tab" data-tab="diy">DIY 新敌人</button>
+    </nav>
+  </header>
+
+  <section id="tab-enemies">
+    <div class="stats">
+      <div class="stat"><b id="s-all">0</b><span>敌人总数</span></div>
+      <div class="stat"><b id="s-normal">0</b><span>普通刷怪池</span></div>
+      <div class="stat"><b id="s-event">0</b><span>特殊事件 / Boss</span></div>
+      <div class="stat"><b id="s-off">0</b><span>未启用</span></div>
+    </div>
+
+    <h2>难度分布：谁在哪一级出现</h2>
+    <div class="gantt" id="gantt"></div>
+    <div class="legend">
+      <span><i style="background:#5aa9ff"></i>普通池：横条 = 可刷的难度区间</span>
+      <span><i style="background:#a06cff"></i>特殊事件：点 = 被事件刷出来的难度</span>
+    </div>
+    <p class="hint">难度每 37 秒 +1。横条左端 = 解锁难度，右端 = 之后不再出现的等级。</p>
+
+    <h3 class="sec">特殊事件时间表（enemy_producer.gd 里写死的）</h3>
+    <table class="diff-table" id="diff-table"></table>
+
+    <h2>敌人列表</h2>
+    <div class="toolbar">
+      <input type="search" id="q" placeholder="搜索：名字 / 场景名 / 组件">
+      <div class="filters" id="filters">
+        <button class="pill on" data-kind="all">全部</button>
+        <button class="pill" data-kind="normal">普通池</button>
+        <button class="pill" data-kind="event">特殊事件</button>
+        <button class="pill" data-kind="disabled">未启用</button>
+      </div>
+      <select id="sort">
+        <option value="id">按 ID</option>
+        <option value="hp">血量 从高到低</option>
+        <option value="speed">速度 从快到慢</option>
+        <option value="weight">权重 从高到低</option>
+      </select>
+    </div>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <section id="tab-events" hidden>
+    <h2>刷新事件</h2>
+    <p class="hint">所有事件都写在 <code>script/manager/enemy_producer.gd</code> 里；普通事件和威胁事件分别存在 <code>all_special_event</code>、<code>all_threat_event</code> 两个数组里，由 40 秒一次的 Special 计时器抽取。</p>
+    <div id="event-list"></div>
+    <h2>难度脚本（on_more_difficulty 里写死的）</h2>
+    <table class="diff-table" id="diff-table2"></table>
+    <h2>事件里能直接用的工具函数</h2>
+    <div class="ev">
+      <p style="margin:0"><code>single_appear(enemy, distance)</code> 刷 1 只 · <code>circle_surround(...)</code> 围一圈 · <code>circle_interval(...)</code> 多层收缩 · <code>line_front(...)</code> 直线冲锋<br>
+      <code>limit_position(pos)</code> 夹进地图边界 · <code>find_enemy(ALL_ID)</code> 按 ID 找配置 · <code>find_shape(ALL_SHAPE)</code> 找阵型 · <code>attach_out_view_reaper(enemy)</code> 挂出屏回收</p>
+    </div>
+  </section>
+
+  <section id="tab-abilities" hidden>
+    <h2>玩家能力（升级卡）</h2>
+    <p class="hint">数据来自 <code>resource/upgrades/**/*.tres</code>，共 <b id="ab-count">0</b> 张。升级时从主池里抽 3 张；同一张卡拿过第二次后会转入低频的"神秘池"。</p>
+    <div class="toolbar">
+      <input type="search" id="ab-q" placeholder="搜索：名字 / 描述">
+      <div class="filters" id="ab-filters"></div>
+    </div>
+    <div class="grid" id="ab-grid"></div>
+  </section>
+
+  <section id="tab-difficulty" hidden>
+    <h2>难度设定</h2>
+    <p class="hint">整理自代码里所有 <code>GameEvent.mode_index</code> / <code>easy_mode</code> / <code>hard_mode</code> 的判断。默认难度是<b>普通</b>（<code>GameEvent._ready()</code> 里设的），主世界的难度切换物件负责改它。</p>
+    <div class="grid" id="difficulty-modes" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr))"></div>
+
+    <h2>四种模式对比</h2>
+    <table class="diff-table" id="difficulty-matrix"></table>
+
+    <h2>Tag 明细</h2>
+    <div id="difficulty-tags"></div>
+
+    <div class="ev">
+      <p style="margin:0"><b>几点说明</b><br>
+      · 主世界的难度切换物件有四块（简单 / 普通 / 困难 / 挑战），每块用 <code>mode_index</code> 自己记住对应难度；<br>
+      · 现在选「挑战」= 三个挑战 tag 全部打开（<code>GameEvent.select_mode(3)</code>），以后做 tag 界面再改这一个函数；<br>
+      · 成就判定在 <code>victoryscreen.gd</code>：普通通关 → <code>normal_finished</code>，困难通关 → <code>hard_finished</code>，挑战三 tag 全开通关 → <code>all_challenge_finished</code>，困难及以上一只特殊怪都不杀 → <code>love_and_peace</code>。</p>
+    </div>
+  </section>
+
+  <section id="tab-diy" hidden>
+    <h2>DIY：做一个新敌人</h2>
+    <p class="hint">左边填设定、右边实时生成草案卡；可以选一张电脑里的图当立绘（只在本地预览，不会上传）。定好之后点「复制草案」，把文本发给我就能直接开工。</p>
+    <div class="diy">
+      <div class="panel">
+        <div class="upload">
+          <div class="thumb" id="diy-thumb">立绘预览</div>
+          <div>
+            <button class="btn" id="diy-pick">选择图片…</button>
+            <input type="file" id="diy-file" accept="image/*">
+            <p class="hint" style="margin-top:6px">建议用横向序列帧的某一张，或直接截一张。</p>
+          </div>
+        </div>
+        <div class="field"><label>中文名</label><input id="f-name" value="新敌人" spellcheck="false"></div>
+        <div class="field"><label>场景文件名</label><input id="f-file" value="my_enemy" spellcheck="false"></div>
+        <div class="field"><label>血量</label><input id="f-hp" type="number" value="60" min="1"></div>
+        <div class="field"><label>速度</label><input id="f-speed" type="number" value="90" min="0"></div>
+        <div class="field"><label>接触伤害</label><input id="f-dmg" type="number" value="15" min="0"></div>
+        <div class="field"><label>刷怪权重</label><input id="f-weight" type="number" value="1" min="0" step="0.1"></div>
+        <div class="field"><label>解锁难度</label><input id="f-unlock" type="number" value="6" min="0" max="99"></div>
+        <div class="field"><label>消失难度</label><input id="f-gone" type="number" value="100" min="1" max="100"></div>
+        <p class="hint" style="margin-bottom:4px">行为标签（会写进草案，方便以后对齐组件）</p>
+        <div class="behaviors" id="behaviors"></div>
+        <p class="hint" style="margin-bottom:4px">机制说明（自由写：攻击方式、阶段、特殊规则…）</p>
+        <textarea id="f-mech" placeholder="例：血量低于 50% 时进入狂暴状态，移速 +40%，每 3 秒向玩家冲锋一次；被击杀后分裂成 2 只小怪。"></textarea>
+      </div>
+      <div class="draft" id="draft"></div>
+    </div>
+  </section>
+
+  <footer>
+    数据来源：Godot 运行时导出（敌人：实例化场景后读取组件；升级卡：读取 AbilityUpgrade 资源）。
+    改了内容后，用 Godot 打开 <code>tools/dump_enemies.tscn</code> / <code>tools/dump_abilities.tscn</code> 按 F6 重跑即可刷新。
+  </footer>
+</div>
+
+<dialog id="detail">
+  <button class="close" id="close">&times;</button>
+  <div class="dlg-head" id="dlg-head"></div>
+  <div class="dlg-body" id="dlg-body"></div>
+</dialog>
+
+<script>
+const ENEMIES = [{"file":"silime","name":"史莱姆","scene":"res://scene/enemy/silime.tscn","id":0,"id_name":"slime","kind":"normal","spawn":"普通刷怪池：难度 1 起，6 级后不再出现","weight":1,"unlock":1,"disappear":6,"hp":13,"data_hp":13,"speed":60,"damage":6,"portrait":"images/enemies/silime.png","pw":14,"ph":12,"anims":["run"],"sprite":"res://sucai/enemy/slime/slime_green.png","comps":["health_component","velocity_component","drop_component","attack_component","wound_component","collision_component","effect_component"]},{"file":"purple_silime","name":"红史莱姆","scene":"res://scene/enemy/puple_silime.tscn","id":1,"id_name":"red_slime","kind":"normal","spawn":"普通刷怪池：难度 2 起，8 级后不再出现","weight":2,"unlock":2,"disappear":8,"hp":32,"data_hp":32,"speed":70,"damage":10,"portrait":"images/enemies/purple_silime.png","pw":14,"ph":12,"anims":["run"],"sprite":"res://sucai/enemy/slime/slime_purple.png","comps":["health_component","drop_component","velocity_component","wound_component","attack_component","collision_component","effect_component"]},{"file":"avocado","name":"亡灵鳄梨","scene":"res://scene/enemy/avocado.tscn","id":2,"id_name":"avocado","kind":"normal","spawn":"普通刷怪池：难度 4 起，11 级后不再出现","weight":1.5,"unlock":4,"disappear":11,"hp":42,"data_hp":42,"speed":100,"damage":10,"portrait":"images/enemies/avocado.png","pw":34,"ph":44,"anims":["run"],"sprite":"res://sucai/enemy/亡灵鳄梨/avacado_character_sprite_sheet_transparent_矫正.png","comps":["health_component","drop_component","velocity_component","attack_component","wound_component","collision_component","effect_component"]},{"file":"wolf","name":"蓝狼","scene":"res://scene/enemy/wolf.tscn","id":3,"id_name":"wolf","kind":"normal","spawn":"普通刷怪池：难度 6 起，17 级后不再出现","weight":2,"unlock":6,"disappear":17,"hp":30,"data_hp":30,"speed":120,"damage":15,"portrait":"images/enemies/wolf.png","pw":64,"ph":30,"anims":["run"],"sprite":"res://sucai/enemy/wolf/run.png","comps":["health_component","drop_component","velocity_component","wound_component","attack_component"]},{"file":"owl","name":"猫头鹰","scene":"res://scene/enemy/owl.tscn","id":4,"id_name":"owl","kind":"normal","spawn":"普通刷怪池：难度 8 起，30 级后不再出现","weight":1.5,"unlock":8,"disappear":30,"hp":55,"data_hp":55,"speed":95,"damage":15,"portrait":"images/enemies/owl.png","pw":56,"ph":86,"anims":["run","run_2"],"sprite":"res://sucai/enemy/黑暗猫头鹰/Aurigaidlewithshadow-Sheet.png","comps":["health_component","drop_component","velocity_component","wound_component","attack_component","collision_component","invisible_component","effect_component"]},{"file":"gorlen","name":"石头人","scene":"res://scene/enemy/gorlen.tscn","id":5,"id_name":"gorlen","kind":"normal","spawn":"普通刷怪池：难度 11 起，之后一直有","weight":0.4,"unlock":11,"disappear":100,"hp":300,"data_hp":300,"speed":25,"damage":20,"portrait":"images/enemies/gorlen.png","pw":48,"ph":46,"anims":["run"],"sprite":"res://sucai/enemy/gorlen/Character_sheet.png","comps":["health_component","drop_component","velocity_component","wound_component","attack_component","collision_component","effect_component","disappear_component"]},{"file":"box","name":"箱子","scene":"res://scene/enemy/box.tscn","id":6,"id_name":"box","kind":"disabled","spawn":"未启用：没有任何刷怪流程会生成它，只在测试里用过","weight":0.001,"unlock":-4,"disappear":100,"hp":500,"data_hp":500,"speed":60,"damage":15,"portrait":"images/enemies/box.png","pw":16,"ph":14,"anims":["run"],"sprite":"res://sucai/迷你地牢素材/used/tile_0089.png","comps":["health_component","velocity_component","box_drop_component","wound_component","attack_component","collision_component","effect_component"]},{"file":"escape_box","name":"逃跑箱子","scene":"res://scene/enemy/escape_box.tscn","id":7,"id_name":"escape_box","kind":"normal","spawn":"普通池（稀有）：难度 5 起，每次难度变化后最多出现 1 只","weight":0.001,"unlock":5,"disappear":100,"hp":300,"data_hp":300,"speed":70,"damage":15,"portrait":"images/enemies/escape_box.png","pw":16,"ph":14,"anims":["run"],"sprite":"res://sucai/迷你地牢素材/used/tile_0089.png","comps":["health_component","box_drop_component","escape_component","wound_component","attack_component","collision_component","effect_component"]},{"file":"knight","name":"骑士","scene":"res://scene/enemy/knight.tscn","id":9,"id_name":"knight","kind":"event","spawn":"特殊事件：难度 11 单只出现、16 包围出现；也是 Boss 波候选","weight":0,"unlock":-11,"disappear":100,"hp":1000,"data_hp":1000,"speed":125,"damage":42,"portrait":"images/enemies/knight.png","pw":61,"ph":42,"anims":["real_rush","run","rush_ready","rush_walk"],"sprite":"res://sucai/enemy/Knight/knight-Sheet_whitefx.png","comps":["health_component","drop_component","velocity_component","wound_component","attack_component","collision_component","rush_component","effect_component"]},{"file":"red_wolf","name":"红狼","scene":"res://scene/enemy/red_wolf.tscn","id":10,"id_name":"red_wolf","kind":"normal","spawn":"普通刷怪池：难度 18 起，之后一直有","weight":0.4,"unlock":18,"disappear":100,"hp":90,"data_hp":90,"speed":140,"damage":28,"portrait":"images/enemies/red_wolf.png","pw":64,"ph":30,"anims":["run"],"sprite":"res://sucai/enemy/wolf/wolf_red.png","comps":["health_component","velocity_component","drop_component","wound_component","attack_component","copy_component"]},{"file":"witch","name":"巫婆","scene":"res://scene/enemy/witch.tscn","id":11,"id_name":"witch","kind":"event","spawn":"特殊事件：难度 13 起每两级出现 1 只；难度 29 后并入 Boss 波","weight":0,"unlock":-13,"disappear":100,"hp":1200,"data_hp":1200,"speed":90,"damage":29,"portrait":"images/enemies/witch.png","pw":168,"ph":174,"anims":["run"],"sprite":"res://sucai/enemy/邪恶女巫.png","comps":["health_component","drop_component","velocity_component","wound_component","attack_component","collision_component","summon_component","effect_component"]},{"file":"mushroom","name":"蘑菇","scene":"res://scene/enemy/mushroomenemy.tscn","id":12,"id_name":"mushroom","kind":"event","spawn":"特殊事件「蘑菇雨」：难度 9 触发，一次刷一大圈","weight":0,"unlock":-1,"disappear":100,"hp":800,"data_hp":500,"speed":10,"damage":30,"portrait":"images/enemies/mushroom.png","pw":30,"ph":34,"anims":["new_animation"],"sprite":"res://sucai/enemy/新蘑菇/Mushroom-Run.png","comps":["health_component","drop_component","velocity_component","disappear_component","wound_component","attack_component","solid_collision_controller","effect_component"]},{"file":"undead","name":"亡灵","scene":"res://scene/enemy/undead.tscn","id":13,"id_name":"undead","kind":"event","spawn":"特殊事件：难度 18 包围出现 2 只；也是 Boss 波候选","weight":0,"unlock":-20,"disappear":100,"hp":1600,"data_hp":1800,"speed":120,"damage":25,"portrait":"images/enemies/undead.png","pw":45,"ph":62,"anims":["attack","blink","run"],"sprite":"res://sucai/enemy/death/attacking.png","comps":["health_component","drop_component","velocity_component","wound_component","with_animation_attack_component","with_animation_attack_component","check_attack_component","blink_component"]},{"file":"laser_gorlen","name":"激光石头人","scene":"res://scene/enemy/laser_gorlen.tscn","id":14,"id_name":"laser_gorlen","kind":"normal","spawn":"普通刷怪池：难度 21 起，之后一直有","weight":0.02,"unlock":21,"disappear":100,"hp":500,"data_hp":500,"speed":45,"damage":35,"portrait":"images/enemies/laser_gorlen.png","pw":48,"ph":46,"anims":["run","shoot"],"sprite":"res://sucai/enemy/gorlen/gloren.png","comps":["health_component","drop_component","velocity_component","wound_component","attack_component","collision_component","effect_component","check_ability_component"]},{"file":"skeleton","name":"骷髅","scene":"res://scene/enemy/skeleton.tscn","id":-1,"id_name":"","kind":"disabled","spawn":"未启用：有场景，但没有数据配置，不会刷出来","weight":0,"unlock":0,"disappear":0,"hp":100,"data_hp":0,"speed":70,"damage":18,"portrait":"images/enemies/skeleton.png","pw":114,"ph":132,"anims":["run"],"sprite":"res://sucai/enemy/邪恶女巫.png","comps":["health_component","drop_component","velocity_component","wound_component","attack_component","collision_component","with_animation_attack_component","effect_component"]}];
+const CARDS = [{"desc":"你学会了闪光魔法！你的头顶会形成光剑，砍下造成巨量伤害！","file":"get_light","id":"解锁光剑","is_init":true,"is_unlock":true,"lock_code":0,"name":"☆闪☆耀☆","path":"res://resource/upgrades/holy_light/get_light.tres","self_lock":0,"sort":"光剑"},{"desc":"光剑的伤害增加30%,并且使长度增加20%","file":"light_power","id":"光的力量","is_init":false,"is_unlock":false,"lock_code":0,"name":"光的力量！","path":"res://resource/upgrades/holy_light/light_power.tres","self_lock":0,"sort":"光剑"},{"desc":"光剑的生成时间-20%","file":"light_speed","id":"光的速度","is_init":false,"is_unlock":false,"lock_code":0,"name":"光的速度！","path":"res://resource/upgrades/holy_light/light_speed.tres","self_lock":0,"sort":"光剑"},{"desc":"剑的伤害增加35%","file":"sword_damage","id":"剑的伤害","is_init":true,"is_unlock":false,"lock_code":0,"name":"刚猛大宝剑","path":"res://resource/upgrades/sword/sword_damage.tres","self_lock":0,"sort":"剑"},{"desc":"每次多生成1把剑","file":"sword_number","id":"剑的数量","is_init":true,"is_unlock":false,"lock_code":0,"name":"剑来！","path":"res://resource/upgrades/sword/sword_number.tres","self_lock":0,"sort":"剑"},{"desc":"剑的生成时间-20%","file":"sword_rate","id":"剑的速度","is_init":true,"is_unlock":false,"lock_code":0,"name":"迅爽大宝剑","path":"res://resource/upgrades/sword/sword_rate.tres","self_lock":0,"sort":"剑"},{"desc":"你得到了天界的力量！你的周围会随机生成三个光柱！\n","file":"get_heaven_fury","id":"解锁天堂之怒","is_init":true,"is_unlock":true,"lock_code":0,"name":"天！堂！之！怒！","path":"res://resource/upgrades/heaven_fury/get_heaven_fury.tres","self_lock":0,"sort":"天堂"},{"desc":"每次会多生成两个天！堂！之！怒！","file":"更多愤怒 (2)","id":"更多愤怒","is_init":false,"is_unlock":false,"lock_code":0,"name":"愤怒的感染力","path":"res://resource/upgrades/heaven_fury/更多愤怒 (2).tres","self_lock":0,"sort":"天堂"},{"desc":"天！堂！之！怒！的生成时间-20%","file":"更快愤怒","id":"更快愤怒","is_init":false,"is_unlock":false,"lock_code":0,"name":"我有易怒症","path":"res://resource/upgrades/heaven_fury/更快愤怒.tres","self_lock":0,"sort":"天堂"},{"desc":"天！堂！之！怒！的伤害增加25%,且会增大10%","file":"更强愤怒 ","id":"更强愤怒","is_init":false,"is_unlock":false,"lock_code":0,"name":"越想越气","path":"res://resource/upgrades/heaven_fury/更强愤怒 .tres","self_lock":0,"sort":"天堂"},{"desc":"每发子弹的伤害增加30%","file":"gun_damage","id":"枪的伤害","is_init":false,"is_unlock":false,"lock_code":0,"name":"升级打磨","path":"res://resource/upgrades/gun/gun_damage.tres","self_lock":0,"sort":"枪"},{"desc":"你的枪变为一把喷子！它每次攻击会喷射许多子弹！","file":"get_shotgun","id":"解锁霰弹枪","is_init":false,"is_unlock":false,"lock_code":0,"name":"开喷！","path":"res://resource/upgrades/gun/get_shotgun.tres","self_lock":2,"sort":"枪"},{"desc":"各个枪的子弹数量增加20%,换弹速度-10%\n\n——火箭筒一效果改为范围增大20%","file":"gun_bigger","id":"枪的弹夹","is_init":false,"is_unlock":false,"lock_code":0,"name":"快速扩容弹夹","path":"res://resource/upgrades/gun/gun_bigger.tres","self_lock":0,"sort":"枪"},{"desc":"你起了一把大狙！它会锁头敌人中的最强者！","file":"get_sniper_rifle","id":"解锁狙击枪","is_init":false,"is_unlock":false,"lock_code":0,"name":"起大狙了","path":"res://resource/upgrades/gun/get_sniper_rifle.tres","self_lock":2,"sort":"枪"},{"desc":"你的枪变为一把火箭筒！它会射向密集的怪群，造成爆炸伤害！","file":"get_rocket","id":"解锁RPG","is_init":false,"is_unlock":false,"lock_code":0,"name":"这个劲大","path":"res://resource/upgrades/gun/get_rocket.tres","self_lock":2,"sort":"枪"},{"desc":"你得到一把枪！它会自动攻击最近的敌人直到弹夹清空！","file":"get_gun","id":"解锁枪","is_init":true,"is_unlock":true,"lock_code":0,"name":"魔法驱动枪也是魔法","path":"res://resource/upgrades/gun/get_gun.tres","self_lock":0,"sort":"枪"},{"desc":"掌握了驾驭火焰的方法！你可以朝最近的敌人发射火球！\n\n——是的，火球是每个法师的必修技能","file":"get_fireball","id":"解锁火球","is_init":true,"is_unlock":true,"lock_code":0,"name":"ta有点烫手","path":"res://resource/upgrades/fireball/get_fireball.tres","self_lock":0,"sort":"火球"},{"desc":"你的火球伤害提高20%，并且穿透数量增加3个！","file":"fireballchuantou  ","id":"火球力穿","is_init":false,"is_unlock":false,"lock_code":0,"name":"力大穿飞！","path":"res://resource/upgrades/fireball/fireballchuantou  .tres","self_lock":0,"sort":"火球"},{"desc":"你现在每次可以多发射一个火球了！","file":"fireballnnumber","id":"火球数量","is_init":false,"is_unlock":false,"lock_code":0,"name":"火球批发","path":"res://resource/upgrades/fireball/fireballnnumber.tres","self_lock":0,"sort":"火球"},{"desc":"你的火球冷却-20%，还会增大20%！\n","file":"fireballpower ","id":"火球大速","is_init":false,"is_unlock":false,"lock_code":0,"name":"速猛火球","path":"res://resource/upgrades/fireball/fireballpower .tres","self_lock":0,"sort":"火球"},{"desc":"死灵法环的伤害增加35%\n","file":"ring_power","id":"环的伤害","is_init":false,"is_unlock":false,"lock_code":0,"name":"全攻死灵师","path":"res://resource/upgrades/ring/ring_power.tres","self_lock":0,"sort":"环"},{"desc":"你学会了死灵咒术！你的周围会涌现死灵法环攻击所有环内的敌人！","file":"get_ring","id":"解锁法环","is_init":true,"is_unlock":true,"lock_code":0,"name":"死灵法环","path":"res://resource/upgrades/ring/get_ring.tres","self_lock":0,"sort":"环"},{"desc":"死灵法环的大小增大15%\n并使生成时间-20%\n","file":"ring_rate_range","id":"环的大速","is_init":false,"is_unlock":false,"lock_code":0,"name":"透支魔力","path":"res://resource/upgrades/ring/ring_rate_range.tres","self_lock":0,"sort":"环"},{"desc":"拾取范围+100%\n\n——其实是吸水石","file":"吸铁石","id":"吸铁石","is_init":true,"is_unlock":false,"lock_code":0,"name":"吸铁石","path":"res://resource/upgrades/else/吸铁石.tres","self_lock":0,"sort":"角色能力"},{"desc":"所有颜色瓶子的效果增强25%","file":"药效增强","id":"增强效果","is_init":true,"is_unlock":false,"lock_code":0,"name":"好日子还在后头呢","path":"res://resource/upgrades/else/药效增强.tres","self_lock":0,"sort":"角色能力"},{"desc":"角色移动速度增加15%","file":"飞毛腿","id":"飞毛腿","is_init":true,"is_unlock":false,"lock_code":0,"name":"我和B蓝狼比移速","path":"res://resource/upgrades/else/飞毛腿.tres","self_lock":0,"sort":"角色能力"},{"desc":"受到伤害-8%\n并增大10%生命值上限","file":"盔甲","id":"盔甲","is_init":true,"is_unlock":false,"lock_code":0,"name":"纯御","path":"res://resource/upgrades/else/盔甲.tres","self_lock":0,"sort":"角色能力"}];
+const EVENTS = [{"fx":"line_front()","kind":"普通事件","name":"直线冲锋","trigger":"40 秒一次的 Special 计时器随机抽中","params":"wave = 2，distance = 280，wait_time = 4","desc":"随机挑一个阵型场景（箭头 / 缺口 / 斜排），在玩家周围 280px 处生成一排敌人，让它们沿阵型方向高速冲过来；每只都会挂上「出屏回收」，飞出屏幕就自己删掉。"},{"fx":"circle_surround()","kind":"普通事件","name":"包围圈","trigger":"普通事件 / 难度脚本","params":"s_radius = 420，number = 70，is_slow = true，direction = 1","desc":"以玩家为圆心刷一整圈，半径带 ±2% 抖动；可以整体减速、可以反向。骑士（16 级 ×3）和亡灵（18 级 ×2）也是用它刷的。"},{"fx":"circle_interval()","kind":"普通事件","name":"收缩包围","trigger":"普通事件","params":"wave = 3，s_radius = 280，number = 16，wait_time = 0.1","desc":"连刷三圈，每圈半径放大、方向反一下，形成一层层往里收的包围感。"},{"fx":"mushroom_circle()","kind":"威胁事件","name":"蘑菇雨","trigger":"难度 9 固定触发 / 威胁事件随机","params":"两次 circle_surround：450×55 与 400×50","desc":"先把刷怪半径临时改成 300、血量统计频率改成 10 秒，然后连刷两圈蘑菇（共 105 只），20 秒后恢复原值。"},{"fx":"collision_disappear()","kind":"威胁事件","name":"看不见的敌人","trigger":"威胁事件随机","params":"持续 12 秒","desc":"发 GameEvent.collision_disappear，让所有敌人半透明、碰撞体失效，12 秒后恢复；EffectComponent 负责半透明表现。"},{"fx":"boss_come()","kind":"威胁事件","name":"Boss 登场","trigger":"难度 ≥29 的奇数级 / 威胁事件随机","params":"数量 = 1.06 ^ 难度 + 1","desc":"从特殊怪池（骑士 / 巫婆 / 亡灵）里随机挑，每 3 秒放一只，数量随难度指数增长。"},{"fx":"normal_special() / real_special()","kind":"调度","name":"事件调度器","trigger":"Special 计时器，每 40 秒","params":"—","desc":"难度 < 10 只走普通事件；≥10 后按 exp(-0.05 × (难度-1)) 的概率改成威胁事件。普通事件会从「已解锁的敌人」里随机挑一个当参数。"}];
+const DIFF_PLAN = [{"lv":"3","text":"逃跑箱子 单只出现（single_appear）"},{"lv":"9","text":"蘑菇雨（mushroom_circle）"},{"lv":"11","text":"骑士 单只出现（single_appear）"},{"lv":"13 / 15 / … / 27","text":"巫婆 单只出现（single_appear）"},{"lv":"16","text":"骑士 包围出现 ×3（circle_surround）"},{"lv":"18","text":"亡灵 包围出现 ×2（circle_surround）"},{"lv":"29 起（奇数级）","text":"Boss 波（boss_come）"}];
+const SPECIAL_LEVELS = {"3":"逃跑箱子","9":"蘑菇雨","11":"骑士","13":"巫婆","15":"巫婆","16":"骑士×3","17":"巫婆","18":"亡灵×2","19":"巫婆","21":"巫婆","23":"巫婆","25":"巫婆","27":"巫婆","29":"Boss 波"};
+
+const COMP_INFO = {
+  health_component:["血量","真实血量看场景里的 HealthComponent"],
+  wound_component:["受击判定","被命中时扣血、白闪、弹伤害数字"],
+  velocity_component:["追击移动","始终朝玩家方向加速"],
+  attack_component:["接触伤害","碰到玩家就扣血"],
+  collision_component:["实体碰撞","会挡住玩家和其它敌人"],
+  drop_component:["掉落","死亡后按概率掉经验/血瓶"],
+  box_drop_component:["必掉增益","至少掉一个增益瓶"],
+  effect_component:["事件表现","比如「看不见的敌人」事件时显示狼影"],
+  rush_component:["冲锋","每隔几秒高速冲一次"],
+  summon_component:["召唤","周期召唤小怪"],
+  invisible_component:["隐身","周期性隐身 / 现身"],
+  copy_component:["分身","受击时分裂出分身"],
+  blink_component:["闪现","周期性瞬移一段距离"],
+  disappear_component:["定时消失","20 秒后自动消失"],
+  with_animation_attack_component:["动画攻击","攻击动作与动画帧同步"],
+  check_attack_component:["条件攻击","满足条件才发起攻击"],
+  check_ability_component:["远程技能","玩家进入范围后放技能"],
+  escape_component:["逃跑","靠近就掉头跑"],
+  solid_collision_controller:["实体碰撞","另一套碰撞实现"],
+  player_wound_component:["玩家受伤","玩家专用，带无敌帧"],
+  ability_component:["技能","通用技能组件"]
+};
+const NOTES = {
+  purple_silime:"枚举里这一项叫 red_slime，但场景用的是紫色史莱姆的贴图；数值与贴图都以场景为准。",
+  box:"场景和数据都在，但没有任何刷怪流程会生成它（只在测试里用到）。",
+  skeleton:"有场景、没有数据配置，也没有注册进任何管理器。"
+};
+const KIND_LABEL = {normal:"普通池", event:"特殊事件", disabled:"未启用"};
+function uniq(arr){ return arr.filter(function(v, i){ return arr.indexOf(v) === i; }); }
+function portraitStyle(e){
+  const s = Math.min(2, 96 / Math.max(e.pw, e.ph));
+  return "width:" + Math.round(e.pw * s) + "px;height:" + Math.round(e.ph * s) + "px";
+}
+function compLabel(c){ return (COMP_INFO[c] || [c])[0]; }
+
+document.querySelectorAll("#tabs .tab").forEach(function(b){
+  b.onclick = function(){
+    document.querySelectorAll("#tabs .tab").forEach(function(x){ x.classList.remove("active"); });
+    b.classList.add("active");
+    ["enemies","events","abilities","difficulty","diy"].forEach(function(k){
+      document.getElementById("tab-" + k).hidden = (k !== b.dataset.tab);
+    });
+    window.scrollTo(0, 0);
+  };
+});
+
+function renderStats(){
+  document.getElementById("s-all").textContent = ENEMIES.length;
+  document.getElementById("s-normal").textContent = ENEMIES.filter(function(e){ return e.kind === "normal"; }).length;
+  document.getElementById("s-event").textContent = ENEMIES.filter(function(e){ return e.kind === "event"; }).length;
+  document.getElementById("s-off").textContent = ENEMIES.filter(function(e){ return e.kind === "disabled"; }).length;
+}
+
+function renderGantt(){
+  const box = document.getElementById("gantt");
+  box.innerHTML = "";
+  const rank = { normal: 0, event: 1, disabled: 2 };
+  const rows = ENEMIES.slice().sort(function(a, b){
+    if (rank[a.kind] !== rank[b.kind]) return rank[a.kind] - rank[b.kind];
+    return (a.unlock < 0 ? 99 : a.unlock) - (b.unlock < 0 ? 99 : b.unlock);
+  });
+  rows.forEach(function(e){
+    const row = document.createElement("div");
+    row.className = "g-row";
+    if (e.kind === "normal"){
+      const start = Math.max(1, e.unlock);
+      const end = (e.disappear && e.disappear < 100) ? e.disappear : 31;
+      const left = (start - 1) / 30 * 100;
+      const width = Math.max(2, (end - start) / 30 * 100);
+      row.innerHTML = '<div class="g-name">' + e.name + '</div>' +
+        '<div class="g-track"><i style="left:' + left + '%;width:' + width + '%"></i></div>' +
+        '<div class="g-range">' + start + (end > 30 ? "+" : "–" + end) + '</div>';
+      row.title = e.name + "：" + start + " 级解锁，" + (end > 30 ? "之后一直有" : end + " 级后不再出现") + "，权重 " + (e.weight || 0);
+    } else {
+      const dots = [];
+      Object.keys(SPECIAL_LEVELS).forEach(function(lv){
+        const who = SPECIAL_LEVELS[lv];
+        const match = who === e.name || (e.name === "骑士" && who === "骑士×3") || (e.name === "亡灵" && who === "亡灵×2");
+        if (match){
+          const left = (Number(lv) - 1) / 30 * 100;
+          dots.push('<i class="event" style="left:' + left + '%;width:10px"></i>');
+        }
+      });
+      row.innerHTML = '<div class="g-name">' + e.name + '</div>' +
+        '<div class="g-track">' + dots.join("") + '</div>' +
+        '<div class="g-range">' + (e.kind === "disabled" ? "未启用" : "事件") + '</div>';
+      row.title = e.name + "：" + e.spawn;
+    }
+    box.appendChild(row);
+  });
+  const axis = document.createElement("div");
+  axis.className = "g-axis";
+  let ticks = "";
+  for (let lv = 1; lv <= 30; lv++) ticks += "<span>" + (lv % 5 === 0 ? lv : "") + "</span>";
+  axis.innerHTML = '<div></div><div class="ticks">' + ticks + '</div><div></div>';
+  box.appendChild(axis);
+}
+
+function renderDiffTables(){
+  const build = function(el){
+    let html = "<tr><th style='width:180px'>难度</th><th>触发的事件</th></tr>";
+    DIFF_PLAN.forEach(function(row){ html += "<tr><td>" + row.lv + "</td><td>" + row.text + "</td></tr>"; });
+    el.innerHTML = html;
+  };
+  build(document.getElementById("diff-table"));
+  build(document.getElementById("diff-table2"));
+}
+
+let currentKind = "all", currentSort = "id", currentQuery = "";
+function renderGrid(){
+  const grid = document.getElementById("grid");
+  let list = ENEMIES.slice();
+  if (currentKind !== "all") list = list.filter(function(e){ return e.kind === currentKind; });
+  if (currentQuery){
+    const q = currentQuery.toLowerCase();
+    list = list.filter(function(e){ return (e.name + " " + e.file + " " + e.comps.join(" ")).toLowerCase().indexOf(q) >= 0; });
+  }
+  if (currentSort === "hp") list.sort(function(a, b){ return (b.hp||0) - (a.hp||0); });
+  else if (currentSort === "speed") list.sort(function(a, b){ return (b.speed||0) - (a.speed||0); });
+  else if (currentSort === "weight") list.sort(function(a, b){ return (b.weight||0) - (a.weight||0); });
+  else list.sort(function(a, b){ return (a.id < 0 ? 999 : a.id) - (b.id < 0 ? 999 : b.id); });
+  grid.innerHTML = "";
+  list.forEach(function(e){
+    const card = document.createElement("article");
+    card.className = "card";
+    card.onclick = function(){ openDetail(e); };
+    card.innerHTML =
+      '<div class="head">' +
+        '<div class="portrait"><img src="' + e.portrait + '" alt="' + e.name + '" style="' + portraitStyle(e) + '"></div>' +
+        '<div><h3>' + e.name + ' <small>' + e.file + '</small></h3>' +
+          '<div class="chips">' +
+            (e.id >= 0 ? '<span class="chip id">ID ' + e.id + '</span>' : '<span class="chip id">无 ID</span>') +
+            '<span class="chip ' + e.kind + '">' + KIND_LABEL[e.kind] + '</span>' +
+          '</div></div>' +
+      '</div>' +
+      '<dl class="stats4">' +
+        '<div><dt>血量</dt><dd>' + (e.hp === null ? "—" : e.hp) + '</dd></div>' +
+        '<div><dt>速度</dt><dd>' + (e.speed === null ? "—" : e.speed) + '</dd></div>' +
+        '<div><dt>伤害</dt><dd>' + (e.damage === null ? "—" : e.damage) + '</dd></div>' +
+        '<div><dt>权重</dt><dd>' + (e.weight ? e.weight : "—") + '</dd></div>' +
+      '</dl>' +
+      '<p class="spawn">' + e.spawn + '</p>' +
+      '<div class="chips">' + uniq(e.comps).map(function(c){ return '<span class="chip comp">' + compLabel(c) + '</span>'; }).join("") + '</div>';
+    grid.appendChild(card);
+  });
+  if (!list.length) grid.innerHTML = '<p class="hint">没有匹配的敌人。</p>';
+}
+
+function openDetail(e){
+  const dlg = document.getElementById("detail");
+  document.getElementById("dlg-head").innerHTML =
+    '<div class="portrait"><img src="' + e.portrait + '" alt="' + e.name + '" style="' + portraitStyle(e) + '"></div>' +
+    '<div><h3 style="margin:0;font-size:20px">' + e.name + ' <small style="color:var(--muted);font-size:13px">' + e.file + '</small></h3>' +
+    '<div class="chips">' +
+      (e.id >= 0 ? '<span class="chip id">ID ' + e.id + ' · ' + e.id_name + '</span>' : '<span class="chip id">没有数据配置</span>') +
+      '<span class="chip ' + e.kind + '">' + KIND_LABEL[e.kind] + '</span>' +
+    '</div></div>';
+  const counts = {};
+  e.comps.forEach(function(c){ counts[c] = (counts[c] || 0) + 1; });
+  const comps = Object.keys(counts).map(function(c){
+    const info = COMP_INFO[c] || [c, ""];
+    const times = counts[c] > 1 ? ' <span style="color:var(--amber)">×' + counts[c] + '</span>' : '';
+    return '<tr><td>' + info[0] + times + '</td><td><code>' + c + '</code><br><span style="color:var(--muted);font-size:12px">' + info[1] + '</span></td></tr>';
+  }).join("");
+  document.getElementById("dlg-body").innerHTML =
+    '<table>' +
+      '<tr><td>出现方式</td><td>' + e.spawn + '</td></tr>' +
+      (NOTES[e.file] ? '<tr><td>备注</td><td style="color:var(--amber)">' + NOTES[e.file] + '</td></tr>' : '') +
+      '<tr><td>血量</td><td>' + (e.hp === null ? "—" : e.hp) + (e.data_hp && e.data_hp !== e.hp ? '（数据里写的是 ' + e.data_hp + '，只用于刷怪节奏估算）' : '') + '</td></tr>' +
+      '<tr><td>移动速度</td><td>' + (e.speed === null ? "—" : e.speed) + '</td></tr>' +
+      '<tr><td>接触伤害</td><td>' + (e.damage === null ? "—" : e.damage) + '</td></tr>' +
+      '<tr><td>刷怪权重</td><td>' + (e.weight ? e.weight : "0（不进普通池）") + '</td></tr>' +
+      '<tr><td>难度区间</td><td>' + (e.unlock < 0 ? "负数 = 只走特殊事件" : ("解锁 " + e.unlock + "，消失 " + (e.disappear || 100) + "（100 = 不会消失）")) + '</td></tr>' +
+      '<tr><td>场景</td><td><code>' + e.scene + '</code></td></tr>' +
+      '<tr><td>贴图</td><td><code>' + e.sprite + '</code></td></tr>' +
+    '</table>' +
+    '<h4>组件（技能）</h4><table>' + comps + '</table>';
+  dlg.showModal();
+}
+
+function renderEvents(){
+  const box = document.getElementById("event-list");
+  box.innerHTML = "";
+  EVENTS.forEach(function(ev){
+    const d = document.createElement("div");
+    d.className = "ev";
+    const kindCls = ev.kind === "威胁事件" ? "event" : (ev.kind === "调度" ? "id" : "normal");
+    d.innerHTML = '<h4>' + ev.name + '<span class="chip ' + kindCls + '">' + ev.kind + '</span>' +
+      '<code style="margin-left:auto">' + ev.fx + '</code></h4>' +
+      '<p>' + ev.desc + '</p>' +
+      '<p class="meta">触发：' + ev.trigger + ' · 参数：' + ev.params + '</p>';
+    box.appendChild(d);
+  });
+}
+
+let abSort = "全部", abQuery = "";
+function renderAbilityFilters(){
+  const sorts = uniq(CARDS.map(function(c){ return c.sort; })).sort();
+  const box = document.getElementById("ab-filters");
+  box.innerHTML = "";
+  ["全部"].concat(sorts).forEach(function(s){
+    const b = document.createElement("button");
+    b.className = "pill" + (s === abSort ? " on" : "");
+    b.textContent = s;
+    b.onclick = function(){
+      abSort = s;
+      document.querySelectorAll("#ab-filters .pill").forEach(function(x){ x.classList.remove("on"); });
+      b.classList.add("on");
+      renderAbilities();
+    };
+    box.appendChild(b);
+  });
+}
+function renderAbilities(){
+  document.getElementById("ab-count").textContent = CARDS.length;
+  const grid = document.getElementById("ab-grid");
+  let list = CARDS.slice();
+  if (abSort !== "全部") list = list.filter(function(c){ return c.sort === abSort; });
+  if (abQuery){
+    const q = abQuery.toLowerCase();
+    list = list.filter(function(c){ return (c.name + " " + c.id + " " + c.desc).toLowerCase().indexOf(q) >= 0; });
+  }
+  grid.innerHTML = "";
+  list.forEach(function(c){
+    const d = document.createElement("article");
+    d.className = "ab";
+    const chips = ['<span class="chip sort">' + c.sort + '</span>'];
+    if (c.is_init) chips.push('<span class="chip normal">初始</span>');
+    if (c.is_unlock) chips.push('<span class="chip event">解锁型</span>');
+    if (c.self_lock) chips.push('<span class="chip id">互斥 ' + c.self_lock + '</span>');
+    d.innerHTML = '<h4>' + c.name + ' <small style="color:var(--muted);font-size:11px;font-weight:400">' + c.id + '</small></h4>' +
+      '<div class="chips">' + chips.join("") + '</div>' +
+      '<p>' + c.desc + '</p>' +
+      '<div class="path"><code>' + c.path + '</code></div>';
+    grid.appendChild(d);
+  });
+  if (!list.length) grid.innerHTML = '<p class="hint">没有匹配的卡。</p>';
+}
+
+const DIFFICULTY = [
+  { index: 0, name: "简单", color: "#4ad295", tagline: "请选择你的外挂",
+    desc: "怪物不变快，玩家受伤减半；还能再勾三个“外挂”tag。",
+    rows: [
+      "怪物移速 ×1.0（勾「敌人减速10%」后 ×0.9）",
+      "玩家造成伤害 ×1.0",
+      "玩家受伤 ×0.5（减半）",
+      "刷怪曲线 decay 0.15",
+      "胜利时间 10 分钟"
+    ],
+    tags: ["is_slow", "is_initial", "is_ascend"],
+    entry: "难度切换物件（第 1 块）" },
+  { index: 1, name: "普通", color: "#dbe4f0", tagline: "非常地普通，非常地友好",
+    desc: "标准难度，也是现在的默认值。",
+    rows: [
+      "怪物移速 ×1.0",
+      "玩家造成伤害 ×1.0",
+      "玩家受伤 ×0.5（减半）",
+      "刷怪曲线 decay 0.15",
+      "胜利时间 10 分钟"
+    ],
+    tags: [],
+    entry: "难度切换物件（默认）" },
+  { index: 2, name: "困难", color: "#a06cff", tagline: "这游戏实际上是先有困难模式再有普通模式的",
+    desc: "怪更快、刷得更凶，玩家输出降低、挨打翻倍。",
+    rows: [
+      "怪物移速 ×1.1（+10%）",
+      "玩家造成伤害 ×0.9（-10%）",
+      "玩家受伤 ×1.0（约为普通的两倍）",
+      "刷怪曲线 decay 0.23（刷怪间隔收缩更快）",
+      "胜利时间 10 分钟"
+    ],
+    tags: [],
+    entry: "难度切换物件" },
+  { index: 3, name: "挑战", color: "#ff6b6b", tagline: "你要迎接怎样的挑战",
+    desc: "在困难的基础上再叠三个挑战 tag；难度切换物件目前按「三个 tag 全选」处理。",
+    rows: [
+      "怪物移速 ×1.1",
+      "玩家造成伤害 ×0.9",
+      "玩家受伤 ×1.0",
+      "刷怪曲线 decay 0.15（只开 is_long 时 min_gap_difficulty = 19）",
+      "胜利时间 10 分钟；勾「时长加长」后 15 分钟",
+      "升级候选 3 张；勾「一半概率只给2张」后一半概率 2 张",
+      "单卡最多 3 次（普通是 4 次）"
+    ],
+    tags: ["is_long", "is_erase_ability", "is_max_4"],
+    entry: "难度切换物件（当前 = tag 全开）" }
+];
+
+const MATRIX = [
+  ["怪物移动速度", "×1.0（is_slow 时 ×0.9）", "×1.0", "×1.1", "×1.1"],
+  ["玩家造成伤害", "×1.0", "×1.0", "×0.9", "×0.9"],
+  ["玩家受到伤害", "×0.5", "×0.5", "×1.0（约两倍）", "×1.0"],
+  ["刷怪速度衰减 decay", "0.15", "0.15", "0.23", "0.15（is_long 时 min_gap 19）"],
+  ["胜利时间", "10 分钟", "10 分钟", "10 分钟", "10 / 15 分钟"],
+  ["升级候选张数", "3 张", "3 张", "3 张", "3 张（一半概率 2 张）"],
+  ["单卡最多获取", "4 次", "4 次", "4 次", "3 次"],
+  ["可选 tag", "3 个", "无", "无", "3 个"],
+  ["通关成就", "—", "normal_finished", "hard_finished", "all_challenge_finished"]
+];
+
+const DIFF_TAGS = [
+  { key: "is_slow", mode: "简单", label: "敌人减速10%",
+    effect: "所有敌人的移动速度乘 0.9（在 VelocityController.set_speed 里统一处理，所以召唤 / 复制出来的怪也吃这个系数）。",
+    where: "script/enemy_component/main_component/velocity_component.gd" },
+  { key: "is_initial", mode: "简单", label: "自带一个攻击能力",
+    effect: "开局直接白送一个攻击类能力。",
+    where: "upgrademanager.gd 的 _ready() / upgradecard_select.gd",
+    note: "现状：upgrademanager 把 easy_mode[is_initial] 当成 AbilityUpgrade 用，但这个值也可能是 bool，开启后可能报错；简单模式现在也没有入口" },
+  { key: "is_ascend", mode: "简单", label: "自带所有通用能力",
+    effect: "开局把 4 张「角色能力」卡（吸铁石 / 增强效果 / 飞毛腿 / 盔甲）全部加上。",
+    where: "upgrademanager.gd 的 _ready()" },
+  { key: "is_long", mode: "挑战", label: "胜利时间延长到15分钟",
+    effect: "倒计时从 600 秒变成 900 秒；同时刷怪间隔的难度下限 min_gap_difficulty 变成 19。",
+    where: "gametimemanager.gd / enemy_manager.gd" },
+  { key: "is_erase_ability", mode: "挑战", label: "升级有一半概率只给2个技能选项",
+    effect: "候选张数改成 randi_range(2, 3)，也就是一半概率只给 2 张卡。",
+    where: "upgrademanager.gd 的 _ready()（limit_number = 2）" },
+  { key: "is_max_4", mode: "挑战", label: "每种能力最多获取3次",
+    effect: "limit_int 改成 2，同时把神秘池概率设成 -1（同一张卡第 3 次之后不会再出现）。",
+    where: "upgrademanager.gd 的 _ready()" }
+];
+
+function renderDifficulty(){
+  const box = document.getElementById("difficulty-modes");
+  box.innerHTML = "";
+  DIFFICULTY.forEach(function(m){
+    const d = document.createElement("article");
+    d.className = "ab";
+    const tags = m.tags.length ? m.tags.map(function(t){ return '<span class="chip id">' + t + '</span>'; }).join("") : "";
+    d.innerHTML = '<h4 style="color:' + m.color + '">' + m.name + ' <small style="color:var(--muted);font-size:11px;font-weight:400">mode_index = ' + m.index + '</small></h4>' +
+      '<div class="chips"><span class="chip sort">' + m.tagline + '</span>' + tags + '</div>' +
+      '<p>' + m.desc + '</p>' +
+      '<ul style="margin:8px 0 0;padding-left:18px;font-size:13px;color:#c4d2e6">' +
+        m.rows.map(function(r){ return '<li>' + r + '</li>'; }).join("") + '</ul>' +
+      '<div class="path">入口：' + m.entry + '</div>';
+    box.appendChild(d);
+  });
+
+  const table = document.getElementById("difficulty-matrix");
+  let html = "<tr><th style='width:170px'>项目</th><th>简单</th><th>普通</th><th>困难</th><th>挑战</th></tr>";
+  MATRIX.forEach(function(row){
+    html += "<tr><td>" + row[0] + "</td>";
+    for (let i = 1; i < row.length; i++) html += "<td>" + row[i] + "</td>";
+    html += "</tr>";
+  });
+  table.innerHTML = html;
+
+  const tagsBox = document.getElementById("difficulty-tags");
+  tagsBox.innerHTML = "";
+  DIFF_TAGS.forEach(function(t){
+    const d = document.createElement("div");
+    d.className = "ev";
+    d.innerHTML = '<h4>' + t.label +
+      '<span class="chip ' + (t.mode === "挑战" ? "event" : "normal") + '">' + t.mode + '</span>' +
+      '<code style="margin-left:auto">' + t.key + '</code></h4>' +
+      '<p>' + t.effect + '</p>' +
+      '<p class="meta">读取位置：' + t.where + (t.note ? '　·　注意：' + t.note : '') + '</p>';
+    tagsBox.appendChild(d);
+  });
+}
+
+const BEHAVIORS = [
+  {id:"chase", label:"追击玩家", on:true},
+  {id:"attack", label:"接触伤害", on:true},
+  {id:"collision", label:"实体碰撞", on:true},
+  {id:"drop", label:"掉落", on:true},
+  {id:"rush", label:"冲锋"},
+  {id:"summon", label:"召唤"},
+  {id:"invisible", label:"隐身"},
+  {id:"blink", label:"闪现"},
+  {id:"copy", label:"分身"},
+  {id:"ranged", label:"远程技能"},
+  {id:"disappear", label:"定时消失"},
+  {id:"reaper", label:"出屏回收"}
+];
+let diyImage = "";
+const picked = {};
+
+function renderBehaviors(){
+  const box = document.getElementById("behaviors");
+  box.innerHTML = "";
+  BEHAVIORS.forEach(function(b){
+    picked[b.id] = !!b.on;
+    const el = document.createElement("span");
+    el.className = "beh" + (b.on ? " on" : "");
+    el.textContent = b.label;
+    el.onclick = function(){
+      picked[b.id] = !picked[b.id];
+      el.classList.toggle("on", picked[b.id]);
+      updateDraft();
+    };
+    box.appendChild(el);
+  });
+}
+function val(id){ return document.getElementById(id).value; }
+function num(id){ return Number(document.getElementById(id).value) || 0; }
+function draftData(){
+  return {
+    name: val("f-name") || "新敌人",
+    file: (val("f-file") || "my_enemy").replace(/[^a-zA-Z0-9_]/g, "_"),
+    hp: num("f-hp"), speed: num("f-speed"), dmg: num("f-dmg"), weight: num("f-weight"),
+    unlock: num("f-unlock"), gone: num("f-gone"),
+    mech: val("f-mech").trim(),
+    tags: BEHAVIORS.filter(function(b){ return picked[b.id]; }).map(function(b){ return b.label; })
+  };
+}
+function updateDraft(){
+  const d = draftData();
+  const thumb = document.getElementById("diy-thumb");
+  thumb.innerHTML = diyImage ? '<img src="' + diyImage + '" alt="立绘预览">' : "立绘预览";
+  const box = document.getElementById("draft");
+  const range = d.gone >= 100 ? ("难度 " + d.unlock + " 起，之后一直有") : ("难度 " + d.unlock + " 起，" + d.gone + " 级后不再出现");
+  box.innerHTML =
+    '<div class="head">' +
+      '<div class="portrait">' + (diyImage ? '<img src="' + diyImage + '" alt="立绘" style="max-width:96px;max-height:96px;image-rendering:pixelated">' : '<span style="color:var(--muted);font-size:12px">立绘</span>') + '</div>' +
+      '<div><h3>' + d.name + ' <small style="color:var(--muted);font-size:12px">' + d.file + '</small></h3>' +
+        '<div class="chips">' + d.tags.map(function(t){ return '<span class="chip comp">' + t + '</span>'; }).join("") + '</div></div>' +
+    '</div>' +
+    '<dl class="stats4">' +
+      '<div><dt>血量</dt><dd>' + d.hp + '</dd></div>' +
+      '<div><dt>速度</dt><dd>' + d.speed + '</dd></div>' +
+      '<div><dt>伤害</dt><dd>' + d.dmg + '</dd></div>' +
+      '<div><dt>权重</dt><dd>' + d.weight + '</dd></div>' +
+    '</dl>' +
+    '<p class="spawn" style="margin:0">' + range + '</p>' +
+    '<div class="mech">' + (d.mech || "（还没写机制说明）") + '</div>' +
+    '<button class="copy" id="diy-copy">复制草案</button>' +
+    '<details><summary>落地步骤（点开看）</summary><ol>' +
+      '<li>复制 <code>scene/enemy/enemy_template.tscn</code> → <code>scene/enemy/' + d.file + '.tscn</code>，换贴图与动画帧。</li>' +
+      '<li>按行为标签挂对应组件，填好血量 / 速度 / 伤害。</li>' +
+      '<li>在 <code>resource/enemy/enemy.gd</code> 的 <code>enum ALL_ID</code> 里加一项，并新建对应的 <code>.tres</code>。</li>' +
+      '<li>把 <code>.tres</code> 拖进 <code>enemy_manager.tscn</code> 的 <code>all_enemy</code>（普通池再加 <code>normal_enemy</code>）。</li>' +
+      '<li>想走特殊事件，就在 <code>enemy_producer.gd</code> 里用 <code>single_appear</code> / <code>circle_surround</code> 之类的工具函数加一行。</li>' +
+    '</ol></details>';
+  document.getElementById("diy-copy").onclick = copyDraft;
+}
+function draftText(){
+  const d = draftData();
+  const range = d.gone >= 100 ? ("难度 " + d.unlock + " 起，之后一直有") : ("难度 " + d.unlock + " 起，" + d.gone + " 级后不再出现");
+  return "【新敌人草案】" + d.name + "（场景名：" + d.file + "）\n" +
+    "血量 " + d.hp + " ｜ 速度 " + d.speed + " ｜ 接触伤害 " + d.dmg + " ｜ 刷怪权重 " + d.weight + "\n" +
+    "出现：" + range + "\n" +
+    "行为：" + (d.tags.length ? d.tags.join("、") : "（未选）") + "\n" +
+    "机制：" + (d.mech || "（未写）");
+}
+function copyDraft(){
+  const btn = document.getElementById("diy-copy");
+  const text = draftText();
+  const done = function(){ btn.textContent = "已复制"; setTimeout(function(){ btn.textContent = "复制草案"; }, 1200); };
+  if (navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(done, function(){ fallbackCopy(text, done); });
+  } else {
+    fallbackCopy(text, done);
+  }
+}
+function fallbackCopy(text, done){
+  const ta = document.createElement("textarea");
+  ta.value = text; document.body.appendChild(ta); ta.select();
+  try { document.execCommand("copy"); } catch(e){}
+  ta.remove(); done();
+}
+document.getElementById("diy-pick").onclick = function(){ document.getElementById("diy-file").click(); };
+document.getElementById("diy-file").onchange = function(ev){
+  const f = ev.target.files && ev.target.files[0];
+  if (!f) return;
+  const reader = new FileReader();
+  reader.onload = function(){ diyImage = reader.result; updateDraft(); };
+  reader.readAsDataURL(f);
+};
+["f-name","f-file","f-hp","f-speed","f-dmg","f-weight","f-unlock","f-gone","f-mech"].forEach(function(id){
+  document.getElementById(id).oninput = updateDraft;
+});
+
+renderStats();
+renderGantt();
+renderDiffTables();
+renderGrid();
+renderEvents();
+renderAbilityFilters();
+renderAbilities();
+renderDifficulty();
+renderBehaviors();
+updateDraft();
+
+document.getElementById("close").onclick = function(){ document.getElementById("detail").close(); };
+document.getElementById("q").oninput = function(ev){ currentQuery = ev.target.value; renderGrid(); };
+document.getElementById("sort").onchange = function(ev){ currentSort = ev.target.value; renderGrid(); };
+document.querySelectorAll("#filters .pill").forEach(function(p){
+  p.onclick = function(){
+    document.querySelectorAll("#filters .pill").forEach(function(x){ x.classList.remove("on"); });
+    p.classList.add("on");
+    currentKind = p.dataset.kind;
+    renderGrid();
+  };
+});
+document.getElementById("ab-q").oninput = function(ev){ abQuery = ev.target.value; renderAbilities(); };
+
+(function(){
+  const want = decodeURIComponent(location.hash.replace("#", ""));
+  if (!want) return;
+  if (["enemies","events","abilities","difficulty","diy"].indexOf(want) >= 0){
+    const btn = document.querySelector('#tabs .tab[data-tab="' + want + '"]');
+    if (btn) btn.click();
+    return;
+  }
+  const hit = ENEMIES.filter(function(e){ return e.file === want || e.name === want; })[0];
+  if (hit) openDetail(hit);
+})();
+</script>
+</body>
+</html>

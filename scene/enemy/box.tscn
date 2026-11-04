@@ -36,7 +36,7 @@ scale = Vector2(1.2553042, 1.0013652)
 sprite_frames = ExtResource("2_7u1is")
 animation = &"run"
 autoplay = "run"
-frame_progress = 0.41755745
+frame_progress = 0.7415727
 
 [node name="health_component" parent="." unique_id=1900297266 instance=ExtResource("4_bpx8c")]
 max_health = 500.0

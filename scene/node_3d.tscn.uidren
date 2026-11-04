@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://xv4wmn2e1iw4"]
+
+[ext_resource type="PackedScene" uid="uid://bf1rf6g02ww7" path="res://asset/asset.glb" id="1_gl4or"]
+
+[node name="Node3D" type="Node3D" unique_id=1444026158]
+
+[node name="AuxScene" parent="." unique_id=1012640011 instance=ExtResource("1_gl4or")]

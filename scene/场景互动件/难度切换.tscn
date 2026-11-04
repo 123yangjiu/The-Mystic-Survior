@@ -1,0 +1,187 @@
+[gd_scene format=3 uid="uid://ynkn4lbmc76i"]
+
+[ext_resource type="Script" uid="uid://dk5dqk8ti143u" path="res://script/场景互动件/difficulty_switcher.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://b78rpntvdpx8n" path="res://sucai/草地城堡风格的背景/Top_Down/Texture/TX Props.png" id="2_d8yp3"]
+[ext_resource type="Script" uid="uid://cvav7b020sid2" path="res://script/场景互动件/difficulty_segment.gd" id="3_seg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_approach"]
+radius = 39.012817
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_back"]
+bg_color = Color(0.06, 0.08, 0.12, 0.92)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.36, 0.47, 0.62, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_leh4i"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d8yp3"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pl22p"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xkr33"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+
+[node name="DifficultySwitcher" type="Node2D" unique_id=939600080]
+script = ExtResource("1_script")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1485392006]
+position = Vector2(0, -7)
+texture = ExtResource("2_d8yp3")
+region_enabled = true
+region_rect = Rect2(452, 117, 24, 39)
+
+[node name="NameLabel" type="Label" parent="." unique_id=1679159785]
+offset_left = -60.0
+offset_top = -47.0
+offset_right = 60.0
+offset_bottom = -25.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+text = "普通"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ApproachArea" type="Area2D" parent="." unique_id=1659025935]
+collision_layer = 0
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ApproachArea" unique_id=1794473476]
+shape = SubResource("CircleShape2D_approach")
+
+[node name="Panel" type="Panel" parent="." unique_id=1472050831]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -138.0
+offset_top = -82.0
+offset_right = 138.0
+offset_bottom = -46.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_back")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=50780322]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 1
+theme_override_constants/margin_bottom = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer" unique_id=1654716553]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 0
+
+[node name="Seg3" type="Panel" parent="Panel/MarginContainer/HBoxContainer" unique_id=543674003]
+custom_minimum_size = Vector2(68, 34)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_leh4i")
+script = ExtResource("3_seg")
+mode_index = 0
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/HBoxContainer/Seg3" unique_id=357529548]
+layout_mode = 0
+offset_right = 68.0
+offset_bottom = 34.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.06, 0.08, 0.12, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 12
+text = "简单"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Seg0" type="Panel" parent="Panel/MarginContainer/HBoxContainer" unique_id=1283412973]
+custom_minimum_size = Vector2(68, 34)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_d8yp3")
+script = ExtResource("3_seg")
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/HBoxContainer/Seg0" unique_id=1407108045]
+layout_mode = 0
+offset_right = 68.0
+offset_bottom = 34.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.06, 0.08, 0.12, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 12
+text = "普通"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Seg1" type="Panel" parent="Panel/MarginContainer/HBoxContainer" unique_id=198352810]
+custom_minimum_size = Vector2(68, 34)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pl22p")
+script = ExtResource("3_seg")
+mode_index = 2
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/HBoxContainer/Seg1" unique_id=1402203773]
+layout_mode = 0
+offset_right = 68.0
+offset_bottom = 34.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.06, 0.08, 0.12, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 12
+text = "困难"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Seg2" type="Panel" parent="Panel/MarginContainer/HBoxContainer" unique_id=856038221]
+custom_minimum_size = Vector2(68, 34)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xkr33")
+script = ExtResource("3_seg")
+mode_index = 3
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/HBoxContainer/Seg2" unique_id=970673444]
+layout_mode = 0
+offset_right = 68.0
+offset_bottom = 34.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.06, 0.08, 0.12, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 12
+text = "挑战"
+horizontal_alignment = 1
+vertical_alignment = 1

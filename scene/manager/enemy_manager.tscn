@@ -20,6 +20,7 @@
 [ext_resource type="Resource" uid="uid://cj0igdud0tmjh" path="res://resource/enemy/undead.tres" id="15_tmr65"]
 [ext_resource type="PackedScene" uid="uid://ugy1pljxk7i0" path="res://scene/enemy_event/gappy_line.tscn" id="16_q5qsi"]
 [ext_resource type="PackedScene" uid="uid://uyasx8hy1oac" path="res://scene/enemy_event/titled_line.tscn" id="17_0i1ta"]
+[ext_resource type="PackedScene" uid="uid://bsyb3sb3mrjn0" path="res://scene/enemy_component/disappear_out_view_component.tscn" id="21_cil4d"]
 
 [node name="EnemyManager" type="Node" unique_id=1015220876]
 script = ExtResource("1_vlakn")
@@ -31,6 +32,7 @@ all_shape = Array[PackedScene]([ExtResource("14_61i4e"), ExtResource("16_q5qsi")
 [node name="EnemyProducer" type="Node" parent="." unique_id=1023889621 node_paths=PackedStringArray("enemy_manager")]
 script = ExtResource("2_lenjj")
 enemy_manager = NodePath("..")
+disappear_out_view_component = ExtResource("21_cil4d")
 
 [node name="CheckHealth" type="Timer" parent="EnemyProducer" unique_id=1658483975]
 wait_time = 2.0

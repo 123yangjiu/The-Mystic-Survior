@@ -1,4 +1,9 @@
 extends Control
+
+## 已停用：游戏现在一启动就进 scene/大场景/main_map.scn，
+## “开始游戏 / 设置 / 图鉴 / 难度”这些大厅功能改为在地图上和物品互动来完成。
+## 这个场景留着只是方便对照原来的做法，不再是游戏入口，也不需要维护。
+
 @onready var main_theme: AudioStreamPlayer = $MainTheme
 @export var setting_screen:PackedScene
 

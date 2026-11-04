@@ -6,20 +6,16 @@ extends CharacterBody2D
 var all_component:Array[EnemyComponent]
 @export var _id:EnemyUnlockEntry.ALL_ID
 
-var is_old :=false
+#“老怪”标记：出生超过 new_time 秒才算，用来决定能不能被回收（见 enemy_manager.check_health）
+#以前是每只敌人 new 一个 Timer 节点来翻这个标记，几百只怪就是几百个计时器；
+#现在只记一个出生时间戳，用属性现算，省掉每个敌人的一个节点 + 一次信号连接。
+var is_old:bool : get = _get_is_old
 var new_time:=3.0
+var _spawn_time:=Time.get_ticks_msec()   # 先给个合理初值，免得 ready 之前被读成“老怪”
 
 func _ready() -> void:
+	_spawn_time=Time.get_ticks_msec()
 	var is_co :=false
-	var timer = Timer.new()
-	# 2. 设置属性
-	timer.wait_time = new_time         # 间隔时间（秒）
-	timer.one_shot = true         # false = 循环触发，true = 只触发一次
-	timer.autostart=true
-	
-	add_child(timer)
-	timer.timeout.connect(on_timer_timeout)
-	
 	for component in all_component:
 		if component is CollisionComponent:
 			is_co = true
@@ -32,5 +28,5 @@ func _exit_tree() -> void:
 		EnemyUnlockEntry.ALL_ID.knight,EnemyUnlockEntry.ALL_ID.witch,EnemyUnlockEntry.ALL_ID.undead:
 			GameEvent.special_moster_dead_number+=1
 
-func on_timer_timeout()->void:
-	is_old=true
+func _get_is_old()->bool:
+	return Time.get_ticks_msec()-_spawn_time>=new_time*1000.0
