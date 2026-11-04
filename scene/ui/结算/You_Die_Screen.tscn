@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://co66107rpg80r"]
+
+[ext_resource type="Script" uid="uid://dhi6irssr0s2a" path="res://script/ui/结算/die_screen.gd" id="1_u23xs"]
+[ext_resource type="Texture2D" uid="uid://d1ue7ojv75eip" path="res://sucai/UI/You_die.png" id="2_nqmcm"]
+[ext_resource type="Theme" uid="uid://bak7nt8mttr06" path="res://resource/theme/black_theme.tres" id="3_q6lwb"]
+[ext_resource type="PackedScene" uid="uid://c4odu6gj71lxh" path="res://scene/ui/通用/return_to_maintheme.tscn" id="4_jjjup"]
+
+[node name="You_Die_Screen" type="CanvasLayer" unique_id=446151037]
+process_mode = 3
+layer = 2
+script = ExtResource("1_u23xs")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1791574977]
+position = Vector2(318, 175)
+scale = Vector2(4, 4)
+texture = ExtResource("2_nqmcm")
+
+[node name="Tips" type="Label" parent="." unique_id=1598068769]
+offset_left = 20.0
+offset_top = 303.0
+offset_right = 1160.0
+offset_bottom = 354.0
+text = "？"
+
+[node name="Return" parent="." unique_id=887643300 instance=ExtResource("4_jjjup")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -102.5
+offset_top = -1.0
+offset_right = 102.5
+offset_bottom = 69.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_q6lwb")
+theme_override_font_sizes/font_size = 36

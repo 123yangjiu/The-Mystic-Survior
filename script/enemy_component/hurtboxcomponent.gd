@@ -4,7 +4,7 @@ extends Area2D
 
 
 @export var health_component:Node
-var floating_text_scene=preload("res://scene/ui/floatingtext.tscn")
+var floating_text_scene=preload("res://scene/ui/战斗/floatingtext.tscn")
 func _ready() -> void:
 	area_entered.connect(on_area_enter)
 func on_area_enter(other_area:Area2D):

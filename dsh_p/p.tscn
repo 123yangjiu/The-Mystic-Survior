@@ -1,0 +1,6 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://dsh_p/p.gd" id="1"]
+
+[node name="DshP" type="Node"]
+script = ExtResource("1")

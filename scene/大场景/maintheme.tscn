@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://c68mua7fii8ye"]
 
-[ext_resource type="Script" uid="uid://dda5cs3qdq8a7" path="res://script/文本及ui显示/主界面.gd" id="1_dlbke"]
+[ext_resource type="Script" uid="uid://dda5cs3qdq8a7" path="res://script/ui/通用/主界面.gd" id="1_dlbke"]
 [ext_resource type="PackedScene" uid="uid://cr32ffcse8os3" path="res://scene/ui/settingscreen.tscn" id="2_prba8"]
 [ext_resource type="Texture2D" uid="uid://bnggolumsatoe" path="res://sucai/background/1.png" id="3_b715o"]
 [ext_resource type="Texture2D" uid="uid://bu0vl6xmgnpud" path="res://sucai/UI/标题.png" id="4_1wghb"]
 [ext_resource type="Theme" uid="uid://5bh541wa60l3" path="res://resource/theme/green_theme.tres" id="5_w6isx"]
 [ext_resource type="AudioStream" uid="uid://drwd3vjuweyx" path="res://sucai/back_music/Brand New_0.wav" id="6_dggem"]
 [ext_resource type="PackedScene" uid="uid://bvbt0jr1g354u" path="res://scene/ui/tujian_button.tscn" id="8_f5s45"]
-[ext_resource type="PackedScene" uid="uid://c56r3vhi7cpoo" path="res://scene/ui/nandu_select.tscn" id="9_prba8"]
+[ext_resource type="PackedScene" uid="uid://c56r3vhi7cpoo" path="res://scene/ui/难度/nandu_select.tscn" id="9_prba8"]
 
 [node name="主界面" type="Control" unique_id=152706506]
 process_mode = 3

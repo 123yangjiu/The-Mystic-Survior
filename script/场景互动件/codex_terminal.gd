@@ -31,7 +31,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		get_viewport().set_input_as_handled()
 
 func _open_codex() -> void:
-	_codex = (load("res://scene/ui/图鉴.tscn") as PackedScene).instantiate()
+	_codex = (load("res://scene/ui/图鉴/图鉴.tscn") as PackedScene).instantiate()
 	get_tree().root.add_child(_codex)
 	_codex.open()
 	_codex.tree_exited.connect(_on_codex_closed)
